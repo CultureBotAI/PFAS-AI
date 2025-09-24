@@ -1,0 +1,30 @@
+gene or protein id	organism (from taxa and genomes tab)	annotation	EC	GO	CHEBI	Download URL
+	Methylobacterium aquaticum strain 22A	siderophore–iron complex TonB-dependent receptor				https://www.ncbi.nlm.nih.gov/gene/?term=nan
+K23995	Methylobacterium species	PQQ-dependent methanol dehydrogenase, lanthanide-dependent (XoxF)	1.1.2.7	GO:0018525 (methanol metabolic process)	CHEBI:17790 (methanol)	https://www.kegg.jp/entry/K23995
+K14028	Methylobacterium species	PQQ-dependent methanol dehydrogenase, calcium-dependent (MxaF)	1.1.2.7	GO:0018525 (methanol metabolic process)	CHEBI:17790 (methanol)	https://www.kegg.jp/entry/K14028
+K00114	Methylobacterium species	PQQ-dependent alcohol dehydrogenase, lanthanide-responsive (ExaF)	1.1.2.7	GO:0046872 (metal ion binding)	CHEBI:30879 (alcohol)	https://www.kegg.jp/entry/K00114
+custom_mxbD	Methylobacterium species	Methanol metabolism transcriptional regulator MxbD		GO:0045892 (negative regulation of transcription)		https://www.ncbi.nlm.nih.gov/gene/?term=Methylobacterium
+custom_xoxG	Methylobacterium species	Small regulatory protein XoxG (lanthanide-responsive)		GO:0045892 (negative regulation of transcription)		https://www.ncbi.nlm.nih.gov/gene/?term=Methylobacterium
+K01499	Methylobacterium species	Formaldehyde dehydrogenase	1.2.1.46	GO:0019437 (formaldehyde metabolic process)	CHEBI:16842 (formaldehyde)	https://www.kegg.jp/entry/K01499
+custom_fae	Methylobacterium species	Formaldehyde activating enzyme (Fae1/Fae2)		GO:0019437 (formaldehyde metabolic process)	CHEBI:16842 (formaldehyde)	https://www.ncbi.nlm.nih.gov/gene/?term=Methylobacterium
+custom_tonB_ln	Methylobacterium species	TonB-dependent lanthanide uptake receptor		GO:0015682 (ferric iron transport)	CHEBI:33519 (metal cation)	https://www.ncbi.nlm.nih.gov/gene/?term=Methylobacterium
+custom_sbn	Methylobacterium species	Staphyloferrin B-like siderophore biosynthesis genes		GO:0019290 (siderophore transport)	CHEBI:26672 (siderophore)	https://www.ncbi.nlm.nih.gov/gene/?term=Methylobacterium
+K01676	Methylobacterium species	Fumarate hydratase (involved in TCA cycle)	4.2.1.2	GO:0006099 (tricarboxylic acid cycle)	CHEBI:18012 (fumarate)	https://www.kegg.jp/entry/K01676
+custom_xoxF	Methylorubrum extorquens	PQQ-dependent methanol dehydrogenase (lanthanide-dependent)	1.1.2.7	GO:0046872 (metal ion binding)	CHEBI:17790 (methanol)	https://www.ncbi.nlm.nih.gov/gene/
+custom_mxaF	Methylorubrum extorquens	PQQ-dependent methanol dehydrogenase (calcium-dependent)	1.1.2.7		CHEBI:17790 (methanol)	https://www.ncbi.nlm.nih.gov/gene/
+custom_exaF	Methylorubrum extorquens	PQQ-dependent alcohol dehydrogenase	1.1.2.7			https://www.ncbi.nlm.nih.gov/gene/
+custom_xoxF	Methylosinus trichosporium	PQQ-dependent methanol dehydrogenase (lanthanide-dependent)	1.1.2.7	GO:0046872 (metal ion binding)	CHEBI:17790 (methanol)	https://www.ncbi.nlm.nih.gov/gene/
+custom_mxaF	Methylosinus trichosporium	PQQ-dependent methanol dehydrogenase (calcium-dependent)	1.1.2.7		CHEBI:17790 (methanol)	https://www.ncbi.nlm.nih.gov/gene/
+custom_exaF	Methylosinus trichosporium	PQQ-dependent alcohol dehydrogenase	1.1.2.7			https://www.ncbi.nlm.nih.gov/gene/
+custom_xoxF	Paracoccus denitrificans	PQQ-dependent methanol dehydrogenase (lanthanide-dependent)	1.1.2.7	GO:0046872 (metal ion binding)	CHEBI:17790 (methanol)	https://www.ncbi.nlm.nih.gov/gene/
+custom_mxaF	Paracoccus denitrificans	PQQ-dependent methanol dehydrogenase (calcium-dependent)	1.1.2.7		CHEBI:17790 (methanol)	https://www.ncbi.nlm.nih.gov/gene/
+custom_exaF	Paracoccus denitrificans	PQQ-dependent alcohol dehydrogenase	1.1.2.7			https://www.ncbi.nlm.nih.gov/gene/
+custom_xoxF	Bradyrhizobium japonicum	PQQ-dependent methanol dehydrogenase (lanthanide-dependent)	1.1.2.7	GO:0046872 (metal ion binding)	CHEBI:17790 (methanol)	https://www.ncbi.nlm.nih.gov/gene/
+custom_mxaF	Bradyrhizobium japonicum	PQQ-dependent methanol dehydrogenase (calcium-dependent)	1.1.2.7		CHEBI:17790 (methanol)	https://www.ncbi.nlm.nih.gov/gene/
+custom_exaF	Bradyrhizobium japonicum	PQQ-dependent alcohol dehydrogenase	1.1.2.7			https://www.ncbi.nlm.nih.gov/gene/
+K23995	Various methylotrophic bacteria	PQQ-dependent methanol dehydrogenase (XoxF)				https://www.kegg.jp/entry/K23995
+K14028	Various methylotrophic bacteria	PQQ-dependent methanol dehydrogenase (MxaF)				https://www.kegg.jp/entry/K14028
+K00114	Various methylotrophic bacteria	alcohol dehydrogenase				https://www.kegg.jp/entry/K00114
+K01499	Various methylotrophic bacteria	formaldehyde dehydrogenase				https://www.kegg.jp/entry/K01499
+K00600	Various methylotrophic bacteria	glycine hydroxymethyltransferase				https://www.kegg.jp/entry/K00600
+K01938	Various methylotrophic bacteria	formate--tetrahydrofolate ligase				https://www.kegg.jp/entry/K01938
