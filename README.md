@@ -1,18 +1,38 @@
 # CMM-AI: Lanthanide Bioprocessing Data Pipeline
 
-A comprehensive data pipeline for lanthanide bioprocessing research, integrating NCBI databases, literature mining, and automated data extension capabilities. This project extends small seed datasets into comprehensive research databases with direct download URLs for all sources.
+## 🔬 Project Overview
 
-## 🌟 Features
+This project develops an automated data pipeline for **lanthanide bioprocessing research**, focusing on rare earth element-dependent biological processes in microorganisms. The pipeline integrates multiple biological databases to create comprehensive research datasets from small seed collections.
 
-- **📊 Automated Data Extension**: Transform small datasets into comprehensive research databases
+### Scientific Focus: Lanthanide-Dependent Biology
+
+Lanthanides (rare earth elements) play crucial roles in microbial metabolism, particularly in:
+- **XoxF methanol dehydrogenase** systems (lanthanide-dependent enzymes)
+- **Methylotrophic bacteria** (Methylobacterium, Methylorubrum, Paracoccus)
+- **Environmental metal cycling** and biogeochemistry
+- **Siderophore/lanthanophore** transport mechanisms
+- **PQQ-dependent enzyme** complexes
+
+### Current Status: First Draft Data (v0.1)
+
+⚠️ **Important**: The current datasets represent a **first draft and initial round** of data collection. This is an evolving research pipeline with:
+- **Proof-of-concept data extension** from seed datasets
+- **Initial database integration** and URL generation
+- **Baseline automation** for reproducible workflows
+- **Foundation for iterative improvement** and refinement
+
+Future versions will include expanded search terms, refined filtering criteria, manual curation, and domain expert validation.
+
+## 🌟 Technical Features
+
+- **📊 Automated Data Extension**: Transform small datasets (2-17 rows) into comprehensive research databases (15-132 rows)
 - **🔗 Download URL Generation**: Direct links to NCBI, KEGG, UniProt, PDB, and other databases
 - **🧬 Multi-Database Integration**: NCBI Assembly/BioSample, KEGG pathways, UniProt proteins, PDB structures
-- **📈 Smart Data Growth**: Extend datasets from 2-17 rows to 15-132 rows each
 - **🔄 Pipeline Automation**: Complete Makefile workflow for reproducible research
 - **📄 File Format Support**: Excel to TSV, Word/PDF to text conversion
 - **🤖 AI-Ready**: Structured for Claude Code and other AI tools
 
-## 📋 Data Tables Extended
+## 📋 Data Tables Extended (First Draft)
 
 | Table | Original → Extended | Description |
 |-------|-------------------|-------------|
@@ -23,6 +43,8 @@ A comprehensive data pipeline for lanthanide bioprocessing research, integrating
 | **Structures** | 1 → 17 rows | PDB crystal structures and AlphaFold predictions |
 | **Publications** | 2 → 22 rows | Peer-reviewed literature from PubMed/PMC |
 | **Datasets** | 2 → 15 rows | Research datasets from multiple repositories |
+
+*Note: These numbers represent initial automated extension. Future iterations will include expert curation and validation.*
 
 ## 🚀 Quick Start
 
@@ -88,15 +110,6 @@ CMM-AI/
 └── 📚 CLAUDE.md                    # AI assistant guidance
 ```
 
-## 🔬 Scientific Focus: Lanthanide Bioprocessing
-
-This pipeline specifically targets **lanthanide-dependent biological processes**, focusing on:
-
-- **XoxF methanol dehydrogenase** systems (lanthanide-dependent)
-- **Methylotrophic bacteria** (Methylobacterium, Methylorubrum, etc.)
-- **Rare earth element metabolism** in environmental microbes
-- **Siderophore/lanthanophore** transport systems
-- **PQQ-dependent enzyme** complexes
 
 ## 🔗 Database Integrations
 
@@ -169,13 +182,13 @@ uv run ruff check src/
 uv run ruff format src/
 ```
 
-## 📈 Data Statistics
+## 📈 Data Statistics (First Draft)
 
 ### Growth Metrics
-- **Total Rows Added**: 500+ new data entries
-- **Database Coverage**: 7+ major biological databases
-- **Literature Coverage**: 20+ peer-reviewed publications
-- **Structure Coverage**: PDB + AlphaFold predictions
+- **Total Rows Added**: 500+ new data entries (initial automated extension)
+- **Database Coverage**: 7+ major biological databases integrated
+- **Literature Coverage**: 20+ peer-reviewed publications (preliminary selection)
+- **Structure Coverage**: PDB + AlphaFold predictions (proof-of-concept)
 
 ### API Usage
 - **NCBI E-utilities**: ~100 queries per pipeline run
