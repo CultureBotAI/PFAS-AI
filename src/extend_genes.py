@@ -3,7 +3,6 @@
 
 import sys
 from pathlib import Path
-from cmm_ai.gene_search import create_extended_genes_table
 
 
 def main():

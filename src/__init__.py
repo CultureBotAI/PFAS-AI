@@ -6,13 +6,13 @@ This package provides utilities for working with CMM data, including:
 - Data enhancement and merging capabilities
 """
 
-from cmm_ai.parsers import (
+from .parsers import (
     xlsx_to_tsv,
     docx_to_text,
     pdf_to_text,
     parse_file
 )
-from cmm_ai.ncbi_search import (
+from .ncbi_search import (
     search_ncbi_assembly,
     search_ncbi_biosample,
     search_lanthanide_organisms,

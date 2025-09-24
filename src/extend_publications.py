@@ -3,7 +3,6 @@
 
 import sys
 from pathlib import Path
-from cmm_ai.publication_search import create_extended_publications_table
 
 
 def main():

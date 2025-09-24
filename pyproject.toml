@@ -1,7 +1,7 @@
 [project]
 name = "cmm-ai"
 version = "0.1.0"
-description = "AI tools for Culture Media Models"
+description = "AI tools for lanthanide bioprocessing research"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
@@ -14,7 +14,10 @@ dependencies = [
 ]
 
 [project.scripts]
-cmm-parse = "cmm_ai.cli:main"
+cmm-parse = "src.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [project.optional-dependencies]
 dev = [

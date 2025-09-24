@@ -3,7 +3,10 @@
 
 import sys
 from pathlib import Path
-from cmm_ai.dataset_search import create_extended_datasets_table
+
+# Add current directory to path for imports
+sys.path.insert(0, '.')
+from dataset_search import create_extended_datasets_table
 
 
 def main():

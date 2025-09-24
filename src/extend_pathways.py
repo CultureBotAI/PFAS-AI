@@ -3,7 +3,6 @@
 
 import sys
 from pathlib import Path
-from cmm_ai.pathway_search import create_extended_pathways_table
 
 
 def main():

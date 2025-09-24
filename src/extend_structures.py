@@ -3,7 +3,6 @@
 
 import sys
 from pathlib import Path
-from cmm_ai.structure_search import create_extended_structures_table
 
 
 def main():

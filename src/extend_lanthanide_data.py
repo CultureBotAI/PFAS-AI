@@ -3,7 +3,11 @@
 
 import sys
 from pathlib import Path
-from cmm_ai.ncbi_search import create_extended_tables
+
+# Add current directory to path for imports
+sys.path.insert(0, '.')
+
+from ncbi_search import create_extended_tables
 
 
 def main():

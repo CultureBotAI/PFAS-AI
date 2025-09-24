@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 from typing import Optional
 
-from cmm_ai.parsers import parse_file, xlsx_to_tsv, docx_to_text, pdf_to_text, sanitize_filename
+from .parsers import parse_file, xlsx_to_tsv, docx_to_text, pdf_to_text, sanitize_filename
 
 
 def main(argv: Optional[list] = None) -> int:

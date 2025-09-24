@@ -4,7 +4,6 @@
 import pandas as pd
 import requests
 from urllib.parse import urlparse
-from cmm_ai.ncbi_search import get_annotation_download_url
 
 
 def test_url_format():
