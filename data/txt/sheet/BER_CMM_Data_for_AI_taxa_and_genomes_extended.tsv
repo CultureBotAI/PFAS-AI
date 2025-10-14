@@ -1,6 +1,6 @@
 Scientific name	NCBITaxon id	Genome identifier (GenBank, IMG etc)	Annotation download URL
 Methylobacterium aquaticum Strain 22A			
-Methylobacterium aquaticum CCM : 7218 , CECT : 5998 , CIP : 108333 , DSM : 16371 , personal : GR16	270351.0		
+Methylobacterium aquaticum CCM : 7218 , CECT : 5998 , CIP : 108333 , DSM : 16371 , personal : GR16	270351		
 Methylobacterium sp. MB200	648885	GCF_000333655.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/333/655/GCF_000333655.1_*/GCF_000333655.1_*_genomic.gff.gz
 Methylobacterium sp. NMS12	3079766	GCF_051554815.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/051/554/815/GCF_051554815.1_*/GCF_051554815.1_*_genomic.gff.gz
 Methylobacterium fujisawaense	107400	GCF_049913165.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/049/913/165/GCF_049913165.1_*/GCF_049913165.1_*_genomic.gff.gz

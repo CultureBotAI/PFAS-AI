@@ -3,7 +3,7 @@
 # This Makefile provides commands to update CMM data tables with lanthanide-relevant
 # bacteria and archaea from NCBI databases.
 
-.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-all clean install test
+.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-bioprocesses update-screening update-protocols update-all clean install test validate-schema validate-consistency gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data
 
 # Default target
 help:
@@ -18,14 +18,28 @@ help:
 	@echo "  update-genes        - Update genes and proteins table with UniProt/KEGG"
 	@echo "  update-structures   - Update macromolecular structures with PDB data"
 	@echo "  update-publications - Update publications table with PubMed/arXiv"
+	@echo ""
+	@echo "Experimental Data Updates:"
+	@echo "  update-chemicals    - Update chemicals table with PubChem/CHEBI"
+	@echo "  update-assays       - Update assays table with curated protocols"
+	@echo "  update-bioprocesses - (Manual) Update bioprocesses table"
+	@echo "  update-screening    - (Manual) Update screening results table"
+	@echo "  update-protocols    - (Manual) Update protocols table"
+	@echo ""
 	@echo "  update-all          - Update all tables (full pipeline)"
 	@echo ""
 	@echo "Utilities:"
-	@echo "  install           - Install/sync dependencies with uv"
-	@echo "  test              - Run tests and validation"
-	@echo "  clean             - Remove temporary and output files"
-	@echo "  convert-excel     - Convert Excel sheets to TSV files"
-	@echo "  add-annotations   - Add annotation URLs to existing genomes table"
+	@echo "  install             - Install/sync dependencies with uv"
+	@echo "  test                - Run tests and validation"
+	@echo "  validate-schema     - Validate extended TSV data against LinkML schema"
+	@echo "  validate-consistency - Validate cross-sheet referential integrity"
+	@echo "  gen-linkml-models   - Generate Python dataclasses from LinkML schema"
+	@echo "  convert-pdfs-to-markdown - Convert PDFs to markdown format"
+	@echo "  extract-from-documents - Extract experimental data from markdown files"
+	@echo "  update-experimental-data - Full pipeline: PDF→markdown→extract→validate"
+	@echo "  clean               - Remove temporary and output files"
+	@echo "  convert-excel       - Convert Excel sheets to TSV files"
+	@echo "  add-annotations     - Add annotation URLs to existing genomes table"
 	@echo ""
 	@echo "Files:"
 	@echo "  Input:  data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes.tsv"
@@ -101,8 +115,40 @@ update-publications: install data/txt/sheet/BER_CMM_Data_for_AI_publications.tsv
 	@echo "Publications table updated successfully."
 	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_publications_extended.tsv"
 
+# Update chemicals table with PubChem/CHEBI data
+update-chemicals: install data/txt/sheet/BER_CMM_Data_for_AI_chemicals.tsv
+	@echo "Updating chemicals table with PubChem/CHEBI data..."
+	uv run python src/chemical_search.py
+	@echo "Chemicals table updated successfully."
+	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_chemicals_extended.tsv"
+
+# Update assays table with curated protocols
+update-assays: install data/txt/sheet/BER_CMM_Data_for_AI_assays.tsv
+	@echo "Updating assays table with curated assay protocols..."
+	uv run python src/assay_search.py
+	@echo "Assays table updated successfully."
+	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_assays_extended.tsv"
+
+# Update bioprocesses table (placeholder - manual data entry for now)
+update-bioprocesses: install
+	@echo "Bioprocesses table: Manual data entry"
+	@echo "Template available at: data/txt/sheet/BER_CMM_Data_for_AI_bioprocesses.tsv"
+	@echo "Note: Automated bioprocess data extraction not yet implemented"
+
+# Update screening results table (placeholder - manual data entry for now)
+update-screening: install
+	@echo "Screening results table: Manual data entry"
+	@echo "Template available at: data/txt/sheet/BER_CMM_Data_for_AI_screening_results.tsv"
+	@echo "Note: Automated screening data import not yet implemented"
+
+# Update protocols table (placeholder - manual data entry for now)
+update-protocols: install
+	@echo "Protocols table: Manual data entry"
+	@echo "Template available at: data/txt/sheet/BER_CMM_Data_for_AI_protocols.tsv"
+	@echo "Note: Automated protocols.io search not yet implemented"
+
 # Update all tables (full pipeline)
-update-all: update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications
+update-all: update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-bioprocesses update-screening update-protocols
 	@echo ""
 	@echo "Full data pipeline completed successfully!"
 	@echo "Updated files:"
@@ -133,9 +179,71 @@ test: install
 	@echo "Running tests and validation..."
 	uv run python test_annotation_urls.py
 	@echo "Running doctests..."
-	uv run python -m doctest src/cmm_ai/parsers.py -v
-	uv run python -m doctest src/cmm_ai/ncbi_search.py -v
+	uv run python -m doctest src/parsers.py -v
+	uv run python -m doctest src/ncbi_search.py -v
 	@echo "Tests completed."
+
+# Generate LinkML Python dataclasses from schema
+gen-linkml-models: install
+	@echo "Generating Python dataclasses from LinkML schema..."
+	uv run gen-python schema/lanthanide_bioprocessing.yaml > src/linkml_models.py
+	@echo "Generated src/linkml_models.py successfully."
+
+# Validate extended TSV data against LinkML schema
+validate-schema: install gen-linkml-models
+	@echo "Validating extended TSV data against LinkML schema..."
+	@echo "Converting TSV files to LinkML YAML format..."
+	uv run python src/tsv_to_linkml.py --data-dir data/txt/sheet --output data/linkml_database.yaml
+	@echo ""
+	@echo "Validating YAML data against schema..."
+	uv run linkml-validate -s schema/lanthanide_bioprocessing.yaml data/linkml_database.yaml
+	@echo ""
+	@echo "✓ Validation completed successfully!"
+	@echo "  Data file: data/linkml_database.yaml"
+	@echo "  Schema: schema/lanthanide_bioprocessing.yaml"
+
+# Validate cross-sheet consistency and referential integrity
+validate-consistency: install
+	@echo "Validating cross-sheet consistency and referential integrity..."
+	@echo ""
+	uv run python src/validate_consistency.py --data-dir data/txt/sheet
+	@echo ""
+	@echo "✓ Consistency validation completed!"
+
+# Convert PDFs to markdown format
+convert-pdfs-to-markdown: install
+	@echo "Converting PDF publications to markdown..."
+	@echo ""
+	uv run python src/pdf_to_markdown.py --batch data/publications --output-dir data/publications
+	@echo ""
+	@echo "✓ PDF to markdown conversion completed!"
+
+# Extract experimental data from markdown (converted from PDFs)
+extract-from-documents: install convert-pdfs-to-markdown
+	@echo ""
+	@echo "Extracting experimental data from markdown files..."
+	@echo ""
+	uv run python src/extract_from_documents.py --pdf-dir data/publications --output-dir data/txt/sheet
+	@echo ""
+	@echo "✓ Extraction completed! Review extracted data in TSV files."
+	@echo "  All extracted data labeled with source='extend2'"
+
+# Combined workflow: extract data + validate + convert to LinkML
+update-experimental-data: extract-from-documents validate-consistency validate-schema
+	@echo ""
+	@echo "============================================================"
+	@echo "✓ Experimental data pipeline completed successfully!"
+	@echo "============================================================"
+	@echo ""
+	@echo "Summary:"
+	@echo "  1. Extracted data from PDFs in data/publications/"
+	@echo "  2. Validated cross-sheet consistency"
+	@echo "  3. Validated against LinkML schema"
+	@echo ""
+	@echo "Next steps:"
+	@echo "  - Review extracted data for accuracy"
+	@echo "  - Manually curate any uncertain entries"
+	@echo "  - Run 'make status' to see updated file counts"
 
 # Clean up temporary and output files
 clean:
@@ -273,4 +381,31 @@ status:
 		echo "  ✓ Extended publications exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_publications_extended.tsv) lines)"; \
 	else \
 		echo "  ✗ Extended publications missing"; \
+	fi
+	@echo ""
+	@echo "Experimental data files:"
+	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_chemicals.tsv" ]; then \
+		echo "  ✓ Chemicals TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_chemicals.tsv) lines)"; \
+	else \
+		echo "  ✗ Chemicals TSV missing"; \
+	fi
+	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_assays.tsv" ]; then \
+		echo "  ✓ Assays TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_assays.tsv) lines)"; \
+	else \
+		echo "  ✗ Assays TSV missing"; \
+	fi
+	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_bioprocesses.tsv" ]; then \
+		echo "  ✓ Bioprocesses TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_bioprocesses.tsv) lines)"; \
+	else \
+		echo "  ✗ Bioprocesses TSV missing"; \
+	fi
+	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_screening_results.tsv" ]; then \
+		echo "  ✓ Screening results TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_screening_results.tsv) lines)"; \
+	else \
+		echo "  ✗ Screening results TSV missing"; \
+	fi
+	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_protocols.tsv" ]; then \
+		echo "  ✓ Protocols TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_protocols.tsv) lines)"; \
+	else \
+		echo "  ✗ Protocols TSV missing"; \
 	fi
