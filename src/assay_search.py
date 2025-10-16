@@ -15,8 +15,13 @@ import pandas as pd
 class AssaySearcher:
     """Search for lanthanide assay protocols."""
 
-    def __init__(self):
-        """Initialize searcher with curated assay database."""
+    def __init__(self, source_label: str = "extend1"):
+        """Initialize searcher with curated assay database.
+
+        Args:
+            source_label: Source label for tracking data provenance (default: extend1)
+        """
+        self.source_label = source_label
         # Curated assays from literature and protocols
         self.curated_assays = [
             {
@@ -32,7 +37,7 @@ class AssaySearcher:
                 'sample_preparation': 'Cell lysis with Triton X-100, 1:10 dilution in TRL buffer (pH 7.4)',
                 'data_output_format': 'Luminescence counts (CPS) and calculated concentrations',
                 'Download URL': 'https://www.protocols.io/view/lanthanide-trl-htp-screening',
-                'source': 'extend1'
+                'source': self.source_label
             },
             {
                 'assay_id': 'OBI:ICP-002',
@@ -47,7 +52,7 @@ class AssaySearcher:
                 'sample_preparation': 'Microwave-assisted acid digestion (HNO3 + H2O2), dilution to 2% HNO3',
                 'data_output_format': 'Elemental concentrations (μg/L) with isotope ratios',
                 'Download URL': 'https://www.epa.gov/esam/method-2008-determination-trace-elements-waters-and-wastes-inductively-coupled-plasma-mass',
-                'source': 'extend1'
+                'source': self.source_label
             },
             {
                 'assay_id': 'OBI:FACS-002',
@@ -62,7 +67,7 @@ class AssaySearcher:
                 'sample_preparation': 'Eu3+ incubation (100 μM, 1h), PBS wash (3x), resuspension in sort buffer',
                 'data_output_format': 'Sorted cell populations, FCS files, enrichment fold-change',
                 'Download URL': 'https://www.protocols.io/view/facs-ree-enrichment-v2',
-                'source': 'extend1'
+                'source': self.source_label
             },
             {
                 'assay_id': 'OBI:Fluor-001',
@@ -77,7 +82,7 @@ class AssaySearcher:
                 'sample_preparation': 'Mix lanthanide (10 μM) with ligand (0-100 μM) in buffered solution',
                 'data_output_format': 'Emission spectra (300-700 nm), binding constants from titration',
                 'Download URL': None,
-                'source': 'extend1'
+                'source': self.source_label
             },
             {
                 'assay_id': 'OBI:UV-001',
@@ -92,7 +97,7 @@ class AssaySearcher:
                 'sample_preparation': 'Prepare lanthanide-ligand mixtures in transparent buffer (pH 7.0)',
                 'data_output_format': 'Absorption spectra (200-800 nm), Job plots for stoichiometry',
                 'Download URL': None,
-                'source': 'extend1'
+                'source': self.source_label
             },
             {
                 'assay_id': 'OBI:XRF-001',
@@ -107,7 +112,7 @@ class AssaySearcher:
                 'sample_preparation': 'Dry biomass, pressed pellets, or direct solid sampling',
                 'data_output_format': 'Elemental composition (wt%), REE oxide concentrations',
                 'Download URL': None,
-                'source': 'extend1'
+                'source': self.source_label
             },
             {
                 'assay_id': 'OBI:AA-001',
@@ -122,7 +127,7 @@ class AssaySearcher:
                 'sample_preparation': 'Acid digestion, dilution to working range, matrix matching',
                 'data_output_format': 'Absorbance values, calculated concentrations (mg/L)',
                 'Download URL': 'https://www.epa.gov/hw-sw846/sw-846-test-method-7000b-flame-atomic-absorption-spectrophotometry',
-                'source': 'extend1'
+                'source': self.source_label
             }
         ]
 
@@ -155,12 +160,13 @@ class AssaySearcher:
         return []
 
 
-def extend_assays_table(input_tsv: Path, output_tsv: Path):
+def extend_assays_table(input_tsv: Path, output_tsv: Path, source_label: str = "extend1"):
     """Extend assays table with curated protocols.
 
     Args:
         input_tsv: Input assays TSV file
         output_tsv: Output extended TSV file
+        source_label: Source label for tracking data provenance (default: extend1)
     """
     # Load existing data
     if input_tsv.exists():
@@ -171,10 +177,11 @@ def extend_assays_table(input_tsv: Path, output_tsv: Path):
         existing_ids = set()
 
     print("Searching for lanthanide assay protocols...")
+    print(f"Source label: {source_label}")
     print("")
 
     # Initialize searcher
-    searcher = AssaySearcher()
+    searcher = AssaySearcher(source_label=source_label)
 
     # Get curated assays
     print("1. Loading curated assay protocols...")
@@ -227,11 +234,17 @@ def main():
         default=Path('data/txt/sheet/BER_CMM_Data_for_AI_assays_extended.tsv'),
         help='Output extended TSV file'
     )
+    parser.add_argument(
+        '--source-label',
+        type=str,
+        default='extend1',
+        help='Source label for data provenance tracking (default: extend1, use extend2 for round 2)'
+    )
 
     args = parser.parse_args()
 
     # Extend table
-    extend_assays_table(args.input, args.output)
+    extend_assays_table(args.input, args.output, source_label=args.source_label)
 
 
 if __name__ == "__main__":

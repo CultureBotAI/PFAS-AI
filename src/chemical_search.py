@@ -17,11 +17,16 @@ import requests
 class ChemicalSearcher:
     """Search chemical databases for lanthanide-relevant compounds."""
 
-    def __init__(self):
-        """Initialize searcher with API endpoints."""
+    def __init__(self, source_label: str = "extend1"):
+        """Initialize searcher with API endpoints.
+
+        Args:
+            source_label: Source label for tracking data provenance (default: extend1)
+        """
         self.pubchem_base = "https://pubchem.ncbi.nlm.nih.gov/rest/pug"
         self.chebi_base = "https://www.ebi.ac.uk/chebi"
         self.rate_limit_delay = 0.5  # seconds between API calls
+        self.source_label = source_label
 
         # Lanthanide elements
         self.lanthanides = [
@@ -166,7 +171,7 @@ class ChemicalSearcher:
                     'iupac_name': iupac_name
                 }),
                 'Download URL': f"https://pubchem.ncbi.nlm.nih.gov/compound/{cid}",
-                'source': 'extend1'
+                'source': self.source_label
             }
 
             return compound
@@ -203,7 +208,7 @@ class ChemicalSearcher:
                     'structure': 'hydroxamate-type siderophore'
                 }),
                 'Download URL': 'https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:138675',
-                'source': 'extend1'
+                'source': self.source_label
             }
         ]
 
@@ -211,12 +216,13 @@ class ChemicalSearcher:
         return curated_compounds
 
 
-def extend_chemicals_table(input_tsv: Path, output_tsv: Path):
+def extend_chemicals_table(input_tsv: Path, output_tsv: Path, source_label: str = "extend1"):
     """Extend chemicals table with PubChem and CHEBI data.
 
     Args:
         input_tsv: Input chemicals TSV file
         output_tsv: Output extended TSV file
+        source_label: Source label for tracking data provenance (default: extend1)
     """
     # Load existing data
     if input_tsv.exists():
@@ -227,10 +233,11 @@ def extend_chemicals_table(input_tsv: Path, output_tsv: Path):
         existing_ids = set()
 
     print("Searching chemical databases for lanthanide compounds...")
+    print(f"Source label: {source_label}")
     print("")
 
     # Initialize searcher
-    searcher = ChemicalSearcher()
+    searcher = ChemicalSearcher(source_label=source_label)
 
     # Search PubChem
     print("1. Searching PubChem for lanthanide cations...")
@@ -287,11 +294,17 @@ def main():
         default=Path('data/txt/sheet/BER_CMM_Data_for_AI_chemicals_extended.tsv'),
         help='Output extended TSV file'
     )
+    parser.add_argument(
+        '--source-label',
+        type=str,
+        default='extend1',
+        help='Source label for data provenance tracking (default: extend1, use extend2 for round 2)'
+    )
 
     args = parser.parse_args()
 
     # Extend table
-    extend_chemicals_table(args.input, args.output)
+    extend_chemicals_table(args.input, args.output, source_label=args.source_label)
 
 
 if __name__ == "__main__":

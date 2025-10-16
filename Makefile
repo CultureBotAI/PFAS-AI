@@ -3,7 +3,7 @@
 # This Makefile provides commands to update CMM data tables with lanthanide-relevant
 # bacteria and archaea from NCBI databases.
 
-.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-bioprocesses update-screening update-protocols update-all clean install test validate-schema validate-consistency gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data
+.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-bioprocesses update-screening update-protocols update-all clean install test validate-schema validate-consistency gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data download-pdfs extend2
 
 # Default target
 help:
@@ -34,9 +34,11 @@ help:
 	@echo "  validate-schema     - Validate extended TSV data against LinkML schema"
 	@echo "  validate-consistency - Validate cross-sheet referential integrity"
 	@echo "  gen-linkml-models   - Generate Python dataclasses from LinkML schema"
+	@echo "  download-pdfs       - Download PDFs from publications table URLs"
 	@echo "  convert-pdfs-to-markdown - Convert PDFs to markdown format"
 	@echo "  extract-from-documents - Extract experimental data from markdown files"
 	@echo "  update-experimental-data - Full pipeline: PDF→markdown→extract→validate"
+	@echo "  extend2             - Run full extend pipeline with source=extend2 label"
 	@echo "  clean               - Remove temporary and output files"
 	@echo "  convert-excel       - Convert Excel sheets to TSV files"
 	@echo "  add-annotations     - Add annotation URLs to existing genomes table"
@@ -118,16 +120,25 @@ update-publications: install data/txt/sheet/BER_CMM_Data_for_AI_publications.tsv
 # Update chemicals table with PubChem/CHEBI data
 update-chemicals: install data/txt/sheet/BER_CMM_Data_for_AI_chemicals.tsv
 	@echo "Updating chemicals table with PubChem/CHEBI data..."
-	uv run python src/chemical_search.py
+	uv run python src/chemical_search.py --source-label extend1
 	@echo "Chemicals table updated successfully."
 	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_chemicals_extended.tsv"
 
 # Update assays table with curated protocols
 update-assays: install data/txt/sheet/BER_CMM_Data_for_AI_assays.tsv
 	@echo "Updating assays table with curated assay protocols..."
-	uv run python src/assay_search.py
+	uv run python src/assay_search.py --source-label extend1
 	@echo "Assays table updated successfully."
 	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_assays_extended.tsv"
+
+# Download PDFs from publications table
+download-pdfs: install
+	@echo "Downloading PDFs from publications table..."
+	@echo ""
+	uv run python src/download_pdfs_from_publications.py
+	@echo ""
+	@echo "✓ PDF download completed!"
+	@echo "  PDFs saved to: data/publications/"
 
 # Update bioprocesses table (placeholder - manual data entry for now)
 update-bioprocesses: install
@@ -244,6 +255,41 @@ update-experimental-data: extract-from-documents validate-consistency validate-s
 	@echo "  - Review extracted data for accuracy"
 	@echo "  - Manually curate any uncertain entries"
 	@echo "  - Run 'make status' to see updated file counts"
+
+# extend2 workflow: Run full extend pipeline with source=extend2 label
+extend2: install convert-excel
+	@echo ""
+	@echo "============================================================"
+	@echo "EXTEND2 WORKFLOW - Second Round Data Extension"
+	@echo "============================================================"
+	@echo ""
+	@echo "Step 1: Download PDFs from publications table..."
+	@$(MAKE) download-pdfs
+	@echo ""
+	@echo "Step 2: Update chemicals with source=extend2..."
+	@uv run python src/chemical_search.py --source-label extend2
+	@echo ""
+	@echo "Step 3: Update assays with source=extend2..."
+	@uv run python src/assay_search.py --source-label extend2
+	@echo ""
+	@echo "Step 4: Process PDFs and extract data..."
+	@$(MAKE) update-experimental-data
+	@echo ""
+	@echo "============================================================"
+	@echo "✓ EXTEND2 WORKFLOW COMPLETED!"
+	@echo "============================================================"
+	@echo ""
+	@echo "Summary:"
+	@echo "  - Downloaded PDFs from publications"
+	@echo "  - Extended chemicals with source=extend2"
+	@echo "  - Extended assays with source=extend2"
+	@echo "  - Extracted experimental data from PDFs with DOI sources"
+	@echo "  - Validated all data"
+	@echo ""
+	@echo "Data provenance:"
+	@echo "  - extend1 = Initial round (manual + database searches)"
+	@echo "  - extend2 = Second round (this workflow)"
+	@echo "  - DOI = Extracted from specific publications"
 
 # Clean up temporary and output files
 clean:
