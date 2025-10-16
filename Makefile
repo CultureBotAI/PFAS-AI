@@ -3,7 +3,7 @@
 # This Makefile provides commands to update CMM data tables with lanthanide-relevant
 # bacteria and archaea from NCBI databases.
 
-.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-bioprocesses update-screening update-protocols update-all clean install test validate-schema validate-consistency gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data download-pdfs extend2
+.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-bioprocesses update-screening update-protocols update-all clean install test validate-schema validate-consistency gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data download-pdfs extend2 extendbypub
 
 # Default target
 help:
@@ -39,6 +39,7 @@ help:
 	@echo "  extract-from-documents - Extract experimental data from markdown files"
 	@echo "  update-experimental-data - Full pipeline: PDF→markdown→extract→validate"
 	@echo "  extend2             - Run full extend pipeline with source=extend2 label"
+	@echo "  extendbypub         - Cross-reference publications with data sheets"
 	@echo "  clean               - Remove temporary and output files"
 	@echo "  convert-excel       - Convert Excel sheets to TSV files"
 	@echo "  add-annotations     - Add annotation URLs to existing genomes table"
@@ -176,7 +177,7 @@ update-all: update-genomes update-biosamples update-pathways update-datasets upd
 convert-excel: install
 	@echo "Converting Excel files to TSV format..."
 	@mkdir -p data/txt/plan data/txt/sheet data/txt/proposal data/txt/publications
-	uv run python convert_sheets.py
+	uv run python src/convert_sheets.py
 	@echo "Excel files converted successfully."
 
 # Add annotation URLs to existing genomes table
@@ -290,6 +291,38 @@ extend2: install convert-excel
 	@echo "  - extend1 = Initial round (manual + database searches)"
 	@echo "  - extend2 = Second round (this workflow)"
 	@echo "  - DOI = Extracted from specific publications"
+
+# extendbypub workflow: Cross-reference publications with data sheets
+extendbypub: install convert-pdfs-to-markdown
+	@echo ""
+	@echo "============================================================"
+	@echo "PUBLICATION CROSS-REFERENCE WORKFLOW"
+	@echo "============================================================"
+	@echo ""
+	@echo "This workflow:"
+	@echo "  1. Reads markdown files converted from PDFs"
+	@echo "  2. Checks if each publication is relevant to rows in data sheets"
+	@echo "  3. Appends publication IDs to source columns with '|' delimiter"
+	@echo ""
+	@echo "Processing all sheets with source columns..."
+	@echo ""
+	uv run python src/extend_by_publication.py \
+		--publications-file data/txt/sheet/BER_CMM_Data_for_AI_publications.tsv \
+		--markdown-dir data/publications \
+		--data-dir data/txt/sheet \
+		--min-keyword-matches 3
+	@echo ""
+	@echo "============================================================"
+	@echo "✓ PUBLICATION CROSS-REFERENCE COMPLETED!"
+	@echo "============================================================"
+	@echo ""
+	@echo "Updated sheets:"
+	@echo "  - Chemicals, Assays, Bioprocesses, Screening Results"
+	@echo "  - Publication IDs appended to source columns"
+	@echo ""
+	@echo "Next steps:"
+	@echo "  - Review source columns for accuracy"
+	@echo "  - Run 'make validate-consistency' to check data integrity"
 
 # Clean up temporary and output files
 clean:

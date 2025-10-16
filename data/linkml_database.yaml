@@ -1374,7 +1374,7 @@ chemicals:
   chebi_id: CHEBI:52927
   pubchem_id: 165668
   properties: '{"oxidation_state": "+3", "ionic_radius": "0.95 Angstrom", "f-f_transition":
-    "5D0→7F2 (615 nm)", "luminescence": "red emission"}'
+    "5D0‚Üí7F2 (615 nm)", "luminescence": "red emission"}'
   download_url: https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:52927
 - chemical_id: CHEBI:52928
   chemical_name: Terbium(III) cation
@@ -1385,7 +1385,7 @@ chemicals:
   chebi_id: CHEBI:52928
   pubchem_id: 165669
   properties: '{"oxidation_state": "+3", "ionic_radius": "0.92 Angstrom", "f-f_transition":
-    "5D4→7F5 (544 nm)", "luminescence": "green emission"}'
+    "5D4‚Üí7F5 (544 nm)", "luminescence": "green emission"}'
   download_url: https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:52928
 - chemical_id: Custom_ML001
   chemical_name: Methylolanthanin
@@ -1465,52 +1465,6 @@ chemicals:
   properties: '{"source": "CHEBI", "metal_binding": "high affinity for La/Ce/Nd",
     "producer": "Methylobacterium extorquens", "structure": "hydroxamate-type siderophore"}'
   download_url: https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:138675
-- chemical_id: Custom_Siderophore_from_fmicb-14-1258452
-  chemical_name: Siderophore
-  compound_type: lanthanophore
-  role_in_bioprocess: Lanthanophore/siderophore mentioned in fmicb-14-1258452
-  properties: '{"source": "Extracted from fmicb-14-1258452"}'
-- chemical_id: Custom_Siderophore_Methylobacterium_aquaticum_from_fmicb-14-1258452
-  chemical_name: Siderophore from Methylobacterium aquaticum
-  compound_type: lanthanophore
-  role_in_bioprocess: Siderophore production gene (rhbC) found in Methylobacterium
-    aquaticum
-  properties: '{"source": "Extracted from fmicb-14-1258452", "organism": "Methylobacterium
-    aquaticum", "gene": "rhbC"}'
-- chemical_id: Custom_Siderophore_from_e00266-15
-  chemical_name: Siderophore
-  compound_type: lanthanophore
-  role_in_bioprocess: Lanthanophore/siderophore mentioned in e00266-15
-  properties: '{"source": "Extracted from e00266-15"}'
-- chemical_id: Custom_Siderophore_Methylobacterium_aquaticum_from_e00266-15
-  chemical_name: Siderophore from Methylobacterium aquaticum
-  compound_type: lanthanophore
-  role_in_bioprocess: Siderophore production gene (rhbC) found in Methylobacterium
-    aquaticum
-  properties: '{"source": "Extracted from e00266-15", "organism": "Methylobacterium
-    aquaticum", "gene": "rhbC"}'
-- chemical_id: Custom_Lnlanthanophore_from_fmicb-13-921635
-  chemical_name: Lnlanthanophore
-  compound_type: lanthanophore
-  role_in_bioprocess: Lanthanophore/siderophore mentioned in fmicb-13-921635
-  properties: '{"source": "Extracted from fmicb-13-921635"}'
-- chemical_id: Custom_Lanthanophore_from_fmicb-13-921635
-  chemical_name: Lanthanophore
-  compound_type: lanthanophore
-  role_in_bioprocess: Lanthanophore/siderophore mentioned in fmicb-13-921635
-  properties: '{"source": "Extracted from fmicb-13-921635"}'
-- chemical_id: Custom_Siderophore_from_fmicb-13-921635
-  chemical_name: Siderophore
-  compound_type: lanthanophore
-  role_in_bioprocess: Lanthanophore/siderophore mentioned in fmicb-13-921635
-  properties: '{"source": "Extracted from fmicb-13-921635"}'
-- chemical_id: Custom_Siderophore_Methylobacterium_aquaticum_from_fmicb-13-921635
-  chemical_name: Siderophore from Methylobacterium aquaticum
-  compound_type: lanthanophore
-  role_in_bioprocess: Siderophore production gene (rhbC) found in Methylobacterium
-    aquaticum
-  properties: '{"source": "Extracted from fmicb-13-921635", "organism": "Methylobacterium
-    aquaticum", "gene": "rhbC"}'
 assays:
 - assay_id: OBI:TRL-001
   assay_name: Time-Resolved Lanthanide Luminescence Assay
@@ -1519,7 +1473,7 @@ assays:
   - Eu3+, Tb3+
   detection_method: f-f transition luminescence with time-gating
   detection_limit: 0.1 nM
-  dynamic_range: 0.1 nM - 10 μM
+  dynamic_range: 0.1 nM - 10 ŒºM
   protocol_reference: Protocol_TRL_v1
   equipment_required:
   - Fluorescence plate reader with time-resolved detection
@@ -1554,16 +1508,101 @@ assays:
   sample_preparation: Eu3+ incubation, wash, resuspension
   data_output_format: Sorted cell populations (FCS files)
   download_url: https://www.protocols.io/view/facs-ree-binding
-- assay_id: Custom_FACS_from_fmicb-14-1258452
-  assay_name: FACS assay from fmicb-14-1258452
-  assay_type: FACS
-  detection_method: flow cytometry
-  protocol_reference: See fmicb-14-1258452 Methods section
-- assay_id: Custom_ICP-MS_from_fmicb-13-921635
-  assay_name: ICP-MS assay from fmicb-13-921635
+- assay_id: OBI:TRL-002
+  assay_name: Microplate-based TRL Assay for Lanthanide Screening
+  assay_type: time-resolved luminescence (TRL)
+  target_analytes:
+  - Eu3+, Tb3+, Sm3+, Dy3+
+  detection_method: Time-gated luminescence with 100 Œºs delay
+  detection_limit: 0.05 nM
+  dynamic_range: 0.05 nM - 50 ŒºM
+  protocol_reference: Protocol_TRL_HTP_v1
+  equipment_required:
+  - Tecan Spark multimode plate reader, black 384-well plates
+  sample_preparation: Cell lysis with Triton X-100, 1:10 dilution in TRL buffer (pH
+    7.4)
+  data_output_format: Luminescence counts (CPS) and calculated concentrations
+  download_url: https://www.protocols.io/view/lanthanide-trl-htp-screening
+- assay_id: OBI:ICP-002
+  assay_name: Multi-element REE Analysis by ICP-MS
   assay_type: ICP-MS
-  detection_method: ICP-MS
-  protocol_reference: See fmicb-13-921635 Methods section
+  target_analytes:
+  - La, Ce, Pr, Nd, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu
+  detection_method: Quadrupole ICP-MS with collision/reaction cell
+  detection_limit: 0.01 ppb
+  dynamic_range: 0.01 ppb - 1 ppm
+  protocol_reference: EPA Method 200.8
+  equipment_required:
+  - Agilent 7900 ICP-MS, microwave digestion system
+  sample_preparation: Microwave-assisted acid digestion (HNO3 + H2O2), dilution to
+    2% HNO3
+  data_output_format: Elemental concentrations (Œºg/L) with isotope ratios
+  download_url: https://www.epa.gov/esam/method-2008-determination-trace-elements-waters-and-wastes-inductively-coupled-plasma-mass
+- assay_id: OBI:FACS-002
+  assay_name: Lanthanide Binding Cell Enrichment via FACS
+  assay_type: FACS
+  target_analytes:
+  - Lanthanide-binding cells (Eu3+ fluorescence)
+  detection_method: 355 nm excitation, 615 nm emission (Eu3+ 5D0‚Üí7F2 transition)
+  detection_limit: Single cell with >10^4 Eu3+ ions bound
+  dynamic_range: 10^3 - 10^7 cells
+  protocol_reference: Protocol_FACS_REE_v2
+  equipment_required:
+  - BD FACSAria Fusion, 355 nm UV laser, custom 610/20 nm filter
+  sample_preparation: Eu3+ incubation (100 ŒºM, 1h), PBS wash (3x), resuspension in
+    sort buffer
+  data_output_format: Sorted cell populations, FCS files, enrichment fold-change
+  download_url: https://www.protocols.io/view/facs-ree-enrichment-v2
+- assay_id: OBI:Fluor-001
+  assay_name: Steady-State Fluorescence Spectroscopy for Lanthanide Complexation
+  assay_type: fluorescence spectroscopy
+  target_analytes:
+  - Eu3+, Tb3+ complexes with organic ligands
+  detection_method: Excitation at ligand absorption wavelength, emission at lanthanide
+    f-f transitions
+  detection_limit: 1 nM
+  dynamic_range: 1 nM - 100 ŒºM
+  equipment_required:
+  - Fluorescence spectrometer (Horiba FluoroMax-4), quartz cuvettes
+  sample_preparation: Mix lanthanide (10 ŒºM) with ligand (0-100 ŒºM) in buffered
+    solution
+  data_output_format: Emission spectra (300-700 nm), binding constants from titration
+- assay_id: OBI:UV-001
+  assay_name: UV-Vis Absorption Spectroscopy for Lanthanide Complex Formation
+  target_analytes:
+  - Lanthanide-ligand complexes
+  detection_method: Absorbance at ligand peak wavelength (250-400 nm)
+  detection_limit: 100 nM
+  dynamic_range: 100 nM - 1 mM
+  equipment_required:
+  - UV-Vis spectrophotometer, quartz cuvettes (1 cm path length)
+  sample_preparation: Prepare lanthanide-ligand mixtures in transparent buffer (pH
+    7.0)
+  data_output_format: Absorption spectra (200-800 nm), Job plots for stoichiometry
+- assay_id: OBI:XRF-001
+  assay_name: X-ray Fluorescence for Solid-Phase REE Quantification
+  target_analytes:
+  - All lanthanides in solid matrices
+  detection_method: Energy-dispersive X-ray fluorescence (ED-XRF)
+  detection_limit: 10 ppm
+  dynamic_range: 10 ppm - 100%
+  equipment_required:
+  - Handheld XRF analyzer or benchtop ED-XRF
+  sample_preparation: Dry biomass, pressed pellets, or direct solid sampling
+  data_output_format: Elemental composition (wt%), REE oxide concentrations
+- assay_id: OBI:AA-001
+  assay_name: Atomic Absorption Spectroscopy for Lanthanide Quantification
+  target_analytes:
+  - Individual lanthanides (one element at a time)
+  detection_method: Flame or graphite furnace atomic absorption
+  detection_limit: 1 ppb (GFAAS) or 10 ppb (FAAS)
+  dynamic_range: 1 ppb - 100 ppm
+  protocol_reference: EPA Method 7000B
+  equipment_required:
+  - AA spectrometer with lanthanide hollow cathode lamps
+  sample_preparation: Acid digestion, dilution to working range, matrix matching
+  data_output_format: Absorbance values, calculated concentrations (mg/L)
+  download_url: https://www.epa.gov/hw-sw846/sw-846-test-method-7000b-flame-atomic-absorption-spectrophotometry
 bioprocesses:
 - process_id: BP-001
   process_name: Methylobacterium Eu3+ Biosorption
@@ -1571,15 +1610,14 @@ bioprocesses:
   strain_used: M_extorquens_AM1
   organism_used: Methylobacterium extorquens AM1
   growth_conditions: LB medium, aerobic, 200 rpm shaking
-  ree_concentration: 100 μM Eu3+
+  ree_concentration: 100 ŒºM Eu3+
   contact_time: 24 hours
   pH: '7.0'
-  temperature: '30.0'
   competing_ions:
   - Ca2+ (1 mM), Mg2+ (0.5 mM)
   process_parameters: '{"inoculum_OD600": 0.1, "biomass_yield": "2.5 g/L", "biosorption_capacity":
     "45 mg Eu/g biomass"}'
-  optimization_history: 'DBTL-1: Initial screening; DBTL-2: pH optimization (6.5→7.0,
+  optimization_history: 'DBTL-1: Initial screening; DBTL-2: pH optimization (6.5‚Üí7.0,
     +15% uptake)'
 - process_id: BP-002
   process_name: Coal Ash Bioleaching with Acidophiles
@@ -1590,7 +1628,6 @@ bioprocesses:
   ree_concentration: Coal ash (500 mg/L REE)
   contact_time: 7 days
   pH: '2.5'
-  temperature: '28.0'
   competing_ions:
   - Fe3+ (10 g/L), Al3+ (2 g/L)
   process_parameters: '{"pulp_density": "10% w/v", "Fe2+_oxidation_rate": "0.5 g/L/day",
@@ -1603,16 +1640,15 @@ bioprocesses:
   strain_used: M_extorquens_WT
   organism_used: Methylobacterium extorquens WT
   growth_conditions: Minimal medium + methanol, aerobic
-  ree_concentration: 50 μM La3+
+  ree_concentration: 50 ŒºM La3+
   contact_time: 48 hours
   pH: '7.2'
-  temperature: '30.0'
   competing_ions:
   - Ca2+ (0.1 mM)
   process_parameters: '{"methanol_concentration": "0.5% v/v", "lanthanophore_production":
-    "25 μM", "precipitate_phase": "La-phosphate"}'
+    "25 ŒºM", "precipitate_phase": "La-phosphate"}'
   optimization_history: 'DBTL-1: Discovery phase; AI prediction: increase methanol
-    to 1.0% → tested, confirmed +30% mineralization'
+    to 1.0% ‚Üí tested, confirmed +30% mineralization'
 - process_id: Custom_bioaccumulation_from_fmicb-14-1258452
   process_name: Bioaccumulation process from fmicb-14-1258452
   process_type: bioaccumulation
@@ -1682,19 +1718,19 @@ protocols:
 - protocol_id: Protocol_TRL_v1
   protocol_name: Time-Resolved Luminescence for Lanthanide Detection
   protocol_type: assay protocol
-  protocol_version: '1'
+  protocol_version: '1.0'
   protocol_doi: 10.17504/protocols.io.bp2l6br9rgqe/v1
   protocol_url: https://www.protocols.io/view/lanthanide-trl-assay
   associated_assays:
   - OBI:TRL-001
   equipment_list:
   - Plate reader (BioTek Synergy Neo2), 96-well black plates, multichannel pipette
-  success_criteria: Z-factor > 0.5, CV < 15%, linear response 0.1-10 μM
+  success_criteria: Z-factor > 0.5, CV < 15%, linear response 0.1-10 ŒºM
   quality_control: Positive control (100 nM Eu3+), negative control (buffer only),
     blank wells
   dbtl_iteration: DBTL-1
   validation_status: validated
-  user_notes: Optimized for Methylobacterium cultures. Use time-gating (100 μs delay)
+  user_notes: Optimized for Methylobacterium cultures. Use time-gating (100 Œºs delay)
     to eliminate autofluorescence.
   download_url: https://www.protocols.io/view/lanthanide-trl-assay
 - protocol_id: Protocol_FACS_v1
@@ -1717,7 +1753,7 @@ protocols:
 - protocol_id: Protocol_Bioleach_v1
   protocol_name: Acidophilic Bioleaching of REE from Coal Ash
   protocol_type: extraction protocol
-  protocol_version: '1'
+  protocol_version: '1.0'
   protocol_url: https://example.org/protocols/bioleaching
   associated_assays:
   - BP-002

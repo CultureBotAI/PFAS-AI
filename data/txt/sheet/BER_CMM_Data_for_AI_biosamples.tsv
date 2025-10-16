@@ -1,18 +1,133 @@
-Sample Name	Sample ID	Organism
-203a	SAMN44800722	Methylobacterium aquaticum strain: LEGMi203a
-MA-22A	SAMD00024788	Methylobacterium aquaticum strain: MA-22A
-BG2	SAMN12692043	Methylobacterium aquaticum strain: BG2
-Methylobacterium aquaticum	SAMN03401149	Methylobacterium aquaticum strain: DSM 16371
-NBRC 110162	SAMD00542649	Methylobacterium aquaticum strain: NBRC 110162
-NBRC 110161	SAMD00542648	Methylobacterium aquaticum strain: NBRC 110161
-NBRC 110160	SAMD00542647	Methylobacterium aquaticum strain: NBRC 110160
-NBRC 110159	SAMD00542646	Methylobacterium aquaticum strain: NBRC 110159
-NBRC 110158	SAMD00542645	Methylobacterium aquaticum strain: NBRC 110158
-NBRC 110157	SAMD00542644	Methylobacterium aquaticum strain: NBRC 110157
-NBRC 110156	SAMD00542643	Methylobacterium aquaticum strain: NBRC 110156
-NBRC 110155	SAMD00542642	Methylobacterium aquaticum strain: NBRC 110155
-NBRC 110154	SAMD00542641	Methylobacterium aquaticum strain: NBRC 110154
-NBRC 110153	SAMD00542640	Methylobacterium aquaticum strain: NBRC 110153
-NBRC 107091	SAMD00541686	Methylobacterium aquaticum strain: NBRC 107091
-NBRC 106538	SAMD00541643	Methylobacterium aquaticum strain: NBRC 106538
-NBRC 106537	SAMD00541642	Methylobacterium aquaticum strain: NBRC 106537
+Sample Name	Sample ID	Organism	Download
+203a	SAMN44800722	Methylobacterium aquaticum strain: LEGMi203a	
+MA-22A	SAMD00024788	Methylobacterium aquaticum strain: MA-22A	
+BG2	SAMN12692043	Methylobacterium aquaticum strain: BG2	
+Methylobacterium aquaticum	SAMN03401149	Methylobacterium aquaticum strain: DSM 16371	
+NBRC 110162	SAMD00542649	Methylobacterium aquaticum strain: NBRC 110162	
+NBRC 110161	SAMD00542648	Methylobacterium aquaticum strain: NBRC 110161	
+NBRC 110160	SAMD00542647	Methylobacterium aquaticum strain: NBRC 110160	
+NBRC 110159	SAMD00542646	Methylobacterium aquaticum strain: NBRC 110159	
+NBRC 110158	SAMD00542645	Methylobacterium aquaticum strain: NBRC 110158	
+NBRC 110157	SAMD00542644	Methylobacterium aquaticum strain: NBRC 110157	
+NBRC 110156	SAMD00542643	Methylobacterium aquaticum strain: NBRC 110156	
+NBRC 110155	SAMD00542642	Methylobacterium aquaticum strain: NBRC 110155	
+NBRC 110154	SAMD00542641	Methylobacterium aquaticum strain: NBRC 110154	
+NBRC 110153	SAMD00542640	Methylobacterium aquaticum strain: NBRC 110153	
+NBRC 107091	SAMD00541686	Methylobacterium aquaticum strain: NBRC 107091	
+NBRC 106538	SAMD00541643	Methylobacterium aquaticum strain: NBRC 106538	
+NBRC 106537	SAMD00541642	Methylobacterium aquaticum strain: NBRC 106537	
+Er.3	SAMEA113907569	Pseudomonas putida	
+Mix.2	SAMEA113907574	Pseudomonas putida	
+La.2	SAMEA113907571	Pseudomonas putida	
+Nd.1	SAMEA113907576	Pseudomonas putida	
+Er.1	SAMEA113907567	Pseudomonas putida	
+None.1	SAMEA113907579	Pseudomonas putida	
+La.1	SAMEA113907570	Pseudomonas putida	
+None.2	SAMEA113907580	Pseudomonas putida	
+Mix.3	SAMEA113907575	Pseudomonas putida	
+None.3	SAMEA113907581	Pseudomonas putida	
+La.3	SAMEA113907572	Pseudomonas putida	
+Nd.3	SAMEA113907578	Pseudomonas putida	
+Mix.1	SAMEA113907573	Pseudomonas putida	
+Nd.2	SAMEA113907577	Pseudomonas putida	
+Er.2	SAMEA113907568	Pseudomonas putida	
+Cocktail.3	SAMEA110447768	Beijerinckiaceae bacterium RH AL1	
+Cocktail.2	SAMEA110447767	Beijerinckiaceae bacterium RH AL1	
+Cocktail.1	SAMEA110447766	Beijerinckiaceae bacterium RH AL1	
+Nd.3	SAMEA110447765	Beijerinckiaceae bacterium RH AL1	
+Nd.2	SAMEA110447764	Beijerinckiaceae bacterium RH AL1	
+Nd.1	SAMEA110447763	Beijerinckiaceae bacterium RH AL1	
+La.3	SAMEA110447762	Beijerinckiaceae bacterium RH AL1	
+La.2	SAMEA110447761	Beijerinckiaceae bacterium RH AL1	
+La.1	SAMEA110447760	Beijerinckiaceae bacterium RH AL1	
+La_high.3	SAMEA110447759	Beijerinckiaceae bacterium RH AL1	
+La_high.2	SAMEA110447758	Beijerinckiaceae bacterium RH AL1	
+La_high.1	SAMEA110447757	Beijerinckiaceae bacterium RH AL1	
+La_low.3	SAMEA110447756	Beijerinckiaceae bacterium RH AL1	
+La_low.2	SAMEA110447755	Beijerinckiaceae bacterium RH AL1	
+La_low.1	SAMEA110447754	Beijerinckiaceae bacterium RH AL1	
+MIGS Cultured Bacterial/Archaeal sample from Methy	SAMN08449683	Methylotenera oryzisoli	
+Model organism or animal sample from Daphnia magna	SAMN36469912	Daphnia magna	
+Model organism or animal sample from Daphnia magna	SAMN36469911	Daphnia magna	
+Model organism or animal sample from Daphnia magna	SAMN36469910	Daphnia magna	
+EuSubs40	SAMN49739896	soil metagenome	
+EuSubs39	SAMN49739895	soil metagenome	
+EuSubs38	SAMN49739894	soil metagenome	
+EuSubs37	SAMN49739893	soil metagenome	
+EuSubs36	SAMN49739892	soil metagenome	
+EuSubs35	SAMN49739891	soil metagenome	
+EuSubs34	SAMN49739890	soil metagenome	
+EuSubs33	SAMN49739889	soil metagenome	
+EuSubs32	SAMN49739888	soil metagenome	
+EuSubs31	SAMN49739887	soil metagenome	
+EuSubs30	SAMN49739886	soil metagenome	
+EuSubs29	SAMN49739885	soil metagenome	
+EuSubs28	SAMN49739884	soil metagenome	
+EuSubs27	SAMN49739883	soil metagenome	
+EuSubs26	SAMN49739882	soil metagenome	
+EuSubs25	SAMN49739881	soil metagenome	
+EuSubs24	SAMN49739880	soil metagenome	
+EuSubs23	SAMN49739879	soil metagenome	
+EuSubs22	SAMN49739878	soil metagenome	
+EuSubs21	SAMN49739877	soil metagenome	
+EuRoot40	SAMN49739846	root metagenome	
+EuRoot39	SAMN49739845	root metagenome	
+EuRoot38	SAMN49739844	root metagenome	
+EuRoot37	SAMN49739843	root metagenome	
+EuRoot36	SAMN49739842	root metagenome	
+EuRoot35	SAMN49739841	root metagenome	
+EuRoot34	SAMN49739840	root metagenome	
+EuRoot33	SAMN49739839	root metagenome	
+EuRoot32	SAMN49739838	root metagenome	
+EuRoot31	SAMN49739837	root metagenome	
+EuRoot30	SAMN49739836	root metagenome	
+EuRoot29	SAMN49739835	root metagenome	
+EuRoot28	SAMN49739834	root metagenome	
+EuRoot27	SAMN49739833	root metagenome	
+EuRoot26	SAMN49739832	root metagenome	
+EuRoot25	SAMN49739831	root metagenome	
+EuRoot24	SAMN49739830	root metagenome	
+EuRoot23	SAMN49739829	root metagenome	
+EuRoot22	SAMN49739828	root metagenome	
+EuRoot21	SAMN49739827	root metagenome	
+ProSubs40	SAMN49739796	soil metagenome	
+ProSubs39	SAMN49739795	soil metagenome	
+ProSubs38	SAMN49739794	soil metagenome	
+ProSubs37	SAMN49739793	soil metagenome	
+ProSubs36	SAMN49739792	soil metagenome	
+ProSubs35	SAMN49739791	soil metagenome	
+ProSubs34	SAMN49739790	soil metagenome	
+Cell culture,succinate, lanthanum, rep1	SAMN48138834	Bradyrhizobium sp. USDA 3456	
+Cell culture,succinate, lanthanum, rep2	SAMN48138833	Bradyrhizobium sp. USDA 3456	
+Cell culture,succinate, lanthanum, rep3	SAMN48138832	Bradyrhizobium sp. USDA 3456	
+Cell culture, methanol, lanthanum, rep1	SAMN48138831	Bradyrhizobium sp. USDA 3456	
+Cell culture, methanol, lanthanum, rep2	SAMN48138830	Bradyrhizobium sp. USDA 3456	
+Cell culture, methanol, lanthanum, rep3	SAMN48138829	Bradyrhizobium sp. USDA 3456	
+Methylobacterium_sp. 22A_RNAseq_La	SAMD00024616	Methylobacterium sp. MA-22A	
+Methylobacterium_sp. 22A_RNAseq_CaLa	SAMD00024614	Methylobacterium sp. MA-22A	
+RHAL1_PyLa_3	SAMEA7233297	Beijerinckiaceae bacterium RH AL1	
+RHAL1_PyLa_2	SAMEA7233296	Beijerinckiaceae bacterium RH AL1	
+RHAL1_PyLa_1	SAMEA7233295	Beijerinckiaceae bacterium RH AL1	
+RHAL1_Py_3	SAMEA7233294	Beijerinckiaceae bacterium RH AL1	
+RHAL1_Py_2	SAMEA7233293	Beijerinckiaceae bacterium RH AL1	
+RHAL1_Py_1	SAMEA7233292	Beijerinckiaceae bacterium RH AL1	
+RHAL1_MetOH_La_3	SAMEA5814855	Beijerinckiaceae bacterium	
+RHAL1_MetOH_La_2	SAMEA5814854	Beijerinckiaceae bacterium	
+RHAL1_MetOH_La_1	SAMEA5814853	Beijerinckiaceae bacterium	
+La_1	SAMN31510102	Cupriavidus basilensis	
+La_2	SAMN31510101	Cupriavidus basilensis	
+Arabidopsis thaliana col-0 La Roots replicate 1	SAMN36521059	Arabidopsis thaliana	
+Arabidopsis thaliana col-0 La Roots replicate 2	SAMN36521058	Arabidopsis thaliana	
+Arabidopsis thaliana col-0 La Roots replicate 3	SAMN36521057	Arabidopsis thaliana	
+Arabidopsis thaliana col-0 La Shoots replicate 1	SAMN36521056	Arabidopsis thaliana	
+Arabidopsis thaliana col-0 La Shoots replicate 2	SAMN36521055	Arabidopsis thaliana	
+Arabidopsis thaliana col-0 La Shoots replicate 3	SAMN36521054	Arabidopsis thaliana	
+MDH-3 La rep 1	SAMN24694859	Methylorubrum extorquens AM1	
+MDH-3 La rep 2	SAMN24694858	Methylorubrum extorquens AM1	
+MDH-3 La rep 3	SAMN24694857	Methylorubrum extorquens AM1	
+evoHLn La rep 1	SAMN24694856	Methylorubrum extorquens AM1	
+evoHLn La rep 2	SAMN24694855	Methylorubrum extorquens AM1	
+evoHLn La rep 3	SAMN24694854	Methylorubrum extorquens AM1	
+Metagenome or environmental sample from metagenome	SAMN21930982	metagenome	
+Metagenome or environmental sample from metagenome	SAMN21930981	metagenome	
+Metagenome or environmental sample from metagenome	SAMN21930980	metagenome	

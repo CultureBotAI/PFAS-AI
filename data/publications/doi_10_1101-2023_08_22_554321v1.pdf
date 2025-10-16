@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" 
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:mml="http://www.w3.org/1998/Math/MathML">
+  <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# book: http://ogp.me/ns/book#" >
+    <!--[if IE]><![endif]-->
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+<link rel="dns-prefetch" href="//d33xdlntwy0kbs.cloudfront.net" />
+<link rel="dns-prefetch" href="//www.google.com" />
+<link rel="dns-prefetch" href="//scholar.google.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="https://www.biorxiv.org/sites/default/files/images/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" type="application/pdf" title="Full Text (PDF)" href="/content/10.1101/2023.08.22.554321v1.full.pdf" />
+<link rel="alternate" type="text/plain" title="Full Text (Plain)" href="/content/10.1101/2023.08.22.554321v1.full.txt" />
+<link rel="alternate" type="application/vnd.ms-powerpoint" title="Powerpoint" href="/content/10.1101/2023.08.22.554321v1.ppt" />
+<meta name="type" content="article" />
+<meta name="category" content="article" />
+<meta name="HW.identifier" content="/biorxiv/early/2023/08/23/2023.08.22.554321.atom" />
+<meta name="HW.pisa" content="biorxiv;2023.08.22.554321v1" />
+<meta name="DC.Format" content="text/html" />
+<meta name="DC.Language" content="en" />
+<meta name="DC.Title" content="Employing Machine Learning Techniques to Detect Protein-Protein Interaction: A Survey, Experimental, and Comparative Evaluations" />
+<meta name="DC.Identifier" content="10.1101/2023.08.22.554321" />
+<meta name="DC.Date" content="2023-08-23" />
+<meta name="DC.Publisher" content="Cold Spring Harbor Laboratory" />
+<meta name="DC.Rights" content="© 2023, Posted by Cold Spring Harbor Laboratory. This pre-print is available under a Creative Commons License (Attribution-NonCommercial-NoDerivs 4.0 International), CC BY-NC-ND 4.0, as described at http://creativecommons.org/licenses/by-nc-nd/4.0/" />
+<meta name="DC.AccessRights" content="restricted" />
+<meta name="DC.Description" content="This survey paper provides an in-depth analysis of various machine learning techniques and algorithms that are utilized in the detection of PPI (Protein-Protein Interactions). For every technique examined, the paper evaluates its efficiency, shortcomings, possibilities for enhancement, and outlook for the future. A major challenge in current survey papers focusing on machine learning algorithms for PPI identification is the successful categorization of these algorithms. To overcome this challenge, the paper introduces a novel hierarchical taxonomy that organizes algorithms into more intricate categories and distinct techniques. The proposed taxonomy is constructed on a four-tier structure, beginning with the broad methodology category, and ending with specific sub-techniques. This structure facilitates a more systematic and exhaustive categorization of algorithms, aiding researchers in grasping the connections between different algorithms and techniques. Included in the paper are both empirical and experimental assessments to classify the various techniques. The empirical assessment judges the techniques according to four standards. The experimental evaluations carry out the following rankings: (1) the algorithms that employ the same specific sub-technique, (2) the different sub-techniques that employ the same technique, (3) the different techniques that employ the same methodology sub-category, and (4) the different methodology sub-categories within the same methodology category. By merging the new methodological taxonomy, empirical analyses, and experimental evaluations, the paper provides a multifaceted and thorough comprehension of the machine learning methods and algorithms for PPI detection. This synthesis helps researchers make well-informed decisions. In its conclusion, the paper furnishes crucial insights into the future possibilities of machine learning techniques for PPI identification, underscoring potential advancements and areas ripe for continued exploration and development.
+
+### Competing Interest Statement
+
+The authors have declared no competing interest." />
+<meta name="DC.Contributor" content="Kamal Taha" />
+<meta name="article:published_time" content="2023-08-23" />
+<meta name="article:section" content="Confirmatory Results" />
+<meta name="citation_title" content="Employing Machine Learning Techniques to Detect Protein-Protein Interaction: A Survey, Experimental, and Comparative Evaluations" />
+<meta name="citation_abstract" lang="en" content="&lt;h3&gt;ABSTRACT&lt;/h3&gt;
+&lt;p&gt;This survey paper provides an in-depth analysis of various machine learning techniques and algorithms that are utilized in the detection of PPI (Protein-Protein Interactions). For every technique examined, the paper evaluates its efficiency, shortcomings, possibilities for enhancement, and outlook for the future. A major challenge in current survey papers focusing on machine learning algorithms for PPI identification is the successful categorization of these algorithms. To overcome this challenge, the paper introduces a novel hierarchical taxonomy that organizes algorithms into more intricate categories and distinct techniques. The proposed taxonomy is constructed on a four-tier structure, beginning with the broad methodology category, and ending with specific sub-techniques. This structure facilitates a more systematic and exhaustive categorization of algorithms, aiding researchers in grasping the connections between different algorithms and techniques. Included in the paper are both empirical and experimental assessments to classify the various techniques. The empirical assessment judges the techniques according to four standards. The experimental evaluations carry out the following rankings: (1) the algorithms that employ the same specific sub-technique, (2) the different sub-techniques that employ the same technique, (3) the different techniques that employ the same methodology sub-category, and (4) the different methodology sub-categories within the same methodology category. By merging the new methodological taxonomy, empirical analyses, and experimental evaluations, the paper provides a multifaceted and thorough comprehension of the machine learning methods and algorithms for PPI detection. This synthesis helps researchers make well-informed decisions. In its conclusion, the paper furnishes crucial insights into the future possibilities of machine learning techniques for PPI identification, underscoring potential advancements and areas ripe for continued exploration and development.&lt;/p&gt;" />
+<meta name="citation_journal_title" content="bioRxiv" />
+<meta name="citation_publisher" content="Cold Spring Harbor Laboratory" />
+<meta name="citation_publication_date" content="2023/01/01" />
+<meta name="citation_mjid" content="biorxiv;2023.08.22.554321v1" />
+<meta name="citation_id" content="2023.08.22.554321v1" />
+<meta name="citation_public_url" content="https://www.biorxiv.org/content/10.1101/2023.08.22.554321v1" />
+<meta name="citation_abstract_html_url" content="https://www.biorxiv.org/content/10.1101/2023.08.22.554321v1.abstract" />
+<meta name="citation_full_html_url" content="https://www.biorxiv.org/content/10.1101/2023.08.22.554321v1.full" />
+<meta name="citation_pdf_url" content="https://www.biorxiv.org/content/biorxiv/early/2023/08/23/2023.08.22.554321.full.pdf" />
+<meta name="citation_doi" content="10.1101/2023.08.22.554321" />
+<meta name="citation_num_pages" content="36" />
+<meta name="citation_article_type" content="Article" />
+<meta name="citation_section" content="Confirmatory Results" />
+<meta name="citation_firstpage" content="2023.08.22.554321" />
+<meta name="citation_author" content="Kamal Taha" />
+<meta name="citation_author_institution" content="Department of Electrical Engineering and Computer Science, Khalifa University" />
+<meta name="citation_author_email" content="kamal.taha{at}ku.ac.ae" />
+<meta name="citation_reference" content="Murakami, Yoichi, “Network analysis and in silico prediction of protein–protein interactions with applications in drug discovery.” Current Opinion in Structural Biology, vol. 44, pp. 134–142, 2017." />
+<meta name="citation_reference" content="Rao, V. Srinivasa, “Protein-protein interaction detection: methods and analysis.” International journal of proteomics 2014." />
+<meta name="citation_reference" content="Barabasi A L, Albert R. Emergence of scaling in random networks. Science, 1999, 286(5439): 509–512." />
+<meta name="citation_reference" content="Barabasi A L, Oltvai Z N. Network biology: understanding the cell’s functional organiza-tion. Nature Review Genetics, 2004, 5(1):101–113." />
+<meta name="citation_reference" content="Schwikowski B, Uetz P, Fields S. A network of protein-protein interactions in yeast. Nat Biotechnol,2000,18(12):1257–1261." />
+<meta name="citation_reference" content="Yook S H, Oltvai Z N, Barabasi A L. Functional and topological characterization of protein interaction networks. Proteomies,2004,4(4):928–942." />
+<meta name="citation_reference" content="Satuluri V., Parthasarathy S, Ucar D. Markov clustering of protein interaction networks with improved balance and scalability[c].Proceedings of the 1st ACM International Conference on Bioinformatics and Computational Biology. New York, USA 2010:247–256." />
+<meta name="citation_reference" content="Tong A H Y, Drees B, Nardelli G, et al. A combined experimental and computational strategy to define protein interaction networks for peptide recognition modules. Science, 2002, 295(5553): 321–324." />
+<meta name="citation_reference" content="Ravasz E, Somera A L, Mongru D A, Oltvai Z N, Barabasi A L. Hierarchical organization of modularity in metabolic networks. Science, 2002, 297(5586): 1551–1555." />
+<meta name="citation_reference" content="Rives A W, Galitski T. Modular organization of cellular networks. Proceedings of the Na-tional Academy of Sciences of the United States of America, 2003, 100(3): 1128–1133." />
+<meta name="citation_reference" content="Tanay A, Sharan R, Kupiec M, Shamir R. Revealing modularity and organization in the yeast molecular network by integrated analysis of highly heterogeneous genomewide data. Proceedings of the National Academy of Sciences of the United States of America, 2004, 101(9): 2981–2986." />
+<meta name="citation_reference" content="Giot L, Bader J S, Brouwer C, et al. A protein interaction map of Drosophila melanogaster [J] Science, 2003,302(5651):1727–1736." />
+<meta name="citation_reference" content="Rual J F, Venkatesan K, Hao T, et al. Towards a protein-scale map of the human protein-protein interaction network. Nature, 2005,437(7062):1173–1178." />
+<meta name="citation_reference" content="PcHegrini M, Marcotte E M, el al. Assigning protein functions by comparative genome analysis, protein phylogenetic profiles[J], Proc Natl Acad Sci USA,1999,96(8):4285–4288." />
+<meta name="citation_reference" content="Overbeek R, Fonstein M, el al. The use of gone clusters to infer functional coupling[J]. Proc Natl Acad Sci USA,1999.96(6):2896–2901." />
+<meta name="citation_reference" content="Pazes F, Valencia A. Similarity of phylogenetic trees as indicator of protein-protein interaction[J]. Protein Eng, 2001,14(9):609–614." />
+<meta name="citation_reference" content="HalpeIin I, Woffson H. Correlated mutations: advances and limitations. A study on fusion proteins and on the Cohesin-Dockerin families[J]. Proteins, 2006, 63(4): 832–845." />
+<meta name="citation_reference" content="Daraselia N, Yuryev A, el al. Extracting human protein interactions from MEDLINE using a full-sentence parser[J].Bioinformatics, 2004, 20(5):604–61l." />
+<meta name="citation_reference" content="Jang H, Lira J, et al. Finding the evidence for protein-protein interactions from PubMed abstracts[J].Bieinformatics,2006, 22(14):e220–226." />
+<meta name="citation_reference" content="Bader GD, Betel D, Hogue CW. BIND: the Biomolecular Interaction Network Database. Nucleic Acids Res. 2003 Jan 1;31(1):248–5." />
+<meta name="citation_reference" content="L. Salwinski, C. S. Miller, A. J. Smith, F. K. Pettit, J. U. Bowie, and D. Eisenberg, “The database of interacting proteins: 2004 update,” Nucleic acids research, vol. 32, no. suppl 1, pp. D449–D451, 2004." />
+<meta name="citation_reference" content="The MIntAct project--IntAct as a common curation platform for 11 molecular interaction databases. 1035670." />
+<meta name="citation_reference" content="Mishra GR, et al. “A. Human protein reference database”--2006 update. Nucleic Acids Res. 2006 Jan 1;34(Database issue):D411–4" />
+<meta name="citation_reference" content="M. Inzamam-Ul-Hossain and M. Islam, “Identification of Essential Protein Using Chemical Reaction Optimization and Machine Learning Technique” in IEEE/ACM Transactions on Computational Biology and Bioinformatics, vol. 20, no. 03, pp. 2122–2135, 2023." />
+<meta name="citation_reference" content="V. Cecchini, T. -P. Nguyen, T. Pfau, S. D. Landtsheer and T. Sauter, “An Efficient Machine Learning Method to Solve Imbalanced Data in Metabolic Disease Prediction,” 2019 11th International Conference on Knowledge and Systems Engineering (KSE), Da Nang, Vietnam, 2019, pp. 1-5." />
+<meta name="citation_reference" content="R. Vyas, et al.,“Application of Genetic Programming (GP) Formalism for Building Disease Predictive Models from Protein-Protein Interactions (PPI) Data” in IEEE/ACM Transactions on Computational Biology and Bioinformatics, vol. 15, no. 01, pp. 27–37, 2018." />
+<meta name="citation_reference" content="S. Bakar, A. Zomaya and J. Taheri, “FIS-PNN: A hybrid computational method for protein-protein interaction prediction,” in 2013 ACS International Conference on Computer Systems and Applications (AICCSA), Sharm El-Sheikh, Egypt, 2011 pp. 196–203" />
+<meta name="citation_reference" content="Norman Goodacre, Nathan Edwards, Mark Danielsen, Peter Uetz, and Cathy Wu. 2017. Predicting nsSNPs that Disrupt Protein-Protein Interactions Using Docking. IEEE/ACM Trans. Comput. Biol. Bioinformatics 14, 5 (September 2017), 1082–1093." />
+<meta name="citation_reference" content="Z. Li and Y. Yu, “Protein secondary structure prediction using cascaded convolutional and recurrent neural networks,’’ in Proc. 25th Int. Joint Conf. Artif. Intell., 2016, pp. 2560–2567." />
+<meta name="citation_reference" content="Li, X., et al. SDNN-PPI: self-attention with deep neural network effect on protein-protein interaction prediction. BMC Genomics 23, 474 (2022)," />
+<meta name="citation_reference" content="Jihong Wang, Xiaodan Wang, and Weitao Chen. 2023. Prediction of protein interactions based on CT-DNN. In Proceedings of the 2022 9th International Conference on Biomedical and Bioinformatics Engineering (ICBBE’ 22), 81–87" />
+<meta name="citation_reference" content="H.-N. Tran, P.-X.-Q. Nguyen, X. Peng and J. Wang, “An integration of deep learning with feature fusion for protein-protein interaction prediction,” 2022 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Las Vegas, NV, USA, 2022, pp. 77-80." />
+<meta name="citation_reference" content="Debby D W, Ran W and Hong Y. Fast prediction of protein-protein interaction sites based on Extreme Learning achines [j]. Neurocomputing 128.128(2014):258–266." />
+<meta name="citation_reference" content="Z.-H. You, Z. Ming, H. Huang and X. Peng, “A novel method to predict protein-protein interactions based on the information of protein sequence,” 2012 IEEE International Conference on Control System, Computing and Engineering, Penang, Malaysia, 2012, pp. 210-215." />
+<meta name="citation_reference" content="M. Sikandar et al., “Analysis for Disease Gene Association Using Machine Learning,” in IEEE Access, vol. 8, pp. 160616-160626, 2020" />
+<meta name="citation_reference" content="Zhu-Hong You, MengChu Zhou, Xin Luo, Shuai Li. Highly Efficient Framework for Predicting Interactions Between Proteins. IEEE Trans Cybern. 2017 Mar;47(3):731–743." />
+<meta name="citation_reference" content="Y. Qiu, L. Wang, P. Ping and T. Pei, “Method for predicting hot spot residues at protein-protein interface based on the extreme learning machine,” 2017 3rd IEEE International Conference on Computer and Communications (ICCC), Chengdu, China, 2017, pp. 2689-2698." />
+<meta name="citation_reference" content="Z.-H. You, L. Li, Z. Ji, M. Li and S. Guo, “Prediction of protein-protein interactions from amino acid sequences using extreme learning machine combined with auto covariance descriptor,” 2013 IEEE Workshop on Memetic Computing (MC), Singapore, 2013, pp. 80-85." />
+<meta name="citation_reference" content="Q.-Y. Huang, Z.-H. You, S. Li and Z. Zhu, “Using Chou’s amphiphilic Pseudo-Amino Acid Composition and Extreme Learning Machine for prediction of Protein-protein interactions,” 2014 International Joint Conference on Neural Networks (IJCNN), Beijing, China, 2014, pp. 2952-2956." />
+<meta name="citation_reference" content="J. Li et al., “Using Weighted Extreme Learning Machine Combined With Scale-Invariant Feature Transform to Predict Protein-Protein Interactions From Protein Evolutionary Information,” in IEEE/ACM Transactions on Computational Biology and Bioinformatics, 17(5):pp. 1546–1554, 1 Sept.-Oct. 2020." />
+<meta name="citation_reference" content="K. Cai and Y. Zhu, “A Method for Identifying Essential Proteins Based on Deep Convolutional Neural Network Architecture with Particle Swarm Optimization,” 2022 Asia Conference on Advanced Robotics, Automation, and Control Engineering (ARACE), Qingdao, China, 2022, pp. 7-12." />
+<meta name="citation_reference" content="H. Zhang et al., “Deep Residual Convolutional Neural Network for Protein-Protein Interaction Extraction,” IEEE Access, vol. 7, pp. 89354-89365, 2019." />
+<meta name="citation_reference" content="X. Yuan, H. Deng and J. Hu, “Deep Transfer Learning Based PPI Prediction for Protein Complex Detection,” 2021 IEEE International Conference on Systems, Man, and Cybernetics (SMC), Melbourne, Australia, 2021, pp. 321-326." />
+<meta name="citation_reference" content="P. Dutta, S. Saha, S. Chopra and V. Miglani, “Ensembling of Gene Clusters Utilizing Deep Learning and Protein-Protein Interaction Information,” in IEEE/ACM Transactions on Computational Biology and Bioinformatics, vol. 17, no. 6, pp. 2005–2016, 1 Nov.-Dec. 2020." />
+<meta name="citation_reference" content="G. Li et al., “DeepGCNs: Making GCNs Go as Deep as CNNs,” in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 45, no. 6, pp. 6923–6939, 1 June 2023." />
+<meta name="citation_reference" content="A. Voytetskiy, A. Herbert and M. Poptsova, “Graph Neural Networks for Z-DNA prediction in Genomes,” 2022 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Las Vegas, NV, USA, 2022, pp. 3173-3178." />
+<meta name="citation_reference" content="J. Zhu, Z. Zheng, M. Yang, G. P. C. Fung and C. Huang, “Protein Complexes Detection Based on Semi-Supervised Network Embedding Model,” in IEEE/ACM Transactions on Computational Biology and Bioinformatics, vol. 18, no. 2, pp. 797–803, 1 March-April 2021." />
+<meta name="citation_reference" content="Jha K, Saha S, Singh H. Prediction of protein-protein interaction using graph neural networks. Sci Rep. 2022 May 19;12(1):8360" />
+<meta name="citation_reference" content="Atashin A.A., Bagherzadeh P., Ghiasishirazi K. A two-stage learning method for protein-protein interaction prediction. arXiv. 20161606.04561." />
+<meta name="citation_reference" content="Sharma, A.; Singh, B. AE-LGBM: Sequence-based novel approach to detect interacting protein pairs via ensemble of autoencoder and LightGBM. Comput. Biol. Med. 2020, 125, 103964." />
+<meta name="citation_reference" content="Alexandra-Ioana Albu, “An Approach for Predicting Protein-Protein Interactions using Supervised Autoencoders”, Procedia Computer Science, Volume 207, 2022, Pages 2023–2032." />
+<meta name="citation_reference" content="Guansong Cao, Yuan Zhu, and Ming Yi.: Variational Autoencoder Based Network Embedding Algorithm For Protein Function Prediction”. In 2022 14th International Conference on Machine Learning and Computing (ICMLC) (ICMLC 2022). NY, USA, 191–196." />
+<meta name="citation_reference" content="Z. Xiao, H. Yuan, W. Li, N. Jiang and Y. Xia, “Highly-Confident Protein Interactome Prediction via Variational Autoencoder,” 2021 IEEE International Conference on Systems, Man, and Cybernetics (SMC), Melbourne, Australia, 2021, pp. 958-963." />
+<meta name="citation_reference" content="X. Luo, L. Wang, P. Hu and L. Hu, “Predicting Protein-Protein Interactions Using Sequence and Network Information via Variational Graph Autoencoder,” in IEEE/ACM Transactions on Computational Biology and Bioinformatics, 2023, doi: 10.1109/TCBB.2023.3273567." />
+<meta name="citation_reference" content="K. Jha, S. Saha, M. Tanveer, “Prediction of protein-protein interactions using stacked auto-encoder”, Transactions on Emerging Telecommunications Technologies (2021), p. e4256." />
+<meta name="citation_reference" content="Sun, T., et al. Sequence-based prediction of protein protein interaction using a deep-learning algorithm. BMC Bioinformatics 18, 277 (2017)." />
+<meta name="citation_reference" content="Zhang, XF., Dai, DQ., Ou-Yang, L. et al. Detecting overlapping protein complexes based on a generative model with functional and topological properties. BMC Bioinformatics 15, 186 (2014)" />
+<meta name="citation_reference" content="Linder, J., et al. Interpreting neural networks for biological sequences by learning stochastic masks. Nat Mach Intell 4, 41–54 (2022)." />
+<meta name="citation_reference" content="Regev Schweiger et al., Generative probabilistic models for protein–protein interaction networks—the biclique perspective, Bioinformatics, Volume 27, Issue 13, July 2011, Pages i142–i148." />
+<meta name="citation_reference" content="Jianmin Wang et al., De novo molecular design with deep molecular generative models for PPI inhibitors, Briefings in Bioinformatics, Volume 23, Issue 4, July 2022, bbac285." />
+<meta name="citation_reference" content="X. Wang et al., “PPISB: A Novel Network-Based Algorithm of Predicting Protein-Protein Interactions With Mixed Membership Stochastic Blockmodel,” in IEEE/ACM Transactions on Computational Biology and Bioinformatics, vol. 20, no. 2, pp. 1606–1612, 1 March-April 2023." />
+<meta name="citation_reference" content="Zhou, J. and Troyanskaya, O.G., 2014, March. Deep Supervised and Convolutional Generative Stochastic Network for Protein Secondary Structure Prediction. In ICML (pp. 745-753)." />
+<meta name="citation_reference" content="Shengyu Lu, Beizhan Wang, Hongji Wang, “Deep learning for Protein-Protein Interactions Predication “ Proceedings of 2020 the 10th International Workshop on Computer Science and Engineering (WCSE 2020), pp. 13-18, Shanghai, China, 19-21 June, 2020." />
+<meta name="citation_reference" content="Yadav, Shweta, Ankith Jain Rakesh Kumar, Asif Ekbal, Sriparna Saha and Pushpak Bhattacharyya. “Feature Assisted bi-directional LSTM Model for Protein-Protein Interaction Identification from Biomedical Texts.” ArXiv abs/1807.02162 (2018)." />
+<meta name="citation_reference" content="Zeng M, Li M, Fei Z, Wu FX, Li Y, Pan Y, Wang J. A Deep Learning Framework for Identifying Essential Proteins by Integrating Multiple Types of Biological Information. IEEE/ACM Trans Comput Biol Bioinform. 2021 Jan-Feb;18(1):296–305, 2021." />
+<meta name="citation_reference" content="Sho Tsukiyama et al., LSTM-PHV: prediction of human-virus protein–protein interactions by LSTM with word2vec, Briefings in Bioinformatics, Volume 22, Issue 6, November 2021." />
+<meta name="citation_reference" content="T. B. Alakus and I. Turkoglu, “Prediction of Protein-Protein Interactions with LSTM Deep Learning Model,” 2019 3rd International Symposium on Multidisciplinary Studies and Innovative Technologies (ISMSIT), Ankara, Turkey, 2019, pp. 1-5." />
+<meta name="citation_reference" content="H. Chen, L. Wang, C.-H. Chi and J. Shen, “Leveraging SMOTE in a Two-Layer Model for Prediction of Protein-Protein Interactions,” 2019 Seventh International Conference on Advanced Cloud and Big Data (CBD), Suzhou, China, 2019, pp. 133-138." />
+<meta name="citation_reference" content="Nian Wang, Min Zeng, Yiming Li, Fang-xiang Wu, and Min Li, “ Essential Protein Prediction Based on node2vec and XGBoost “, Journal of Computational Biology 2021 28:7, 687–700." />
+<meta name="citation_reference" content="J. C. Beltran, P. Valdez and P. Naval, “Predicting Protein-Protein Interactions based on Biological Information using Extreme Gradient Boosting,” 2019 IEEE Conference on Computational Intelligence in Bioinformatics and Computational Biology (CIBCB), Siena, Italy, 2019, pp. 1-6." />
+<meta name="citation_reference" content="Satyajit Mahapatra, Vivek Raj Gupta, Sitanshu Sekhar Sahu, and Ganapati Panda. 2021. Deep Neural Network and Extreme Gradient Boosting Based Hybrid Classifier for Improved Prediction of Protein-Protein Interaction. IEEE/ACM Trans. Comput. Biol. Bioinformatics 19, 1, 2022, 155–165" />
+<meta name="citation_reference" content="J. Zhong, Y. Sun, W. Peng, M. Xie, J. Yang and X. Tang, “XGBFEMF: An XGBoost-Based Framework for Essential Protein Prediction,” in IEEE Transactions on NanoBioscience, vol. 17, no. 3, pp. 243–250, July 2018." />
+<meta name="citation_reference" content="Xue Wang, Yaqun Zhang, Bin Yu, Adil Salhi, Ruixin Chen, Lin Wang, Zengfeng Liu, “Prediction of protein-protein interaction sites through eXtreme gradient boosting with kernel principal component analysis”, Computers in Biology and Medicine, Volume 134, 2021." />
+<meta name="citation_reference" content="X. Lin, X. Zhang and X. Xu, “Efficient Classification of Hot Spots and Hub Protein Interfaces by Recursive Feature Elimination and Gradient Boosting” in IEEE/ACM Transactions on Computational Biology and Bioinformatics, vol. 17, no. 05, pp. 1525-1534, 2020." />
+<meta name="citation_reference" content="M. Zeng, N. Wang, Y. Wu, Y. Li, F.-X. Wu and M. Li, “Improving human essential protein prediction using only protein sequences via ensemble learning,” IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Houston, TX, USA, 2021, pp. 98-103." />
+<meta name="citation_reference" content="Mahapatra S, Gupta VR, Sahu SS, Panda G. Deep Neural Network and Extreme Gradient Boosting Based Hybrid Classifier for Improved Prediction of Protein-Protein Interaction. IEEE/ACM Trans Comput Biol Bioinform. 2022 Jan-Feb;19(1):155–165." />
+<meta name="citation_reference" content="Cheng Chen, Qingmei Zhang, Qin Ma, Bin Yu, “LightGBM-PPI: Predicting protein-protein interactions through LightGBM with multi-information fusion”, Chemometrics and Intelligent Laboratory Systems, Volume 191, 2019, Pages 54–64." />
+<meta name="citation_reference" content="Zhan ZH, You ZH, Li LP, Zhou Y, Yi HC. Accurate Prediction of ncRNA-Protein Interactions From the Integration of Sequence and Evolutionary Information. Front Genet. 2018 Oct 8;9:458." />
+<meta name="citation_reference" content="T. Wang et al., “Predicting Hepatoma-Related Genes Based on Representation Learning of PPI network and Gene Ontology Annotations,” IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Houston, TX, USA, 2021, pp. 1892-1898." />
+<meta name="citation_reference" content="N. Q. K. Le and Q. H. Kha, “Prediction of Protein-Protein Interactions through Deep Learning Based on Sequence Feature Extraction and Interaction Network,” 2022 IEEE Biomedical Circuits and Systems Conference (BioCAS), Taipei, Taiwan, 2022, pp. 539-543" />
+<meta name="citation_reference" content="R. Zhao, L. Chen, B. Zhou, Z.-H. Guo, S. Wang and Aorigele, “Recognizing Novel Tumor Suppressor Genes Using a Network Machine Learning Strategy,” in IEEE Access, vol. 7, pp. 155002-155013, 2019" />
+<meta name="citation_reference" content="M. S. Khatun, M. M. Hasan, M. N. H. Mollah and H. Kurata, “SIPMA: A Systematic Identification of Protein-Protein Interactions in Zea mays Using Autocorrelation Features in a Machine-Learning Framework,” 2018 IEEE 18th International Conference on Bioinformatics and Bioengineering (BIBE), Taichung, Taiwan, 2018, pp. 122-125" />
+<meta name="citation_reference" content="Zaki N, Alashwal H. Improving the Detection of Protein Complexes by Predicting Novel Missing Interactome Links in the Protein-Protein Interaction Network. Annu Int Conf IEEE Eng Med Biol Soc. 2018 Jul;2018:5041–5044." />
+<meta name="citation_reference" content="X. Yang et al., “CETSA Feature Based Clustering for Protein Outlier Discovery by Protein-to-Protein Interaction Prediction,” 2022 44th Annual International Conference of the IEEE Engineering in Medicine &amp; Biology Society (EMBC), Glasgow, Scotland, United Kingdom, 2022, pp. 1659-1662" />
+<meta name="citation_reference" content="Bo Xu, Hongfei Lin, Zhihao Yang, Kavishwar B. Wagholikar, Hongfang Liu: “Classifying protein complexes from candidate subgraphs using fuzzy machine learning model”. BIBM Workshops 2012: 640–647." />
+<meta name="citation_reference" content="P. Metipatil, P. Bhuvaneshwari, S. M. Basha and S. S. Patil, “An Efficient Framework for classifying Cancer diseases using Ensemble machine learning over Cancer Gene Expression and Sequence Based Protein Interactions.,” 2023 2nd International Conference for Innovation in Technology (INOCON), Bangalore, India, 2023, pp. 1-8." />
+<meta name="citation_reference" content="J. Hu, Z. Li, X. Zhang and N. Chen, “Prediction of hot spots in protein-protein interaction by Nine-Pipeline &amp; Ensemble Learning strategy,” 2021 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Houston, TX, USA, 2021, pp. 2223-2230." />
+<meta name="citation_reference" content="L. Dey and A. Mukhopadhyay, “A Classification-based Approach to Prediction of Dengue Virus and Human Protein-Protein Interactions using Amino Acid Composition and Conjoint Triad Features,” IEEE Region 10 Symposium (TENSYMP), Kolkata, India, 2019, pp. 373-378." />
+<meta name="citation_reference" content="Szklarczyk D, et al. “STRING v11: protein-protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets”. Nucleic Acids Res. 2019 Jan 8;47(D1):D607–D613." />
+<meta name="citation_reference" content="P. Shiguihara-Juárez, N. Murrugarra-Llerena and A. d. Andrade Lopes, “POS-tags features for Protein-Protein Interaction Extraction from Biomedical Articles,” 2018 IEEE XXV International Conference on Electronics, Electrical Engineering and Computing (INTERCON), Lima, Peru, 2018, pp. 1-3." />
+<meta name="citation_reference" content="K. Ambert and A. Cohen, “k-Information Gain Scaled Nearest Neighbors: A Novel Approach to Classifying Protein-Protein Interaction-Related Documents” in IEEE/ACM Transactions on Computational Biology and Bioinformatics, vol. 9, no. 01, pp. 305–310, 2012." />
+<meta name="citation_reference" content="Y. Chen, F. Liu and B. Manderick, “BioLMiner System: Interaction Normalization Task and Interaction Pair Task in the BioCreative II.5 Challenge,” in IEEE/ACM Transactions on Computational Biology and Bioinformatics, vol. 7, no. 3, pp. 428–441, July-Sept. 2010." />
+<meta name="citation_reference" content="R. Sætre, K. Yoshida, M. Miwa, T. Matsuzaki, Y. Kano and J. Tsujii, “Extracting Protein Interactions from Text with the Unified AkaneRE Event Extraction System,” in IEEE/ACM Transactions on Computational Biology and Bioinformatics, vol. 7, no. 3, pp. 442-453, July-Sept. 2010." />
+<meta name="citation_reference" content="X. Lin and X. Zhang, “Prediction and analysis of hot region in protein-protein interactions,” 2016 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Shenzhen, China, 2016, pp. 1598–1603" />
+<meta name="citation_reference" content="H. Chen et al., “Hyperparameter Estimation in SVM with GPU Acceleration for Prediction of Protein-Protein Interactions,” 2019 IEEE International Conference on Big Data (Big Data), Los Angeles, CA, USA, 2019, pp. 2197-2204." />
+<meta name="citation_reference" content="J. D. Arango-Rodriguez, A. Escobar, J. A. Garzon, J. C. Arroyave-Ospina, “Machine learning based protein-protein interaction prediction using physical-chemical representations,” XXI Symposium on Signal Processing, Images and Artificial Vision (STSIVA), Bucaramanga, Colombia, 2016, pp. 1–5." />
+<meta name="citation_reference" content="O. Chatrabgoun, A. Daneshkhah, M. Esmaeilbeigi, N. Sohrabi Safa, A. H. Alenezi and A. Rahman, “Predicting Primary Sequence-Based Protein-Protein Interactions Using a Mercer Series Representation of Nonlinear Support Vector Machine,” in IEEE Access, vol. 10, pp. 124345-124354, 2022." />
+<meta name="citation_reference" content="B. Karan, S. Mahapatra and S. S. Sahu, “Prediction of Protein Interactions in Rice and Blast Fungus Using Machine Learning,” 2019 International Conference on Information Technology (ICIT), Bhubaneswar, India, 2019, pp. 33-36." />
+<meta name="citation_reference" content="M. I. Sunggawa, A. Bustamam, D. Sarwinda, P. P. Tampubolon and W. Mangunwardoyo, “Prediction of Protein-Protein Interactions between HIV-1 and Human using Support Vector Machine Combined with Multivariate Mutual Information,” 2020 3rd International Conference on Biomedical Engineering (IBIOMED), Yogyakarta, Indonesia, 2020, pp. 77-81" />
+<meta name="citation_reference" content="L. Li, D. Huang and M. Wang, “Protein-Protein Interaction extraction based on ensemble kernel model and active learning strategy,” 2011 7th International Conference on Natural Language Processing and Knowledge Engineering, Tokushima, Japan, 2011, pp. 9-14." />
+<meta name="citation_reference" content="Yan-Shuo Chu, Ya-Qiu Liu and Qu Wu, “SVM-based prediction of protein-protein interactions of Glucosinolate biosynthesis,” 2012 International Conference on Machine Learning and Cybernetics, Xi’an, China, 2012, pp. 471-476." />
+<meta name="citation_reference" content="Tienan Feng, Dingli Jin and Yifei Wang, “The construction of protein-protein interaction network based on machine learning method,” The 2nd International Conference on Information Science and Engineering, Hangzhou, China, 2010, pp. 1-5." />
+<meta name="citation_reference" content="Sinaga K. and Yang, M. “Unsupervised K-Means Clustering Algorithm,” in IEEE Access, vol. 8, pp. 80716-80727, 2020" />
+<meta name="citation_reference" content="Morselli, C. and Giguere, C. “Legitimate strengths in criminal networks,” Crime, Law Social Change, 45(3):185–200, 2006." />
+<meta name="twitter:title" content="Employing Machine Learning Techniques to Detect Protein-Protein Interaction: A Survey, Experimental, and Comparative Evaluations" />
+<meta name="twitter:site" content="{at}biorxivpreprint" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://www.biorxiv.org/sites/default/files/images/biorxiv_logo_homepage7-5-small.png" />
+<meta name="twitter:description" content="This survey paper provides an in-depth analysis of various machine learning techniques and algorithms that are utilized in the detection of PPI (Protein-Protein Interactions). For every technique examined, the paper evaluates its efficiency, shortcomings, possibilities for enhancement, and outlook for the future. A major challenge in current survey papers focusing on machine learning algorithms for PPI identification is the successful categorization of these algorithms. To overcome this challenge, the paper introduces a novel hierarchical taxonomy that organizes algorithms into more intricate categories and distinct techniques. The proposed taxonomy is constructed on a four-tier structure, beginning with the broad methodology category, and ending with specific sub-techniques. This structure facilitates a more systematic and exhaustive categorization of algorithms, aiding researchers in grasping the connections between different algorithms and techniques. Included in the paper are both empirical and experimental assessments to classify the various techniques. The empirical assessment judges the techniques according to four standards. The experimental evaluations carry out the following rankings: (1) the algorithms that employ the same specific sub-technique, (2) the different sub-techniques that employ the same technique, (3) the different techniques that employ the same methodology sub-category, and (4) the different methodology sub-categories within the same methodology category. By merging the new methodological taxonomy, empirical analyses, and experimental evaluations, the paper provides a multifaceted and thorough comprehension of the machine learning methods and algorithms for PPI detection. This synthesis helps researchers make well-informed decisions. In its conclusion, the paper furnishes crucial insights into the future possibilities of machine learning techniques for PPI identification, underscoring potential advancements and areas ripe for continued exploration and development.
+
+### Competing Interest Statement
+
+The authors have declared no competing interest." />
+<meta name="og-title" property="og:title" content="Employing Machine Learning Techniques to Detect Protein-Protein Interaction: A Survey, Experimental, and Comparative Evaluations" />
+<meta name="og-url" property="og:url" content="https://www.biorxiv.org/content/10.1101/2023.08.22.554321v1" />
+<meta name="og-site-name" property="og:site_name" content="bioRxiv" />
+<meta name="og-description" property="og:description" content="This survey paper provides an in-depth analysis of various machine learning techniques and algorithms that are utilized in the detection of PPI (Protein-Protein Interactions). For every technique examined, the paper evaluates its efficiency, shortcomings, possibilities for enhancement, and outlook for the future. A major challenge in current survey papers focusing on machine learning algorithms for PPI identification is the successful categorization of these algorithms. To overcome this challenge, the paper introduces a novel hierarchical taxonomy that organizes algorithms into more intricate categories and distinct techniques. The proposed taxonomy is constructed on a four-tier structure, beginning with the broad methodology category, and ending with specific sub-techniques. This structure facilitates a more systematic and exhaustive categorization of algorithms, aiding researchers in grasping the connections between different algorithms and techniques. Included in the paper are both empirical and experimental assessments to classify the various techniques. The empirical assessment judges the techniques according to four standards. The experimental evaluations carry out the following rankings: (1) the algorithms that employ the same specific sub-technique, (2) the different sub-techniques that employ the same technique, (3) the different techniques that employ the same methodology sub-category, and (4) the different methodology sub-categories within the same methodology category. By merging the new methodological taxonomy, empirical analyses, and experimental evaluations, the paper provides a multifaceted and thorough comprehension of the machine learning methods and algorithms for PPI detection. This synthesis helps researchers make well-informed decisions. In its conclusion, the paper furnishes crucial insights into the future possibilities of machine learning techniques for PPI identification, underscoring potential advancements and areas ripe for continued exploration and development.
+
+### Competing Interest Statement
+
+The authors have declared no competing interest." />
+<meta name="og-type" property="og:type" content="article" />
+<meta name="og-image" property="og:image" content="https://www.biorxiv.org/sites/default/files/images/biorxiv_logo_homepage7-5-small.png" />
+<meta name="citation_date" content="2023-08-23" />
+<meta name="description" content="bioRxiv - the preprint server for biology, operated by Cold Spring Harbor Laboratory, a research and educational institution" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://www.biorxiv.org/content/10.1101/2023.08.22.554321v1" />
+<link rel="shortlink" href="https://www.biorxiv.org/node/3325683" />
+    <title>Employing Machine Learning Techniques to Detect Protein-Protein Interaction: A Survey, Experimental, and Comparative Evaluations | bioRxiv</title>  
+    <link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__7SC0i-kTgUlQGKuqbmyS18Sez8FDO-aG9FSHkGrLGl8__EBUojqg5W_1M2-aUl2Y1w9JxEEauoJ0pj29wOb-7Vz4__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__UufzdoKtMhzTNiAJfsa_0bYn78zz-bBHwNEqMQ0UIXk__1-Opexvnkee5dlO1d6qLW5_7DT6gOdNGKRcC-FxT6QU__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<style type="text/css" media="all">
+/* <![CDATA[ */
+.panels-flexible-new .panels-flexible-region{padding:0}.panels-flexible-new .panels-flexible-region-inside{padding-right:.5em;padding-left:.5em}.panels-flexible-new .panels-flexible-region-inside-first{padding-left:0}.panels-flexible-new .panels-flexible-region-inside-last{padding-right:0}.panels-flexible-new .panels-flexible-column{padding:0}.panels-flexible-new .panels-flexible-column-inside{padding-right:.5em;padding-left:.5em}.panels-flexible-new .panels-flexible-column-inside-first{padding-left:0}.panels-flexible-new .panels-flexible-column-inside-last{padding-right:0}.panels-flexible-new .panels-flexible-row{padding:0 0 .5em;margin:0}.panels-flexible-new .panels-flexible-row-last{padding-bottom:0}.panels-flexible-column-new-main{float:left;width:99.0000%}.panels-flexible-new-inside{padding-right:0}.panels-flexible-new{width:auto}.panels-flexible-region-new-center{float:left;width:99.0000%}.panels-flexible-row-new-main-row-inside{padding-right:0}
+/* ]]> */
+</style>
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__PWuQ_RYRTJ4BLEKsbWQeHysPg0gOQ3571ruQa_rXvAo__YSSQV2ikPcFdZzQTgMJYRqFNRVKLBho-5sYN56e5oms__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<style type="text/css" media="all">
+/* <![CDATA[ */
+#sliding-popup.sliding-popup-bottom,#sliding-popup.sliding-popup-bottom .eu-cookie-withdraw-banner,.eu-cookie-withdraw-tab{background:gray}#sliding-popup.sliding-popup-bottom.eu-cookie-withdraw-wrapper{background:transparent}#sliding-popup .popup-content #popup-text h1,#sliding-popup .popup-content #popup-text h2,#sliding-popup .popup-content #popup-text h3,#sliding-popup .popup-content #popup-text p,.eu-cookie-compliance-secondary-button,.eu-cookie-withdraw-tab{color:#fff !important}.eu-cookie-withdraw-tab{border-color:#fff}.eu-cookie-compliance-more-button{color:#fff !important}
+/* ]]> */
+</style>
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__ElJr3PIJEvw3qLXc1cnYiLj2G4KgDPSXFOfm6Phf8hw__JdWGm15cDWjsK6KrFlQVXQix9YgNeYysf22XZHj-Y-c__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__Wnlyen9qEpwh_Qaf9okEu4QdVGM0BDothxeqA6Nbvo8__V5ELGUNlvrQNy0DawYpgoJkHNarLIFjzheVeu7ifICQ__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__Ht1WW_Gz5w2rYxx6jaornT0q9xc3pNpE6SIGZj-bdus__igagZiGB2PktJMjUpZ2u3tnc56saoUGIrD5N0KSRmI4__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+
+<!--[if (lt IE 9)&(!IEMobile)]>
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__XH6bpcI0f2dImc-p674DLCZtWBGb-QwxJK1YexVGtno__vUceGprdo5nIhV6DH93X7fI3r8RcTJbChbas9TQXeW4__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<![endif]-->
+
+<!--[if gte IE 9]><!-->
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__2WBMox6sOrN42ss5lCnH7WWVRdFdJCxtTKnQJYRwTE4__yqNvNYLvMpjy3ffuJrjjm9uW2i-Me1c23KLYuWHaqio__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<!--<![endif]-->
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__wi5Zxnuh_T8fWjtQoxn7iPbo4fJ-3qqyY6JmwgLHo18__E0Tx0ykGwSvbSa_sKCrkD0RCA6q_OJfnjP8zcxUKd_I__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://d33xdlntwy0kbs.cloudfront.net/cshl_custom.css" media="all" />
+    <script type="text/javascript" src="https://www.biorxiv.org/sites/default/files/advagg_js/js__BKYqkKToQ7EjirB7eIdMEH5521EU3da9IpoOs8Ex2XI__aSjVoX8giBmLhN2EbCgIGQJNu89Mh5aVu1LvI_gkJ7Y__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="https://www.biorxiv.org/sites/default/files/advagg_js/js__4Cn2dxvNlsJ-sHe6QOTLREaQvcqb0Yh0Zm9tTOHtQow__JeZEUjzbaj_yX6UjCI8eBbXy_J64ZVuoWmc2fSpLZHo__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.js"></script>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=en&amp;render=explicit&amp;onload=drupalRecaptchaOnload"></script>
+<script type="text/javascript" src="https://www.biorxiv.org/sites/default/files/advagg_js/js__GprzlhkUYgQWK5kPdmqTZ__-6RV2TDXloi849KAdN9E__Xf33mfqZqeeXqmwODvN9K5IVoQP5-RFtolqDZdixfa0__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.js"></script>
+<script type="text/javascript" async="async" src="https://scholar.google.com/scholar_js/casa.js"></script>
+<script type="text/javascript" async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RZD586MC3Q"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+/*!
+ * yepnope1.5.4
+ * (c) WTFPL, GPLv2
+ */
+(function(a,b,c){function d(a){return"[object Function]"==o.call(a)}function e(a){return"string"==typeof a}function f(){}function g(a){return!a||"loaded"==a||"complete"==a||"uninitialized"==a}function h(){var a=p.shift();q=1,a?a.t?m(function(){("c"==a.t?B.injectCss:B.injectJs)(a.s,0,a.a,a.x,a.e,1)},0):(a(),h()):q=0}function i(a,c,d,e,f,i,j){function k(b){if(!o&&g(l.readyState)&&(u.r=o=1,!q&&h(),l.onload=l.onreadystatechange=null,b)){"img"!=a&&m(function(){t.removeChild(l)},50);for(var d in y[c])y[c].hasOwnProperty(d)&&y[c][d].onload()}}var j=j||B.errorTimeout,l=b.createElement(a),o=0,r=0,u={t:d,s:c,e:f,a:i,x:j};1===y[c]&&(r=1,y[c]=[]),"object"==a?l.data=c:(l.src=c,l.type=a),l.width=l.height="0",l.onerror=l.onload=l.onreadystatechange=function(){k.call(this,r)},p.splice(e,0,u),"img"!=a&&(r||2===y[c]?(t.insertBefore(l,s?null:n),m(k,j)):y[c].push(l))}function j(a,b,c,d,f){return q=0,b=b||"j",e(a)?i("c"==b?v:u,a,b,this.i++,c,d,f):(p.splice(this.i++,0,a),1==p.length&&h()),this}function k(){var a=B;return a.loader={load:j,i:0},a}var l=b.documentElement,m=a.setTimeout,n=b.getElementsByTagName("script")[0],o={}.toString,p=[],q=0,r="MozAppearance"in l.style,s=r&&!!b.createRange().compareNode,t=s?l:n.parentNode,l=a.opera&&"[object Opera]"==o.call(a.opera),l=!!b.attachEvent&&!l,u=r?"object":l?"script":"img",v=l?"script":u,w=Array.isArray||function(a){return"[object Array]"==o.call(a)},x=[],y={},z={timeout:function(a,b){return b.length&&(a.timeout=b[0]),a}},A,B;B=function(a){function b(a){var a=a.split("!"),b=x.length,c=a.pop(),d=a.length,c={url:c,origUrl:c,prefixes:a},e,f,g;for(f=0;f<d;f++)g=a[f].split("="),(e=z[g.shift()])&&(c=e(c,g));for(f=0;f<b;f++)c=x[f](c);return c}function g(a,e,f,g,h){var i=b(a),j=i.autoCallback;i.url.split(".").pop().split("?").shift(),i.bypass||(e&&(e=d(e)?e:e[a]||e[g]||e[a.split("/").pop().split("?")[0]]),i.instead?i.instead(a,e,f,g,h):(y[i.url]?i.noexec=!0:y[i.url]=1,f.load(i.url,i.forceCSS||!i.forceJS&&"css"==i.url.split(".").pop().split("?").shift()?"c":c,i.noexec,i.attrs,i.timeout),(d(e)||d(j))&&f.load(function(){k(),e&&e(i.origUrl,h,g),j&&j(i.origUrl,h,g),y[i.url]=2})))}function h(a,b){function c(a,c){if(a){if(e(a))c||(j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}),g(a,j,b,0,h);else if(Object(a)===a)for(n in m=function(){var b=0,c;for(c in a)a.hasOwnProperty(c)&&b++;return b}(),a)a.hasOwnProperty(n)&&(!c&&!--m&&(d(j)?j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}:j[n]=function(a){return function(){var b=[].slice.call(arguments);a&&a.apply(this,b),l()}}(k[n])),g(a[n],j,b,n,h))}else!c&&l()}var h=!!a.test,i=a.load||a.both,j=a.callback||f,k=j,l=a.complete||f,m,n;c(h?a.yep:a.nope,!!i),i&&c(i)}var i,j,l=this.yepnope.loader;if(e(a))g(a,0,l,0);else if(w(a))for(i=0;i<a.length;i++)j=a[i],e(j)?g(j,0,l,0):w(j)?B(j):Object(j)===j&&h(j,l);else Object(a)===a&&h(a,l)},B.addPrefix=function(a,b){z[a]=b},B.addFilter=function(a){x.push(a)},B.errorTimeout=1e4,null==b.readyState&&b.addEventListener&&(b.readyState="loading",b.addEventListener("DOMContentLoaded",A=function(){b.removeEventListener("DOMContentLoaded",A,0),b.readyState="complete"},0)),a.yepnope=k(),a.yepnope.executeStack=h,a.yepnope.injectJs=function(a,c,d,e,i,j){var k=b.createElement("script"),l,o,e=e||B.errorTimeout;k.src=a;for(o in d)k.setAttribute(o,d[o]);c=j?h:c||f,k.onreadystatechange=k.onload=function(){!l&&g(k.readyState)&&(l=1,c(),k.onload=k.onreadystatechange=null)},m(function(){l||(l=1,c(1))},e),i?k.onload():n.parentNode.insertBefore(k,n)},a.yepnope.injectCss=function(a,c,d,e,g,i){var e=b.createElement("link"),j,c=i?h:c||f;e.href=a,e.rel="stylesheet",e.type="text/css";for(j in d)e.setAttribute(j,d[j]);g||(n.parentNode.insertBefore(e,n),m(c,0))}})(this,document);
+
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+yepnope({
+  test: Modernizr.matchmedia,
+  nope: '/sites/all/libraries/media-match/media.match.min.js'
+});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _prum=[['id', '612e3d94173350001100005d'], ['mark', 'firstbyte',
+      (new Date()).getTime()]]; (function() {
+      var s=document.getElementsByTagName('script')[0],
+      p=document.createElement('script');
+      p.async='async'; p.src='//rum-static.pingdom.net/prum.min.js';s.parentNode.insertBefore(p,s);})();
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if(typeof window.MathJax === "undefined") window.MathJax = { menuSettings: { zoom: "Click" } };
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-RZD586MC3Q", {"groups":"default","anonymize_ip":true});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"jcore_1","theme_token":"904OWv9NkiWbVrhGCSYYtAUF70Y225FmW5r6TR5P0GM"},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"highwire":{"markup":[{"requested":"short-text","variant":"abstract","view":"abstract","pisa":"biorxiv;2023.08.22.554321v1"},{"requested":"short-text","variant":"abstract","view":"abstract","pisa":"biorxiv;2023.08.22.554321v1"},{"requested":"abstract","variant":"abstract","view":"abstract","pisa":"biorxiv;2023.08.22.554321v1"}],"nid":"3325683","apath":"\/biorxiv\/early\/2023\/08\/23\/2023.08.22.554321.atom","pisa":"biorxiv;2023.08.22.554321v1","ac":{"\/biorxiv\/early\/2023\/08\/23\/2023.08.22.554321.atom":{"access":{"full":true},"pisa_id":"","apath":"\/biorxiv\/early\/2023\/08\/23\/2023.08.22.554321.atom","jcode":"biorxiv"},"biorxiv;2023.08.22.554321v1":{"access":{"full":true},"pisa_id":"biorxiv;2023.08.22.554321v1","apath":"","jcode":"biorxiv"}},"processed":["highwire_math"],"modal_window_width":"560","share_modal_width":"560","share_modal_title":"Share this Article"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"instances":"{\u0022highwire_abstract_tooltip\u0022:{\u0022content\u0022:{\u0022text\u0022:\u0022\u0022},\u0022style\u0022:{\u0022tip\u0022:{\u0022width\u0022:20,\u0022height\u0022:20,\u0022border\u0022:1,\u0022offset\u0022:0,\u0022corner\u0022:true},\u0022classes\u0022:\u0022qtip-custom hw-tooltip hw-abstract-tooltip qtip-shadow qtip-rounded\u0022,\u0022classes_custom\u0022:\u0022hw-tooltip hw-abstract-tooltip\u0022},\u0022position\u0022:{\u0022at\u0022:\u0022right center\u0022,\u0022my\u0022:\u0022left center\u0022,\u0022viewport\u0022:true,\u0022adjust\u0022:{\u0022method\u0022:\u0022shift\u0022}},\u0022show\u0022:{\u0022event\u0022:\u0022mouseenter click \u0022,\u0022solo\u0022:true},\u0022hide\u0022:{\u0022event\u0022:\u0022mouseleave \u0022,\u0022fixed\u0022:1,\u0022delay\u0022:\u0022100\u0022}},\u0022highwire_author_tooltip\u0022:{\u0022content\u0022:{\u0022text\u0022:\u0022\u0022},\u0022style\u0022:{\u0022tip\u0022:{\u0022width\u0022:15,\u0022height\u0022:15,\u0022border\u0022:1,\u0022offset\u0022:0,\u0022corner\u0022:true},\u0022classes\u0022:\u0022qtip-custom hw-tooltip hw-author-tooltip qtip-shadow qtip-rounded\u0022,\u0022classes_custom\u0022:\u0022hw-tooltip hw-author-tooltip\u0022},\u0022position\u0022:{\u0022at\u0022:\u0022top center\u0022,\u0022my\u0022:\u0022bottom center\u0022,\u0022viewport\u0022:true,\u0022adjust\u0022:{\u0022method\u0022:\u0022\u0022}},\u0022show\u0022:{\u0022event\u0022:\u0022mouseenter \u0022,\u0022solo\u0022:true},\u0022hide\u0022:{\u0022event\u0022:\u0022mouseleave \u0022,\u0022fixed\u0022:1,\u0022delay\u0022:\u0022100\u0022}},\u0022highwire_reflinks_tooltip\u0022:{\u0022content\u0022:{\u0022text\u0022:\u0022\u0022},\u0022style\u0022:{\u0022tip\u0022:{\u0022width\u0022:15,\u0022height\u0022:15,\u0022border\u0022:1,\u0022mimic\u0022:\u0022top center\u0022,\u0022offset\u0022:0,\u0022corner\u0022:true},\u0022classes\u0022:\u0022qtip-custom hw-tooltip hw-ref-link-tooltip qtip-shadow qtip-rounded\u0022,\u0022classes_custom\u0022:\u0022hw-tooltip hw-ref-link-tooltip\u0022},\u0022position\u0022:{\u0022at\u0022:\u0022bottom left\u0022,\u0022my\u0022:\u0022top left\u0022,\u0022viewport\u0022:true,\u0022adjust\u0022:{\u0022method\u0022:\u0022flip\u0022}},\u0022show\u0022:{\u0022event\u0022:\u0022mouseenter \u0022,\u0022solo\u0022:true},\u0022hide\u0022:{\u0022event\u0022:\u0022mouseleave \u0022,\u0022fixed\u0022:1,\u0022delay\u0022:\u0022100\u0022}}}","qtipDebug":"{\u0022leaveElement\u0022:0}","panel_ajax_tab":{"path":"sites\/all\/modules\/contrib\/panels_ajax_tab"},"disqus":{"domain":"biorxivstage","url":"https:\/\/www.biorxiv.org\/content\/10.1101\/2023.08.22.554321v1","title":"Employing Machine Learning Techniques to Detect Protein-Protein Interaction: A Survey, Experimental, and Comparative Evaluations","identifier":"node\/3325683"},"panels_ajax_pane":{"new-28877068-b9cb-4641-830b-b6b4638c98bb":"{\u0022encrypted\u0022:\u0022{\\\u0022encrypted\\\u0022:\\\u0022SSWH8bMhemLolrYMGoL6lvY6Uq7RG9nNr9EKjbZLt0K\\\\\\\/OM6jduCw9faJ3xliLwiZJBVnRCzd370NOpkf4GjpG\\\\\\\/yxdgD0h5Id9CCqj3k+rh8L8WYV0QvixJCsUbJ5mH8r+5ok1nWmR0loEt81TN3xmZBB\\\\\\\/xr36ePW8PqdjMG3akE1NY0DyBfB6MskJKv5QBY1di9wnmmVOcl0FF3Czx1JJ3FxqHaf6TtTyWtKkeNGESuNbdMQNusVkTbvbL3CfNowMZcdlulr0t5K0rJRWQpmNtcRYw0g6adYgwEtHZ73eKghloMd9pB7v6EeQteVNRomCK\\\\\\\/okRq1o+zhZKIexVA\\\\\\\/gx0CAAjqFYno8q598JoL39RG90bqBHHwC5qkcrtH5mDTBILUypZTDWy1pkQenBpCTKefTPwpOdo1HXBH3mt8Ds5Ccb7DsGukzawsWoMsX0VSVJwHuQQCp50AuqKBxpXCs5A07CzXB1rA8clhQGJVPKjtom+aaWGIiwtDQdDivY1FwVMGdyStf1zmZXjrHHwg\\\\\\\/03s\\\\\\\/XvIQETgZrDH+hXZ7iI4I+azWZn16fR7FL3C080\\\\\\\/GzEuwQweKu54uC4MQqQYrBxzM3J4ASgkKVIjBdTzqjN0uo+gcd\\\\\\\/I7c7V9+dlEw+hnkzHVNuWvIgLEy8ufxP4rAKG05a6h+qX\\\\\\\/iFrv1+YK1\\\\\\\/pXn9Hbqj8cXv7Lvd3Gwra3M0mMCMGwKKYkolPBRhJi+rll8JIRZgel7RpqDOegrn2NOSB6kv0LPxtiyokBuEAAO83egmjo7PFuesDGIg0swXRyClmbAx+hXZ2yQdj9K3X1GuEQD3fN1jMiLf9X9ALpVTukfR9rzvDgLjsDKcb8TmcREJfq3brgSybaF4MO5XfxIHgrGudcNs2aXPxXaNC1uWQXFR6uM8Pcu3QvxDisGjeCooRnq9jKo3XAJaa805tC2tY4+uS5bSbEDwCqWwiH67+JYORpCT\\\\\\\/PvTBwAj+QzK7Rm5FHo\\\\\\\/WiTgkLeSTip4o4Z9KL8AnzwxyNDZVTrPCR87LbDLbwn0SGKyDgPWMDpobZ7aGCPqv6WuZei8jLYgs599Z4nKWjAQYDVJWuaiCf\\\\\\\/YTNC5PAQN9ALjXiGoJNUIpSIQSrrP\\\\\\\/5dLXB6SzrH7XB7voFfYmIW93pShZE7WyHWTfUXfxu7QLXCTb6ieWnG07exvNZ0y7KkTmUx5L0Ap7ThDWA\\\\\\\/khcDU6XQ9RkHJhk3OHN5qHw3Opjrdj7Hp+r26l7uVV3gHO0bhQfVv0L2MMZNOjw+C4x61MDnFW89B7wDpAQYz8Fv8xQPdzXi44SwgEnW8SmuHk\\\\\\\/PuuVqIwnUW4aBYhRu9gAvDD5CybRhHZ\\\u0022,\\\u0022iv\\\u0022:\\\u00228u5uuIY1xvieI1DIVnoNNQ==\\\u0022,\\\u0022salt\\\u0022:\\\u0022f9d8845712f72c9fee5db7d9ff111eab\\\u0022}\u0022,\u0022hmac\u0022:\u0022af4f3be1ba643ad747ce5418f951abeed30b887f20edbcc037fc7ee113063286\u0022}"},"urlIsAjaxTrusted":{"\/content\/10.1101\/2023.08.22.554321v1":true},"ws_fl":{"width":100,"height":21},"ws_gpo":{"size":"","annotation":"","lang":"","callback":"","width":300},"color":{"logo":"https:\/\/www.biorxiv.org\/sites\/default\/files\/biorxiv_article_logo.jpg"},"highwire_list_expand":{"is_collapsed":"1"},"highwireResponsive":{"enquire_enabled":1,"breakpoints_configured":1,"breakpoints":{"zero":"all and (min-width: 0px)","xsmall":"all and (min-width: 380px)","narrow":"all and (min-width: 768px) and (min-device-width: 768px), (max-device-width: 800px) and (min-width: 768px) and (orientation:landscape)","normal":"all and (min-width: 980px) and (min-device-width: 980px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)","wide":"all and (min-width: 1220px)"}},"eu_cookie_compliance":{"popup_enabled":1,"popup_agreed_enabled":0,"popup_hide_agreed":0,"popup_clicking_confirmation":1,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003EWe use cookies on this site to enhance your user experience. By clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 role=\u0022dialog\u0022 aria-labelledby=\u0022Continue\u0022\n        class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EContinue\u003C\/button\u003E\n                  \u003Cbutton type=\u0022button\u0022 role=\u0022dialog\u0022 aria-labelledby=\u0022Find out more\u0022\n        class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EFind out more\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n          \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 role=\u0022dialog\u0022 aria-labelledby=\u0022Continue\u0022\n        class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EContinue\u003C\/button\u003E\n                  \u003Cbutton type=\u0022button\u0022 role=\u0022dialog\u0022 aria-labelledby=\u0022Find out more\u0022\n        class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EFind out more\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":"768","popup_html_agreed":"\u003Cdiv\u003E\n  \u003Cdiv class=\u0022popup-content agreed\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EThank you for accepting cookies\u003C\/h2\u003E\u003Cp\u003EYou can now hide this message or find out more about cookies.\u003C\/p\u003E    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022hide-popup-button eu-cookie-compliance-hide-button\u0022\u003EHide\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button-thank-you\u0022 \u003EMore info\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/help\/cookie-policy","popup_link_new_window":1,"popup_position":null,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":0,"reload_page":0,"domain":"","popup_eu_only_js":0,"cookie_lifetime":"365","cookie_session":false,"disagree_do_not_show_popup":0,"method":"default","whitelisted_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003E\u0026lt;h2\u0026gt;We use cookies on this site to enhance your user experience\u0026lt;\/h2\u0026gt;\u0026lt;p\u0026gt;You have given your consent for us to set cookies.\u0026lt;\/p\u0026gt;\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","withdraw_enabled":false},"googleanalytics":{"account":["G-RZD586MC3Q"],"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"jnl_biorxiv_styles":{"defaultJCode":"biorxiv"},"omega":{"layouts":{"primary":"normal","order":["narrow","normal","wide"],"queries":{"narrow":"all and (min-width: 768px) and (min-device-width: 768px), (max-device-width: 800px) and (min-width: 768px) and (orientation:landscape)","normal":"all and (min-width: 980px) and (min-device-width: 980px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)","wide":"all and (min-width: 1220px)"}}}});
+//--><!]]>
+</script>
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  </head>
+  <body class="html not-front not-logged-in page-node page-node- page-node-3325683 node-type-highwire-article context-content hw-default-jcode-biorxiv hw-article-type-article hw-article-category-confirmatory-results">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M677548" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M677548');</script>
+<!-- End Google Tag Manager -->
+    <div id="skip-link">
+      <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    </div>
+        <div class="page clearfix page-box-shadows footer-borders panels-page panels-layout-jcore_2col" id="page">
+      <header id="section-header" class="section section-header">
+    
+  <div id="zone-branding" class="zone zone-branding clearfix print-display-block container-30">
+    <div class="grid-15 prefix-1 region region-branding print-display-block" id="region-branding">
+  <div class="region-inner region-branding-inner">
+        <div class="branding-data clearfix">
+            <div class="logo-img">
+        <a href="/" rel="home" class="" data-icon-position="" data-hide-link-title="0"><img alt="bioRxiv" src="https://www.biorxiv.org/sites/default/files/biorxiv_article_logo.jpg" /></a>      </div>
+                </div>
+          </div>
+</div><div class="grid-11 suffix-1 region region-branding-second print-hidden" id="region-branding-second">
+  <div class="region-inner region-branding-second-inner">
+    <div class="block block-system block-menu block-main-menu block-system-main-menu odd block-without-title" id="block-system-main-menu">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <nav class="menubar-nav"><ul class="menu" role="menu"><li class="first leaf" role="menuitem"><a href="/" title="" class="" data-icon-position="" data-hide-link-title="0">Home</a></li>
+<li class="leaf" role="menuitem"><a href="/about-biorxiv" class="" data-icon-position="" data-hide-link-title="0">About</a></li>
+<li class="leaf" role="menuitem"><a href="/submit-a-manuscript" class="" data-icon-position="" data-hide-link-title="0">Submit</a></li>
+<li class="last leaf" role="menuitem"><a href="/alertsrss" title="" class="" data-icon-position="" data-hide-link-title="0">ALERTS / RSS</a></li>
+</ul></nav>    </div>
+  </div>
+</div><div class="block block-panels-mini block-biorxiv-search-box block-panels-mini-biorxiv-search-box even block-without-title" id="block-panels-mini-biorxiv-search-box">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div class="panel-display panel-1col clearfix" id="mini-panel-biorxiv_search_box">
+  <div class="panel-panel panel-col">
+    <div><div class="panel-pane pane-highwire-seach-quicksearch" >
+  
+      
+  
+  <div class="pane-content">
+    <form class="highwire-quicksearch button-style-mini button-style-mini" action="/content/10.1101/2023.08.22.554321v1" method="post" id="highwire-search-quicksearch-form-0" accept-charset="UTF-8"><div><div class="form-item form-item-label-invisible form-type-textfield form-item-keywords">
+  <label class="element-invisible" for="search_rightsidebar_keywords_529499012">Search for this keyword </label>
+ <input placeholder="Search" type="text" id="search_rightsidebar_keywords_529499012" name="keywords" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<div class="button-wrapper button-mini"><span class="icon-search"></span><input data-icon-only="1" data-font-icon="icon-search" data-icon-position="after" type="submit" id="search_rightsidebar_submit_1207008116" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-ujihFrZbQJDpvdWBX8hv4ytVb7-mimJFajTSRNHt8vI" />
+<input type="hidden" name="form_id" value="highwire_search_quicksearch_form_0" />
+</div></form>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-custom pane-2 advanced-search-link" >
+  
+      
+  
+  <div class="pane-content">
+    <a href="/search">Advanced Search</a>  </div>
+
+  
+  </div>
+</div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>  </div>
+</div>  </div>
+  
+  <div id="zone-header" class="zone zone-header clearfix container-30">
+  	      </div>
+</header>    
+      <section id="section-content" class="section section-content">
+    
+  <div id="zone-content" class="zone zone-content clearfix container-30">    
+        
+    <div class="grid-28 suffix-1 prefix-1 region region-content" id="region-content">
+  <div class="region-inner region-content-inner">
+    <a id="main-content"></a>
+                        <div class="block block-system block-main block-system-main odd block-without-title" id="block-system-main">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div class="panel-display panels-960-layout jcore-2col-layout" >
+	  
+  <div class="panel-row-wrapper clearfix">
+		
+		<div class="main-content-wrapper grid-17 suffix-1 alpha">
+			<div class="panel-panel panel-region-content">
+			  <div class="inside"><div class="panel-pane pane-highwire-article-citation" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="highwire-article-citation highwire-citation-type-highwire-article node3325683" data-node-nid="3325683" id="node-3325683--21658735038" data-pisa="biorxiv;2023.08.22.554321v1" data-pisa-master="biorxiv;2023.08.22.554321" data-apath="/biorxiv/early/2023/08/23/2023.08.22.554321.atom" data-hw-author-tooltip-instance="highwire_author_tooltip"><div  class="highwire-cite highwire-cite-highwire-article highwire-citation-biorxiv-article-top clearfix has-author-tooltip" >
+
+      <span class="biorxiv-article-type">
+        Confirmatory Results    </span>
+  
+        <h1 class="highwire-cite-title" id="page-title">Employing Machine Learning Techniques to Detect Protein-Protein Interaction: A Survey, Experimental, and Comparative Evaluations</h1>  
+      <div  class="highwire-cite-authors" ><span  class="highwire-citation-authors"><span class="highwire-citation-author first" data-delta="0"><span class="nlm-given-names">Kamal</span> <span class="nlm-surname">Taha</span></span></span></div>
+  
+      <div  class="highwire-cite-metadata" ><span  class="highwire-cite-metadata-doi highwire-cite-metadata"><span class="label">doi:</span> https://doi.org/10.1101/2023.08.22.554321 </span></div>
+  
+  
+  </div>
+<div id="hw-article-author-popups-node-3325683--21658735038" style="display: none;"><div class="author-tooltip-0"><div class="author-tooltip-name">Kamal Taha </div><div class="author-tooltip-affiliation"><span class="author-tooltip-text"><div class='author-affiliation'><span class='nlm-institution'>Department of Electrical Engineering and Computer Science, Khalifa University</span>, Abu Dhabi, UAE</div></span></div><ul class="author-tooltip-find-more"><li class="author-tooltip-gs-link first"><a href="/lookup/google-scholar?link_type=googlescholar&amp;gs_type=author&amp;author%5B0%5D=Kamal%2BTaha%2B" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on Google Scholar</a></li><li class="author-tooltip-pubmed-link"><a href="/lookup/external-ref?access_num=Taha%20K&amp;link_type=AUTHORSEARCH" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on PubMed</a></li><li class="author-site-search-link"><a href="/search/author1%3AKamal%2BTaha%2B" rel="nofollow" class="" data-icon-position="" data-hide-link-title="0">Search for this author on this site</a></li><li class="author-corresp-email-link last"><span>For correspondence: 
+<a href="/cdn-cgi/l/email-protection#254e444844490b51444d445e4451584e500b44460b4440" class="" data-icon-position="" data-hide-link-title="0">kamal.taha{at}ku.ac.ae</a></span></li></ul></div></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-highwire-panel-tabs pane-panels-ajax-tab-tabs" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="item-list"><ul class="tabs inline panels-ajax-tab"><li class="first"><a href="/content/10.1101/2023.08.22.554321v1" class="panels-ajax-tab-tab" data-panel-name="biorxiv_tab_art" data-target-id="highwire_article_tabs" data-entity-context="node:3325683" data-trigger="" data-url-enabled="1">Abstract</a><a href="/panels_ajax_tab/biorxiv_tab_art/node:3325683/1" rel="nofollow" style="display:none" class="js-crawler-link"></a></li><li><a href="/content/10.1101/2023.08.22.554321v1.full-text" class="panels-ajax-tab-tab" data-panel-name="article_tab_full_text" data-target-id="highwire_article_tabs" data-entity-context="node:3325683" data-trigger="full-text" data-url-enabled="1">Full Text</a><a href="/panels_ajax_tab/article_tab_full_text/node:3325683/1" rel="nofollow" style="display:none" class="js-crawler-link"></a></li><li><a href="/content/10.1101/2023.08.22.554321v1.article-info" class="panels-ajax-tab-tab" data-panel-name="biorxiv_tab_info" data-target-id="highwire_article_tabs" data-entity-context="node:3325683" data-trigger="article-info" data-url-enabled="1">Info/History</a><a href="/panels_ajax_tab/biorxiv_tab_info/node:3325683/1" rel="nofollow" style="display:none" class="js-crawler-link"></a></li><li><a href="/content/10.1101/2023.08.22.554321v1.article-metrics" class="panels-ajax-tab-tab" data-panel-name="article_tab_metrics" data-target-id="highwire_article_tabs" data-entity-context="node:3325683" data-trigger="article-metrics" data-url-enabled="1">Metrics</a><a href="/panels_ajax_tab/article_tab_metrics/node:3325683/1" rel="nofollow" style="display:none" class="js-crawler-link"></a></li><li class="last"><a href="/content/10.1101/2023.08.22.554321v1.full.pdf+html" class="panels-ajax-tab-tab" data-panel-name="biorxiv_tab_pdf" data-target-id="highwire_article_tabs" data-entity-context="node:3325683" data-trigger="full.pdf+html" data-url-enabled="1"><i class="icon-file-alt"></i> Preview PDF</a><a href="/panels_ajax_tab/biorxiv_tab_pdf/node:3325683/1" rel="nofollow" style="display:none" class="js-crawler-link"></a></li></ul></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-highwire-panel-tabs-container" >
+  
+      
+  
+  <div class="pane-content">
+    <div data-panels-ajax-tab-preloaded="biorxiv_tab_art" id="panels-ajax-tab-container-highwire_article_tabs" class="panels-ajax-tab-container"><div class="panels-ajax-tab-loading" style ="display:none"><img class="loading" src="https://www.biorxiv.org/sites/all/modules/contrib/panels_ajax_tab/images/loading.gif" alt="Loading" title="Loading" /></div><div class="panels-ajax-tab-wrap-biorxiv_tab_art"><div class="panel-display panel-1col clearfix" >
+  <div class="panel-panel panel-col">
+    <div><div class="panel-pane pane-highwire-markup" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="highwire-markup"><div xmlns="http://www.w3.org/1999/xhtml" data-highwire-cite-ref-tooltip-instance="highwire_reflinks_tooltip" class="content-block-markup" xmlns:xhtml="http://www.w3.org/1999/xhtml"><div class="article abstract-view "><span class="highwire-journal-article-marker-start"></span><div class="section abstract" id="abstract-1"><h2 class="">ABSTRACT</h2><p id="p-2">This survey paper provides an in-depth analysis of various machine learning techniques and algorithms that are utilized in the detection of PPI (Protein-Protein Interactions). For every technique examined, the paper evaluates its efficiency, shortcomings, possibilities for enhancement, and outlook for the future. A major challenge in current survey papers focusing on machine learning algorithms for PPI identification is the successful categorization of these algorithms. To overcome this challenge, the paper introduces a novel hierarchical taxonomy that organizes algorithms into more intricate categories and distinct techniques. The proposed taxonomy is constructed on a four-tier structure, beginning with the broad methodology category, and ending with specific sub-techniques. This structure facilitates a more systematic and exhaustive categorization of algorithms, aiding researchers in grasping the connections between different algorithms and techniques. Included in the paper are both empirical and experimental assessments to classify the various techniques. The empirical assessment judges the techniques according to four standards. The experimental evaluations carry out the following rankings: (1) the algorithms that employ the same specific sub-technique, (2) the different sub-techniques that employ the same technique, (3) the different techniques that employ the same methodology sub-category, and (4) the different methodology sub-categories within the same methodology category. By merging the new methodological taxonomy, empirical analyses, and experimental evaluations, the paper provides a multifaceted and thorough comprehension of the machine learning methods and algorithms for PPI detection. This synthesis helps researchers make well-informed decisions. In its conclusion, the paper furnishes crucial insights into the future possibilities of machine learning techniques for PPI identification, underscoring potential advancements and areas ripe for continued exploration and development.</p></div><h3>Competing Interest Statement</h3><p id="p-3">The authors have declared no competing interest.</p><span class="highwire-journal-article-marker-end"></span></div><span class="related-urls"></span></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-biorxiv-copyright" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="field field-name-field-highwire-copyright field-type-text field-label-inline clearfix"><div class="field-label">Copyright&nbsp;</div><div class="field-items"><div class="field-item even">The copyright holder for this preprint is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity.<span class="license-type"> It is made available under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" class="" data-icon-position="" data-hide-link-title="0">CC-BY-NC-ND 4.0 International license</a>.</span></div></div></div>  </div>
+
+  
+  </div>
+</div>
+  </div>
+</div>
+</div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-disqus-comment" >
+  
+      
+  
+  <div class="pane-content">
+    <div id="disqus_thread"><noscript><p><a href="http://biorxivstage.disqus.com/?url=https%3A%2F%2Fwww.biorxiv.org%2Fcontent%2F10.1101%2F2023.08.22.554321v1" class="" data-icon-position="" data-hide-link-title="0">View the discussion thread.</a></p></noscript></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-highwire-back-to-top" >
+  
+      
+  
+  <div class="pane-content">
+    <a href="#page" class="back-to-top" data-icon-position="" data-hide-link-title="0"><span class="icon-chevron-up"></span> Back to top</a>  </div>
+
+  
+  </div>
+</div>
+			</div>
+		</div>
+		
+		<div class="sidebar-right-wrapper grid-10 omega">
+			<div class="panel-panel panel-region-sidebar-right">
+			  <div class="inside"><div class="panel-pane pane-highwire-node-pager" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="pager highwire-pager pager-mini clearfix highwire-node-pager highwire-article-pager"><span class="pager-prev"><a href="/content/10.1101/2023.08.22.554345v1" title="Disruption of Hepatic Mitochondrial Pyruvate and Amino Acid Metabolism Impairs Gluconeogenesis and Endurance Exercise Capacity in Mice" rel="prev" class="pager-link-prev link-icon"><span class="icon-circle-arrow-left"></span> <span class="title">Previous</span></a></span><span class="pager-next"><a href="/content/10.1101/2021.11.15.468576v1" title="WITHDRAWN: In Silico Prediction and Comparison of Resistomes in Model Pseudomonas Strains by Resistance Gene Identifier (RGI)" rel="next" class="pager-link-next link-icon-right link-icon"><span class="title">Next</span> <span class="icon-circle-arrow-right"></span></a></span></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-custom pane-1" >
+  
+      
+  
+  <div class="pane-content">
+    Posted&nbsp;August 23, 2023.  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-panels-mini pane-biorxiv-art-tools" >
+  
+      
+  
+  <div class="pane-content">
+    <div id="mini-panel-biorxiv_art_tools" class="highwire-2col-stacked panel-display">
+	  
+  <div class="panel-row-wrapper clearfix">
+		<div class="content-left-wrapper content-column">
+          <div class="panel-panel panel-region-content-left">
+            <div class="inside"><div class="panel-pane pane-highwire-variant-link" >
+  
+      
+  
+  <div class="pane-content">
+    <a href="/content/10.1101/2023.08.22.554321v1.full.pdf" target="_self" class="article-dl-pdf-link link-icon"><span class="icon-external-link-sign"></span> <span class="title">Download PDF</span></a>  </div>
+
+  
+  </div>
+</div>
+          </div>
+        </div>
+        
+        <div class="content-right-wrapper content-column">
+          <div class="panel-panel panel-region-content-right">
+            <div class="inside"><div class="panel-pane pane-minipanel-dialog-link pane-biorxiv-art-email" >
+  
+      
+  
+  <div class="pane-content">
+    <div class='minipanel-dialog-wrapper'><div class='minipanel-dialog-link-link'><a href="/" oncontextmenu="javascript: return false;" class="minipanel-dialog-link-trigger" title="Email this Article" data-icon-position="" data-hide-link-title="0"><i class = 'icon-envelope'></i> Email</a></div><div class='minipanel-dialog-link-mini' style='display:none'><div class="panel-display panel-1col clearfix" id="mini-panel-biorxiv_art_email">
+  <div class="panel-panel panel-col">
+    <div><div class="panel-pane pane-block pane-forward-form pane-forward" >
+  
+      
+  
+  <div class="pane-content">
+    <form action="/content/10.1101/2023.08.22.554321v1" method="post" id="forward-form" accept-charset="UTF-8"><div><div id="edit-instructions" class="form-item form-item-label-before form-type-item">
+ <p>Thank you for your interest in spreading the word about bioRxiv.</p><p>NOTE: Your email address is requested solely to identify you as the sender of this article.</p>
+</div>
+<div class="form-item form-item-label-before form-type-textfield form-item-email">
+  <label for="edit-email">Your Email <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" id="edit-email" name="email" value="" size="58" maxlength="256" class="form-text required" />
+</div>
+<div class="form-item form-item-label-before form-type-textfield form-item-name">
+  <label for="edit-name">Your Name <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" id="edit-name" name="name" value="" size="58" maxlength="256" class="form-text required" />
+</div>
+<div class="form-item form-item-label-before form-type-textarea form-item-recipients">
+  <label for="edit-recipients">Send To <span class="form-required" title="This field is required.">*</span></label>
+ <div class="form-textarea-wrapper resizable"><textarea id="edit-recipients" name="recipients" cols="50" rows="5" class="form-textarea required"></textarea></div>
+<div class="description">Enter multiple addresses on separate lines or separate them with commas.</div>
+</div>
+<div id="edit-page" class="form-item form-item-label-before form-type-item">
+  <label for="edit-page">You are going to email the following </label>
+ <a href="/content/10.1101/2023.08.22.554321v1" class="active" data-icon-position="" data-hide-link-title="0">Employing Machine Learning Techniques to Detect Protein-Protein Interaction: A Survey, Experimental, and Comparative Evaluations</a>
+</div>
+<div id="edit-subject" class="form-item form-item-label-before form-type-item">
+  <label for="edit-subject">Message Subject </label>
+ (Your Name) has forwarded a page to you from bioRxiv
+</div>
+<div id="edit-body" class="form-item form-item-label-before form-type-item">
+  <label for="edit-body">Message Body </label>
+ (Your Name) thought you would like to see this page from the bioRxiv website.
+</div>
+<div class="form-item form-item-label-before form-type-textarea form-item-message">
+  <label for="edit-message--2">Your Personal Message </label>
+ <div class="form-textarea-wrapper resizable"><textarea id="edit-message--2" name="message" cols="50" rows="10" class="form-textarea"></textarea></div>
+</div>
+<input type="hidden" name="path" value="node/3325683" />
+<input type="hidden" name="path_cid" value="" />
+<input type="hidden" name="forward_footer" value=" " />
+<input type="hidden" name="form_build_id" value="form-sYywhOtztTTMi5v4faxvxkXKDciAMCdUlNEdXmYERag" />
+<input type="hidden" name="form_id" value="forward_form" />
+<fieldset class="captcha form-wrapper"><legend><span class="fieldset-legend">CAPTCHA</span></legend><div class="fieldset-wrapper"><div class="fieldset-description">This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.</div><input type="hidden" name="captcha_sid" value="1017775733" />
+<input type="hidden" name="captcha_token" value="b3500bb66338cacd6db3c9585a4dd806" />
+<input type="hidden" name="captcha_response" value="Google no captcha" />
+<div class="g-recaptcha" data-sitekey="6LfnJVIUAAAAAE-bUOMg0MJGki4lqSvDmhJp19fN" data-theme="light" data-type="image"></div></div></fieldset>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Send Message" class="form-submit" /></div></div></form>  </div>
+
+  
+  </div>
+</div>
+  </div>
+</div>
+</div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-highwire-share-link highwire_clipboard_link_ajax"  id="shareit">
+  
+      
+  
+  <div class="pane-content">
+    <a href="/" class="link-icon"><span class="icon-share-alt"></span> <span class="title">Share</span></a>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-panels-mini pane-biorxiv-share highwire_clipboard_form_ajax_shareit" >
+  
+      
+  
+  <div class="pane-content">
+    
+<div class="panel-display omega-12-onecol" id="mini-panel-biorxiv_share">
+
+		  <div class="panel-panel grid-12 panel-region-preface">
+		  <div class="inside"><div class="panel-pane pane-highwire-article-citation" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="highwire-article-citation highwire-citation-type-highwire-article node3325683--3" data-node-nid="3325683" id="node-3325683--4189177298" data-pisa="biorxiv;2023.08.22.554321v1" data-pisa-master="biorxiv;2023.08.22.554321" data-seqnum="3325683" data-apath="/biorxiv/early/2023/08/23/2023.08.22.554321.atom"><div  class="highwire-cite highwire-cite-highwire-article highwire-citation-biorxiv-article-pap-list clearfix" >
+
+      <div class="highwire-cite-title" >
+      <div class="highwire-cite-title">Employing Machine Learning Techniques to Detect Protein-Protein Interaction: A Survey, Experimental, and Comparative Evaluations</div>    </div>
+  
+      <div  class="highwire-cite-authors" ><span  class="highwire-citation-authors"><span class="highwire-citation-author first" data-delta="0"><span class="nlm-given-names">Kamal</span> <span class="nlm-surname">Taha</span></span></span></div>
+  
+      <div  class="highwire-cite-metadata" ><span  class="highwire-cite-metadata-journal highwire-cite-metadata">bioRxiv </span><span  class="highwire-cite-metadata-pages highwire-cite-metadata">2023.08.22.554321; </span><span  class="highwire-cite-metadata-doi highwire-cite-metadata"><span class="doi_label">doi:</span> https://doi.org/10.1101/2023.08.22.554321 </span></div>
+  
+  
+  </div>
+</div>  </div>
+
+  
+  </div>
+</div>
+	  </div>
+	
+  <div class="panel-panel grid-12 panel-region-content">
+  	<div class="inside"><div class="panel-pane pane-highwire-article-clipboard-copy" >
+  
+      
+  
+  <div class="pane-content">
+    <div class = "clipboard-copy">
+  <span class="label-url">
+    <label for="dynamic">Share This Article:</label>
+  </span>
+  <span class="input-text-url">
+    <input type="text" id="dynamic" value="https://www.biorxiv.org/content/10.1101/2023.08.22.554321v1" size="50"/>
+  </span>
+  <span class="copy-button button">
+    <button id="copy-dynamic" class="clipboardjs-button" data-clipboard-target="#dynamic" data-clipboard-alert-style="tooltip" data-clipboard-alert-text="Copied!">Copy</button>
+  </span>
+</div>
+  </div>
+
+  
+  </div>
+</div>
+  </div>
+	
+		  <div class="panel-panel grid-12 panel-region-postscript">
+	    <div class="inside"><div class="panel-pane pane-service-links text-center" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="service-links"><a href="http://twitter.com/share?url=https%3A//www.biorxiv.org/content/10.1101/2023.08.22.554321v1&amp;text=Employing%20Machine%20Learning%20Techniques%20to%20Detect%20Protein-Protein%20Interaction%3A%20A%20Survey%2C%20Experimental%2C%20and%20Comparative%20Evaluations" id="twitter" title="Share this on Twitter" class="service-links-twitter" rel="nofollow" data-icon-position="" data-hide-link-title="0"><img src="https://www.biorxiv.org/sites/all/modules/highwire/highwire/images/twitter.png" alt="Twitter logo" /></a> <a href="http://www.facebook.com/sharer.php?u=https%3A//www.biorxiv.org/content/10.1101/2023.08.22.554321v1&amp;t=Employing%20Machine%20Learning%20Techniques%20to%20Detect%20Protein-Protein%20Interaction%3A%20A%20Survey%2C%20Experimental%2C%20and%20Comparative%20Evaluations" id="facebook" title="Share on Facebook" class="service-links-facebook" rel="nofollow" data-icon-position="" data-hide-link-title="0"><img src="https://www.biorxiv.org/sites/all/modules/highwire/highwire/images/fb-blue.png" alt="Facebook logo" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A//www.biorxiv.org/content/10.1101/2023.08.22.554321v1&amp;title=Employing%20Machine%20Learning%20Techniques%20to%20Detect%20Protein-Protein%20Interaction%3A%20A%20Survey%2C%20Experimental%2C%20and%20Comparative%20Evaluations&amp;summary=&amp;source=bioRxiv" id="linkedin" title="Publish this post to LinkedIn" class="service-links-linkedin" rel="nofollow" data-icon-position="" data-hide-link-title="0"><img src="https://www.biorxiv.org/sites/all/modules/highwire/highwire/images/linkedin-32px.png" alt="LinkedIn logo" /></a> <a href="http://www.mendeley.com/import/?url=https%3A//www.biorxiv.org/content/10.1101/2023.08.22.554321v1&amp;title=Employing%20Machine%20Learning%20Techniques%20to%20Detect%20Protein-Protein%20Interaction%3A%20A%20Survey%2C%20Experimental%2C%20and%20Comparative%20Evaluations" id="mendeley" title="Share on Mendeley" class="service-links-mendeley" rel="nofollow" data-icon-position="" data-hide-link-title="0"><img src="https://www.biorxiv.org/sites/all/modules/highwire/highwire/images/mendeley.png" alt="Mendeley logo" /></a></div>  </div>
+
+  
+  </div>
+</div>
+	  </div>
+	
+</div>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-minipanel-dialog-link pane-biorxiv-cite-tool" >
+  
+      
+  
+  <div class="pane-content">
+    <div class='minipanel-dialog-wrapper'><div class='minipanel-dialog-link-link'><a href="/" oncontextmenu="javascript: return false;" class="minipanel-dialog-link-trigger link-icon" title="Citation Tools"><span class="icon-globe"></span> <span class="title">Citation Tools</span></a></div><div class='minipanel-dialog-link-mini' style='display:none'><div class="panel-display panel-1col clearfix" id="mini-panel-biorxiv_cite_tool">
+  <div class="panel-panel panel-col">
+    <div><div class="panel-pane pane-highwire-citation-export" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="highwire-citation-export">  
+  <div class="highwire-citation-info">
+      <div class="highwire-article-citation highwire-citation-type-highwire-article cite-tool-node3325683--5" data-node-nid="3325683" id="citation-node-3325683--6270684398" data-pisa="biorxiv;2023.08.22.554321v1" data-pisa-master="biorxiv;2023.08.22.554321" data-seqnum="3325683" data-apath="/biorxiv/early/2023/08/23/2023.08.22.554321.atom"><div  class="highwire-cite highwire-cite-highwire-article highwire-citation-biorxiv-article-pap-list clearfix" >
+
+      <div class="highwire-cite-title" >
+      <div class="highwire-cite-title">Employing Machine Learning Techniques to Detect Protein-Protein Interaction: A Survey, Experimental, and Comparative Evaluations</div>    </div>
+  
+      <div  class="highwire-cite-authors" ><span  class="highwire-citation-authors"><span class="highwire-citation-author first" data-delta="0"><span class="nlm-given-names">Kamal</span> <span class="nlm-surname">Taha</span></span></span></div>
+  
+      <div  class="highwire-cite-metadata" ><span  class="highwire-cite-metadata-journal highwire-cite-metadata">bioRxiv </span><span  class="highwire-cite-metadata-pages highwire-cite-metadata">2023.08.22.554321; </span><span  class="highwire-cite-metadata-doi highwire-cite-metadata"><span class="doi_label">doi:</span> https://doi.org/10.1101/2023.08.22.554321 </span></div>
+  
+  
+  </div>
+</div>  </div>
+  <div class="highwire-citation-formats">
+  	      <h2>Citation Manager Formats</h2>
+        <div class="highwire-citation-formats-links">
+      <span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.spage&amp;rft.epage&amp;rft.atitle=Employing%20Machine%20Learning%20Techniques%20to%20Detect%20Protein-Protein%20Interaction%3A%20A%20Survey%2C%20Experimental%2C%20and%20Comparative%20Evaluations&amp;rft.volume&amp;rft.issue&amp;rft.date=2023-01-01%2000%3A00%3A00&amp;rft.stitle&amp;rft.jtitle=bioRxiv&amp;rft.au=Taha%2C+Kamal"></span><ul class="hw-citation-links inline button button-alt button-grid clearfix"><li class="bibtext first"><a href="/highwire/citation/3325683/bibtext" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">BibTeX</a></li><li class="bookends"><a href="/highwire/citation/3325683/bookends" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">Bookends</a></li><li class="easybib"><a href="/highwire/citation/3325683/easybib" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">EasyBib</a></li><li class="endnote-tagged"><a href="/highwire/citation/3325683/endnote-tagged" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">EndNote (tagged)</a></li><li class="endnote-8-xml"><a href="/highwire/citation/3325683/endnote-8-xml" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">EndNote 8 (xml)</a></li><li class="medlars"><a href="/highwire/citation/3325683/medlars" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">Medlars</a></li><li class="mendeley"><a href="/highwire/citation/3325683/mendeley" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">Mendeley</a></li><li class="papers"><a href="/highwire/citation/3325683/papers" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">Papers</a></li><li class="refworks-tagged"><a href="/highwire/citation/3325683/refworks-tagged" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">RefWorks Tagged</a></li><li class="reference-manager"><a href="/highwire/citation/3325683/reference-manager" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">Ref Manager</a></li><li class="ris"><a href="/highwire/citation/3325683/ris" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">RIS</a></li><li class="zotero last"><a href="/highwire/citation/3325683/zotero" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">Zotero</a></li></ul>    </div>
+  </div>
+</div>
+  </div>
+
+  
+  </div>
+</div>
+  </div>
+</div>
+</div></div>  </div>
+
+  
+  </div>
+</div>
+          </div>
+        </div>
+	</div> <!-- /.panel-row-wrapper -->	
+	
+	</div>
+
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-service-links" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="service-links"><div class="item-list"><ul><li class="first"><a href="http://twitter.com/share?url=https%3A//www.biorxiv.org/content/10.1101/2023.08.22.554321v1&amp;count=horizontal&amp;via=&amp;text=Employing%20Machine%20Learning%20Techniques%20to%20Detect%20Protein-Protein%20Interaction%3A%20A%20Survey%2C%20Experimental%2C%20and%20Comparative%20Evaluations&amp;counturl=https%3A//www.biorxiv.org/content/10.1101/2023.08.22.554321v1" class="twitter-share-button service-links-twitter-widget" id="twitter_widget" title="Tweet This" rel="nofollow" data-icon-position="" data-hide-link-title="0"><span class="element-invisible">Tweet Widget</span></a></li><li><a href="http://www.facebook.com/plugins/like.php?href=https%3A//www.biorxiv.org/content/10.1101/2023.08.22.554321v1&amp;layout=button_count&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;width=100&amp;height=21&amp;font=&amp;locale=" id="facebook_like" title="I Like it" class="service-links-facebook-like" rel="nofollow" data-icon-position="" data-hide-link-title="0"><span class="element-invisible">Facebook Like</span></a></li><li class="last"><a href="https://www.biorxiv.org/content/10.1101/2023.08.22.554321v1" id="google_plus_one" title="Plus it" class="service-links-google-plus-one" rel="nofollow" data-icon-position="" data-hide-link-title="0"><span class="element-invisible">Google Plus One</span></a></li></ul></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-highwire-article-collections" >
+  
+        <h2 class="pane-title">Subject Area</h2>
+    
+  
+  <div class="pane-content">
+    <div class="highwire-list-wrapper highwire-article-collections"><div class="highwire-list"><ul class="highwire-article-collection-term-list"><li class="first last odd"><span class="highwire-article-collection-term"><a href="/collection/bioinformatics" class="highlight" data-icon-position="" data-hide-link-title="0">Bioinformatics<i class="icon-caret-right"></i>
+</a></span></li></ul></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-panels-mini pane-biorxiv-subject-collections block-style-col2" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="panel-flexible panels-flexible-new clearfix" id="mini-panel-biorxiv_subject_collections">
+<div class="panel-flexible-inside panels-flexible-new-inside">
+<div class="panels-flexible-region panels-flexible-region-new-center panels-flexible-region-first panels-flexible-region-last">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-new-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-snippet" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="snippet biorxiv-subject-areas-table-title" id="biorxiv-subject-areas-table-title">
+  
+      
+  <div class="snippet-content">
+    <b>Subject Areas</b>  </div>
+
+</div>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-snippet" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="snippet biorxiv-subject-areas-view-papers" id="biorxiv-subject-areas-view-papers">
+  
+      
+  <div class="snippet-content">
+    <a href="/content/early/recent"><strong>All Articles</strong></a>  </div>
+
+</div>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-highwire-subject-collections" >
+  
+      
+  
+  <div class="pane-content">
+    <ul id="collection" class="collection highwire-list-expand"><li class="outer collection depth-2  child first"><div class = "data-wrapper"><a href="/collection/animal-behavior-and-cognition" class="" data-icon-position="" data-hide-link-title="0">Animal Behavior and Cognition</a> <span class = "article-count">(6908)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/biochemistry" class="" data-icon-position="" data-hide-link-title="0">Biochemistry</a> <span class = "article-count">(15840)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/bioengineering" class="" data-icon-position="" data-hide-link-title="0">Bioengineering</a> <span class = "article-count">(12236)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/bioinformatics" class="" data-icon-position="" data-hide-link-title="0">Bioinformatics</a> <span class = "article-count">(37725)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/biophysics" class="" data-icon-position="" data-hide-link-title="0">Biophysics</a> <span class = "article-count">(19427)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/cancer-biology" class="" data-icon-position="" data-hide-link-title="0">Cancer Biology</a> <span class = "article-count">(16602)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/cell-biology" class="" data-icon-position="" data-hide-link-title="0">Cell Biology</a> <span class = "article-count">(23013)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/clinical-trials" class="" data-icon-position="" data-hide-link-title="0">Clinical Trials</a> <span class = "article-count">(138)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/developmental-biology" class="" data-icon-position="" data-hide-link-title="0">Developmental Biology</a> <span class = "article-count">(12269)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/ecology" class="" data-icon-position="" data-hide-link-title="0">Ecology</a> <span class = "article-count">(18108)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/epidemiology" class="" data-icon-position="" data-hide-link-title="0">Epidemiology</a> <span class = "article-count">(2067)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/evolutionary-biology" class="" data-icon-position="" data-hide-link-title="0">Evolutionary Biology</a> <span class = "article-count">(22472)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/genetics" class="" data-icon-position="" data-hide-link-title="0">Genetics</a> <span class = "article-count">(14624)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/genomics" class="" data-icon-position="" data-hide-link-title="0">Genomics</a> <span class = "article-count">(20723)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/immunology" class="" data-icon-position="" data-hide-link-title="0">Immunology</a> <span class = "article-count">(15884)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/microbiology" class="" data-icon-position="" data-hide-link-title="0">Microbiology</a> <span class = "article-count">(36572)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/molecular-biology" class="" data-icon-position="" data-hide-link-title="0">Molecular Biology</a> <span class = "article-count">(15405)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/neuroscience" class="" data-icon-position="" data-hide-link-title="0">Neuroscience</a> <span class = "article-count">(80071)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/paleontology" class="" data-icon-position="" data-hide-link-title="0">Paleontology</a> <span class = "article-count">(599)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/pathology" class="" data-icon-position="" data-hide-link-title="0">Pathology</a> <span class = "article-count">(2565)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/pharmacology-and-toxicology" class="" data-icon-position="" data-hide-link-title="0">Pharmacology and Toxicology</a> <span class = "article-count">(4336)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/physiology" class="" data-icon-position="" data-hide-link-title="0">Physiology</a> <span class = "article-count">(6855)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/plant-biology" class="" data-icon-position="" data-hide-link-title="0">Plant Biology</a> <span class = "article-count">(13725)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/scientific-communication-and-education" class="" data-icon-position="" data-hide-link-title="0">Scientific Communication and Education</a> <span class = "article-count">(1944)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/synthetic-biology" class="" data-icon-position="" data-hide-link-title="0">Synthetic Biology</a> <span class = "article-count">(3854)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/systems-biology" class="" data-icon-position="" data-hide-link-title="0">Systems Biology</a> <span class = "article-count">(9069)</span></div></li>
+<li class="outer collection depth-2  child last"><div class = "data-wrapper"><a href="/collection/zoology" class="" data-icon-position="" data-hide-link-title="0">Zoology</a> <span class = "article-count">(2091)</span></div></li>
+</ul>  </div>
+
+  
+  </div>
+  </div>
+</div>
+</div>
+</div>
+  </div>
+
+  
+  </div>
+</div>
+			</div>
+		</div>
+	
+	</div> <!-- /.panel-row-wrapper -->	
+	
+	</div>
+
+    </div>
+  </div>
+</div>      </div>
+</div>  </div>
+</section>    
+  
+  </div>    <div class="region region-page-bottom" id="region-page-bottom">
+  <div class="region-inner region-page-bottom-inner">
+      </div>
+</div><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="https://www.biorxiv.org/sites/default/files/advagg_js/js__Vh5BcRYb6VtLoN3uam6O4DIKltYUVMjVDWtakoysPq0__Wed8jsPTirEozek7dWSCS8970Cp7a9xKKgFk6FPuSVM__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.js"></script>
+<script type="text/javascript" src="//d33xdlntwy0kbs.cloudfront.net/cshl_custom.js"></script>
+<script type="text/javascript" src="https://www.biorxiv.org/sites/default/files/advagg_js/js__BmqjBnkz3MgYCAoc25s1lDRMEjLhC3mEPVonUFIHi08__Unwv5-ZIuHBfFwytsjEx1niBVJ7n1T4lPws7VrkHXM4__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+function euCookieComplianceLoadScripts() {}
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var eu_cookie_compliance_cookie_name = "";
+//--><!]]>
+</script>
+  </body>
+</html>

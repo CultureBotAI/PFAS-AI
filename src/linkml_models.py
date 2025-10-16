@@ -1,5 +1,5 @@
 # Auto generated from lanthanide_bioprocessing.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-09T23:42:29
+# Generation date: 2025-10-15T21:26:11
 # Schema: lanthanide-bioprocessing-schema
 #
 # id: https://w3id.org/cmm-ai/lanthanide-bioprocessing
