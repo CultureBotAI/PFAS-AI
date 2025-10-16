@@ -1,0 +1,66 @@
+Scientific name	NCBITaxon id	Genome identifier (GenBank, IMG etc)	download
+Methylobacterium aquaticum Strain 22A			
+Methylobacterium aquaticum CCM : 7218 , CECT : 5998 , CIP : 108333 , DSM : 16371 , personal : GR16	270351.0		
+Methylobacterium sp. MB200	648885.0	GCF_000333655.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/333/655/GCF_000333655.1_*/GCF_000333655.1_*_genomic.gff.gz
+Methylobacterium sp. NMS12	3079766.0	GCF_051554815.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/051/554/815/GCF_051554815.1_*/GCF_051554815.1_*_genomic.gff.gz
+Methylobacterium fujisawaense	107400.0	GCF_049913165.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/049/913/165/GCF_049913165.1_*/GCF_049913165.1_*_genomic.gff.gz
+Methylobacterium bullatum	570505.0	GCF_044501185.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/044/501/185/GCF_044501185.1_*/GCF_044501185.1_*_genomic.gff.gz
+Methylobacterium sp. 22177	3453885.0	GCF_052045615.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/052/045/615/GCF_052045615.1_*/GCF_052045615.1_*_genomic.gff.gz
+Methylobacterium sp.	409.0	GCA_052039795.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/052/039/795/GCA_052039795.1_*/GCA_052039795.1_*_genomic.gff.gz
+Methylobacterium radiotolerans	31998.0	GCA_052032835.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/052/032/835/GCA_052032835.1_*/GCA_052032835.1_*_genomic.gff.gz
+uncultured Methylobacterium sp.	157278.0	GCA_965531505.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/965/531/505/GCA_965531505.1_*/GCA_965531505.1_*_genomic.gff.gz
+Methylobacterium sp. sgz302542	3418176.0	GCF_051201755.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/051/201/755/GCF_051201755.1_*/GCF_051201755.1_*_genomic.gff.gz
+Methylobacterium sp. P31	3423958.0	GCA_050632875.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/050/632/875/GCA_050632875.1_*/GCA_050632875.1_*_genomic.gff.gz
+Methylobacterium phyllosphaerae	418223.0	GCA_050632685.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/050/632/685/GCA_050632685.1_*/GCA_050632685.1_*_genomic.gff.gz
+Methylobacterium sp. sgz302541	3418177.0	GCF_050591105.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/591/105/GCF_050591105.1_*/GCF_050591105.1_*_genomic.gff.gz
+Methylobacterium sp. PvP112	3156440.0	GCF_050435965.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/435/965/GCF_050435965.1_*/GCF_050435965.1_*_genomic.gff.gz
+Methylobacterium sp. PvP062	3156439.0	GCF_050435385.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/435/385/GCF_050435385.1_*/GCF_050435385.1_*_genomic.gff.gz
+Methylobacterium aquaticum	270351.0	GCF_050408745.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/408/745/GCF_050408745.1_*/GCF_050408745.1_*_genomic.gff.gz
+Methylobacterium sp. NPDC080182	3390590.0	GCF_050281105.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/281/105/GCF_050281105.1_*/GCF_050281105.1_*_genomic.gff.gz
+Methylobacterium sp. NPDC097169	3390591.0	GCF_050278045.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/278/045/GCF_050278045.1_*/GCF_050278045.1_*_genomic.gff.gz
+Methylobacterium sp. NPDC097303	3390592.0	GCF_050277835.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/277/835/GCF_050277835.1_*/GCF_050277835.1_*_genomic.gff.gz
+Methylobacterium tarhaniae	1187852.0	GCF_050275655.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/275/655/GCF_050275655.1_*/GCF_050275655.1_*_genomic.gff.gz
+Methylobacterium sp. NPDC052247	3390589.0	GCF_050270895.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/270/895/GCF_050270895.1_*/GCF_050270895.1_*_genomic.gff.gz
+Methylorubrum populi	223967.0	GCF_051554265.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/051/554/265/GCF_051554265.1_*/GCF_051554265.1_*_genomic.gff.gz
+Methylorubrum extorquens	408.0	GCF_051522905.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/051/522/905/GCF_051522905.1_*/GCF_051522905.1_*_genomic.gff.gz
+Methylorubrum thiocyanatum	47958.0	GCF_051964895.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/051/964/895/GCF_051964895.1_*/GCF_051964895.1_*_genomic.gff.gz
+Methylorubrum rhodesianum	29427.0	GCF_050479725.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/479/725/GCF_050479725.1_*/GCF_050479725.1_*_genomic.gff.gz
+Methylorubrum aminovorans	269069.0	GCF_049541075.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/049/541/075/GCF_049541075.1_*/GCF_049541075.1_*_genomic.gff.gz
+Methylorubrum rhodinum	29428.0	GCF_049276595.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/049/276/595/GCF_049276595.1_*/GCF_049276595.1_*_genomic.gff.gz
+Methylorubrum sp. POS3	2998492.0	GCF_043352485.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/043/352/485/GCF_043352485.1_*/GCF_043352485.1_*_genomic.gff.gz
+Methylorubrum suomiense	144191.0	GCF_042679845.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/679/845/GCF_042679845.1_*/GCF_042679845.1_*_genomic.gff.gz
+Methylorubrum zatmanii	29429.0	GCF_042660345.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/042/660/345/GCF_042660345.1_*/GCF_042660345.1_*_genomic.gff.gz
+Methylorubrum podarium	200476.0	GCF_040270385.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/040/270/385/GCF_040270385.1_*/GCF_040270385.1_*_genomic.gff.gz
+Methylorubrum subtropicum	3138812.0	GCF_038442325.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/038/442/325/GCF_038442325.1_*/GCF_038442325.1_*_genomic.gff.gz
+uncultured Methylorubrum sp.	2282526.0	GCA_963516085.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/963/516/085/GCA_963516085.1_*/GCA_963516085.1_*_genomic.gff.gz
+Methylosinus sp. C49	2699395.0	GCF_009936375.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/936/375/GCF_009936375.1_*/GCF_009936375.1_*_genomic.gff.gz
+Methylosinus sp. 3S-1	1849840.0	GCF_051599325.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/051/599/325/GCF_051599325.1_*/GCF_051599325.1_*_genomic.gff.gz
+Methylosinus sporium	428.0	GCF_051122735.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/051/122/735/GCF_051122735.1_*/GCF_051122735.1_*_genomic.gff.gz
+Methylosinus sp.	427.0	GCF_036560965.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/036/560/965/GCF_036560965.1_*/GCF_036560965.1_*_genomic.gff.gz
+Methylosinus trichosporium	426.0	GCF_030062355.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/030/062/355/GCF_030062355.1_*/GCF_030062355.1_*_genomic.gff.gz
+Methylosinus sp. Sm6	2866948.0	GCF_019802345.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/019/802/345/GCF_019802345.1_*/GCF_019802345.1_*_genomic.gff.gz
+Methylosinus sp. KRF6	2846853.0	GCF_018887255.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/018/887/255/GCF_018887255.1_*/GCF_018887255.1_*_genomic.gff.gz
+Methylosinus sp. H3A	2785786.0	GCF_015709455.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/015/709/455/GCF_015709455.1_*/GCF_015709455.1_*_genomic.gff.gz
+Methylosinus sp. RM1	2583817.0	GCF_011378635.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/011/378/635/GCF_011378635.1_*/GCF_011378635.1_*_genomic.gff.gz
+Methylosinus sp. Ce-a6	2172005.0	GCF_009811655.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/811/655/GCF_009811655.1_*/GCF_009811655.1_*_genomic.gff.gz
+Methylosinus sp. sav-2	2485168.0	GCF_004366495.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/004/366/495/GCF_004366495.1_*/GCF_004366495.1_*_genomic.gff.gz
+Methylosinus sp. R-45379	980563.0	GCF_001644125.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/644/125/GCF_001644125.1_*/GCF_001644125.1_*_genomic.gff.gz
+Methylosinus sp. LW4	136993.0	GCF_000379125.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/379/125/GCF_000379125.1_*/GCF_000379125.1_*_genomic.gff.gz
+Methylosinus sp. PW1	107636.0	GCF_000745215.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/745/215/GCF_000745215.1_*/GCF_000745215.1_*_genomic.gff.gz
+Methylosinus sp. LW3	107635.0	GCF_000527115.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/527/115/GCF_000527115.1_*/GCF_000527115.1_*_genomic.gff.gz
+Paracoccus sp. PARArs4	2853442.0	GCF_947311865.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/947/311/865/GCF_947311865.1_*/GCF_947311865.1_*_genomic.gff.gz
+Paracoccus yeei	147645.0	GCF_049392085.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/049/392/085/GCF_049392085.1_*/GCF_049392085.1_*_genomic.gff.gz
+Paracoccus sp. TD-10	3395918.0	GCF_048270675.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/048/270/675/GCF_048270675.1_*/GCF_048270675.1_*_genomic.gff.gz
+Paracoccus sp. SJTW-4	3078428.0	GCF_047716885.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/047/716/885/GCF_047716885.1_*/GCF_047716885.1_*_genomic.gff.gz
+Paracoccus homiensis	364199.0	GCF_046764325.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/046/764/325/GCF_046764325.1_*/GCF_046764325.1_*_genomic.gff.gz
+Paracoccus sp. ME4	3138066.0	GCF_046736325.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/046/736/325/GCF_046736325.1_*/GCF_046736325.1_*_genomic.gff.gz
+Paracoccus marcusii	59779.0	GCF_046042675.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/046/042/675/GCF_046042675.1_*/GCF_046042675.1_*_genomic.gff.gz
+Paracoccus denitrificans	266.0	GCF_040409775.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/040/409/775/GCF_040409775.1_*/GCF_040409775.1_*_genomic.gff.gz
+Paracoccus sp. NSM	3457784.0	GCF_052379855.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/052/379/855/GCF_052379855.1_*/GCF_052379855.1_*_genomic.gff.gz
+Paracoccus aminovorans	34004.0	GCA_966250345.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/966/250/345/GCA_966250345.1_*/GCA_966250345.1_*_genomic.gff.gz
+Paracoccus sp. 22332	3453913.0	GCF_052045125.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/052/045/125/GCF_052045125.1_*/GCF_052045125.1_*_genomic.gff.gz
+Paracoccus sp. KR1-242	3410028.0	GCF_049446195.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/049/446/195/GCF_049446195.1_*/GCF_049446195.1_*_genomic.gff.gz
+Paracoccus sp. T5	3402161.0	GCF_048538155.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/048/538/155/GCF_048538155.1_*/GCF_048538155.1_*_genomic.gff.gz
+Paracoccus sp. (in: a-proteobacteria)	267.0	GCF_047973135.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/047/973/135/GCF_047973135.1_*/GCF_047973135.1_*_genomic.gff.gz
+Paracoccus nototheniae	2489002.0	GCF_965137045.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/965/137/045/GCF_965137045.1_*/GCF_965137045.1_*_genomic.gff.gz
+uncultured Paracoccus sp.	189685.0	GCA_964441125.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/964/441/125/GCA_964441125.1_*/GCA_964441125.1_*_genomic.gff.gz

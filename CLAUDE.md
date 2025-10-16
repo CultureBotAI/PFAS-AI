@@ -18,6 +18,8 @@ CMM-AI - Automated data pipeline for lanthanide bioprocessing research. Extends 
 - `uv sync` or `make install` - Install dependencies
 
 ### Pipeline Commands (via Makefile)
+
+**Basic Data Extension**:
 - `make` or `make help` - Show all available commands
 - `make update-all` - Run full pipeline (all tables)
 - `make update-genomes` - Extend taxa and genomes with NCBI Assembly data
@@ -26,8 +28,24 @@ CMM-AI - Automated data pipeline for lanthanide bioprocessing research. Extends 
 - `make update-genes` - Extend genes/proteins with UniProt/KEGG
 - `make update-structures` - Extend structures with PDB/AlphaFold
 - `make update-publications` - Extend publications with PubMed/arXiv
+- `make update-datasets` - Extend datasets with repository searches
 - `make convert-excel` - Convert Excel sheets to TSV (prerequisite)
-- `make status` - Check pipeline status
+
+**Experimental Data Tables**:
+- `make update-chemicals` - Extend chemicals with PubChem/CHEBI
+- `make update-assays` - Extend assays with curated protocols
+- `make update-bioprocesses` - (Manual) Update bioprocesses table
+- `make update-screening` - (Manual) Update screening results table
+- `make update-protocols` - (Manual) Update protocols table
+
+**Advanced Workflows**:
+- `make extend2` - Full extend2 workflow: download PDFs → extend chemicals/assays → extract experimental data
+- `make extendbypub` - Cross-reference publications with data sheets and append publication IDs to source columns
+- `make merge-excel` - Merge Excel updates while preserving generated data and publication references
+- `make merge-excel-dry-run` - Preview merge without applying changes
+
+**Utilities**:
+- `make status` - Check pipeline status (file existence and line counts)
 - `make test` - Run doctests and validation
 
 ### Testing Commands
@@ -75,11 +93,26 @@ ai.just              # AI assistant setup commands
 ```
 
 ### Data Pipeline Flow
+
+**Basic Extension (extend1)**:
 1. **Input**: Small seed datasets (2-17 rows) in Excel format
 2. **Conversion**: Excel → TSV via `parsers.py`
 3. **Extension**: Query APIs (NCBI, KEGG, UniProt, PDB) to find related data
 4. **URL Generation**: Create direct download links for all resources
 5. **Output**: Extended TSV tables (15-132 rows) with download URLs
+
+**Advanced Extension (extend2)**:
+1. **PDF Download**: Download publications from URLs in publications table
+2. **Chemical/Assay Extension**: Extend chemicals and assays with source=extend2 label
+3. **PDF Conversion**: Convert PDFs to markdown format for text extraction
+4. **Data Extraction**: Extract experimental data from PDFs (DOI-based provenance)
+5. **Validation**: Run consistency checks and LinkML schema validation
+6. **Cross-Reference (extendbypub)**: Link publications to data rows by keyword matching
+
+**Source Tracking**:
+- All extended rows include a `source` column for data provenance
+- Source labels: `extend1` (initial extension), `extend2` (second round), DOI (extracted from specific papers)
+- Publication cross-references appended to source column with `|` delimiter (e.g., `extend2|10.1038/s41586-024-07070-8`)
 
 ### Key Modules
 
@@ -101,6 +134,15 @@ ai.just              # AI assistant setup commands
 **structure_search.py**: 3D structure search (PDB/AlphaFold)
 **publication_search.py**: Literature search (PubMed/arXiv/bioRxiv)
 **dataset_search.py**: Dataset search (GEO, SRA, MetaboLights, etc.)
+**chemical_search.py**: Chemical compound search (PubChem/CHEBI) with source labeling
+**assay_search.py**: Assay protocol search with curated methods
+**pdf_to_markdown.py**: Convert PDFs to markdown for text extraction
+**extract_from_documents.py**: Extract experimental data from markdown files with DOI tracking
+**download_pdfs_from_publications.py**: Download PDFs from publications table URLs
+**extend_by_publication.py**: Cross-reference publications with data sheets
+**merge_excel_updates.py**: Intelligently merge Excel updates while preserving generated data
+**validate_consistency.py**: Cross-sheet consistency and referential integrity validation
+**tsv_to_linkml.py**: Convert TSV data to LinkML YAML format
 
 ### Search Strategy
 - **Lanthanide terms**: lanthanide, cerium, lanthanum, rare earth element, XoxF, MDH
@@ -329,12 +371,62 @@ uv run python src/validate_consistency.py --data-dir data/txt/sheet --strict
 - Low coverage for optional fields (GO terms, EC numbers)
 - Gene IDs in pathways not found in genes table (expected for KEGG pathways with incomplete gene lists)
 
+## Workflow Examples
+
+### Complete Extension Workflow
+```bash
+# 1. Convert Excel to TSV (if starting fresh)
+make convert-excel
+
+# 2. Run basic extension (extend1)
+make update-all
+
+# 3. Run advanced extension (extend2)
+make extend2
+# This includes: PDF download → chemical/assay extension → PDF extraction → validation
+
+# 4. Cross-reference publications with data
+make extendbypub
+
+# 5. Validate everything
+make validate-consistency
+make validate-schema
+
+# 6. Check status
+make status
+```
+
+### Merging Excel Updates
+```bash
+# Preview changes without applying
+make merge-excel-dry-run
+
+# Apply merge (backs up existing TSV files)
+make merge-excel
+
+# Validate after merge
+make validate-consistency
+```
+
+### Individual Table Updates
+```bash
+# Update specific tables with custom source labels
+uv run python src/chemical_search.py --source-label extend2
+uv run python src/assay_search.py --source-label extend2
+
+# Extract data from a specific PDF directory
+uv run python src/extract_from_documents.py --pdf-dir data/publications --output-dir data/txt/sheet
+```
+
 ## Important Notes
 
-- This repo uses Makefile, not justfile for main commands (only ai.just exists)
+- This repo uses Makefile for main commands (only ai.just exists for AI setup)
 - No tests/ directory - tests are embedded as doctests or in src/ files
 - No docs/ directory or mkdocs - documentation is in README.md and CLAUDE.md
-- Python files are in src/ directly, not src/cmm_ai/
+- Python files are in src/ directly, not src/cmm_ai/ subdirectory
 - NCBI Entrez.email should be set (currently "your.email@example.com")
 - Data is first draft/proof-of-concept - not manually curated yet
 - LinkML schema in schema/ directory models all data types with ontology mappings
+- **Source Provenance**: All extended data includes source column tracking data origin (extend1, extend2, DOI)
+- **Publication Tracking**: Source columns can contain multiple references separated by `|` (e.g., `extend2|10.1038/...`)
+- **Merge Strategy**: `merge-excel` backs up TSV files and intelligently merges schema changes while preserving extended rows

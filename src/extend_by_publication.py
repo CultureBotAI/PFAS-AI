@@ -111,69 +111,192 @@ def read_markdown_content(md_path: Path) -> str:
         return ""
 
 
-def extract_keywords_from_row(row: pd.Series, sheet_name: str) -> Set[str]:
+def extract_keywords_from_row(row: pd.Series, sheet_name: str) -> Dict[str, Set[str]]:
     """
-    Extract searchable keywords from a data row.
+    Extract searchable keywords from a data row with biological curator specificity.
+
+    Groups keywords by type (organism, gene, chemical, etc.) for context-aware matching.
 
     Args:
         row: Pandas Series representing a row
         sheet_name: Name of the sheet (for context-specific extraction)
 
     Returns:
-        Set of keywords to search for in publications
+        Dictionary mapping keyword types to sets of keywords
     """
-    keywords = set()
+    keywords = {
+        'organisms': set(),
+        'genes': set(),
+        'chemicals': set(),
+        'pathways': set(),
+        'identifiers': set(),  # CHEBI, GO, EC numbers
+        'general': set()
+    }
 
     # Convert all string values to lowercase for searching
-    for value in row.values:
+    for col_name, value in row.items():
         if pd.notna(value) and isinstance(value, str):
             # Skip URLs and very short strings
             if len(value) < 3 or value.startswith('http'):
                 continue
 
-            # Add the full value
-            keywords.add(value.lower())
+            value_lower = value.lower()
 
-            # Extract scientific names (e.g., "Methylobacterium extorquens")
-            scientific_name_match = re.search(r'\b([A-Z][a-z]+\s+[a-z]+)\b', value)
-            if scientific_name_match:
-                keywords.add(scientific_name_match.group(1).lower())
+            # Extract organisms (scientific names)
+            if 'organism' in str(col_name).lower() or 'species' in str(col_name).lower():
+                # Full organism name
+                scientific_name_match = re.search(r'\b([A-Z][a-z]+\s+[a-z]+)\b', value)
+                if scientific_name_match:
+                    keywords['organisms'].add(scientific_name_match.group(1).lower())
+                # Genus only
+                genus_match = re.search(r'\b([A-Z][a-z]+)\b', value)
+                if genus_match:
+                    keywords['organisms'].add(genus_match.group(1).lower())
 
-            # Extract gene names (e.g., "xoxF", "mxaF")
-            gene_matches = re.findall(r'\b([a-z]{3,}[A-Z])\b', value)
-            keywords.update([g.lower() for g in gene_matches])
+            # Extract gene names (xoxF, mxaF, etc.)
+            if 'gene' in str(col_name).lower() or 'protein' in str(col_name).lower():
+                # Gene symbols: lowercase letters + uppercase letter (e.g., xoxF, mxaF)
+                gene_matches = re.findall(r'\b([a-z]{3,}[A-Z]\w*)\b', value)
+                keywords['genes'].update([g.lower() for g in gene_matches])
+                # Also capture gene names in text
+                keywords['genes'].add(value_lower)
 
-            # Extract chemical formulas (e.g., "Eu3+", "La3+")
-            chem_matches = re.findall(r'\b([A-Z][a-z]?\d?\+?)\b', value)
-            keywords.update([c.lower() for c in chem_matches])
+            # Extract chemical identifiers
+            if 'chemical' in str(col_name).lower() or 'compound' in str(col_name).lower():
+                # Chemical names and formulas
+                keywords['chemicals'].add(value_lower)
+                # Lanthanide ions (Eu3+, La3+, etc.)
+                ion_matches = re.findall(r'\b([A-Z][a-z]?\d?\+)\b', value)
+                keywords['chemicals'].update([i.lower() for i in ion_matches])
+
+            # Extract pathway names
+            if 'pathway' in str(col_name).lower():
+                keywords['pathways'].add(value_lower)
+
+            # Extract ontology identifiers (CHEBI, GO, EC, etc.)
+            if any(prefix in value for prefix in ['CHEBI:', 'GO:', 'EC:', 'KEGG:', 'K0', 'K1', 'K2']):
+                keywords['identifiers'].add(value_lower)
+                # Also extract the ID alone
+                id_matches = re.findall(r'((?:CHEBI|GO|EC|K)[:_]?\d+)', value, re.IGNORECASE)
+                keywords['identifiers'].update([i.lower() for i in id_matches])
+
+            # General keywords for rows without specific column types
+            if len(value) >= 4 and not value.startswith('http'):
+                keywords['general'].add(value_lower)
 
     return keywords
 
 
 def is_publication_relevant(
     markdown_content: str,
-    keywords: Set[str],
-    min_matches: int = 3
-) -> Tuple[bool, int]:
+    keywords: Dict[str, Set[str]],
+    min_score: float = 3.0
+) -> Tuple[bool, float, Dict[str, int]]:
     """
-    Determine if a publication is relevant based on keyword matching.
+    Determine if a publication is relevant using biological curator standards.
+
+    Uses weighted scoring system:
+    - Organism names (genus + species): 2.0 points each
+    - Gene names (xoxF, mxaF, etc.): 2.5 points each
+    - Chemical names/IDs: 1.5 points each
+    - Pathway names: 2.0 points each
+    - Ontology identifiers (CHEBI, GO, EC): 2.0 points each
+    - General keywords: 0.5 points each
+
+    Requires true mention (not just substring match) for high-value entities.
 
     Args:
         markdown_content: Publication content as markdown string
-        keywords: Set of keywords to search for
-        min_matches: Minimum number of keyword matches required
+        keywords: Dictionary of keyword types to sets of keywords
+        min_score: Minimum weighted score required for relevance (default: 3.0)
 
     Returns:
-        Tuple of (is_relevant, match_count)
+        Tuple of (is_relevant, score, match_details)
     """
     content_lower = markdown_content.lower()
 
-    match_count = 0
-    for keyword in keywords:
-        if keyword in content_lower:
-            match_count += 1
+    score = 0.0
+    match_details = {
+        'organisms': 0,
+        'genes': 0,
+        'chemicals': 0,
+        'pathways': 0,
+        'identifiers': 0,
+        'general': 0
+    }
 
-    return match_count >= min_matches, match_count
+    # Weight configuration for biological curator standards
+    weights = {
+        'organisms': 2.0,      # High value: organism specificity is critical
+        'genes': 2.5,          # Highest value: gene/protein mentions are highly specific
+        'chemicals': 1.5,      # Medium-high: chemical names can be ambiguous
+        'pathways': 2.0,       # High value: pathway mentions indicate mechanistic relevance
+        'identifiers': 2.0,    # High value: ontology IDs are specific and unambiguous
+        'general': 0.5         # Low value: generic terms less specific
+    }
+
+    # Check organisms with word boundaries for specificity
+    for organism in keywords.get('organisms', set()):
+        if len(organism) < 3:
+            continue
+        # Use word boundaries to avoid false matches
+        if re.search(r'\b' + re.escape(organism) + r'\b', content_lower):
+            score += weights['organisms']
+            match_details['organisms'] += 1
+
+    # Check gene names with word boundaries
+    for gene in keywords.get('genes', set()):
+        if len(gene) < 3:
+            continue
+        # Genes: require word boundary match for specificity
+        if re.search(r'\b' + re.escape(gene) + r'\b', content_lower):
+            score += weights['genes']
+            match_details['genes'] += 1
+
+    # Check chemical names with word boundaries
+    for chemical in keywords.get('chemicals', set()):
+        if len(chemical) < 3:
+            continue
+        # Allow partial match for chemical formulas (e.g., "eu3+" in "Eu3+ ion")
+        if re.search(r'\b' + re.escape(chemical), content_lower):
+            score += weights['chemicals']
+            match_details['chemicals'] += 1
+
+    # Check pathway names
+    for pathway in keywords.get('pathways', set()):
+        if len(pathway) < 4:
+            continue
+        # Pathway names can be longer phrases, use substring match
+        if pathway in content_lower:
+            score += weights['pathways']
+            match_details['pathways'] += 1
+
+    # Check ontology identifiers (exact match required)
+    for identifier in keywords.get('identifiers', set()):
+        if len(identifier) < 3:
+            continue
+        # IDs must match exactly with word boundaries
+        if re.search(r'\b' + re.escape(identifier) + r'\b', content_lower):
+            score += weights['identifiers']
+            match_details['identifiers'] += 1
+
+    # Check general keywords (lower weight)
+    for keyword in keywords.get('general', set()):
+        if len(keyword) < 4:
+            continue
+        # General terms: substring match is acceptable
+        if keyword in content_lower:
+            score += weights['general']
+            match_details['general'] += 1
+
+    # Biological curator standard: require meaningful score from specific entities
+    # Don't rely solely on general keywords
+    specific_score = score - (match_details['general'] * weights['general'])
+
+    # Relevant if: total score meets threshold AND has at least some specific matches
+    is_relevant = (score >= min_score) and (specific_score >= 1.0 or match_details['identifiers'] > 0)
+
+    return is_relevant, score, match_details
 
 
 def update_source_column(
@@ -275,14 +398,16 @@ def process_sheet(
             # Extract keywords from row
             keywords = extract_keywords_from_row(row, sheet_name)
 
-            if not keywords:
+            # Check if we have any meaningful keywords
+            total_keywords = sum(len(v) for v in keywords.values())
+            if total_keywords == 0:
                 continue
 
-            # Check relevance
-            is_relevant, match_count = is_publication_relevant(
+            # Check relevance using curator standards
+            is_relevant, score, match_details = is_publication_relevant(
                 markdown_content,
                 keywords,
-                min_matches=min_keyword_matches
+                min_score=min_keyword_matches
             )
 
             if is_relevant:
@@ -295,8 +420,12 @@ def process_sheet(
                     stats['updated'] += 1
                     stats['publications_added'] += 1
 
+                    # Log match details for transparency
+                    match_summary = ", ".join([f"{k}:{v}" for k, v in match_details.items() if v > 0])
+                    print(f"    Row {idx}: score={score:.1f} [{match_summary}]")
+
         if rows_matched > 0:
-            print(f"  ✓ Matched {rows_matched} rows (added to {rows_matched} rows)")
+            print(f"  ✓ Matched {rows_matched} rows with curator standards")
 
     # Write updated sheet
     if stats['updated'] > 0 and not dry_run:
@@ -338,10 +467,16 @@ def main():
         help='Directory containing data TSV files'
     )
     parser.add_argument(
+        '--min-score',
+        type=float,
+        default=3.0,
+        help='Minimum weighted score for biological relevance (default: 3.0)'
+    )
+    parser.add_argument(
         '--min-keyword-matches',
-        type=int,
-        default=3,
-        help='Minimum keyword matches for relevance (default: 3)'
+        type=float,
+        dest='min_score',
+        help='Deprecated: use --min-score instead'
     )
     parser.add_argument(
         '--sheets',
@@ -362,7 +497,8 @@ def main():
     print(f"Publications file: {args.publications_file}")
     print(f"Markdown directory: {args.markdown_dir}")
     print(f"Data directory: {args.data_dir}")
-    print(f"Min keyword matches: {args.min_keyword_matches}")
+    print(f"Min relevance score: {args.min_score}")
+    print(f"Curator standards: Entity-weighted scoring (genes: 2.5, organisms: 2.0, ontology IDs: 2.0)")
     if args.dry_run:
         print("MODE: DRY RUN (no changes will be written)")
     print()
@@ -405,7 +541,7 @@ def main():
             sheet_path,
             publications,
             args.markdown_dir,
-            min_keyword_matches=args.min_keyword_matches,
+            min_keyword_matches=args.min_score,
             dry_run=args.dry_run
         )
 

@@ -3,7 +3,7 @@
 # This Makefile provides commands to update CMM data tables with lanthanide-relevant
 # bacteria and archaea from NCBI databases.
 
-.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-bioprocesses update-screening update-protocols update-all clean install test validate-schema validate-consistency gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data download-pdfs extend2 extendbypub
+.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-bioprocesses update-screening update-protocols update-all clean install test validate-schema validate-consistency gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data download-pdfs extend2 extendbypub merge-excel
 
 # Default target
 help:
@@ -40,6 +40,7 @@ help:
 	@echo "  update-experimental-data - Full pipeline: PDF→markdown→extract→validate"
 	@echo "  extend2             - Run full extend pipeline with source=extend2 label"
 	@echo "  extendbypub         - Cross-reference publications with data sheets"
+	@echo "  merge-excel         - Merge Excel updates while preserving generated data"
 	@echo "  clean               - Remove temporary and output files"
 	@echo "  convert-excel       - Convert Excel sheets to TSV files"
 	@echo "  add-annotations     - Add annotation URLs to existing genomes table"
@@ -323,6 +324,49 @@ extendbypub: install convert-pdfs-to-markdown
 	@echo "Next steps:"
 	@echo "  - Review source columns for accuracy"
 	@echo "  - Run 'make validate-consistency' to check data integrity"
+
+# merge-excel workflow: Merge Excel updates while preserving generated data
+merge-excel: install
+	@echo ""
+	@echo "============================================================"
+	@echo "EXCEL MERGE WORKFLOW"
+	@echo "============================================================"
+	@echo ""
+	@echo "This workflow:"
+	@echo "  1. Backs up existing TSV files"
+	@echo "  2. Reads new Excel file"
+	@echo "  3. Intelligently merges schema and data"
+	@echo "  4. Preserves publication references and extended rows"
+	@echo "  5. Applies to both base and _extended files"
+	@echo ""
+	@echo "Running merge (use --dry-run to preview)..."
+	@echo ""
+	uv run python src/merge_excel_updates.py \
+		--excel-file "data/sheet/BER CMM Data for AI.xlsx" \
+		--tsv-dir data/txt/sheet
+	@echo ""
+	@echo "============================================================"
+	@echo "✓ EXCEL MERGE COMPLETED!"
+	@echo "============================================================"
+	@echo ""
+	@echo "Next steps:"
+	@echo "  - Review changes in updated TSV files"
+	@echo "  - Run 'make validate-consistency' to check integrity"
+	@echo "  - Run 'make validate-schema' to validate against LinkML"
+
+# merge-excel-dry-run: Preview Excel merge without applying changes
+merge-excel-dry-run: install
+	@echo ""
+	@echo "============================================================"
+	@echo "EXCEL MERGE (DRY RUN - PREVIEW ONLY)"
+	@echo "============================================================"
+	@echo ""
+	uv run python src/merge_excel_updates.py \
+		--excel-file "data/sheet/BER CMM Data for AI.xlsx" \
+		--tsv-dir data/txt/sheet \
+		--dry-run
+	@echo ""
+	@echo "To apply these changes, run: make merge-excel"
 
 # Clean up temporary and output files
 clean:

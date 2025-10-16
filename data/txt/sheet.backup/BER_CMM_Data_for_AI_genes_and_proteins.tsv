@@ -1,4 +1,4 @@
-gene or protein id	organism (from taxa and genomes tab)	annotation	EC	GO	CHEBI	Source
+gene or protein id	organism (from taxa and genomes tab)	annotation	EC	GO	CHEBI	Link
 	Methylobacterium aquaticum strain 22A	siderophore‚ iron complex TonB-dependent receptor				
 K23995	Methylobacterium species	PQQ-dependent methanol dehydrogenase, lanthanide-dependent (XoxF)	1.1.2.7	GO:0018525 (methanol metabolic process)	CHEBI:17790 (methanol)	
 K14028	Methylobacterium species	PQQ-dependent methanol dehydrogenase, calcium-dependent (MxaF)	1.1.2.7	GO:0018525 (methanol metabolic process)	CHEBI:17790 (methanol)	

@@ -1,18 +1,18 @@
-Name	Organism	Components	id or type	resolution	type
-staphyloferrin B-like (sbn) siderophore	Methylobacterium aquaticum strain 22A				
-PQQ-dependent methanol dehydrogenase with Ce3+	Methylobacterium extorquens	XoxF subunit, PQQ cofactor, Ce3+ ion, cytochrome c	4MAE	1.6 √Ö	X-ray crystallography
-Ca2+-dependent methanol dehydrogenase	Methylobacterium extorquens	MxaF subunit, PQQ cofactor, Ca2+ ion	1W6S	1.9 √Ö	X-ray crystallography
-Lanthanide-binding protein (hypothetical)	Methylobacterium species	Lanthanide-binding domain, regulatory domain	predicted		Predicted structure
-PQQ biosynthesis enzyme complex	Methylotroph	PqqB, PqqC, PqqD, PqqE enzymes	multiple	Variable	X-ray crystallography
-Alcohol dehydrogenase with lanthanide cofactor	Methylobacterium species	ExaF/ADH subunit, PQQ cofactor, Ln3+ ion	predicted		Predicted structure
-Staphyloferrin B (siderophore)	Methylobacterium aquaticum	L-2,3-diaminopropionic acid, citric acid, ethylenediamine			NMR, chemical characterization
-Lanthanophore (putative)	Methylobacterium species	Modified siderophore with lanthanide-binding groups			Predicted/hypothetical
-Desferrioxamine B (lanthanide complex)	Various bacteria	Desferrioxamine B chelated with Ln3+	multiple	Variable	X-ray crystallography
-Enterobactin-like lanthanide chelator	Methylotroph	Catecholate-based lanthanide chelator	predicted		Computational prediction
-Methanol dehydrogenase complex (XoxF-type)	Methylobacterium species	XoxF (large subunit), XoxG (small subunit), cytochrome c, PQQ, Ln3+	multiple	1.5-2.5 √Ö	X-ray crystallography
-TonB-dependent transporter complex	Methylobacterium species	Outer membrane receptor, TonB protein, periplasmic binding protein	homology	Variable	Homology modeling
-Formaldehyde dehydrogenase complex	Methylotroph	FDH subunits, GSH cofactor, NAD+ binding domain	multiple	2.0-3.0 √Ö	X-ray crystallography
-C1 transfer enzyme complex	Methylotroph	Folate-binding enzymes, tetrahydrofolate, formate	multiple	Variable	X-ray crystallography
-MxbD regulatory complex	Methylobacterium species	MxbD transcriptional regulator, DNA binding domain, lanthanide sensor	predicted		Predicted structure
-Two-component system (lanthanide response)	Methylobacterium species	Histidine kinase, response regulator, lanthanide binding domain	homology		Homology modeling
-XoxG regulatory protein complex	Methylobacterium species	XoxG small protein, partner proteins, regulatory RNA	predicted		Computational prediction
+Name	Organism	Components	id or type	resolution	type	Source
+staphyloferrin B-like (sbn) siderophore	Methylobacterium aquaticum strain 22A					
+PQQ-dependent methanol dehydrogenase with Ce3+	Methylobacterium extorquens	XoxF subunit, PQQ cofactor, Ce3+ ion, cytochrome c	4MAE	1.6 √Ö	X-ray crystallography	
+Ca2+-dependent methanol dehydrogenase	Methylobacterium extorquens	MxaF subunit, PQQ cofactor, Ca2+ ion	1W6S	1.9 √Ö	X-ray crystallography	
+Lanthanide-binding protein (hypothetical)	Methylobacterium species	Lanthanide-binding domain, regulatory domain	predicted		Predicted structure	
+PQQ biosynthesis enzyme complex	Methylotroph	PqqB, PqqC, PqqD, PqqE enzymes	multiple	Variable	X-ray crystallography	
+Alcohol dehydrogenase with lanthanide cofactor	Methylobacterium species	ExaF/ADH subunit, PQQ cofactor, Ln3+ ion	predicted		Predicted structure	
+Staphyloferrin B (siderophore)	Methylobacterium aquaticum	L-2,3-diaminopropionic acid, citric acid, ethylenediamine			NMR, chemical characterization	
+Lanthanophore (putative)	Methylobacterium species	Modified siderophore with lanthanide-binding groups			Predicted/hypothetical	
+Desferrioxamine B (lanthanide complex)	Various bacteria	Desferrioxamine B chelated with Ln3+	multiple	Variable	X-ray crystallography	
+Enterobactin-like lanthanide chelator	Methylotroph	Catecholate-based lanthanide chelator	predicted		Computational prediction	
+Methanol dehydrogenase complex (XoxF-type)	Methylobacterium species	XoxF (large subunit), XoxG (small subunit), cytochrome c, PQQ, Ln3+	multiple	1.5-2.5 √Ö	X-ray crystallography	
+TonB-dependent transporter complex	Methylobacterium species	Outer membrane receptor, TonB protein, periplasmic binding protein	homology	Variable	Homology modeling	
+Formaldehyde dehydrogenase complex	Methylotroph	FDH subunits, GSH cofactor, NAD+ binding domain	multiple	2.0-3.0 √Ö	X-ray crystallography	
+C1 transfer enzyme complex	Methylotroph	Folate-binding enzymes, tetrahydrofolate, formate	multiple	Variable	X-ray crystallography	
+MxbD regulatory complex	Methylobacterium species	MxbD transcriptional regulator, DNA binding domain, lanthanide sensor	predicted		Predicted structure	
+Two-component system (lanthanide response)	Methylobacterium species	Histidine kinase, response regulator, lanthanide binding domain	homology		Homology modeling	
+XoxG regulatory protein complex	Methylobacterium species	XoxG small protein, partner proteins, regulatory RNA	predicted		Computational prediction	

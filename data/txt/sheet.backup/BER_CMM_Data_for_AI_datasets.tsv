@@ -1,4 +1,4 @@
-Dataset name	Data Type	URL	Size (rows or MB)	Publication	License	Source
+Dataset name	Data Type	URL	Size (rows or MB)	Publication	License	Download
 OBIGT thermodynamic database	thermodynamics	https://chnosz.net/vignettes/OBIGT.html				https://chnosz.net/vignettes/OBIGT.html
 ClaiMM Datasets	EDX submissions related to the CLAIMM project relevant to critical minerals and materials, rare earth elements	https://edx.netl.doe.gov/group/about/claimm-datasets				https://edx.netl.doe.gov/group/about/claimm-datasets
 Methylobacterium genome sequencing projects	genomic DNA sequencing	https://www.ncbi.nlm.nih.gov/sra/?term=Methylobacterium	Multiple projects	Various publications	NCBI SRA	https://www.ncbi.nlm.nih.gov/sra/?term=Methylobacterium
