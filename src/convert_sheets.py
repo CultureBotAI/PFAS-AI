@@ -56,11 +56,10 @@ def convert_excel_sheets(input_path: str, output_dir: str) -> None:
 
 def main():
     """Convert Excel files to separate TSV per sheet."""
-    
-    # Convert both Excel files
+
+    # Convert PFAS Excel file
     files_to_convert = [
-        ("data/plan/BER CMM AI Project Map.xlsx", "data/txt/plan"),
-        ("data/sheet/BER CMM Data for AI.xlsx", "data/txt/sheet")
+        ("data/sheet/PFAS Data for AI.xlsx", "data/txt/sheet")
     ]
     
     for excel_file, output_dir in files_to_convert:

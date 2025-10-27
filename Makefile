@@ -1,13 +1,13 @@
-# Makefile for CMM-AI data pipeline operations
-# 
-# This Makefile provides commands to update CMM data tables with lanthanide-relevant
+# Makefile for PFAS-AI data pipeline operations
+#
+# This Makefile provides commands to update PFAS data tables with PFAS-degrading
 # bacteria and archaea from NCBI databases.
 
 .PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-bioprocesses update-screening update-protocols update-all clean install test validate-schema validate-consistency gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data download-pdfs extend2 extendbypub merge-excel
 
 # Default target
 help:
-	@echo "CMM-AI Data Pipeline Commands:"
+	@echo "PFAS-AI Data Pipeline Commands:"
 	@echo "=============================="
 	@echo ""
 	@echo "Data Updates:"
@@ -46,14 +46,14 @@ help:
 	@echo "  add-annotations     - Add annotation URLs to existing genomes table"
 	@echo ""
 	@echo "Files:"
-	@echo "  Input:  data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes.tsv"
-	@echo "  Input:  data/txt/sheet/BER_CMM_Data_for_AI_biosamples.tsv"
-	@echo "  Input:  data/txt/sheet/BER_CMM_Data_for_AI_pathways.tsv"
-	@echo "  Input:  data/txt/sheet/BER_CMM_Data_for_AI_datasets.tsv"
-	@echo "  Input:  data/txt/sheet/BER_CMM_Data_for_AI_genes_and_proteins.tsv"
-	@echo "  Input:  data/txt/sheet/BER_CMM_Data_for_AI_macromolecular_structures.tsv"
-	@echo "  Input:  data/txt/sheet/BER_CMM_Data_for_AI_publications.tsv"
-	@echo "  Output: data/txt/sheet/BER_CMM_Data_for_AI_*_extended.tsv"
+	@echo "  Input:  data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes.tsv"
+	@echo "  Input:  data/txt/sheet/PFAS_Data_for_AI_biosamples.tsv"
+	@echo "  Input:  data/txt/sheet/PFAS_Data_for_AI_pathways.tsv"
+	@echo "  Input:  data/txt/sheet/PFAS_Data_for_AI_datasets.tsv"
+	@echo "  Input:  data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins.tsv"
+	@echo "  Input:  data/txt/sheet/PFAS_Data_for_AI_macromolecular_structures.tsv"
+	@echo "  Input:  data/txt/sheet/PFAS_Data_for_AI_publications.tsv"
+	@echo "  Output: data/txt/sheet/PFAS_Data_for_AI_*_extended.tsv"
 
 # Install dependencies
 install:
@@ -61,77 +61,77 @@ install:
 	uv sync
 	@echo "Dependencies installed successfully."
 
-# Update taxa and genomes table with lanthanide-relevant organisms
-update-genomes: install data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes.tsv
+# Update taxa and genomes table with PFAS-relevant organisms
+update-genomes: install data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes.tsv
 	@echo "Updating taxa and genomes table..."
-	@echo "Searching NCBI for lanthanide-relevant bacteria and archaea..."
-	uv run python extend_lanthanide_data.py
+	@echo "Searching NCBI for PFAS-relevant bacteria and archaea..."
+	uv run python src/extend_pfas_data.py
 	@echo "Adding annotation download URLs..."
-	uv run python add_annotation_urls.py
+	uv run python src/add_annotation_urls.py
 	@echo "Taxa and genomes table updated successfully."
-	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes_extended.tsv"
+	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes_extended.tsv"
 
-# Update biosamples table with lanthanide-relevant samples
-update-biosamples: install data/txt/sheet/BER_CMM_Data_for_AI_biosamples.tsv
+# Update biosamples table with PFAS-relevant samples
+update-biosamples: install data/txt/sheet/PFAS_Data_for_AI_biosamples.tsv
 	@echo "Updating biosamples table..."
-	@echo "Searching NCBI for lanthanide-relevant biosamples..."
-	uv run python extend_lanthanide_data.py
+	@echo "Searching NCBI for PFAS-relevant biosamples..."
+	uv run python src/extend_pfas_data.py
 	@echo "Biosamples table updated successfully."
-	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_biosamples_extended.tsv"
+	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_biosamples_extended.tsv"
 
-# Update pathways table with lanthanide-relevant pathways
-update-pathways: install data/txt/sheet/BER_CMM_Data_for_AI_pathways.tsv
+# Update pathways table with PFAS-relevant pathways
+update-pathways: install data/txt/sheet/PFAS_Data_for_AI_pathways.tsv
 	@echo "Updating pathways table..."
-	@echo "Searching KEGG and MetaCyc for lanthanide-relevant pathways..."
-	uv run python extend_pathways.py
+	@echo "Searching KEGG and MetaCyc for PFAS-relevant pathways..."
+	uv run python src/extend_pathways.py
 	@echo "Pathways table updated successfully."
-	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_pathways_extended.tsv"
+	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_pathways_extended.tsv"
 
-# Update datasets table with database searches  
-update-datasets: install data/txt/sheet/BER_CMM_Data_for_AI_datasets.tsv
+# Update datasets table with database searches
+update-datasets: install data/txt/sheet/PFAS_Data_for_AI_datasets.tsv
 	@echo "Updating datasets table..."
-	@echo "Searching multiple databases for lanthanide-relevant datasets..."
-	uv run python extend_datasets.py
+	@echo "Searching multiple databases for PFAS-relevant datasets..."
+	uv run python src/extend_datasets.py
 	@echo "Datasets table updated successfully."
-	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_datasets_extended.tsv"
+	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_datasets_extended.tsv"
 
 # Update genes and proteins table with UniProt/KEGG data
-update-genes: install data/txt/sheet/BER_CMM_Data_for_AI_genes_and_proteins.tsv
+update-genes: install data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins.tsv
 	@echo "Updating genes and proteins table..."
 	@echo "Searching UniProt, KEGG and curated databases..."
-	uv run python extend_genes.py
+	uv run python src/extend_genes.py
 	@echo "Genes and proteins table updated successfully."
-	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_genes_and_proteins_extended.tsv"
+	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins_extended.tsv"
 
 # Update macromolecular structures table with PDB data
-update-structures: install data/txt/sheet/BER_CMM_Data_for_AI_macromolecular_structures.tsv
+update-structures: install data/txt/sheet/PFAS_Data_for_AI_macromolecular_structures.tsv
 	@echo "Updating macromolecular structures table..."
 	@echo "Searching PDB and structural databases..."
-	uv run python extend_structures.py
+	uv run python src/extend_structures.py
 	@echo "Structures table updated successfully."
-	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_macromolecular_structures_extended.tsv"
+	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_macromolecular_structures_extended.tsv"
 
 # Update publications table with literature searches
-update-publications: install data/txt/sheet/BER_CMM_Data_for_AI_publications.tsv
+update-publications: install data/txt/sheet/PFAS_Data_for_AI_publications.tsv
 	@echo "Updating publications table..."
 	@echo "Searching PubMed, arXiv, bioRxiv and curated literature..."
-	uv run python extend_publications.py
+	uv run python src/extend_publications.py
 	@echo "Publications table updated successfully."
-	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_publications_extended.tsv"
+	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_publications_extended.tsv"
 
 # Update chemicals table with PubChem/CHEBI data
-update-chemicals: install data/txt/sheet/BER_CMM_Data_for_AI_chemicals.tsv
+update-chemicals: install data/txt/sheet/PFAS_Data_for_AI_chemicals.tsv
 	@echo "Updating chemicals table with PubChem/CHEBI data..."
 	uv run python src/chemical_search.py --source-label extend1
 	@echo "Chemicals table updated successfully."
-	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_chemicals_extended.tsv"
+	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_chemicals_extended.tsv"
 
 # Update assays table with curated protocols
-update-assays: install data/txt/sheet/BER_CMM_Data_for_AI_assays.tsv
+update-assays: install data/txt/sheet/PFAS_Data_for_AI_assays.tsv
 	@echo "Updating assays table with curated assay protocols..."
 	uv run python src/assay_search.py --source-label extend1
 	@echo "Assays table updated successfully."
-	@echo "Output: data/txt/sheet/BER_CMM_Data_for_AI_assays_extended.tsv"
+	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_assays_extended.tsv"
 
 # Download PDFs from publications table
 download-pdfs: install
@@ -145,19 +145,19 @@ download-pdfs: install
 # Update bioprocesses table (placeholder - manual data entry for now)
 update-bioprocesses: install
 	@echo "Bioprocesses table: Manual data entry"
-	@echo "Template available at: data/txt/sheet/BER_CMM_Data_for_AI_bioprocesses.tsv"
+	@echo "Template available at: data/txt/sheet/PFAS_Data_for_AI_bioprocesses.tsv"
 	@echo "Note: Automated bioprocess data extraction not yet implemented"
 
 # Update screening results table (placeholder - manual data entry for now)
 update-screening: install
 	@echo "Screening results table: Manual data entry"
-	@echo "Template available at: data/txt/sheet/BER_CMM_Data_for_AI_screening_results.tsv"
+	@echo "Template available at: data/txt/sheet/PFAS_Data_for_AI_screening_results.tsv"
 	@echo "Note: Automated screening data import not yet implemented"
 
 # Update protocols table (placeholder - manual data entry for now)
 update-protocols: install
 	@echo "Protocols table: Manual data entry"
-	@echo "Template available at: data/txt/sheet/BER_CMM_Data_for_AI_protocols.tsv"
+	@echo "Template available at: data/txt/sheet/PFAS_Data_for_AI_protocols.tsv"
 	@echo "Note: Automated protocols.io search not yet implemented"
 
 # Update all tables (full pipeline)
@@ -165,14 +165,14 @@ update-all: update-genomes update-biosamples update-pathways update-datasets upd
 	@echo ""
 	@echo "Full data pipeline completed successfully!"
 	@echo "Updated files:"
-	@echo "  - data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes_extended.tsv"
-	@echo "  - data/txt/sheet/BER_CMM_Data_for_AI_biosamples_extended.tsv"
-	@echo "  - data/txt/sheet/BER_CMM_Data_for_AI_pathways_extended.tsv"
-	@echo "  - data/txt/sheet/BER_CMM_Data_for_AI_datasets_extended.tsv"
-	@echo "  - data/txt/sheet/BER_CMM_Data_for_AI_genes_and_proteins_extended.tsv"
-	@echo "  - data/txt/sheet/BER_CMM_Data_for_AI_macromolecular_structures_extended.tsv"
-	@echo "  - data/txt/sheet/BER_CMM_Data_for_AI_publications_extended.tsv"
-	@wc -l data/txt/sheet/BER_CMM_Data_for_AI_*_extended.tsv
+	@echo "  - data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes_extended.tsv"
+	@echo "  - data/txt/sheet/PFAS_Data_for_AI_biosamples_extended.tsv"
+	@echo "  - data/txt/sheet/PFAS_Data_for_AI_pathways_extended.tsv"
+	@echo "  - data/txt/sheet/PFAS_Data_for_AI_datasets_extended.tsv"
+	@echo "  - data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins_extended.tsv"
+	@echo "  - data/txt/sheet/PFAS_Data_for_AI_macromolecular_structures_extended.tsv"
+	@echo "  - data/txt/sheet/PFAS_Data_for_AI_publications_extended.tsv"
+	@wc -l data/txt/sheet/PFAS_Data_for_AI_*_extended.tsv
 
 # Convert Excel files to TSV (prerequisite step)
 convert-excel: install
@@ -182,7 +182,7 @@ convert-excel: install
 	@echo "Excel files converted successfully."
 
 # Add annotation URLs to existing genomes table
-add-annotations: install data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes_extended.tsv
+add-annotations: install data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes_extended.tsv
 	@echo "Adding annotation download URLs to genomes table..."
 	uv run python add_annotation_urls.py
 	@echo "Annotation URLs added successfully."
@@ -199,7 +199,7 @@ test: install
 # Generate LinkML Python dataclasses from schema
 gen-linkml-models: install
 	@echo "Generating Python dataclasses from LinkML schema..."
-	uv run gen-python schema/lanthanide_bioprocessing.yaml > src/linkml_models.py
+	uv run gen-python schema/pfas_biodegradation.yaml > src/linkml_models.py
 	@echo "Generated src/linkml_models.py successfully."
 
 # Validate extended TSV data against LinkML schema
@@ -209,11 +209,11 @@ validate-schema: install gen-linkml-models
 	uv run python src/tsv_to_linkml.py --data-dir data/txt/sheet --output data/linkml_database.yaml
 	@echo ""
 	@echo "Validating YAML data against schema..."
-	uv run linkml-validate -s schema/lanthanide_bioprocessing.yaml data/linkml_database.yaml
+	uv run linkml-validate -s schema/pfas_biodegradation.yaml data/linkml_database.yaml
 	@echo ""
 	@echo "✓ Validation completed successfully!"
 	@echo "  Data file: data/linkml_database.yaml"
-	@echo "  Schema: schema/lanthanide_bioprocessing.yaml"
+	@echo "  Schema: schema/pfas_biodegradation.yaml"
 
 # Validate cross-sheet consistency and referential integrity
 validate-consistency: install
@@ -308,7 +308,7 @@ extendbypub: install convert-pdfs-to-markdown
 	@echo "Processing all sheets with source columns..."
 	@echo ""
 	uv run python src/extend_by_publication.py \
-		--publications-file data/txt/sheet/BER_CMM_Data_for_AI_publications.tsv \
+		--publications-file data/txt/sheet/PFAS_Data_for_AI_publications.tsv \
 		--markdown-dir data/publications \
 		--data-dir data/txt/sheet \
 		--min-keyword-matches 3
@@ -342,7 +342,7 @@ merge-excel: install
 	@echo "Running merge (use --dry-run to preview)..."
 	@echo ""
 	uv run python src/merge_excel_updates.py \
-		--excel-file "data/sheet/BER CMM Data for AI.xlsx" \
+		--excel-file "data/sheet/PFAS Data for AI.xlsx" \
 		--tsv-dir data/txt/sheet
 	@echo ""
 	@echo "============================================================"
@@ -362,7 +362,7 @@ merge-excel-dry-run: install
 	@echo "============================================================"
 	@echo ""
 	uv run python src/merge_excel_updates.py \
-		--excel-file "data/sheet/BER CMM Data for AI.xlsx" \
+		--excel-file "data/sheet/PFAS Data for AI.xlsx" \
 		--tsv-dir data/txt/sheet \
 		--dry-run
 	@echo ""
@@ -372,7 +372,7 @@ merge-excel-dry-run: install
 clean:
 	@echo "Cleaning up temporary files..."
 	rm -f *.log
-	rm -f extend_lanthanide_data.py
+	rm -f extend_pfas_data.py
 	rm -f add_annotation_urls.py 
 	rm -f test_annotation_urls.py
 	rm -f convert_sheets.py
@@ -383,152 +383,152 @@ clean-extended:
 	@echo "WARNING: This will delete extended data files!"
 	@echo "Press Ctrl+C within 5 seconds to cancel..."
 	@sleep 5
-	rm -f data/txt/sheet/BER_CMM_Data_for_AI_*_extended.tsv
+	rm -f data/txt/sheet/PFAS_Data_for_AI_*_extended.tsv
 	@echo "Extended files removed."
 
 # Check that input files exist
-data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes.tsv:
+data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes.tsv:
 	@echo "Error: Input file not found: $@"
 	@echo "Please run 'make convert-excel' first to convert Excel files to TSV."
 	@exit 1
 
-data/txt/sheet/BER_CMM_Data_for_AI_biosamples.tsv:
+data/txt/sheet/PFAS_Data_for_AI_biosamples.tsv:
 	@echo "Error: Input file not found: $@"
 	@echo "Please run 'make convert-excel' first to convert Excel files to TSV."
 	@exit 1
 
-data/txt/sheet/BER_CMM_Data_for_AI_pathways.tsv:
+data/txt/sheet/PFAS_Data_for_AI_pathways.tsv:
 	@echo "Error: Input file not found: $@"
 	@echo "Please run 'make convert-excel' first to convert Excel files to TSV."
 	@exit 1
 
-data/txt/sheet/BER_CMM_Data_for_AI_datasets.tsv:
+data/txt/sheet/PFAS_Data_for_AI_datasets.tsv:
 	@echo "Error: Input file not found: $@"
 	@echo "Please run 'make convert-excel' first to convert Excel files to TSV."
 	@exit 1
 
-data/txt/sheet/BER_CMM_Data_for_AI_genes_and_proteins.tsv:
+data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins.tsv:
 	@echo "Error: Input file not found: $@"
 	@echo "Please run 'make convert-excel' first to convert Excel files to TSV."
 	@exit 1
 
-data/txt/sheet/BER_CMM_Data_for_AI_macromolecular_structures.tsv:
+data/txt/sheet/PFAS_Data_for_AI_macromolecular_structures.tsv:
 	@echo "Error: Input file not found: $@"
 	@echo "Please run 'make convert-excel' first to convert Excel files to TSV."
 	@exit 1
 
-data/txt/sheet/BER_CMM_Data_for_AI_publications.tsv:
+data/txt/sheet/PFAS_Data_for_AI_publications.tsv:
 	@echo "Error: Input file not found: $@"
 	@echo "Please run 'make convert-excel' first to convert Excel files to TSV."
 	@exit 1
 
-data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes_extended.tsv:
+data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes_extended.tsv:
 	@echo "Error: Extended genomes file not found: $@"
 	@echo "Please run 'make update-genomes' first to create extended table."
 	@exit 1
 
 # Show current data status
 status:
-	@echo "CMM-AI Data Pipeline Status:"
+	@echo "PFAS-AI Data Pipeline Status:"
 	@echo "============================"
 	@echo ""
 	@echo "Input files:"
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes.tsv" ]; then \
-		echo "  ✓ Taxa and genomes TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes.tsv" ]; then \
+		echo "  ✓ Taxa and genomes TSV exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes.tsv) lines)"; \
 	else \
 		echo "  ✗ Taxa and genomes TSV missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_biosamples.tsv" ]; then \
-		echo "  ✓ Biosamples TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_biosamples.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_biosamples.tsv" ]; then \
+		echo "  ✓ Biosamples TSV exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_biosamples.tsv) lines)"; \
 	else \
 		echo "  ✗ Biosamples TSV missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_pathways.tsv" ]; then \
-		echo "  ✓ Pathways TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_pathways.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_pathways.tsv" ]; then \
+		echo "  ✓ Pathways TSV exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_pathways.tsv) lines)"; \
 	else \
 		echo "  ✗ Pathways TSV missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_datasets.tsv" ]; then \
-		echo "  ✓ Datasets TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_datasets.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_datasets.tsv" ]; then \
+		echo "  ✓ Datasets TSV exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_datasets.tsv) lines)"; \
 	else \
 		echo "  ✗ Datasets TSV missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_genes_and_proteins.tsv" ]; then \
-		echo "  ✓ Genes and proteins TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_genes_and_proteins.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins.tsv" ]; then \
+		echo "  ✓ Genes and proteins TSV exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins.tsv) lines)"; \
 	else \
 		echo "  ✗ Genes and proteins TSV missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_macromolecular_structures.tsv" ]; then \
-		echo "  ✓ Structures TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_macromolecular_structures.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_macromolecular_structures.tsv" ]; then \
+		echo "  ✓ Structures TSV exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_macromolecular_structures.tsv) lines)"; \
 	else \
 		echo "  ✗ Structures TSV missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_publications.tsv" ]; then \
-		echo "  ✓ Publications TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_publications.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_publications.tsv" ]; then \
+		echo "  ✓ Publications TSV exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_publications.tsv) lines)"; \
 	else \
 		echo "  ✗ Publications TSV missing"; \
 	fi
 	@echo ""
 	@echo "Extended files:"
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes_extended.tsv" ]; then \
-		echo "  ✓ Extended taxa and genomes exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes_extended.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes_extended.tsv" ]; then \
+		echo "  ✓ Extended taxa and genomes exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes_extended.tsv) lines)"; \
 	else \
 		echo "  ✗ Extended taxa and genomes missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_biosamples_extended.tsv" ]; then \
-		echo "  ✓ Extended biosamples exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_biosamples_extended.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_biosamples_extended.tsv" ]; then \
+		echo "  ✓ Extended biosamples exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_biosamples_extended.tsv) lines)"; \
 	else \
 		echo "  ✗ Extended biosamples missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_pathways_extended.tsv" ]; then \
-		echo "  ✓ Extended pathways exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_pathways_extended.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_pathways_extended.tsv" ]; then \
+		echo "  ✓ Extended pathways exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_pathways_extended.tsv) lines)"; \
 	else \
 		echo "  ✗ Extended pathways missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_datasets_extended.tsv" ]; then \
-		echo "  ✓ Extended datasets exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_datasets_extended.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_datasets_extended.tsv" ]; then \
+		echo "  ✓ Extended datasets exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_datasets_extended.tsv) lines)"; \
 	else \
 		echo "  ✗ Extended datasets missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_genes_and_proteins_extended.tsv" ]; then \
-		echo "  ✓ Extended genes and proteins exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_genes_and_proteins_extended.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins_extended.tsv" ]; then \
+		echo "  ✓ Extended genes and proteins exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins_extended.tsv) lines)"; \
 	else \
 		echo "  ✗ Extended genes and proteins missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_macromolecular_structures_extended.tsv" ]; then \
-		echo "  ✓ Extended structures exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_macromolecular_structures_extended.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_macromolecular_structures_extended.tsv" ]; then \
+		echo "  ✓ Extended structures exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_macromolecular_structures_extended.tsv) lines)"; \
 	else \
 		echo "  ✗ Extended structures missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_publications_extended.tsv" ]; then \
-		echo "  ✓ Extended publications exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_publications_extended.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_publications_extended.tsv" ]; then \
+		echo "  ✓ Extended publications exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_publications_extended.tsv) lines)"; \
 	else \
 		echo "  ✗ Extended publications missing"; \
 	fi
 	@echo ""
 	@echo "Experimental data files:"
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_chemicals.tsv" ]; then \
-		echo "  ✓ Chemicals TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_chemicals.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_chemicals.tsv" ]; then \
+		echo "  ✓ Chemicals TSV exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_chemicals.tsv) lines)"; \
 	else \
 		echo "  ✗ Chemicals TSV missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_assays.tsv" ]; then \
-		echo "  ✓ Assays TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_assays.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_assays.tsv" ]; then \
+		echo "  ✓ Assays TSV exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_assays.tsv) lines)"; \
 	else \
 		echo "  ✗ Assays TSV missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_bioprocesses.tsv" ]; then \
-		echo "  ✓ Bioprocesses TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_bioprocesses.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_bioprocesses.tsv" ]; then \
+		echo "  ✓ Bioprocesses TSV exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_bioprocesses.tsv) lines)"; \
 	else \
 		echo "  ✗ Bioprocesses TSV missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_screening_results.tsv" ]; then \
-		echo "  ✓ Screening results TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_screening_results.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_screening_results.tsv" ]; then \
+		echo "  ✓ Screening results TSV exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_screening_results.tsv) lines)"; \
 	else \
 		echo "  ✗ Screening results TSV missing"; \
 	fi
-	@if [ -f "data/txt/sheet/BER_CMM_Data_for_AI_protocols.tsv" ]; then \
-		echo "  ✓ Protocols TSV exists ($$(wc -l < data/txt/sheet/BER_CMM_Data_for_AI_protocols.tsv) lines)"; \
+	@if [ -f "data/txt/sheet/PFAS_Data_for_AI_protocols.tsv" ]; then \
+		echo "  ✓ Protocols TSV exists ($$(wc -l < data/txt/sheet/PFAS_Data_for_AI_protocols.tsv) lines)"; \
 	else \
 		echo "  ✗ Protocols TSV missing"; \
 	fi

@@ -1,7 +1,7 @@
-"""Search PubChem and CHEBI for lanthanide-relevant chemical compounds.
+"""Search PubChem and CHEBI for PFAS-relevant chemical compounds.
 
-This script searches chemical databases for compounds relevant to lanthanide
-bioprocessing and extends the chemicals table with structured data.
+This script searches chemical databases for compounds relevant to PFAS
+biodegradation and extends the chemicals table with structured data.
 """
 
 import argparse
@@ -15,7 +15,7 @@ import requests
 
 
 class ChemicalSearcher:
-    """Search chemical databases for lanthanide-relevant compounds."""
+    """Search chemical databases for PFAS-relevant compounds."""
 
     def __init__(self, source_label: str = "extend1"):
         """Initialize searcher with API endpoints.
@@ -28,60 +28,59 @@ class ChemicalSearcher:
         self.rate_limit_delay = 0.5  # seconds between API calls
         self.source_label = source_label
 
-        # Lanthanide elements
-        self.lanthanides = [
-            "Lanthanum", "Cerium", "Praseodymium", "Neodymium",
-            "Promethium", "Samarium", "Europium", "Gadolinium",
-            "Terbium", "Dysprosium", "Holmium", "Erbium",
-            "Thulium", "Ytterbium", "Lutetium"
+        # Major PFAS compounds
+        self.pfas_compounds = [
+            "PFOA", "PFOS", "PFNA", "PFDA", "PFHxS", "PFBS",
+            "GenX", "PFBA", "PFHxA", "PFDoA", "PFOSA",
+            "6:2 FTOH", "8:2 FTOH"
         ]
 
-        # Lanthanide-relevant search terms
+        # PFAS-relevant search terms
         self.search_terms = [
-            "lanthanophore",
-            "methylolanthanin",
-            "lanthanide chelator",
-            "lanthanide siderophore",
-            "europium complex",
-            "terbium complex",
+            "perfluorooctanoic acid",
+            "perfluorooctane sulfonic acid",
+            "perfluorinated compound",
+            "polyfluorinated compound",
+            "fluorinated surfactant",
+            "fluorotelomer alcohol",
+            "perfluoroalkyl acid",
+            "AFFF compound"
         ]
 
-    def search_pubchem_lanthanides(self) -> List[Dict]:
-        """Search PubChem for lanthanide cations.
+    def search_pubchem_pfas(self) -> List[Dict]:
+        """Search PubChem for PFAS compounds.
 
         Returns:
             List of compound dictionaries
         """
         compounds = []
 
-        for element in self.lanthanides:
-            # Search for trivalent cation (most common oxidation state)
-            query = f"{element}(III) cation"
-            print(f"  Searching PubChem for: {query}")
+        for compound_name in self.pfas_compounds:
+            print(f"  Searching PubChem for: {compound_name}")
 
             try:
                 # Search by name
-                url = f"{self.pubchem_base}/compound/name/{query}/JSON"
+                url = f"{self.pubchem_base}/compound/name/{compound_name}/JSON"
                 response = requests.get(url, timeout=30)
 
                 if response.status_code == 200:
                     data = response.json()
                     if 'PC_Compounds' in data:
                         pc_compound = data['PC_Compounds'][0]
-                        compound = self._parse_pubchem_compound(pc_compound, element)
+                        compound = self._parse_pubchem_compound(pc_compound, compound_name)
                         if compound:
                             compounds.append(compound)
 
                 time.sleep(self.rate_limit_delay)
 
             except Exception as e:
-                print(f"    Error searching {element}: {e}")
+                print(f"    Error searching {compound_name}: {e}")
                 continue
 
         return compounds
 
-    def search_pubchem_complexes(self) -> List[Dict]:
-        """Search PubChem for lanthanide complexes and chelators.
+    def search_pubchem_pfas_precursors(self) -> List[Dict]:
+        """Search PubChem for PFAS precursors and metabolites.
 
         Returns:
             List of compound dictionaries

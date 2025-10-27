@@ -1,4 +1,4 @@
-"""NCBI search functions for finding bacteria and archaea relevant to lanthanide bioprocessing."""
+"""NCBI search functions for finding bacteria and archaea relevant to PFAS biodegradation."""
 
 import time
 from typing import Dict, List, Optional, Set, Tuple
@@ -101,8 +101,8 @@ def search_ncbi_assembly(
         List of assembly records with metadata
         
     Examples:
-        >>> # Search for lanthanide-related bacteria
-        >>> results = search_ncbi_assembly("lanthanide bacteria", retmax=10)  # doctest: +SKIP
+        >>> # Search for PFAS-related bacteria
+        >>> results = search_ncbi_assembly("PFAS bacteria", retmax=10)  # doctest: +SKIP
         >>> len(results) > 0  # doctest: +SKIP
         True
     """
@@ -173,8 +173,8 @@ def search_ncbi_biosample(
         List of biosample records with metadata
         
     Examples:
-        >>> # Search for lanthanide-related biosamples
-        >>> results = search_ncbi_biosample("lanthanide", retmax=10)  # doctest: +SKIP
+        >>> # Search for PFAS-related biosamples
+        >>> results = search_ncbi_biosample("PFAS", retmax=10)  # doctest: +SKIP
         >>> len(results) >= 0  # doctest: +SKIP
         True
     """
@@ -252,54 +252,60 @@ def search_ncbi_biosample(
         return []
 
 
-def search_lanthanide_organisms() -> Tuple[List[Dict], List[Dict]]:
-    """Search for bacteria and archaea relevant to lanthanide bioprocessing.
-    
+def search_pfas_organisms() -> Tuple[List[Dict], List[Dict]]:
+    """Search for bacteria and archaea relevant to PFAS biodegradation.
+
     Returns:
         Tuple of (assembly_results, biosample_results)
     """
-    # Lanthanide-related search terms
-    lanthanide_terms = [
-        "lanthanide",
-        "cerium", "lanthanum", "praseodymium", "neodymium",
-        "europium", "gadolinium", "terbium", "dysprosium",
-        "rare earth element", "REE",
-        "methylotroph lanthanide", "XoxF", "MDH",
-        "methanol dehydrogenase lanthanide"
+    # PFAS-related search terms
+    pfas_terms = [
+        "PFAS", "perfluorinated", "polyfluorinated",
+        "PFOA", "PFOS", "AFFF",
+        "C-F bond", "defluorination", "dehalogenation",
+        "fluoride resistance", "fluoride exporter",
+        "dehalogenase", "defluorinase", "reductive dehalogenase",
+        "fluoroacetate dehalogenase", "haloalkane dehalogenase"
     ]
-    
-    # Organism groups known for lanthanide use
-    lanthanide_organisms = [
-        "Methylobacterium", "Methylorubrum", "Methylosinus",
-        "Paracoccus", "Pseudomonas", "Bradyrhizobium",
-        "Methylocystis", "Methylomicrobium"
+
+    # Organism groups relevant for PFAS degradation
+    pfas_organisms = [
+        "Pseudomonas",  # Known PFAS degraders
+        "Hyphomicrobium",  # C1 metabolism, potential PFAS degradation
+        "Acidimicrobium",  # Acid-tolerant extremophiles
+        "Dehalococcoides",  # Dechlorinating bacteria
+        "Desulfitobacterium",  # Reductive dehalogenase producers
+        "Rhodococcus",  # Hydrocarbon degraders
+        "Mycobacterium",  # Hydrocarbon degraders
+        "Geobacter",  # Anaerobic degradation
+        "Shewanella"  # Metal reduction, potential PFAS degradation
     ]
-    
+
     all_assemblies = []
     all_biosamples = []
-    
-    print("Searching for lanthanide-related organisms...")
-    
-    # Search with lanthanide terms
-    for term in lanthanide_terms[:3]:  # Limit to avoid rate limiting
+
+    print("Searching for PFAS-related organisms...")
+
+    # Search with PFAS terms
+    for term in pfas_terms[:5]:  # Limit to avoid rate limiting
         print(f"  Searching assemblies for: {term}")
         assemblies = search_ncbi_assembly(
-            f"{term} AND (bacteria[Filter] OR archaea[Filter])", 
+            f"{term} AND (bacteria[Filter] OR archaea[Filter])",
             retmax=50
         )
         all_assemblies.extend(assemblies)
         time.sleep(0.5)  # Rate limiting
-        
+
         print(f"  Searching biosamples for: {term}")
         biosamples = search_ncbi_biosample(term, retmax=50)
         all_biosamples.extend(biosamples)
         time.sleep(0.5)  # Rate limiting
-    
-    # Search known lanthanide-using organisms
-    for organism in lanthanide_organisms[:4]:  # Limit to avoid rate limiting
+
+    # Search known PFAS-degrading organisms
+    for organism in pfas_organisms[:6]:  # Limit to avoid rate limiting
         print(f"  Searching assemblies for organism: {organism}")
         assemblies = search_ncbi_assembly(
-            f"{organism} AND (bacteria[Filter] OR archaea[Filter])", 
+            f"{organism} AND (bacteria[Filter] OR archaea[Filter])",
             retmax=30
         )
         all_assemblies.extend(assemblies)
@@ -386,7 +392,7 @@ def create_extended_tables(
     existing_biosamples_path: str,
     output_dir: str = "data/txt/sheet"
 ) -> None:
-    """Create extended tables with lanthanide-relevant organisms.
+    """Create extended tables with PFAS-relevant organisms.
     
     Args:
         existing_genomes_path: Path to existing genomes TSV
@@ -401,8 +407,8 @@ def create_extended_tables(
     enhanced_genomes = enhance_existing_data(genomes_df, "genome")
     enhanced_biosamples = enhance_existing_data(biosamples_df, "biosample")
     
-    print("Searching for new lanthanide-related organisms...")
-    new_assemblies, new_biosamples = search_lanthanide_organisms()
+    print("Searching for new PFAS-related organisms...")
+    new_assemblies, new_biosamples = search_pfas_organisms()
     
     # Convert new assemblies to DataFrame matching existing structure
     if new_assemblies:

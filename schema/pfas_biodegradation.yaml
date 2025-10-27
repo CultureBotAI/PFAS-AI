@@ -1,0 +1,590 @@
+id: https://w3id.org/pfas-ai/pfas-biodegradation
+name: pfas-biodegradation
+title: PFAS Biodegradation Data Model
+description: >-
+  LinkML schema for modeling PFAS biodegradation research data including microorganisms,
+  genes, pathways, structures, assays, and experimental conditions.
+license: MIT
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  pfas: https://w3id.org/pfas-ai/pfas-biodegradation/
+  schema: http://schema.org/
+  NCBI: http://www.ncbi.nlm.nih.gov/gene/
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  SRA: https://www.ncbi.nlm.nih.gov/sra/
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  UniProtKB: http://purl.uniprot.org/uniprot/
+  GO: http://purl.obolibrary.org/obo/GO_
+  EC: https://www.enzyme-database.org/query.php?ec=
+  RHEA: https://www.rhea-db.org/rhea/
+  KEGG: http://www.kegg.jp/entry/
+  PDB: https://www.rcsb.org/structure/
+  DOI: https://doi.org/
+  PMID: http://www.ncbi.nlm.nih.gov/pubmed/
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  BAO: http://www.bioassayontology.org/bao#
+  PubChem: https://pubchem.ncbi.nlm.nih.gov/compound/
+  ChEMBL: https://www.ebi.ac.uk/chembl/compound_report_card/
+
+default_prefix: pfas
+default_range: string
+
+imports:
+  - linkml:types
+
+classes:
+
+  Database:
+    description: >-
+      Container for all PFAS biodegradation research data
+    tree_root: true
+    attributes:
+      genomes:
+        range: GenomeRecord
+        multivalued: true
+      biosamples:
+        range: BiosampleRecord
+        multivalued: true
+      pathways:
+        range: PathwayRecord
+        multivalued: true
+      genes_proteins:
+        range: GeneProteinRecord
+        multivalued: true
+      structures:
+        range: MacromolecularStructureRecord
+        multivalued: true
+      publications:
+        range: PublicationRecord
+        multivalued: true
+      datasets:
+        range: DatasetRecord
+        multivalued: true
+      chemicals:
+        range: ChemicalCompoundRecord
+        multivalued: true
+      assays:
+        range: AssayMeasurementRecord
+        multivalued: true
+      bioprocesses:
+        range: BioprocessConditionsRecord
+        multivalued: true
+      screening_results:
+        range: ScreeningResultRecord
+        multivalued: true
+      protocols:
+        range: ProtocolRecord
+        multivalued: true
+
+  GenomeRecord:
+    description: >-
+      Bacterial or archaeal genome with taxonomy and annotation information
+    attributes:
+      scientific_name:
+        description: Scientific name of the organism
+        range: string
+        required: true
+        identifier: true
+      ncbi_taxon_id:
+        description: NCBI Taxonomy identifier
+        range: string
+        pattern: "^\\d+$"
+      genome_identifier:
+        description: Genome assembly accession (GenBank, RefSeq, IMG)
+        range: string
+        pattern: "^(GCF_|GCA_|\\d+).*"
+      annotation_download_url:
+        description: Direct download URL for genome annotation files
+        range: uri
+      source:
+        description: Data provenance (extend1, extend2, DOI, etc.)
+        range: string
+
+  BiosampleRecord:
+    description: >-
+      Environmental or cultured biological sample
+    attributes:
+      sample_id:
+        description: BioSample accession number
+        range: string
+        identifier: true
+        pattern: "^SAMN\\d+$"
+      sample_name:
+        description: Sample name or description
+        range: string
+      organism:
+        description: Organism name
+        range: string
+      download_url:
+        description: URL to access sample metadata or sequence data
+        range: uri
+      source:
+        description: Data provenance
+        range: string
+
+  PathwayRecord:
+    description: >-
+      Metabolic pathway relevant to PFAS biodegradation
+    attributes:
+      pathway_id:
+        description: Pathway identifier (KEGG, MetaCyc)
+        range: string
+        identifier: true
+      pathway_name:
+        description: Pathway name or description
+        range: string
+        required: true
+      database:
+        description: Source database (KEGG, MetaCyc)
+        range: pathway_database_enum
+      url:
+        description: URL to pathway in source database
+        range: uri
+      genes:
+        description: Gene names involved in pathway
+        range: string
+        multivalued: true
+      genes_kegg:
+        description: KEGG K numbers for pathway genes
+        range: string
+        multivalued: true
+        pattern: "^K\\d{5}$"
+      source:
+        description: Data provenance
+        range: string
+
+  GeneProteinRecord:
+    description: >-
+      Gene or protein with functional annotations
+    attributes:
+      gene_protein_id:
+        description: Gene/protein identifier (UniProt, GenBank, custom)
+        range: string
+        identifier: true
+      organism:
+        description: Source organism
+        range: string
+      annotation:
+        description: Functional annotation or protein name
+        range: string
+      ec_number:
+        description: Enzyme Commission number
+        range: string
+        pattern: "^\\d+\\.\\d+\\.\\d+\\.\\d+$|^\\d+\\.\\d+\\.\\d+\\.-$"
+      go_terms:
+        description: Gene Ontology terms
+        range: string
+        multivalued: true
+        pattern: "^GO:\\d{7}$"
+      chebi_terms:
+        description: CHEBI terms for substrates/products
+        range: string
+        multivalued: true
+        pattern: "^CHEBI:\\d+$"
+      sequence_url:
+        description: URL to retrieve sequence
+        range: uri
+      source:
+        description: Data provenance
+        range: string
+
+  MacromolecularStructureRecord:
+    description: >-
+      3D structure of protein or complex
+    attributes:
+      pdb_id:
+        description: PDB identifier
+        range: string
+        identifier: true
+        pattern: "^[0-9][A-Za-z0-9]{3}$"
+      structure_name:
+        description: Structure title or protein name
+        range: string
+      components:
+        description: Molecular components
+        range: string
+      method:
+        description: Experimental method
+        range: structure_method_enum
+      resolution:
+        description: Resolution in Angstroms
+        range: float
+      organism:
+        description: Source organism
+        range: string
+      structure_url:
+        description: URL to structure file
+        range: uri
+      source:
+        description: Data provenance
+        range: string
+
+  PublicationRecord:
+    description: >-
+      Scientific publication
+    attributes:
+      url:
+        description: Publication URL (DOI, PMID, etc.)
+        range: uri
+        identifier: true
+      title:
+        description: Publication title
+        range: string
+      journal:
+        description: Journal name
+        range: string
+      year:
+        description: Publication year
+        range: integer
+      authors:
+        description: Author list
+        range: string
+      pmid:
+        description: PubMed ID
+        range: string
+        pattern: "^\\d+$"
+      doi:
+        description: Digital Object Identifier
+        range: string
+        pattern: "^10\\.\\d+/.*$"
+      source:
+        description: Data provenance
+        range: string
+
+  DatasetRecord:
+    description: >-
+      Research dataset from public repositories
+    attributes:
+      dataset_name:
+        description: Dataset name or title
+        range: string
+        identifier: true
+      data_type:
+        description: Type of data
+        range: dataset_type_enum
+      url:
+        description: Dataset access URL
+        range: uri
+      accession:
+        description: Repository accession number
+        range: string
+      license:
+        description: Data license
+        range: string
+      source:
+        description: Data provenance
+        range: string
+
+  ChemicalCompoundRecord:
+    description: >-
+      PFAS compounds and related chemicals
+    attributes:
+      chemical_id:
+        description: Chemical identifier (CHEBI, PubChem)
+        range: string
+        identifier: true
+      chemical_name:
+        description: Chemical name
+        range: string
+        required: true
+      compound_type:
+        description: Type of compound
+        range: compound_type_enum
+      molecular_formula:
+        description: Molecular formula
+        range: string
+      molecular_weight:
+        description: Molecular weight (g/mol)
+        range: float
+      role_in_bioprocess:
+        description: Role in PFAS biodegradation
+        range: string
+      chebi_id:
+        description: CHEBI identifier
+        range: string
+        pattern: "^CHEBI:\\d+$"
+      pubchem_id:
+        description: PubChem CID
+        range: string
+        pattern: "^\\d+$"
+      chembl_id:
+        description: ChEMBL identifier
+        range: string
+      properties:
+        description: Chemical properties (JSON)
+        range: string
+      download_url:
+        description: Structure file URL
+        range: uri
+      source:
+        description: Data provenance
+        range: string
+
+  AssayMeasurementRecord:
+    description: >-
+      Analytical assay or measurement method
+    attributes:
+      assay_id:
+        description: Assay identifier
+        range: string
+        identifier: true
+      assay_name:
+        description: Assay name
+        range: string
+        required: true
+      assay_type:
+        description: Type of assay
+        range: assay_type_enum
+      target_analytes:
+        description: Analytes being measured
+        range: string
+      detection_method:
+        description: Detection method
+        range: string
+      detection_limit:
+        description: Detection limit
+        range: string
+      dynamic_range:
+        description: Dynamic range
+        range: string
+      protocol_reference:
+        description: Protocol reference
+        range: string
+      equipment_required:
+        description: Required equipment
+        range: string
+      sample_preparation:
+        description: Sample preparation steps
+        range: string
+      data_output_format:
+        description: Output data format
+        range: string
+      download_url:
+        description: Protocol download URL
+        range: uri
+      source:
+        description: Data provenance
+        range: string
+
+  BioprocessConditionsRecord:
+    description: >-
+      Experimental conditions for PFAS biodegradation
+    attributes:
+      process_id:
+        description: Process identifier
+        range: string
+        identifier: true
+      process_name:
+        description: Process name
+        range: string
+        required: true
+      process_type:
+        description: Type of bioprocess
+        range: process_type_enum
+      strain_used:
+        description: Microbial strain(s)
+        range: string
+      ph:
+        description: pH
+        range: float
+      temperature:
+        description: Temperature (°C)
+        range: float
+      pfas_concentration:
+        description: PFAS concentration
+        range: string
+      duration:
+        description: Process duration
+        range: string
+      oxygen_condition:
+        description: Aerobic/anaerobic
+        range: string
+      medium_composition:
+        description: Growth medium
+        range: string
+      degradation_percentage:
+        description: PFAS degradation (%)
+        range: float
+      fluoride_release:
+        description: Fluoride release (mg/L)
+        range: float
+      source:
+        description: Data provenance
+        range: string
+
+  ScreeningResultRecord:
+    description: >-
+      High-throughput screening result
+    attributes:
+      experiment_id:
+        description: Experiment identifier
+        range: string
+        identifier: true
+      plate_coordinates:
+        description: Well position
+        range: string
+      strain_barcode:
+        description: Strain barcode
+        range: string
+      screening_assay:
+        description: Assay used
+        range: string
+      measurement_values:
+        description: Measured values (JSON)
+        range: string
+      hit_classification:
+        description: Hit classification
+        range: hit_classification_enum
+      source:
+        description: Data provenance
+        range: string
+
+  ProtocolRecord:
+    description: >-
+      Experimental protocol or SOP
+    attributes:
+      protocol_id:
+        description: Protocol identifier
+        range: string
+        identifier: true
+      protocol_name:
+        description: Protocol name
+        range: string
+        required: true
+      protocol_type:
+        description: Type of protocol
+        range: protocol_type_enum
+      protocol_version:
+        description: Protocol version
+        range: string
+      protocol_doi:
+        description: Protocol DOI
+        range: string
+      dbtl_iteration:
+        description: Design-Build-Test-Learn iteration
+        range: integer
+      source:
+        description: Data provenance
+        range: string
+
+enums:
+
+  pathway_database_enum:
+    permissible_values:
+      KEGG:
+        description: Kyoto Encyclopedia of Genes and Genomes
+      MetaCyc:
+        description: Metabolic Pathway Database
+      BioCyc:
+        description: Collection of Pathway/Genome Databases
+      RHEA:
+        description: Reaction database
+
+  structure_method_enum:
+    permissible_values:
+      X-RAY DIFFRACTION:
+        description: X-ray crystallography
+      SOLUTION NMR:
+        description: Nuclear magnetic resonance in solution
+      ELECTRON MICROSCOPY:
+        description: Cryo-EM or electron microscopy
+      SOLID-STATE NMR:
+        description: Solid-state NMR
+      THEORETICAL MODEL:
+        description: Computational model (AlphaFold, etc.)
+
+  dataset_type_enum:
+    permissible_values:
+      genomics:
+        description: Genomic sequencing data
+      transcriptomics:
+        description: RNA-seq or microarray data
+      proteomics:
+        description: Protein expression data
+      metabolomics:
+        description: Metabolite profiling data
+      metagenomics:
+        description: Environmental metagenome data
+      other:
+        description: Other data types
+
+  compound_type_enum:
+    permissible_values:
+      perfluorinated:
+        description: Fully fluorinated PFAS (PFOA, PFOS)
+      polyfluorinated:
+        description: Partially fluorinated PFAS (precursors)
+      fluoride:
+        description: Fluoride ion
+      metabolite:
+        description: PFAS degradation metabolite
+      degradation_product:
+        description: Degradation product
+      fluorotelomer:
+        description: Fluorotelomer alcohol
+      precursor:
+        description: PFAS precursor compound
+
+  assay_type_enum:
+    permissible_values:
+      LC-MS/MS:
+        description: Liquid chromatography tandem mass spectrometry
+      fluoride electrode:
+        description: Ion-selective electrode
+      ion chromatography:
+        description: Ion chromatography
+      combustion IC:
+        description: Combustion ion chromatography (TOF)
+      FACS:
+        description: Fluorescence-activated cell sorting
+      growth assay:
+        description: Microbial growth assay
+      ICP-MS:
+        description: Inductively coupled plasma mass spectrometry
+      GC-MS:
+        description: Gas chromatography mass spectrometry
+
+  process_type_enum:
+    permissible_values:
+      aerobic_degradation:
+        description: Aerobic PFAS biodegradation
+      anaerobic_degradation:
+        description: Anaerobic PFAS biodegradation
+      sequential_anaerobic_aerobic:
+        description: Sequential treatment
+      bioaugmentation:
+        description: Bioaugmentation with degraders
+      consortia_based:
+        description: Microbial consortia degradation
+      bioreactor:
+        description: Bioreactor system
+
+  hit_classification_enum:
+    permissible_values:
+      positive:
+        description: Positive hit
+      negative:
+        description: Negative hit
+      borderline:
+        description: Borderline result
+      false_positive:
+        description: False positive
+      validated:
+        description: Validated hit
+
+  protocol_type_enum:
+    permissible_values:
+      assay_protocol:
+        description: Analytical assay protocol
+      cultivation_protocol:
+        description: Microbial cultivation protocol
+      extraction_protocol:
+        description: Compound extraction protocol
+      transformation_protocol:
+        description: Genetic transformation protocol
+      screening_protocol:
+        description: High-throughput screening protocol
+      degradation_protocol:
+        description: PFAS degradation protocol

@@ -239,46 +239,6 @@ wheels = [
 ]
 
 [[package]]
-name = "cmm-ai"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "biopython" },
-    { name = "linkml" },
-    { name = "linkml-runtime" },
-    { name = "openpyxl" },
-    { name = "pandas" },
-    { name = "pypdf2" },
-    { name = "python-docx" },
-    { name = "requests" },
-]
-
-[package.optional-dependencies]
-dev = [
-    { name = "mkdocs" },
-    { name = "pytest" },
-    { name = "pytest-cov" },
-    { name = "ruff" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "biopython", specifier = ">=1.80" },
-    { name = "linkml", specifier = ">=1.7.0" },
-    { name = "linkml-runtime", specifier = ">=1.7.0" },
-    { name = "mkdocs", marker = "extra == 'dev'", specifier = ">=1.5.0" },
-    { name = "openpyxl", specifier = ">=3.0.0" },
-    { name = "pandas", specifier = ">=2.0.0" },
-    { name = "pypdf2", specifier = ">=3.0.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0.0" },
-    { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=4.0.0" },
-    { name = "python-docx", specifier = ">=0.8.0" },
-    { name = "requests", specifier = ">=2.28.0" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.1.0" },
-]
-provides-extras = ["dev"]
-
-[[package]]
 name = "colorama"
 version = "0.4.6"
 source = { registry = "https://pypi.org/simple" }
@@ -613,7 +573,7 @@ name = "importlib-metadata"
 version = "8.7.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "zipp", marker = "python_full_version < '3.11'" },
+    { name = "zipp", marker = "python_full_version < '3.10'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/76/66/650a33bd90f786193e4de4b3ad86ea60b53c89b669a5c7be931fac31cdb0/importlib_metadata-8.7.0.tar.gz", hash = "sha256:d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000", size = 56641 }
 wheels = [
@@ -1376,6 +1336,46 @@ sdist = { url = "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb
 wheels = [
     { url = "https://files.pythonhosted.org/packages/cc/20/ff623b09d963f88bfde16306a54e12ee5ea43e9b597108672ff3a408aad6/pathspec-0.12.1-py3-none-any.whl", hash = "sha256:a0d503e138a4c123b27490a4f7beda6a01c6f288df0e4a8b79c7eb0dc7b4cc08", size = 31191 },
 ]
+
+[[package]]
+name = "pfas-ai"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "biopython" },
+    { name = "linkml" },
+    { name = "linkml-runtime" },
+    { name = "openpyxl" },
+    { name = "pandas" },
+    { name = "pypdf2" },
+    { name = "python-docx" },
+    { name = "requests" },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "mkdocs" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "ruff" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "biopython", specifier = ">=1.80" },
+    { name = "linkml", specifier = ">=1.7.0" },
+    { name = "linkml-runtime", specifier = ">=1.7.0" },
+    { name = "mkdocs", marker = "extra == 'dev'", specifier = ">=1.5.0" },
+    { name = "openpyxl", specifier = ">=3.0.0" },
+    { name = "pandas", specifier = ">=2.0.0" },
+    { name = "pypdf2", specifier = ">=3.0.0" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0.0" },
+    { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=4.0.0" },
+    { name = "python-docx", specifier = ">=0.8.0" },
+    { name = "requests", specifier = ">=2.28.0" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.1.0" },
+]
+provides-extras = ["dev"]
 
 [[package]]
 name = "platformdirs"

@@ -1,4 +1,4 @@
-"""Publication search functions for extending lanthanide bioprocessing literature."""
+"""Publication search functions for extending PFAS biodegradation literature."""
 
 import time
 from typing import Dict, List, Optional, Set, Tuple
@@ -10,20 +10,23 @@ from Bio import Entrez
 
 
 def search_pubmed_publications() -> List[Dict]:
-    """Search PubMed for lanthanide bioprocessing publications.
-    
+    """Search PubMed for PFAS biodegradation publications.
+
     Returns:
         List of publication records from PubMed
     """
     publications = []
-    
-    # Key search terms for lanthanide bioprocessing
+
+    # Key search terms for PFAS biodegradation
     search_terms = [
-        "lanthanide methanol dehydrogenase",
-        "XoxF methylotroph",
-        "rare earth element bacteria", 
-        "cerium methylobacterium",
-        "lanthanide cofactor enzyme"
+        "PFAS biodegradation",
+        "PFOA PFOS degradation",
+        "perfluorinated compound biodegradation",
+        "dehalogenase PFAS",
+        "fluoride resistance bacteria",
+        "C-F bond cleavage microbial",
+        "reductive dehalogenation PFAS",
+        "AFFF contamination bioremediation"
     ]
     
     try:

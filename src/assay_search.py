@@ -1,4 +1,4 @@
-"""Search for analytical assay protocols relevant to lanthanide bioprocessing.
+"""Search for analytical assay protocols relevant to PFAS biodegradation.
 
 This script searches protocols.io and curated sources for assay methods
 and extends the assays table with structured protocol data.
@@ -13,7 +13,7 @@ import pandas as pd
 
 
 class AssaySearcher:
-    """Search for lanthanide assay protocols."""
+    """Search for PFAS assay protocols."""
 
     def __init__(self, source_label: str = "extend1"):
         """Initialize searcher with curated assay database.
@@ -25,108 +25,93 @@ class AssaySearcher:
         # Curated assays from literature and protocols
         self.curated_assays = [
             {
-                'assay_id': 'OBI:TRL-002',
-                'assay_name': 'Microplate-based TRL Assay for Lanthanide Screening',
-                'assay_type': 'time-resolved luminescence (TRL)',
-                'target_analytes': 'Eu3+, Tb3+, Sm3+, Dy3+',
-                'detection_method': 'Time-gated luminescence with 100 μs delay',
-                'detection_limit': '0.05 nM',
-                'dynamic_range': '0.05 nM - 50 μM',
-                'protocol_reference': 'Protocol_TRL_HTP_v1',
-                'equipment_required': 'Tecan Spark multimode plate reader, black 384-well plates',
-                'sample_preparation': 'Cell lysis with Triton X-100, 1:10 dilution in TRL buffer (pH 7.4)',
-                'data_output_format': 'Luminescence counts (CPS) and calculated concentrations',
-                'Download URL': 'https://www.protocols.io/view/lanthanide-trl-htp-screening',
+                'assay_id': 'EPA-533',
+                'assay_name': 'LC-MS/MS Analysis of PFAS in Drinking Water (EPA Method 533)',
+                'assay_type': 'LC-MS/MS',
+                'target_analytes': 'PFOA, PFOS, PFNA, PFHxS, PFBS, GenX, 25+ PFAS compounds',
+                'detection_method': 'Triple quadrupole LC-MS/MS with ESI negative mode',
+                'detection_limit': '0.5-4 ng/L (depending on compound)',
+                'dynamic_range': '2-80 ng/L',
+                'protocol_reference': 'EPA Method 533',
+                'equipment_required': 'LC-MS/MS (triple quad), C18 column, isotope-labeled internal standards',
+                'sample_preparation': 'Solid phase extraction (WAX cartridge), methanol elution',
+                'data_output_format': 'Concentration (ng/L) with MRM transitions',
+                'Download URL': 'https://www.epa.gov/dwanalyticalmethods/method-533',
                 'source': self.source_label
             },
             {
-                'assay_id': 'OBI:ICP-002',
-                'assay_name': 'Multi-element REE Analysis by ICP-MS',
-                'assay_type': 'ICP-MS',
-                'target_analytes': 'La, Ce, Pr, Nd, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu',
-                'detection_method': 'Quadrupole ICP-MS with collision/reaction cell',
-                'detection_limit': '0.01 ppb',
-                'dynamic_range': '0.01 ppb - 1 ppm',
-                'protocol_reference': 'EPA Method 200.8',
-                'equipment_required': 'Agilent 7900 ICP-MS, microwave digestion system',
-                'sample_preparation': 'Microwave-assisted acid digestion (HNO3 + H2O2), dilution to 2% HNO3',
-                'data_output_format': 'Elemental concentrations (μg/L) with isotope ratios',
-                'Download URL': 'https://www.epa.gov/esam/method-2008-determination-trace-elements-waters-and-wastes-inductively-coupled-plasma-mass',
+                'assay_id': 'OBI:Fluoride-001',
+                'assay_name': 'Ion-Selective Electrode Fluoride Measurement',
+                'assay_type': 'fluoride electrode',
+                'target_analytes': 'Free fluoride ion (F-)',
+                'detection_method': 'Potentiometry with fluoride ion-selective electrode',
+                'detection_limit': '0.02 mg/L (0.02 ppm)',
+                'dynamic_range': '0.02 mg/L - 19,000 mg/L',
+                'protocol_reference': 'EPA Method 340.2, ASTM D1179',
+                'equipment_required': 'Fluoride ISE, pH/mV meter, TISAB II buffer',
+                'sample_preparation': 'Mix with TISAB II (1:10 v/v) to adjust pH and ionic strength',
+                'data_output_format': 'Fluoride concentration (mg/L or ppm)',
+                'Download URL': 'https://www.epa.gov/esam/epa-method-3402-fluoride-potentiometric-ion-selective-electrode',
                 'source': self.source_label
             },
             {
-                'assay_id': 'OBI:FACS-002',
-                'assay_name': 'Lanthanide Binding Cell Enrichment via FACS',
+                'assay_id': 'OBI:IC-001',
+                'assay_name': 'Ion Chromatography for Fluoride and Short-Chain PFAS',
+                'assay_type': 'ion chromatography',
+                'target_analytes': 'Fluoride, TFA, PFPrA, PFBA (C2-C4 PFAS)',
+                'detection_method': 'Suppressed conductivity detection',
+                'detection_limit': '0.5 μg/L (fluoride), 1-5 μg/L (short-chain PFAS)',
+                'dynamic_range': '1 μg/L - 100 mg/L',
+                'protocol_reference': 'EPA Method 300.0, modified for PFAS',
+                'equipment_required': 'Ion chromatograph, anion exchange column, carbonate/bicarbonate eluent',
+                'sample_preparation': 'Filtration (0.2 μm), dilution if needed',
+                'data_output_format': 'Anion concentrations (μg/L)',
+                'Download URL': 'https://www.epa.gov/esam/epa-method-3000-determination-inorganic-anions-drinking-water-ion-chromatography',
+                'source': self.source_label
+            },
+            {
+                'assay_id': 'OBI:TOF-001',
+                'assay_name': 'Total Organic Fluorine (TOF) by Combustion IC',
+                'assay_type': 'combustion IC',
+                'target_analytes': 'Total organic fluorine (sum of all organofluorines)',
+                'detection_method': 'Combustion at 1000°C, fluoride capture, IC quantification',
+                'detection_limit': '10-50 μg F/L',
+                'dynamic_range': '50 μg/L - 10 mg/L',
+                'protocol_reference': 'ISO 9562 modified for organofluorines',
+                'equipment_required': 'Combustion IC system, quartz combustion tube, oxygen supply',
+                'sample_preparation': 'Sample injection into combustion module, fluoride trapping solution',
+                'data_output_format': 'Total organic fluorine (μg F/L)',
+                'Download URL': 'https://www.protocols.io/view/total-organic-fluorine-cic',
+                'source': self.source_label
+            },
+            {
+                'assay_id': 'OBI:FACS-003',
+                'assay_name': 'PFAS-Degrading Cell Sorting via Fluoride-Responsive Reporter',
                 'assay_type': 'FACS',
-                'target_analytes': 'Lanthanide-binding cells (Eu3+ fluorescence)',
-                'detection_method': '355 nm excitation, 615 nm emission (Eu3+ 5D0→7F2 transition)',
-                'detection_limit': 'Single cell with >10^4 Eu3+ ions bound',
+                'target_analytes': 'Cells with active fluoride export (PFAS degradation indicator)',
+                'detection_method': 'GFP reporter under fluoride-responsive riboswitch promoter',
+                'detection_limit': 'Single cell detection',
                 'dynamic_range': '10^3 - 10^7 cells',
-                'protocol_reference': 'Protocol_FACS_REE_v2',
-                'equipment_required': 'BD FACSAria Fusion, 355 nm UV laser, custom 610/20 nm filter',
-                'sample_preparation': 'Eu3+ incubation (100 μM, 1h), PBS wash (3x), resuspension in sort buffer',
-                'data_output_format': 'Sorted cell populations, FCS files, enrichment fold-change',
-                'Download URL': 'https://www.protocols.io/view/facs-ree-enrichment-v2',
+                'protocol_reference': 'Protocol_FACS_Fluoride_v1',
+                'equipment_required': 'BD FACSAria, 488 nm laser, 530/30 nm emission filter',
+                'sample_preparation': 'PFAS incubation (48h), PBS wash, resuspension in sort buffer',
+                'data_output_format': 'Sorted populations, GFP fluorescence intensity, enrichment ratios',
+                'Download URL': 'https://www.protocols.io/view/facs-fluoride-responsive-sorting',
                 'source': self.source_label
             },
             {
-                'assay_id': 'OBI:Fluor-001',
-                'assay_name': 'Steady-State Fluorescence Spectroscopy for Lanthanide Complexation',
-                'assay_type': 'fluorescence spectroscopy',
-                'target_analytes': 'Eu3+, Tb3+ complexes with organic ligands',
-                'detection_method': 'Excitation at ligand absorption wavelength, emission at lanthanide f-f transitions',
-                'detection_limit': '1 nM',
-                'dynamic_range': '1 nM - 100 μM',
-                'protocol_reference': None,
-                'equipment_required': 'Fluorescence spectrometer (Horiba FluoroMax-4), quartz cuvettes',
-                'sample_preparation': 'Mix lanthanide (10 μM) with ligand (0-100 μM) in buffered solution',
-                'data_output_format': 'Emission spectra (300-700 nm), binding constants from titration',
-                'Download URL': None,
-                'source': self.source_label
-            },
-            {
-                'assay_id': 'OBI:UV-001',
-                'assay_name': 'UV-Vis Absorption Spectroscopy for Lanthanide Complex Formation',
-                'assay_type': 'UV-visible spectroscopy',
-                'target_analytes': 'Lanthanide-ligand complexes',
-                'detection_method': 'Absorbance at ligand peak wavelength (250-400 nm)',
-                'detection_limit': '100 nM',
-                'dynamic_range': '100 nM - 1 mM',
-                'protocol_reference': None,
-                'equipment_required': 'UV-Vis spectrophotometer, quartz cuvettes (1 cm path length)',
-                'sample_preparation': 'Prepare lanthanide-ligand mixtures in transparent buffer (pH 7.0)',
-                'data_output_format': 'Absorption spectra (200-800 nm), Job plots for stoichiometry',
-                'Download URL': None,
-                'source': self.source_label
-            },
-            {
-                'assay_id': 'OBI:XRF-001',
-                'assay_name': 'X-ray Fluorescence for Solid-Phase REE Quantification',
-                'assay_type': 'X-ray fluorescence (XRF)',
-                'target_analytes': 'All lanthanides in solid matrices',
-                'detection_method': 'Energy-dispersive X-ray fluorescence (ED-XRF)',
-                'detection_limit': '10 ppm',
-                'dynamic_range': '10 ppm - 100%',
-                'protocol_reference': None,
-                'equipment_required': 'Handheld XRF analyzer or benchtop ED-XRF',
-                'sample_preparation': 'Dry biomass, pressed pellets, or direct solid sampling',
-                'data_output_format': 'Elemental composition (wt%), REE oxide concentrations',
-                'Download URL': None,
-                'source': self.source_label
-            },
-            {
-                'assay_id': 'OBI:AA-001',
-                'assay_name': 'Atomic Absorption Spectroscopy for Lanthanide Quantification',
-                'assay_type': 'atomic absorption spectroscopy (AAS)',
-                'target_analytes': 'Individual lanthanides (one element at a time)',
-                'detection_method': 'Flame or graphite furnace atomic absorption',
-                'detection_limit': '1 ppb (GFAAS) or 10 ppb (FAAS)',
-                'dynamic_range': '1 ppb - 100 ppm',
-                'protocol_reference': 'EPA Method 7000B',
-                'equipment_required': 'AA spectrometer with lanthanide hollow cathode lamps',
-                'sample_preparation': 'Acid digestion, dilution to working range, matrix matching',
-                'data_output_format': 'Absorbance values, calculated concentrations (mg/L)',
-                'Download URL': 'https://www.epa.gov/hw-sw846/sw-846-test-method-7000b-flame-atomic-absorption-spectrophotometry',
+                'assay_id': 'OBI:Growth-001',
+                'assay_name': 'PFAS-Dependent Growth Assay (96-Well Microplate)',
+                'assay_type': 'growth assay',
+                'target_analytes': 'Microbial growth with PFAS as sole carbon/energy source',
+                'detection_method': 'OD600 kinetic reading, CFU enumeration',
+                'detection_limit': 'OD600 >0.05 above background',
+                'dynamic_range': 'OD600 0.01 - 2.0',
+                'protocol_reference': 'Protocol_PFAS_Growth_HTP',
+                'equipment_required': 'Microplate reader, 96-well plates, anaerobic chamber (if needed)',
+                'sample_preparation': 'Minimal media + PFAS (10-100 mg/L), cell inoculation (OD600=0.01)',
+                'data_output_format': 'Growth curves, doubling time, final OD600, fluoride release',
+                'Download URL': 'https://www.protocols.io/view/pfas-growth-assay-htp',
                 'source': self.source_label
             }
         ]
@@ -140,7 +125,7 @@ class AssaySearcher:
         return self.curated_assays
 
     def search_protocols_io(self, api_key: Optional[str] = None) -> List[Dict]:
-        """Search protocols.io for lanthanide assay protocols.
+        """Search protocols.io for PFAS assay protocols.
 
         Note: This requires a protocols.io API key. For now, returns empty list
         as placeholder for future implementation.
@@ -153,7 +138,7 @@ class AssaySearcher:
         """
         # Placeholder for protocols.io API integration
         # Would require API key and implementation of:
-        # GET https://www.protocols.io/api/v3/protocols?key={key}&filter=lanthanide
+        # GET https://www.protocols.io/api/v3/protocols?key={key}&filter=PFAS
 
         print("  protocols.io API integration not yet implemented")
         print("  Using curated assay database instead")
@@ -176,7 +161,7 @@ def extend_assays_table(input_tsv: Path, output_tsv: Path, source_label: str = "
         df = pd.DataFrame()
         existing_ids = set()
 
-    print("Searching for lanthanide assay protocols...")
+    print("Searching for PFAS assay protocols...")
     print(f"Source label: {source_label}")
     print("")
 
@@ -220,18 +205,18 @@ def extend_assays_table(input_tsv: Path, output_tsv: Path, source_label: str = "
 def main():
     """Main entry point."""
     parser = argparse.ArgumentParser(
-        description="Search for lanthanide assay protocols"
+        description="Search for PFAS assay protocols"
     )
     parser.add_argument(
         '--input',
         type=Path,
-        default=Path('data/txt/sheet/BER_CMM_Data_for_AI_assays.tsv'),
+        default=Path('data/txt/sheet/PFAS_Data_for_AI_assays.tsv'),
         help='Input assays TSV file'
     )
     parser.add_argument(
         '--output',
         type=Path,
-        default=Path('data/txt/sheet/BER_CMM_Data_for_AI_assays_extended.tsv'),
+        default=Path('data/txt/sheet/PFAS_Data_for_AI_assays_extended.tsv'),
         help='Output extended TSV file'
     )
     parser.add_argument(

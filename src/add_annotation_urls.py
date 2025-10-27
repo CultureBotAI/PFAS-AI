@@ -47,11 +47,11 @@ def add_annotation_urls_to_table(input_file: str, output_file: str = None) -> No
 def main():
     """Main function to update the extended genomes table."""
     
-    input_file = "data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes_extended.tsv"
-    
+    input_file = "data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes_extended.tsv"
+
     if not Path(input_file).exists():
         print(f"Error: File not found: {input_file}")
-        print("Please run the extend_lanthanide_data.py script first.")
+        print("Please run the extend_pfas_data.py script first.")
         return 1
     
     print("Adding annotation download URLs to extended genomes table...")

@@ -1,56 +1,62 @@
-# CMM-AI: Lanthanide Bioprocessing Data Pipeline
+# PFAS-AI: Machine Learning-Enabled PFAS Biodegradation Pipeline
 
 ## 🔬 Project Overview
 
-This project develops an automated data pipeline for **lanthanide bioprocessing research**, focusing on rare earth element-dependent biological processes in microorganisms. The pipeline integrates multiple biological databases to create comprehensive research datasets from small seed collections.
+This project develops an automated, ML-enabled data pipeline for **PFAS biodegradation research**, focusing on the identification and characterization of microorganisms capable of degrading per- and polyfluoroalkyl substances (PFAS). The pipeline integrates multiple biological databases and machine learning approaches to design optimal microbial consortia for PFAS remediation.
 
-### Scientific Focus: Lanthanide-Dependent Biology
+### Scientific Focus: PFAS Biodegradation
 
-Lanthanides (rare earth elements) play crucial roles in microbial metabolism, particularly in:
-- **XoxF methanol dehydrogenase** systems (lanthanide-dependent enzymes)
-- **Methylotrophic bacteria** (Methylobacterium, Methylorubrum, Paracoccus)
-- **Environmental metal cycling** and biogeochemistry
-- **Siderophore/lanthanophore** transport mechanisms
-- **PQQ-dependent enzyme** complexes
+PFAS ("forever chemicals") are persistent environmental contaminants characterized by strong C-F bonds that resist degradation. This project addresses PFAS contamination through:
 
-### Current Status: First Draft Data (v0.1)
+- **C-F Bond Cleavage**: Identifying microbes with dehalogenases and defluorinases
+- **Fluoride Resistance**: Characterizing fluoride export systems and resistance mechanisms
+- **Hydrocarbon Degradation**: Finding microbes that can cleave PFAS carbon backbones
+- **Microbial Consortia Design**: Using ML to design optimized 3-5 member consortia
+- **Environmental Context**: AFFF-contaminated sites, groundwater, and wastewater systems
 
-⚠️ **Important**: The current datasets represent a **first draft and initial round** of data collection. This is an evolving research pipeline with:
-- **Proof-of-concept data extension** from seed datasets
-- **Initial database integration** and URL generation
-- **Baseline automation** for reproducible workflows
-- **Foundation for iterative improvement** and refinement
+### Research Objectives
 
-Future versions will include expanded search terms, refined filtering criteria, manual curation, and domain expert validation.
+1. **ML-Powered Database**: Build a semantically-aware database using the KG-Microbe platform to identify putative PFAS biodegradation genes, pathways, taxa, environments, and microbial communities
+2. **Intelligent Consortia Design**: Use graph learning and LLMs to design optimized microbial consortia (10-15 total, down-select to 5 best)
+3. **Experimental Validation**: Test consortia for degradation of both perfluorinated (PFOA, PFOS) and polyfluorinated compounds
+
+### Current Status: Initial Development
+
+⚠️ **Important**: The current datasets represent **initial seed data** for pipeline development. This is transitioning from CMM-AI (lanthanide bioprocessing) to PFAS-AI with:
+- **Initial seed data**: 6 microorganisms, 23 publications
+- **Pipeline architecture**: Proven data extension workflows
+- **ML integration**: KG-Microbe platform for intelligent feature extraction
+- **Foundation for growth**: Automated extension to 100+ organisms and comprehensive datasets
 
 ## 🌟 Technical Features
 
-- **📊 Automated Data Extension**: Transform small datasets (2-17 rows) into comprehensive research databases (15-132 rows)
+- **📊 Automated Data Extension**: Transform small seed datasets into comprehensive research databases
 - **🔗 Download URL Generation**: Direct links to NCBI, KEGG, UniProt, PDB, and other databases
 - **🧬 Multi-Database Integration**: NCBI Assembly/BioSample, KEGG pathways, UniProt proteins, PDB structures
+- **🤖 ML-Enabled Search**: KG-Microbe integration for intelligent feature identification
 - **🔄 Pipeline Automation**: Complete Makefile workflow for reproducible research
 - **📄 File Format Support**: Excel to TSV, Word/PDF to text conversion
-- **🤖 AI-Ready**: Structured for Claude Code and other AI tools
+- **✅ Data Validation**: LinkML schema validation and cross-sheet consistency checks
 
-## 📋 Data Tables Extended (First Draft)
+## 📋 Data Tables Structure
 
-| Table | Original → Extended | Description |
-|-------|-------------------|-------------|
-| **Genomes** | 2 → 65 rows | Lanthanide-relevant bacteria/archaea genomes with annotation URLs |
-| **Biosamples** | 17 → 132 rows | Environmental samples with NCBI download links |
-| **Pathways** | 1 → 9 rows | KEGG and MetaCyc metabolic pathways with direct access |
-| **Genes/Proteins** | 3 → 29 rows | Curated protein sequences from UniProt/KEGG |
-| **Structures** | 1 → 17 rows | PDB crystal structures and AlphaFold predictions |
-| **Publications** | 2 → 22 rows | Peer-reviewed literature from PubMed/PMC |
-| **Datasets** | 2 → 15 rows | Research datasets from multiple repositories |
-
-*Note: These numbers represent initial automated extension. Future iterations will include expert curation and validation.*
+| Table | Initial Data | Description |
+|-------|-------------|-------------|
+| **Genomes** | 6 organisms | PFAS-degrading bacteria/archaea genomes with annotation URLs |
+| **Biosamples** | (to extend) | Environmental samples from PFAS-contaminated sites |
+| **Pathways** | (to extend) | KEGG and MetaCyc dehalogenation and fluoride metabolism pathways |
+| **Genes/Proteins** | (to extend) | Dehalogenases, defluorinases, fluoride exporters from UniProt/KEGG |
+| **Structures** | (to extend) | PDB crystal structures of dehalogenases and related enzymes |
+| **Publications** | 23 papers | Peer-reviewed literature on PFAS biodegradation |
+| **Datasets** | (to extend) | Research datasets from PFAS metagenomes and contaminated sites |
+| **Chemicals** | (to extend) | PFAS compounds (PFOA, PFOS, precursors, metabolites) |
+| **Assays** | (to extend) | Fluoride detection, PFAS quantification protocols |
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.9+
 - [uv](https://docs.astral.sh/uv/) package manager
 - Git
 
@@ -58,13 +64,13 @@ Future versions will include expanded search terms, refined filtering criteria, 
 
 ```bash
 # Clone the repository
-git clone https://github.com/CultureBotAI/CMM-AI.git
-cd CMM-AI
+git clone https://github.com/YourOrg/PFAS-AI.git
+cd PFAS-AI
 
 # Install dependencies
 make install
 
-# Convert original Excel files to TSV
+# Convert PFAS Excel file to TSV
 make convert-excel
 
 # Run the full pipeline
@@ -75,13 +81,17 @@ make update-all
 
 ```bash
 # Update specific tables
-make update-genomes      # Extend genomes with NCBI data
-make update-biosamples   # Extend biosamples with NCBI data
-make update-pathways     # Extend pathways with KEGG/MetaCyc
-make update-datasets     # Extend datasets with repository links
-make update-genes        # Extend genes/proteins with UniProt/KEGG
-make update-structures   # Extend structures with PDB/AlphaFold
-make update-publications # Extend publications with PubMed/PMC
+make update-genomes      # Extend genomes with NCBI data (PFAS degraders)
+make update-biosamples   # Extend biosamples with PFAS site data
+make update-pathways     # Extend pathways with dehalogenation routes
+make update-datasets     # Extend datasets with PFAS metagenomes
+make update-genes        # Extend genes with dehalogenases, fluoride exporters
+make update-structures   # Extend structures with dehalogenase PDB entries
+make update-publications # Extend publications with PFAS literature
+
+# Experimental data
+make update-chemicals    # Extend PFAS compounds with PubChem/CHEBI
+make update-assays       # Extend assays with fluoride/PFAS detection methods
 
 # View pipeline status
 make status
@@ -90,78 +100,113 @@ make status
 ## 📁 Repository Structure
 
 ```
-CMM-AI/
+PFAS-AI/
 ├── 📂 src/                          # Python source code
 │   ├── 🐍 parsers.py               # File conversion utilities
-│   ├── 🐍 ncbi_search.py           # NCBI database integration
-│   ├── 🐍 pathway_search.py        # KEGG/MetaCyc pathway search
-│   ├── 🐍 gene_search.py           # UniProt/KEGG gene search
+│   ├── 🐍 ncbi_search.py           # NCBI database integration (PFAS microbes)
+│   ├── 🐍 pathway_search.py        # KEGG/MetaCyc pathway search (dehalogenation)
+│   ├── 🐍 gene_search.py           # UniProt/KEGG gene search (dehalogenases)
 │   ├── 🐍 structure_search.py      # PDB/AlphaFold structure search
 │   ├── 🐍 dataset_search.py        # Multi-repository dataset search
 │   ├── 🐍 publication_search.py    # PubMed/PMC literature search
+│   ├── 🐍 chemical_search.py       # PFAS compound search
+│   ├── 🐍 assay_search.py          # Assay protocol search
 │   └── 🐍 extend_*.py              # Pipeline automation scripts
 ├── 📂 data/                         # Research data
-│   ├── 📂 sheet/                   # Original Excel files
+│   ├── 📂 sheet/                   # Original Excel file (PFAS Data for AI.xlsx)
 │   ├── 📂 txt/sheet/               # Converted TSV files + extensions
 │   ├── 📂 publications/            # PDF research papers
 │   └── 📂 proposal/                # Project documentation
+├── 📂 schema/                       # LinkML schema definitions
+│   └── 📄 pfas_biodegradation.yaml # PFAS data model (to be created)
 ├── ⚙️ Makefile                     # Pipeline automation
 ├── 📋 pyproject.toml               # Package configuration
 └── 📚 CLAUDE.md                    # AI assistant guidance
 ```
 
-
 ## 🔗 Database Integrations
 
 ### NCBI APIs
-- **Assembly Database**: Genome sequences and annotations
-- **BioSample Database**: Environmental sample metadata
-- **PubMed/PMC**: Scientific literature
+- **Assembly Database**: Genome sequences with dehalogenase annotations
+- **BioSample Database**: Environmental samples from PFAS-contaminated sites
+- **PubMed/PMC**: Scientific literature on PFAS biodegradation
 
 ### Other APIs
-- **KEGG REST**: Metabolic pathways and enzyme data
-- **UniProt REST**: Protein sequences and annotations
-- **RCSB PDB**: Crystal structures and experimental data
-- **AlphaFold**: Predicted protein structures
+- **KEGG REST**: Dehalogenation pathways and fluoride metabolism
+- **UniProt REST**: Protein sequences (dehalogenases, fluoride exporters)
+- **RCSB PDB**: Crystal structures of dehalogenase enzymes
+- **AlphaFold**: Predicted structures for novel dehalogenases
+- **PubChem/CHEBI**: PFAS compound structures and properties
 
 ## 📊 Data Pipeline Details
 
 ### Input Processing
-1. **Excel Conversion**: Multi-sheet Excel files → Individual TSV files
+1. **Excel Conversion**: Multi-sheet Excel file → Individual TSV files
 2. **Document Parsing**: Word/PDF documents → Searchable text
 3. **Filename Sanitization**: Spaces → underscores for consistency
 
 ### Data Extension Process
-1. **NCBI Search**: Query Assembly/BioSample with lanthanide terms
-2. **Literature Mining**: PubMed searches for relevant publications
-3. **Pathway Mapping**: KEGG/MetaCyc pathway identification
-4. **Structure Discovery**: PDB searches for protein structures
+1. **NCBI Search**: Query Assembly/BioSample with PFAS-relevant terms
+2. **Literature Mining**: PubMed searches for PFAS biodegradation papers
+3. **Pathway Mapping**: KEGG/MetaCyc dehalogenation pathway identification
+4. **Structure Discovery**: PDB searches for dehalogenase structures
 5. **URL Generation**: Direct download links for all data sources
 
+### Search Strategy
+
+**PFAS-Specific Terms**:
+- PFAS, perfluorinated, polyfluorinated, PFOA, PFOS, AFFF
+- C-F bond, defluorination, dehalogenation, fluoride
+- Forever chemicals, per- and polyfluoroalkyl substances
+
+**Functional Terms**:
+- Dehalogenase, defluorinase, fluoroacetate dehalogenase
+- Fluoride exporter, fluoride resistance, CrcB, FEX
+- Reductive dehalogenase (RdhA), haloalkane dehalogenase
+- Hydrocarbon degradation, aromatic degradation
+
+**Target Organisms**:
+- Pseudomonas (known PFAS degraders)
+- Hyphomicrobium (C1 metabolism)
+- Acidimicrobium (acid-tolerant extremophile)
+- Dechlorinating bacteria (Dehalococcoides, Desulfitobacterium)
+- Hydrocarbon degraders (Rhodococcus, Mycobacterium)
+
 ### Quality Control
-- **Rate Limiting**: Respects API usage guidelines
+- **Rate Limiting**: Respects API usage guidelines (0.5-1.0 sec delays)
 - **Duplicate Removal**: Based on unique identifiers
 - **Error Handling**: Graceful degradation with informative messages
-- **Validation**: Doctests and integration tests
+- **Validation**: Doctests, LinkML schema validation, cross-sheet consistency
 
-## 🤖 AI Integration
+## 🤖 Machine Learning Integration (KG-Microbe)
 
-### Claude Code Support
-- **CLAUDE.md**: Comprehensive guidance for AI assistants
-- **Structured Documentation**: Clear file organization and conventions
-- **Type Hints**: Full type annotation for better AI understanding
-- **Doctest Examples**: Executable documentation
+### Training Data Categories
 
-### GitHub AI Features
-- **AI-powered workflows**: Automated code review and issue triage
-- **Copilot integration**: Smart code completion and suggestions
+1. **Known PFAS degraders**: Microbes with demonstrated PFAS biodegradation
+2. **Dechlorinating microbes**: Organisms with dehalogenases (potential C-F bond cleavage)
+3. **Fluoride-resistant microbes**: Organisms with fluoride exporters and resistance genes
+4. **Hydrocarbon degraders**: Microbes for cleaving C-C bonds in PFAS backbones
+5. **PFAS-contaminated site isolates**: Environmental microbes from AFFF sites
+6. **Co-occurrence patterns**: Microbial associations in PFAS-contaminated environments
+7. **Similar organisms**: High similarity to categories 1-6
 
-## ⚡ Performance & Scalability
+### Negative Controls
+- Pristine environment microbes (no PFAS exposure)
+- Human pathogens (filter housekeeping genes)
 
-- **Parallel Processing**: Multiple API calls where possible
-- **Caching**: Intelligent rate limiting and result storage
-- **Incremental Updates**: Only fetch new data when needed
-- **Batch Operations**: Efficient database queries
+### Feature Extraction
+- Dehalogenase genes (RdhA, DehH, DhaA, etc.)
+- Fluoride exporters (CrcB, FEX)
+- Hydrocarbon degradation pathways
+- Reactive oxygen species production
+- Metabolic co-dependencies
+- Environmental metadata (pH, temperature, salinity, PFAS concentration)
+
+### Model Outputs
+- PFAS biodegradation potential scores
+- Community design recommendations (3-5 members per consortium)
+- Stability predictions (microbe-microbe interactions)
+- Pathway completeness assessment
 
 ## 🧪 Development
 
@@ -173,33 +218,40 @@ make test
 # Run specific validation
 python -m doctest src/parsers.py -v
 python -m doctest src/ncbi_search.py -v
+
+# Validate data schemas
+make validate-schema
+make validate-consistency
 ```
 
 ### Code Quality
 ```bash
-# Check code formatting (if ruff is configured)
+# Check code formatting
 uv run ruff check src/
 uv run ruff format src/
 ```
 
-## 📈 Data Statistics (First Draft)
+## 📈 Expected Outcomes
 
-### Growth Metrics
-- **Total Rows Added**: 500+ new data entries (initial automated extension)
-- **Database Coverage**: 7+ major biological databases integrated
-- **Literature Coverage**: 20+ peer-reviewed publications (preliminary selection)
-- **Structure Coverage**: PDB + AlphaFold predictions (proof-of-concept)
+### Phase 1: Database Construction
+- Comprehensive PFAS biodegradation database with 100+ genomes
+- Annotated dehalogenase and fluoride resistance gene catalog
+- Environmental metadata from PFAS-contaminated sites
 
-### API Usage
-- **NCBI E-utilities**: ~100 queries per pipeline run
-- **KEGG REST**: ~20 pathway queries
-- **UniProt REST**: ~50 protein queries
-- **Rate Limiting**: 0.5-1.0 second delays between calls
+### Phase 2: ML Model Training
+- Predictive models for PFAS biodegradation potential
+- Community design algorithms for optimal consortia
+- Feature importance rankings for experimental validation
+
+### Phase 3: Experimental Validation
+- 10-15 designed microbial consortia
+- 5 top-performing consortia validated experimentally
+- Degradation of PFOA, PFOS, and polyfluorinated precursors
 
 ## 🤝 Contributing
 
 We welcome contributions! This project uses:
-- **Python 3.8+** with type hints
+- **Python 3.9+** with type hints
 - **uv** for dependency management
 - **Make** for pipeline automation
 - **Git** with conventional commits
@@ -221,14 +273,22 @@ This project is licensed under the [MIT License](LICENSE).
 - **KEGG** for metabolic pathway data
 - **UniProt** for protein sequence databases
 - **RCSB PDB** for structural biology data
+- **KG-Microbe** for ML-enabled microbial feature extraction
 - **Claude AI** for development assistance
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/CultureBotAI/CMM-AI/issues)
+- **Issues**: [GitHub Issues](https://github.com/YourOrg/PFAS-AI/issues)
 - **Documentation**: See `CLAUDE.md` for detailed technical guidance
-- **Discussions**: [GitHub Discussions](https://github.com/CultureBotAI/CMM-AI/discussions)
+- **Discussions**: [GitHub Discussions](https://github.com/YourOrg/PFAS-AI/discussions)
+
+## 📚 References
+
+Key papers on PFAS biodegradation:
+1. Wackett, L.P. (2021). Why is the biodegradation of polyfluorinated compounds so rare? mSphere 6, e0072121.
+2. Zhang, C., et al. (2022). Biological Utility of Fluorinated Compounds: from Materials Design to Molecular Imaging, Therapeutics and Environmental Remediation. Chem. Rev. 122, 167–208.
+3. Ochoa-Herrera, V., et al. (2009). Toxicity of fluoride to microorganisms in biological wastewater treatment systems. Water Res. 43, 3177–3186.
 
 ---
 
-**🔬 Built for lanthanide bioprocessing research • 🤖 AI-enhanced development • 📊 Data-driven discovery**
+**🧪 Built for PFAS biodegradation research • 🤖 ML-enhanced discovery • 🌍 Environmental remediation**

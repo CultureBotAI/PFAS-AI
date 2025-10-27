@@ -1,4 +1,4 @@
-"""Pathway search functions for extending lanthanide bioprocessing pathways."""
+"""Pathway search functions for extending PFAS biodegradation pathways."""
 
 import time
 from typing import Dict, List, Optional, Set, Tuple
@@ -17,8 +17,8 @@ def search_kegg_pathways(keywords: List[str]) -> List[Dict]:
         List of pathway records with metadata
         
     Examples:
-        >>> # Search for methanol metabolism pathways
-        >>> pathways = search_kegg_pathways(["methanol", "methane"])  # doctest: +SKIP
+        >>> # Search for dehalogenation pathways
+        >>> pathways = search_kegg_pathways(["dehalogenation", "fluoride"])  # doctest: +SKIP
         >>> len(pathways) >= 0  # doctest: +SKIP
         True
     """
@@ -60,43 +60,57 @@ def search_kegg_pathways(keywords: List[str]) -> List[Dict]:
 
 
 def search_metacyc_pathways() -> List[Dict]:
-    """Search for MetaCyc pathways relevant to lanthanide metabolism.
-    
+    """Search for MetaCyc pathways relevant to PFAS biodegradation.
+
     Returns:
         List of MetaCyc pathway records
-        
+
     Note:
-        This function provides known lanthanide-relevant MetaCyc pathways
+        This function provides known PFAS-relevant MetaCyc pathways
         since direct API access is limited.
     """
-    # Known lanthanide-relevant MetaCyc pathways
+    # Known PFAS-relevant MetaCyc pathways
     metacyc_pathways = [
         {
-            "pathway_id": "PWY-5506",
-            "pathway_name": "methanol degradation to hydrogen",
-            "description": "Methanol degradation pathway involving methanol dehydrogenase",
-            "organisms": "Methylotrophic bacteria",
+            "pathway_id": "PWY-5134",
+            "pathway_name": "reductive dehalogenation",
+            "description": "Reductive dechlorination pathway (potential for C-F bond cleavage)",
+            "organisms": "Dehalococcoides, Desulfitobacterium",
             "database": "MetaCyc"
         },
         {
-            "pathway_id": "PWY-6966", 
-            "pathway_name": "methanol oxidation to carbon dioxide",
-            "description": "Complete methanol oxidation pathway",
-            "organisms": "Methylotrophic bacteria",
+            "pathway_id": "PWY-7003",
+            "pathway_name": "haloacid dehalogenase pathway",
+            "description": "Hydrolytic dehalogenation of halogenated acids",
+            "organisms": "Pseudomonas, Rhodococcus",
             "database": "MetaCyc"
         },
         {
-            "pathway_id": "PWY-6510",
-            "pathway_name": "methanol oxidation to formaldehyde",
-            "description": "First step of methanol metabolism using methanol dehydrogenase",
-            "organisms": "Methylotrophic bacteria", 
+            "pathway_id": "PWY-6353",
+            "pathway_name": "fluoroacetate degradation",
+            "description": "Degradation of fluoroacetate via dehalogenation",
+            "organisms": "Rhodopseudomonas palustris",
             "database": "MetaCyc"
         },
         {
-            "pathway_id": "PWY-7560",
-            "pathway_name": "methylotrophy",
-            "description": "General methylotrophic metabolism",
-            "organisms": "Methylotrophic bacteria",
+            "pathway_id": "PWY-6173",
+            "pathway_name": "aromatic compound degradation",
+            "description": "Aromatic ring cleavage (relevant for PFAS backbone degradation)",
+            "organisms": "Pseudomonas, Rhodococcus",
+            "database": "MetaCyc"
+        },
+        {
+            "pathway_id": "PWY-5188",
+            "pathway_name": "tetrachloroethene degradation",
+            "description": "Reductive dechlorination of chlorinated ethenes",
+            "organisms": "Dehalococcoides mccartyi",
+            "database": "MetaCyc"
+        },
+        {
+            "pathway_id": "PWY-6520",
+            "pathway_name": "naphthalene degradation",
+            "description": "Aerobic degradation of polycyclic aromatic hydrocarbons",
+            "organisms": "Pseudomonas putida",
             "database": "MetaCyc"
         }
     ]

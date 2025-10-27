@@ -1,7 +1,7 @@
 [project]
-name = "cmm-ai"
+name = "pfas-ai"
 version = "0.1.0"
-description = "AI tools for lanthanide bioprocessing research"
+description = "ML-enabled data pipeline for PFAS biodegradation research"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
@@ -16,7 +16,7 @@ dependencies = [
 ]
 
 [project.scripts]
-cmm-parse = "src.cli:main"
+pfas-parse = "src.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

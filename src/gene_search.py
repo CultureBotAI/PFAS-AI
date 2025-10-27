@@ -1,4 +1,4 @@
-"""Gene and protein search functions for extending lanthanide bioprocessing genes."""
+"""Gene and protein search functions for extending PFAS biodegradation genes."""
 
 import time
 from typing import Dict, List, Optional, Set, Tuple
@@ -8,137 +8,176 @@ from pathlib import Path
 from Bio import Entrez
 
 
-def get_lanthanide_genes_database() -> List[Dict]:
-    """Get comprehensive database of lanthanide-related genes and proteins.
-    
+def get_pfas_genes_database() -> List[Dict]:
+    """Get comprehensive database of PFAS biodegradation-related genes and proteins.
+
     Returns:
         List of gene records with annotations
     """
-    lanthanide_genes = [
+    pfas_genes = [
+        # Reductive dehalogenases (RdhA family)
         {
-            "gene_id": "K23995",
-            "organism": "Methylobacterium species",
-            "annotation": "PQQ-dependent methanol dehydrogenase, lanthanide-dependent (XoxF)",
-            "ec": "1.1.2.7",
-            "go": "GO:0018525 (methanol metabolic process)",
-            "chebi": "CHEBI:17790 (methanol)"
+            "gene_id": "custom_rdhA",
+            "organism": "Dehalococcoides species",
+            "annotation": "Reductive dehalogenase (RdhA) - potential C-F bond cleavage",
+            "ec": "1.21.99.5",
+            "go": "GO:0018872 (aryl-halide reductase activity)",
+            "chebi": "CHEBI:24471 (halide)"
         },
         {
-            "gene_id": "K14028", 
-            "organism": "Methylobacterium species",
-            "annotation": "PQQ-dependent methanol dehydrogenase, calcium-dependent (MxaF)",
-            "ec": "1.1.2.7",
-            "go": "GO:0018525 (methanol metabolic process)",
-            "chebi": "CHEBI:17790 (methanol)"
+            "gene_id": "custom_pceA",
+            "organism": "Desulfitobacterium hafniense",
+            "annotation": "Tetrachloroethene reductive dehalogenase (PceA)",
+            "ec": "1.21.99.1",
+            "go": "GO:0018872 (aryl-halide reductase activity)",
+            "chebi": "CHEBI:30662 (tetrachloroethene)"
         },
         {
-            "gene_id": "K00114",
-            "organism": "Methylobacterium species", 
-            "annotation": "PQQ-dependent alcohol dehydrogenase, lanthanide-responsive (ExaF)",
-            "ec": "1.1.2.7",
-            "go": "GO:0046872 (metal ion binding)",
-            "chebi": "CHEBI:30879 (alcohol)"
+            "gene_id": "custom_tceA",
+            "organism": "Dehalococcoides mccartyi",
+            "annotation": "Trichloroethene reductive dehalogenase (TceA)",
+            "ec": "1.21.99.-",
+            "go": "GO:0018872 (aryl-halide reductase activity)",
+            "chebi": "CHEBI:27789 (trichloroethene)"
+        },
+        # Hydrolytic dehalogenases
+        {
+            "gene_id": "custom_dhaA",
+            "organism": "Rhodococcus species",
+            "annotation": "Haloalkane dehalogenase (DhaA)",
+            "ec": "3.8.1.5",
+            "go": "GO:0018826 (haloacetate dehalogenase activity)",
+            "chebi": "CHEBI:23077 (haloalkane)"
         },
         {
-            "gene_id": "custom_mxbD",
-            "organism": "Methylobacterium species",
-            "annotation": "Methanol metabolism transcriptional regulator MxbD",
+            "gene_id": "custom_dehH",
+            "organism": "Pseudomonas putida",
+            "annotation": "Haloacid dehalogenase (DehH)",
+            "ec": "3.8.1.2",
+            "go": "GO:0018826 (haloacetate dehalogenase activity)",
+            "chebi": "CHEBI:24376 (haloacid)"
+        },
+        {
+            "gene_id": "custom_fda",
+            "organism": "Rhodopseudomonas palustris",
+            "annotation": "Fluoroacetate dehalogenase (FAc-DEX)",
+            "ec": "3.8.1.3",
+            "go": "GO:0018826 (haloacetate dehalogenase activity)",
+            "chebi": "CHEBI:30775 (fluoroacetate)"
+        },
+        # Fluoride exporters and resistance
+        {
+            "gene_id": "custom_crcB",
+            "organism": "Pseudomonas aeruginosa",
+            "annotation": "Fluoride exporter CrcB",
             "ec": "",
-            "go": "GO:0045892 (negative regulation of transcription)",
-            "chebi": ""
+            "go": "GO:0015698 (inorganic anion transport)",
+            "chebi": "CHEBI:17051 (fluoride)"
         },
         {
-            "gene_id": "custom_xoxG",
-            "organism": "Methylobacterium species",
-            "annotation": "Small regulatory protein XoxG (lanthanide-responsive)",
+            "gene_id": "custom_fex",
+            "organism": "Streptomyces cattleya",
+            "annotation": "Fluoride export protein (FEX)",
             "ec": "",
-            "go": "GO:0045892 (negative regulation of transcription)",
-            "chebi": ""
+            "go": "GO:0015698 (inorganic anion transport)",
+            "chebi": "CHEBI:17051 (fluoride)"
         },
         {
-            "gene_id": "K01499",
-            "organism": "Methylobacterium species",
-            "annotation": "Formaldehyde dehydrogenase",
-            "ec": "1.2.1.46",
-            "go": "GO:0019437 (formaldehyde metabolic process)",
-            "chebi": "CHEBI:16842 (formaldehyde)"
-        },
-        {
-            "gene_id": "custom_fae",
-            "organism": "Methylobacterium species", 
-            "annotation": "Formaldehyde activating enzyme (Fae1/Fae2)",
+            "gene_id": "custom_fluc",
+            "organism": "Escherichia coli",
+            "annotation": "Fluoride riboswitch-controlled channel protein",
             "ec": "",
-            "go": "GO:0019437 (formaldehyde metabolic process)",
-            "chebi": "CHEBI:16842 (formaldehyde)"
+            "go": "GO:0015698 (inorganic anion transport)",
+            "chebi": "CHEBI:17051 (fluoride)"
+        },
+        # Hydrocarbon degradation enzymes
+        {
+            "gene_id": "K00517",
+            "organism": "Pseudomonas putida",
+            "annotation": "Catechol 1,2-dioxygenase (aromatic ring cleavage)",
+            "ec": "1.13.11.1",
+            "go": "GO:0019439 (aromatic compound catabolic process)",
+            "chebi": "CHEBI:18135 (catechol)"
         },
         {
-            "gene_id": "custom_tonB_ln",
-            "organism": "Methylobacterium species",
-            "annotation": "TonB-dependent lanthanide uptake receptor",
-            "ec": "",
-            "go": "GO:0015682 (ferric iron transport)",
-            "chebi": "CHEBI:33519 (metal cation)"
+            "gene_id": "K00446",
+            "organism": "Rhodococcus species",
+            "annotation": "Alkane 1-monooxygenase (hydrocarbon oxidation)",
+            "ec": "1.14.15.3",
+            "go": "GO:0043448 (alkane catabolic process)",
+            "chebi": "CHEBI:18310 (alkane)"
         },
         {
-            "gene_id": "custom_sbn",
-            "organism": "Methylobacterium species",
-            "annotation": "Staphyloferrin B-like siderophore biosynthesis genes",
-            "ec": "",
-            "go": "GO:0019290 (siderophore transport)",
-            "chebi": "CHEBI:26672 (siderophore)"
+            "gene_id": "custom_nahAc",
+            "organism": "Pseudomonas putida",
+            "annotation": "Naphthalene dioxygenase alpha subunit",
+            "ec": "1.14.12.12",
+            "go": "GO:0019439 (aromatic compound catabolic process)",
+            "chebi": "CHEBI:16482 (naphthalene)"
+        },
+        # Monooxygenases and oxidoreductases
+        {
+            "gene_id": "K00493",
+            "organism": "Methylosinus trichosporium",
+            "annotation": "Methane/ammonia monooxygenase",
+            "ec": "1.14.13.25",
+            "go": "GO:0015948 (methanogenesis)",
+            "chebi": "CHEBI:16183 (methane)"
         },
         {
-            "gene_id": "K01676",
-            "organism": "Methylobacterium species",
-            "annotation": "Fumarate hydratase (involved in TCA cycle)",
-            "ec": "4.2.1.2",
-            "go": "GO:0006099 (tricarboxylic acid cycle)",
-            "chebi": "CHEBI:18012 (fumarate)"
+            "gene_id": "custom_dfnA",
+            "organism": "Methylobacterium radiotolerans",
+            "annotation": "Putative defluorinase",
+            "ec": "3.8.1.-",
+            "go": "GO:0018872 (aryl-halide reductase activity)",
+            "chebi": "CHEBI:17051 (fluoride)"
         }
     ]
-    
-    # Add genes from other methylotrophic organisms
-    other_organisms = [
-        "Methylorubrum extorquens",
-        "Methylosinus trichosporium", 
-        "Paracoccus denitrificans",
-        "Bradyrhizobium japonicum"
+
+    # Add genes from other PFAS-degrading organisms
+    pfas_organisms = [
+        "Pseudomonas sp. Strain 273",
+        "Hyphomicrobium sp. MC1",
+        "Acidimicrobium sp. Strain A6",
+        "Geobacter sulfurreducens",
+        "Shewanella oneidensis"
     ]
-    
-    for organism in other_organisms:
-        # Add core lanthanide genes for each organism
+
+    for organism in pfas_organisms:
+        # Add core PFAS degradation genes for each organism
         for gene_type, gene_data in [
-            ("xoxF", {"annotation": "PQQ-dependent methanol dehydrogenase (lanthanide-dependent)", "ec": "1.1.2.7"}),
-            ("mxaF", {"annotation": "PQQ-dependent methanol dehydrogenase (calcium-dependent)", "ec": "1.1.2.7"}),
-            ("exaF", {"annotation": "PQQ-dependent alcohol dehydrogenase", "ec": "1.1.2.7"})
+            ("rdhA", {"annotation": "Reductive dehalogenase (potential C-F cleavage)", "ec": "1.21.99.5"}),
+            ("dhaA", {"annotation": "Haloalkane dehalogenase", "ec": "3.8.1.5"}),
+            ("crcB", {"annotation": "Fluoride exporter CrcB", "ec": ""}),
+            ("catA", {"annotation": "Catechol 1,2-dioxygenase (aromatic degradation)", "ec": "1.13.11.1"})
         ]:
-            lanthanide_genes.append({
+            pfas_genes.append({
                 "gene_id": f"custom_{gene_type}",
                 "organism": organism,
                 "annotation": gene_data["annotation"],
                 "ec": gene_data["ec"],
-                "go": "GO:0046872 (metal ion binding)" if "lanthanide" in gene_data["annotation"] else "",
-                "chebi": "CHEBI:17790 (methanol)" if "methanol" in gene_data["annotation"] else ""
+                "go": "GO:0018872 (aryl-halide reductase activity)" if "dehalogenase" in gene_data["annotation"] else "GO:0015698 (inorganic anion transport)" if "fluoride" in gene_data["annotation"] else "GO:0019439 (aromatic compound catabolic process)",
+                "chebi": "CHEBI:24471 (halide)" if "dehalogenase" in gene_data["annotation"] else "CHEBI:17051 (fluoride)" if "fluoride" in gene_data["annotation"] else ""
             })
-    
-    return lanthanide_genes
+
+    return pfas_genes
 
 
 def search_uniprot_genes(organism_list: List[str]) -> List[Dict]:
-    """Search UniProt for lanthanide-related genes in specific organisms.
-    
+    """Search UniProt for PFAS biodegradation-related genes in specific organisms.
+
     Args:
         organism_list: List of organism names to search
-        
+
     Returns:
         List of gene records from UniProt
     """
     genes = []
-    
+
     for organism in organism_list[:3]:  # Limit to avoid API overload
         try:
-            # Search UniProt for methanol dehydrogenase genes
-            query = f"organism:{organism} AND (methanol dehydrogenase OR alcohol dehydrogenase)"
+            # Search UniProt for dehalogenase and fluoride-related genes
+            query = f"organism:{organism} AND (dehalogenase OR fluoride OR defluorinase OR haloalkane)"
             url = f"https://rest.uniprot.org/uniprotkb/search"
             params = {
                 "query": query,

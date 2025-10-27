@@ -75,17 +75,17 @@ def main():
 
     # List of experimental data files to update
     experimental_files = [
-        'BER_CMM_Data_for_AI_chemicals.tsv',
-        'BER_CMM_Data_for_AI_assays.tsv',
-        'BER_CMM_Data_for_AI_bioprocesses.tsv',
-        'BER_CMM_Data_for_AI_screening_results.tsv',
-        'BER_CMM_Data_for_AI_protocols.tsv',
+        'PFAS_Data_for_AI_chemicals.tsv',
+        'PFAS_Data_for_AI_assays.tsv',
+        'PFAS_Data_for_AI_bioprocesses.tsv',
+        'PFAS_Data_for_AI_screening_results.tsv',
+        'PFAS_Data_for_AI_protocols.tsv',
     ]
 
     # Also update extended files if they exist
     extended_files = [
-        'BER_CMM_Data_for_AI_chemicals_extended.tsv',
-        'BER_CMM_Data_for_AI_assays_extended.tsv',
+        'PFAS_Data_for_AI_chemicals_extended.tsv',
+        'PFAS_Data_for_AI_assays_extended.tsv',
     ]
 
     all_files = experimental_files + extended_files
