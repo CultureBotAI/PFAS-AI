@@ -48,6 +48,7 @@ PFAS-AI - ML-enabled automated data pipeline for PFAS biodegradation research. E
 **Experimental Data Tables**:
 - `make update-chemicals` - Extend chemicals with PubChem/CHEBI (PFAS compounds)
 - `make update-assays` - Extend assays with curated protocols (fluoride, PFAS detection)
+- `make update-reactions` - Extend reactions with RHEA/KEGG data (dehalogenation, fluoride resistance)
 - `make update-bioprocesses` - (Manual) Update bioprocesses table
 - `make update-screening` - (Manual) Update screening results table
 - `make update-protocols` - (Manual) Update protocols table
@@ -144,6 +145,9 @@ pyproject.toml       # Package configuration (uses uv/hatchling)
 **dataset_search.py**: Dataset search (GEO, SRA, MetaboLights, PFAS metagenomes)
 **chemical_search.py**: Chemical compound search (PubChem/CHEBI for PFAS compounds) with source labeling
 **assay_search.py**: Assay protocol search with curated methods (fluoride detection, PFAS quantification)
+**reaction_search.py**: Biochemical reaction enrichment from RHEA/KEGG databases
+**convert_reactions_excel.py**: Convert reactions Excel with reaction_category column tracking
+**extend_reactions.py**: Main reactions extension pipeline script
 **pdf_to_markdown.py**: Convert PDFs to markdown for text extraction
 **extract_from_documents.py**: Extract experimental data from markdown files with DOI tracking
 **download_pdfs_from_publications.py**: Download PDFs from publications table URLs
@@ -193,6 +197,7 @@ All extended tables follow TSV format with consistent column naming:
 - **Publications**: Title, Authors, Journal, PMID, DOI, URL (PFAS biodegradation focus)
 - **Chemicals**: PFAS compounds (PFOA, PFOS, precursors), CHEBI/PubChem IDs, molecular formula, compound_type
 - **Assays**: Fluoride detection, PFAS quantification, LC-MS/MS protocols
+- **Reactions**: Biochemical reactions (RHEA IDs, equations, EC numbers, reaction_category for dehalogenation/fluoride resistance/hydrocarbon degradation)
 
 ## Development Principles
 
@@ -232,7 +237,7 @@ This repository will include a comprehensive LinkML schema for modeling PFAS bio
 
 ### Schema Overview
 
-The schema should model twelve main classes for comprehensive PFAS biodegradation research:
+The schema models thirteen main classes for comprehensive PFAS biodegradation research:
 
 #### Core Data Tables (7)
 
@@ -271,29 +276,34 @@ The schema should model twelve main classes for comprehensive PFAS biodegradatio
    - Key fields: dataset_name, data_type, url, license
    - Focus: PFAS metagenomes, contaminated site microbiomes
 
-#### Experimental Data Tables (5)
+#### Experimental Data Tables (6)
 
-8. **ChemicalCompoundRecord**: PFAS compounds and related chemicals
+8. **ReactionRecord**: Biochemical reactions for PFAS biodegradation
+   - Maps to: RHEA (reaction database), KEGG Reaction, EC (Enzyme Commission)
+   - Key fields: reaction_id, equation, reaction_category, ec_number, rhea_id, kegg_reaction_id
+   - Reaction categories: dehalogenase (C-F bond cleavage), fluoride_resistance (transport), hydrocarbon_degradation, oxygenase_cometabolism, known_pfas_degraders
+
+9. **ChemicalCompoundRecord**: PFAS compounds and related chemicals
    - Maps to: CHEBI, PubChem, ChEMBL
    - Key fields: chemical_id, chemical_name, compound_type, molecular_formula, role_in_bioprocess
    - Compound types: perfluorinated (PFOA, PFOS), polyfluorinated (precursors), fluoride, metabolites, degradation products
 
-9. **AssayMeasurementRecord**: Analytical assays for PFAS and fluoride
-   - Maps to: OBI (Ontology for Biomedical Investigations), BAO (BioAssay Ontology)
-   - Key fields: assay_id, assay_name, assay_type, target_analytes, detection_method, detection_limit
-   - Assay types: LC-MS/MS (PFAS quantification), fluoride electrode, ion chromatography, total organic fluorine
+10. **AssayMeasurementRecord**: Analytical assays for PFAS and fluoride
+    - Maps to: OBI (Ontology for Biomedical Investigations), BAO (BioAssay Ontology)
+    - Key fields: assay_id, assay_name, assay_type, target_analytes, detection_method, detection_limit
+    - Assay types: LC-MS/MS (PFAS quantification), fluoride electrode, ion chromatography, total organic fluorine
 
-10. **BioprocessConditionsRecord**: Experimental conditions for PFAS biodegradation
+11. **BioprocessConditionsRecord**: Experimental conditions for PFAS biodegradation
     - Maps to: ENVO, MIXS, OBI
     - Key fields: process_id, process_name, process_type, strain_used, pH, temperature, pfas_concentration
     - Process types: aerobic degradation, anaerobic degradation, sequential anaerobic-aerobic, bioaugmentation, consortia-based
 
-11. **ScreeningResultRecord**: High-throughput screening data
+12. **ScreeningResultRecord**: High-throughput screening data
     - Maps to: OBI, BAO
     - Key fields: experiment_id, plate_coordinates, strain_barcode, screening_assay, measurement_values, hit_classification
     - Focus: Fluoride production, PFAS degradation, growth on PFAS
 
-12. **ProtocolRecord**: Experimental protocols and SOPs
+13. **ProtocolRecord**: Experimental protocols and SOPs
     - Maps to: OBI
     - Key fields: protocol_id, protocol_name, protocol_type, protocol_version, protocol_doi, dbtl_iteration
     - Protocol types: PFAS extraction, fluoride measurement, consortia assembly, LC-MS/MS analysis

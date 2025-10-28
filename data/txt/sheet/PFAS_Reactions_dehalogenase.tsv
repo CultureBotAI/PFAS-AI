@@ -1,0 +1,17 @@
+Reaction identifier	Equation	Enzyme class	Enzymes	reaction_category	source
+RHEA:23440	4-chlorobenzoate + H2O = 4-hydroxybenzoate + chloride + H(+)	EC:3.8.1.6 4-chlorobenzoate dehalogenase	0	dehalogenase	reactions_excel
+RHEA:56832	2,6-dichlorohydroquinone + glutathione disulfide + chloride + H(+) = 2,3,6-trichlorohydroquinone + 2 glutathione	EC:1.21.4.5 tetrachlorohydroquinone reductive dehalogenase	1	dehalogenase	reactions_excel
+RHEA:67992	trichloroethene + AH2 = (Z)-1,2-dichloroethene + chloride + A + H(+)		6	dehalogenase	reactions_excel
+RHEA:68004	chloroethene + AH2 = ethene + chloride + A + H(+)		1	dehalogenase	reactions_excel
+RHEA:11044	a haloacetate + H2O = a halide anion + glycolate + H(+)	EC:3.8.1.3 haloacetate dehalogenase	4	dehalogenase	reactions_excel
+RHEA:11192	an (S)-2-haloacid + H2O = a (2R)-2-hydroxycarboxylate + a halide anion + H(+)	EC:3.8.1.2 (S)-2-haloacid dehalogenase;EC:3.8.1.10 2-haloacid dehalogenase (configuration-inverting)	5750	dehalogenase	reactions_excel
+RHEA:12072	an (S)-2-haloacid + H2O = a (2S)-2-hydroxycarboxylate + a halide anion + H(+)	EC:3.8.1.11 2-haloacid dehalogenase (configuration-retaining)	0	dehalogenase	reactions_excel
+RHEA:14853	4-chlorobenzoyl-CoA + H2O = 4-hydroxybenzoyl-CoA + chloride + H(+)	EC:3.8.1.7 4-chlorobenzoyl-CoA dehalogenase	3	dehalogenase	reactions_excel
+RHEA:15397	dichloromethane + H2O = formaldehyde + 2 chloride + 2 H(+)	EC:4.5.1.3 dichloromethane dehalogenase	2	dehalogenase	reactions_excel
+RHEA:19081	1-haloalkane + H2O = a halide anion + a primary alcohol + H(+)	EC:3.8.1.5 haloalkane dehalogenase	1217	dehalogenase	reactions_excel
+RHEA:20353	trichloroethene + chloride + A + H(+) = tetrachloroethene + AH2	EC:1.21.99.5 tetrachloroethene reductive dehalogenase	5	dehalogenase	reactions_excel
+RHEA:22188	an (R)-2-haloacid + H2O = a (2S)-2-hydroxycarboxylate + a halide anion + H(+)	EC:3.8.1.9 (R)-2-haloacid dehalogenase;EC:3.8.1.10 2-haloacid dehalogenase (configuration-inverting)	4	dehalogenase	reactions_excel
+RHEA:49280	phenol + FADH2 + O2 = catechol + FAD + H2O + H(+)	EC:1.14.14.20 phenol 2-monooxygenase (FADH2)	0	dehalogenase	reactions_excel
+RHEA:25189	chloroacetate + H2O = glycolate + chloride + H(+)	EC:3.8.1.3 haloacetate dehalogenase	1	dehalogenase	reactions_excel
+RHEA:30051	fluoroacetate + H2O = fluoride + glycolate + H(+)	EC:3.8.1.3 haloacetate dehalogenase	2	dehalogenase	reactions_excel
+RHEA:11044	a haloacetate + H2O = a halide anion + glycolate + H(+)	EC:3.8.1.3 haloacetate dehalogenase	4	dehalogenase	reactions_excel

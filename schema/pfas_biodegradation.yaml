@@ -77,6 +77,9 @@ classes:
       protocols:
         range: ProtocolRecord
         multivalued: true
+      reactions:
+        range: ReactionRecord
+        multivalued: true
 
   GenomeRecord:
     description: >-
@@ -151,6 +154,72 @@ classes:
         range: string
         multivalued: true
         pattern: "^K\\d{5}$"
+      source:
+        description: Data provenance
+        range: string
+
+  ReactionRecord:
+    description: >-
+      Biochemical reaction relevant to PFAS biodegradation
+    attributes:
+      reaction_id:
+        description: Reaction identifier (RHEA, KEGG Reaction)
+        range: string
+        identifier: true
+        required: true
+      reaction_name:
+        description: Name or description of the reaction
+        range: string
+      equation:
+        description: Chemical equation for the reaction
+        range: string
+        required: true
+      reaction_category:
+        description: Functional category of the reaction
+        range: reaction_category_enum
+        required: true
+      enzyme_class:
+        description: Enzyme class and EC number
+        range: string
+      ec_number:
+        description: Enzyme Commission number
+        range: string
+        multivalued: true
+        pattern: "^EC:\\d+\\.\\d+\\.\\d+\\.\\d+$|^EC:\\d+\\.\\d+\\.\\d+\\.-$"
+      rhea_id:
+        description: RHEA reaction database identifier
+        range: string
+        pattern: "^RHEA:\\d+$"
+      kegg_reaction_id:
+        description: KEGG Reaction identifier
+        range: string
+        pattern: "^R\\d{5}$"
+      go_terms:
+        description: Gene Ontology terms for molecular function
+        range: string
+        multivalued: true
+        pattern: "^GO:\\d{7}$"
+      substrates:
+        description: Substrate compounds (CHEBI terms)
+        range: string
+        multivalued: true
+      products:
+        description: Product compounds (CHEBI terms)
+        range: string
+        multivalued: true
+      enzyme_genes:
+        description: Genes encoding enzymes that catalyze this reaction
+        range: string
+        multivalued: true
+      pathway_id:
+        description: Associated metabolic pathway
+        range: string
+      note:
+        description: Additional notes or comments
+        range: string
+      url:
+        description: URL to reaction in database
+        range: uri
       source:
         description: Data provenance
         range: string
@@ -481,6 +550,21 @@ enums:
         description: Collection of Pathway/Genome Databases
       RHEA:
         description: Reaction database
+
+  reaction_category_enum:
+    permissible_values:
+      dehalogenase:
+        description: Dehalogenase reactions for C-X bond cleavage
+      known_pfas_degraders:
+        description: Reactions from known PFAS-degrading organisms
+      fluoride_resistance:
+        description: Fluoride resistance and transport reactions
+      hydrocarbon_degradation:
+        description: Hydrocarbon degradation pathways
+      important_genes:
+        description: Important non-enzymatic genes (transporters, regulators)
+      oxygenase_cometabolism:
+        description: Oxygenase and co-metabolism reactions
 
   structure_method_enum:
     permissible_values:

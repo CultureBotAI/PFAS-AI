@@ -92,6 +92,7 @@ make update-publications # Extend publications with PFAS literature
 # Experimental data
 make update-chemicals    # Extend PFAS compounds with PubChem/CHEBI
 make update-assays       # Extend assays with fluoride/PFAS detection methods
+make update-reactions    # Extend reactions with RHEA/KEGG data
 
 # View pipeline status
 make status
@@ -111,6 +112,8 @@ PFAS-AI/
 │   ├── 🐍 publication_search.py    # PubMed/PMC literature search
 │   ├── 🐍 chemical_search.py       # PFAS compound search
 │   ├── 🐍 assay_search.py          # Assay protocol search
+│   ├── 🐍 reaction_search.py       # Biochemical reaction enrichment
+│   ├── 🐍 convert_reactions_excel.py # Reactions Excel converter
 │   └── 🐍 extend_*.py              # Pipeline automation scripts
 ├── 📂 data/                         # Research data
 │   ├── 📂 sheet/                   # Original Excel file (PFAS Data for AI.xlsx)

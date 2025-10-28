@@ -3,7 +3,7 @@
 # This Makefile provides commands to update PFAS data tables with PFAS-degrading
 # bacteria and archaea from NCBI databases.
 
-.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-bioprocesses update-screening update-protocols update-all clean install test validate-schema validate-consistency gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data download-pdfs extend2 extendbypub merge-excel
+.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-reactions update-bioprocesses update-screening update-protocols update-all clean install test validate-schema validate-consistency gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data download-pdfs extend2 extendbypub merge-excel
 
 # Default target
 help:
@@ -22,6 +22,7 @@ help:
 	@echo "Experimental Data Updates:"
 	@echo "  update-chemicals    - Update chemicals table with PubChem/CHEBI"
 	@echo "  update-assays       - Update assays table with curated protocols"
+	@echo "  update-reactions    - Update reactions table with RHEA/KEGG data"
 	@echo "  update-bioprocesses - (Manual) Update bioprocesses table"
 	@echo "  update-screening    - (Manual) Update screening results table"
 	@echo "  update-protocols    - (Manual) Update protocols table"
@@ -133,6 +134,14 @@ update-assays: install data/txt/sheet/PFAS_Data_for_AI_assays.tsv
 	@echo "Assays table updated successfully."
 	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_assays_extended.tsv"
 
+# Update reactions table with RHEA/KEGG reaction data
+update-reactions: install
+	@echo "Updating reactions table with biochemical reaction data..."
+	uv run python src/extend_reactions.py --source-label extend1
+	@echo "Reactions table updated successfully."
+	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_reactions.tsv"
+	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_reactions_extended.tsv"
+
 # Download PDFs from publications table
 download-pdfs: install
 	@echo "Downloading PDFs from publications table..."
@@ -161,7 +170,7 @@ update-protocols: install
 	@echo "Note: Automated protocols.io search not yet implemented"
 
 # Update all tables (full pipeline)
-update-all: update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-bioprocesses update-screening update-protocols
+update-all: update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-reactions update-bioprocesses update-screening update-protocols
 	@echo ""
 	@echo "Full data pipeline completed successfully!"
 	@echo "Updated files:"
@@ -172,6 +181,7 @@ update-all: update-genomes update-biosamples update-pathways update-datasets upd
 	@echo "  - data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins_extended.tsv"
 	@echo "  - data/txt/sheet/PFAS_Data_for_AI_macromolecular_structures_extended.tsv"
 	@echo "  - data/txt/sheet/PFAS_Data_for_AI_publications_extended.tsv"
+	@echo "  - data/txt/sheet/PFAS_Data_for_AI_reactions_extended.tsv"
 	@wc -l data/txt/sheet/PFAS_Data_for_AI_*_extended.tsv
 
 # Convert Excel files to TSV (prerequisite step)

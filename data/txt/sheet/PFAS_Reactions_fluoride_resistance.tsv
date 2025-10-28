@@ -1,0 +1,39 @@
+Reaction identifier	Equation	Enzyme class	Enzymes	Note	reaction_category	source
+RHEA:15901	(2R)-2-phosphoglycerate = (2R)-3-phosphoglycerate	EC:5.4.2.11 phosphoglycerate mutase (2,3-diphosphoglycerate-dependent);EC:5.4.2.12 phosphoglycerate mutase (2,3-diphosphoglycerate-independent)	66667.0		fluoride_resistance	reactions_excel
+RHEA:10164	(2R)-2-phosphoglycerate = phosphoenolpyruvate + H2O	EC:4.2.1.11 phosphopyruvate hydratase	48136.0		fluoride_resistance	reactions_excel
+RHEA:24576	diphosphate + H2O = 2 phosphate + H(+)	EC:3.6.1.1 inorganic diphosphatase	45789.0		fluoride_resistance	reactions_excel
+RHEA:18769	5-methylsulfanyl-2,3-dioxopentyl phosphate = 2-hydroxy-5-methylsulfanyl-3-oxopent-1-enyl phosphate	EC:5.3.2.5 2,3-diketo-5-methylthiopentyl-1-phosphate enolase	635.0		fluoride_resistance	reactions_excel
+RHEA:27290	formate + A + H(+) = AH2 + CO2	EC:1.17.98.4 formate dehydrogenase (acceptor)	1.0		fluoride_resistance	reactions_excel
+RHEA:13897	chorismate = prephenate	EC:5.4.99.5 chorismate mutase	25496.0		fluoride_resistance	reactions_excel
+RHEA:11364	pyruvate + ATP + H2O = phosphoenolpyruvate + AMP + phosphate + 2 H(+)	EC:2.7.9.2 pyruvate, water dikinase	23492.0		fluoride_resistance	reactions_excel
+RHEA:18157	pyruvate + ATP = phosphoenolpyruvate + ADP + H(+)	EC:2.7.1.40 pyruvate kinase	61743.0		fluoride_resistance	reactions_excel
+RHEA:23052	L-seryl-[pyruvate dehydrogenase E1 alpha subunit] + ATP = O-phospho-L-seryl-[pyruvate dehydrogenase E1 alpha subunit] + ADP + H(+)	EC:2.7.11.2 [pyruvate dehydrogenase (acetyl-transferring)] kinase	4662.0		fluoride_resistance	reactions_excel
+RHEA:18381	dihydroxyacetone + phosphoenolpyruvate = dihydroxyacetone phosphate + pyruvate	EC:2.7.1.121 phosphoenolpyruvate--glycerone phosphotransferase	5467.0		fluoride_resistance	reactions_excel
+RHEA:23764	L-serine + diphosphate = O-phospho-L-serine + phosphate + H(+)	EC:2.7.1.80 diphosphate--serine phosphotransferase	0.0		fluoride_resistance	reactions_excel
+RHEA:16833	2 glutathione + H2O2 = glutathione disulfide + 2 H2O	EC:1.11.1.9 glutathione peroxidase	4073.0	antioxidative stress	fluoride_resistance	reactions_excel
+RHEA:20309	2 H2O2 = O2 + 2 H2O	EC:1.11.1.6 catalase;EC:1.11.1.21 catalase peroxidase	54990.0	antioxidative stress	fluoride_resistance	reactions_excel
+RHEA:56136	2 a phenolic donor + H2O2 = 2 a phenolic radical donor + 2 H2O	EC:1.11.1.7 peroxidase	37004.0	antioxidative stress	fluoride_resistance	reactions_excel
+crcB/clcA genes				no ec number	fluoride_resistance	reactions_excel
+Na+/H+ antiporters				no ec number	fluoride_resistance	reactions_excel
+phosphate homeostasis				no ec number	fluoride_resistance	reactions_excel
+universal stress global response regulator UspA				no ec number	fluoride_resistance	reactions_excel
+RHEA:15017	a phosphate monoester + H2O = an alcohol + phosphate	EC:3.1.3.1 alkaline phosphatase;EC:3.1.3.2 acid phosphatase	39697.0		fluoride_resistance	reactions_excel
+Recombination factor protein RarA				no ec number	fluoride_resistance	reactions_excel
+Transmembrane anti-σ factor PrtR				no ec number	fluoride_resistance	reactions_excel
+RHEA:29799	D-allose(out) + ATP + H2O = D-allose(in) + ADP + phosphate + H(+)	EC:7.5.2.8 ABC-type D-allose transporter	1.0	ABC trasnporter	fluoride_resistance	reactions_excel
+RHEA:29899	D-xylose(out) + ATP + H2O = D-xylose(in) + ADP + phosphate + H(+)	EC:7.5.2.10 ABC-type D-xylose transporter;EC:7.5.2.13 ABC-type D-xylose/L-arabinose transporter	36.0	ABC trasnporter	fluoride_resistance	reactions_excel
+RHEA:29903	D-ribose(out) + ATP + H2O = D-ribose(in) + ADP + phosphate + H(+)	EC:7.5.2.7 ABC-type D-ribose transporter	130.0	ABC trasnporter	fluoride_resistance	reactions_excel
+RHEA:30007	L-arabinose(out) + ATP + H2O = L-arabinose(in) + ADP + phosphate + H(+)	EC:7.5.2.12 ABC-type L-arabinose transporter;EC:7.5.2.13 ABC-type D-xylose/L-arabinose transporter	45.0	ABC trasnporter	fluoride_resistance	reactions_excel
+RHEA:60156	D-galactose(out) + ATP + H2O = D-galactose(in) + ADP + phosphate + H(+)	EC:7.5.2.11 ABC-type D-galactose transporter	4613.0	ABC trasnporter	fluoride_resistance	reactions_excel
+RHEA:61716	D-galactofuranose(out) + ATP + H2O = D-galactofuranose(in) + ADP + phosphate + H(+)	EC:7.5.2.9 ABC-type D-galactofuranose transporter	2.0	ABC trasnporter	fluoride_resistance	reactions_excel
+RHEA:18453	[(1->2)-beta-D-glucosyl](n)(in) + ATP + H2O = [(1->2)-beta-D-glucosyl](n)(out) + ADP + phosphate + H(+)	EC:7.5.2.3 ABC-type beta-glucan transporter	23.0	ABC trasnporter	fluoride_resistance	reactions_excel
+RHEA:22132	D-maltose(out) + ATP + H2O = D-maltose(in) + ADP + phosphate + H(+)	EC:7.5.2.1 ABC-type maltose transporter	27.0	ABC trasnporter	fluoride_resistance	reactions_excel
+bis-(3′,5′)-cyclic dimeric GMP-binding protein				no ec number	fluoride_resistance	reactions_excel
+fleQ				no ec number	fluoride_resistance	reactions_excel
+Flagellar biosynthesis protein FlhA				no ec number	fluoride_resistance	reactions_excel
+RHEA:11172	(6S)-5-methyl-5,6,7,8-tetrahydrofolate + L-homocysteine = (6S)-5,6,7,8-tetrahydrofolate + L-methionine	EC:2.1.1.13 methionine synthase	28118.0		fluoride_resistance	reactions_excel
+RHEA:34811	tetrahydrocurcumin + NADP(+) = dihydrocurcumin + NADPH + H(+)	EC:1.3.1.n3 curcumin reductase	1.0		fluoride_resistance	reactions_excel
+RHEA:34815	tetrahydrocurcumin + 2 NADP(+) = curcumin + 2 NADPH + 2 H(+)	EC:1.3.1.n3 curcumin reductase	1.0		fluoride_resistance	reactions_excel
+RHEA:34819	dihydrocurcumin + NADP(+) = curcumin + NADPH + H(+)	EC:1.3.1.n3 curcumin reductase	1.0		fluoride_resistance	reactions_excel
+Methyl-accepting chemotaxis protein CtpL				no ec number	fluoride_resistance	reactions_excel
+				Genes associated with adhesion, biofilm formation, cell membrane structure and integrity, and polysaccharide export are upregulated in response to fluoride by diverse bacteria	fluoride_resistance	reactions_excel
