@@ -48,8 +48,17 @@ PFAS-AI - ML-enabled automated data pipeline for PFAS biodegradation research. E
 **Experimental Data Tables**:
 - `make update-chemicals` - Extend chemicals with PubChem/CHEBI (PFAS compounds)
 - `make update-assays` - Extend assays with curated protocols (fluoride, PFAS detection)
-- `make update-reactions` - Extend reactions with RHEA/KEGG data (dehalogenation, fluoride resistance)
+- `make update-reactions` - Extend reactions with RHEA/KEGG data (unified table)
 - `make update-bioprocesses` - (Manual) Update bioprocesses table
+
+**Reaction Category Extensions** (category-specific enrichment with gene linking):
+- `make update-reactions-dehalogenase` - C-F bond cleavage enzymes (16 reactions)
+- `make update-reactions-fluoride` - Fluoride transporters and resistance (38 reactions)
+- `make update-reactions-hydrocarbon` - Alkane/hydrocarbon metabolism (19 reactions)
+- `make update-reactions-pfas-degraders` - Validated PFAS degrader reactions (11 reactions)
+- `make update-reactions-oxygenase` - Oxygenase co-metabolism (29 reactions)
+- `make update-reactions-important-genes` - Non-enzymatic genes (3 entries)
+- `make update-reactions-all-categories` - Extend all categories at once
 - `make update-screening` - (Manual) Update screening results table
 - `make update-protocols` - (Manual) Update protocols table
 
@@ -148,6 +157,7 @@ pyproject.toml       # Package configuration (uses uv/hatchling)
 **reaction_search.py**: Biochemical reaction enrichment from RHEA/KEGG databases
 **convert_reactions_excel.py**: Convert reactions Excel with reaction_category column tracking
 **extend_reactions.py**: Main reactions extension pipeline script
+**extend_reactions_by_category.py**: Category-specific reaction enrichment with gene linking
 **pdf_to_markdown.py**: Convert PDFs to markdown for text extraction
 **extract_from_documents.py**: Extract experimental data from markdown files with DOI tracking
 **download_pdfs_from_publications.py**: Download PDFs from publications table URLs
