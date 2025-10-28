@@ -37,7 +37,7 @@ def check_sample_urls():
     
     print("Checking sample URLs from extended table...")
     
-    df = pd.read_csv("data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes_extended.tsv", sep='\t')
+    df = pd.read_csv("data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes_extended.tsv", sep='\t')
     
     # Get first 3 entries with URLs
     sample_entries = df[df["Annotation download URL"].notna() & (df["Annotation download URL"] != "")].head(3)
@@ -72,7 +72,7 @@ def create_usage_examples():
     print("Example usage for downloading genome annotations:")
     print("=" * 60)
     
-    df = pd.read_csv("data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes_extended.tsv", sep='\t')
+    df = pd.read_csv("data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes_extended.tsv", sep='\t')
     
     # Get first entry with URL
     sample = df[df["Annotation download URL"].notna() & (df["Annotation download URL"] != "")].iloc[0]

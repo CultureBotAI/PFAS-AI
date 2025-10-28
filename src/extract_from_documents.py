@@ -417,7 +417,7 @@ def batch_extract_from_directory(pdf_dir: Path, output_dir: Path, summary_only: 
         if not summary_only:
             for sheet_type, records in extracted.items():
                 if records:
-                    tsv_path = output_dir / f"BER_CMM_Data_for_AI_{sheet_type}.tsv"
+                    tsv_path = output_dir / f"PFAS_Data_for_AI_{sheet_type}.tsv"
                     append_to_tsv(records, tsv_path, sheet_type)
 
     print("=" * 60)

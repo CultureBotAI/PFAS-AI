@@ -452,8 +452,8 @@ def create_extended_tables(
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     
-    genomes_output = output_dir / "BER_CMM_Data_for_AI_taxa_and_genomes_extended.tsv"
-    biosamples_output = output_dir / "BER_CMM_Data_for_AI_biosamples_extended.tsv"
+    genomes_output = output_dir / "PFAS_Data_for_AI_taxa_and_genomes_extended.tsv"
+    biosamples_output = output_dir / "PFAS_Data_for_AI_biosamples_extended.tsv"
     
     combined_genomes.to_csv(genomes_output, sep='\t', index=False)
     combined_biosamples.to_csv(biosamples_output, sep='\t', index=False)
@@ -467,6 +467,6 @@ def create_extended_tables(
 if __name__ == "__main__":
     # Example usage
     create_extended_tables(
-        "data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes.tsv",
-        "data/txt/sheet/BER_CMM_Data_for_AI_biosamples.tsv"
+        "data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes.tsv",
+        "data/txt/sheet/PFAS_Data_for_AI_biosamples.tsv"
     )

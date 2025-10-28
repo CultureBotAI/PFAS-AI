@@ -4,12 +4,14 @@
 import sys
 from pathlib import Path
 
+from pathway_search import create_extended_pathways_table
+
 
 def main():
     """Main function to extend the pathways data table."""
     
     # Path to existing data
-    pathways_path = "data/txt/sheet/BER_CMM_Data_for_AI_pathways.tsv"
+    pathways_path = "data/txt/sheet/PFAS_Data_for_AI_pathways.tsv"
     
     # Check if file exists
     if not Path(pathways_path).exists():

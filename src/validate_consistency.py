@@ -51,7 +51,7 @@ class ConsistencyValidator:
         Returns:
             DataFrame with the table data
         """
-        filepath = self.data_dir / f"BER_CMM_Data_for_AI_{filename}"
+        filepath = self.data_dir / f"PFAS_Data_for_AI_{filename}"
         if not filepath.exists():
             self.warnings.append(f"File not found: {filepath}")
             return pd.DataFrame()

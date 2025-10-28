@@ -142,18 +142,20 @@ class ChemicalSearcher:
                 elif label == 'IUPAC Name':
                     iupac_name = value.get('sval')
 
-            # Determine compound type
-            compound_type = "lanthanide" if element_name else "chelator"
-            if "lanthanophore" in str(iupac_name).lower():
-                compound_type = "lanthanophore"
-            elif "siderophore" in str(iupac_name).lower():
-                compound_type = "lanthanophore"
+            # Determine compound type for PFAS
+            compound_type = "pfas"
+            if "perfluoro" in str(iupac_name).lower():
+                compound_type = "pfas"
+            elif "fluoro" in str(iupac_name).lower() and "alcohol" in str(iupac_name).lower():
+                compound_type = "precursor"
+            elif "metabolite" in str(iupac_name).lower():
+                compound_type = "metabolite"
 
             # Generate chemical name
-            chemical_name = iupac_name or (f"{element_name}(III) cation" if element_name else f"PubChem_{cid}")
+            chemical_name = iupac_name or f"PubChem_{cid}"
 
             # Role in bioprocess
-            role = "TRL assay probe for REE detection" if element_name else "Lanthanide chelation and transport"
+            role = "PFAS compound for biodegradation studies"
 
             compound = {
                 'chemical_id': f"PubChem:{cid}",
@@ -231,7 +233,7 @@ def extend_chemicals_table(input_tsv: Path, output_tsv: Path, source_label: str 
         df = pd.DataFrame()
         existing_ids = set()
 
-    print("Searching chemical databases for lanthanide compounds...")
+    print("Searching chemical databases for PFAS compounds...")
     print(f"Source label: {source_label}")
     print("")
 
@@ -239,14 +241,14 @@ def extend_chemicals_table(input_tsv: Path, output_tsv: Path, source_label: str 
     searcher = ChemicalSearcher(source_label=source_label)
 
     # Search PubChem
-    print("1. Searching PubChem for lanthanide cations...")
-    lanthanide_compounds = searcher.search_pubchem_lanthanides()
-    print(f"   Found {len(lanthanide_compounds)} lanthanide cations")
+    print("1. Searching PubChem for PFAS compounds...")
+    pfas_compounds = searcher.search_pubchem_pfas()
+    print(f"   Found {len(pfas_compounds)} PFAS compounds")
     print("")
 
-    print("2. Searching PubChem for lanthanide complexes...")
-    complex_compounds = searcher.search_pubchem_complexes()
-    print(f"   Found {len(complex_compounds)} complexes")
+    print("2. Searching PubChem for PFAS precursors and metabolites...")
+    precursor_compounds = searcher.search_pubchem_pfas_precursors()
+    print(f"   Found {len(precursor_compounds)} precursors")
     print("")
 
     print("3. Adding curated CHEBI lanthanophores...")
@@ -255,7 +257,7 @@ def extend_chemicals_table(input_tsv: Path, output_tsv: Path, source_label: str 
     print("")
 
     # Combine all compounds
-    all_compounds = lanthanide_compounds + complex_compounds + chebi_compounds
+    all_compounds = pfas_compounds + precursor_compounds + chebi_compounds
 
     # Filter out duplicates
     new_compounds = []
@@ -279,18 +281,18 @@ def extend_chemicals_table(input_tsv: Path, output_tsv: Path, source_label: str 
 def main():
     """Main entry point."""
     parser = argparse.ArgumentParser(
-        description="Search PubChem and CHEBI for lanthanide-relevant compounds"
+        description="Search PubChem and CHEBI for PFAS-relevant compounds"
     )
     parser.add_argument(
         '--input',
         type=Path,
-        default=Path('data/txt/sheet/BER_CMM_Data_for_AI_chemicals.tsv'),
+        default=Path('data/txt/sheet/PFAS_Data_for_AI_chemicals.tsv'),
         help='Input chemicals TSV file'
     )
     parser.add_argument(
         '--output',
         type=Path,
-        default=Path('data/txt/sheet/BER_CMM_Data_for_AI_chemicals_extended.tsv'),
+        default=Path('data/txt/sheet/PFAS_Data_for_AI_chemicals_extended.tsv'),
         help='Output extended TSV file'
     )
     parser.add_argument(

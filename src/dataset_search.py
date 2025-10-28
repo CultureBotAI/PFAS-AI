@@ -229,7 +229,7 @@ def create_extended_datasets_table(input_file: str, output_dir: str = "data/txt/
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     
-    output_file = output_dir / "BER_CMM_Data_for_AI_datasets_extended.tsv"
+    output_file = output_dir / "PFAS_Data_for_AI_datasets_extended.tsv"
     combined_datasets.to_csv(output_file, sep='\t', index=False)
     
     print(f"Extended datasets table saved: {output_file}")
@@ -239,4 +239,4 @@ def create_extended_datasets_table(input_file: str, output_dir: str = "data/txt/
 
 if __name__ == "__main__":
     # Example usage
-    create_extended_datasets_table("data/txt/sheet/BER_CMM_Data_for_AI_datasets.tsv")
+    create_extended_datasets_table("data/txt/sheet/PFAS_Data_for_AI_datasets.tsv")

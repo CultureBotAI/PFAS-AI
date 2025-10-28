@@ -351,7 +351,7 @@ def create_extended_genes_table(input_file: str, output_dir: str = "data/txt/she
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     
-    output_file = output_dir / "BER_CMM_Data_for_AI_genes_and_proteins_extended.tsv"
+    output_file = output_dir / "PFAS_Data_for_AI_genes_and_proteins_extended.tsv"
     combined_genes.to_csv(output_file, sep='\t', index=False)
     
     print(f"Extended genes table saved: {output_file}")
@@ -361,4 +361,4 @@ def create_extended_genes_table(input_file: str, output_dir: str = "data/txt/she
 
 if __name__ == "__main__":
     # Example usage
-    create_extended_genes_table("data/txt/sheet/BER_CMM_Data_for_AI_genes_and_proteins.tsv")
+    create_extended_genes_table("data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins.tsv")

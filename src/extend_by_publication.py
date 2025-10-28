@@ -7,7 +7,7 @@ is relevant to any row in the data sheets. If relevant, it appends the publicati
 identifier (DOI or other standard ID) to the source column with a '|' delimiter.
 
 Usage:
-    python src/extend_by_publication.py --publications-file data/txt/sheet/BER_CMM_Data_for_AI_publications.tsv \
+    python src/extend_by_publication.py --publications-file data/txt/sheet/PFAS_Data_for_AI_publications.tsv \
                                         --markdown-dir data/publications \
                                         --data-dir data/txt/sheet
 """
@@ -451,7 +451,7 @@ def main():
     parser.add_argument(
         '--publications-file',
         type=Path,
-        default=Path('data/txt/sheet/BER_CMM_Data_for_AI_publications.tsv'),
+        default=Path('data/txt/sheet/PFAS_Data_for_AI_publications.tsv'),
         help='Path to publications TSV file'
     )
     parser.add_argument(
@@ -513,12 +513,12 @@ def main():
 
     # Find sheets to process
     if args.sheets:
-        sheet_paths = [args.data_dir / f"BER_CMM_Data_for_AI_{sheet}.tsv"
+        sheet_paths = [args.data_dir / f"PFAS_Data_for_AI_{sheet}.tsv"
                       for sheet in args.sheets]
     else:
         # Process all sheets with source column
         sheet_paths = []
-        for tsv_file in sorted(args.data_dir.glob('BER_CMM_Data_for_AI_*.tsv')):
+        for tsv_file in sorted(args.data_dir.glob('PFAS_Data_for_AI_*.tsv')):
             # Skip publications sheet itself
             if 'publications' in tsv_file.stem:
                 continue

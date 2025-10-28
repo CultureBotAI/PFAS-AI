@@ -14,8 +14,8 @@ def main():
     """Main function to extend the lanthanide data tables."""
     
     # Paths to existing data
-    genomes_path = "data/txt/sheet/BER_CMM_Data_for_AI_taxa_and_genomes.tsv"
-    biosamples_path = "data/txt/sheet/BER_CMM_Data_for_AI_biosamples.tsv"
+    genomes_path = "data/txt/sheet/PFAS_Data_for_AI_taxa_and_genomes.tsv"
+    biosamples_path = "data/txt/sheet/PFAS_Data_for_AI_biosamples.tsv"
     
     # Check if files exist
     if not Path(genomes_path).exists():

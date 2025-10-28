@@ -668,54 +668,54 @@ def convert_all_tsvs(data_dir: Path, output_path: Optional[Path] = None) -> Lant
     print(f"Converting TSV files from {data_dir}...")
 
     # Convert each table
-    genomes = convert_genomes(data_dir / "BER_CMM_Data_for_AI_taxa_and_genomes_extended.tsv")
+    genomes = convert_genomes(data_dir / "PFAS_Data_for_AI_taxa_and_genomes_extended.tsv")
     print(f"  Converted {len(genomes)} genome records")
 
-    biosamples = convert_biosamples(data_dir / "BER_CMM_Data_for_AI_biosamples_extended.tsv")
+    biosamples = convert_biosamples(data_dir / "PFAS_Data_for_AI_biosamples_extended.tsv")
     print(f"  Converted {len(biosamples)} biosample records")
 
-    pathways = convert_pathways(data_dir / "BER_CMM_Data_for_AI_pathways_extended.tsv")
+    pathways = convert_pathways(data_dir / "PFAS_Data_for_AI_pathways_extended.tsv")
     print(f"  Converted {len(pathways)} pathway records")
 
-    genes_proteins = convert_genes_proteins(data_dir / "BER_CMM_Data_for_AI_genes_and_proteins_extended.tsv")
+    genes_proteins = convert_genes_proteins(data_dir / "PFAS_Data_for_AI_genes_and_proteins_extended.tsv")
     print(f"  Converted {len(genes_proteins)} gene/protein records")
 
-    structures = convert_structures(data_dir / "BER_CMM_Data_for_AI_macromolecular_structures_extended.tsv")
+    structures = convert_structures(data_dir / "PFAS_Data_for_AI_macromolecular_structures_extended.tsv")
     print(f"  Converted {len(structures)} structure records")
 
-    publications = convert_publications(data_dir / "BER_CMM_Data_for_AI_publications_extended.tsv")
+    publications = convert_publications(data_dir / "PFAS_Data_for_AI_publications_extended.tsv")
     print(f"  Converted {len(publications)} publication records")
 
-    datasets = convert_datasets(data_dir / "BER_CMM_Data_for_AI_datasets_extended.tsv")
+    datasets = convert_datasets(data_dir / "PFAS_Data_for_AI_datasets_extended.tsv")
     print(f"  Converted {len(datasets)} dataset records")
 
     # Convert new experimental data tables
     chemicals = []
-    chemicals_file = data_dir / "BER_CMM_Data_for_AI_chemicals.tsv"
+    chemicals_file = data_dir / "PFAS_Data_for_AI_chemicals.tsv"
     if chemicals_file.exists():
         chemicals = convert_chemicals(chemicals_file)
         print(f"  Converted {len(chemicals)} chemical records")
 
     assays = []
-    assays_file = data_dir / "BER_CMM_Data_for_AI_assays.tsv"
+    assays_file = data_dir / "PFAS_Data_for_AI_assays.tsv"
     if assays_file.exists():
         assays = convert_assays(assays_file)
         print(f"  Converted {len(assays)} assay records")
 
     bioprocesses = []
-    bioprocesses_file = data_dir / "BER_CMM_Data_for_AI_bioprocesses.tsv"
+    bioprocesses_file = data_dir / "PFAS_Data_for_AI_bioprocesses.tsv"
     if bioprocesses_file.exists():
         bioprocesses = convert_bioprocesses(bioprocesses_file)
         print(f"  Converted {len(bioprocesses)} bioprocess records")
 
     screening_results = []
-    screening_file = data_dir / "BER_CMM_Data_for_AI_screening_results.tsv"
+    screening_file = data_dir / "PFAS_Data_for_AI_screening_results.tsv"
     if screening_file.exists():
         screening_results = convert_screening_results(screening_file)
         print(f"  Converted {len(screening_results)} screening result records")
 
     protocols = []
-    protocols_file = data_dir / "BER_CMM_Data_for_AI_protocols.tsv"
+    protocols_file = data_dir / "PFAS_Data_for_AI_protocols.tsv"
     if protocols_file.exists():
         protocols = convert_protocols(protocols_file)
         print(f"  Converted {len(protocols)} protocol records")

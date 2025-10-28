@@ -309,7 +309,7 @@ def create_extended_structures_table(input_file: str, output_dir: str = "data/tx
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     
-    output_file = output_dir / "BER_CMM_Data_for_AI_macromolecular_structures_extended.tsv"
+    output_file = output_dir / "PFAS_Data_for_AI_macromolecular_structures_extended.tsv"
     combined_structures.to_csv(output_file, sep='\t', index=False)
     
     print(f"Extended structures table saved: {output_file}")
@@ -319,4 +319,4 @@ def create_extended_structures_table(input_file: str, output_dir: str = "data/tx
 
 if __name__ == "__main__":
     # Example usage
-    create_extended_structures_table("data/txt/sheet/BER_CMM_Data_for_AI_macromolecular_structures.tsv")
+    create_extended_structures_table("data/txt/sheet/PFAS_Data_for_AI_macromolecular_structures.tsv")

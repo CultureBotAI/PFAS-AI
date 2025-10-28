@@ -234,7 +234,7 @@ def main():
     parser.add_argument(
         '--publications-file',
         type=str,
-        default='data/txt/sheet/BER_CMM_Data_for_AI_publications.tsv',
+        default='data/txt/sheet/PFAS_Data_for_AI_publications.tsv',
         help='Path to publications TSV file'
     )
     parser.add_argument(

@@ -4,6 +4,8 @@
 import pandas as pd
 from pathlib import Path
 
+from ncbi_search import get_annotation_download_url
+
 
 def add_annotation_urls_to_table(input_file: str, output_file: str = None) -> None:
     """Add annotation download URLs to genomes table.

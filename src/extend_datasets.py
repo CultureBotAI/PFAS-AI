@@ -13,7 +13,7 @@ def main():
     """Main function to extend the datasets data table."""
     
     # Path to existing data
-    datasets_path = "data/txt/sheet/BER_CMM_Data_for_AI_datasets.tsv"
+    datasets_path = "data/txt/sheet/PFAS_Data_for_AI_datasets.tsv"
     
     # Check if file exists
     if not Path(datasets_path).exists():
