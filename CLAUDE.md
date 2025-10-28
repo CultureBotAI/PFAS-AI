@@ -59,6 +59,7 @@ PFAS-AI - ML-enabled automated data pipeline for PFAS biodegradation research. E
 - `make update-reactions-oxygenase` - Oxygenase co-metabolism (29 reactions)
 - `make update-reactions-important-genes` - Non-enzymatic genes (3 entries)
 - `make update-reactions-all-categories` - Extend all categories at once
+- `make merge-reactions` - Merge category files into unified reactions table (107 unique reactions)
 - `make update-screening` - (Manual) Update screening results table
 - `make update-protocols` - (Manual) Update protocols table
 
@@ -158,6 +159,7 @@ pyproject.toml       # Package configuration (uses uv/hatchling)
 **convert_reactions_excel.py**: Convert reactions Excel with reaction_category column tracking
 **extend_reactions.py**: Main reactions extension pipeline script
 **extend_reactions_by_category.py**: Category-specific reaction enrichment with gene linking
+**scripts/merge_reaction_categories.py**: Merge category-specific files into unified reactions table
 **pdf_to_markdown.py**: Convert PDFs to markdown for text extraction
 **extract_from_documents.py**: Extract experimental data from markdown files with DOI tracking
 **download_pdfs_from_publications.py**: Download PDFs from publications table URLs

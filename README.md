@@ -99,6 +99,7 @@ make update-reactions-dehalogenase     # C-F bond cleavage (16 reactions)
 make update-reactions-fluoride         # Fluoride resistance (38 reactions)
 make update-reactions-hydrocarbon      # Hydrocarbon degradation (19 reactions)
 make update-reactions-all-categories   # Extend all categories
+make merge-reactions                   # Merge into unified table (107 reactions)
 
 # View pipeline status
 make status

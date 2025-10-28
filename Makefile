@@ -3,7 +3,7 @@
 # This Makefile provides commands to update PFAS data tables with PFAS-degrading
 # bacteria and archaea from NCBI databases.
 
-.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-reactions update-reactions-dehalogenase update-reactions-fluoride update-reactions-hydrocarbon update-reactions-pfas-degraders update-reactions-oxygenase update-reactions-important-genes update-reactions-all-categories update-bioprocesses update-screening update-protocols update-all clean install test validate-schema validate-consistency gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data download-pdfs extend2 extendbypub merge-excel
+.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-reactions update-reactions-dehalogenase update-reactions-fluoride update-reactions-hydrocarbon update-reactions-pfas-degraders update-reactions-oxygenase update-reactions-important-genes update-reactions-all-categories merge-reactions update-bioprocesses update-screening update-protocols update-all clean install test validate-schema validate-consistency gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data download-pdfs extend2 extendbypub merge-excel
 
 # Default target
 help:
@@ -32,6 +32,7 @@ help:
 	@echo "  update-reactions-oxygenase         - Extend oxygenase co-metabolism reactions"
 	@echo "  update-reactions-important-genes   - Extend important genes (non-enzymatic)"
 	@echo "  update-reactions-all-categories    - Extend all reaction categories"
+	@echo "  merge-reactions                    - Merge category files into unified table"
 	@echo ""
 	@echo "  update-bioprocesses - (Manual) Update bioprocesses table"
 	@echo "  update-screening    - (Manual) Update screening results table"
@@ -194,6 +195,15 @@ update-reactions-all-categories: update-reactions-dehalogenase update-reactions-
 	@echo "  - PFAS_Reactions_known_pfas_degraders_extended.tsv"
 	@echo "  - PFAS_Reactions_oxygenase_cometabolism_extended.tsv"
 	@echo "  - PFAS_Reactions_important_genes_extended.tsv"
+
+# Merge category-specific reaction files into unified table
+merge-reactions: update-reactions-all-categories
+	@echo ""
+	@echo "Merging category-specific reactions into unified table..."
+	uv run python scripts/merge_reaction_categories.py
+	@echo ""
+	@echo "✓ Unified reactions table created!"
+	@echo "  Output: data/txt/sheet/PFAS_Data_for_AI_reactions_extended.tsv"
 
 # Download PDFs from publications table
 download-pdfs: install
