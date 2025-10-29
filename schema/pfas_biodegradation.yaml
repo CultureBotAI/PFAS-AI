@@ -80,6 +80,18 @@ classes:
       reactions:
         range: ReactionRecord
         multivalued: true
+      transcriptomics:
+        range: TranscriptomicsRecord
+        multivalued: true
+      strains:
+        range: StrainRecord
+        multivalued: true
+      growth_media:
+        range: GrowthMediaRecord
+        multivalued: true
+      media_ingredients:
+        range: MediaIngredientRecord
+        multivalued: true
 
   GenomeRecord:
     description: >-
@@ -538,6 +550,222 @@ classes:
         description: Data provenance
         range: string
 
+  TranscriptomicsRecord:
+    description: >-
+      Transcriptomics experiment record from SRA, GEO, or ArrayExpress
+    attributes:
+      experiment_id:
+        description: Experiment accession (SRX, ERX, DRX, or GEO/ArrayExpress ID)
+        range: string
+        identifier: true
+        required: true
+        pattern: "^([SED]RX\\d+|GSE\\d+|E-[A-Z]+-\\d+)$"
+      study_id:
+        description: Study accession (SRP, ERP, DRP, GSE, or ArrayExpress study)
+        range: string
+        pattern: "^([SED]RP\\d+|GSE\\d+|E-[A-Z]+-\\d+)?$"
+      sample_id:
+        description: BioSample accession (references BiosampleRecord)
+        range: string
+        pattern: "^(SAM[NED]\\d+|GSM\\d+)?$"
+      organism:
+        description: Source organism (should match GenomeRecord scientific_name)
+        range: string
+        required: true
+      project_title:
+        description: Study or project title
+        range: string
+      sample_description:
+        description: Sample description or experimental condition details
+        range: string
+      condition:
+        description: Experimental condition (e.g., PFAS treatment, fluoride, control)
+        range: string
+      data_type:
+        description: Type of sequencing or expression analysis
+        range: transcriptomics_data_type_enum
+      sra_accession:
+        description: SRA experiment accession if available
+        range: string
+        pattern: "^[SED]RX\\d*$"
+      geo_accession:
+        description: GEO accession if available
+        range: string
+        pattern: "^(GSE|GSM)\\d*$"
+      arrayexpress_accession:
+        description: ArrayExpress accession if available
+        range: string
+        pattern: "^E-[A-Z]+-\\d*$"
+      size:
+        description: Dataset size (number of reads, spots, or samples)
+        range: string
+      publication:
+        description: Associated publication DOI or PMID
+        range: string
+      license:
+        description: Data access license
+        range: string
+      download_url:
+        description: Direct download URL for FASTQ, BAM, or processed data files
+        range: uri
+      source:
+        description: Data provenance (extend1, extend2, DOI, PMID, etc.)
+        range: string
+
+  StrainRecord:
+    description: >-
+      Microbial strain with standardized nomenclature and culture collection information
+    attributes:
+      strain_id:
+        description: Unique strain identifier (primary culture collection ID or custom ID)
+        range: string
+        identifier: true
+        required: true
+        pattern: "^([A-Z]{2,10}:\\d+|STRAIN_\\d+)$"
+      species_taxon_id:
+        description: NCBITaxon ID of species (links to GenomeRecord)
+        range: integer
+      scientific_name:
+        description: Species name without strain designation
+        range: string
+        required: true
+      strain_designation:
+        description: Short strain identifier (e.g., AM-1, 22A, C49, 2.4-D)
+        range: string
+      type_strain:
+        description: Whether this is the nomenclatural type strain
+        range: type_strain_enum
+      culture_collection_ids:
+        description: Semicolon-separated culture collection IDs (e.g., ATCC:14718; DSM:1338)
+        range: string
+        multivalued: true
+      procurement_urls:
+        description: URLs to culture collection purchase/request pages
+        range: uri
+        multivalued: true
+      availability_status:
+        description: Current availability status
+        range: availability_status_enum
+      alternative_names:
+        description: Synonyms, old names, lab codes
+        range: string
+        multivalued: true
+      biosafety_level:
+        description: Biosafety level (1, 2, 3, or 4)
+        range: integer
+      growth_requirements:
+        description: Brief summary of cultivation needs
+        range: string
+      kg_microbe_nodes:
+        description: KG-Microbe node IDs matching this strain by NCBITaxon ID or name
+        range: string
+        multivalued: true
+      notes:
+        description: Additional information, lab stock locations, etc.
+        range: string
+      source:
+        description: Data provenance (KG-Microbe, NCBI, manual_curation, extend1)
+        range: string
+
+  GrowthMediaRecord:
+    description: >-
+      Curated growth medium formulation for microbial cultivation with standardized nomenclature
+    attributes:
+      media_id:
+        description: Unique media identifier (ATCC:1306, DSMZ:88, NMS, LB, etc.)
+        range: string
+        identifier: true
+        required: true
+        pattern: "^([A-Z]+:\\d+|[A-Z0-9]+)$"
+      media_name:
+        description: Full standardized name of the medium
+        range: string
+        required: true
+      media_type:
+        description: Type of medium (minimal, complex, selective, differential, enrichment)
+        range: media_type_enum
+      alternative_names:
+        description: Synonyms and alternative names (semicolon-separated)
+        range: string
+        multivalued: true
+      description:
+        description: Brief description of medium purpose and composition
+        range: string
+      target_organisms:
+        description: Primary organisms or groups this medium is designed for
+        range: string
+      ph:
+        description: pH value or range (e.g., 7.0, 6.8-7.2)
+        range: string
+      sterilization_method:
+        description: How the medium is sterilized (autoclave, filter-sterilize, etc.)
+        range: string
+      references:
+        description: Publications, database URLs, or standards references
+        range: string
+        multivalued: true
+      kg_microbe_nodes:
+        description: KG-Microbe node IDs matching ingredients (aggregated from all ingredients)
+        range: string
+        multivalued: true
+      notes:
+        description: Special preparation notes, storage conditions, etc.
+        range: string
+      source:
+        description: Data provenance (curated, ATCC, DSMZ, literature, extend1)
+        range: string
+
+  MediaIngredientRecord:
+    description: >-
+      Individual ingredient in a growth medium with chemical details and concentration
+    attributes:
+      ingredient_id:
+        description: Unique ingredient identifier (media_id + sequential number)
+        range: string
+        identifier: true
+        required: true
+        pattern: "^[A-Z0-9_:]+_ING_\\d+$"
+      ingredient_name:
+        description: Common name of the ingredient
+        range: string
+        required: true
+      media_id:
+        description: Foreign key to GrowthMediaRecord
+        range: string
+        required: true
+      media_name:
+        description: Name of the medium (for readability)
+        range: string
+      ontology_id:
+        description: Chemical ontology ID (CHEBI preferred, or PubChem)
+        range: string
+        pattern: "^(CHEBI:\\d+|PUBCHEM:\\d+|)$"
+      ontology_label:
+        description: Human-readable label from ontology (CHEBI preferred name)
+        range: string
+      chemical_formula:
+        description: Molecular formula (e.g., C6H12O6, MgSO4·7H2O)
+        range: string
+      concentration:
+        description: Numeric concentration value
+        range: float
+      unit:
+        description: Concentration unit (g/L, mM, mg/L, % (v/v), mL/L, etc.)
+        range: string
+      role:
+        description: Function in the medium
+        range: ingredient_role_enum
+      kg_microbe_nodes:
+        description: KG-Microbe node IDs matching this ingredient by ontology ID or name
+        range: string
+        multivalued: true
+      notes:
+        description: Preparation notes, solubility issues, etc.
+        range: string
+      source:
+        description: Data provenance (curated, ATCC, DSMZ, literature)
+        range: string
+
 enums:
 
   pathway_database_enum:
@@ -672,3 +900,89 @@ enums:
         description: High-throughput screening protocol
       degradation_protocol:
         description: PFAS degradation protocol
+
+  transcriptomics_data_type_enum:
+    description: Type of transcriptomics or gene expression data
+    permissible_values:
+      RNA-Seq:
+        description: RNA sequencing (Illumina, PacBio, Nanopore)
+      single-cell RNA-seq:
+        description: Single-cell RNA sequencing
+      microarray:
+        description: Gene expression microarray
+      differential expression:
+        description: Differential gene expression analysis
+      time-course:
+        description: Time-series transcriptomics
+      dual RNA-seq:
+        description: Host-pathogen dual RNA-seq
+      metatranscriptomics:
+        description: Community-level transcriptomics
+      small RNA-seq:
+        description: Small RNA or miRNA sequencing
+      long-read RNA-seq:
+        description: Long-read transcriptomics (PacBio, Nanopore)
+
+  type_strain_enum:
+    description: Type strain designation
+    permissible_values:
+      "yes":
+        description: Nomenclatural type strain for the species
+      "no":
+        description: Not a type strain
+      unknown:
+        description: Type strain status unknown
+
+  availability_status_enum:
+    description: Culture collection availability status
+    permissible_values:
+      available:
+        description: Currently available for purchase/request
+      restricted:
+        description: Available with restrictions (MTA, permits, etc.)
+      discontinued:
+        description: No longer maintained in collection
+      unknown:
+        description: Availability status unknown
+
+  media_type_enum:
+    description: Type of growth medium
+    permissible_values:
+      minimal:
+        description: Minimal medium with defined chemical composition
+      complex:
+        description: Complex medium with undefined components (extracts, peptones)
+      selective:
+        description: Selective medium favoring specific organisms
+      differential:
+        description: Differential medium distinguishing organisms by visible changes
+      enrichment:
+        description: Enrichment medium promoting growth of target organisms
+
+  ingredient_role_enum:
+    description: Function of ingredient in growth medium
+    permissible_values:
+      carbon source:
+        description: Primary carbon source for growth
+      nitrogen source:
+        description: Nitrogen source (nitrate, ammonium, amino acids)
+      mineral:
+        description: Essential mineral (Mg, Ca, etc.)
+      buffer:
+        description: pH buffer (phosphate, HEPES, etc.)
+      salt:
+        description: Osmotic support or ionic strength
+      trace element:
+        description: Micronutrient or trace element mix
+      vitamin:
+        description: Vitamin or growth factor
+      indicator:
+        description: pH or metabolic indicator
+      solidifying agent:
+        description: Agar or gellan gum for solid media
+      protein source:
+        description: Peptone, tryptone, or protein hydrolysate
+      vitamin source:
+        description: Yeast extract or vitamin mix
+      amino acid source:
+        description: Casamino acids or amino acid mix
