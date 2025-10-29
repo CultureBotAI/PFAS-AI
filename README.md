@@ -51,6 +51,11 @@ PFAS ("forever chemicals") are persistent environmental contaminants characteriz
 | **Datasets** | (to extend) | Research datasets from PFAS metagenomes and contaminated sites |
 | **Chemicals** | (to extend) | PFAS compounds (PFOA, PFOS, precursors, metabolites) |
 | **Assays** | (to extend) | Fluoride detection, PFAS quantification protocols |
+| **Reactions** | 107 reactions | Biochemical reactions for PFAS degradation (dehalogenation, fluoride resistance) |
+| **Transcriptomics** | (to extend) | RNA-seq datasets from NCBI SRA, GEO, ArrayExpress |
+| **Strains** | (to extend) | Culture collection IDs and procurement URLs for PFAS degraders |
+| **Growth Media** | 7 formulations | Curated media for cultivating PFAS-degrading organisms |
+| **Media Ingredients** | (varies) | Detailed ingredients with CHEBI IDs and concentrations |
 
 ## 🚀 Quick Start
 
@@ -100,6 +105,13 @@ make update-reactions-fluoride         # Fluoride resistance (38 reactions)
 make update-reactions-hydrocarbon      # Hydrocarbon degradation (19 reactions)
 make update-reactions-all-categories   # Extend all categories
 make merge-reactions                   # Merge into unified table (107 reactions)
+
+# New tables (synced from CMM-AI)
+make update-transcriptomics  # Extend with SRA, GEO, ArrayExpress datasets
+make update-strains          # Extract culture collection IDs and procurement URLs
+make update-media            # Create curated growth media formulations
+make create-kg-db            # Create KG-Microbe DuckDB database
+make query-kg-db             # Query knowledge graph
 
 # View pipeline status
 make status

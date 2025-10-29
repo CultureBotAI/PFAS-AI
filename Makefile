@@ -205,6 +205,51 @@ merge-reactions: update-reactions-all-categories
 	@echo "✓ Unified reactions table created!"
 	@echo "  Output: data/txt/sheet/PFAS_Data_for_AI_reactions_extended.tsv"
 
+# Update transcriptomics table
+update-transcriptomics: install
+	@echo "Updating transcriptomics table..."
+	@echo "Searching NCBI SRA, GEO, and ArrayExpress for RNA-seq datasets..."
+	uv run python src/extend_transcriptomics.py
+	@echo ""
+	@echo "✓ Transcriptomics table updated successfully!"
+	@echo "  Output: data/txt/sheet/PFAS_Data_for_AI_transcriptomics_extended.tsv"
+
+# Update strains table
+update-strains: install
+	@echo "Updating strains table..."
+	@echo "Querying KG-Microbe, NCBI Taxonomy, and BacDive for strain information..."
+	uv run python src/extend_strains.py
+	@echo ""
+	@echo "✓ Strains table updated successfully!"
+	@echo "  Output: data/txt/sheet/PFAS_Data_for_AI_strains_extended.tsv"
+
+# Update growth media tables
+update-media: install
+	@echo "Creating curated growth media and ingredients tables..."
+	@echo "Data sources: ATCC, DSMZ, and literature formulations..."
+	uv run python src/extend_media.py
+	@echo ""
+	@echo "✓ Growth media tables updated successfully!"
+	@echo "  Outputs:"
+	@echo "  - data/txt/sheet/PFAS_Data_for_AI_growth_media_extended.tsv"
+	@echo "  - data/txt/sheet/PFAS_Data_for_AI_media_ingredients_extended.tsv"
+
+# Create knowledge graph database from TSV files
+create-kg-db: install
+	@echo "Creating knowledge graph database from TSV files..."
+	@echo ""
+	@echo "Note: Download KG-Microbe TSV files first:"
+	@echo "  See data/kgm/README.md for instructions"
+	@echo ""
+	uv run python src/kg_analysis/kg_database.py --create --stats
+	@echo ""
+	@echo "✓ Knowledge graph database created: data/kgm/kg-microbe.duckdb"
+
+# Query knowledge graph database
+query-kg-db: install
+	@echo "Knowledge graph ready for queries"
+	@echo "See data/kgm/README.md for Python API usage examples"
+
 # Download PDFs from publications table
 download-pdfs: install
 	@echo "Downloading PDFs from publications table..."
@@ -233,7 +278,7 @@ update-protocols: install
 	@echo "Note: Automated protocols.io search not yet implemented"
 
 # Update all tables (full pipeline)
-update-all: update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-chemicals update-assays update-reactions update-bioprocesses update-screening update-protocols
+update-all: update-genomes update-biosamples update-pathways update-datasets update-transcriptomics update-strains update-media update-genes update-structures update-publications update-chemicals update-assays update-reactions update-bioprocesses update-screening update-protocols
 	@echo ""
 	@echo "Full data pipeline completed successfully!"
 	@echo "Updated files:"
