@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" 
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:mml="http://www.w3.org/1998/Math/MathML">
+  <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# book: http://ogp.me/ns/book#" >
+    <!--[if IE]><![endif]-->
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+<link rel="dns-prefetch" href="//d33xdlntwy0kbs.cloudfront.net" />
+<link rel="dns-prefetch" href="//www.google.com" />
+<link rel="dns-prefetch" href="//scholar.google.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="https://www.biorxiv.org/sites/default/files/images/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" type="application/pdf" title="Full Text (PDF)" href="/content/10.1101/2025.09.19.677392v1.full.pdf" />
+<link rel="alternate" type="text/plain" title="Full Text (Plain)" href="/content/10.1101/2025.09.19.677392v1.full.txt" />
+<link rel="alternate" type="application/vnd.ms-powerpoint" title="Powerpoint" href="/content/10.1101/2025.09.19.677392v1.ppt" />
+<meta name="citation_funding_source" content="citation_grant_number=60NANB24D118;" />
+<meta name="type" content="article" />
+<meta name="category" content="article" />
+<meta name="HW.identifier" content="/biorxiv/early/2025/09/19/2025.09.19.677392.atom" />
+<meta name="HW.pisa" content="biorxiv;2025.09.19.677392v1" />
+<meta name="DC.Format" content="text/html" />
+<meta name="DC.Language" content="en" />
+<meta name="DC.Title" content="Machine Learning-Guided Synthetic Microbial Communities Enable Functional and Sustainable Degradation of Persistent Environmental Pollutants" />
+<meta name="DC.Identifier" content="10.1101/2025.09.19.677392" />
+<meta name="DC.Date" content="2025-09-19" />
+<meta name="DC.Publisher" content="Cold Spring Harbor Laboratory" />
+<meta name="DC.Rights" content="© 2025, Posted by Cold Spring Harbor Laboratory. This pre-print is available under a Creative Commons License (Attribution-NonCommercial-NoDerivs 4.0 International), CC BY-NC-ND 4.0, as described at http://creativecommons.org/licenses/by-nc-nd/4.0/" />
+<meta name="DC.AccessRights" content="restricted" />
+<meta name="DC.Description" content="Persistent environmental pollutants demand the use of diverse microbial metabolic capabilities for effective degradation. While naturally occurring consortia or single strains often fall short in efficiency, synthetic microbial communities (SynComs) hold greater promise for enhanced degradation. To address this challenge, we developed GENIA (Genomically and Environmentally Networked Intelligent Assemblies), a genome-informed and machine learning–guided framework for the rational design of SynComs capable of multi-pollutant degradation under simulated environmental conditions. Using a microfluidic high-throughput cultivation platform, 2,155 bacterial strains were isolated from xenobiotic-enriched environments and screened for pollutant-specific growth. Whole-genome sequencing and functional annotation of 45 prioritized strains revealed metabolic traits associated with the potential degradation of challenging persistent environmental pollutants as proof of concept, i.e., lignin oxidation, atrazine dechlorination, and PFAS defluorination. These genomic profiles were encoded into spline-based graph representations and integrated within the GENIA pipeline, which combines graph neural networks, pathway complementarity modeling, and functional redundancy minimization to predict optimal community assemblies. The resulting nine-member community—comprising Pantoea dispersa , Atlantibacter hermannii , Pseudomonas fulva , Paenibacillus polymyxa , Bacillus cabrialesii , Micrococcus luteus , Bacillus pseudomycoides , Bacillus licheniformis , and Pseudomonas pergaminensis —was predicted to exhibit broad catabolic capacity and minimal intra-community competition. Kinetic experiments in minimal medium demonstrated simultaneous multi-pollutant degradation: lignin (91.6% removal by day 5), atrazine (91.4% removal by day 3), and PFOS (93.1% removal within seven days), representing a 2-4-fold improvement over existing approaches. GENIA establishes a scalable and generalizable framework that integrates systems-level genomics, phenotypic screening, and predictive modeling to engineer ecologically coherent microbial consortia with application to complex environmental bioremediation.
+
+![Figure][1]&lt;/img&gt;
+
+### Competing Interest Statement
+
+The authors have declared no competing interest.
+
+United States Department of Commerce National Institute of Standards and Technology, 60NANB24D118
+
+ [1]: pending:yes" />
+<meta name="DC.Contributor" content="Esaú De la Vega-Camarillo" />
+<meta name="DC.Contributor" content="Jorge Arreola-Vargas" />
+<meta name="DC.Contributor" content="Sanjay Antony-Babu" />
+<meta name="DC.Contributor" content="Saurav Kumar Mathur" />
+<meta name="DC.Contributor" content="Joshua Andrew Santos" />
+<meta name="DC.Contributor" content="Won Bo Shim" />
+<meta name="article:published_time" content="2025-09-19" />
+<meta name="article:section" content="New Results" />
+<meta name="citation_title" content="Machine Learning-Guided Synthetic Microbial Communities Enable Functional and Sustainable Degradation of Persistent Environmental Pollutants" />
+<meta name="citation_abstract" lang="en" content="&lt;h3&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;Persistent environmental pollutants demand the use of diverse microbial metabolic capabilities for effective degradation. While naturally occurring consortia or single strains often fall short in efficiency, synthetic microbial communities (SynComs) hold greater promise for enhanced degradation. To address this challenge, we developed GENIA (Genomically and Environmentally Networked Intelligent Assemblies), a genome-informed and machine learning–guided framework for the rational design of SynComs capable of multi-pollutant degradation under simulated environmental conditions. Using a microfluidic high-throughput cultivation platform, 2,155 bacterial strains were isolated from xenobiotic-enriched environments and screened for pollutant-specific growth. Whole-genome sequencing and functional annotation of 45 prioritized strains revealed metabolic traits associated with the potential degradation of challenging persistent environmental pollutants as proof of concept, i.e., lignin oxidation, atrazine dechlorination, and PFAS defluorination. These genomic profiles were encoded into spline-based graph representations and integrated within the GENIA pipeline, which combines graph neural networks, pathway complementarity modeling, and functional redundancy minimization to predict optimal community assemblies. The resulting nine-member community—comprising &lt;i&gt;Pantoea dispersa&lt;/i&gt;, &lt;i&gt;Atlantibacter hermannii&lt;/i&gt;, &lt;i&gt;Pseudomonas fulva&lt;/i&gt;, &lt;i&gt;Paenibacillus polymyxa&lt;/i&gt;, &lt;i&gt;Bacillus cabrialesii&lt;/i&gt;, &lt;i&gt;Micrococcus luteus&lt;/i&gt;, &lt;i&gt;Bacillus pseudomycoides&lt;/i&gt;, &lt;i&gt;Bacillus licheniformis&lt;/i&gt;, and &lt;i&gt;Pseudomonas pergaminensis&lt;/i&gt;—was predicted to exhibit broad catabolic capacity and minimal intra-community competition. Kinetic experiments in minimal medium demonstrated simultaneous multi-pollutant degradation: lignin (91.6% removal by day 5), atrazine (91.4% removal by day 3), and PFOS (93.1% removal within seven days), representing a 2-4-fold improvement over existing approaches. GENIA establishes a scalable and generalizable framework that integrates systems-level genomics, phenotypic screening, and predictive modeling to engineer ecologically coherent microbial consortia with application to complex environmental bioremediation.&lt;/p&gt;&lt;h3&gt;Graphical Abstract&lt;/h3&gt;
+" />
+<meta name="citation_journal_title" content="bioRxiv" />
+<meta name="citation_publisher" content="Cold Spring Harbor Laboratory" />
+<meta name="citation_publication_date" content="2025/01/01" />
+<meta name="citation_mjid" content="biorxiv;2025.09.19.677392v1" />
+<meta name="citation_id" content="2025.09.19.677392v1" />
+<meta name="citation_public_url" content="https://www.biorxiv.org/content/10.1101/2025.09.19.677392v1" />
+<meta name="citation_abstract_html_url" content="https://www.biorxiv.org/content/10.1101/2025.09.19.677392v1.abstract" />
+<meta name="citation_full_html_url" content="https://www.biorxiv.org/content/10.1101/2025.09.19.677392v1.full" />
+<meta name="citation_pdf_url" content="https://www.biorxiv.org/content/biorxiv/early/2025/09/19/2025.09.19.677392.full.pdf" />
+<meta name="citation_issn" content="2692-8205" />
+<meta name="citation_doi" content="10.1101/2025.09.19.677392" />
+<meta name="citation_num_pages" content="37" />
+<meta name="citation_article_type" content="Article" />
+<meta name="citation_section" content="New Results" />
+<meta name="citation_firstpage" content="2025.09.19.677392" />
+<meta name="citation_author" content="Esaú De la Vega-Camarillo" />
+<meta name="citation_author_institution" content="Department of Plant Pathology and Microbiology, Texas A&amp;M University, College Station" />
+<meta name="citation_author" content="Jorge Arreola-Vargas" />
+<meta name="citation_author_institution" content="Department of Plant Pathology and Microbiology, Texas A&amp;M University, College Station" />
+<meta name="citation_author" content="Sanjay Antony-Babu" />
+<meta name="citation_author_institution" content="Department of Plant Pathology and Microbiology, Texas A&amp;M University, College Station" />
+<meta name="citation_author" content="Saurav Kumar Mathur" />
+<meta name="citation_author_institution" content="Department of Plant Pathology and Microbiology, Texas A&amp;M University, College Station" />
+<meta name="citation_author" content="Joshua Andrew Santos" />
+<meta name="citation_author_institution" content="Department of Plant Pathology and Microbiology, Texas A&amp;M University, College Station" />
+<meta name="citation_author" content="Won Bo Shim" />
+<meta name="citation_author_institution" content="Department of Plant Pathology and Microbiology, Texas A&amp;M University, College Station" />
+<meta name="citation_author_email" content="wbshim{at}tamu.edu" />
+<meta name="citation_reference" content="Margulis, L. Symbiosis in Cell Evolution: Life and Its Environment on the Early Earth; W. H. Freeman: San Francisco, 1981." />
+<meta name="citation_reference" content="Lindemann, S. R.; Bernstein, H. C.; Song, H.-S.; Fredrickson, J. K.; Fields, M. W.; Shou, W.; Johnson, D. R.; Beliaev, A. S. Engineering Microbial Consortia for Controllable Outputs. The ISME Journal 2016, 10 (9), 2077–2084. 10.1038/ismej.2016.26." />
+<meta name="citation_reference" content="McCarty, N. S.; Ledesma-Amaro, R. Synthetic Biology Tools to Engineer Microbial Communities for Biotechnology. Trends in Biotechnology 2019, 37 (2), 181–197. 10.1016/j.tibtech.2018.11.002." />
+<meta name="citation_reference" content="Shetty, S. A.; Hugenholtz, F.; Lahti, L.; Smidt, H.; De Vos, W. M. Intestinal Microbiome Landscaping: Insight in Community Assemblage and Implications for Microbial Modulation Strategies. FEMS Microbiology Reviews 2017, 41 (2), 182–199. 10.1093/femsre/fuw045." />
+<meta name="citation_reference" content="Ghattas, A.-K.; Fischer, F.; Wick, A.; Ternes, T. A. Anaerobic Biodegradation of (Emerging) Organic Contaminants in the Aquatic Environment. Water Research 2017, 116, 268–295. 10.1016/j.watres.2017.02.001." />
+<meta name="citation_reference" content="Khatoon, H.; Rai, J. P. N. Optimization Studies on Biodegradation of Atrazine by Bacillus Badius ABP6 Strain Using Response Surface Methodology. Biotechnology Reports 2020, 26, e00459. 10.1016/j.btre.2020.e00459." />
+<meta name="citation_reference" content="Ahmad, M.; Riaz, U.; Iqbal, S.; Ahmad, J.; Rasheed, H.; Al-Farraj, A. S. F.; Al-Wabel, M. I. Adsorptive Removal of Atrazine From Contaminated Water Using Low-Cost Carbonaceous Materials: A Review. Front. Mater. 2022, 9. 10.3389/fmats.2022.909534." />
+<meta name="citation_reference" content="Cousins, I. T.; DeWitt, J. C.; Glüge, J.; Goldenman, G.; Herzke, D.; Lohmann, R.; Ng, C. A.; Scheringer, M.; Wang, Z. The High Persistence of PFAS Is Sufficient for Their Management as a Chemical Class. Environ. Sci.: Processes Impacts 2020, 22 (12), 2307–2312. 10.1039/d0em00355g." />
+<meta name="citation_reference" content="Hayes, T. B.; Collins, A.; Lee, M.; Mendoza, M.; Noriega, N.; Stuart, A. A.; Vonk, A. Hermaphroditic, Demasculinized Frogs after Exposure to the Herbicide Atrazine at Low Ecologically Relevant Doses. Proc. Natl. Acad. Sci. U.S.A. 2002, 99 (8), 5476–5480. 10.1073/pnas.082121499." />
+<meta name="citation_reference" content="Qu, M.; Liu, G.; Zhao, J.; Li, H.; Liu, W.; Yan, Y.; Feng, X.; Zhu, D. Fate of Atrazine and Its Relationship with Environmental Factors in Distinctly Different Lake Sediments Associated with Hydrophytes. Environmental Pollution 2020, 256, 113371. 10.1016/j.envpol.2019.113371." />
+<meta name="citation_reference" content="Wang, Y.; Lin, T.; Chen, H. Degradation of Atrazine by a UV-Activated Organic Chloramines Process: Kinetics, Degradation Pathways, Disinfection by-Product Formation, and Toxicity Changes. Chemical Engineering Journal 2023, 468, 143788. 10.1016/j.cej.2023.143788." />
+<meta name="citation_reference" content="Zakzeski, J.; Bruijnincx, P. C. A.; Jongerius, A. L.; Weckhuysen, B. M. The Catalytic Valorization of Lignin for the Production of Renewable Chemicals. Chem. Rev. 2010, 110 (6), 3552–3599. 10.1021/cr900354u." />
+<meta name="citation_reference" content="Bugg, T. D.; Ahmad, M.; Hardiman, E. M.; Singh, R. The Emerging Role for Bacteria in Lignin Degradation and Bio-Product Formation. Current Opinion in Biotechnology 2011, 22 (3), 394–400. 10.1016/j.copbio.2010.10.009." />
+<meta name="citation_reference" content="Renner, R. Growing Concern Over Perfluorinated Chemicals. Environ. Sci. Technol. 2001, 35 (7), 154A–160A. 10.1021/es012317k." />
+<meta name="citation_reference" content="D’Agostino, L. A.; Mabury, S. A. Identification of Novel Fluorinated Surfactants in Aqueous Film Forming Foams and Commercial Surfactant Concentrates. Environ. Sci. Technol. 2014, 48 (1), 121–129. 10.1021/es403729e." />
+<meta name="citation_reference" content="Dasu, K.; Liu, J.; Lee, L. S. Aerobic Soil Biodegradation of 8:2 Fluorotelomer Stearate Monoester. Environ. Sci. Technol. 2012, 46 (7), 3831–3836. 10.1021/es203978g." />
+<meta name="citation_reference" content="Harris, B. A.; Zhou, J.; Clarke, B. O.; Leung, I. K. H. Enzymatic Degradation of PFAS: Current Status and Ongoing Challenges. ChemSusChem 2025, 18 (2). 10.1002/cssc.202401122." />
+<meta name="citation_reference" content="Henn, C.; Monteiro, D. A.; Boscolo, M.; Da Silva, R.; Gomes, E. Biodegradation of Atrazine and Ligninolytic Enzyme Production by Basidiomycete Strains. BMC Microbiol 2020, 20 (1). 10.1186/s12866-020-01950-0." />
+<meta name="citation_reference" content="Huang, S.; Jaffé, P. R. Defluorination of Perfluorooctanoic Acid (PFOA) and Perfluorooctane Sulfonate (PFOS) by Acidimicrobium Sp. Strain A6. Environ. Sci. Technol. 2019, 53 (19), 11410–11419. 10.1021/acs.est.9b04047." />
+<meta name="citation_reference" content="Lozupone, C. A.; Knight, R. Global Patterns in Bacterial Diversity. Proc. Natl. Acad. Sci. U.S.A. 2007, 104 (27), 11436–11440. 10.1073/pnas.0611525104." />
+<meta name="citation_reference" content="Díaz-Rodríguez, A. M.; Salcedo Gastelum, L. A.; Félix Pablos, C. M.; Parra-Cota, F. I.; Santoyo, G.; Puente, M. L.; Bhattacharya, D.; Mukherjee, J.; De Los Santos-Villalobos, S. The Current and Future Role of Microbial Culture Collections in Food Security Worldwide. Front. Sustain. Food Syst. 2021, 4. 10.3389/fsufs.2020.614739." />
+<meta name="citation_reference" content="Liang, J.; Arellano, A.; Sajjadi, S.; Jewell, T. Cultivation of Diverse and Rare Bacteria from the Human Gut Microbiome: Rapid Isolation of Entire Populations of Microbes Using the GALT Prospector, an Automated Array-Based Platform. Genetic Engineering &amp; Biotechnology News 2020, 40 (7), 50–52. 10.1089/gen.40.07.14." />
+<meta name="citation_reference" content="Nichols, D.; Cahoon, N.; Trakhtenberg, E. M.; Pham, L.; Mehta, A.; Belanger, A.; Kanigan, T.; Lewis, K.; Epstein, S. S. Use of Ichip for High-Throughput In Situ Cultivation of “Uncultivable” Microbial Species. Appl Environ Microbiol 2010, 76 (8), 2445–2450. 10.1128/aem.01754-09." />
+<meta name="citation_reference" content="Simpson, J. T.; Pop, M. The Theory and Practice of Genome Sequence Assembly. Annu. Rev. Genom. Hum. Genet. 2015, 16 (1), 153–172. 10.1146/annurev-genom-090314-050032." />
+<meta name="citation_reference" content="Wick, R. R.; Judd, L. M.; Gorrie, C. L.; Holt, K. E. Completing Bacterial Genome Assemblies with Multiplex MinION Sequencing. Microbial Genomics 2017, 3 (10). 10.1099/mgen.0.000132." />
+<meta name="citation_reference" content="McGann, P.; Bunin, J. L.; Snesrud, E.; Singh, S.; Maybank, R.; Ong, A. C.; Kwak, Y. I.; Seronello, S.; Clifford, R. J.; Hinkle, M.; Yamada, S.; Barnhill, J.; Lesho, E. Real Time Application of Whole Genome Sequencing for Outbreak Investigation – What Is an Achievable Turnaround Time? Diagnostic Microbiology and Infectious Disease 2016, 85 (3), 277–282. 10.1016/j.diagmicrobio.2016.04.020." />
+<meta name="citation_reference" content="Valous, N. A.; Popp, F.; Zörnig, I.; Jäger, D.; Charoentong, P. Graph Machine Learning for Integrated Multi-Omics Analysis. Br J Cancer 2024, 131 (2), 205–211. 10.1038/s41416-024-02706-7." />
+<meta name="citation_reference" content="Zitnik, M.; Nguyen, F.; Wang, B.; Leskovec, J.; Goldenberg, A.; Hoffman, M. M. Machine Learning for Integrating Data in Biology and Medicine: Principles, Practice, and Opportunities. Information Fusion 2019, 50, 71–91. 10.1016/j.inffus.2018.09.012." />
+<meta name="citation_reference" content="Dornaika, F.; Bi, J.; Charafeddine, J. Leveraging Graph Convolutional Networks for Semi-Supervised Learning in Multi-View Non-Graph Data. Cogn Comput 2025, 17 (2). 10.1007/s12559-025-10428-y." />
+<meta name="citation_reference" content="Grover, A.; Leskovec, J. Node2vec: Scalable Feature Learning for Networks. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining; ACM: San Francisco California USA, 2016; pp 855–864. 10.1145/2939672.2939754." />
+<meta name="citation_reference" content="Hamilton, W. L.; Ying, R.; Leskovec, J. Inductive Representation Learning on Large Graphs. arXiv September 10, 2018. 10.48550/arXiv.1706.02216." />
+<meta name="citation_reference" content="Alluhaybi, A. A.; Alharbi, A.; Alshammari, K. F.; El-Desouky, M. G. Efficient Adsorption and Removal of the Herbicide 2,4-Dichlorophenylacetic Acid from Aqueous Solutions Using MIL-88(Fe)-NH2. ACS Omega 2023, 8 (43), 40775–40784. 10.1021/acsomega.3c05818." />
+<meta name="citation_reference" content="Sagarkar, S.; Mukherjee, S.; Nousiainen, A.; Björklöf, K.; Purohit, H. J.; Jørgensen, K. S.; Kapley, A. Monitoring Bioremediation of Atrazine in Soil Microcosms Using Molecular Tools. Environmental Pollution 2013, 172, 108–115. 10.1016/j.envpol.2012.07.048." />
+<meta name="citation_reference" content="Isolation Bio. Prospector® Microbial Isolation and Cultivation System: User Manual, Version 1.2; Isolation Bio, Inc.: San Carlos, CA, 2023." />
+<meta name="citation_reference" content="Persyn, A.; Mueller, A.; Goormachtig, S. Drops Join to Make a Stream: High-throughput Nanoscale Cultivation to Grasp the Lettuce Root Microbiome. Environ Microbiol Rep 2022, 14 (1), 60–69. 10.1111/1758-2229.13014." />
+<meta name="citation_reference" content="Opentrons OT-2 Liquid Handling Platform. Opentrons Labworks Inc., Brooklyn, NY. https://opentrons.com/products/ot-2-robot (accessed July 12, 2025)." />
+<meta name="citation_reference" content="Boundy-Mills, K. L.; de Jonge, R.; Flaherty, J. E.; Giunta, A.; Heckman, D. Mechanisms of Atrazine Biodegradation in Agricultural Soils. Appl. Environ. Microbiol. 2017, 83 (18), e00816–17. DOI: 10.1128/AEM.00816-17." />
+<meta name="citation_reference" content="Liu, J.; Mejia Avendaño, S. Microbial Degradation of Polyfluoroalkyl Chemicals in the Environment: A Review. Environ. Int. 2013, 61, 98–114. DOI: 10.1016/j.envint.2013.08.022." />
+<meta name="citation_reference" content="Kolmogorov, M.; Yuan, J.; Lin, Y.; Pevzner, P. Assembly of Long Error-Prone Reads Using Repeat Graphs. Nat. Biotechnol. 2019, 37 (5), 540–546. DOI: 10.1038/s41587-019-0072-8." />
+<meta name="citation_reference" content="Vaser, R.; Sović, I.; Nagarajan, N.; Šikić, M. Fast and Accurate De Novo Genome Assembly from Long Uncorrected Reads. Genome Res. 2017, 27 (5), 737–746. DOI: 10.1101/gr.214270.116." />
+<meta name="citation_reference" content="Oxford Nanopore Technologies. Medaka: Sequence Correction Provided by ONT Research. Oxford, UK. https://github.com/nanoporetech/medaka (accessed July 12, 2025)." />
+<meta name="citation_reference" content="Gurevich, A.; Saveliev, V.; Vyahhi, N.; Tesler, G. QUAST: Quality Assessment Tool for Genome Assemblies. Bioinformatics 2013, 29 (8), 1072–1075. DOI: 10.1093/bioinformatics/btt086." />
+<meta name="citation_reference" content="Parks, D. H.; Imelfort, M.; Skennerton, C. T.; Hugenholtz, P.; Tyson, G. W. CheckM: Assessing the Quality of Microbial Genomes Recovered from Isolates, Single Cells, and Metagenomes. Genome Res. 2015, 25 (7), 1043–1055. DOI: 10.1101/gr.186072.114." />
+<meta name="citation_reference" content="Tatusova, T.; DiCuccio, M.; Badretdin, A.; Chetvernin, V.; Nawrocki, E. P.; Zaslavsky, L.; Lomsadze, A.; Pruitt, K. D.; Borodovsky, M.; Ostell, J. NCBI Prokaryotic Genome Annotation Pipeline. Nucleic Acids Res. 2016, 44 (14), 6614–6624. DOI: 10.1093/nar/gkw569." />
+<meta name="citation_reference" content="Seemann, T. Prokka: Rapid Prokaryotic Genome Annotation. Bioinformatics 2014, 30 (14), 2068–2069. DOI: 10.1093/bioinformatics/btu153." />
+<meta name="citation_reference" content="Aziz, R. K.; Bartels, D.; Best, A. A.; DeJongh, M.; Disz, T.; Edwards, R. A.; Formsma, K.; Gerdes, S.; Glass, E. M.; Kubal, M.; Meyer, F.; Olsen, G. J.; Olson, R.; Osterman, A. L.; Overbeek, R. A.; McNeil, L. K.; Paarmann, D.; Paczian, T.; Parrello, B.; Pusch, G. D.; Reich, C.; Stevens, R.; Vassieva, O.; Vonstein, V.; Wilke, A.; Zagnitko, O. The RAST Server: Rapid Annotations Using Subsystems Technology. BMC Genomics 2008, 9, 75. DOI: 10.1186/1471-2164-9-75." />
+<meta name="citation_reference" content="Hyatt, D.; Chen, G.-L.; LoCascio, P. F.; Land, M. L.; Larimer, F. W.; Hauser, L. J. Prodigal: Prokaryotic Gene Recognition and Translation Initiation Site Identification. BMC Bioinformatics 2010, 11, 119. DOI: 10.1186/1471-2105-11-119." />
+<meta name="citation_reference" content="Kanehisa, M.; Goto, S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000, 28 (1), 27–30. DOI: 10.1093/nar/28.1.27." />
+<meta name="citation_reference" content="Galperin, M. Y.; Makarova, K. S.; Wolf, Y. I.; Koonin, E. V. Expanded Microbial Genome Coverage and Improved Protein Family Annotation in the COG Database. Nucleic Acids Res. 2015, 43 (D1), D261–D269. DOI: 10.1093/nar/gku1223." />
+<meta name="citation_reference" content="King, Z. A.; Lu, J.; Dräger, A.; Miller, P.; Federowicz, S.; Lerman, J. A.; Ebrahim, A.; Palsson, B. O.; Lewis, N. E. BiGG Models: A Platform for Integrating, Standardizing and Sharing Genome-Scale Models. Nucleic Acids Res. 2016, 44 (D1), D515–D522. DOI: 10.1093/nar/gkv1049." />
+<meta name="citation_reference" content="Altschul, S. F.; Gish, W.; Miller, W.; Myers, E. W.; Lipman, D. J. Basic Local Alignment Search Tool. J. Mol. Biol. 1990, 215 (3), 403–410. DOI: 10.1016/S0022-2836(05)80360-2." />
+<meta name="citation_reference" content="Avsec, Ž.; Weilert, M.; Shrikumar, A.; Krueger, S.; Alexandari, A.; Dalal, K.; Fropf, R.; McAnany, C.; Gagneur, J.; Kundaje, A.; Zeitlinger, J. Modeling Positional Effects of Regulatory Sequences with Spline Transformations Increases Prediction Accuracy of Deep Neural Networks. Bioinformatics 2018, 34 (8), 1261–1268. DOI: 10.1093/bioinformatics/btw727." />
+<meta name="citation_reference" content="Karp, P. D.; Weaver, D.; Latendresse, M. How Accurate Is Automated Gap Filling of Metabolic Models? BMC Syst. Biol. 2018, 12 (1), 73. DOI: 10.1186/s12918-018-0593-7." />
+<meta name="citation_reference" content="Reed, J. L.; Vo, T. D.; Schilling, C. H.; Palsson, B. O. An Expanded Genome-Scale Model of Escherichia coli K-12 (iJR904 GSM/GPR). Genome Biol. 2003, 4 (9), R54. DOI: 10.1186/gb-2003-4-9-r54." />
+<meta name="citation_reference" content="Burgard, A. P.; Nikolaev, E. V.; Schilling, C. H.; Maranas, C. D. Flux Coupling Analysis of Genome-Scale Metabolic Network Reconstructions. Genome Res. 2004, 14 (2), 301–312. DOI: 10.1101/gr.1926504." />
+<meta name="citation_reference" content="Zenil, H.; Kiani, N. A.; Tegnér, J. Methods of Information Theory and Algorithmic Complexity for Network Biology. Semin. Cell Dev. Biol. 2016, 51, 32–43. DOI: 10.1016/j.semcdb.2016.01.011." />
+<meta name="citation_reference" content="Li, M.; Vitányi, P. An Introduction to Kolmogorov Complexity and Its Applications, 3rd ed.; Springer: New York, 2008." />
+<meta name="citation_reference" content="Mahadevan, R.; Edwards, J. S.; Doyle, F. J. Dynamic Flux Balance Analysis of Diauxic Growth in Escherichia coli. Biophys. J. 2002, 83 (3), 1331–1340. DOI: 10.1016/S0006-3495(02)73903-9." />
+<meta name="citation_reference" content="Zhuang, K.; Izallalen, M.; Mouser, P.; Richter, H.; Risso, C.; Mahadevan, R.; Lovley, D. R. Genome-Scale Dynamic Modeling of the Competition between Rhodoferax and Geobacter in Anoxic Subsurface Environments. ISME J. 2011, 5 (2), 305–316. DOI: 10.1038/ismej.2010.117." />
+<meta name="citation_reference" content="Veličković, P.; Cucurull, G.; Casanova, A.; Romero, A.; Liò, P.; Bengio, Y. Graph Attention Networks. arXiv preprint 2017, arXiv:1710.10903. DOI: 10.48550/arXiv.1710.10903." />
+<meta name="citation_reference" content="Grover, A.; Leskovec, J. node2vec: Scalable Feature Learning for Networks. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining; ACM: New York, 2016; pp 855–864. DOI: 10.1145/2939672.2939754." />
+<meta name="citation_reference" content="Peng, X.; Feng, K.; Yang, X.; He, Q.; Zhao, B.; Li, T.; Wang, S.; Deng, Y. iNAP 2.0: Harnessing Metabolic Complementarity in Microbial Network Analysis. iMeta 2024, 3 (4), e235. DOI: 10.1002/imt2.235." />
+<meta name="citation_reference" content="Mirzaei, R.; Akbari, A.; Shayestehpour, M.; Jafari, M.; Shahsavari, E. Multi-Residue Analysis of Herbicides in Environmental Waters by Liquid Chromatography-Tandem Mass Spectrometry. J. Chromatogr. A 2019, 1608, 460415. DOI: 10.1016/j.chroma.2019.460415." />
+<meta name="citation_reference" content="Fujii, S.; Polprasert, C.; Tanaka, S.; Lien, N. P. H.; Qiu, Y. New POPs in the Water Environment: Distribution, Bioaccumulation and Treatment of Perfluorinated Compounds - A Review Paper. J. Water Supply Res. Technol. 2007, 56 (5), 313–326. DOI: 10.2166/aqua.2007.005." />
+<meta name="citation_reference" content="Hach Company. SPADNS 2 Method 10225: Fluoride Determination Using Accuvac® Ampules. EPA Method SM 4500-F D Equivalent; Hach Company: Loveland, CO, 2021." />
+<meta name="citation_reference" content="Lee, R. A.; Bédard, C.; Berberi, V.; Beauchet, R.; Lavoie, J.-M. UV–Vis as Quantification Tool for Solubilized Lignin Following a Single-Shot Steam Process. Bioresource Technology 2013, 144, 658–663. 10.1016/j.biortech.2013.06.045." />
+<meta name="citation_reference" content="Paszke, A.; Gross, S.; Massa, F.; Lerer, A.; Bradbury, J.; Chanan, G.; Killeen, T.; Lin, Z.; Gimelshein, N.; Antiga, L.; et al. PyTorch: An Imperative Style, High-Performance Deep Learning Library. In Advances in Neural Information Processing Systems 32; Curran Associates, Inc.: 2019; pp 8024–8035." />
+<meta name="citation_reference" content="Pedregosa, F.; Varoquaux, G.; Gramfort, A.; Michel, V.; Thirion, B.; Grisel, O.; Blondel, M.; Prettenhofer, P.; Weiss, R.; Dubourg, V.;, et al. Scikit-learn: Machine Learning in Python. J. Mach. Learn. Res. 2011, 12, 2825–2830." />
+<meta name="citation_reference" content="Harris, C. R.; Millman, K. J.; van der Walt, S. J.; Gommers, R.; Virtanen, P.; Cournapeau, D.; Wieser, E.; Taylor, J.; Berg, S.; Smith, N. J.;, et al. Array Programming with NumPy. Nature 2020, 585 (7825), 357–362. DOI: 10.1038/s41586-020-2649-2." />
+<meta name="citation_reference" content="Chen, J.; Bittinger, K.; Charlson, E. S.; Hoffmann, C.; Lewis, J.; Wu, G. D.; Collman, R. G.; Bushman, F. D.; Li, H. Associating Microbiome Composition with Environmental Covariates Using Generalized UniFrac Distances. Bioinformatics 2012, 28 (16), 2106–2113. DOI: 10.1093/bioinformatics/bts342." />
+<meta name="citation_reference" content="Zhao, N.; Chen, J.; Carroll, I. M.; Ringel-Kulka, T.; Epstein, M. P.; Zhou, H.; Zhou, J. J.; Ringel, Y.; Li, H.; Wu, M. C. Testing in Microbiome-Profiling Studies with MiRKAT, the Microbiome Regression-Based Kernel Association Test. Am. J. Hum. Genet. 2015, 96 (5), 797–807. DOI: 10.1016/j.ajhg.2015.04.003." />
+<meta name="citation_reference" content="Koh, H.; Livanos, A. E.; Blaser, M. J.; Li, H. A Powerful Microbial Group Association Test Based on the Higher Criticism Analysis for Sparse Microbial Association Signals. Microbiome 2020, 8 (1), 63. DOI: 10.1186/s40168-020-00834-9." />
+<meta name="citation_reference" content="Anderson, M. J. Permutational Multivariate Analysis of Variance (PERMANOVA). In Wiley StatsRef: Statistics Reference Online; 2017; pp 1–15. DOI: 10.1002/9781118445112.stat07841." />
+<meta name="citation_reference" content="Akiba, T.; Sano, S.; Yanase, T.; Ohta, T.; Koyama, M. Optuna: A Next-Generation Hyperparameter Optimization Framework. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining; ACM: 2019; pp 2623–2631. DOI: 10.1145/3292500.3330701." />
+<meta name="citation_reference" content="Loshchilov, I.; Hutter, F. SGDR: Stochastic Gradient Descent with Warm Restarts. arXiv May 3, 2017. 10.48550/arXiv.1608.03983." />
+<meta name="citation_reference" content="Pascanu, R.; Mikolov, T.; Bengio, Y. On the Difficulty of Training Recurrent Neural Networks. arXiv February 16, 2013. 10.48550/arXiv.1211.5063." />
+<meta name="citation_reference" content="Lundberg, S.; Lee, S.-I. A Unified Approach to Interpreting Model Predictions. arXiv November 25, 2017. 10.48550/arXiv.1705.07874." />
+<meta name="citation_reference" content="Sundararajan, M.; Taly, A.; Yan, Q. Axiomatic Attribution for Deep Networks. arXiv June 13, 2017. 10.48550/arXiv.1703.01365." />
+<meta name="citation_reference" content="Hinton, G. E. Nobel Lecture: Physics 2024. NobelPrize.org. https://www.nobelprize.org/prizes/physics/2024/hinton/speech/ (accessed July 28, 2025)." />
+<meta name="citation_reference" content="Fritts, R. K.; McCully, A. L.; McKinlay, J. B. Extracellular Metabolism Sets the Table for Microbial Cross-Feeding. Microbiol Mol Biol Rev 2021, 85 (1). 10.1128/mmbr.00135-20." />
+<meta name="citation_reference" content="Xu, Z.; Lei, P.; Zhai, R.; Wen, Z.; Jin, M. Recent Advances in Lignin Valorization with Bacterial Cultures: Microorganisms, Metabolic Pathways, and Bio-Products. Biotechnol Biofuels 2019, 12 (1). 10.1186/s13068-019-1376-0." />
+<meta name="citation_reference" content="Gu, J.; Qiu, Q.; Yu, Y.; Sun, X.; Tian, K.; Chang, M.; Wang, Y.; Zhang, F.; Huo, H. Bacterial Transformation of Lignin: Key Enzymes and High-Value Products. Biotechnol Biofuels 2024, 17 (1). 10.1186/s13068-023-02447-4." />
+<meta name="citation_reference" content="Dos Santos Melo-Nascimento, A. O.; Mota Moitinho Sant’Anna, B.; Gonçalves, C. C.; Santos, G.; Noronha, E.; Parachin, N.; De Abreu Roque, M. R.; Bruce, T. Complete Genome Reveals Genetic Repertoire and Potential Metabolic Strategies Involved in Lignin Degradation by Environmental Ligninolytic Klebsiella Variicola P1CD1. PLoS ONE 2020, 15 (12), e0243739. 10.1371/journal.pone.0243739." />
+<meta name="citation_reference" content="Chiriac, F. L.; Stoica, C.; Iftode, C.; Pirvu, F.; Petre, V. A.; Paun, I.; Pascu, L. F.; Vasile, G. G.; Nita-Lazar, M. Bacterial Biodegradation of Perfluorooctanoic Acid (PFOA) and Perfluorosulfonic Acid (PFOS) Using Pure Pseudomonas Strains. Sustainability 2023, 15 (18), 14000. 10.3390/su151814000." />
+<meta name="citation_reference" content="Ge, Z.-B.; Zhai, Z.-Q.; Xie, W.-Y.; Dai, J.; Huang, K.; Johnson, D. R.; Zhao, F.-J.; Wang, P. Two-Tiered Mutualism Improves Survival and Competitiveness of Cross-Feeding Soil Bacteria. The ISME Journal 2023, 17 (11), 2090–2102. 10.1038/s41396-023-01519-5." />
+<meta name="citation_reference" content="Liao, C.; Wang, T.; Maslov, S.; Xavier, J. B. Modeling Microbial Cross-Feeding at Intermediate Scale Portrays Community Dynamics and Species Coexistence. PLoS Comput Biol 2020, 16 (8), e1008135. 10.1371/journal.pcbi.1008135." />
+<meta name="citation_reference" content="Zhao, W.; Wu, Y.; Fu, C.; Li, L. Mutualistic Cross Feeding Mediated by Metabolic Intermediates and Siderophores Enhances Dibenzo-p-Dioxin Removal. Environ. Sci. Technol. 2025, 59 (28), 14508–14517. 10.1021/acs.est.4c11857." />
+<meta name="citation_reference" content="Harris, B. A.; Zhou, J.; Clarke, B. O.; Leung, I. K. H. Enzymatic Degradation of PFAS: Current Status and Ongoing Challenges. ChemSusChem 2025, 18 (2). 10.1002/cssc.202401122." />
+<meta name="citation_reference" content="Liang, Y.; Ma, A. Investigating the Degradation Potential of Microbial Consortia for Perfluorooctane Sulfonate through a Functional “Top-down” Screening Approach. PLoS ONE 2024, 19 (5), e0303904. 10.1371/journal.pone.0303904." />
+<meta name="citation_reference" content="Skinner, J. P.; Raderstorf, A.; Rittmann, B. E.; Delgado, A. G. Biotransforming the “Forever Chemicals”: Trends and Insights from Microbiological Studies on PFAS. Environ. Sci. Technol. 2025, 59 (11), 5417–5430. 10.1021/acs.est.4c04557." />
+<meta name="citation_reference" content="LaFond, J. A.; Hatzinger, P. B.; Guelfo, J. L.; Millerick, K.; Jackson, W. A. Bacterial Transformation of Per- and Poly-Fluoroalkyl Substances: A Review for the Field of Bioremediation. Environ. Sci.: Adv. 2023, 2 (8), 1019–1041. 10.1039/d3va00031a." />
+<meta name="citation_reference" content="Shah, B. A.; Malhotra, H.; Papade, S. E.; Dhamale, T.; Ingale, O. P.; Kasarlawar, S. T.; Phale, P. S. Microbial Degradation of Contaminants of Emerging Concern: Metabolic, Genetic and Omics Insights for Enhanced Bioremediation. Front. Bioeng. Biotechnol. 2024, 12. 10.3389/fbioe.2024.1470522." />
+<meta name="citation_reference" content="Govantes, F.; Porrúa, O.; García-González, V.; Santero, E. Atrazine Biodegradation in the Lab and in the Field: Enzymatic Activities and Gene Regulation. Microbial Biotechnology 2009, 2 (2), 178–185. 10.1111/j.1751-7915.2008.00073.x." />
+<meta name="citation_reference" content="Zhao, X.; Wang, L.; Ma, F.; Yang, J. Characterisation of an Efficient Atrazine-Degrading Bacterium, Arthrobacter Sp. ZXY-2: An Attempt to Lay the Foundation for Potential Bioaugmentation Applications. Biotechnol Biofuels 2018, 11 (1). 10.1186/s13068-018-1113-0." />
+<meta name="citation_reference" content="Zhang, Y.; Gilbert, J. A.; Liu, X.; Nie, L.; Xu, X.; Gao, G.; Lyu, L.; Ma, Y.; Fan, K.; Yang, T.; Zhang, Y.; Zhang, J.; Chu, H. SynCom-mediated Herbicide Degradation Activates Microbial Carbon Metabolism in Soils. iMeta 2025. 10.1002/imt2.70058." />
+<meta name="citation_reference" content="Zhang, R.; Wang, J.; Milligan, S.; Yan, Y. Microbial Utilization of Lignin-Derived Aromatics via a Synthetic Catechol Meta-Cleavage Pathway. Green Chem. 2021, 23 (20), 8238–8250. 10.1039/d1gc02347k." />
+<meta name="citation_reference" content="Przymus, P.; Rykaczewski, K.; Martín-Segura, A.; Truu, J.; Carrillo De Santa Pau, E.; Kolev, M.; Naskinova, I.; Gruca, A.; Sampri, A.; Frohme, M.; Nechyporenko, A. Deep Learning in Microbiome Analysis: A Comprehensive Review of Neural Network Models. Front. Microbiol. 2025, 15. 10.3389/fmicb.2024.1516667." />
+<meta name="citation_reference" content="Karp, P. D.; Weaver, D.; Latendresse, M. How Accurate Is Automated Gap Filling of Metabolic Models? BMC Syst Biol 2018, 12 (1). 10.1186/s12918-018-0593-7." />
+<meta name="citation_reference" content="Silva-Andrade, C.; Rodriguez-Fernández, M.; Garrido, D.; Martin, A. J. M. Using Metabolic Networks to Predict Cross-Feeding and Competition Interactions between Microorganisms. Microbiol Spectr 2024, 12 (5). 10.1128/spectrum.02287-23." />
+<meta name="citation_reference" content="Kim, S.-B.; Lee, S.-Y.; Park, S.-J. TiO2/Multi-Walled Carbon Nanotube Electrospun Nanofibers Mats for Enhanced Cr(VI) Photoreduction. Journal of Cleaner Production 2024, 448, 141611. 10.1016/j.jclepro.2024.141611." />
+<meta name="twitter:title" content="Machine Learning-Guided Synthetic Microbial Communities Enable Functional and Sustainable Degradation of Persistent Environmental Pollutants" />
+<meta name="twitter:site" content="{at}biorxivpreprint" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://www.biorxiv.org/sites/default/files/images/biorxiv_logo_homepage7-5-small.png" />
+<meta name="twitter:description" content="Persistent environmental pollutants demand the use of diverse microbial metabolic capabilities for effective degradation. While naturally occurring consortia or single strains often fall short in efficiency, synthetic microbial communities (SynComs) hold greater promise for enhanced degradation. To address this challenge, we developed GENIA (Genomically and Environmentally Networked Intelligent Assemblies), a genome-informed and machine learning–guided framework for the rational design of SynComs capable of multi-pollutant degradation under simulated environmental conditions. Using a microfluidic high-throughput cultivation platform, 2,155 bacterial strains were isolated from xenobiotic-enriched environments and screened for pollutant-specific growth. Whole-genome sequencing and functional annotation of 45 prioritized strains revealed metabolic traits associated with the potential degradation of challenging persistent environmental pollutants as proof of concept, i.e., lignin oxidation, atrazine dechlorination, and PFAS defluorination. These genomic profiles were encoded into spline-based graph representations and integrated within the GENIA pipeline, which combines graph neural networks, pathway complementarity modeling, and functional redundancy minimization to predict optimal community assemblies. The resulting nine-member community—comprising Pantoea dispersa , Atlantibacter hermannii , Pseudomonas fulva , Paenibacillus polymyxa , Bacillus cabrialesii , Micrococcus luteus , Bacillus pseudomycoides , Bacillus licheniformis , and Pseudomonas pergaminensis —was predicted to exhibit broad catabolic capacity and minimal intra-community competition. Kinetic experiments in minimal medium demonstrated simultaneous multi-pollutant degradation: lignin (91.6% removal by day 5), atrazine (91.4% removal by day 3), and PFOS (93.1% removal within seven days), representing a 2-4-fold improvement over existing approaches. GENIA establishes a scalable and generalizable framework that integrates systems-level genomics, phenotypic screening, and predictive modeling to engineer ecologically coherent microbial consortia with application to complex environmental bioremediation.
+
+![Figure][1]&lt;/img&gt;
+
+### Competing Interest Statement
+
+The authors have declared no competing interest.
+
+United States Department of Commerce National Institute of Standards and Technology, 60NANB24D118
+
+ [1]: pending:yes" />
+<meta name="og-title" property="og:title" content="Machine Learning-Guided Synthetic Microbial Communities Enable Functional and Sustainable Degradation of Persistent Environmental Pollutants" />
+<meta name="og-url" property="og:url" content="https://www.biorxiv.org/content/10.1101/2025.09.19.677392v1" />
+<meta name="og-site-name" property="og:site_name" content="bioRxiv" />
+<meta name="og-description" property="og:description" content="Persistent environmental pollutants demand the use of diverse microbial metabolic capabilities for effective degradation. While naturally occurring consortia or single strains often fall short in efficiency, synthetic microbial communities (SynComs) hold greater promise for enhanced degradation. To address this challenge, we developed GENIA (Genomically and Environmentally Networked Intelligent Assemblies), a genome-informed and machine learning–guided framework for the rational design of SynComs capable of multi-pollutant degradation under simulated environmental conditions. Using a microfluidic high-throughput cultivation platform, 2,155 bacterial strains were isolated from xenobiotic-enriched environments and screened for pollutant-specific growth. Whole-genome sequencing and functional annotation of 45 prioritized strains revealed metabolic traits associated with the potential degradation of challenging persistent environmental pollutants as proof of concept, i.e., lignin oxidation, atrazine dechlorination, and PFAS defluorination. These genomic profiles were encoded into spline-based graph representations and integrated within the GENIA pipeline, which combines graph neural networks, pathway complementarity modeling, and functional redundancy minimization to predict optimal community assemblies. The resulting nine-member community—comprising Pantoea dispersa , Atlantibacter hermannii , Pseudomonas fulva , Paenibacillus polymyxa , Bacillus cabrialesii , Micrococcus luteus , Bacillus pseudomycoides , Bacillus licheniformis , and Pseudomonas pergaminensis —was predicted to exhibit broad catabolic capacity and minimal intra-community competition. Kinetic experiments in minimal medium demonstrated simultaneous multi-pollutant degradation: lignin (91.6% removal by day 5), atrazine (91.4% removal by day 3), and PFOS (93.1% removal within seven days), representing a 2-4-fold improvement over existing approaches. GENIA establishes a scalable and generalizable framework that integrates systems-level genomics, phenotypic screening, and predictive modeling to engineer ecologically coherent microbial consortia with application to complex environmental bioremediation.
+
+![Figure][1]&lt;/img&gt;
+
+### Competing Interest Statement
+
+The authors have declared no competing interest.
+
+United States Department of Commerce National Institute of Standards and Technology, 60NANB24D118
+
+ [1]: pending:yes" />
+<meta name="og-type" property="og:type" content="article" />
+<meta name="og-image" property="og:image" content="https://www.biorxiv.org/sites/default/files/images/biorxiv_logo_homepage7-5-small.png" />
+<meta name="citation_date" content="2025-09-19" />
+<meta name="description" content="bioRxiv - the preprint server for biology, operated by Cold Spring Harbor Laboratory, a research and educational institution" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://www.biorxiv.org/content/10.1101/2025.09.19.677392v1" />
+<link rel="shortlink" href="https://www.biorxiv.org/node/4897048" />
+    <title>Machine Learning-Guided Synthetic Microbial Communities Enable Functional and Sustainable Degradation of Persistent Environmental Pollutants | bioRxiv</title>  
+    <link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__7SC0i-kTgUlQGKuqbmyS18Sez8FDO-aG9FSHkGrLGl8__EBUojqg5W_1M2-aUl2Y1w9JxEEauoJ0pj29wOb-7Vz4__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__UufzdoKtMhzTNiAJfsa_0bYn78zz-bBHwNEqMQ0UIXk__1-Opexvnkee5dlO1d6qLW5_7DT6gOdNGKRcC-FxT6QU__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<style type="text/css" media="all">
+/* <![CDATA[ */
+.panels-flexible-new .panels-flexible-region{padding:0}.panels-flexible-new .panels-flexible-region-inside{padding-right:.5em;padding-left:.5em}.panels-flexible-new .panels-flexible-region-inside-first{padding-left:0}.panels-flexible-new .panels-flexible-region-inside-last{padding-right:0}.panels-flexible-new .panels-flexible-column{padding:0}.panels-flexible-new .panels-flexible-column-inside{padding-right:.5em;padding-left:.5em}.panels-flexible-new .panels-flexible-column-inside-first{padding-left:0}.panels-flexible-new .panels-flexible-column-inside-last{padding-right:0}.panels-flexible-new .panels-flexible-row{padding:0 0 .5em;margin:0}.panels-flexible-new .panels-flexible-row-last{padding-bottom:0}.panels-flexible-column-new-main{float:left;width:99.0000%}.panels-flexible-new-inside{padding-right:0}.panels-flexible-new{width:auto}.panels-flexible-region-new-center{float:left;width:99.0000%}.panels-flexible-row-new-main-row-inside{padding-right:0}
+/* ]]> */
+</style>
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__PWuQ_RYRTJ4BLEKsbWQeHysPg0gOQ3571ruQa_rXvAo__YSSQV2ikPcFdZzQTgMJYRqFNRVKLBho-5sYN56e5oms__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<style type="text/css" media="all">
+/* <![CDATA[ */
+#sliding-popup.sliding-popup-bottom,#sliding-popup.sliding-popup-bottom .eu-cookie-withdraw-banner,.eu-cookie-withdraw-tab{background:gray}#sliding-popup.sliding-popup-bottom.eu-cookie-withdraw-wrapper{background:transparent}#sliding-popup .popup-content #popup-text h1,#sliding-popup .popup-content #popup-text h2,#sliding-popup .popup-content #popup-text h3,#sliding-popup .popup-content #popup-text p,.eu-cookie-compliance-secondary-button,.eu-cookie-withdraw-tab{color:#fff !important}.eu-cookie-withdraw-tab{border-color:#fff}.eu-cookie-compliance-more-button{color:#fff !important}
+/* ]]> */
+</style>
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__ElJr3PIJEvw3qLXc1cnYiLj2G4KgDPSXFOfm6Phf8hw__JdWGm15cDWjsK6KrFlQVXQix9YgNeYysf22XZHj-Y-c__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__Wnlyen9qEpwh_Qaf9okEu4QdVGM0BDothxeqA6Nbvo8__V5ELGUNlvrQNy0DawYpgoJkHNarLIFjzheVeu7ifICQ__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__Ht1WW_Gz5w2rYxx6jaornT0q9xc3pNpE6SIGZj-bdus__igagZiGB2PktJMjUpZ2u3tnc56saoUGIrD5N0KSRmI4__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+
+<!--[if (lt IE 9)&(!IEMobile)]>
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__XH6bpcI0f2dImc-p674DLCZtWBGb-QwxJK1YexVGtno__vUceGprdo5nIhV6DH93X7fI3r8RcTJbChbas9TQXeW4__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<![endif]-->
+
+<!--[if gte IE 9]><!-->
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__2WBMox6sOrN42ss5lCnH7WWVRdFdJCxtTKnQJYRwTE4__yqNvNYLvMpjy3ffuJrjjm9uW2i-Me1c23KLYuWHaqio__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<!--<![endif]-->
+<link type="text/css" rel="stylesheet" href="https://www.biorxiv.org/sites/default/files/advagg_css/css__wi5Zxnuh_T8fWjtQoxn7iPbo4fJ-3qqyY6JmwgLHo18__E0Tx0ykGwSvbSa_sKCrkD0RCA6q_OJfnjP8zcxUKd_I__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://d33xdlntwy0kbs.cloudfront.net/cshl_custom.css" media="all" />
+    <script type="text/javascript" src="https://www.biorxiv.org/sites/default/files/advagg_js/js__BKYqkKToQ7EjirB7eIdMEH5521EU3da9IpoOs8Ex2XI__aSjVoX8giBmLhN2EbCgIGQJNu89Mh5aVu1LvI_gkJ7Y__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="https://www.biorxiv.org/sites/default/files/advagg_js/js__4Cn2dxvNlsJ-sHe6QOTLREaQvcqb0Yh0Zm9tTOHtQow__JeZEUjzbaj_yX6UjCI8eBbXy_J64ZVuoWmc2fSpLZHo__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.js"></script>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=en&amp;render=explicit&amp;onload=drupalRecaptchaOnload"></script>
+<script type="text/javascript" src="https://www.biorxiv.org/sites/default/files/advagg_js/js__GprzlhkUYgQWK5kPdmqTZ__-6RV2TDXloi849KAdN9E__Xf33mfqZqeeXqmwODvN9K5IVoQP5-RFtolqDZdixfa0__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.js"></script>
+<script type="text/javascript" async="async" src="https://scholar.google.com/scholar_js/casa.js"></script>
+<script type="text/javascript" async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RZD586MC3Q"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+/*!
+ * yepnope1.5.4
+ * (c) WTFPL, GPLv2
+ */
+(function(a,b,c){function d(a){return"[object Function]"==o.call(a)}function e(a){return"string"==typeof a}function f(){}function g(a){return!a||"loaded"==a||"complete"==a||"uninitialized"==a}function h(){var a=p.shift();q=1,a?a.t?m(function(){("c"==a.t?B.injectCss:B.injectJs)(a.s,0,a.a,a.x,a.e,1)},0):(a(),h()):q=0}function i(a,c,d,e,f,i,j){function k(b){if(!o&&g(l.readyState)&&(u.r=o=1,!q&&h(),l.onload=l.onreadystatechange=null,b)){"img"!=a&&m(function(){t.removeChild(l)},50);for(var d in y[c])y[c].hasOwnProperty(d)&&y[c][d].onload()}}var j=j||B.errorTimeout,l=b.createElement(a),o=0,r=0,u={t:d,s:c,e:f,a:i,x:j};1===y[c]&&(r=1,y[c]=[]),"object"==a?l.data=c:(l.src=c,l.type=a),l.width=l.height="0",l.onerror=l.onload=l.onreadystatechange=function(){k.call(this,r)},p.splice(e,0,u),"img"!=a&&(r||2===y[c]?(t.insertBefore(l,s?null:n),m(k,j)):y[c].push(l))}function j(a,b,c,d,f){return q=0,b=b||"j",e(a)?i("c"==b?v:u,a,b,this.i++,c,d,f):(p.splice(this.i++,0,a),1==p.length&&h()),this}function k(){var a=B;return a.loader={load:j,i:0},a}var l=b.documentElement,m=a.setTimeout,n=b.getElementsByTagName("script")[0],o={}.toString,p=[],q=0,r="MozAppearance"in l.style,s=r&&!!b.createRange().compareNode,t=s?l:n.parentNode,l=a.opera&&"[object Opera]"==o.call(a.opera),l=!!b.attachEvent&&!l,u=r?"object":l?"script":"img",v=l?"script":u,w=Array.isArray||function(a){return"[object Array]"==o.call(a)},x=[],y={},z={timeout:function(a,b){return b.length&&(a.timeout=b[0]),a}},A,B;B=function(a){function b(a){var a=a.split("!"),b=x.length,c=a.pop(),d=a.length,c={url:c,origUrl:c,prefixes:a},e,f,g;for(f=0;f<d;f++)g=a[f].split("="),(e=z[g.shift()])&&(c=e(c,g));for(f=0;f<b;f++)c=x[f](c);return c}function g(a,e,f,g,h){var i=b(a),j=i.autoCallback;i.url.split(".").pop().split("?").shift(),i.bypass||(e&&(e=d(e)?e:e[a]||e[g]||e[a.split("/").pop().split("?")[0]]),i.instead?i.instead(a,e,f,g,h):(y[i.url]?i.noexec=!0:y[i.url]=1,f.load(i.url,i.forceCSS||!i.forceJS&&"css"==i.url.split(".").pop().split("?").shift()?"c":c,i.noexec,i.attrs,i.timeout),(d(e)||d(j))&&f.load(function(){k(),e&&e(i.origUrl,h,g),j&&j(i.origUrl,h,g),y[i.url]=2})))}function h(a,b){function c(a,c){if(a){if(e(a))c||(j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}),g(a,j,b,0,h);else if(Object(a)===a)for(n in m=function(){var b=0,c;for(c in a)a.hasOwnProperty(c)&&b++;return b}(),a)a.hasOwnProperty(n)&&(!c&&!--m&&(d(j)?j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}:j[n]=function(a){return function(){var b=[].slice.call(arguments);a&&a.apply(this,b),l()}}(k[n])),g(a[n],j,b,n,h))}else!c&&l()}var h=!!a.test,i=a.load||a.both,j=a.callback||f,k=j,l=a.complete||f,m,n;c(h?a.yep:a.nope,!!i),i&&c(i)}var i,j,l=this.yepnope.loader;if(e(a))g(a,0,l,0);else if(w(a))for(i=0;i<a.length;i++)j=a[i],e(j)?g(j,0,l,0):w(j)?B(j):Object(j)===j&&h(j,l);else Object(a)===a&&h(a,l)},B.addPrefix=function(a,b){z[a]=b},B.addFilter=function(a){x.push(a)},B.errorTimeout=1e4,null==b.readyState&&b.addEventListener&&(b.readyState="loading",b.addEventListener("DOMContentLoaded",A=function(){b.removeEventListener("DOMContentLoaded",A,0),b.readyState="complete"},0)),a.yepnope=k(),a.yepnope.executeStack=h,a.yepnope.injectJs=function(a,c,d,e,i,j){var k=b.createElement("script"),l,o,e=e||B.errorTimeout;k.src=a;for(o in d)k.setAttribute(o,d[o]);c=j?h:c||f,k.onreadystatechange=k.onload=function(){!l&&g(k.readyState)&&(l=1,c(),k.onload=k.onreadystatechange=null)},m(function(){l||(l=1,c(1))},e),i?k.onload():n.parentNode.insertBefore(k,n)},a.yepnope.injectCss=function(a,c,d,e,g,i){var e=b.createElement("link"),j,c=i?h:c||f;e.href=a,e.rel="stylesheet",e.type="text/css";for(j in d)e.setAttribute(j,d[j]);g||(n.parentNode.insertBefore(e,n),m(c,0))}})(this,document);
+
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+yepnope({
+  test: Modernizr.matchmedia,
+  nope: '/sites/all/libraries/media-match/media.match.min.js'
+});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _prum=[['id', '612e3d94173350001100005d'], ['mark', 'firstbyte',
+      (new Date()).getTime()]]; (function() {
+      var s=document.getElementsByTagName('script')[0],
+      p=document.createElement('script');
+      p.async='async'; p.src='//rum-static.pingdom.net/prum.min.js';s.parentNode.insertBefore(p,s);})();
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if(typeof window.MathJax === "undefined") window.MathJax = { menuSettings: { zoom: "Click" } };
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-RZD586MC3Q", {"groups":"default","anonymize_ip":true});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"jcore_1","theme_token":"UMezOcaQrKCPLLlqbLsaR6eHFw25UcwZ2wbru3dYLl0"},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"highwire":{"markup":[{"requested":"short-text","variant":"abstract","view":"abstract","pisa":"biorxiv;2025.09.19.677392v1"},{"requested":"short-text","variant":"abstract","view":"abstract","pisa":"biorxiv;2025.09.19.677392v1"},{"requested":"abstract","variant":"abstract","view":"abstract","pisa":"biorxiv;2025.09.19.677392v1"}],"nid":"4897048","apath":"\/biorxiv\/early\/2025\/09\/19\/2025.09.19.677392.atom","pisa":"biorxiv;2025.09.19.677392v1","ac":{"\/biorxiv\/early\/2025\/09\/19\/2025.09.19.677392.atom":{"access":{"full":true},"pisa_id":"","apath":"\/biorxiv\/early\/2025\/09\/19\/2025.09.19.677392.atom","jcode":"biorxiv"},"biorxiv;2025.09.19.677392v1":{"access":{"full":true},"pisa_id":"biorxiv;2025.09.19.677392v1","apath":"","jcode":"biorxiv"}},"processed":["highwire_math"],"modal_window_width":"560","share_modal_width":"560","share_modal_title":"Share this Article"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"instances":"{\u0022highwire_abstract_tooltip\u0022:{\u0022content\u0022:{\u0022text\u0022:\u0022\u0022},\u0022style\u0022:{\u0022tip\u0022:{\u0022width\u0022:20,\u0022height\u0022:20,\u0022border\u0022:1,\u0022offset\u0022:0,\u0022corner\u0022:true},\u0022classes\u0022:\u0022qtip-custom hw-tooltip hw-abstract-tooltip qtip-shadow qtip-rounded\u0022,\u0022classes_custom\u0022:\u0022hw-tooltip hw-abstract-tooltip\u0022},\u0022position\u0022:{\u0022at\u0022:\u0022right center\u0022,\u0022my\u0022:\u0022left center\u0022,\u0022viewport\u0022:true,\u0022adjust\u0022:{\u0022method\u0022:\u0022shift\u0022}},\u0022show\u0022:{\u0022event\u0022:\u0022mouseenter click \u0022,\u0022solo\u0022:true},\u0022hide\u0022:{\u0022event\u0022:\u0022mouseleave \u0022,\u0022fixed\u0022:1,\u0022delay\u0022:\u0022100\u0022}},\u0022highwire_author_tooltip\u0022:{\u0022content\u0022:{\u0022text\u0022:\u0022\u0022},\u0022style\u0022:{\u0022tip\u0022:{\u0022width\u0022:15,\u0022height\u0022:15,\u0022border\u0022:1,\u0022offset\u0022:0,\u0022corner\u0022:true},\u0022classes\u0022:\u0022qtip-custom hw-tooltip hw-author-tooltip qtip-shadow qtip-rounded\u0022,\u0022classes_custom\u0022:\u0022hw-tooltip hw-author-tooltip\u0022},\u0022position\u0022:{\u0022at\u0022:\u0022top center\u0022,\u0022my\u0022:\u0022bottom center\u0022,\u0022viewport\u0022:true,\u0022adjust\u0022:{\u0022method\u0022:\u0022\u0022}},\u0022show\u0022:{\u0022event\u0022:\u0022mouseenter \u0022,\u0022solo\u0022:true},\u0022hide\u0022:{\u0022event\u0022:\u0022mouseleave \u0022,\u0022fixed\u0022:1,\u0022delay\u0022:\u0022100\u0022}},\u0022highwire_reflinks_tooltip\u0022:{\u0022content\u0022:{\u0022text\u0022:\u0022\u0022},\u0022style\u0022:{\u0022tip\u0022:{\u0022width\u0022:15,\u0022height\u0022:15,\u0022border\u0022:1,\u0022mimic\u0022:\u0022top center\u0022,\u0022offset\u0022:0,\u0022corner\u0022:true},\u0022classes\u0022:\u0022qtip-custom hw-tooltip hw-ref-link-tooltip qtip-shadow qtip-rounded\u0022,\u0022classes_custom\u0022:\u0022hw-tooltip hw-ref-link-tooltip\u0022},\u0022position\u0022:{\u0022at\u0022:\u0022bottom left\u0022,\u0022my\u0022:\u0022top left\u0022,\u0022viewport\u0022:true,\u0022adjust\u0022:{\u0022method\u0022:\u0022flip\u0022}},\u0022show\u0022:{\u0022event\u0022:\u0022mouseenter \u0022,\u0022solo\u0022:true},\u0022hide\u0022:{\u0022event\u0022:\u0022mouseleave \u0022,\u0022fixed\u0022:1,\u0022delay\u0022:\u0022100\u0022}}}","qtipDebug":"{\u0022leaveElement\u0022:0}","panel_ajax_tab":{"path":"sites\/all\/modules\/contrib\/panels_ajax_tab"},"disqus":{"domain":"biorxivstage","url":"https:\/\/www.biorxiv.org\/content\/10.1101\/2025.09.19.677392v1","title":"Machine Learning-Guided Synthetic Microbial Communities Enable Functional and Sustainable Degradation of Persistent Environmental Pollutants","identifier":"node\/4897048"},"panels_ajax_pane":{"new-28877068-b9cb-4641-830b-b6b4638c98bb":"{\u0022encrypted\u0022:\u0022{\\\u0022encrypted\\\u0022:\\\u0022ssaJ6sSXfYCnko8aAAHmj\\\\\\\/mf40XKGCFnFukDrb52pp6EUUjpDRG5VvLPv+kxFD2ZFaVU66UlupCcEiWUW34uyyUvc6sxF59vRQ1TuY1juj0rdiEv2tVWExXbMApDJxtchgAmk\\\\\\\/evce02RwVrkZSe7GmUJQZDUdkWwMZDN3inOqhbn2PLBzNeNdncjO+IXI09Y3PMzt5HU9yBZm42vGy+UbclIEa9Vlm+Sa24lfpKq53WkMVIXmjqAVZIuT5Ait998+1XLBKlPsCy+11wY5xwrmDucwoTTbqkqRv2lHY1QN0bD4GdlScUimlfs1DgXt56X+tEFe1O0yxffHp6qb5yvC5TIMUEemuFTvnIH3qUV6qZrcpiOtY0Xtn\\\\\\\/Ue31d77gmDFJKLodKOLrZv4qH7CZi8SnItA+\\\\\\\/OMzZ64TYs2gQhbCsx6Z8g9hTR3T85BnMHZR2cF4kKiYcRe0MtPBwZGM01rZqlb9X+h9W4DxNX5\\\\\\\/oMO08OUK7V9BZ5kQaKGq\\\\\\\/sqVSqa7YBFBRYLlQQ7h5H0S0hWNtMbg9LtZaVVvGqO039nGWRVwa1KKVDOQTbVDrPhbNC824F5fTaNELHUEeMSBYL3s628kB+DdAK77TGGKVY6Krx1+o4vDgvFRQ5pnd4rdGZuc5qwRXZURSuMBpsR\\\\\\\/a\\\\\\\/bJU0RAoesPTt7gmPVlT+kZJKqcBy2q+vyZFFr0dQHR5UwLSkPsFxQ6UTQ0vTCcoHiirRAt4UnO18yv7T8FrtiXb+WecPGz267tMFo4NjFpGEx8zIi5836u0qfUkMneevr+r5EuGc4L6oxnZ7Bzk6hMKY2Shhl9FgmngAAW6AKaxONOUUsbf3RDxgXgdLWnA\\\\\\\/UiqRZoqQAZ3Oyy4atYxThMtfVckg11MGJEQRkyxrE4uLZCpanXmWCxpxzF+NVN8rHnbYs9vcxZh0jvWuDJsREbuRieivqMC\\\\\\\/PFajL\\\\\\\/CUVcLgIHOPaCMIU\\\\\\\/BpOIy6QcmthjJHWVgwPsPUjhTOW\\\\\\\/Vg6Ds6Hc6DLACudUlO0xhZDcj7d2NYwfHEVGjYp4HeosuCn97vEptmkpWbfnsUkmUFhZCZJUd\\\\\\\/MPDcBMgsLfgi8DYgAf44e58fBw3euUdxU6Yg8ylXOD9Ot2Xbh3IJC\\\\\\\/p5tPkKiOLzcl7SH\\\\\\\/jLLOcgNko3cW7Uns32mqpFL\\\\\\\/t64FvBVU\\\\\\\/RaQPclSFbWRvMnqFH+acPSX5lJY16QOmV\\\\\\\/4JaRbpDgiXNdDuElr6MjnQgW9EtIwydtWH5chQDi1Eg8dljoWaZx5WEeymJLQHR7dYbLv+6d2w59c9hqWcSa5gfBPvYTCCYTvAqv5AKE+j5zeY0zds5Jg0z\\\\\\\/1w78SZnlWKcgc\\\u0022,\\\u0022iv\\\u0022:\\\u0022srP9YOieVCQFkOiH4+Vx4g==\\\u0022,\\\u0022salt\\\u0022:\\\u0022f9d8845712f72c9fee5db7d9ff111eab\\\u0022}\u0022,\u0022hmac\u0022:\u00228fdec74bbf69d3cc226af8d4cf08c58b694c2b69fee71f83718ebc6dbbd294a1\u0022}"},"urlIsAjaxTrusted":{"\/content\/10.1101\/2025.09.19.677392v1":true},"ws_fl":{"width":100,"height":21},"ws_gpo":{"size":"","annotation":"","lang":"","callback":"","width":300},"color":{"logo":"https:\/\/www.biorxiv.org\/sites\/default\/files\/biorxiv_article_logo.jpg"},"highwire_list_expand":{"is_collapsed":"1"},"highwireResponsive":{"enquire_enabled":1,"breakpoints_configured":1,"breakpoints":{"zero":"all and (min-width: 0px)","xsmall":"all and (min-width: 380px)","narrow":"all and (min-width: 768px) and (min-device-width: 768px), (max-device-width: 800px) and (min-width: 768px) and (orientation:landscape)","normal":"all and (min-width: 980px) and (min-device-width: 980px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)","wide":"all and (min-width: 1220px)"}},"eu_cookie_compliance":{"popup_enabled":1,"popup_agreed_enabled":0,"popup_hide_agreed":0,"popup_clicking_confirmation":1,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003EWe use cookies on this site to enhance your user experience. By clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 role=\u0022dialog\u0022 aria-labelledby=\u0022Continue\u0022\n        class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EContinue\u003C\/button\u003E\n                  \u003Cbutton type=\u0022button\u0022 role=\u0022dialog\u0022 aria-labelledby=\u0022Find out more\u0022\n        class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EFind out more\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n          \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 role=\u0022dialog\u0022 aria-labelledby=\u0022Continue\u0022\n        class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EContinue\u003C\/button\u003E\n                  \u003Cbutton type=\u0022button\u0022 role=\u0022dialog\u0022 aria-labelledby=\u0022Find out more\u0022\n        class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EFind out more\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":"768","popup_html_agreed":"\u003Cdiv\u003E\n  \u003Cdiv class=\u0022popup-content agreed\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EThank you for accepting cookies\u003C\/h2\u003E\u003Cp\u003EYou can now hide this message or find out more about cookies.\u003C\/p\u003E    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022hide-popup-button eu-cookie-compliance-hide-button\u0022\u003EHide\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button-thank-you\u0022 \u003EMore info\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/help\/cookie-policy","popup_link_new_window":1,"popup_position":null,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":0,"reload_page":0,"domain":"","popup_eu_only_js":0,"cookie_lifetime":"365","cookie_session":false,"disagree_do_not_show_popup":0,"method":"default","whitelisted_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003E\u0026lt;h2\u0026gt;We use cookies on this site to enhance your user experience\u0026lt;\/h2\u0026gt;\u0026lt;p\u0026gt;You have given your consent for us to set cookies.\u0026lt;\/p\u0026gt;\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","withdraw_enabled":false},"googleanalytics":{"account":["G-RZD586MC3Q"],"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"jnl_biorxiv_styles":{"defaultJCode":"biorxiv"},"omega":{"layouts":{"primary":"normal","order":["narrow","normal","wide"],"queries":{"narrow":"all and (min-width: 768px) and (min-device-width: 768px), (max-device-width: 800px) and (min-width: 768px) and (orientation:landscape)","normal":"all and (min-width: 980px) and (min-device-width: 980px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)","wide":"all and (min-width: 1220px)"}}}});
+//--><!]]>
+</script>
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  </head>
+  <body class="html not-front not-logged-in page-node page-node- page-node-4897048 node-type-highwire-article context-content hw-default-jcode-biorxiv hw-article-type-article hw-article-category-new-results">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M677548" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M677548');</script>
+<!-- End Google Tag Manager -->
+    <div id="skip-link">
+      <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    </div>
+        <div class="page clearfix page-box-shadows footer-borders panels-page panels-layout-jcore_2col" id="page">
+      <header id="section-header" class="section section-header">
+    
+  <div id="zone-branding" class="zone zone-branding clearfix print-display-block container-30">
+    <div class="grid-15 prefix-1 region region-branding print-display-block" id="region-branding">
+  <div class="region-inner region-branding-inner">
+        <div class="branding-data clearfix">
+            <div class="logo-img">
+        <a href="/" rel="home" class="" data-icon-position="" data-hide-link-title="0"><img alt="bioRxiv" src="https://www.biorxiv.org/sites/default/files/biorxiv_article_logo.jpg" /></a>      </div>
+                </div>
+          </div>
+</div><div class="grid-11 suffix-1 region region-branding-second print-hidden" id="region-branding-second">
+  <div class="region-inner region-branding-second-inner">
+    <div class="block block-system block-menu block-main-menu block-system-main-menu odd block-without-title" id="block-system-main-menu">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <nav class="menubar-nav"><ul class="menu" role="menu"><li class="first leaf" role="menuitem"><a href="/" title="" class="" data-icon-position="" data-hide-link-title="0">Home</a></li>
+<li class="leaf" role="menuitem"><a href="/about-biorxiv" class="" data-icon-position="" data-hide-link-title="0">About</a></li>
+<li class="leaf" role="menuitem"><a href="/submit-a-manuscript" class="" data-icon-position="" data-hide-link-title="0">Submit</a></li>
+<li class="last leaf" role="menuitem"><a href="/alertsrss" title="" class="" data-icon-position="" data-hide-link-title="0">ALERTS / RSS</a></li>
+</ul></nav>    </div>
+  </div>
+</div><div class="block block-panels-mini block-biorxiv-search-box block-panels-mini-biorxiv-search-box even block-without-title" id="block-panels-mini-biorxiv-search-box">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div class="panel-display panel-1col clearfix" id="mini-panel-biorxiv_search_box">
+  <div class="panel-panel panel-col">
+    <div><div class="panel-pane pane-highwire-seach-quicksearch" >
+  
+      
+  
+  <div class="pane-content">
+    <form class="highwire-quicksearch button-style-mini button-style-mini" action="/content/10.1101/2025.09.19.677392v1" method="post" id="highwire-search-quicksearch-form-0" accept-charset="UTF-8"><div><div class="form-item form-item-label-invisible form-type-textfield form-item-keywords">
+  <label class="element-invisible" for="search_rightsidebar_keywords_30560996">Search for this keyword </label>
+ <input placeholder="Search" type="text" id="search_rightsidebar_keywords_30560996" name="keywords" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<div class="button-wrapper button-mini"><span class="icon-search"></span><input data-icon-only="1" data-font-icon="icon-search" data-icon-position="after" type="submit" id="search_rightsidebar_submit_1900145398" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-5Fpn6mEzcM_0uo2ckk8FRQy7jFBj3TOWU-RggyN9dGg" />
+<input type="hidden" name="form_id" value="highwire_search_quicksearch_form_0" />
+</div></form>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-custom pane-2 advanced-search-link" >
+  
+      
+  
+  <div class="pane-content">
+    <a href="/search">Advanced Search</a>  </div>
+
+  
+  </div>
+</div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>  </div>
+</div>  </div>
+  
+  <div id="zone-header" class="zone zone-header clearfix container-30">
+  	      </div>
+</header>    
+      <section id="section-content" class="section section-content">
+    
+  <div id="zone-content" class="zone zone-content clearfix container-30">    
+        
+    <div class="grid-28 suffix-1 prefix-1 region region-content" id="region-content">
+  <div class="region-inner region-content-inner">
+    <a id="main-content"></a>
+                        <div class="block block-system block-main block-system-main odd block-without-title" id="block-system-main">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div class="panel-display panels-960-layout jcore-2col-layout" >
+	  
+  <div class="panel-row-wrapper clearfix">
+		
+		<div class="main-content-wrapper grid-17 suffix-1 alpha">
+			<div class="panel-panel panel-region-content">
+			  <div class="inside"><div class="panel-pane pane-highwire-article-citation" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="highwire-article-citation highwire-citation-type-highwire-article node4897048" data-node-nid="4897048" id="node-4897048--2644020124" data-pisa="biorxiv;2025.09.19.677392v1" data-pisa-master="biorxiv;2025.09.19.677392" data-apath="/biorxiv/early/2025/09/19/2025.09.19.677392.atom" data-hw-author-tooltip-instance="highwire_author_tooltip"><div  class="highwire-cite highwire-cite-highwire-article highwire-citation-biorxiv-article-top clearfix has-author-tooltip" >
+
+      <span class="biorxiv-article-type">
+        New Results    </span>
+  
+        <h1 class="highwire-cite-title" id="page-title">Machine Learning-Guided Synthetic Microbial Communities Enable Functional and Sustainable Degradation of Persistent Environmental Pollutants</h1>  
+      <div  class="highwire-cite-authors" ><span  class="highwire-citation-authors"><span class="highwire-citation-author first" data-delta="0"><span class="nlm-given-names">Esaú</span> <span class="nlm-surname">De la Vega-Camarillo</span></span>, <span class="highwire-citation-author" data-delta="1"><span class="nlm-given-names">Jorge</span> <span class="nlm-surname">Arreola-Vargas</span></span>, <span class="highwire-citation-author" data-delta="2"><span class="nlm-given-names">Sanjay</span> <span class="nlm-surname">Antony-Babu</span></span>, <span class="highwire-citation-author" data-delta="3"><span class="nlm-given-names">Saurav Kumar</span> <span class="nlm-surname">Mathur</span></span>, <span class="highwire-citation-author" data-delta="4"><span class="nlm-given-names">Joshua Andrew</span> <span class="nlm-surname">Santos</span></span>, <span class="highwire-citation-author" data-delta="5"><span class="nlm-given-names">Won Bo</span> <span class="nlm-surname">Shim</span></span></span></div>
+  
+      <div  class="highwire-cite-metadata" ><span  class="highwire-cite-metadata-doi highwire-cite-metadata"><span class="label">doi:</span> https://doi.org/10.1101/2025.09.19.677392 </span></div>
+  
+  
+  </div>
+<div id="hw-article-author-popups-node-4897048--2644020124" style="display: none;"><div class="author-tooltip-0"><div class="author-tooltip-name">Esaú De la Vega-Camarillo </div><div class="author-tooltip-affiliation"><span class="author-tooltip-text"><div class='author-affiliation'><span class='nlm-sup'>1</span><span class='nlm-institution'>Department of Plant Pathology and Microbiology, Texas A&M University, College Station</span>, Texas, <span class='nlm-country'>USA</span></div></span></div><ul class="author-tooltip-find-more"><li class="author-tooltip-gs-link first"><a href="/lookup/google-scholar?link_type=googlescholar&amp;gs_type=author&amp;author%5B0%5D=Esa%C3%BA%2BDe%2Bla%2BVega-Camarillo%2B" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on Google Scholar</a></li><li class="author-tooltip-pubmed-link"><a href="/lookup/external-ref?access_num=De%20la%20Vega-Camarillo%20E&amp;link_type=AUTHORSEARCH" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on PubMed</a></li><li class="author-site-search-link last"><a href="/search/author1%3AEsa%25C3%25BA%2BDe%2Bla%2BVega-Camarillo%2B" rel="nofollow" class="" data-icon-position="" data-hide-link-title="0">Search for this author on this site</a></li></ul></div><div class="author-tooltip-1"><div class="author-tooltip-name">Jorge Arreola-Vargas </div><div class="author-tooltip-affiliation"><span class="author-tooltip-text"><div class='author-affiliation'><span class='nlm-sup'>1</span><span class='nlm-institution'>Department of Plant Pathology and Microbiology, Texas A&M University, College Station</span>, Texas, <span class='nlm-country'>USA</span></div></span></div><ul class="author-tooltip-find-more"><li class="author-tooltip-gs-link first"><a href="/lookup/google-scholar?link_type=googlescholar&amp;gs_type=author&amp;author%5B0%5D=Jorge%2BArreola-Vargas%2B" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on Google Scholar</a></li><li class="author-tooltip-pubmed-link"><a href="/lookup/external-ref?access_num=Arreola-Vargas%20J&amp;link_type=AUTHORSEARCH" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on PubMed</a></li><li class="author-site-search-link last"><a href="/search/author1%3AJorge%2BArreola-Vargas%2B" rel="nofollow" class="" data-icon-position="" data-hide-link-title="0">Search for this author on this site</a></li></ul></div><div class="author-tooltip-2"><div class="author-tooltip-name">Sanjay Antony-Babu </div><div class="author-tooltip-affiliation"><span class="author-tooltip-text"><div class='author-affiliation'><span class='nlm-sup'>1</span><span class='nlm-institution'>Department of Plant Pathology and Microbiology, Texas A&M University, College Station</span>, Texas, <span class='nlm-country'>USA</span></div></span></div><ul class="author-tooltip-find-more"><li class="author-tooltip-gs-link first"><a href="/lookup/google-scholar?link_type=googlescholar&amp;gs_type=author&amp;author%5B0%5D=Sanjay%2BAntony-Babu%2B" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on Google Scholar</a></li><li class="author-tooltip-pubmed-link"><a href="/lookup/external-ref?access_num=Antony-Babu%20S&amp;link_type=AUTHORSEARCH" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on PubMed</a></li><li class="author-site-search-link last"><a href="/search/author1%3ASanjay%2BAntony-Babu%2B" rel="nofollow" class="" data-icon-position="" data-hide-link-title="0">Search for this author on this site</a></li></ul></div><div class="author-tooltip-3"><div class="author-tooltip-name">Saurav Kumar Mathur </div><div class="author-tooltip-affiliation"><span class="author-tooltip-text"><div class='author-affiliation'><span class='nlm-sup'>1</span><span class='nlm-institution'>Department of Plant Pathology and Microbiology, Texas A&M University, College Station</span>, Texas, <span class='nlm-country'>USA</span></div></span></div><ul class="author-tooltip-find-more"><li class="author-tooltip-gs-link first"><a href="/lookup/google-scholar?link_type=googlescholar&amp;gs_type=author&amp;author%5B0%5D=Saurav%2BKumar%2BMathur%2B" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on Google Scholar</a></li><li class="author-tooltip-pubmed-link"><a href="/lookup/external-ref?access_num=Mathur%20SK&amp;link_type=AUTHORSEARCH" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on PubMed</a></li><li class="author-site-search-link last"><a href="/search/author1%3ASaurav%2BKumar%2BMathur%2B" rel="nofollow" class="" data-icon-position="" data-hide-link-title="0">Search for this author on this site</a></li></ul></div><div class="author-tooltip-4"><div class="author-tooltip-name">Joshua Andrew Santos </div><div class="author-tooltip-affiliation"><span class="author-tooltip-text"><div class='author-affiliation'><span class='nlm-sup'>1</span><span class='nlm-institution'>Department of Plant Pathology and Microbiology, Texas A&M University, College Station</span>, Texas, <span class='nlm-country'>USA</span></div></span></div><ul class="author-tooltip-find-more"><li class="author-tooltip-gs-link first"><a href="/lookup/google-scholar?link_type=googlescholar&amp;gs_type=author&amp;author%5B0%5D=Joshua%2BAndrew%2BSantos%2B" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on Google Scholar</a></li><li class="author-tooltip-pubmed-link"><a href="/lookup/external-ref?access_num=Santos%20JA&amp;link_type=AUTHORSEARCH" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on PubMed</a></li><li class="author-site-search-link last"><a href="/search/author1%3AJoshua%2BAndrew%2BSantos%2B" rel="nofollow" class="" data-icon-position="" data-hide-link-title="0">Search for this author on this site</a></li></ul></div><div class="author-tooltip-5"><div class="author-tooltip-name">Won Bo Shim </div><div class="author-tooltip-affiliation"><span class="author-tooltip-text"><div class='author-affiliation'><span class='nlm-sup'>1</span><span class='nlm-institution'>Department of Plant Pathology and Microbiology, Texas A&M University, College Station</span>, Texas, <span class='nlm-country'>USA</span></div></span></div><ul class="author-tooltip-find-more"><li class="author-tooltip-gs-link first"><a href="/lookup/google-scholar?link_type=googlescholar&amp;gs_type=author&amp;author%5B0%5D=Won%2BBo%2BShim%2B" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on Google Scholar</a></li><li class="author-tooltip-pubmed-link"><a href="/lookup/external-ref?access_num=Shim%20WB&amp;link_type=AUTHORSEARCH" target="_blank" title="Open in new tab" class="" data-icon-position="" data-hide-link-title="0">Find this author on PubMed</a></li><li class="author-site-search-link"><a href="/search/author1%3AWon%2BBo%2BShim%2B" rel="nofollow" class="" data-icon-position="" data-hide-link-title="0">Search for this author on this site</a></li><li class="author-corresp-email-link last"><span>For correspondence: 
+<a href="/cdn-cgi/l/email-protection#1b6c7968737276607a6f666f7a766e357e7f6e" class="" data-icon-position="" data-hide-link-title="0">wbshim{at}tamu.edu</a></span></li></ul></div></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-highwire-panel-tabs pane-panels-ajax-tab-tabs" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="item-list"><ul class="tabs inline panels-ajax-tab"><li class="first"><a href="/content/10.1101/2025.09.19.677392v1" class="panels-ajax-tab-tab" data-panel-name="biorxiv_tab_art" data-target-id="highwire_article_tabs" data-entity-context="node:4897048" data-trigger="" data-url-enabled="1">Abstract</a><a href="/panels_ajax_tab/biorxiv_tab_art/node:4897048/1" rel="nofollow" style="display:none" class="js-crawler-link"></a></li><li><a href="/content/10.1101/2025.09.19.677392v1.full-text" class="panels-ajax-tab-tab" data-panel-name="article_tab_full_text" data-target-id="highwire_article_tabs" data-entity-context="node:4897048" data-trigger="full-text" data-url-enabled="1">Full Text</a><a href="/panels_ajax_tab/article_tab_full_text/node:4897048/1" rel="nofollow" style="display:none" class="js-crawler-link"></a></li><li><a href="/content/10.1101/2025.09.19.677392v1.article-info" class="panels-ajax-tab-tab" data-panel-name="biorxiv_tab_info" data-target-id="highwire_article_tabs" data-entity-context="node:4897048" data-trigger="article-info" data-url-enabled="1">Info/History</a><a href="/panels_ajax_tab/biorxiv_tab_info/node:4897048/1" rel="nofollow" style="display:none" class="js-crawler-link"></a></li><li><a href="/content/10.1101/2025.09.19.677392v1.article-metrics" class="panels-ajax-tab-tab" data-panel-name="article_tab_metrics" data-target-id="highwire_article_tabs" data-entity-context="node:4897048" data-trigger="article-metrics" data-url-enabled="1">Metrics</a><a href="/panels_ajax_tab/article_tab_metrics/node:4897048/1" rel="nofollow" style="display:none" class="js-crawler-link"></a></li><li><a href="/content/10.1101/2025.09.19.677392v1.supplementary-material" class="panels-ajax-tab-tab" data-panel-name="biorxiv_tab_data" data-target-id="highwire_article_tabs" data-entity-context="node:4897048" data-trigger="supplementary-material" data-url-enabled="1">Supplementary material</a><a href="/panels_ajax_tab/biorxiv_tab_data/node:4897048/1" rel="nofollow" style="display:none" class="js-crawler-link"></a></li><li class="last"><a href="/content/10.1101/2025.09.19.677392v1.full.pdf+html" class="panels-ajax-tab-tab" data-panel-name="biorxiv_tab_pdf" data-target-id="highwire_article_tabs" data-entity-context="node:4897048" data-trigger="full.pdf+html" data-url-enabled="1"><i class="icon-file-alt"></i> Preview PDF</a><a href="/panels_ajax_tab/biorxiv_tab_pdf/node:4897048/1" rel="nofollow" style="display:none" class="js-crawler-link"></a></li></ul></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-highwire-panel-tabs-container" >
+  
+      
+  
+  <div class="pane-content">
+    <div data-panels-ajax-tab-preloaded="biorxiv_tab_art" id="panels-ajax-tab-container-highwire_article_tabs" class="panels-ajax-tab-container"><div class="panels-ajax-tab-loading" style ="display:none"><img class="loading" src="https://www.biorxiv.org/sites/all/modules/contrib/panels_ajax_tab/images/loading.gif" alt="Loading" title="Loading" /></div><div class="panels-ajax-tab-wrap-biorxiv_tab_art"><div class="panel-display panel-1col clearfix" >
+  <div class="panel-panel panel-col">
+    <div><div class="panel-pane pane-highwire-markup" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="highwire-markup"><div xmlns="http://www.w3.org/1999/xhtml" data-highwire-cite-ref-tooltip-instance="highwire_reflinks_tooltip" class="content-block-markup" xmlns:xhtml="http://www.w3.org/1999/xhtml"><div class="article abstract-view "><span class="highwire-journal-article-marker-start"></span><div class="section abstract" id="abstract-1"><h2 class="">Abstract</h2><p id="p-2">Persistent environmental pollutants demand the use of diverse microbial metabolic capabilities for effective degradation. While naturally occurring consortia or single strains often fall short in efficiency, synthetic microbial communities (SynComs) hold greater promise for enhanced degradation. To address this challenge, we developed GENIA (Genomically and Environmentally Networked Intelligent Assemblies), a genome-informed and machine learning–guided framework for the rational design of SynComs capable of multi-pollutant degradation under simulated environmental conditions. Using a microfluidic high-throughput cultivation platform, 2,155 bacterial strains were isolated from xenobiotic-enriched environments and screened for pollutant-specific growth. Whole-genome sequencing and functional annotation of 45 prioritized strains revealed metabolic traits associated with the potential degradation of challenging persistent environmental pollutants as proof of concept, i.e., lignin oxidation, atrazine dechlorination, and PFAS defluorination. These genomic profiles were encoded into spline-based graph representations and integrated within the GENIA pipeline, which combines graph neural networks, pathway complementarity modeling, and functional redundancy minimization to predict optimal community assemblies. The resulting nine-member community—comprising <em>Pantoea dispersa</em>, <em>Atlantibacter hermannii</em>, <em>Pseudomonas fulva</em>, <em>Paenibacillus polymyxa</em>, <em>Bacillus cabrialesii</em>, <em>Micrococcus luteus</em>, <em>Bacillus pseudomycoides</em>, <em>Bacillus licheniformis</em>, and <em>Pseudomonas pergaminensis</em>—was predicted to exhibit broad catabolic capacity and minimal intra-community competition. Kinetic experiments in minimal medium demonstrated simultaneous multi-pollutant degradation: lignin (91.6% removal by day 5), atrazine (91.4% removal by day 3), and PFOS (93.1% removal within seven days), representing a 2-4-fold improvement over existing approaches. GENIA establishes a scalable and generalizable framework that integrates systems-level genomics, phenotypic screening, and predictive modeling to engineer ecologically coherent microbial consortia with application to complex environmental bioremediation.</p><div id="sec-1" class="subsection"><div id="F1" class="fig pos-float type-figure  odd"><div class="highwire-figure"><div class="fig-inline-img-wrapper"><div class="fig-inline-img"><a href="https://www.biorxiv.org/content/biorxiv/early/2025/09/19/2025.09.19.677392/F1.large.jpg?width=800&amp;height=600&amp;carousel=1" title="" class="highwire-fragment fragment-images colorbox-load" rel="gallery-fragment-images-1831625274" data-figure-caption="&lt;div class=&quot;highwire-markup&quot;&gt;&lt;/div&gt;" data-icon-position="" data-hide-link-title="0"><span class="hw-responsive-img"><img class="highwire-fragment fragment-image lazyload" alt="Figure" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.biorxiv.org/content/biorxiv/early/2025/09/19/2025.09.19.677392/F1.medium.gif" width="440" height="292"/><noscript><img class="highwire-fragment fragment-image" alt="Figure" src="https://www.biorxiv.org/content/biorxiv/early/2025/09/19/2025.09.19.677392/F1.medium.gif" width="440" height="292"/></noscript></span></a></div></div><ul class="highwire-figure-links inline"><li class="download-fig first"><a href="https://www.biorxiv.org/content/biorxiv/early/2025/09/19/2025.09.19.677392/F1.large.jpg?download=true" class="highwire-figure-link highwire-figure-link-download" title="Download Figure1" data-icon-position="" data-hide-link-title="0">Download figure</a></li><li class="new-tab last"><a href="https://www.biorxiv.org/content/biorxiv/early/2025/09/19/2025.09.19.677392/F1.large.jpg" class="highwire-figure-link highwire-figure-link-newtab" target="_blank" data-icon-position="" data-hide-link-title="0">Open in new tab</a></li></ul></div></div></div></div><h3>Competing Interest Statement</h3><p id="p-3">The authors have declared no competing interest.</p><div class="funding-group"><h2>Funder Information Declared</h2><div class="award-group" id="award-group-1"><span class="funding-source">United States Department of Commerce National Institute of Standards and Technology</span><span class="award-id" id="award-id-1">, 60NANB24D118</span></div></div><span class="highwire-journal-article-marker-end"></span></div><span class="related-urls"></span></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-biorxiv-copyright" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="field field-name-field-highwire-copyright field-type-text field-label-inline clearfix"><div class="field-label">Copyright&nbsp;</div><div class="field-items"><div class="field-item even">The copyright holder for this preprint is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity.<span class="license-type"> It is made available under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" class="" data-icon-position="" data-hide-link-title="0">CC-BY-NC-ND 4.0 International license</a>.</span></div></div></div>  </div>
+
+  
+  </div>
+</div>
+  </div>
+</div>
+</div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-disqus-comment" >
+  
+      
+  
+  <div class="pane-content">
+    <div id="disqus_thread"><noscript><p><a href="http://biorxivstage.disqus.com/?url=https%3A%2F%2Fwww.biorxiv.org%2Fcontent%2F10.1101%2F2025.09.19.677392v1" class="" data-icon-position="" data-hide-link-title="0">View the discussion thread.</a></p></noscript></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-highwire-back-to-top" >
+  
+      
+  
+  <div class="pane-content">
+    <a href="#page" class="back-to-top" data-icon-position="" data-hide-link-title="0"><span class="icon-chevron-up"></span> Back to top</a>  </div>
+
+  
+  </div>
+</div>
+			</div>
+		</div>
+		
+		<div class="sidebar-right-wrapper grid-10 omega">
+			<div class="panel-panel panel-region-sidebar-right">
+			  <div class="inside"><div class="panel-pane pane-highwire-node-pager" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="pager highwire-pager pager-mini clearfix highwire-node-pager highwire-article-pager"><span class="pager-prev"><a href="/content/10.1101/2025.09.19.676120v1" title="Parsing the Functions of Immediate Early Proteins in HCMV Infection Outcome" rel="prev" class="pager-link-prev link-icon"><span class="icon-circle-arrow-left"></span> <span class="title">Previous</span></a></span><span class="pager-next"><a href="/content/10.1101/2024.06.14.599060v2" title="Differential effects of diphenyl diselenide (PhSe)2 on mitochondria-related pathways depending on the cellular energy status in Bovine Vascular Endothelial Cells" rel="next" class="pager-link-next link-icon-right link-icon"><span class="title">Next</span> <span class="icon-circle-arrow-right"></span></a></span></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-custom pane-1" >
+  
+      
+  
+  <div class="pane-content">
+    Posted&nbsp;September 19, 2025.  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-panels-mini pane-biorxiv-art-tools" >
+  
+      
+  
+  <div class="pane-content">
+    <div id="mini-panel-biorxiv_art_tools" class="highwire-2col-stacked panel-display">
+	  
+  <div class="panel-row-wrapper clearfix">
+		<div class="content-left-wrapper content-column">
+          <div class="panel-panel panel-region-content-left">
+            <div class="inside"><div class="panel-pane pane-highwire-variant-link" >
+  
+      
+  
+  <div class="pane-content">
+    <a href="/content/10.1101/2025.09.19.677392v1.full.pdf" target="_self" class="article-dl-pdf-link link-icon"><span class="icon-external-link-sign"></span> <span class="title">Download PDF</span></a>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-biorxiv-supplementary-fragment" >
+  
+      
+  
+  <div class="pane-content">
+    <p><a href="/content/10.1101/2025.09.19.677392v1.supplementary-material"><i class="icon-file"></i>Supplementary Material </a></p>  </div>
+
+  
+  </div>
+</div>
+          </div>
+        </div>
+        
+        <div class="content-right-wrapper content-column">
+          <div class="panel-panel panel-region-content-right">
+            <div class="inside"><div class="panel-pane pane-minipanel-dialog-link pane-biorxiv-art-email" >
+  
+      
+  
+  <div class="pane-content">
+    <div class='minipanel-dialog-wrapper'><div class='minipanel-dialog-link-link'><a href="/" oncontextmenu="javascript: return false;" class="minipanel-dialog-link-trigger" title="Email this Article" data-icon-position="" data-hide-link-title="0"><i class = 'icon-envelope'></i> Email</a></div><div class='minipanel-dialog-link-mini' style='display:none'><div class="panel-display panel-1col clearfix" id="mini-panel-biorxiv_art_email">
+  <div class="panel-panel panel-col">
+    <div><div class="panel-pane pane-block pane-forward-form pane-forward" >
+  
+      
+  
+  <div class="pane-content">
+    <form action="/content/10.1101/2025.09.19.677392v1" method="post" id="forward-form" accept-charset="UTF-8"><div><div id="edit-instructions" class="form-item form-item-label-before form-type-item">
+ <p>Thank you for your interest in spreading the word about bioRxiv.</p><p>NOTE: Your email address is requested solely to identify you as the sender of this article.</p>
+</div>
+<div class="form-item form-item-label-before form-type-textfield form-item-email">
+  <label for="edit-email">Your Email <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" id="edit-email" name="email" value="" size="58" maxlength="256" class="form-text required" />
+</div>
+<div class="form-item form-item-label-before form-type-textfield form-item-name">
+  <label for="edit-name">Your Name <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" id="edit-name" name="name" value="" size="58" maxlength="256" class="form-text required" />
+</div>
+<div class="form-item form-item-label-before form-type-textarea form-item-recipients">
+  <label for="edit-recipients">Send To <span class="form-required" title="This field is required.">*</span></label>
+ <div class="form-textarea-wrapper resizable"><textarea id="edit-recipients" name="recipients" cols="50" rows="5" class="form-textarea required"></textarea></div>
+<div class="description">Enter multiple addresses on separate lines or separate them with commas.</div>
+</div>
+<div id="edit-page" class="form-item form-item-label-before form-type-item">
+  <label for="edit-page">You are going to email the following </label>
+ <a href="/content/10.1101/2025.09.19.677392v1" class="active" data-icon-position="" data-hide-link-title="0">Machine Learning-Guided Synthetic Microbial Communities Enable Functional and Sustainable Degradation of Persistent Environmental Pollutants</a>
+</div>
+<div id="edit-subject" class="form-item form-item-label-before form-type-item">
+  <label for="edit-subject">Message Subject </label>
+ (Your Name) has forwarded a page to you from bioRxiv
+</div>
+<div id="edit-body" class="form-item form-item-label-before form-type-item">
+  <label for="edit-body">Message Body </label>
+ (Your Name) thought you would like to see this page from the bioRxiv website.
+</div>
+<div class="form-item form-item-label-before form-type-textarea form-item-message">
+  <label for="edit-message--2">Your Personal Message </label>
+ <div class="form-textarea-wrapper resizable"><textarea id="edit-message--2" name="message" cols="50" rows="10" class="form-textarea"></textarea></div>
+</div>
+<input type="hidden" name="path" value="node/4897048" />
+<input type="hidden" name="path_cid" value="" />
+<input type="hidden" name="forward_footer" value=" " />
+<input type="hidden" name="form_build_id" value="form-OYqGbKp9nC_tfBHGfO9-Vn_UUAVVn25yVzuVGeXz-r8" />
+<input type="hidden" name="form_id" value="forward_form" />
+<fieldset class="captcha form-wrapper"><legend><span class="fieldset-legend">CAPTCHA</span></legend><div class="fieldset-wrapper"><div class="fieldset-description">This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.</div><input type="hidden" name="captcha_sid" value="1022632420" />
+<input type="hidden" name="captcha_token" value="c1cd0c46a9258f13ba40ba84f54bd7c7" />
+<input type="hidden" name="captcha_response" value="Google no captcha" />
+<div class="g-recaptcha" data-sitekey="6LfnJVIUAAAAAE-bUOMg0MJGki4lqSvDmhJp19fN" data-theme="light" data-type="image"></div></div></fieldset>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Send Message" class="form-submit" /></div></div></form>  </div>
+
+  
+  </div>
+</div>
+  </div>
+</div>
+</div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-highwire-share-link highwire_clipboard_link_ajax"  id="shareit">
+  
+      
+  
+  <div class="pane-content">
+    <a href="/" class="link-icon"><span class="icon-share-alt"></span> <span class="title">Share</span></a>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-panels-mini pane-biorxiv-share highwire_clipboard_form_ajax_shareit" >
+  
+      
+  
+  <div class="pane-content">
+    
+<div class="panel-display omega-12-onecol" id="mini-panel-biorxiv_share">
+
+		  <div class="panel-panel grid-12 panel-region-preface">
+		  <div class="inside"><div class="panel-pane pane-highwire-article-citation" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="highwire-article-citation highwire-citation-type-highwire-article node4897048--3" data-node-nid="4897048" id="node-4897048--41197309391" data-pisa="biorxiv;2025.09.19.677392v1" data-pisa-master="biorxiv;2025.09.19.677392" data-seqnum="4897048" data-apath="/biorxiv/early/2025/09/19/2025.09.19.677392.atom"><div  class="highwire-cite highwire-cite-highwire-article highwire-citation-biorxiv-article-pap-list clearfix" >
+
+      <div class="highwire-cite-title" >
+      <div class="highwire-cite-title">Machine Learning-Guided Synthetic Microbial Communities Enable Functional and Sustainable Degradation of Persistent Environmental Pollutants</div>    </div>
+  
+      <div  class="highwire-cite-authors" ><span  class="highwire-citation-authors"><span class="highwire-citation-author first" data-delta="0"><span class="nlm-given-names">Esaú</span> <span class="nlm-surname">De la Vega-Camarillo</span></span>, <span class="highwire-citation-author" data-delta="1"><span class="nlm-given-names">Jorge</span> <span class="nlm-surname">Arreola-Vargas</span></span>, <span class="highwire-citation-author" data-delta="2"><span class="nlm-given-names">Sanjay</span> <span class="nlm-surname">Antony-Babu</span></span>, <span class="highwire-citation-author" data-delta="3"><span class="nlm-given-names">Saurav Kumar</span> <span class="nlm-surname">Mathur</span></span>, <span class="highwire-citation-author" data-delta="4"><span class="nlm-given-names">Joshua Andrew</span> <span class="nlm-surname">Santos</span></span>, <span class="highwire-citation-author" data-delta="5"><span class="nlm-given-names">Won Bo</span> <span class="nlm-surname">Shim</span></span></span></div>
+  
+      <div  class="highwire-cite-metadata" ><span  class="highwire-cite-metadata-journal highwire-cite-metadata">bioRxiv </span><span  class="highwire-cite-metadata-pages highwire-cite-metadata">2025.09.19.677392; </span><span  class="highwire-cite-metadata-doi highwire-cite-metadata"><span class="doi_label">doi:</span> https://doi.org/10.1101/2025.09.19.677392 </span></div>
+  
+  
+  </div>
+</div>  </div>
+
+  
+  </div>
+</div>
+	  </div>
+	
+  <div class="panel-panel grid-12 panel-region-content">
+  	<div class="inside"><div class="panel-pane pane-highwire-article-clipboard-copy" >
+  
+      
+  
+  <div class="pane-content">
+    <div class = "clipboard-copy">
+  <span class="label-url">
+    <label for="dynamic">Share This Article:</label>
+  </span>
+  <span class="input-text-url">
+    <input type="text" id="dynamic" value="https://www.biorxiv.org/content/10.1101/2025.09.19.677392v1" size="50"/>
+  </span>
+  <span class="copy-button button">
+    <button id="copy-dynamic" class="clipboardjs-button" data-clipboard-target="#dynamic" data-clipboard-alert-style="tooltip" data-clipboard-alert-text="Copied!">Copy</button>
+  </span>
+</div>
+  </div>
+
+  
+  </div>
+</div>
+  </div>
+	
+		  <div class="panel-panel grid-12 panel-region-postscript">
+	    <div class="inside"><div class="panel-pane pane-service-links text-center" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="service-links"><a href="http://twitter.com/share?url=https%3A//www.biorxiv.org/content/10.1101/2025.09.19.677392v1&amp;text=Machine%20Learning-Guided%20Synthetic%20Microbial%20Communities%20Enable%20Functional%20and%20Sustainable%20Degradation%20of%20Persistent%20Environmental%20Pollutants" id="twitter" title="Share this on Twitter" class="service-links-twitter" rel="nofollow" data-icon-position="" data-hide-link-title="0"><img src="https://www.biorxiv.org/sites/all/modules/highwire/highwire/images/twitter.png" alt="Twitter logo" /></a> <a href="http://www.facebook.com/sharer.php?u=https%3A//www.biorxiv.org/content/10.1101/2025.09.19.677392v1&amp;t=Machine%20Learning-Guided%20Synthetic%20Microbial%20Communities%20Enable%20Functional%20and%20Sustainable%20Degradation%20of%20Persistent%20Environmental%20Pollutants" id="facebook" title="Share on Facebook" class="service-links-facebook" rel="nofollow" data-icon-position="" data-hide-link-title="0"><img src="https://www.biorxiv.org/sites/all/modules/highwire/highwire/images/fb-blue.png" alt="Facebook logo" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A//www.biorxiv.org/content/10.1101/2025.09.19.677392v1&amp;title=Machine%20Learning-Guided%20Synthetic%20Microbial%20Communities%20Enable%20Functional%20and%20Sustainable%20Degradation%20of%20Persistent%20Environmental%20Pollutants&amp;summary=&amp;source=bioRxiv" id="linkedin" title="Publish this post to LinkedIn" class="service-links-linkedin" rel="nofollow" data-icon-position="" data-hide-link-title="0"><img src="https://www.biorxiv.org/sites/all/modules/highwire/highwire/images/linkedin-32px.png" alt="LinkedIn logo" /></a> <a href="http://www.mendeley.com/import/?url=https%3A//www.biorxiv.org/content/10.1101/2025.09.19.677392v1&amp;title=Machine%20Learning-Guided%20Synthetic%20Microbial%20Communities%20Enable%20Functional%20and%20Sustainable%20Degradation%20of%20Persistent%20Environmental%20Pollutants" id="mendeley" title="Share on Mendeley" class="service-links-mendeley" rel="nofollow" data-icon-position="" data-hide-link-title="0"><img src="https://www.biorxiv.org/sites/all/modules/highwire/highwire/images/mendeley.png" alt="Mendeley logo" /></a></div>  </div>
+
+  
+  </div>
+</div>
+	  </div>
+	
+</div>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-minipanel-dialog-link pane-biorxiv-cite-tool" >
+  
+      
+  
+  <div class="pane-content">
+    <div class='minipanel-dialog-wrapper'><div class='minipanel-dialog-link-link'><a href="/" oncontextmenu="javascript: return false;" class="minipanel-dialog-link-trigger link-icon" title="Citation Tools"><span class="icon-globe"></span> <span class="title">Citation Tools</span></a></div><div class='minipanel-dialog-link-mini' style='display:none'><div class="panel-display panel-1col clearfix" id="mini-panel-biorxiv_cite_tool">
+  <div class="panel-panel panel-col">
+    <div><div class="panel-pane pane-highwire-citation-export" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="highwire-citation-export">  
+  <div class="highwire-citation-info">
+      <div class="highwire-article-citation highwire-citation-type-highwire-article cite-tool-node4897048--5" data-node-nid="4897048" id="citation-node-4897048--650669427" data-pisa="biorxiv;2025.09.19.677392v1" data-pisa-master="biorxiv;2025.09.19.677392" data-seqnum="4897048" data-apath="/biorxiv/early/2025/09/19/2025.09.19.677392.atom"><div  class="highwire-cite highwire-cite-highwire-article highwire-citation-biorxiv-article-pap-list clearfix" >
+
+      <div class="highwire-cite-title" >
+      <div class="highwire-cite-title">Machine Learning-Guided Synthetic Microbial Communities Enable Functional and Sustainable Degradation of Persistent Environmental Pollutants</div>    </div>
+  
+      <div  class="highwire-cite-authors" ><span  class="highwire-citation-authors"><span class="highwire-citation-author first" data-delta="0"><span class="nlm-given-names">Esaú</span> <span class="nlm-surname">De la Vega-Camarillo</span></span>, <span class="highwire-citation-author" data-delta="1"><span class="nlm-given-names">Jorge</span> <span class="nlm-surname">Arreola-Vargas</span></span>, <span class="highwire-citation-author" data-delta="2"><span class="nlm-given-names">Sanjay</span> <span class="nlm-surname">Antony-Babu</span></span>, <span class="highwire-citation-author" data-delta="3"><span class="nlm-given-names">Saurav Kumar</span> <span class="nlm-surname">Mathur</span></span>, <span class="highwire-citation-author" data-delta="4"><span class="nlm-given-names">Joshua Andrew</span> <span class="nlm-surname">Santos</span></span>, <span class="highwire-citation-author" data-delta="5"><span class="nlm-given-names">Won Bo</span> <span class="nlm-surname">Shim</span></span></span></div>
+  
+      <div  class="highwire-cite-metadata" ><span  class="highwire-cite-metadata-journal highwire-cite-metadata">bioRxiv </span><span  class="highwire-cite-metadata-pages highwire-cite-metadata">2025.09.19.677392; </span><span  class="highwire-cite-metadata-doi highwire-cite-metadata"><span class="doi_label">doi:</span> https://doi.org/10.1101/2025.09.19.677392 </span></div>
+  
+  
+  </div>
+</div>  </div>
+  <div class="highwire-citation-formats">
+  	      <h2>Citation Manager Formats</h2>
+        <div class="highwire-citation-formats-links">
+      <span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.spage&amp;rft.epage&amp;rft.atitle=Machine%20Learning-Guided%20Synthetic%20Microbial%20Communities%20Enable%20Functional%20and%20Sustainable%20Degradation%20of%20Persistent%20Environmental%20Pollutants&amp;rft.volume&amp;rft.issue&amp;rft.date=2025-01-01%2000%3A00%3A00&amp;rft.stitle&amp;rft.jtitle=bioRxiv&amp;rft.au=De+la+Vega-Camarillo%2C+Esa%C3%BA&amp;rft.au=Arreola-Vargas%2C+Jorge&amp;rft.au=Antony-Babu%2C+Sanjay&amp;rft.au=Mathur%2C+Saurav+Kumar&amp;rft.au=Santos%2C+Joshua+Andrew&amp;rft.au=Shim%2C+Won+Bo"></span><ul class="hw-citation-links inline button button-alt button-grid clearfix"><li class="bibtext first"><a href="/highwire/citation/4897048/bibtext" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">BibTeX</a></li><li class="bookends"><a href="/highwire/citation/4897048/bookends" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">Bookends</a></li><li class="easybib"><a href="/highwire/citation/4897048/easybib" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">EasyBib</a></li><li class="endnote-tagged"><a href="/highwire/citation/4897048/endnote-tagged" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">EndNote (tagged)</a></li><li class="endnote-8-xml"><a href="/highwire/citation/4897048/endnote-8-xml" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">EndNote 8 (xml)</a></li><li class="medlars"><a href="/highwire/citation/4897048/medlars" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">Medlars</a></li><li class="mendeley"><a href="/highwire/citation/4897048/mendeley" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">Mendeley</a></li><li class="papers"><a href="/highwire/citation/4897048/papers" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">Papers</a></li><li class="refworks-tagged"><a href="/highwire/citation/4897048/refworks-tagged" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">RefWorks Tagged</a></li><li class="reference-manager"><a href="/highwire/citation/4897048/reference-manager" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">Ref Manager</a></li><li class="ris"><a href="/highwire/citation/4897048/ris" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">RIS</a></li><li class="zotero last"><a href="/highwire/citation/4897048/zotero" class="hw-download-citation-link" data-icon-position="" data-hide-link-title="0">Zotero</a></li></ul>    </div>
+  </div>
+</div>
+  </div>
+
+  
+  </div>
+</div>
+  </div>
+</div>
+</div></div>  </div>
+
+  
+  </div>
+</div>
+          </div>
+        </div>
+	</div> <!-- /.panel-row-wrapper -->	
+	
+	</div>
+
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-service-links" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="service-links"><div class="item-list"><ul><li class="first"><a href="http://twitter.com/share?url=https%3A//www.biorxiv.org/content/10.1101/2025.09.19.677392v1&amp;count=horizontal&amp;via=&amp;text=Machine%20Learning-Guided%20Synthetic%20Microbial%20Communities%20Enable%20Functional%20and%20Sustainable%20Degradation%20of%20Persistent%20Environmental%20Pollutants&amp;counturl=https%3A//www.biorxiv.org/content/10.1101/2025.09.19.677392v1" class="twitter-share-button service-links-twitter-widget" id="twitter_widget" title="Tweet This" rel="nofollow" data-icon-position="" data-hide-link-title="0"><span class="element-invisible">Tweet Widget</span></a></li><li><a href="http://www.facebook.com/plugins/like.php?href=https%3A//www.biorxiv.org/content/10.1101/2025.09.19.677392v1&amp;layout=button_count&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;width=100&amp;height=21&amp;font=&amp;locale=" id="facebook_like" title="I Like it" class="service-links-facebook-like" rel="nofollow" data-icon-position="" data-hide-link-title="0"><span class="element-invisible">Facebook Like</span></a></li><li class="last"><a href="https://www.biorxiv.org/content/10.1101/2025.09.19.677392v1" id="google_plus_one" title="Plus it" class="service-links-google-plus-one" rel="nofollow" data-icon-position="" data-hide-link-title="0"><span class="element-invisible">Google Plus One</span></a></li></ul></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-highwire-article-collections" >
+  
+        <h2 class="pane-title">Subject Area</h2>
+    
+  
+  <div class="pane-content">
+    <div class="highwire-list-wrapper highwire-article-collections"><div class="highwire-list"><ul class="highwire-article-collection-term-list"><li class="first last odd"><span class="highwire-article-collection-term"><a href="/collection/microbiology" class="highlight" data-icon-position="" data-hide-link-title="0">Microbiology<i class="icon-caret-right"></i>
+</a></span></li></ul></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-panels-mini pane-biorxiv-subject-collections block-style-col2" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="panel-flexible panels-flexible-new clearfix" id="mini-panel-biorxiv_subject_collections">
+<div class="panel-flexible-inside panels-flexible-new-inside">
+<div class="panels-flexible-region panels-flexible-region-new-center panels-flexible-region-first panels-flexible-region-last">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-new-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-snippet" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="snippet biorxiv-subject-areas-table-title" id="biorxiv-subject-areas-table-title">
+  
+      
+  <div class="snippet-content">
+    <b>Subject Areas</b>  </div>
+
+</div>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-snippet" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="snippet biorxiv-subject-areas-view-papers" id="biorxiv-subject-areas-view-papers">
+  
+      
+  <div class="snippet-content">
+    <a href="/content/early/recent"><strong>All Articles</strong></a>  </div>
+
+</div>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-highwire-subject-collections" >
+  
+      
+  
+  <div class="pane-content">
+    <ul id="collection" class="collection highwire-list-expand"><li class="outer collection depth-2  child first"><div class = "data-wrapper"><a href="/collection/animal-behavior-and-cognition" class="" data-icon-position="" data-hide-link-title="0">Animal Behavior and Cognition</a> <span class = "article-count">(6955)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/biochemistry" class="" data-icon-position="" data-hide-link-title="0">Biochemistry</a> <span class = "article-count">(15947)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/bioengineering" class="" data-icon-position="" data-hide-link-title="0">Bioengineering</a> <span class = "article-count">(12328)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/bioinformatics" class="" data-icon-position="" data-hide-link-title="0">Bioinformatics</a> <span class = "article-count">(37917)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/biophysics" class="" data-icon-position="" data-hide-link-title="0">Biophysics</a> <span class = "article-count">(19535)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/cancer-biology" class="" data-icon-position="" data-hide-link-title="0">Cancer Biology</a> <span class = "article-count">(16736)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/cell-biology" class="" data-icon-position="" data-hide-link-title="0">Cell Biology</a> <span class = "article-count">(23145)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/clinical-trials" class="" data-icon-position="" data-hide-link-title="0">Clinical Trials</a> <span class = "article-count">(138)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/developmental-biology" class="" data-icon-position="" data-hide-link-title="0">Developmental Biology</a> <span class = "article-count">(12331)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/ecology" class="" data-icon-position="" data-hide-link-title="0">Ecology</a> <span class = "article-count">(18216)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/epidemiology" class="" data-icon-position="" data-hide-link-title="0">Epidemiology</a> <span class = "article-count">(2067)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/evolutionary-biology" class="" data-icon-position="" data-hide-link-title="0">Evolutionary Biology</a> <span class = "article-count">(22578)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/genetics" class="" data-icon-position="" data-hide-link-title="0">Genetics</a> <span class = "article-count">(14686)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/genomics" class="" data-icon-position="" data-hide-link-title="0">Genomics</a> <span class = "article-count">(20818)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/immunology" class="" data-icon-position="" data-hide-link-title="0">Immunology</a> <span class = "article-count">(15982)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/microbiology" class="" data-icon-position="" data-hide-link-title="0">Microbiology</a> <span class = "article-count">(36784)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/molecular-biology" class="" data-icon-position="" data-hide-link-title="0">Molecular Biology</a> <span class = "article-count">(15507)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/neuroscience" class="" data-icon-position="" data-hide-link-title="0">Neuroscience</a> <span class = "article-count">(80579)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/paleontology" class="" data-icon-position="" data-hide-link-title="0">Paleontology</a> <span class = "article-count">(604)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/pathology" class="" data-icon-position="" data-hide-link-title="0">Pathology</a> <span class = "article-count">(2582)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/pharmacology-and-toxicology" class="" data-icon-position="" data-hide-link-title="0">Pharmacology and Toxicology</a> <span class = "article-count">(4361)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/physiology" class="" data-icon-position="" data-hide-link-title="0">Physiology</a> <span class = "article-count">(6910)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/plant-biology" class="" data-icon-position="" data-hide-link-title="0">Plant Biology</a> <span class = "article-count">(13790)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/scientific-communication-and-education" class="" data-icon-position="" data-hide-link-title="0">Scientific Communication and Education</a> <span class = "article-count">(1949)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/synthetic-biology" class="" data-icon-position="" data-hide-link-title="0">Synthetic Biology</a> <span class = "article-count">(3876)</span></div></li>
+<li class="outer collection depth-2  child"><div class = "data-wrapper"><a href="/collection/systems-biology" class="" data-icon-position="" data-hide-link-title="0">Systems Biology</a> <span class = "article-count">(9119)</span></div></li>
+<li class="outer collection depth-2  child last"><div class = "data-wrapper"><a href="/collection/zoology" class="" data-icon-position="" data-hide-link-title="0">Zoology</a> <span class = "article-count">(2106)</span></div></li>
+</ul>  </div>
+
+  
+  </div>
+  </div>
+</div>
+</div>
+</div>
+  </div>
+
+  
+  </div>
+</div>
+			</div>
+		</div>
+	
+	</div> <!-- /.panel-row-wrapper -->	
+	
+	</div>
+
+    </div>
+  </div>
+</div>      </div>
+</div>  </div>
+</section>    
+  
+  </div>    <div class="region region-page-bottom" id="region-page-bottom">
+  <div class="region-inner region-page-bottom-inner">
+      </div>
+</div><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="https://www.biorxiv.org/sites/default/files/advagg_js/js__Vh5BcRYb6VtLoN3uam6O4DIKltYUVMjVDWtakoysPq0__Wed8jsPTirEozek7dWSCS8970Cp7a9xKKgFk6FPuSVM__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.js"></script>
+<script type="text/javascript" src="https://www.biorxiv.org/sites/default/files/advagg_js/js__2WRbxlwOW0MEUc_hSWU5MBepQg6Lch6O5SZwefpJ6IE__HCL0YQJqLkOhrLPZZYGqosGvtFsEHMGghHIkSx4y9vA__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.js" defer="defer"></script>
+<script type="text/javascript" src="https://www.biorxiv.org/sites/default/files/advagg_js/js__6viZXGTUBFQgkjmstbEE_afG3I4ijWtITnHEICwK2G0__nv4HA7frDBw8WgYRnLhySGqIqDqXfZsvdM0Tc-FJhuo__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.js"></script>
+<script type="text/javascript" src="//d33xdlntwy0kbs.cloudfront.net/cshl_custom.js"></script>
+<script type="text/javascript" src="https://www.biorxiv.org/sites/default/files/advagg_js/js__BmqjBnkz3MgYCAoc25s1lDRMEjLhC3mEPVonUFIHi08__Unwv5-ZIuHBfFwytsjEx1niBVJ7n1T4lPws7VrkHXM4__3YLHNFe4yXi0_nM5ObMd6sJ9S5bY-ebXxwNTe6K0QQ4.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+function euCookieComplianceLoadScripts() {}
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var eu_cookie_compliance_cookie_name = "";
+//--><!]]>
+</script>
+  </body>
+</html>

@@ -1,0 +1,3333 @@
+
+
+
+
+
+<!DOCTYPE html>
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+<html lang="en"
+      
+        
+      
+      
+        
+
+        
+
+        
+        
+            
+        
+        
+        
+        
+        
+
+      class="pb-page"
+         data-request-id="996001f7cc73f9ed-SJC"  
+
+>
+
+    
+        <head data-pb-dropzone="head">
+            
+
+<meta charset="UTF-8">
+
+
+
+
+
+
+    
+        
+            
+        
+    
+        
+            
+                
+                
+<title>Pseudomonas sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons | Environmental Science & Technology</title>
+
+
+
+
+
+                
+            
+        
+    
+        
+            
+        
+    
+
+
+
+
+
+
+
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    
+        
+            
+                <link rel="stylesheet" type="text/css" href="/wro/d1325e69bfb1d3a976633a1bafe514da7512cdce~article-metrics.css">
+            
+            
+            
+        
+    
+
+<link rel="stylesheet" type="text/css" href="/wro/d1325e69bfb1d3a976633a1bafe514da7512cdce~product.css">
+    <link rel="stylesheet" href="/products/achs/releasedAssets/css/build-63914094b17be48af1a1.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+                
+                
+                
+                    
+                    
+
+
+
+    
+        <link rel="schema.DC" href="http://purl.org/DC/elements/1.0/" /><meta name="citation_journal_title" content="Environmental Science &amp; Technology" /><meta name="dc.Title" content="Pseudomonas sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons" /><meta name="dc.Creator" content="Alexander S.  Walls" /><meta name="dc.Creator" content="Gao  Chen" /><meta name="dc.Creator" content="Diana  Ramirez" /><meta name="dc.Creator" content="Yongchao  Xie" /><meta name="dc.Creator" content="Broquell M.  Wong" /><meta name="dc.Creator" content="Amanda L.  May" /><meta name="dc.Creator" content="Anita  Thapalia" /><meta name="dc.Creator" content="Frank E.  Löffler" /><meta name="dc.Creator" content="Shawn R.  Campagna" /><meta name="dc.Subject" content="Pseudomonas sp. strain 273; polyfluorinated alkanes; per- and polyfluoroalkyl substances (PFASs); metabolism; defluorination; fluorinated glycerophospholipids; fluoromembrane biosynthesis" /><meta name="dc.Description" content="During growth with terminally monofluorinated decanes, the soil isolate Pseudomonas sp. strain 273 releases inorganic fluoride and channels fluorometabolites into glycerophospholipid biosynthesis. ..." /><meta name="Description" content="During growth with terminally monofluorinated decanes, the soil isolate Pseudomonas sp. strain 273 releases inorganic fluoride and channels fluorometabolites into glycerophospholipid biosynthesis. ..." /><meta name="dc.Description" content="Pseudomonas sp. strain 273 metabolizes decanes bearing poly- and perfluorinated carbons to shorter chain fluorinated organic acids, inorganic fluoride, and fluorinated glycerophospholipids." /><meta name="Description" content="Pseudomonas sp. strain 273 metabolizes decanes bearing poly- and perfluorinated carbons to shorter chain fluorinated organic acids, inorganic fluoride, and fluorinated glycerophospholipids." /><meta name="dc.Publisher" content="American Chemical Society" /><meta name="dc.Date" scheme="WTN8601" content="October 15, 2025" /><meta name="dc.Type" content="research-article" /><meta name="dc.Format" content="text/HTML" /><meta name="dc.Identifier" scheme="doi" content="10.1021/acs.est.5c06771" /><meta name="dc.Language" content="en" /><meta name="dc.Coverage" content="world" /><meta name="dc.Rights" content="© 2025 American Chemical Society" /><meta name="keywords" content="Pseudomonas sp. strain 273,polyfluorinated alkanes,per- and polyfluoroalkyl substances (PFASs),metabolism,defluorination,fluorinated glycerophospholipids,fluoromembrane biosynthesis" />
+        
+        
+
+        
+            <link rel="meta" type="application/atom+xml" href="https://doi.org/10.1021%2Facs.est.5c06771" />
+            <link rel="meta" type="application/rdf+json" href="https://doi.org/10.1021%2Facs.est.5c06771" />
+            <link rel="meta" type="application/unixref+xml" href="https://doi.org/10.1021%2Facs.est.5c06771" />
+        
+    
+    
+    
+
+
+                    
+                
+            
+        
+    
+        
+            
+                
+                
+                
+                
+                
+            
+        
+    
+        
+            
+                
+                
+                
+                    
+                    
+
+
+
+
+
+
+
+
+
+
+<meta name="robots" content="noarchive"/>
+
+
+
+
+
+
+    <meta name="publication_doi" content="10.1021/acs.est.5c06771"/>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    
+        <meta property="og:url" content="https://pubs.acs.org/doi/abs/10.1021/acs.est.5c06771" /><meta property="og:title" content="Pseudomonas sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons" /><meta property="og:image" content="https://pubs.acs.org/cms/10.1021/acs.est.5c06771/asset/images/acs.est.5c06771.social.jpeg_v03" /><meta property="og:description" content="During growth with terminally monofluorinated decanes, the soil isolate Pseudomonas sp. strain 273 releases inorganic fluoride and channels fluorometabolites into glycerophospholipid biosynthesis. We explored the ability of this bacterium to metabolize 1,1-difluorodecane (F2-decane), 1,1,1-trifluorodecane (F3-decane), and 1,1,1,2,2-pentafluorodecane (F5-decane) to assess the impacts of increasing degree of fluorination on organismal metabolism. Growth occurred with all three polyfluorodecane substrates, and inorganic fluoride release was observed in cultures amended with F2-decane and F5-decane but not with F3-decane. Fluorine nuclear magnetic resonance spectroscopy (19F NMR) detected polyfluorinated C6 and C4 short-chain fatty acid catabolites suggesting incomplete β-oxidation during catabolism by strain 273. Gas chromatography–mass spectrometry (GC-MS) analysis corroborated the formation of terminally poly- or perfluorinated short-chain fatty acids. Ultrahigh performance liquid chromatography-high resolution mass spectrometry (UHPLC-HRMS) based global lipidome profiling revealed glycerophospholipids with fluorine substitutions at the sn1/sn2 acyl chains and identified a range of glycerophospholipids that contained between two and ten fluorines depending on the growth substrate. These findings advance our understanding of bacterial transformation of alkanes with poly- and perfluorinated carbons and highlight the formation of short-chain fluorinated fatty acids as catabloc products and fluorophospholipids as anabolic products." /><meta property="og:type" content="Article" /><meta property="og:site_name" content="ACS Publications" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:site" content="@ACSPublications" /><meta name="twitter:image" content="https://pubs.acs.org/cms/10.1021/acs.est.5c06771/asset/images/acs.est.5c06771.social.jpeg_v03" />
+    
+    
+
+
+
+
+
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=10, user-scalable=1"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <meta name="dc.Identifier"  scheme="doi" content="10.1021/acs.est.5c06771"/>
+
+
+<meta name="format-detection" content="telephone=no">
+                    
+                
+            
+        
+    
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/pb-assets/styles/achs-1741976108227.css">
+<link rel="stylesheet" type="text/css" href="/pb-assets/styles/acs-1721719115433.css">
+<script type="text/javascript" src="/templates/jsp/js/jquery-3.1.1.min.js" nonce="996001f7cc73f9ed-SJC"></script>
+<script type="text/javascript" src="/pb-assets/javascript/eloqua-1619549134767.js" nonce="996001f7cc73f9ed-SJC"></script>
+
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"5200035e6e4d5180","startTime":1570117212010}' nonce="996001f7cc73f9ed-SJC"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"7224ce26191e6f50","token":"0562ec7bcba14d1cae3543aa43d6e749","version":"2022.6.0","si":100}' crossorigin="anonymous" nonce="996001f7cc73f9ed-SJC"></script>
+
+<!-- ACHS-7903: Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q72ZQB7GTR" nonce="996001f7cc73f9ed-SJC"></script>
+<script nonce="996001f7cc73f9ed-SJC">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q72ZQB7GTR');
+</script>
+
+
+<!-- ACHS-9596 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XP5JV6H8Q6" nonce="996001f7cc73f9ed-SJC"></script>
+<script nonce="996001f7cc73f9ed-SJC">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XP5JV6H8Q6');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+        
+            
+                
+                
+
+                <link rel="canonical" href="https://pubs.acs.org/doi/10.1021/acs.est.5c06771">
+            
+        
+    
+
+
+
+
+
+
+<!-- loading Javascript for using the persistence Service -->
+    <script src="/wro/d1325e69bfb1d3a976633a1bafe514da7512cdce~thiss-ds.js" async nonce="996001f7cc73f9ed-SJC"></script>
+
+    <script type="text/javascript" nonce="996001f7cc73f9ed-SJC">
+
+        var SeamlessAccessService = {
+            spUrl: "/action/ssostart",
+            returnURL: window.location.href,
+            my_context: 'seamlessaccess.org',
+            timeout: 5000,
+            _persistenceService: null,
+            _getPersistenceService: function () {
+                if (!this._persistenceService) {
+                    this._persistenceService = new thiss.PersistenceService('https://service.seamlessaccess.org/ps/');
+                }
+                return this._persistenceService;
+            },
+
+            getWAYFLessUrl: function (entityId) {
+                return this.spUrl + "?idp=" + encodeURIComponent(entityId)
+                    + "&redirectUri=" + encodeURIComponent(this.returnURL);
+            },
+            retrieveEntity: function (ms) {
+                var self = this;
+                var persistService = this._getPersistenceService();
+
+                if (ms == undefined || ms === '') {
+                    ms = this.timeout;
+                }
+
+                return new Promise(function (resolve, reject) {
+                    persistService.entities(self.my_context)
+                        .then(function (res) {
+                            return resolve(res.data);
+                        }, function (err) {
+                            // failed
+                            reject('failed to retrieve entity from local storage: ' + err);
+                        });
+                    // Set up the timeout
+                    setTimeout(function () {
+                        reject('Promise timed out ' + ms + ' ms');
+                    }, ms);
+                });
+            },
+            updateEntity: function (entitydata) {
+                var self = this;
+                var persistService = this._getPersistenceService();
+
+                var jsonObj = {};
+                try {
+                    //try to parse it, if it is a json string
+                    jsonObj = JSON.parse(entitydata.val());
+                } catch (e) {
+                    jsonObj = entitydata;
+                }
+                return new Promise(function (resolve, reject) {
+                    persistService.update(self.my_context, jsonObj)
+                        .then(function (res) {
+                            // Process the results
+                            var ssoInstitutions = res.data;
+                            return resolve(ssoInstitutions);
+                        }, function (err) {
+                            // failed
+                            console.log('failed to update the local storage due to: ' + err);
+                            reject(err);
+                        });
+                })
+            },
+            removeEntity: function (entityId) {
+                var self = this;
+                var persistService = this._getPersistenceService();
+
+                return new Promise(function (resolve) {
+                    persistService.remove(self.my_context, entityId)
+                        .then(function (res) {
+                            return resolve(res);
+                        }, function (err) {
+                            // failed
+                            console.log('failed to remove from local storage duo to: ' + err);
+                        });
+                })
+            },
+            getAccessibleEntityStatus: function (doi, entityId, entityTitle) {
+                return new Promise(function (resolve, reject) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/action/seamlessAccess',
+                        accept: {
+                            text: "application/json"
+                        },
+                        data: {
+                            doi: doi,
+                            entityid: entityId,
+                            entityTitle: entityTitle,
+                            eventGroupKey: 'b4294634-0fe0-49c0-a41c-cce349b99914'
+                        }
+
+                    }).done(function (status) {
+                        return resolve(status);
+                    }).fail(function (status) {
+                        return reject(status);
+                    });
+                });
+            },
+            getEntitiesWithAllInfo: function (doi) {
+                let self = this,
+                    arrayOfPromises = [];
+                return new Promise(function (resolve, reject) {
+                    self.retrieveEntity().then(function (res) {
+                        let allSsoInstitutions = res;
+                        for (i = 0; i < allSsoInstitutions.length; i++) {
+                            let ssoInstitution = allSsoInstitutions[i];
+                            arrayOfPromises.push(new Promise(function (resolve) {
+                                self.getAccessibleEntityStatus(doi, ssoInstitution.entity.entityID, ssoInstitution.entity.title)
+                                    .then(function (entityStatus) {
+                                        resolve({
+                                            entityID: ssoInstitution.entity.entityID,
+                                            entityTitle: ssoInstitution.entity.title,
+                                            entityStatusObj: entityStatus,
+                                            entitySsoUrl: self.getWAYFLessUrl(ssoInstitution.entity.entityID)
+                                        });
+                                    }, function (err) {
+                                        console.log('failed to get the entity status: ' + ssoInstitution.entity.entityID,err);
+                                    });
+                            }));
+                        }
+                        if(allSsoInstitutions.length === 0 && true){
+                            self.getAccessibleEntityStatus(doi, null, null)
+                                .then(function () {
+                                    console.log('No Entity found');
+                                }, function (err) {
+                                    console.log('failed to get the none entity status' ,err);
+                                });
+                        }
+                        Promise.all(arrayOfPromises)
+                            .then(function (finalResponse) {
+                                resolve(finalResponse);
+                            }).catch(function (err) {
+                                reject(err);
+                            });
+
+                    }).catch(function (err) {
+                        reject(err);
+                    })
+                });
+            }
+        };
+
+        window.addEventListener('load', function () {
+            document.querySelectorAll(".sso-institution").forEach(function (institution) {
+                var entityId = institution.getAttribute('data-entityid');
+                var entityName = institution.getAttribute('data-name');
+                var entitydata = {
+                    entityID: entityId,
+                    title: entityName
+                };
+                institution.addEventListener("click", function (e) {
+                    e.preventDefault();
+
+                    if ($('.institution-preference-userconsent-checkbox').length > 0) {
+                        let institutionPreferenceUserConsentCheckbox = $('.institution-preference-userconsent-checkbox').get(0);
+                        if (!$(institutionPreferenceUserConsentCheckbox).is(":checked")) {
+                            return;
+                        }
+                    }
+
+                    var self = this;
+                    SeamlessAccessService.updateEntity(entitydata).then(function (res) {
+                        console.log(res);
+                        window.location.href = self.href;
+                    }).catch(function (err) {
+                        window.location.href = self.href;
+                    });
+                });
+            });
+        });
+
+    </script>
+
+    <script nonce="996001f7cc73f9ed-SJC">
+        (function() {
+            function isBrowserChrome() {
+                return /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+            }
+
+            if (isBrowserChrome()) {
+                const originTrialToken = 'AqvyZOCDq6W6Q9D+To+LSEOSztQgEaIZ1WW13TtcGHR/lf3NbAMwKFLfXztN1v4QV99Tfn7iC630Z90KBcZV9QIAAAB+eyJvcmlnaW4iOiJodHRwczovL3B1YnMuYWNzLm9yZzo0NDMiLCJmZWF0dXJlIjoiRGlzYWJsZVRoaXJkUGFydHlTdG9yYWdlUGFydGl0aW9uaW5nMyIsImV4cGlyeSI6MTc1Nzk4MDgwMCwiaXNTdWJkb21haW4iOnRydWV9';
+                const originTrialMetaTag = document.createElement('meta');
+                originTrialMetaTag.httpEquiv = 'origin-trial';
+                originTrialMetaTag.content = originTrialToken;
+                document.head.append(originTrialMetaTag);
+            }
+        })();
+    </script>
+    
+
+
+
+
+
+    <meta name="google-site-verification" content="uBHpu2M2kL7VihPCSRXWyBSxooDf7L_BGgfHA3cjSfY" />
+
+
+<link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-29/html/container.html">
+
+<link rel="shortcut icon" href="/pb-assets/ux3/favicon-1635812676023.ico">
+<meta name="pbContext" content=";page:string:Article/Chapter View;ctype:string:Journal Content;article:article:10.1021/acs.est.5c06771;subPage:string:Abstract;journal:journal:esthag;requestedJournal:journal:esthag;wgroup:string:ACHS website Group;issue:issue:10.1021/esthag.2025.59.issue-42;website:website:acspubs;pageGroup:string:Publication Pages">
+        </head>
+    
+
+    
+
+
+
+    
+        
+        
+        
+            <body
+                    class="pb-ui website-acspubs">
+            
+
+
+
+
+
+
+    
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="pb-page-content" data-ng-non-bindable>
+                
+            <div data-pb-dropzone="main" data-pb-dropzone-name="Main">
+                
+                    
+                        
+
+
+
+        
+        <script type="text/javascript" nonce="996001f7cc73f9ed-SJC">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "rj2hj2w2zc");
+</script>
+
+                    
+                        
+
+
+
+        
+        <script type="text/javascript" data-osano-category="marketing" data-osano="true" src="https://pubsbc.acs.org/script.js" nonce="97968fa3cdf11877-SJC"></script>
+
+                    
+                        
+
+
+
+        
+        <div class="activity-container hidden-lg hidden-md" role="dialog" aria-modal="false" aria-label="recently viewed" ><div class="recentlyViewed" style="right: -100%"><div class="activity_title_container"><span class="activity_title">Recently Viewed</span><a href="javascript:void(0)" class="activity_back"><i class="icon-angle-left" aria-hidden="true"></i><span class="sr-only">close modal</span></a></div></div></div>
+
+                    
+                        
+
+
+
+
+
+
+
+
+
+    
+    
+        <div data-widget-def="UX3HTMLWidget" data-widget-id="ed6ae788-7707-48f4-b02c-3187c75e10db" class="hide">
+        
+
+
+
+        
+        
+
+        </div>
+    
+
+
+                    
+                        
+
+
+
+        
+        
+
+                    
+                        
+
+
+
+        
+        <div class="skip"><a id="skip-to-article" href="#article__left-side">Skip to article</a><a id="skip-to-sidebar" href="#article_content-right">Skip to sidebar</a></div>
+
+                    
+                        
+
+
+
+        
+        <style>
+  /* Fonts */
+  .osano-cm-window,
+  .osano-cm-dialog,
+  .osano-cm-description {
+      color:  #333333;
+      font-family: Roboto, Helvetica, Arial, Hiragino Sans GB, STXihei, Microsoft YaHei, WenQuanYi Micro Hei, Hind, MS Gothic, Apple SD Gothic Neo, NanumBarunGothic, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 19.6px */
+  }
+
+  .osano-cm-list-item__description {
+      font-size: 14px;
+  }
+
+  .osano-cm-header {
+      background: #e6ebf6;
+      color: #000000;
+      font-family: Roboto, Helvetica, Arial, Hiragino Sans GB, STXihei, Microsoft YaHei, WenQuanYi Micro Hei, Hind, MS Gothic, Apple SD Gothic Neo, NanumBarunGothic, sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 28.8px */
+  }
+
+  .osano-cm-content__message,
+  .osano-cm-label {
+      color:  #333333;
+      font-family: Roboto, Helvetica, Arial, Hiragino Sans GB, STXihei, Microsoft YaHei, WenQuanYi Micro Hei, Hind, MS Gothic, Apple SD Gothic Neo, NanumBarunGothic, sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%; /* 20.8px */
+  }
+
+  .osano-cm-drawer-toggle .osano-cm-label {
+      font-size: 16px;
+      line-height: 130%; /* 20.8px */
+  }
+
+  .osano-cm-dialog .osano-cm-link {
+      font-size: 16px;
+  }
+
+  .osano-cm-disclosure {
+      font-size: 1em;
+  }
+
+  .osano-cm-info {
+      max-width: 30em;
+  }
+
+  .osano-cm-dialog,
+  .osano-cm-info,
+  .osano-cm-info-dialog-header {
+      background: #e6ebf6;
+  }
+
+
+  /* General Buttons */
+  .osano-cm-button {
+      background-color: #0039A6;
+      border-color: #0039A6;
+      color: #FFFFFF;
+  }
+
+  .osano-cm-button:focus {
+      background-color: #0039A6;
+      outline: 1px #0039A6 dashed;
+  }
+
+  .osano-cm-button:hover {
+      background-color: #002D72;
+      box-shadow: 0px 2px 4px -2px #547AC380;
+      box-shadow: 0px 4px 8px -1px #547AC380;
+  }
+
+  .osano-cm-button--type_deny {
+      background-color: #0039A6;
+      border-color: #0039A6;
+      color: #FFFFFF;
+  }
+
+  .osano-cm-button--type_deny:focus {
+      background-color: #0039A6;
+      outline: 1px #0039A6 dashed;
+  }
+
+  .osano-cm-button--type_deny:hover {
+      background-color: #002D72;
+      box-shadow: 0px 2px 4px -2px #547AC380;
+      box-shadow: 0px 4px 8px -1px #547AC380;
+  }
+
+  .osano-cm-view__button {
+      font-size: 1em;
+      margin: 1em 0 0;
+      width: 100%;
+  }
+
+
+  /*  Toggle button colors */
+  /* OFF - enabled */
+  .osano-cm-toggle__switch {
+      background-color: #767676;
+  }
+
+  .osano-cm-toggle__switch::after {
+      background-color: #FFFFFF;
+      border-color: #FFFFFF;
+  }
+
+  .osano-cm-toggle__switch::before {
+      border-color: transparent;
+  }
+
+  /* OFF - hover */
+  .osano-cm-toggle__input:hover+.osano-cm-toggle__switch {
+      background-color: #5C5C5C;
+      border-color: transparent;
+      box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.05)
+  }
+  .osano-cm-toggle__input:hover+.osano-cm-toggle__switch::before {
+      border-color: #5C5C5C;
+  }
+
+  /* OFF - focus */
+  .osano-cm-toggle__input:focus+.osano-cm-toggle__switch {
+      background-color: #767676;
+      border-color: #767676;
+      border-radius: 40px;
+      outline: 1px #767676 dashed;
+  }
+  .osano-cm-toggle__input:focus+.osano-cm-toggle__switch::before {
+      border-color: #767676;
+  }
+
+  /* ON - enabled */
+  .osano-cm-toggle__input:checked+.osano-cm-toggle__switch {
+      background-color: #0039A6;
+      border-color: transparent;
+  }
+
+  .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::after,
+  .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::before {
+      border-color: transparent;
+  }
+
+  /* ON - hover */
+  .osano-cm-toggle__input:checked:hover+.osano-cm-toggle__switch {
+      background-color: #002D72;
+  }
+  .osano-cm-toggle__input:checked:hover+.osano-cm-toggle__switch::before {
+      border-color: transparent;
+      /* Color shadows/shadow-blue */
+      box-shadow: 0px 4px 8px -1px rgba(84, 122, 195, 0.50), 0px 2px 4px -2px rgba(84, 122, 195, 0.50);
+  }
+
+  /* ON - focus */
+  .osano-cm-toggle__input:checked:focus+.osano-cm-toggle__switch {
+      background-color: #0039A6;
+      border-radius: 40px;
+      outline: 1px #0039A6 dashed;
+  }
+
+
+  /* OFF - inactive */
+  .osano-cm-toggle__input:disabled+.osano-cm-toggle__switch,
+  .osano-cm-toggle__input:disabled:focus+.osano-cm-toggle__switch,
+  .osano-cm-toggle__input:disabled:hover+.osano-cm-toggle__switch {
+      background-color: #D7D7D9;
+      border-color: #D7D7D9;
+  }
+
+  .osano-cm-toggle__input:disabled+.osano-cm-toggle__switch::after,
+  .osano-cm-toggle__input:disabled:focus+.osano-cm-toggle__switch::after,
+  .osano-cm-toggle__input:disabled:hover+.osano-cm-toggle__switch::after {
+      background-color: #FFFFFF;
+      border-color: #FFFFFF;
+  }
+
+  .osano-cm-toggle__input:disabled+.osano-cm-toggle__switch::before,
+  .osano-cm-toggle__input:disabled:hover+.osano-cm-toggle__switch::before {
+      border-color: transparent;
+  }
+
+  .osano-cm-toggle__input:disabled:focus+.osano-cm-toggle__switch::before {
+      border-color: #D7D7D9;
+      border-radius: 40px;
+      outline: 1px #D7D7D9 dashed;
+  }
+
+
+
+  /* ON - inactive */
+  .osano-cm-toggle__input:disabled:checked+.osano-cm-toggle__switch,
+  .osano-cm-toggle__input:disabled:checked:focus+.osano-cm-toggle__switch,
+  .osano-cm-toggle__input:disabled:checked:hover+.osano-cm-toggle__switch {
+      background-color: #8AA4D6;
+      border-color: #8AA4D6;
+      box-shadow: none;
+  }
+
+  .osano-cm-toggle__input:disabled:checked+.osano-cm-toggle__switch::after,
+  .osano-cm-toggle__input:disabled:checked:focus+.osano-cm-toggle__switch::after,
+  .osano-cm-toggle__input:disabled:checked:hover+.osano-cm-toggle__switch::after {
+      background-color: #FFFFFF;
+      border-color: #FFFFFF;
+  }
+
+  .osano-cm-toggle__input:disabled:checked+.osano-cm-toggle__switch::before,
+  .osano-cm-toggle__input:disabled:checked:hover+.osano-cm-toggle__switch::before {
+      border-color: transparent;
+  }
+
+  .osano-cm-toggle__input:disabled:checked:focus+.osano-cm-toggle__switch::before {
+      border-color: #8AA4D6;
+      border-radius: 40px;
+      outline: 1px #8AA4D6 dashed;
+  }
+
+  .osano-cm-toggle__switch:before {
+      border-radius: 0px;
+      border-width: 0px;
+      bottom: 0px;
+      box-sizing: border-box;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+  }
+
+
+  /* Disclosure Links */
+  .osano-cm-disclosure__list:first-of-type::after {
+      background-color: #0039A6;
+  }
+
+  .osano-cm-disclosure__toggle,
+  .osano-cm-expansion-panel__toggle {
+      color: #0039A6;
+  }
+
+  .osano-cm-disclosure__toggle:hover,
+  .osano-cm-disclosure__toggle:active,
+  .osano-cm-expansion-panel__toggle:hover,
+  .osano-cm-expansion-panel__toggle:active {
+      color: #0039A6;
+  }
+
+  .osano-cm-disclosure__toggle:focus,
+  .osano-cm-expansion-panel__toggle:focus {
+      color: #002D72;
+  }
+
+
+  /* Disclosure Links */
+  .osano-cm-disclosure__list:first-of-type::after {
+      background-color: #0039A6;
+  }
+
+  .osano-cm-disclosure__toggle,
+  .osano-cm-expansion-panel__toggle {
+      color: #0039A6;
+  }
+
+  .osano-cm-disclosure__toggle:hover,
+  .osano-cm-disclosure__toggle:active,
+  .osano-cm-expansion-panel__toggle:hover,
+  .osano-cm-expansion-panel__toggle:active {
+      color: #0039A6;
+  }
+
+  .osano-cm-disclosure__toggle:focus,
+  .osano-cm-expansion-panel__toggle:focus {
+      color: #002D72;
+  }
+
+
+  /* Links */
+  .osano-cm-link {
+      color: #0039A6;
+  }
+
+  .osano-cm-link:hover,
+  .osano-cm-link:active {
+      color: #0039A6;
+  }
+
+  .osano-cm-link:focus {
+      color: #002D72;
+  }
+
+
+  /* Widget */
+  .osano-cm-widget__outline {
+      fill: #fff;
+      stroke:  #002D72;
+  }
+
+  .osano-cm-widget__dot {
+      fill: #0039A6;
+  }
+
+  .osano-cm-widget:focus {
+      outline: none;
+      outline-offset: 0;
+  }
+
+  /* Close button */
+  .osano-cm-close {
+      color: #e6ebf6;
+      stroke: #0039A6;
+  }
+
+  .osano-cm-close:focus {
+      background-color: #e6ebf6;
+      border-color: #e6ebf6;
+      stroke: #002D72;
+  }
+
+  .osano-cm-close:hover {
+      stroke: #0039A6;
+  }
+
+  .osano-cm-close:focus:hover {
+      stroke: #002D72;
+  }
+</style>
+
+<script nonce="996001f7cc73f9ed-SJC">
+    //allows for osano API to check consent agreement
+    (function (w, o, d) {
+      w[o] =
+        w[o] ||
+        function () {
+        w[o][d].push(arguments);
+      };
+      w[o][d] = w[o][d] || [];
+    })(window, 'Osano', 'data');
+    
+    const script = document.createElement("script");
+    if (typeof PB === "undefined") {
+      console.log("PB not found");
+      console.log("load osano");
+      script.id = "osanoScript";
+      script.type = "text/javascript";
+      script.async = true;
+      script.src =
+        "https://cmp.osano.com/16BPzAUFV1UoQ26HU/10002854-e376-4b5a-919a-0dd3ef22c9ed/osano.js";
+      document.head.append(script);
+    } else {
+      if (PB.deps) {
+        console.log("load osano");
+        script.id = "osanoScript";
+        script.type = "text/javascript";
+        script.async = true;
+        script.src =
+          "https://cmp.osano.com/16BPzAUFV1UoQ26HU/10002854-e376-4b5a-919a-0dd3ef22c9ed/osano.js";
+        document.head.append(script);
+      } else {
+        console.log("don't load osano");
+      }
+    }
+  </script>
+
+
+                    
+                        
+
+
+
+        
+        
+
+
+
+    
+        <div class="pb-las">
+            <script type="text/javascript" nonce="996001f7cc73f9ed-SJC">
+	var dartInstitutionType = 'none';
+	var dartMember = 'false';
+</script>
+            
+        </div>
+    
+
+    
+
+    
+
+
+
+                    
+                        
+
+
+
+        
+        
+
+
+
+    
+
+    
+
+    
+        
+    
+
+
+
+                    
+                        
+
+
+
+        
+        
+
+
+
+    
+
+    
+
+    
+        
+    
+
+
+
+                    
+                        
+
+
+
+        
+        <script async="" type="text/javascript" src="https://www.googletagservices.com/tag/js/gpt.js" rel="preconnect" nonce="996001f7cc73f9ed-SJC"></script>
+
+
+<script type="text/javascript" nonce="996001f7cc73f9ed-SJC">
+  
+    function getOsanoUUID() {
+    const name = "osano_consentmanager_uuid=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) === 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+
+
+  const stringToHexHash = (str, len) => {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    let hex = hash.toString(16);
+    let alphanumeric = hex.replace(/[^0-9a-zA-Z]/gi, "");
+    while (alphanumeric.length < len) {
+      alphanumeric = "0" + alphanumeric;
+    }
+    return alphanumeric.substr(0, len);
+  };
+  
+var dfpReady = false;
+$(document).ready(function() {
+  window.googletag = window.googletag || {cmd: []};
+  var currentJournal = "environmental_science_technology";
+  googletag.cmd.push(function(){
+    var mappingLeader = '';
+
+    // pubs homepage
+    if( ((currentJournal === ("{"+"{journal.dartId}"+"}")) || (currentJournal === ("")) ) && ($("main.homepage").length) ) {
+      googletag.defineSlot("/8868/pubs/homepage",
+        [[1, 1], [300, 250]], "dfp-pubs-rectangle-1").
+        setTargeting("location", "rectangle1").
+        setTargeting("ntvPlacement", ["1100168"]).
+        addService(googletag.pubads());
+    }
+
+    // search results
+    else if( $("main.search-result").length ) {
+      mappingLeader = googletag.sizeMapping().
+        addSize([1367, 600], [[1, 1], [728, 90]]).
+        addSize([0, 0], [[1, 1], [320, 50]]).
+        build();
+      googletag.defineSlot("/8868/pubs/search",
+        [[1, 1], [728, 90]], "dfp-pubs-search-sponsor-1").
+        defineSizeMapping(mappingLeader).
+        setTargeting("location", "sponsor1").
+        setTargeting("ntvPlacement", ["1101382"]).
+        addService(googletag.pubads());
+      googletag.defineSlot("/8868/pubs/search",
+        [[1, 1], [728, 90]], "dfp-pubs-search-sponsor-2").
+        defineSizeMapping(mappingLeader).
+        setTargeting("location", "sponsor2").
+        setTargeting("ntvPlacement", ["1101383"]).
+        addService(googletag.pubads());
+    }
+
+    // editors choice
+    else if( $("main.editorschoice").length ) {
+      mappingLeader = googletag.sizeMapping().
+        addSize([1024, 600], [[1, 1], [728, 90]]).
+        addSize([0, 0], [[1, 1], [320, 50]]).
+        build();
+      googletag.defineSlot("/8868/pubs/editorschoice",
+        [[1, 1], [728, 90]], "dfp-pubs-editorschoice-sponsor-1").
+        defineSizeMapping(mappingLeader).
+        setTargeting("location", "sponsor1").
+        setTargeting("ntvPlacement", ["1100169"]).
+        addService(googletag.pubads());
+      googletag.defineSlot("/8868/pubs/editorschoice",
+        [[1, 1], [728, 90]], "dfp-pubs-editorschoice-sponsor-2").
+        defineSizeMapping(mappingLeader).
+        setTargeting("location", "sponsor2").
+        setTargeting("ntvPlacement", ["1100170"]).
+        addService(googletag.pubads());
+    }
+
+    // c&en global enterprise
+    else if((currentJournal === "cen_global_enterprise") || (($("main.cen-hp").length)) ) {
+      mappingLeader = googletag.sizeMapping().
+        addSize([750, 200], [[1, 1], [728, 90]]).
+        addSize([0, 0], [[1, 1], [320, 50]]).
+        build();
+      googletag.defineSlot("/8868/journal/environmental_science_technology/homepage", 
+        [1, 1], "dfp-journal-hp-revealer").
+        defineSizeMapping(mappingLeader).
+        setTargeting("pos", "Journals_HR").
+        addService(googletag.pubads());
+      googletag.defineSlot("/8868/journal/environmental_science_technology/homepage",
+        [728, 90], "dfp-journal-hp-leaderboard").
+        defineSizeMapping(mappingLeader).
+        setTargeting("location", "leaderboard1").
+        addService(googletag.pubads());
+      googletag.defineSlot("/8868/journal/environmental_science_technology/homepage",
+        [1, 1], "dfp-journal-hp-rectangle-1").
+        setTargeting("ntvPlacement", ["1100648"]).
+        setTargeting("location", "rectangle1").
+        addService(googletag.pubads());
+      googletag.defineSlot("/8868/journal/environmental_science_technology/homepage",
+        [1, 1], "dfp-journal-hp-rectangle-2").
+        setTargeting("ntvPlacement", ["1100649"]).
+        setTargeting("location", "rectangle2").
+        addService(googletag.pubads());
+      googletag.defineSlot("/8868/journal/environmental_science_technology/homepage",
+        [[1, 1], [300, 250]] , "dfp-journal-hp-rectangle-3").
+        setTargeting("ntvPlacement", ["1100651"]).
+        setTargeting("location", "rectangle3").
+        addService(googletag.pubads());
+    }
+
+    //journal home page
+    else if( $("main.journal-home").length ) {
+      mappingLeader = googletag.sizeMapping().
+        addSize([750, 200], [728, 90]).
+        addSize([0, 0], [320, 50]).
+        build();
+      googletag.defineSlot("/8868/journal/environmental_science_technology/homepage", [1, 1], "dfp-journal-hp-revealer").
+        setTargeting("pos", "Journals_HR").
+        addService(googletag.pubads());
+      googletag.defineSlot("/8868/journal/environmental_science_technology/homepage", [728, 90], "dfp-journal-hp-leaderboard").
+        defineSizeMapping(mappingLeader).
+        setTargeting("location", "leaderboard1").
+        addService(googletag.pubads());
+      // googletag.defineSlot("/8868/journal/environmental_science_technology/homepage",
+      //   [[1, 1], [300, 250]], "dfp-journal-hp-rectangle-1").
+      //   setTargeting("ntvPlacement", ["1100164"]).
+      //   setTargeting("location", "rectangle1").
+      //   addService(googletag.pubads());
+      // googletag.defineSlot("/8868/journal/environmental_science_technology/homepage",
+      //   [[1, 1], [300, 250]], "dfp-journal-hp-rectangle-2").
+      //   setTargeting("ntvPlacement", ["1100165"]).
+      //   setTargeting("location", "rectangle2").
+      //   addService(googletag.pubads());
+      googletag.defineSlot("/8868/journal/environmental_science_technology/homepage",
+        [[1, 1], [300, 250]], "dfp-journal-hp-rectangle-3").
+        setTargeting("ntvPlacement", ["1100166"]).
+        setTargeting("location", "rectangle3").
+        addService(googletag.pubads());
+      // googletag.defineSlot("/8868/journal/environmental_science_technology/homepage",
+      //   [1, 1], "dfp-journal-hp-rectangle-4").
+      //   setTargeting("ntvPlacement", ["1100167"]).
+      //   setTargeting("location", "rectangle4").
+      //   addService(googletag.pubads());
+      // googletag.defineSlot("/8868/journal/environmental_science_technology/homepage",
+      //   [1, 1], "dfp-journal-hp-rectangle-5").
+      //   setTargeting("ntvPlacement", ["1100303"]).
+      //   setTargeting("location", "rectangle5").
+      //   addService(googletag.pubads());
+      // googletag.defineSlot("/8868/journal/environmental_science_technology/homepage",
+      //   [[1, 1], [300, 250]], "dfp-journal-hp-rectangle-6").
+      //   setTargeting("ntvPlacement", ["1100304"]).
+      //   setTargeting("location", "rectangle6").
+      //   addService(googletag.pubads());
+    }
+
+    // journal secondary pages
+    else if( $("main.pubs-custom").length ) {
+      googletag.defineSlot("/8868/journal/environmental_science_technology/homepage",
+        [300, 250], "dfp-journal-hp-rectangle-1").
+        setTargeting("location", "rectangle1").
+        addService(googletag.pubads());
+    }
+
+    //journal toc
+    else if( $("main.toc").length ) {
+      mappingLeader = googletag.sizeMapping().
+        addSize([1024, 200], [[1, 1], [728, 90]]).
+        addSize([0, 0], [[1, 1], [320, 50]]).
+        build();
+      googletag.defineSlot("/8868/journal/environmental_science_technology/all_toc/toc",
+        [[1, 1], [728, 90]], "dfp-journal-toc-sponsor-1").
+        defineSizeMapping(mappingLeader).
+        setTargeting("location", "sponsor1").
+        setTargeting("ntvPlacement", ["1101380"]).
+        addService(googletag.pubads());
+      googletag.defineSlot("/8868/journal/environmental_science_technology/all_toc/toc",
+        [[1, 1], [728, 90]], "dfp-journal-toc-sponsor-2").
+        defineSizeMapping(mappingLeader).
+        setTargeting("location", "sponsor2").
+        setTargeting("ntvPlacement", ["1101381"]).
+        addService(googletag.pubads());
+    }
+
+    // journal asap
+    else if( $("main.asap").length ) {
+      mappingLeader = googletag.sizeMapping().
+        addSize([1024, 200], [[1, 1], [728, 90]]).
+        addSize([0, 0], [[1, 1], [320, 50]]).
+        build();
+      googletag.defineSlot("/8868/journal/environmental_science_technology/all_toc/asap",
+        [[1, 1], [728, 90]], "dfp-journal-asap-sponsor-1").
+        defineSizeMapping(mappingLeader).
+        setTargeting("location", "sponsor1").
+        setTargeting("ntvPlacement", ["1101380"]).
+        addService(googletag.pubads());
+      googletag.defineSlot("/8868/journal/environmental_science_technology/all_toc/asap",
+        [[1, 1], [728, 90]], "dfp-journal-asap-sponsor-2").
+        defineSizeMapping(mappingLeader).
+        setTargeting("location", "sponsor2").
+        setTargeting("ntvPlacement", ["1101381"]).
+        addService(googletag.pubads());
+    }
+
+    //googletag.pubads().enableSingleRequest();
+    googletag.pubads().
+      setTargeting("inst",dartInstitutionType).
+      setTargeting("memb",dartMember);
+    googletag.pubads().collapseEmptyDivs();
+    
+    googletag.pubads().addEventListener("slotRenderEnded", function(event) {
+      if((currentJournal === "cen_global_enterprise") || (($("main.cen-hp").length)) ) {
+        if ((event.slot.getSlotElementId() === "dfp-journal-hp-rectangle-1") || 
+          (event.slot.getSlotElementId() === "dfp-journal-hp-rectangle-2") || 
+          (event.slot.getSlotElementId() === "dfp-journal-hp-rectangle-3")) {
+          if (event.isEmpty === false) {
+            if(event.size) {
+              $("#" + event.slot.getSlotElementId()).parents(".advertisement").slideDown();
+              console.log("ad display: " + event.creativeId + " " + event.size[0] + "x" + event.size[1]);
+            }
+            else {
+              $("#" + event.slot.getSlotElementId()).parents(".advertisement").hide();
+            }
+          }
+        }
+      }
+      else {
+        if ((event.slot.getSlotElementId() === "dfp-pubs-rectangle-1") || 
+          (event.slot.getSlotElementId() === "dfp-journal-hp-rectangle-3")) {
+          if (event.isEmpty === false) {
+            if(event.size) {
+              $("#" + event.slot.getSlotElementId()).parents(".teaser_advDropZone").slideDown();
+              $("#" + event.slot.getSlotElementId()).parents(".advertisement").slideDown();
+              console.log("ad display: " + event.creativeId + " " + event.size[0] + "x" + event.size[1]);
+            }
+            else {
+              $("#" + event.slot.getSlotElementId()).parents(".teaser_advDropZone").hide();
+              $("#" + event.slot.getSlotElementId()).parents(".advertisement").hide();
+            }
+          }
+        }
+        if((event.slot.getSlotElementId() === "dfp-journal-toc-sponsor-1") || 
+          (event.slot.getSlotElementId() === "dfp-journal-toc-sponsor-2") || 
+          (event.slot.getSlotElementId() === "dfp-journal-asap-sponsor-1") || 
+          (event.slot.getSlotElementId() === "dfp-journal-asap-sponsor-2") || 
+          (event.slot.getSlotElementId() === "dfp-pubs-search-sponsor-1") || 
+          (event.slot.getSlotElementId() === "dfp-pubs-search-sponsor-2")) {
+          if (event.isEmpty === false) {
+            if(event.size) {
+              $("#" + event.slot.getSlotElementId()).parents(".advertisement-container-toc").slideDown();
+              $("#" + event.slot.getSlotElementId()).parents(".advertisement").slideDown();
+              console.log("ad display: " + event.creativeId + " " + event.size[0] + "x" + event.size[1]);
+            }
+            else {
+              $("#" + event.slot.getSlotElementId()).parents(".advertisement-container-toc").hide();
+              $("#" + event.slot.getSlotElementId()).parents(".advertisement").hide();
+            }
+          }
+        }
+      }
+    });
+    if (window.Osano && window.Osano.cm) {      
+      //set PPID for ad capping 
+      marketingConsent = window.Osano.cm.getConsent()['MARKETING'];
+      let PPID = '';
+      if(marketingConsent != "DENY"){
+        const osanoUUID = getOsanoUUID();
+        PPID = stringToHexHash(osanoUUID, 37)
+        googletag.pubads().setPublisherProvidedId(PPID);
+        console.log('ppid sent');
+      }
+   	 }else{
+      console.log('osano not loaded for ads');    }
+
+    googletag.enableServices();
+    dfpReady = true;
+  });
+});
+</script>
+
+
+                    
+                        
+
+
+
+        
+        <header class="header header_article_inactive header--new">
+
+
+
+        
+        <div class="header_topbar hidden-sm hidden-xs">
+
+
+
+        
+        <div class="col-lg-3 col-md-4 col-sm-5 header_topbar_left">
+
+
+
+
+
+
+
+
+
+    
+    
+        <div data-widget-def="UX3HTMLWidget" data-widget-id="0be92cec-36a8-4b4d-9a08-a28c790ce306" class="header_mainmenu">
+        
+
+
+
+        
+        <ul>
+	<li>
+		<a href="http://www.acs.org">ACS</a>
+	</li>
+	<li class="header_mainmenu_current">
+		<a href="/">ACS Publications</a>
+	</li>
+	<li>
+		<a href="https://cen.acs.org">C&amp;EN</a>
+	</li>
+	<li>
+		<a href="https://www.cas.org">CAS</a>
+	</li>
+</ul>
+
+        </div>
+    
+
+</div><div class="col-lg-9 col-md-8 col-sm-7 header_topbar_right">
+
+
+
+        
+        <div class="institution"><span class="no-institution-wrapper"><a href="/action/ssostart?redirectUri=%2Fdoi%2F10.1021%2Facs.est.5c06771" title="Access through institution" class="no-institution-link"><span class="institution_no">Access through institution</span></a></span></div>
+
+
+
+
+        
+        <div class="user-login-bar"><input type="hidden" name="statusServiceCall" value="CORS" class="statusServiceCall"/><input type="hidden" name="statusEndpoint" value="https://sso.acs.org/idpservice/status" class="statusEndpoint"/><input type="hidden" name="clientID" value="atypon-lives" class="clientID"/><input type="hidden" name="heartBeatReloadInterval" value="1740000" class="heartBeatReloadInterval"/><input type="hidden" name="logoutUrl" value="https://pubs.acs.org/action/doLogout?logoutRedirectUrl=https%3A%2F%2Fsso.acs.org%2Fidp%2Fglogout%3Fappid%3Datypon-live%26returnURL%3Dhttps%253A%252F%252Fpubs.acs.org%252F" class="logoutUrl"/><span class="user-login-bar__value"><a href="https://pubs.acs.org/action/ssoRequestForLoginPage" class="user-login-bar__Login">Log In</a></span><input type="hidden" name="isUserLoggedIn" value="false" class="user-login-bar_is-loggedin"/><input type="hidden" name="isPaired" value="false" class="pair-device-is-paired"/><input type="hidden" name="isStronglyAuthenticated" value="false" class="isStronglyAuthenticated"/></div>
+</div>
+</div>
+
+
+
+
+        
+        <div class="header_content header_content_container"><div class="header_content_main"><div class="header_content_row article__header__content--row"><div class="header_content_left pull-left"><a href="/" title="ACS Publications. Most Trusted. Most Cited. Most Read"><img width="205" height="35" id="" alt="ACS Publications. Most Trusted. Most Cited. Most Read" src="/pb-assets/ux3/pubs-logo-481x82-1523435513963.png"></a><div class="pj-badge"></div><a href="/journal/esthag" title="Environmental Science &amp; Technology" class="header_article-logo"><img src="/cms/10.1021/esthag/asset/16ad6c8f-9116-d6c8-d911-ad6c8fd9116a/title.png" alt="Environmental Science &amp; Technology"></a></div><div class="header_article-separator"></div><div class="header_content_center"><div class="header_contnav"><div class="header_contnav-row"><div class="header_contnav-title"><span class="hlFld-Title"><i>Pseudomonas</i> sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons</span></div></div></div></div><div class="header_article-separator"></div><div class="header_content_right pull-right"><div class="header_article-share">
+
+
+
+        
+        <!-- Go to https://www.addtoany.com/buttons/customize/ to customize your tools --><script type="text/javascript" defer="defer" src="https://static.addtoany.com/menu/page.js"></script><div class="share"><ul class="share__list"><li class="share__item share__item--citation">
+
+
+
+        
+        <button data-id="article_header_CiteThisMenu" aria-controls="citeBlock_Pop" aria-expanded="false" class="share__ctrl share__ctrl--article"><i class="icon-cite"></i><span>Cite</span></button><div id="citeBlock_Pop" class="cit-download-dropdown_content share__block--article"><ul><li><a href="/action/downloadCitation?doi=10.1021%2Facs.est.5c06771&include=cit&format=ris&direct=true&downloadFileName=acs.est.5c06771" title="Citation" data-id="article_header_CiteThis_Citation"><span>Citation</span></a></li><li><a href="/action/downloadCitation?doi=10.1021%2Facs.est.5c06771&include=abs&format=ris&direct=true&downloadFileName=acs.est.5c06771" title="Citation and abstract" data-id="article_header_CiteThis_Citation_CitationAbstract"><span>Citation and abstract</span></a></li><li><a href="/action/downloadCitation?doi=10.1021%2Facs.est.5c06771&include=ref&format=ris&direct=true&downloadFileName=acs.est.5c06771" title="Citation and references" data-id="article_header_CiteThis_Citation_CitationReferences"><span>Citation and references</span></a></li><li><a href="/action/showCitFormats?doi=10.1021%2Facs.est.5c06771&include=cit&format=ris&direct=true&downloadFileName=acs.est.5c06771&href=/doi/10.1021/acs.est.5c06771" title="Cite This" data-id="article_header_CiteThis_Citation_MoreOptions"><span>More citation options</span><i class="icon-check-circle"></i></a></li></ul></div>
+</li><li class="share__item sm-hidden-header share__item--share"><button aria-controls="shareBlock_Pop" aria-expanded="false" data-id="article_header_ShareThisMenu" class="share__ctrl share__ctrl--article"><i aria-hidden="true" class="icon-share-circle"></i><span>Share</span></button><div id="shareBlock_Pop" class="share__block--article"><span class="sr-only">Share on</span><ul class="a2a a2a_kit  mb-0 a2a_kit_size_32 share__list--vertical"><li class="a2a_listitem_custom"><a role="link" title="Facebook" data-id="article_header_ShareThis_Facebook" class="a2a_button_facebook a2a_button_custom "><i aria-hidden="true" class="icon-facebook1"></i>Facebook</a></li><li class="a2a_listitem_custom"><a role="link" title="X" data-id="article_header_ShareThis_X" class="a2a_button_x a2a_button_custom "><i aria-hidden="true" class="icon-x-square"></i>X</a></li><li class="a2a_listitem_custom"><a role="link" title="Wechat" data-id="article_header_ShareThis_Wechat" class="a2a_button_wechat a2a_button_custom "><i aria-hidden="true" class="icon-wechat"></i>Wechat</a></li><li class="a2a_listitem_custom"><a role="link" title="LinkedIn" data-id="article_header_ShareThis_LinkedIn" class="a2a_button_linkedin a2a_button_custom "><i aria-hidden="true" class="icon-linkedin1"></i>LinkedIn</a></li><li class="a2a_listitem_custom"><a role="link" title="Reddit" data-id="article_header_ShareThis_Reddit" class="a2a_button_reddit a2a_button_custom "><i aria-hidden="true" class="icon-reddit"></i>Reddit</a></li><li class="a2a_listitem_custom"><a role="link" title="Email" data-id="article_header_ShareThis_Email" class="a2a_button_email a2a_button_custom "><i aria-hidden="true" class="icon-envelope-o1"></i>Email</a></li><li class="a2a_listitem_custom"><a role="link" title="Bluesky" data-id="article_header_ShareThis_Bluesky" class="a2a_button_bluesky a2a_button_custom "><i aria-hidden="true" class="icon-bluesky-square"></i>Bluesky</a></li></ul></div></li><li class="share__item"><button aria-controls="jumpToBlock_Pop" aria-expanded="false" data-id="article_header_JumpToMenu" class="share__ctrl share__ctrl--article"><i aria-hidden="true" class="icon-dot-menu"></i><span>Jump to</span></button><div id="jumpToBlock_Pop" class="share__block--article jump-to-dropblock-holder"></div></li><li class="share__item share__item--close"><button data-id="article_header_Expand" class="share__ctrl share__ctrl--article"><i aria-hidden="true" class="icon-arrows-expand"></i><span class="expand">Expand</span><span class="compress">Collapse</span></button></li></ul></div>
+</div><div class="header_back-to-top"><button><i aria-hidden="true" class="icon-arrow-up"></i><span>Back to top</span></button></div>
+
+
+
+        
+        <search id="quick-search__field" class="quick-search"><div class="quick-search__block"><button type="button" class="quick-search__close--small hidden-lg hidden-md"><i aria-hidden="true" class="icon-chevron-left"></i><span class="sr-only">Close quick search form</span></button><form action="/action/checkIsValidDoi" name="defaultQuickSearch" method="GET" title="Quick Search" autocomplete="off" class="quick-search_default"><input type="search" name="AllField" placeHolder="Search text, DOI, authors, etc." aria-label="Search text, DOI, authors, etc." data-auto-complete-max-words="7" data-auto-complete-max-chars="32" data-contributors-conf="3" data-topics-conf="3" data-publication-titles-conf="3" data-history-items-conf="3" aria-required="true" class="quick-search_all-field autocomplete" id="quick-search-all-field"/><button type="button" class="quick-search__close hidden"><i aria-hidden="true" class="icon-pub-close"></i><span class="sr-only">clear</span></button><button type="submit" class="quick-search__submit"><i aria-hidden="true" class="icon-search-split"></i><span class="sr-only">search</span></button><div role="radiogroup" aria-label="journal filter" class="quick-search_journal-filter"><label for="thisJournalRadio" class="radio--primary"><input id="thisJournalRadio" type="radio" value="esthag" name="SeriesKey" checked="checked" class="all-content"/><span>Environ. Sci. Technol.</span></label><label for="allPubRadio" class="radio--primary"><input id="allPubRadio" type="radio" value="" name="SeriesKey" class="all-content"/><span>All Publications/Website</span></label></div></form></div><div class="advanced-search__block"> <a href="/search/advanced" title="Advanced Search" class="advanced-search__link">Advanced Search</a></div></search>
+<nav class="header-home__nav"><ul class="rlist--inline"><li class="header-home__nav__item"><button aria-expanded="false" aria-controls="header-home__nav__dropdown--Read" class="header-home__nav__trigger"><span>Read</span><i aria-hidden="true" class="icon-chevron-down"></i></button><div id="header-home__nav__dropdown--Read" class="header-home__nav__dropdown"><ul class="header-home__nav__dropdown__list"><li class="header-home__nav__dropdown__item"><button data-action="publications" data-action-type="journals" class="header-home__nav__dropdown__link pubModal_button"><span class="header-home__nav__dropdown__link__title">Journals</span><span class="header-home__nav__dropdown__link__meta">Peer-reviewed chemistry research</span></button></li><li class="header-home__nav__dropdown__item"><a href="/curated-content?ref=Article/esthag_Header_Subjects" class="header-home__nav__dropdown__link"><span class="header-home__nav__dropdown__link__title">Subjects</span><span class="header-home__nav__dropdown__link__meta">Specific research topics from across the ACS portfolio</span></a></li><li class="header-home__nav__dropdown__item"><button data-action="publications" data-action-type="books" class="header-home__nav__dropdown__link pubModal_button"><span class="header-home__nav__dropdown__link__title">Books & References</span><span class="header-home__nav__dropdown__link__meta">eBooks, monographs, and references</span></button></li><li class="header-home__nav__dropdown__item"><button data-action="publications" data-action-type="news" class="header-home__nav__dropdown__link pubModal_button"><span class="header-home__nav__dropdown__link__title">C&EN</span><span class="header-home__nav__dropdown__link__meta">News and analysis in chemistry and chemical engineering</span></button></li></ul></div></li><li class="header-home__nav__item"><button aria-expanded="false" aria-controls="header-home__nav__dropdown--Publish" class="header-home__nav__trigger"><span>Publish</span><i aria-hidden="true" class="icon-chevron-down"></i></button><div id="header-home__nav__dropdown--Publish" class="header-home__nav__dropdown"><ul class="header-home__nav__dropdown__list"><li class="header-home__nav__dropdown__item"><a href="https://publish.acs.org?ref=Article/esthag_Header_SubmitaManuscript" class="header-home__nav__dropdown__link"><span class="header-home__nav__dropdown__link__title">Submit a Manuscript</span><i aria-hidden="true" class="icon-arrow-up-right"></i><span class="header-home__nav__dropdown__link__meta">Prepare, submit, and track manuscripts</span></a></li><li class="header-home__nav__dropdown__item"><a href="https://researcher-resources.acs.org/publish?ref=Article/esthag_Header_AuthorResources" class="header-home__nav__dropdown__link"><span class="header-home__nav__dropdown__link__title">Author Resources</span><i aria-hidden="true" class="icon-arrow-up-right"></i><span class="header-home__nav__dropdown__link__meta">Author guidelines, templates, publishing policies, and more</span></a></li><li class="header-home__nav__dropdown__item"><a href="https://authoringservices.acs.org?ref=Article/esthag_Header_PurchaseAuthorServices" class="header-home__nav__dropdown__link"><span class="header-home__nav__dropdown__link__title">Purchase Author Services</span><i aria-hidden="true" class="icon-arrow-up-right"></i><span class="header-home__nav__dropdown__link__meta">Expert editing, formatting, and graphics support</span></a></li><li class="header-home__nav__dropdown__item"><a href="https://acsopenscience.org/?ref=Article/esthag_Header_ExploreOpenAccess" class="header-home__nav__dropdown__link"><span class="header-home__nav__dropdown__link__title">Explore Open Access</span><i aria-hidden="true" class="icon-arrow-up-right"></i><span class="header-home__nav__dropdown__link__meta">Open access tools, resources, and news</span></a></li></ul></div></li><li class="header-home__nav__item"><button aria-expanded="false" aria-controls="header-home__nav__dropdown--Subscribe" class="header-home__nav__trigger"><span>Subscribe</span><i aria-hidden="true" class="icon-chevron-down"></i></button><div id="header-home__nav__dropdown--Subscribe" class="header-home__nav__dropdown"><ul class="header-home__nav__dropdown__list"><li class="header-home__nav__dropdown__item"><a href="https://solutions.acs.org/who-we-serve/librarians/?ref=Article/esthag_Header_LibrariansAccountManagers" class="header-home__nav__dropdown__link"><span class="header-home__nav__dropdown__link__title">Librarians & Account Managers</span><i aria-hidden="true" class="icon-arrow-up-right"></i></a></li><li class="header-home__nav__dropdown__item"><a href="https://acsopenscience.org/institutions/read-and-publish/?ref=Article/esthag_Header_OpenScienceforInstitutions" class="header-home__nav__dropdown__link"><span class="header-home__nav__dropdown__link__title">Open Science for Institutions</span><i aria-hidden="true" class="icon-arrow-up-right"></i></a></li><li class="header-home__nav__dropdown__item"><a href="https://solutions.acs.org/access-options/?ref=Article/esthag_Header_InquireAboutAccess" class="header-home__nav__dropdown__link"><span class="header-home__nav__dropdown__link__title">Inquire About Access</span><i aria-hidden="true" class="icon-arrow-up-right"></i></a></li></ul></div></li><li class="header-home__nav__item"><button aria-expanded="false" aria-controls="header-home__nav__dropdown--Help" class="header-home__nav__trigger"><span>Help</span><i aria-hidden="true" class="icon-chevron-down"></i></button><div id="header-home__nav__dropdown--Help" class="header-home__nav__dropdown"><ul class="header-home__nav__dropdown__list"><li class="header-home__nav__dropdown__item"><a href="https://acs.service-now.com/acs?ref=Article/esthag_Header_SupportFAQ" class="header-home__nav__dropdown__link"><span class="header-home__nav__dropdown__link__title">Support FAQ</span><i aria-hidden="true" class="icon-arrow-up-right"></i><span class="header-home__nav__dropdown__link__meta">Quick answers to common questions</span></a></li><li class="header-home__nav__dropdown__item"><a href="#" onclick="SnapEngage.startLink();return false; gtag('event', 'Menu', { 'event_category': 'Top Nav', 'event_label':'Live Chat with Agent'});" class="header-home__nav__dropdown__link"><span class="header-home__nav__dropdown__link__title">Live Chat with Agent</span><span class="header-home__nav__dropdown__link__meta">Get real-time help from a support representative</span></a></li></ul></div></li></ul><div class="header-home__mobile-menu__wrapper"><button aria-controls="quick-search__field" aria-expanded="false" class="header-home__search hidden-lg hidden-md hidden-sm"><i aria-hidden="true" class="icon-search-split"></i><span class="sr-only">Open quick search form</span></button><button aria-controls="mobile-menu-dialog" aria-expanded="false" class="header-home__burger hidden-lg"><i aria-hidden="true" class="icon-burger-thin"></i><span class="sr-only">Open menu</span></button><dialog id="mobile-menu-dialog" aria-modal="true" aria-label="Main menu" class="header-home__mobile-menu"><button class="header-home__mobile-menu__close"><i aria-hidden="true" class="icon-pub-close"></i><span class="sr-only">Close menu</span></button><div class="header-home__mobile-menu__content"><ul class="header-home__mobile-menu__list"><li><span class="header-home__mobile-menu__section-title">Read</span><ul class="header-home__mobile-menu__section-list"><li class="header-home__mobile-menu__item"><button data-action="publications" data-action-type="journals" class="pubModal_button">Journals</button></li><li class="header-home__mobile-menu__item"><a href="/curated-content?ref=Article/esthag_Header_Subjects"><span>Subjects</span></a></li><li class="header-home__mobile-menu__item"><button data-action="publications" data-action-type="books" class="pubModal_button">Books & References</button></li><li class="header-home__mobile-menu__item"><button data-action="publications" data-action-type="news" class="pubModal_button">C&EN</button></li></ul></li><li><span class="header-home__mobile-menu__section-title">Publish</span><ul class="header-home__mobile-menu__section-list"><li class="header-home__mobile-menu__item"><a href="https://publish.acs.org?ref=Article/esthag_Header_SubmitaManuscript"><span>Submit a Manuscript</span><i aria-hidden="true" class="icon-arrow-up-right"></i></a></li><li class="header-home__mobile-menu__item"><a href="https://researcher-resources.acs.org/publish?ref=Article/esthag_Header_AuthorResources"><span>Author Resources</span><i aria-hidden="true" class="icon-arrow-up-right"></i></a></li><li class="header-home__mobile-menu__item"><a href="https://authoringservices.acs.org?ref=Article/esthag_Header_PurchaseAuthorServices"><span>Purchase Author Services</span><i aria-hidden="true" class="icon-arrow-up-right"></i></a></li><li class="header-home__mobile-menu__item"><a href="https://acsopenscience.org/?ref=Article/esthag_Header_ExploreOpenAccess"><span>Explore Open Access</span><i aria-hidden="true" class="icon-arrow-up-right"></i></a></li></ul></li><li><span class="header-home__mobile-menu__section-title">Subscribe</span><ul class="header-home__mobile-menu__section-list"><li class="header-home__mobile-menu__item"><a href="https://solutions.acs.org/who-we-serve/librarians/?ref=Article/esthag_Header_LibrariansAccountManagers"><span>Librarians & Account Managers</span><i aria-hidden="true" class="icon-arrow-up-right"></i></a></li><li class="header-home__mobile-menu__item"><a href="https://acsopenscience.org/institutions/read-and-publish/?ref=Article/esthag_Header_OpenScienceforInstitutions"><span>Open Science for Institutions</span><i aria-hidden="true" class="icon-arrow-up-right"></i></a></li><li class="header-home__mobile-menu__item"><a href="https://solutions.acs.org/access-options/?ref=Article/esthag_Header_InquireAboutAccess"><span>Inquire About Access</span><i aria-hidden="true" class="icon-arrow-up-right"></i></a></li></ul></li><li><span class="header-home__mobile-menu__section-title">Help</span><ul class="header-home__mobile-menu__section-list"><li class="header-home__mobile-menu__item"><a href="https://acs.service-now.com/acs?ref=Article/esthag_Header_SupportFAQ"><span>Support FAQ</span><i aria-hidden="true" class="icon-arrow-up-right"></i></a></li><li class="header-home__mobile-menu__item"><a href="#" onclick="SnapEngage.startLink();return false; gtag('event', 'Menu', { 'event_category': 'Top Nav', 'event_label':'Live Chat with Agent'});" class="help help-chat"><span>Live Chat with Agent</span></a></li></ul></li><li><span class="header-home__mobile-menu__section-title">Account</span><ul class="header-home__mobile-menu__section-list header__dialog__account"><li class="header-home__mobile-menu__item login"><a href="/action/ssoRequestForLoginPage">Log in</a></li><li class="header-home__mobile-menu__item account"><a href="/action/showPreferences">My Profile</a></li><li class="header-home__mobile-menu__item logout"><a href="#">Log out</a></li></ul></li></ul></div></dialog></div></nav></div></div></div></div>
+
+
+
+
+        
+        <div class="pub"><div role="dialog" aria-modal="true" aria-label="publications modal" class="pub-modal"><p aria-live="polite" role="alert" class="pub-modal__alerts sr-only"><span class="pub-modal__alert"></span></p><div class="pub-modal_content loop-trap"><button class="pub-modal_close pull-right"><i aria-hidden="true" class="icon-close"></i><span class="sr-only">Close</span></button><div class="pub-modal_row"><div class="pub-modal_left"><div class="pub-modal_left-content"><div class="pub-modal_control hidden-lg hidden-md"><span class="pub-modal_control-text">Publications</span><a href="#" title="Back button" class="pub-modal_back"><i class="icon-angle-left"></i></a></div><!-- Types--><div class="pub-modal_types"><p>CONTENT TYPES</p><ul class="pub-modal_types-list"><li data-type="all" id="allID" class="pub-modal_types-active"><button class="pub-modal_types-item">All Types</button></li></ul></div><!-- Subjects--><div class="pub-modal_subjects hidden-sm hidden-xs"><p id="subjects__heading">SUBJECTS</p><ul aria-labelledby="subjects__heading" role="group" class="pub-modal_subjects-list"></ul></div></div></div><div class="pub-modal_right"><div class="pub-modal_control hidden-lg hidden-md"><span class="pub-modal_control-text">Publications: All Types</span><a href="#" title="Back button" class="pub-modal_back"><i class="icon-angle-left"></i></a></div><!--div.pub-modal_right-cover-gallery.hidden-lg.hidden-md--><!--a(href="/coverGallery") Browse Our Cover Art Gallery--><!-- Publications list--><!-- 'pub-modal_right--inner' adds styling required for IE--><div class="pub-modal_right--inner"><div class="pub-content"></div></div></div></div></div><!-- The widget data--><input type="hidden" id="ajaxUrl" name="ajaxUrl" value="/pb/widgets/achs-publication-list?widgetId=cabcb15c-6f7a-494b-a19c-eba4fafaee5c&amp;pbContext=%3Bpage%3Astring%3AArticle%2FChapter+View%3Bctype%3Astring%3AJournal+Content%3Barticle%3Aarticle%3A10.1021%2Facs.est.5c06771%3BsubPage%3Astring%3AAbstract%3Bjournal%3Ajournal%3Aesthag%3BrequestedJournal%3Ajournal%3Aesthag%3Bwgroup%3Astring%3AACHS+website+Group%3Bissue%3Aissue%3A10.1021%2Festhag.2025.59.issue-42%3Bwebsite%3Awebsite%3Aacspubs%3BpageGroup%3Astring%3APublication+Pages&amp;key=1693dab40d79661765f727c94dc70fa90&amp;ajaxRequest=true"/><input type="hidden" name="pubModalData" value=""/></div></div>
+</header>
+
+                    
+                        
+
+
+
+        
+        <script type='text/javascript' nonce="996001f7cc73f9ed-SJC">
+    window.onload = function initDoubleClickEvents(){
+    googletag.cmd.push(function() {
+
+        //pubs
+        googletag.defineSlot('/8868/pubs/homepage', [[970, 90], [728, 90]], 'dfp-pubs-leaderboard').addService(googletag.pubads()).setTargeting('location', 'leaderboard1');
+        googletag.defineSlot('/8868/pubs/homepage', [300, 250], 'dfp-pubs-rectangle-1').addService(googletag.pubads()).setTargeting('location', 'rectangle1');
+        googletag.defineSlot('/8868/pubs/homepage', [300, 250], 'dfp-pubs-rectangle-2').addService(googletag.pubads()).setTargeting('location', 'rectangle2');
+
+        //arrc
+        googletag.defineSlot('/8868/pubs/arrc', [[970, 90], [728, 90]], 'dfp-pubs-arrc-leaderboard').addService(googletag.pubads()).setTargeting('location', 'leaderboard1');
+
+        //info central
+        googletag.defineSlot('/8868/pubs/infocentral', [[970, 90], [728, 90]], 'dfp-pubs-infocentral-leaderboard').addService(googletag.pubads()).setTargeting('location', 'leaderboard1');
+
+        //books
+        googletag.defineSlot('/8868/pubs/books', [[970, 90], [728, 90]], 'dfp-pubs-books-leaderboard').addService(googletag.pubads()).setTargeting('location', 'leaderboard1');
+        googletag.defineSlot('/8868/pubs/books', [300, 250], 'dfp-pubs-books-rectangle-1').addService(googletag.pubads()).setTargeting('location', 'rectangle1');
+        googletag.defineSlot('/8868/pubs/books', [300, 250], 'dfp-pubs-books-rectangle-2').addService(googletag.pubads()).setTargeting('location', 'rectangle2');
+
+
+        //advanced search
+        googletag.defineSlot('/8868/search', [[970, 90], [728, 90]], 'dfp-pubs-adv-search-leaderboard').addService(googletag.pubads());
+
+
+        //journal home pages and secondary pages
+        googletag.defineSlot('/8868/journal/${journal.dartId}/homepage', [[970, 90], [728, 90]], 'dfp-journal-hp-leaderboard').addService(googletag.pubads()).setTargeting('location', 'leaderboard1');
+        googletag.defineSlot('/8868/journal/${journal.dartId}/homepage', [[970, 90], [728, 90], [300, 250]], 'dfp-journal-hp-rectangle-1').addService(googletag.pubads()).setTargeting('location', 'rectangle1');
+        googletag.defineSlot('/8868/journal/${journal.dartId}/homepage', [300, 250], 'dfp-journal-hp-rectangle-2').addService(googletag.pubads()).setTargeting('location', 'rectangle2');
+
+
+        //journal submission pages
+        googletag.defineSlot('/8868/journal/${journal.dartId}/submission', [[970, 90], [728, 90]], 'dfp-journal-submission-leaderboard').addService(googletag.pubads()).setTargeting('location', 'leaderboard1');
+        googletag.defineSlot('/8868/journal/${journal.dartId}/submission', [300, 250], 'dfp-journal-submission-rectangle-1').addService(googletag.pubads()).setTargeting('location', 'rectangle1');
+        googletag.defineSlot('/8868/journal/${journal.dartId}/submission', [300, 250], 'dfp-journal-submission-rectangle-2').addService(googletag.pubads()).setTargeting('location', 'rectangle2');
+
+        //journal loi
+        googletag.defineSlot('/8868/journal/${journal.dartId}/loi', [[970, 90], [728, 90]], 'dfp-journal-loi-leaderboard').addService(googletag.pubads()).setTargeting('location', 'leaderboard1');
+        googletag.defineSlot('/8868/journal/${journal.dartId}/loi', [300, 250], 'dfp-journal-loi-rectangle-1').addService(googletag.pubads()).setTargeting('location', 'rectangle1');
+        googletag.defineSlot('/8868/journal/${journal.dartId}/loi', [300, 250], 'dfp-journal-loi-rectangle-2').addService(googletag.pubads()).setTargeting('location', 'rectangle2');
+
+        //journal toc
+        googletag.defineSlot('/8868/journal/${journal.dartId}/toc', [[970, 90], [728, 90]], 'dfp-journal-toc-leaderboard').addService(googletag.pubads()).setTargeting('location', 'leaderboard1');
+        googletag.defineSlot('/8868/journal/${journal.dartId}/toc', [300, 250], 'dfp-journal-toc-rectangle-1').addService(googletag.pubads()).setTargeting('location', 'rectangle1');
+        googletag.defineSlot('/8868/journal/${journal.dartId}/toc', [300, 250], 'dfp-journal-toc-rectangle-2').addService(googletag.pubads()).setTargeting('location', 'rectangle2');
+
+        //journal articles
+        googletag.defineSlot('/8868/journal/${journal.dartId}/article', [[970, 90], [728, 90]], 'dfp-journal-article-leaderboard').addService(googletag.pubads()).setTargeting('location', 'leaderboard1');
+
+        //googletag.pubads().enableSingleRequest();
+        googletag.pubads().collapseEmptyDivs();
+        googletag.pubads().setTargeting('inst',dartInstitutionType).setTargeting('memb',dartMember);
+        googletag.enableServices();
+    });
+
+};
+</script>
+
+
+                    
+                        
+
+
+
+        
+        <main data-widget-id="28284a6d-730d-4a56-93ad-909787c5ac1b" id="" class="content article"><article data-getFTR-enabled="data-getFTR-enabled" data-getFTR-references-enabled="data-getFTR-references-enabled" data-getFTR-reference-url="/action/CitationEntitlement" data-getFTR-citedBy-enabled="data-getFTR-citedBy-enabled" data-getFTR-citedBy-url="/action/CitedByEntitlement" data-getFTR-links-count='10' data-getFTR-request-source="FULL_TEXT" data-getFTR-doi="10.1021/acs.est.5c06771" data-getFTR-retractions-enabled="data-getFTR-retractions-enabled" data-figures="https://pubs.acs.org/action/ajaxShowFigures?doi=10.1021%2Facs.est.5c06771&ajax=true" data-references="https://pubs.acs.org/action/ajaxShowEnhancedAbstract?doi=10.1021%2Facs.est.5c06771&ajax=true" data-enable-mathjax="true" vocab="http://schema.org/" typeof="ScholarlyArticle" class="article--latest"><div class="figure-viewer"><div class="figure-viewer_row"><div class="figure-viewer_col loop-trap"><div aria-modal="true" role="dialog" aria-live="polite" aria-atomic="true" aria-relevant="additions" class="figure-viewer_modal"><button title="Close" class="figure-viewer_close icon-close"><span class="sr-only">Close</span></button><h2 class="figure-viewer_label"><span class="figure-viewer_current"></span></h2><div class="figure-viewer_image"><button title="Next" class="figure-viewer_next icon-angle-right"><span class="sr-only">Next</span></button><button title="Previous" class="figure-viewer_prev icon-angle-left"><span class="sr-only">Previous</span></button><div class="figure-viewer_image-content"><img src="" alt="Figure 1" class="fv-img"/><img src="/specs/products/achs/releasedAssets/images/loading/loading-018624cffd023ad5641b8e99931a80e6.gif" alt="Loading Img" class="loading-img"/></div></div><div class="figure-viewer_links"><a href="#" title="Download Hi-Res Image" target="_blank" class="figure-viewer_hi-res-link"><i class="icon-file-image-o"></i><span>Download Hi-Res Image</span></a><span class="fv-separator"></span><a href="#" title="Download to MS-PowerPoint" class="figure-viewer_ms-p-link"><i class="icon-file-powerpoint-o"></i><span>Download to MS-PowerPoint</span></a><span class="cit-this-container"><a href="/action/showCitFormats?doi=10.1021/acs.est.5c06771&amp;href=/doi/10.1021/acs.est.5c06771" title="Cite This" class="figure-viewer-cite-this-link"><i class="icon-check-circle"></i><span><strong>Cite This:</strong></span></a><span class="article_header-cite-this figure-viewer-cite-this"><span class="cit-fg-title"><i>Environ. Sci. Technol.</i></span><span class="cit-fg-year"> 2025</span><span class="cit-fg-volume">, 59</span><span class="cit-fg-issue">, 42</span><span class="cit-fg-pageRange">, 22663-22675</span></span></span></div></div></div></div></div><input type="hidden" name="esthag" id="copyRights" value="/pb-assets/json/journal-info-1761153138097.json"/><div class="articleHeaderDropzone5" data-pb-dropzone="articleHeaderDropzone5"><script nonce="996001f7cc73f9ed-SJC">
+document.addEventListener('DOMContentLoaded', function () {
+  // Expand
+  let expandBtn = document.querySelector('[data-id="article_header_Expand"]');
+  if (expandBtn) {
+    expandBtn.addEventListener('click', function () {
+      gtag('event', 'Journal Article', {
+        'Article_Title': '&lt;italic toggle&#x3D;&quot;yes&quot;&gt;Pseudomonas&lt;/italic&gt; sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons',
+        'Article_DOI': '10.1021/acs.est.5c06771',
+        'Article_Element': 'article_header_Expand'
+      });
+    });
+  }
+
+  // Collapse
+  let collapseBtn = document.querySelector('[data-id="article_header_Collapse"]');
+  if (collapseBtn) {
+    collapseBtn.addEventListener('click', function () {
+      gtag('event', 'Journal Article', {
+        'Article_Title': '&lt;italic toggle&#x3D;&quot;yes&quot;&gt;Pseudomonas&lt;/italic&gt; sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons',
+        'Article_DOI': '10.1021/acs.est.5c06771',
+        'Article_Element': 'article_header_Collapse'
+      });
+    });
+  }
+  
+  let altMetricsElement = document.querySelector('.articleMetrics-val.articleMetrics_score');
+  if (altMetricsElement) {
+    altMetricsElement.addEventListener('mouseover', function () {
+      gtag('event', 'Journal Article', {
+        'Article_Title': '&lt;italic toggle&#x3D;&quot;yes&quot;&gt;Pseudomonas&lt;/italic&gt; sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons',
+        'Article_DOI': '10.1021/acs.est.5c06771',
+        'Article_Element': 'Altmetric Hover'
+      });
+    });
+
+    altMetricsElement.addEventListener('click', function () {
+      gtag('event', 'Journal Article', {
+        'Article_Title': '&lt;italic toggle&#x3D;&quot;yes&quot;&gt;Pseudomonas&lt;/italic&gt; sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons',
+        'Article_DOI': '10.1021/acs.est.5c06771',
+        'Article_Element': 'Altmetric Click'
+      });
+    });
+  }
+});
+</script>
+                            
+
+
+
+
+        
+        <!-- Article Refresh Event Tracking -->
+<script nonce="996001f7cc73f9ed-SJC">
+$(function() {
+    var serialCode = "esthag";
+    var books = ["reagents", "symposium", "advances", "medichemreviews", "styleguide"]
+    if(books.includes(serialCode) === false) {
+        // default click action
+        $("[data-id]").on("mousedown", function(e) {
+            var currentClickID = $(this).attr("data-id");
+
+            if(currentClickID.includes("_hover") === false) {
+                if(currentClickID.match("^article_") && !currentClickID.match("^article_abstract_CC")) {   
+                    gtag('event', "Journal Article", { "Article_Title": "&lt;italic toggle&#x3D;&quot;yes&quot;&gt;Pseudomonas&lt;/italic&gt; sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons", "Article_DOI": "10.1021/acs.est.5c06771", "Article_Element": $(this).attr("data-id") });
+                }
+            }
+        });
+        
+        // Access Management icons hover
+        var articleAccessManagementIconHover = false;
+        var articleAccessManagementIconHoverEvent = false;
+        $("[data-id='article_access_icon']").on("mouseenter", function(e) {
+            if(articleAccessManagementIconHoverEvent === false) {
+                articleAccessManagementIconHover = true;
+                var articleAccessManagementHover =  $(this).attr("data-id") + "_hover";
+                
+                setTimeout(function() { 
+                    if(articleAccessManagementIconHover === true) {
+                        gtag("event", "Journal Article", { "Article_Title": "&lt;italic toggle&#x3D;&quot;yes&quot;&gt;Pseudomonas&lt;/italic&gt; sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons", "Article_DOI": "10.1021/acs.est.5c06771", "Article_Element": articleAccessManagementHover });
+    
+                        articleAccessManagementIconHoverEvent = true;
+                    }
+                }, 1000);
+            }
+        });
+        $("[data-id='article_access_icon']").on("mouseleave", function(e) {
+            articleAccessManagementIconHover = false;
+        });
+    
+        // articleRightsPermissionsLink hover
+        var articleRightsPermissionsLinkHover = false;
+        var articleRightsPermissionsLinkHoverEvent = false;
+        $("[data-id='article_rights_permissions']").on("mouseenter", function(e) {
+            if(articleRightsPermissionsLinkHoverEvent === false) {
+                articleRightsPermissionsLinkHover = true;
+                var articleRightsHover =  $(this).attr("data-id") + "_hover";
+                
+                setTimeout(function() { 
+                    if(articleRightsPermissionsLinkHover === true) {
+                        gtag("event", "Journal Article", { "Article_Title": "&lt;italic toggle&#x3D;&quot;yes&quot;&gt;Pseudomonas&lt;/italic&gt; sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons", "Article_DOI": "10.1021/acs.est.5c06771", "Article_Element": articleRightsHover });
+    
+                        articleRightsPermissionsLinkHoverEvent = true;
+                    }
+                }, 1000);
+            }
+        });
+        $("[data-id='article_rights_permissions']").on("mouseleave", function(e) {
+            articleRightsPermissionsLinkHover = false;
+        });
+    
+        // Author hover
+        var articleAuthorHover = false
+        var articleAuthorHoverEvent = false
+        $("[data-id='article_author_info']").on("mouseenter", function(e) {
+            if((articleAuthorHoverEvent === false) && ($(this).parent().hasClass("view-affs") === false)) {
+                articleAuthorHover = true;
+                var authorInfoHover =  $(this).attr("data-id") + "_hover";
+                
+                setTimeout(function() { 
+                    if((articleAuthorHover === true) && (articleAuthorHoverEvent === false)) {
+                        gtag("event", "Journal Article", { "Article_Title": "&lt;italic toggle&#x3D;&quot;yes&quot;&gt;Pseudomonas&lt;/italic&gt; sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons", "Article_DOI": "10.1021/acs.est.5c06771", "Article_Element": authorInfoHover });
+    
+                        articleAuthorHoverEvent = true;
+                    }
+                }, 1000);
+            }
+        });
+        $("[data-id='article_author_info']").on("mouseleave", function(e) {
+            articleAuthorHover = false;
+        });
+    
+        // CC License hover
+        var articleAbstractCCHover = false
+        var articleAbstractCCHoverEvent = false
+        var articleDrawerCCHover = false
+        var articleDrawerCCHoverEvent = false
+        $(".article__cc-license__inter a").on("mouseenter", function(e) {
+            if($(this).attr("data-id")) {
+                if(($(this).attr("data-id") === "article_drawer_CC-License") && (articleDrawerCCHoverEvent === false)) {
+                    articleDrawerCCHover = true;
+                    
+                    setTimeout(function() { 
+                        if((articleDrawerCCHover === true) && (articleDrawerCCHoverEvent === false)) {
+                            gtag("event", "Journal Article", { "Article_Title": "&lt;italic toggle&#x3D;&quot;yes&quot;&gt;Pseudomonas&lt;/italic&gt; sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons", "Article_DOI": "10.1021/acs.est.5c06771", "Article_Element": "article_drawer_CC-License_hover" });
+    
+                            articleDrawerCCHoverEvent = true;
+                        }
+                    }, 1000);
+                }
+                else if(($(this).attr("data-id").match("^article_abstract_CC")) && (articleAbstractCCHoverEvent === false)) {
+                    articleAbstractCCHover = true;
+    
+                    setTimeout(function() { 
+                        if((articleAbstractCCHover === true) && (articleAbstractCCHoverEvent === false)) {
+                            gtag("event", "Journal Article", { "Article_Title": "&lt;italic toggle&#x3D;&quot;yes&quot;&gt;Pseudomonas&lt;/italic&gt; sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons", "Article_DOI": "10.1021/acs.est.5c06771", "Article_Element": "article_abstract_CC_hover" });
+    
+                            articleAbstractCCHoverEvent = true;
+                        }
+                    }, 1000);
+                }
+            }
+            else if(($(this).hasClass("article__cc-license__link")) && (articleAbstractCCHoverEvent === false)) {
+                articleAbstractCCHover = true;
+                
+                setTimeout(function() { 
+                    if((articleAbstractCCHover === true) && (articleAbstractCCHoverEvent === false)) {
+                        gtag("event", "Journal Article", { "Article_Title": "&lt;italic toggle&#x3D;&quot;yes&quot;&gt;Pseudomonas&lt;/italic&gt; sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons", "Article_DOI": "10.1021/acs.est.5c06771", "Article_Element": "article_abstract_CC_hover" });
+    
+                        articleAbstractCCHoverEvent = true;
+                    }
+                }, 1000);
+            }
+        });
+        $(".article__cc-license__inter a").on("mouseleave", function(e) {
+            if(articleAbstractCCHover === true) {
+                articleAbstractCCHover = false;
+            }
+            if(articleDrawerCCHover = true) {
+                articleDrawerCCHover = false;
+            }
+        });
+        
+        // show recommeneded click delay
+        var intervalCount = 0;
+        var showRecommendedInterval = setInterval(function() {
+            intervalCount += 100;
+            if($(".show-recommended__wrapper .show-recommended").length > 0) {
+                clearInterval(showRecommendedInterval);
+                $("[data-id='article_drawer_RecommendedShowMore']").on("mousedown", function(e) {
+                    gtag('event', "Journal Article", { "Article_Title": "&lt;italic toggle&#x3D;&quot;yes&quot;&gt;Pseudomonas&lt;/italic&gt; sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons", "Article_DOI": "10.1021/acs.est.5c06771", "Article_Element": $(this).attr("data-id") });
+                });
+                $("[data-id='article_drawer_RecommendedShowLess']").on("mousedown", function(e) {
+                    gtag('event', "Journal Article", { "Article_Title": "&lt;italic toggle&#x3D;&quot;yes&quot;&gt;Pseudomonas&lt;/italic&gt; sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons", "Article_DOI": "10.1021/acs.est.5c06771", "Article_Element": $(this).attr("data-id") });
+                });
+            }
+        }, 100);
+    }
+});
+</script>
+
+
+
+
+
+
+        
+        <div class="advertisement">
+    <div class="advertisement-link">
+        <a href="http://acsmediakit.org">ADVERTISEMENT</a>
+    </div>
+    <div id="dfp-journal-article-leaderboard">
+        <script type="text/javascript" nonce="996001f7cc73f9ed-SJC">
+        $(document).ready(function() {
+            var leaderboardCheckInterval = setInterval(function() {
+                if(dfpReady === true) {
+                    clearInterval(leaderboardCheckInterval);
+                    googletag.cmd.push(function() { googletag.display("dfp-journal-article-leaderboard"); });
+                }	
+            }, 100);
+        });
+        </script>
+    </div>
+</div></div><div class="article__alert sr-only" aria-live="polite" aria-atomic="true" role="alert"></div><div class="article-grid"><nav class="tab-nav-shortcut__wrapper" aria-label="collapsed menu"><ul class="tab-nav-shortcut"><li class="tab-nav-shortcut__scroll"><button class="tab-nav-shortcut__btn"><i class="icon-info-circle-outline" aria-hidden="true"></i><span>Info</span></button></li><li class="tab-nav-shortcut__scroll"><button class="tab-nav-shortcut__btn"><i class="icon-metrics" aria-hidden="true"></i><span>Metrics</span></button></li></ul></nav><div class="article__left-side" id="article__left-side" role="region" aria-label="Article"><div class="article_abstractPage"><div class="article_header"><div class="article_header-left"><div class="article_header-dropzone-1 hidden-xs hidden-sm"><div class="articleHeaderDropzone1" data-pb-dropzone="articleHeaderDropzone1"><div class="breadcrumbs__wrapper"> <nav aria-label="breadcrumbs" class="breadcrumbs__nav separator"><div class="breadcrumbs__item"><a href="/journal/esthag?ref=breadcrumb" data-id="article_breadcrumbs_Journal" class="breadcrumbs__link">Environmental Science &amp; Technology</a><i class="icon-angle-right"></i></div><div class="breadcrumbs__item"><a href="/toc/esthag/59/42?ref=breadcrumb" data-id="article_breadcrumbs_TOC" class="breadcrumbs__link">Vol 59/Issue 42</a><i class="icon-angle-right"></i></div><div class="breadcrumbs__item"><span class="breadcrumbs__tag">Article</span></div></nav></div></div></div><div class="headerLogo_e-alertsMobile_container hidden-md hidden-lg hidden-xl"><div class="article_header-logo"><div class="pj-badge"></div><a href="/journal/esthag" title="Journal Logo"><img src="specs/products/achs/releasedAssets/images/loading/loader.gif" data-src="/cms/10.1021/esthag/asset/16ad6c8f-9116-d6c8-d911-ad6c8fd9116a/title.png" alt="Journal Logo" /></a></div><div class="e-alertsMobile_container"></div></div><div class="article_header-icons"><ul aria-label="access controls" class="access-management-access-icons"></ul></div><div class="articleHeaderDropzone6" data-pb-dropzone="articleHeaderDropzone6"><div data-widget-def="UX3share" data-widget-id="787b5b92-0445-40f4-bdd2-9591d56f4a67" class="article_header-share share_label_visible">
+        
+
+
+
+        
+        <!-- Go to https://www.addtoany.com/buttons/customize/ to customize your tools --><script type="text/javascript" defer="defer" src="https://static.addtoany.com/menu/page.js" nonce="996001f7cc73f9ed-SJC"></script><div class="share"><ul class="share__list"><li class="share__item share__item--citation">
+
+
+
+        
+        <button data-id="article_header_CiteThisMenu" aria-controls="citeBlock_Pop" aria-expanded="false" class="share__ctrl share__ctrl--article"><i class="icon-cite"></i><span>Cite</span></button><div id="citeBlock_Pop" class="cit-download-dropdown_content share__block--article"><ul><li><a href="/action/downloadCitation?doi=10.1021%2Facs.est.5c06771&include=cit&format=ris&direct=true&downloadFileName=acs.est.5c06771" title="Citation" data-id="article_header_CiteThis_Citation"><span>Citation</span></a></li><li><a href="/action/downloadCitation?doi=10.1021%2Facs.est.5c06771&include=abs&format=ris&direct=true&downloadFileName=acs.est.5c06771" title="Citation and abstract" data-id="article_header_CiteThis_Citation_CitationAbstract"><span>Citation and abstract</span></a></li><li><a href="/action/downloadCitation?doi=10.1021%2Facs.est.5c06771&include=ref&format=ris&direct=true&downloadFileName=acs.est.5c06771" title="Citation and references" data-id="article_header_CiteThis_Citation_CitationReferences"><span>Citation and references</span></a></li><li><a href="/action/showCitFormats?doi=10.1021%2Facs.est.5c06771&include=cit&format=ris&direct=true&downloadFileName=acs.est.5c06771&href=/doi/10.1021/acs.est.5c06771" title="Cite This" data-id="article_header_CiteThis_Citation_MoreOptions"><span>More citation options</span><i class="icon-check-circle"></i></a></li></ul></div>
+</li><li class="share__item sm-hidden-header share__item--share"><button aria-controls="shareBlock_Pop" aria-expanded="false" data-id="article_header_ShareThisMenu" class="share__ctrl share__ctrl--article"><i aria-hidden="true" class="icon-share-circle"></i><span>Share</span></button><div id="shareBlock_Pop" class="share__block--article"><span class="sr-only">Share on</span><ul class="a2a a2a_kit  mb-0 a2a_kit_size_32 share__list--vertical"><li class="a2a_listitem_custom"><a role="link" title="Facebook" data-id="article_header_ShareThis_Facebook" class="a2a_button_facebook a2a_button_custom "><i aria-hidden="true" class="icon-facebook1"></i>Facebook</a></li><li class="a2a_listitem_custom"><a role="link" title="X" data-id="article_header_ShareThis_X" class="a2a_button_x a2a_button_custom "><i aria-hidden="true" class="icon-x-square"></i>X</a></li><li class="a2a_listitem_custom"><a role="link" title="WeChat" data-id="article_header_ShareThis_WeChat" class="a2a_button_wechat a2a_button_custom "><i aria-hidden="true" class="icon-wechat"></i>WeChat</a></li><li class="a2a_listitem_custom"><a role="link" title="LinkedIn" data-id="article_header_ShareThis_LinkedIn" class="a2a_button_linkedin a2a_button_custom "><i aria-hidden="true" class="icon-linkedin1"></i>LinkedIn</a></li><li class="a2a_listitem_custom"><a role="link" title="Reddit" data-id="article_header_ShareThis_Reddit" class="a2a_button_reddit a2a_button_custom "><i aria-hidden="true" class="icon-reddit"></i>Reddit</a></li><li class="a2a_listitem_custom"><a role="link" title="Email" data-id="article_header_ShareThis_Email" class="a2a_button_email a2a_button_custom "><i aria-hidden="true" class="icon-envelope-o1"></i>Email</a></li><li class="a2a_listitem_custom"><a role="link" title="Bluesky" data-id="article_header_ShareThis_Bluesky" class="a2a_button_bluesky a2a_button_custom "><i aria-hidden="true" class="icon-bluesky-square"></i>Bluesky</a></li></ul></div></li><li class="share__item"><button aria-controls="jumpToBlock_Pop" aria-expanded="false" data-id="article_header_JumpToMenu" class="share__ctrl share__ctrl--article"><i aria-hidden="true" class="icon-dot-menu"></i><span>Jump to</span></button><div id="jumpToBlock_Pop" class="share__block--article jump-to-dropblock-holder"></div></li><li class="share__item share__item--close"><button data-id="article_header_Expand" class="share__ctrl share__ctrl--article"><i aria-hidden="true" class="icon-arrows-expand"></i><span class="expand">Expand</span><span class="compress">Collapse</span></button></li></ul></div>
+
+        </div></div><div class="article__pubdate"><span>Bioremediation and Biotechnology</span><time datetime="2025-10-15">October 15, 2025</time></div><h1 class="article_header-title" tabindex="0"><span class="hlFld-Title" property="headline"><i>Pseudomonas</i> sp. Strain 273 Metabolizes Decanes with Poly- or Perfluorinated Carbons</span><div class="article__copy"><button class="article__copy__btn"><i class="article__copy__icon icon-copy-solid" aria-hidden="true"></i></button><span class="article__copy__text">Click to copy article link</span><span class="article__copy__success">Article link copied!</span></div></h1><ul class="loa"><li><span><span class="hlFld-ContribAuthor" tabindex="0" data-id="article_author_info" property="author">Alexander S. Walls</span><div class="loa-info hlFld-Affiliation"><div class="loa-info--wrapper"><div class="loa-info-name">Alexander S. Walls</div><div class="loa-info-affiliations"><div class="loa-info-affiliations-info">Department of Chemistry, University of Tennessee, Knoxville, Knoxville, Tennessee 37996, United States</div></div><div class="loa-info-scifinder"><span>More by <a href="/action/doSearch?field1=Contrib&amp;text1=Alexander S. Walls" data-id="article_author_search">Alexander S. Walls</a></span></div></div></div></span></li><li><span><span class="hlFld-ContribAuthor" tabindex="0" data-id="article_author_info" property="author">Gao Chen</span><div class="loa-info hlFld-Affiliation"><div class="loa-info--wrapper"><div class="loa-info-name">Gao Chen</div><div class="loa-info-affiliations"><div class="loa-info-affiliations-info">Department of Civil and Environmental Engineering, University of Tennessee, Knoxville, Knoxville, Tennessee 37996, United States</div></div><div class="loa-info-scifinder"><span>More by <a href="/action/doSearch?field1=Contrib&amp;text1=Gao Chen" data-id="article_author_search">Gao Chen</a></span></div><div class="loa-info-orcid"><img height="20" width="27" src="/products/achs/releasedAssets/images/orchid-2856f829046fbda55b90e1582edf0e9a.png" alt="Orcid" /><a href="https://orcid.org/0000-0002-8767-3130" title="Orcid link">https://orcid.org/0000-0002-8767-3130</a></div></div></div></span></li><li><span><span class="hlFld-ContribAuthor" tabindex="0" data-id="article_author_info" property="author">Diana Ramirez</span><div class="loa-info hlFld-Affiliation"><div class="loa-info--wrapper"><div class="loa-info-name">Diana Ramirez</div><div class="loa-info-affiliations"><div class="loa-info-affiliations-info">Department of Microbiology, University of Tennessee, Knoxville, Knoxville, Tennessee 37996, United States</div></div><div class="loa-info-scifinder"><span>More by <a href="/action/doSearch?field1=Contrib&amp;text1=Diana Ramirez" data-id="article_author_search">Diana Ramirez</a></span></div></div></div></span></li><li><span><span class="hlFld-ContribAuthor" tabindex="0" data-id="article_author_info" property="author">Yongchao Xie</span><div class="loa-info hlFld-Affiliation"><div class="loa-info--wrapper"><div class="loa-info-name">Yongchao Xie</div><div class="loa-info-affiliations"><div class="loa-info-affiliations-info">State Key Laboratory of Pollution Control and Resource Reuse, School of Environment, Nanjing University, Nanjing, Jiangsu 210023, China</div></div><div class="loa-info-scifinder"><span>More by <a href="/action/doSearch?field1=Contrib&amp;text1=Yongchao Xie" data-id="article_author_search">Yongchao Xie</a></span></div></div></div></span></li><li><span><span class="hlFld-ContribAuthor" tabindex="0" data-id="article_author_info" property="author">Broquell M. Wong</span><div class="loa-info hlFld-Affiliation"><div class="loa-info--wrapper"><div class="loa-info-name">Broquell M. Wong</div><div class="loa-info-affiliations"><div class="loa-info-affiliations-info">Department of Biochemistry &amp; Cellular and Molecular Biology, University of Tennessee, Knoxville, Knoxville, Tennessee 37996, United States</div></div><div class="loa-info-scifinder"><span>More by <a href="/action/doSearch?field1=Contrib&amp;text1=Broquell M. Wong" data-id="article_author_search">Broquell M. Wong</a></span></div></div></div></span></li><li><span><span class="hlFld-ContribAuthor" tabindex="0" data-id="article_author_info" property="author">Amanda L. May</span><div class="loa-info hlFld-Affiliation"><div class="loa-info--wrapper"><div class="loa-info-name">Amanda L. May</div><div class="loa-info-affiliations"><div class="loa-info-affiliations-info">Center for Renewable Carbon, University of Tennessee, Knoxville, Knoxville, Tennessee 37996, United States</div></div><div class="loa-info-scifinder"><span>More by <a href="/action/doSearch?field1=Contrib&amp;text1=Amanda L. May" data-id="article_author_search">Amanda L. May</a></span></div></div></div></span></li><li><span><span class="hlFld-ContribAuthor" tabindex="0" data-id="article_author_info" property="author">Anita Thapalia</span><div class="loa-info hlFld-Affiliation"><div class="loa-info--wrapper"><div class="loa-info-name">Anita Thapalia</div><div class="loa-info-affiliations"><div class="loa-info-affiliations-info">ExxonMobil Environmental and Property Solutions Company, Spring, Texas 77389, United States</div></div><div class="loa-info-scifinder"><span>More by <a href="/action/doSearch?field1=Contrib&amp;text1=Anita Thapalia" data-id="article_author_search">Anita Thapalia</a></span></div></div></div></span></li><li><span><span class="hlFld-ContribAuthor" tabindex="0" data-id="article_author_info" property="author">Frank E. Löffler</span><strong>*</strong><div class="loa-info hlFld-Affiliation"><div class="loa-info--wrapper"><div class="loa-info-name">Frank E. Löffler</div><div class="loa-info-affiliations"><div class="loa-info-affiliations-info">Department of Civil and Environmental Engineering, University of Tennessee, Knoxville, Knoxville, Tennessee 37996, United States</div><div class="loa-info-affiliations-info">Department of Biochemistry &amp; Cellular and Molecular Biology, University of Tennessee, Knoxville, Knoxville, Tennessee 37996, United States</div><div class="loa-info-affiliations-info">Department of Biosystems Engineering and Soil Science, University of Tennessee, Knoxville, Knoxville, Tennessee 37996, United States</div></div><span class="conrtib-corresp"><strong>*</strong><a href="/cdn-cgi/l/email-protection#721400131c195c1e1d1714141e1700320706195c171607"><span class="__cf_email__" data-cfemail="680e1a0906034604070d0e0e040d1a281d1c03460d0c1d">[email&#160;protected]</span></a></span><span class="conrtib-corresp"></span><span class="conrtib-corresp"></span><span class="conrtib-corresp"></span><div class="loa-info-scifinder"><span>More by <a href="/action/doSearch?field1=Contrib&amp;text1=Frank E. Löffler" data-id="article_author_search">Frank E. Löffler</a></span></div><div class="loa-info-orcid"><img height="20" width="27" src="/products/achs/releasedAssets/images/orchid-2856f829046fbda55b90e1582edf0e9a.png" alt="Orcid" /><a href="https://orcid.org/0000-0002-9797-4279" title="Orcid link">https://orcid.org/0000-0002-9797-4279</a></div></div></div></span></li><li><span><span class="hlFld-ContribAuthor" tabindex="0" data-id="article_author_info" property="author">Shawn R. Campagna</span><strong>*</strong><div class="loa-info hlFld-Affiliation"><div class="loa-info--wrapper"><div class="loa-info-name">Shawn R. Campagna</div><div class="loa-info-affiliations"><div class="loa-info-affiliations-info">Department of Chemistry, University of Tennessee, Knoxville, Knoxville, Tennessee 37996, United States</div><div class="loa-info-affiliations-info">Biological Small Molecule Mass Spectrometry Core, University of Tennessee, Knoxville, Knoxville, Tennessee 37996, United States</div></div><span class="conrtib-corresp"><strong>*</strong><a href="/cdn-cgi/l/email-protection#4724262a37262029260732332c69222332"><span class="__cf_email__" data-cfemail="7b181a160b1a1c151a3b0e0f10551e1f0e">[email&#160;protected]</span></a></span><span class="conrtib-corresp"></span><span class="conrtib-corresp"></span><div class="loa-info-scifinder"><span>More by <a href="/action/doSearch?field1=Contrib&amp;text1=Shawn R. Campagna" data-id="article_author_search">Shawn R. Campagna</a></span></div><div class="loa-info-orcid"><img height="20" width="27" src="/products/achs/releasedAssets/images/orchid-2856f829046fbda55b90e1582edf0e9a.png" alt="Orcid" /><a href="https://orcid.org/0000-0001-6809-3862" title="Orcid link">https://orcid.org/0000-0001-6809-3862</a></div></div></div></span></li></ul><div class="article_header-footer"><div class="article_header-footer-left"><div class="article_header-links"><input class="pub-doi" type="hidden" name="pub-doi" value="10.1021/acs.est.5c06771" /><div class="seamless-access-drop-area"></div><a href="#" class="article__btn__secondary" id="accessOptionsLink"><span>Other Access Options</span></a><a href="#_i24" title="Supporting Information" class="article__btn__secondary internalNav" data-id="article_header_SupportingInfo"><i class="icon-supporting-info"></i><span>Supporting Information (2)</span></a></div></div></div><div class="article_header-meta"><div class="article_header-meta-left"><input type="hidden" name="journalCodeForjhpLink" value="esthag" /><input type="hidden" name="journalNameForjhpLink" value="Environmental Science &amp; Technology" /><div class="article_header-journal"><h2>Environmental Science & Technology</h2></div><div class="article_header-cite-this" tabindex="0"><input type="hidden" name="citation-copy-value" value="Environ. Sci. Technol. 2025, 59, 42, 22663–22675" /><span class="cite-this">Cite this: </span><span class="cit-title"><i>Environ. Sci. Technol.</i></span> <span class="cit-year-info"><span>2025</span></span><span class="cit-volume">, 59</span><span class="cit-issue">, 42</span><span class="cit-pageRange">, 22663–22675</span><div class="article__copy"><button class="article__copy__btn"><i class="article__copy__icon icon-copy-solid" aria-hidden="true"></i></button><span class="article__copy__text">Click to copy citation</span><span class="article__copy__success">Citation copied!</span></div></div><div class="hidden"><a href="/doi/10.1021/acs.est.5c06771" property="mainEntityOfPage" title="DOI URL">https://pubs.acs.org/doi/10.1021/acs.est.5c06771</a></div><div class="article_header-doiurl"><a href="https://doi.org/10.1021/acs.est.5c06771" title="DOI URL">https://doi.org/10.1021/acs.est.5c06771</a></div><div class="article_header-epubdate"><span class="pub-date ppub-date">Published </span><span class="pub-date-value" property="datePublished">October 15, 2025</span><div class="article_header-history base dropBlock"><a href="#" data-db-target-for="article_header-history" title="History" target="_self" class="" aria-expanded="false" aria-label="Publication History"><i class="icon-angle-down"></i><i class="icon-angle-up"></i></a><div data-db-target-of="article_header-history" class="dropBlock__holder" aria-hidden="true"><div class="articleHeaderHistoryDropzone" data-pb-dropzone="articleHeaderHistoryDropzone"><div class="article__history"> <h3 class="article__history__header">Publication History</h3><ul class="article__history__list"> <li class="article__history__item"><i class="article__history__icon icon-date"></i><p class="article__history__label"><span class="bold">Received&nbsp;</span></p><time datetime="2025-05-20" class="article__history__time">20 May 2025</time></li><li class="article__history__item"><i class="article__history__icon icon-date"></i><p class="article__history__label"><span class="bold">Accepted&nbsp;</span></p><time datetime="2025-09-26" class="article__history__time">26 September 2025</time></li><li class="article__history__item"><i class="article__history__icon icon-date"></i><p class="article__history__label"><span class="bold">Revised&nbsp;</span></p><time datetime="2025-09-25" class="article__history__time">25 September 2025</time></li><li class="article__history__item"><i class="article__history__icon icon-date"></i><p class="article__history__label"><span class="bold">Published&nbsp;</span></p><span>online&nbsp;</span><time datetime="2025-10-15" class="article__history__time">15 October 2025</time></li><li class="article__history__item"><i class="article__history__icon icon-date"></i><p class="article__history__label"><span class="bold">Published&nbsp;</span></p><span>in issue&nbsp;</span><time datetime="2025-10-28" class="article__history__time">28 October 2025</time></li></ul></div></div></div></div></div><div class="hidden" property="articleSection">research-article</div><div class="article_header-article-copyright">Copyright © 2025 American Chemical Society</div><div class="article_rightPermissionsLink"><div class="articleHeaderDropzone4" data-pb-dropzone="articleHeaderDropzone4"><div class="articleRightsPermissionsLink"><a href="/servlet/linkout?type=rightslink&amp;url=startPage%3D22663%26pageCount%3D13%26copyright%3DAmerican%2BChemical%2BSociety%26author%3DAlexander%2BS.%2BWalls%252C%2BGao%2BChen%252C%2BDiana%2BRamirez%252C%2Bet%2Bal%26orderBeanReset%3Dtrue%26imprint%3DAmerican%2BChemical%2BSociety%26volumeNum%3D59%26issueNum%3D42%26contentID%3Dacs.est.5c06771%26title%3DPseudomonas%2Bsp.%2BStrain%2B273%2BMetabolizes%2BDecanes%2Bwith%2BPoly-%2Bor%2BPerfluorinated%2BCarbons%26numPages%3D13%26pa%3D%26issn%3D0013-936X%26publisherName%3Dacs%26publication%3Desthag%26rpt%3Dn%26endPage%3D22675%26publicationDate%3DOctober%2B2025" data-id="article_rights_permissions">Request reuse permissions</a></div></div></div></div></div><div class="article_header-metrics-dropzone" data-pb-dropzone="article_header-metrics-dropzone"><!-- Empty dropzone --></div></div></div></div><div class="article_abstract"><div class="article_abstract-title" id="Abstract" tabindex="0"><h2>Abstract</h2><div class="article__copy"><button class="article__copy__btn"><i class="article__copy__icon icon-copy-solid" aria-hidden="true"></i></button><span class="article__copy__text">Click to copy section link</span><span class="article__copy__success">Section link copied!</span></div></div><div class="article_abstract-content hlFld-Abstract" id="abstractBox" property="description"><div class="article_abstract-img" id="_i1"><img alt="Abstract Image" src="/cms/10.1021/acs.est.5c06771/asset/images/medium/es5c06771_0007.gif" property="image" /></div><p class="articleBody_abstractText">During growth with terminally monofluorinated decanes, the soil isolate <i>Pseudomonas</i> sp. strain 273 releases inorganic fluoride and channels fluorometabolites into glycerophospholipid biosynthesis. We explored the ability of this bacterium to metabolize 1,1-difluorodecane (F2-decane), 1,1,1-trifluorodecane (F3-decane), and 1,1,1,2,2-pentafluorodecane (F5-decane) to assess the impacts of increasing degree of fluorination on organismal metabolism. Growth occurred with all three polyfluorodecane substrates, and inorganic fluoride release was observed in cultures amended with F2-decane and F5-decane but not with F3-decane. Fluorine nuclear magnetic resonance spectroscopy (<sup>19</sup>F NMR) detected polyfluorinated C<sub>6</sub> and C<sub>4</sub> short-chain fatty acid catabolites suggesting incomplete β-oxidation during catabolism by strain 273. Gas chromatography–mass spectrometry (GC-MS) analysis corroborated the formation of terminally poly- or perfluorinated short-chain fatty acids. Ultrahigh performance liquid chromatography-high resolution mass spectrometry (UHPLC-HRMS) based global lipidome profiling revealed glycerophospholipids with fluorine substitutions at the sn1/sn2 acyl chains and identified a range of glycerophospholipids that contained between two and ten fluorines depending on the growth substrate. These findings advance our understanding of bacterial transformation of alkanes with poly- and perfluorinated carbons and highlight the formation of short-chain fluorinated fatty acids as catabloc products and fluorophospholipids as anabolic products.</p></div><span class="hidden" property="publisher">ACS Publications</span><div class="article_header-article-copyright">Copyright © 2025 American Chemical Society</div><div class="article_header-footer-right"><div class="articleHeaderDropzone7" data-pb-dropzone="articleHeaderDropzone7"><!-- Empty dropzone --></div><div class="article__tags article__tags--subjects"><div class="article__tags__container"><header class="article__tags__header"><h3 class="article__tags__heading">Subjects</h3><div tabindex="0" class="article__tags__tooltip"><div aria-describedby="tooltip-subjects" class="article__tags__icon"><i class="icon-info-circle-outline"></i><span class="sr-only">what are subjects</span></div><p id="tooltip-subjects" role="tooltip" class="article__tags__diff">
+                                        Article subjects are automatically applied from the ACS Subject Taxonomy and describe the scientific concepts and themes of the article.</p></div></header><ul class="article__tags__list"><li class='article__tags__item'><a class='article__tags__link' href='/action/doSearch?ConceptID=291645&ref=nofulltext' title='Acyls'> Acyls </a></li><li class='article__tags__item'><a class='article__tags__link' href='/action/doSearch?ConceptID=291651&ref=nofulltext' title='Anions'> Anions </a></li><li class='article__tags__item'><a class='article__tags__link' href='/action/doSearch?ConceptID=291214&ref=nofulltext' title='Bacteria'> Bacteria </a></li><li class='article__tags__item'><a class='article__tags__link' href='/action/doSearch?ConceptID=292395&ref=nofulltext' title='Fluorine'> Fluorine </a></li><li class='article__tags__item'><a class='article__tags__link' href='/action/doSearch?ConceptID=291137&ref=nofulltext' title='Lipids'> Lipids </a></li></ul></div></div></div><div class="article__tags article__tags--keywords hlFld-Abstract"><div class="article__tags__container"><header class="article__tags__header"><h3 class="article__tags__heading">Keywords</h3><div class="article__tags__tooltip" tabindex="0"><div class="article__tags__icon" aria-describedby="tooltip-keywords"><i class="icon-info-circle-outline"></i><span class="sr-only">what are keywords</span></div><p class="article__tags__diff" id="tooltip-keywords" role="tooltip">
+                        Article keywords are supplied by the authors and highlight key terms and topics
+                        of the paper.
+                    </p></div></header><ul class="article__tags__list"><li class="article__tags__item"><a class="article__tags__link" href="https://pubs.acs.org/action/doSearch?action=search&amp;AllField=Pseudomonas+Sp.+Strain+273&amp;qsSearchArea=AllField&amp;ref=nofulltext" data-id="article_abstract_Keyword_Pseudomonas%20sp.%20strain%20273"><i>Pseudomonas</i> sp. strain 273</a></li><li class="article__tags__item"> <a class="article__tags__link" href="https://pubs.acs.org/action/doSearch?action=search&amp;AllField=Polyfluorinated+Alkanes&amp;qsSearchArea=AllField&amp;ref=nofulltext" data-id="article_abstract_Keyword_polyfluorinated%20alkanes">polyfluorinated alkanes</a></li><li class="article__tags__item"> <a class="article__tags__link" href="https://pubs.acs.org/action/doSearch?action=search&amp;AllField=Per-+And+Polyfluoroalkyl+Substances&amp;qsSearchArea=AllField&amp;ref=nofulltext" data-id="article_abstract_Keyword_per-%20and%20polyfluoroalkyl%20substances%20%28PFASs%29">per- and polyfluoroalkyl substances (PFASs)</a></li><li class="article__tags__item"> <a class="article__tags__link" href="https://pubs.acs.org/action/doSearch?action=search&amp;AllField=Metabolism&amp;qsSearchArea=AllField&amp;ref=nofulltext" data-id="article_abstract_Keyword_metabolism">metabolism</a></li><li class="article__tags__item"> <a class="article__tags__link" href="https://pubs.acs.org/action/doSearch?action=search&amp;AllField=Defluorination&amp;qsSearchArea=AllField&amp;ref=nofulltext" data-id="article_abstract_Keyword_defluorination">defluorination</a></li><li class="article__tags__item"> <a class="article__tags__link" href="https://pubs.acs.org/action/doSearch?action=search&amp;AllField=Fluorinated+Glycerophospholipids&amp;qsSearchArea=AllField&amp;ref=nofulltext" data-id="article_abstract_Keyword_fluorinated%20glycerophospholipids">fluorinated glycerophospholipids</a></li><li class="article__tags__item"> <a class="article__tags__link" href="https://pubs.acs.org/action/doSearch?action=search&amp;AllField=Fluoromembrane+Biosynthesis&amp;qsSearchArea=AllField&amp;ref=nofulltext" data-id="article_abstract_Keyword_fluoromembrane%20biosynthesis">fluoromembrane biosynthesis</a></li></ul></div></div></div><div class="articleContentDenialDropzone1" data-pb-dropzone="articleContentDenialDropzone1"><div data-widget-def="ux3-layout-widget" data-widget-id="1d9e615f-18e5-4105-b9fd-f28e8404c5da" class="container container_scaled-down newDenial">
+        
+
+
+
+        
+        <div>
+
+
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="/swfobject.js" nonce="996001f7cc73f9ed-SJC"></script>
+<script type="text/javascript" nonce="996001f7cc73f9ed-SJC">
+function addFlashMovie(id, flv) {
+    var flashvars = {file: flv ,type: 'flv'};
+    var params = {allowfullscreen :true};
+    var attributes = {};
+    swfobject.embedSWF('/flvplayer.swf', id, "352", "288", "7.0.0", false, flashvars, params, attributes);
+}
+
+function addFlashMovie(id, flv, image) {
+    var flashvars = {file: flv ,type: 'flv', image: image};
+    var params = {allowfullscreen :true};
+    var attributes = {};
+    swfobject.embedSWF('/flvplayer.swf', id, "352", "288", "7.0.0", false, flashvars, params, attributes);
+}
+</script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js" nonce="996001f7cc73f9ed-SJC"></script>
+
+
+
+<div class="access-denial-widget-container clearfix">
+    <input name="pub-doi" class="pub-doi" type="hidden" value="10.1021/acs.est.5c06771">
+
+
+
+    <div class="accessHead">
+        
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+    
+
+
+    <div id="accessDenialContent"  class="accessDenialWidget access-denials__wrapper">
+        
+        <div class="access" id="accessDenialHead">
+
+            
+                
+                
+                    
+                        
+                        
+
+                            <div class="accessDenialDropZone3" data-pb-dropzone="accessDenialDropZone3">
+                                
+                            </div>
+
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+        <div class="access-denials__header" tabindex="-1">
+            <h2>Read this <span style="text-transform: capitalize">article</span></h2>
+            <p>To access this article, please review the available access options below.</p>
+        </div>
+        <div class="access-ind article-ind">
+            <div class="access-inner-wrap">
+                
+                    
+                        <div class="no-ind-user-exists">
+                            <div class="note">
+                                    
+                                    
+                                    
+                                    
+                                    
+                            </div>
+
+                            <div class="buttons access-denials__options">
+                                
+
+                                <div class="access-denials__option purchase-access">
+                                    <header><p class="label">Get instant access</p>
+
+                                        <span class="card-icon">
+                                         <i class="icon-denials-cart"></i>
+                                        </span>
+                                        <h3>Purchase Access</h3>
+                                    </header>
+                                    <p class="content">Read this article for 48 hours. Check out below using your
+                                        ACS ID or as a guest.</p>
+                                    <footer class="access-denials__controls" style="min-height: 0px;">
+                                        <a href="#" class="purchase-access">Purchase Access</a>
+
+                                        <div class="cartLinkDropZone" data-pb-dropzone="cartLinkDropZone">
+                                            
+                                                
+
+
+
+        
+        
+
+                                            
+                                        </div>
+
+                                        
+                                            
+                                                
+                                                
+                                                    <a href="/action/showRestoreContentAccess"> Restore my guest access</a>
+                                                
+                                            
+                                            <div class="restoreContentAccessExplanatoryText">
+                                                    
+                                            </div>
+                                        
+
+                                    </footer>
+                                </div>
+                                <div class="seamless-access-btn-container  access-denials__option">
+                                    <header>
+                                        <p class="label">Recommended</p>
+                                        <span class="card-icon"><i class="icon-denials-inst"></i></span>
+                                        <h3>Access through Your Institution</h3>
+                                    </header>
+                                    <p class="content">You may have access to this article through your
+                                        institution.</p>
+
+                                    <p class="content state-inst-did-not-provide-access">Your institution does not have access to this content.
+                                        <a class="add-or-change-inst" href="#">Add or change your institution</a> or let them know you’d like them to include access.
+                                    </p>
+
+
+                                    <footer class="access-denials__controls" style="min-height: 0px;">
+                                        
+
+
+
+<a class="seamless-access-btn state-default" href="#">
+    <span class="seamless-access-icon"><i class="icon-seamless-access"></i></span>
+
+    <div class="inst-info">
+        <span class="access-through">Access Through</span>
+        
+            
+                <span class="access-not-provided">Recommend Publication</span>
+            
+            
+        
+        <span class="inst-name">Institution Name</span>
+
+        <span class="loading-status-txt">Loading Institutional Login Options... </span>
+        <span class="no-institutions">Access Through Your Institution</span>
+        <input type="hidden" id="entity-id" value="">
+        <input type="hidden" id="entitlement-check-result" value="">
+        <input type="hidden" id="seamless-access-institution-name" value="">
+    </div>
+</a>
+
+<div class="add-or-change-inst">
+    <a class="add-or-change-inst-anchor" href="#">
+        <i class="add-or-change-inst-anchor-icon icon-edit-pencil"></i>
+        <span class="add-or-change-inst-anchor-desc">Add or Change Institution</span>
+    </a>
+</div>
+
+    <a class="explore-link" href="https://www.solutions.acs.org">Explore subscriptions for institutions</a>
+
+
+
+                                    </footer>
+                                </div>
+                                <div class="access-denials__option log-in">
+                                    <header>
+                                        <p class="label">Recommended</p>
+                                        <span class="card-icon">
+                                      <i class="icon-denials-user"></i>
+                                </span>
+                                        <h3>Log in to Access</h3>
+                                    </header>
+
+                                    <p class="content">You may have access to this article with your ACS ID if you
+                                        have previously purchased it or have ACS member benefits. Log in below.</p>
+                                    <footer class="access-denials__controls">
+                                        <a href="/action/ssoRequestForLoginPage" class="login-btn">Login with ACS
+                                            ID</a>
+                                    </footer>
+                                </div>
+
+                            </div>
+                            <ul id="signInLinks" class="signInLinks">
+                                <li class="ppv-offers hidden">
+                                    <div class="purchaseAccessDropZone" data-pb-dropzone="purchaseAccessDropZone">
+                                        
+                                            
+
+
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+    <div class="purchaseHeader">Purchase access</div>
+    <div class="eCommercePurchaseAccessWidgetContainer ">
+
+        <div class="purchaseAreaList_expanded" id="#purchasePanel">
+            
+
+
+
+
+
+
+
+
+
+
+
+<div class="purchase-options-container">
+    
+
+    
+        <div class="savedItem-info hidden">
+            <p></p>
+        </div>
+    
+
+    
+        
+            
+                
+                
+
+                
+                    <input type="hidden" name="ppvLicenseType"/>
+                
+
+                
+                    
+                    
+                        <div class="add-journal-to-cart">
+                            
+                                <header>
+                                    <a data-bind="addItem" data-key="PPVJOURNALSE-ELECTRONIC-USD-10.1021/ACS.EST.5C06771-137905" data-entity="PPVJOURNALSE-ELECTRONIC-USD-10.1021/ACS.EST.5C06771-137905" class="add-article-to-cart"
+                                       href="/action/addToCart?id=PPVJOURNALSE-ELECTRONIC-USD-10.1021%2FACS.EST.5C06771-137905">
+                                    <span class="add-article-to-cart__title title">
+                                
+                                    
+                                        Purchase this article for 48 hours
+                                    
+                                    
+                                    
+                                
+                            </span>
+                                        <span class="add-article-to-cart__price price">$48.00</span>
+                                        <span class="add-to-cart-msg">
+                                        <span class="icon-Icon_Cart"></span>
+                                            Add to cart
+                                    </span>
+                                    </a>
+                                    <div class="purchaseMessage hidden info" data-item="PPVJOURNALSE-ELECTRONIC-USD-10.1021/ACS.EST.5C06771-137905">
+                                        <p></p>
+                                    </div>
+                                </header>
+                            
+                            <div class="addedMessage hidden" data-item="PPVJOURNALSE-ELECTRONIC-USD-10.1021/ACS.EST.5C06771-137905">
+                                <span class="article-title">
+                                    <span class="article-title-content">
+                                        <span class="icon-check"></span>
+                                        <span class="text">
+                                            
+                                                
+                                                    Purchase this article for 48 hours
+                                                
+                                                
+                                                
+                                            
+                                        </span>
+                                    </span>
+                                    <a href="/action/showCart?FlowID=2" class="show-cart-link">
+                                        <span class="text">
+                                            Checkout
+                                        </span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    
+                
+            
+        
+        
+    
+
+    
+</div>
+        </div>
+    </div>
+
+
+
+                                        
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    
+                    
+                
+            </div>
+        </div>
+    
+
+                        
+                    
+                
+            
+        </div>
+    </div>
+
+    <div class="accessDenialDropZone2" data-pb-dropzone="accessDenialDropZone2">
+        
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+        </div></div><div class="article_si-figshare-container"><div class="article_content-table"><div class="article_content-row"><div class="article_content-left article_content-left-fullwidth"><div class="article_supporting-info hlFld-Abstract" id="notes1"><div class="article_content-header"><div class="article_content-header-row"><div class="article_content-title" tabindex="0"><h2 id="_i24">Supporting Information</h2><div class="article__copy"><button class="article__copy__btn"><i class="article__copy__icon icon-copy-solid" aria-hidden="true"></i></button><span class="article__copy__text">Click to copy section link</span><span class="article__copy__success">Section link copied!</span></div></div></div></div><hr /><p class="last">The Supporting Information is available free of charge at <a href="/doi/10.1021/acs.est.5c06771?goto=supporting-info" class="ext-link">https://pubs.acs.org/doi/10.1021/acs.est.5c06771</a>.<ul class="NLM_list-list_type-label" id="silist"><li><p class="inline">FISE analysis for averages of five replicates and controls (Table S6), quantification of inorganic fluoride using <sup>19</sup>F NMR (Table S7), GP abundances for cells grown with F2-decane, F3-decane, and F5-decane (Table S8), glycerophospholipid abundances grown with decane (Table S9), glycerophospholipid abundances of cells grown with F2-decane (Table S10), glycerophospholipid abundances of cells grown with F3-decane (Table S11), and glycerophospholipid abundances of cells grown with F5-decane (Table S12) (<a href="/doi/suppl/10.1021/acs.est.5c06771/suppl_file/es5c06771_si_001.xlsx" class="ext-link">XLSX</a>)</p></li><li><p class="inline">Additional information for GC-MS analysis of polyfluorinated short chain fatty acids, procedural details for Method H and Method RP, formulae and equations, nomenclature of compounds and glycerophospholipids, external standard curves for mass balance analysis at time of inoculation (Figure S1), external standard curves for mass balance analysis following incubation (Figure S2), standards for <sup>19</sup>F NMR (Figure S3), abiotic controls for <sup>19</sup>F NMR (Figure S4), standard curve for inorganic fluoride analysis (<a data-tab="pane-pcw-Figures" href="#fig5" id="" class=" internalNav">Figure 5</a>), fluoride release in live cultures and control incubations (Figure S6), volatility data regarding F5-decane (Figure S7), GC-HRMS headspace analysis of F5-decane (Figure S8), relative pool size changes of glycerophospholipid classes (Figure S9), mass balance analysis for cells grown with F2-decane (Table S1), mass balance analysis for cells grown with F3-decane (Table S2), mass balance analysis for cells grown with F5-decane (Table S3), mass balance analysis for cells grown with F5-decane + decanoate (Table S4), cell enumeration through qPCR (Table S5), and full <sup>19</sup>F NMR spectra (Figures SA1–SA26) (<a href="/doi/suppl/10.1021/acs.est.5c06771/suppl_file/es5c06771_si_002.pdf" class="ext-link">PDF</a>)</p></li></ul></p><div class="supInfoBoxOnFTP "><div class="sup-info-attachments"><ul><li><a class="suppl-anchor" href="/doi/suppl/10.1021/acs.est.5c06771/suppl_file/es5c06771_si_001.xlsx">es5c06771_si_001.xlsx (73.49 kb)</a></li><li><a class="suppl-anchor" href="/doi/suppl/10.1021/acs.est.5c06771/suppl_file/es5c06771_si_002.pdf">es5c06771_si_002.pdf (1.75 MB)</a></li></ul></div></div></div><div class="testing" data-doi="10.1021/acs.est.5c06771" data-url="https://widgets.figshare.com/static/figshare.js" id="figshare-widget"></div><div class="TermsAndConditionsDropzone5" data-pb-dropzone="TermsAndConditionsDropzone5"><div data-widget-def="UX3HTMLWidget" data-widget-id="4f56e050-da32-4718-9a4f-153e1aca7abc" class="mb-4">
+        
+
+
+
+        
+            <h2 class="">
+                Terms & Conditions
+            </h2>
+        
+        <p>Most electronic Supporting Information files are available without a subscription to ACS Web Editions. Such files may be downloaded by article for research use (if there is a public use license linked to the relevant article, that license may permit other uses). Permission may be obtained from ACS for other uses through requests via the RightsLink permission system: <a href="/page/copyright/permissions.html" title="RightsLink">http://pubs.acs.org/page/copyright/permissions.html</a>.</p>
+
+        </div></div></div></div></div></div><div class="article_citedby-section-container"><div class="article_content-table"><div class="article_content-row"><div class="article_content-left article_content-left-fullwidth"><div class="articleCitedByDropzone" data-pb-dropzone="articleCitedByDropzone"><div class="cited-by"><div class="article_content-header cited-content_header"><div class="article_content-header-row"><div tabindex="0" class="article_content-title"><h2 id="citeThis">Cited By</h2><div class="article__copy"> <button class="article__copy__btn"><i aria-hidden="true" class="article__copy__icon icon-copy-solid"></i></button><span class="article__copy__text">Click to copy section link</span><span class="article__copy__success">Section link copied!</span></div></div></div></div><div class="cited-by__content"><div class="cited-content hlFld-Abstract"><p>This article has not yet been cited by other publications.</p></div></div></div></div></div></div></div></div></div><div class="article_content-right hlFld-FullText" id="article_content-right" role="region" aria-label="Article"><div class="article_header-right"><div class="article_header-cover"><div class="articleHeaderDropzone2" data-pb-dropzone="articleHeaderDropzone2"><div class="cover-image"><div class="cover-image__image"><a href="/toc/esthag/59/42" title="Go to  "><img src="/cms/10.1021/esthag.2025.59.issue-42/asset/19a29a06-a119-29a0-9a11-a29a069a119a/esthag.2025.59.issue-42.largecover.jpg" alt="Go to  " width="140" height="187"/></a></div></div>
+
+
+
+
+        
+        <input type="hidden" id="aJhpJournalInfo" value="/pb-assets/json/journal-info-1761153138097.json">
+<a href="/action/doUpdateAlertSettings?action=addJournal&amp;journalCode=esthag" class="button_primary_2"><i class="icon-send"></i><span>Get e-Alerts</span></a></div><div class="articleHeaderDropzone8" data-pb-dropzone="articleHeaderDropzone8"><div class="external-alerts-management"><input type="hidden" name="pub-type" value="article" class="pub-type"/><input type="hidden" name="is-enabled" value="true" class="is-enabled"/><input type="hidden" name="is-authenticated" value="false" class="is-authenticated"/><!-- TODO: comment out below line:--><!--input.acs-id(type="hidden" name="acs-id" value="31838729")--><input type="hidden" name="pub-code" value="esthag" class="pub-code"/><input type="hidden" name="linkout-url" value="https://preferences.acs.org/journals" class="linkout-url"/><button data-toggle="modal" data-target="#ealertsModal" class="ealerts-toggle-btn hidden"></button><a aria-label="get e-alerts" href="#" class="button_primary_2 niHeader_getEAlerts jhHeader_sub_info" data-id="article_drawer_eAlerts_GetEAlerts"><i class="icon-send"></i><i class="icon-envelope-o"></i><i class="icon-check"></i><span class="ealerts-btn-text">Get e-Alerts</span></a><div class="ux-modal-container"><div id="ealertsModal" style="display: none;" aria-live="polite" aria-atomic="true" class="modal"><div class="modal__dialog"><div class="modal__body"><iframe src="" class="ealerts-frame"></iframe></div></div></div></div><input type="hidden" id="ealertsModalSrc" value="https://preferences.acs.org/esthag?ifr=1"/></div></div></div><div class="article_header-meta"><div class="article_header-meta-left"><input type="hidden" name="journalCodeForjhpLink" value="esthag" /><input type="hidden" name="journalNameForjhpLink" value="Environmental Science &amp; Technology" /><div class="article_header-journal"><h2>Environmental Science & Technology</h2></div><div class="article_header-cite-this" tabindex="0"><input type="hidden" name="citation-copy-value" value="Environ. Sci. Technol. 2025, 59, 42, 22663–22675" /><span class="cite-this">Cite this: </span><span class="cit-title"><i>Environ. Sci. Technol.</i></span> <span class="cit-year-info"><span>2025</span></span><span class="cit-volume">, 59</span><span class="cit-issue">, 42</span><span class="cit-pageRange">, 22663–22675</span><div class="article__copy"><button class="article__copy__btn"><i class="article__copy__icon icon-copy-solid" aria-hidden="true"></i></button><span class="article__copy__text">Click to copy citation</span><span class="article__copy__success">Citation copied!</span></div></div><div class="article_header-doiurl"><a href="https://doi.org/10.1021/acs.est.5c06771" title="DOI URL">https://doi.org/10.1021/acs.est.5c06771</a></div><div class="article_header-epubdate"><span class="pub-date ppub-date">Published </span><span class="pub-date-value">October 15, 2025</span><div class="article_header-history base dropBlock"><a href="#" data-db-target-for="article_header-history" title="History" target="_self" class="" aria-expanded="false" aria-label="Publication History"><i class="icon-angle-down"></i><i class="icon-angle-up"></i></a><div data-db-target-of="article_header-history" class="dropBlock__holder" aria-hidden="true"><div class="articleHeaderHistoryDropzone" data-pb-dropzone="articleHeaderHistoryDropzone"><div class="article__history"> <h3 class="article__history__header">Publication History</h3><ul class="article__history__list"> <li class="article__history__item"><i class="article__history__icon icon-date"></i><p class="article__history__label"><span class="bold">Received&nbsp;</span></p><time datetime="2025-05-20" class="article__history__time">20 May 2025</time></li><li class="article__history__item"><i class="article__history__icon icon-date"></i><p class="article__history__label"><span class="bold">Accepted&nbsp;</span></p><time datetime="2025-09-26" class="article__history__time">26 September 2025</time></li><li class="article__history__item"><i class="article__history__icon icon-date"></i><p class="article__history__label"><span class="bold">Revised&nbsp;</span></p><time datetime="2025-09-25" class="article__history__time">25 September 2025</time></li><li class="article__history__item"><i class="article__history__icon icon-date"></i><p class="article__history__label"><span class="bold">Published&nbsp;</span></p><span>online&nbsp;</span><time datetime="2025-10-15" class="article__history__time">15 October 2025</time></li><li class="article__history__item"><i class="article__history__icon icon-date"></i><p class="article__history__label"><span class="bold">Published&nbsp;</span></p><span>in issue&nbsp;</span><time datetime="2025-10-28" class="article__history__time">28 October 2025</time></li></ul></div></div></div></div></div><div class="article_header-article-copyright">Copyright © 2025 American Chemical Society</div><div class="article_rightPermissionsLink"><div class="articleHeaderDropzone4" data-pb-dropzone="articleHeaderDropzone4"><div class="articleRightsPermissionsLink"><a href="/servlet/linkout?type=rightslink&amp;url=startPage%3D22663%26pageCount%3D13%26copyright%3DAmerican%2BChemical%2BSociety%26author%3DAlexander%2BS.%2BWalls%252C%2BGao%2BChen%252C%2BDiana%2BRamirez%252C%2Bet%2Bal%26orderBeanReset%3Dtrue%26imprint%3DAmerican%2BChemical%2BSociety%26volumeNum%3D59%26issueNum%3D42%26contentID%3Dacs.est.5c06771%26title%3DPseudomonas%2Bsp.%2BStrain%2B273%2BMetabolizes%2BDecanes%2Bwith%2BPoly-%2Bor%2BPerfluorinated%2BCarbons%26numPages%3D13%26pa%3D%26issn%3D0013-936X%26publisherName%3Dacs%26publication%3Desthag%26rpt%3Dn%26endPage%3D22675%26publicationDate%3DOctober%2B2025" data-id="article_rights_permissions">Request reuse permissions</a></div></div></div></div></div></div><div class="articleHeaderDropzone3" data-pb-dropzone="articleHeaderDropzone3"><div class="articleMetrics articleMetrics--article"><div class="articleMetrics_table"><div class="articleMetrics_row"><input type="hidden" name="articleMetricsDoi" value="10.1021/acs.est.5c06771"/><div class="articleMetrics_metric"><h2>Article Views</h2><div tabindex="-1" aria-describedby="views-tooltip" class="articleMetrics-val articleMetrics-tooltip"><span>408</span></div></div><div class="articleMetrics_altmetric"><h2>Altmetric</h2><div class="articleMetrics-val articleMetrics_score">-</div><div class="altmetric-donut hidden"><div data-badge-details="right" data-badge-type="donut" data-hide-no-mentions="false" data-condensed="true" class="altmetric-embed"></div></div></div><div class="articleMetrics_count"><h2>Citations</h2><div class="articleMetrics-val">-</div></div></div></div><div class="articleMetrics_about"><div class="base dropBlock"><a href="#" data-db-target-for="aboutArticleMetrics" aria-describedby="about-article-metrics" class="article_aboutLink">Learn about these metrics</a><div data-db-target-of="aboutArticleMetrics" id="about-article-metrics" class="dropBlock__holder"><button class="articleMetrics_close"> <i aria-hidden="true" class="icon-close_thin"></i><span class="sr-only">close</span></button><p>Article Views are the COUNTER-compliant sum of full text article downloads since November 2008 (both PDF and HTML) across all institutions and individuals. These metrics are regularly updated to reflect usage leading up to the last few days.</p><p>Citations are the number of other articles citing this article, calculated by Crossref and updated daily.<a href="https://www.crossref.org/services/cited-by/"> Find more information about Crossref citation counts.</a></p><p>The Altmetric Attention Score is a quantitative measure of the attention that a research article has received online. Clicking on the donut icon will load a page at altmetric.com with additional details about the score and the social media presence for the given article. Find more information on<a href="https://help.altmetric.com/support/solutions/articles/6000233311-how-is-the-altmetric-attention-score-calculated"> the Altmetric Attention Score and how the score is calculated.</a></p></div></div></div></div></div><div class="recommendedDropzone7" data-pb-dropzone="recommendedDropzone7"><div class="show-recommended__wrapper collapsed"><h2 class="show-recommended__header">Recommended Articles   </h2><div data-ajaxurl="/pb/widgets/ux3/ux3-showRecommend?widgetId=b272b1fe-ab4e-454f-940c-a3deaf223d23&amp;doi=10.1021%2Facs.est.5c06771&amp;pbContext=%3Bpage%3Astring%3AArticle%2FChapter+View%3Bctype%3Astring%3AJournal+Content%3Barticle%3Aarticle%3A10.1021%2Facs.est.5c06771%3BsubPage%3Astring%3AAbstract%3Bjournal%3Ajournal%3Aesthag%3BrequestedJournal%3Ajournal%3Aesthag%3Bwgroup%3Astring%3AACHS+website+Group%3Bissue%3Aissue%3A10.1021%2Festhag.2025.59.issue-42%3Bwebsite%3Awebsite%3Aacspubs%3BpageGroup%3Astring%3APublication+Pages&amp;wlm=mdfpy7oa" class="show-recommended-placeholder"><div class="show-recommended-placeholder__list"><div class="show-recommended-placeholder__item"><div class="show-recommended-placeholder__title"></div><div class="show-recommended-placeholder__title"></div><div class="show-recommended-placeholder__meta"></div><div class="show-recommended-placeholder__auth">               </div><div class="show-recommended-placeholder__auth">    </div></div><div class="show-recommended-placeholder__item"><div class="show-recommended-placeholder__title"></div><div class="show-recommended-placeholder__title"></div><div class="show-recommended-placeholder__meta"></div><div class="show-recommended-placeholder__auth">               </div><div class="show-recommended-placeholder__auth">    </div></div></div><div class="show-recommended-placeholder__button"></div></div></div></div></div></div></article></main>
+
+                    
+                        
+
+
+
+        
+        <script async="" type="text/javascript" src="https://www.googletagservices.com/tag/js/gpt.js" rel="preconnect" nonce="996001f7cc73f9ed-SJC"></script>
+
+<script type="text/javascript" nonce="996001f7cc73f9ed-SJC">
+var dfpReady = false;
+$(document).ready(function() {
+    // var journalTitle = 'environmental_science_technology';
+    var taxonomyKeywords = $('.article_header-taxonomy');
+    var articleKeyword = $('meta[name="keywords"]');
+    var articleTitle = $('meta[name="dc.Title"]');
+    var articleDescription = $('meta[name="dc.Description"]');
+    var abstractKeyword = $('p.articleBody_abstractText:contains("Keywords: ")');
+    var searchTerms = [];
+
+    if (taxonomyKeywords.length > 0) {
+        $(taxonomyKeywords).children(".rlist--inline").children("li").each(function() {
+            searchTerms.push($(this).text());
+        });
+    }
+    else if (articleKeyword.length > 0) { 
+        searchTerms = searchTerms.concat(articleKeyword.prop('content').split(', '));
+    }
+    else if (abstractKeyword.length > 0) {
+        searchTerms = searchTerms.concat(abstractKeyword.text().split("Keywords: ")[1].split('; '));
+    }
+    else if (articleDescription.length > 0) {
+        $(articleDescription).each(function() {
+            articleDescriptionKeywords = $(this).prop('content');
+            articleDescriptionKeywords = articleDescriptionKeywords.replace(/.,/g,"");
+            articleDescriptionKeywords = articleDescriptionKeywords.replace(/\s{2,}/g," ");
+            searchTerms = searchTerms.concat(articleDescriptionKeywords.split(' '));
+        });
+    }
+
+    if (articleTitle.length > 0) {
+        searchTerms = searchTerms.concat(articleTitle.prop('content').split(' '));
+    }
+
+    googletag.cmd.push(function() {
+        var mappingLeader = googletag.sizeMapping().
+        addSize([750, 200], [728, 90]). 
+        addSize([0, 0], [320, 50]).
+        build();
+        //leaderboard
+        googletag.defineSlot('/8868/journal/environmental_science_technology/article', [728, 90], 'dfp-journal-article-leaderboard').defineSizeMapping(mappingLeader).setTargeting('location', 'leaderboard1').setTargeting('Keyword', searchTerms).addService(googletag.pubads());
+        //recommend
+        googletag.defineSlot("/8868/journal/environmental_science_technology/article", [1, 1], "dfp-journal-article-recommend").setTargeting("ntvPlacement", ["1100167"]).setTargeting("location", "recommend").setTargeting('Keyword', searchTerms).addService(googletag.pubads());
+        //googletag.pubads().enableSingleRequest();
+        googletag.pubads().collapseEmptyDivs();
+        googletag.pubads().setTargeting('inst',dartInstitutionType).setTargeting('memb',dartMember);
+        googletag.pubads().addEventListener("slotRenderEnded", function(event) {
+            console.log(event.slot.getSlotElementId() + " isEmpty: " + event.isEmpty + " | creative id: " + event.creativeId + " " + event.size[0] + "x" + event.size[1]);
+            if((event.isEmpty === false) && (event.slot.getSlotElementId() != "dfp-journal-article-recommend")) {
+                $("#" + event.slot.getSlotElementId()).parents(".advertisement").slideDown();
+                console.log("ad display: " + event.creativeId + " " + event.size[0] + "x" + event.size[1]);
+            }
+            // else {
+            //     console.log("no ad found");
+            // }
+        });
+        googletag.enableServices();
+        dfpReady = true;
+    });
+});
+</script>
+
+<style>
+.articleHeaderDropzone5 .advertisement { display: none; }
+.article_header .advertisement {
+  margin: -25px auto 25px auto;
+}
+.show-recommended .sponsoredContent { display: none; }
+.show-recommended__wrapper .sponsoredContent { display: none; }
+</style>
+
+
+
+                    
+                        
+
+
+
+        
+        <script src="https://common.ccdc.cam.ac.uk/ccdc-widget/1.0.0.107/Widget.min.js" nonce="996001f7cc73f9ed-SJC"></script>
+
+                    
+                        
+
+
+
+        
+        <script nonce="996001f7cc73f9ed-SJC">
+(function(){
+	
+	/*Event Tracking for RIS menu dropdown - Article pages*/
+
+	$('.cit-download-dropdown_button').on('click',function(e)
+	{	
+		e.preventDefault();
+	    gtag('event', 'Export', { 'event_category': 'Citation', 'event_label':'Main'});
+
+	});
+
+
+	$('.cit-download-dropdown_content ul li').on('click',function(e)
+	{	
+	//	e.preventDefault();
+	    var idx = $(this).index();
+	    
+	    var label = '';
+	    if (idx === 0 ) {
+	    	label = 'Citation';
+	    } else if (idx === 1 ) {
+	    	label = 'Abstract';
+	    } else if (idx === 2 ) {
+	    	label = 'Reference';
+	    } else if (idx === 3 ) {
+	    	label = 'More Options';
+	    }
+	   
+	   gtag('event', 'Export', { 'event_category': 'Citation', 'event_label':label});
+	});
+
+	$('.header_contnav-next a').on('click', function(e){
+        e.preventDefault();
+        gtag('event', 'Top', { 'event_category': 'Article', 'event_label':'Right Arrow'});
+	}); 
+
+ 	$('.header_contnav-pre a').on('click', function(e){
+	    e.preventDefault();
+	     gtag('event', 'Top', { 'event_category': 'Article', 'event_label':'Left Arrow'});
+	}); 
+
+	$('.share_button').on('click', function(e){
+		e.preventDefault();
+		gtag('event', 'Top', { 'event_category': 'Article', 'event_label':'Share'});
+	});
+
+	$("#pane-m1con").on('click', function(e) {
+		e.preventDefault();
+		gtag('event', 'Sidebar', { 'event_category': 'Article', 'event_label':'Figures'});
+	});
+
+	$("#pane-m2con").on('click', function(e) {
+		e.preventDefault();
+	    gtag('event', 'Sidebar', { 'event_category': 'Article', 'event_label':'References'});
+	});
+
+	$("#pane-m3con").on('click', function(e) {
+		e.preventDefault();
+		gtag('event', 'Sidebar', { 'event_category': 'Article', 'event_label':'Supporting Info'});
+	});
+
+	$('.tab__close').on('click', function(){
+		gtag('event', 'Sidebar', { 'event_category': 'Article', 'event_label':'Close'});
+	}); 
+
+
+
+})();
+
+</script>
+
+                    
+                        
+
+
+
+        
+        <footer class="footer">
+
+
+
+        
+            <div class="footer__content">
+        <div class="footer__block">
+            <h3 class="footer__title">
+                read
+            </h3>
+        
+            <ul class="footer__list">
+                <li class="footer__item"><a href="/action/showPublications?pubType=journal&amp;ref=Article/esthag_Footer_Journals" class="footer__link">Journals</a></li>
+                <li class="footer__item">
+                    <a href="/action/showPublications?pubType=book&amp;ref=Article/esthag_Footer_BooksReferences" class="footer__link">Books &amp; References</a>
+                </li>
+                <li class="footer__item"><a href="https://cen.acs.org/?ref=Article/esthag_Footer_CEN" class="footer__link">C&amp;EN</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer__block">
+            <h3 class="footer__title">
+                publish
+            </h3>
+
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a href="https://publish.acs.org?ref=Article/esthag_Footer_SubmitaManuscript" class="footer__link">Submit a Manuscript</a>
+                </li>
+                <li class="footer__item">
+                    <a href="https://researcher-resources.acs.org/publish?ref=Article/esthag_Footer_AuthorResources" class="footer__link">Author Resources</a>
+                </li>
+ <li class="footer__item"><a href="/page/review/index.html?ref=Article/esthag_Footer_PeerReview" class="footer__link">Peer Review</a></li>
+
+                <li class="footer__item">
+                    <a href="https://authoringservices.acs.org/?ref=Article/esthag_Footer_PurchaseAuthorServices" class="footer__link">Purchase Author Services</a>
+                </li>
+                <li class="footer__item">
+                    <a href="https://acsopenscience.org/?ref=Article/esthag_Footer_ExploreOpenAccess" class="footer__link">Explore Open Access</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer__block">
+            <h3 class="footer__title">
+                    subscribe
+            </h3>
+            
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a href="https://solutions.acs.org/who-we-serve/librarians/?ref=Article/esthag_Footer_LibrariansAccountManagers" class="footer__link">Librarians &amp; Account Managers</a>
+                </li>
+                <li class="footer__item">
+                    <a href="https://acsopenscience.org/institutions/read-and-publish/?ref=Article/esthag_Footer_OpenScienceforInstitutions" class="footer__link">Open Science for Institutions</a>
+                </li>
+                <li class="footer__item">
+                    <a href="https://solutions.acs.org/access-options/?ref=Article/esthag_Footer_InquireAboutAccess" class="footer__link">Inquire About Access</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer__block">    
+                <h3 class="footer__title">
+                    help
+                </h3>
+            
+            <ul class="footer__list">
+                <li class="footer__item"><a href="https://acs.service-now.com/acs?ref=Article/esthag_Footer_SupportFAQ" class="footer__link">Support FAQ</a></li>
+                <li class="footer__item">
+                    <a href="#" onclick="SnapEngage.startLink();return false;" class="footer__link">Live Chat with Agent</a>
+                </li>
+              <!--
+                <li class="footer__item">
+                    <a href="/page/demo/index.html?ref=Article/esthag_Footer_TutorialsDemos" class="footer__link">Tutorials &amp; Demos</a>
+                </li>
+			-->
+            </ul>
+        </div>
+
+        <div class="footer__block">
+                <h3 class="footer__title">
+                    resources
+                </h3>
+            
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a href="/page/about-us.html?ref=Article/esthag_Footer_AboutACSPublications" class="footer__link">About ACS Publications</a>
+                </li>
+
+                <li class="footer__item">
+                    <a href="https://chemrxiv.org/engage/chemrxiv/public-dashboard?ref=Article/esthag_Footer_ChemRxiv" class="footer__link">ChemRxiv</a>
+                </li>
+                <li class="footer__item">
+                    <a href="https://axial.acs.org/?ref=Article/esthag_Footer_Blog" class="footer__link">Blog</a></li>
+
+                <li class="footer__item">
+                    <a href="/events?ref=Article/esthag_Footer_Events" class="footer__link">Events</a></li>
+                <li class="footer__item">
+                    <a href="https://www.acs.org/content/acs/en/membership.html?ref=Article/esthag_Footer_JoinACS" class="footer__link">Join ACS</a></li>
+              <li class="footer__item">
+                    <a href="https://acsmediakit.org/advertising/?ref=Article/esthag_Footer_ForAdvertisers" class="footer__link">For Advertisers</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="footer__logo-wrapper">
+                <a href="/?ref=Article/esthag_Footer_ACSLogo" class="footer__logo"><img src="/pb-assets/ux3/ACSPubs_logo_tagline_Knockout-1718648850557.svg" alt="American Chemical Society" width="275" height="54.8" class="footer__logo-img"></a>
+                
+                <p class="footer__location">
+                    <span class="footer__location-item">1155 Sixteenth Street N.W.</span><span class="footer__location-item">Washington, DC 20036</span>
+                </p>
+            </div>
+            <div class="footer__meta">
+                <p class="footer__copyright">
+                  <a href="https://www.acs.org/copyright.html?ref=Article/esthag_Footer_Copyright" class="footer__link">Copyright © 2025 American Chemical Society.</a> 
+              </p>
+        
+                <ul class="footer__terms">
+                    <li class="footer__term"><a href="https://www.acs.org/terms.html?ref=Article/esthag_Footer_TermsofUse" class="footer__link">Terms of Use</a></li>
+                    <li class="footer__term">
+                        <a href="https://www.acs.org/privacy.html?ref=Article/esthag_Footer_PrivacyPolicy" class="footer__link">Privacy Policy</a>
+                    </li>
+
+                    <!--
+                    <li class="footer__term">
+                        <a href="" class="footer__link">Manage Cookies</a>
+                    </li>
+                    -->
+
+                    <li class="footer__term">
+                        <a href="/accessibility?ref=Article/esthag_Footer_Accessibility" class="footer__link">Accessibility</a></li>
+                </ul>
+
+                <ul class="footer__social">
+                    <li class="footer__social__item">
+                        <a href="https://www.facebook.com/ACSPublications/" class="footer__link--social"><i aria-hidden="true" class="icon-facebook"></i><span class="sr-only">Facebook</span></a>
+                    </li>
+                    <li class="footer__social__item">
+                        <a href="https://x.com/ACSPublications" class="footer__link--social"><i aria-hidden="true" class="icon-x"></i><span class="sr-only">X</span></a>
+                    </li>
+                    <li class="footer__social__item">
+                        <a href="https://bsky.app/profile/pubs.acs.org" class="footer__link--social"><i aria-hidden="true" class="icon-bluesky"></i><span class="sr-only">Bluesky</span></a>
+                    </li>
+                    <li class="footer__social__item">
+                        <a href="https://www.youtube.com/user/AmerChemSoc" class="footer__link--social"><i aria-hidden="true" class="icon-youtube-play"></i><span class="sr-only">YouTube</span></a>
+                    </li>
+                    <li class="footer__social__item">
+                        <a href="/page/follow.html?widget=follow-pane-rss&amp;ref=Article/esthag_Footer_RSS" class="footer__link--social"><i aria-hidden="true" class="icon-rss"></i><span class="sr-only">RSS</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+                    
+                        
+
+
+
+        
+        <script nonce="996001f7cc73f9ed-SJC">
+    //Top nav tracking
+
+    (function(){
+        $('.header_my-activity a:first').on('click', function(e){
+            e.preventDefault();
+            //console.log('Button , Activity')
+            gtag('event', 'Button', { 'event_category': 'Top Nav', 'event_label':'Activity'});
+        })
+
+
+        $('.pubModal_button').on('click', function(e){
+            e.preventDefault();
+            //console.log('Button , Publications')
+            gtag('event', 'Button', { 'event_category': 'Top Nav', 'event_label':'Publications'});
+
+        }) 
+
+        $('.header_burger-menu_button').on('click', function(e){
+            e.preventDefault();
+            //console.log('Button , Hamburger');
+            gtag('event', 'Button', { 'event_category': 'Top Nav', 'event_label':'Hamburger'});
+        }) 
+
+        // $('.header_burger-menu_content ul li').on('click', function(e){
+        //     // e.preventDefault();
+        //     var idx = $(this).index();
+        //     console.log('Menu item' + idx)
+        // })
+    })();
+    
+    
+</script>
+
+                    
+                        
+
+
+
+        
+        <!-- AdRoll Pixel -->
+<script type="text/javascript" nonce="996001f7cc73f9ed-SJC">
+    adroll_adv_id = "3LBZJ4KXKBF2PJ46QCMT3X";
+    adroll_pix_id = "6EITYRDI4FFGJPSZQ62UJJ";
+
+    (function () {
+        var _onload = function(){
+            if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+            if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+        else {window.attachEvent('onload', _onload)}
+    }());
+</script>
+<style>
+iframe#adroll_slg {
+    display:block;
+    width: 100%;
+    background-color: #044788;
+    margin-top: -1px;
+}
+</style>
+
+<!-- Twitter universal website tag code -->
+<!-- Commented out for ACHS-6152
+<script nonce="996001f7cc73f9ed-SJC">
+    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+    // Insert Twitter Pixel ID and Standard Event data below
+    twq('init','o3njp');
+    twq('track','PageView');
+</script>
+-->
+<!-- Facebook Pixel Code -->
+<!-- Commented out for ACHS-6152
+<script nonce="996001f7cc73f9ed-SJC">
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '529840281033320');
+    fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=529840281033320&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+-->
+
+
+                    
+                        
+
+
+
+        
+        <script nonce="996001f7cc73f9ed-SJC">
+// LIT-455776 workaround
+// Moving the popup before the header content for tab accessibility
+document.addEventListener('DOMContentLoaded', () => {
+    const headerNode = $('.header_content');
+    const popupNode = $('.pairing-affiliations-popup');
+
+    if (!headerNode.length || !popupNode.length)
+        return;
+
+    popupNode.insertBefore(headerNode);  
+});
+</script> 
+
+                    
+                        
+
+
+
+        
+        
+
+
+
+    
+
+    
+
+    
+        
+    
+
+
+
+                    
+                        
+
+
+
+        
+        <!-- begin SnapEngage code -->
+<script type="text/javascript" nonce="996001f7cc73f9ed-SJC">
+  (function() {
+    var se = document.createElement('script'); se.type = 'text/javascript'; se.async = true;
+    se.src = 'https://www2.snapengage.com/cdn/js/921a4ec7-cecf-43a6-afa5-6cd1346520b1.js';
+    var done = false;
+    se.onload = se.onreadystatechange = function() {
+      if (!done&&(!this.readyState||this.readyState==='loaded'||this.readyState==='complete')) {
+        done = true;
+        /* Place your SnapEngage JS API code below */
+        /* SnapEngage.allowChatSound(true); Example JS API: Enable sounds for Visitors. */
+      }
+    };
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se, s);
+  })();
+</script>
+
+<style>
+    #SnapABug_Button,
+    #designstudio-button {
+        display: none;
+    }
+</style>
+<!-- end SnapEngage code -->
+
+                    
+                        
+
+
+
+        
+        <script nonce="996001f7cc73f9ed-SJC">
+(function(d,b,a,s,e){ var t = b.createElement(a),
+  fs = b.getElementsByTagName(a)[0]; t.async=1; t.id=e; t.src=s;
+  fs.parentNode.insertBefore(t, fs); })
+(window,document,'script','https://tag.demandbase.com/b01e0bcf02a2a19f.min.js','demandbase_js_lib'); 
+</script>
+
+                    
+                        
+
+
+
+        
+        <div id="sys-message-panel" style="display: none;">
+    <div class="system-message-logo-area"><a id="asterisk"><i class="icon-asterisk"></i></a></div>
+    <div class="sys-message-content">
+        <a id="closebtn" href="#"><i class="icon-times-circle-o"></i></a>
+        <!-- <h2>System Message</h2> -->
+        <span class="system-message-date">2025-10-28T21:42:42.023-07:00</span>
+      <!--
+        <p>Notice: ACS is aware of a recent issue that may have caused some users to be temporarily blocked from accessing content. The issue has been resolved, and we sincerely apologize for any inconvenience caused. If you continue to experience access problems, please contact us at <a href="mailto:acs_pubs_assist@acs.org">acs_pubs_assist@acs.org</a>.</p>
+	   -->
+
+        <p>We are undergoing maintenance on October 10, 4:00 pm EST which may impact site access. This update will complete shortly and we appreciate your patience while we improve the ACS Publications Platform.</p>
+ 
+        <!-- <p>On Tuesday, July 23, we will complete an update to our article pages. You may find that some elements are not aligned on these pages while the final work is completed.<br>
+            Thank you for your patience.</p> -->
+  
+    </div>
+</div>
+<script nonce="996001f7cc73f9ed-SJC">
+    document.addEventListener("DOMContentLoaded", function(){
+    // Function to get a Human readable formatted date
+    function getFormattedDateForMaintenance() {
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        //January is 0
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); 
+        let yyyy = today.getFullYear();
+        
+        let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        let monthsOfYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        let dayOfWeek = daysOfWeek[today.getDay()];
+        let monthOfYear = monthsOfYear[today.getMonth()];
+
+        return dayOfWeek + ', ' + monthOfYear + ' ' + dd + ', ' + yyyy;
+    }
+    
+    // Insert the date into the .system-message-date element
+    document.querySelector('.system-message-date').innerText = getFormattedDateForMaintenance();
+});
+</script>
+
+                    
+                        
+
+
+
+        
+        <!-- Hotjar Tracking Code for https://pubs.acs.org/ -->
+<script nonce="996001f7cc73f9ed-SJC">
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3120009,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+                    
+                        
+
+
+
+        
+        <script nonce="996001f7cc73f9ed-SJC">
+(function (m, a, z, e) {
+  var s, t;
+  try {
+    t = m.sessionStorage.getItem('maze-us');
+  } catch (err) {}
+
+  if (!t) {
+    t = new Date().getTime();
+    try {
+      m.sessionStorage.setItem('maze-us', t);
+    } catch (err) {}
+  }
+
+  s = a.createElement('script');
+  s.src = z + '?apiKey=' + e;
+  s.async = true;
+  a.getElementsByTagName('head')[0].appendChild(s);
+  m.mazeUniversalSnippetApiKey = e;
+})(window, document, 'https://snippet.maze.co/maze-universal-loader.js', '324f1949-7e39-430a-964b-caafd31cacfd');
+</script>
+
+                    
+                        
+
+
+
+        
+        <!--
+<style type="text/css">
+  #gdpr-message-modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 10;
+      /* Sit on top */
+      /*padding-top: 100px;*/
+      /* Location of the box */
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      /* Full width */
+      /*height: 100%;*/
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      /*background-color: rgb(0,0,0);*/
+      /* Fallback color */
+      /*background-color: rgba(0,0,0,0.4);*/
+      /* Black w/ opacity */
+  }
+  #gdpr-message-content {
+      font-family: Arial;
+      background-color: #005083;
+      color: #fff;
+      margin: auto;
+      padding: 5px 0 10px 0;
+      /*border: 1px solid #888;*/
+      box-shadow: 0 -1px 3px #666;
+      width: 100%;
+      display: block;
+      bottom: 0;
+  }
+  #gdpr-message-container {
+      /*width: 1130px;*/
+      margin: 0 auto;
+  }
+  .gdpr-innerwrap {
+      display: block;
+      /*width: 1100px;*/
+      margin: 0 auto;
+      text-align: center;
+  }
+  #gdpr-message-content h1 {
+      color: #0629b5;
+      font-size: 26px;
+      margin: 0.5em 0 0 0;
+      border-bottom: solid 2px #4c7fb9;
+      display: inline;
+      padding-bottom: 10px;
+  }
+  #gdpr-message-content h3 {
+      display: inline-block;
+      margin-left: 0;
+      margin-right: 14px;
+      margin-top: 13px;
+      /*width: 980px;*/
+      font-size: 14px;
+      font-weight: normal;
+  }
+  #gdpr-message-content p {
+      font-size: 14px;
+      margin: 2em 2em 0.5em 0em;
+      text-align: left;
+      font-weight: bold;
+  }
+  #gdpr-message-content a,
+  #gdpr-message-content a:hover {
+      color: #9bcfff;
+  }
+  .gdpr-listwrap {
+      display: block;
+      margin-bottom: 10px;
+      min-height: 100px;
+      min-width: 200px;
+  }
+  #gdpr-message-content ul {
+      margin-top: 20px;
+      font-size: 13px;
+  }
+  #gdpr-ul1 {
+      display: inline-block;
+      float: left;
+  }
+  #gdpr-ul2 {
+      display: inline-block;
+      margin-left: 10px;
+  }
+  #gdpr-message-content ul li {
+      margin-top: 4px;
+  }
+  a#gdpr-con-btn,
+  a#gdpr-con-btn:hover {
+      width: 110px;
+      height: 35px;
+      background: #fec82a;
+      background-image: none;
+      background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fec82a), color-stop(100%, #daa301));
+      background-image: -webkit-linear-gradient(top, #fec82a, #daa301);
+      background-image: -moz-linear-gradient(top, #fec82a, #daa301);
+      background-image: -o-linear-gradient(top, #fec82a, #daa301);
+      background-image: linear-gradient(top, #fec82a, #daa301);
+      border-radius: 4px;
+      color: #004a7b;
+      display: inline-block;
+      text-decoration: none;
+      line-height: 35px;
+      text-align: center;
+      margin-top: 5px;
+      /*margin-right: 14px;*/
+      /*float: right;*/
+      font-weight: bold;
+  }
+  #gdpr-message-btn {
+      width: 60px;
+      height: 38px;
+      background: #4b8fc2;
+      border-radius: 4px;
+      color: white;
+      display: inline-block;
+      margin-top: -4px;
+      font-size: 12px;
+  }
+  a#closebtn {
+      float: right;
+      color: #d4e5ef;
+  }
+  #gdpr-input {
+      width: 200px;
+      height: 30px;
+      border-radius: 3px;
+      border-width: 1px;
+      box-shadow: none;
+      margin-right: 10px;
+      font-size: 14px;
+      outline: none;
+      padding-left: 2px;
+      display: inline-block;
+      float: left;
+  }
+  #gdpr-message-content p.gdpr_err {
+      font-size: 15px;
+      margin-top: 10px;
+  }
+  #gdpr-message-modal.mobile, #gdpr-message-modal.mobile .gdpr-message-content {
+      height: 160px;
+  }
+  @media only screen and (min-width: 1026px) and (max-width: 1368px) {
+  	#gdpr-message-content h3 {
+  		width: 80%;
+  		text-align: left;
+  	}
+  }
+</style>
+
+
+<div
+  id="gdpr-message-modal"
+  role="dialog"
+  aria-modal="false"
+  aria-label="cookies policy"
+  tabindex="0">
+  <div id="gdpr-message-content">
+    <div class="gdpr-innerwrap container">
+      <h3>
+        This website uses cookies to improve your user experience. By continuing
+        to use the site, you are accepting our use of cookies.
+        <a href="http://www.acs.org/content/acs/en/privacy.html"
+          >Read the ACS privacy policy</a
+        >.
+      </h3>
+      <a href="#" id="gdpr-con-btn" tabindex="1">CONTINUE</a>
+    </div>
+  </div>
+</div>
+
+
+<p>
+  <script type="text/javascript" nonce="996001f7cc73f9ed-SJC">
+    "use strict";
+    //Script checks gdpr cookie and submits form
+    /* 
+	Create an in-page pop-up message, only for the InfoCentral homepage, that will gather email registrants for the library marketing list.
+	 
+	Needs the end point
+	*/
+
+    var infoCentralCapture = (function () {
+      //Detect mobile device
+      window.mobilecheck = function () {
+        var check = false;
+        (function (a) {
+          if (
+            /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(
+              a,
+            ) ||
+            /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(
+              a.substr(0, 4),
+            )
+          )
+            check = true;
+        })(navigator.userAgent || navigator.vendor || window.opera);
+        return check;
+      };
+
+      var _isMobile = window.mobilecheck();
+      if (_isMobile) {
+        $("#gdpr-message-modal").addClass("mobile");
+      }
+
+      var emailValid = "",
+        time = 3000,
+        btnStatus = true,
+        errorStatus = false,
+        errormessage =
+          "<p class='gdpr_err'><b>Please Enter a valid email address<b><p>";
+
+      function init() {
+        setTimeout(function () {
+          var cookieExist = getCookie("gdpr");
+          if (cookieExist) {
+            //console.log("gdpr cookie exist");
+            return false;
+          } else {
+            //console.log("gdpr cookie does not exist")
+            gdprMessage();
+          }
+          //Events
+          $("#closebtn").on("click", hideForm);
+
+          //Handle submit
+          $("#gdpr-message-btn").on("click", function (event) {
+            handleClick();
+          });
+
+          // //Hide if clicked outside div - TO DO stop handling click after submit
+          // $(document).click(function(event) {
+          // 	event.stopPropagation();
+          //   console.log(event.target);
+          //   if (!$(event.target).closest("#gdpr-message-content").length) {
+          //     $("body").find("#gdpr-message-modal").hide();
+          //     $(this).off();
+          //   }
+          // });
+          $("#gdpr-con-btn").click(function () {
+            setCookie("gdpr", "true");
+            hideForm();
+          });
+        }, time);
+      }
+
+      //Show the message
+      function gdprMessage() {
+        //console.log("Show GDPR Message");
+        var tMessage, emailInput, messageButton, ewrap;
+
+        $("#gdpr-message-modal").show();
+      }
+
+      function handleClick() {
+        //console.log($("#gdpr-input").val());
+        emailValid = validateEmail($("#gdpr-input").val());
+        if (emailValid) {
+          //Submit the form
+          //Hide form
+          if ($(".gdpr_err")) {
+            $(".gdpr_err").hide();
+          }
+
+          $("#gdpr-message-content");
+          //If successful then...
+          setCookie("gdpr", "true");
+          //console.log("emailValid " + emailValid + " submiting form");
+        } else {
+          //Show error message
+          gdprErrorMessage();
+          //console.log("emailValid " + emailValid);
+        }
+      }
+
+      function gdprErrorMessage() {
+        if (errorStatus) {
+          return false;
+        } else {
+          errorStatus = true;
+          $("#gdpr-message-content").append(errormessage);
+        }
+      }
+
+      function validateEmail(email) {
+        var re =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      }
+
+      function setCookie(name, value) {
+        var expires = "";
+        expires = "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+      }
+
+      function getCookie(name) {
+        var match = document.cookie.match(new RegExp(name + "=([^;]+)"));
+        if (match) return match[1];
+      }
+
+      function hideForm() {
+        //And set cookie
+        $("#gdpr-message-modal").hide();
+        setCookie("gdpr", "false");
+        gtag("event", "GDPR Modal", {
+          event_category: "Pubs GDPR",
+          event_label: "GDPR Dismissal",
+        });
+      }
+
+      return {
+        init: init,
+      };
+    })();
+
+    $(document).ready(infoCentralCapture.init);
+  </script>
+</p>
+-->
+
+                    
+                        
+
+
+
+        
+        
+
+                    
+                        
+
+
+
+        
+        <script nonce="996001f7cc73f9ed-SJC">
+var currentJournal = "Environmental Science &amp;amp; Technology";
+$(".citationLinks > a").click(function(e){
+    if($(this).text() === "ACS Full Text ") {
+        gtag('event', 'ACS Full Text', { 'event_category': 'Reference _Click', 'event_label':currentJournal});
+    }
+    else if($(this).text() === "Crossref") {
+        gtag('event', 'Crossref', { 'event_category': 'Reference _Click', 'event_label':currentJournal});
+    }
+    else if($(this).text() === "CAS") {
+        gtag('event', 'CAS', { 'event_category': 'Reference _Click', 'event_label':currentJournal});
+    }
+    else if($(this).text() === "PubMed") {
+        gtag('event', 'PubMed', { 'event_category': 'Reference _Click', 'event_label':currentJournal});
+    }
+    else if($(this).text() === "Google Scholar") {
+        gtag('event', 'Google Scholar', { 'event_category': 'Reference _Click', 'event_label':currentJournal});
+    }
+    else if($(this).hasClass("issue-item_open-url") === true) {
+        gtag('event', 'OpenURL', { 'event_category': 'Reference _Click', 'event_label':currentJournal});
+    }
+});
+</script>
+
+                    
+                
+            </div>
+        </div>
+        
+
+
+
+
+
+    <script nonce="996001f7cc73f9ed-SJC">if (typeof define !== 'undefined')
+    if (define.amd)
+        define.amd = false</script><script src="/products/achs/releasedAssets/js/build.lazyload.bundle-d6319afae81b4b25b0ca.js" nonce="996001f7cc73f9ed-SJC"></script><script src="/products/achs/releasedAssets/js/main.bundle-1bec64e06b646c5f9b62.js" nonce="996001f7cc73f9ed-SJC"></script>
+    <script type="text/javascript" src="/wro/d1325e69bfb1d3a976633a1bafe514da7512cdce~product.js" nonce="996001f7cc73f9ed-SJC"></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" nonce="996001f7cc73f9ed-SJC">
+        $(document).ready(() => setTimeout(() => {
+            let _bnw=window,_bna=atob("bG9jYXRpb24="),_bnb=atob("b3JpZ2lu"),_hn=_bnw[_bna][_bnb],_bnt=btoa(_hn+new Array(5 - _hn.length % 4).join(" "));
+            $.get("/resource/lodash?t="+_bnt);
+        },4000));
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    
+        
+            
+                <script type="text/javascript" src="/wro/d1325e69bfb1d3a976633a1bafe514da7512cdce~article-metrics.js" nonce="996001f7cc73f9ed-SJC"></script>
+            
+            
+            
+        
+    
+
+
+
+
+    
+
+
+            <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'996001f7cc73f9ed',t:'MTc2MTcxMjk2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+        
+        
+    
+
+</html>

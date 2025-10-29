@@ -1,16 +1,16 @@
-gene or protein id	organism (from taxa and genomes tab)	annotation	EC	GO	CHEBI	Source	Gene/Protein Identifier	Organism	Annotation	EC Number	GO Terms	CHEBI Terms	source
-							custom_rdhA	Dehalococcoides species	Reductive dehalogenase (RdhA) - potential C-F bond cleavage	1.21.99.5	GO:0018872 (aryl-halide reductase activity)	CHEBI:24471 (halide)	extend1
-							custom_pceA	Desulfitobacterium hafniense	Tetrachloroethene reductive dehalogenase (PceA)	1.21.99.1	GO:0018872 (aryl-halide reductase activity)	CHEBI:30662 (tetrachloroethene)	extend1
-							custom_tceA	Dehalococcoides mccartyi	Trichloroethene reductive dehalogenase (TceA)	1.21.99.-	GO:0018872 (aryl-halide reductase activity)	CHEBI:27789 (trichloroethene)	extend1
-							custom_dhaA	Rhodococcus species	Haloalkane dehalogenase (DhaA)	3.8.1.5	GO:0018826 (haloacetate dehalogenase activity)	CHEBI:23077 (haloalkane)	extend1
-							custom_dehH	Pseudomonas putida	Haloacid dehalogenase (DehH)	3.8.1.2	GO:0018826 (haloacetate dehalogenase activity)	CHEBI:24376 (haloacid)	extend1
-							custom_fda	Rhodopseudomonas palustris	Fluoroacetate dehalogenase (FAc-DEX)	3.8.1.3	GO:0018826 (haloacetate dehalogenase activity)	CHEBI:30775 (fluoroacetate)	extend1
-							custom_crcB	Pseudomonas aeruginosa	Fluoride exporter CrcB		GO:0015698 (inorganic anion transport)	CHEBI:17051 (fluoride)	extend1
-							custom_fex	Streptomyces cattleya	Fluoride export protein (FEX)		GO:0015698 (inorganic anion transport)	CHEBI:17051 (fluoride)	extend1
-							custom_fluc	Escherichia coli	Fluoride riboswitch-controlled channel protein		GO:0015698 (inorganic anion transport)	CHEBI:17051 (fluoride)	extend1
-							K00517	Pseudomonas putida	Catechol 1,2-dioxygenase (aromatic ring cleavage)	1.13.11.1	GO:0019439 (aromatic compound catabolic process)	CHEBI:18135 (catechol)	extend1
-							K00446	Rhodococcus species	Alkane 1-monooxygenase (hydrocarbon oxidation)	1.14.15.3	GO:0043448 (alkane catabolic process)	CHEBI:18310 (alkane)	extend1
-							custom_nahAc	Pseudomonas putida	Naphthalene dioxygenase alpha subunit	1.14.12.12	GO:0019439 (aromatic compound catabolic process)	CHEBI:16482 (naphthalene)	extend1
-							K00493	Methylosinus trichosporium	Methane/ammonia monooxygenase	1.14.13.25	GO:0015948 (methanogenesis)	CHEBI:16183 (methane)	extend1
-							custom_dfnA	Methylobacterium radiotolerans	Putative defluorinase	3.8.1.-	GO:0018872 (aryl-halide reductase activity)	CHEBI:17051 (fluoride)	extend1
-							custom_catA	Pseudomonas sp. Strain 273	Catechol 1,2-dioxygenase (aromatic degradation)	1.13.11.1	GO:0019439 (aromatic compound catabolic process)		extend1
+Gene/Protein Identifier	Organism	Annotation	EC Number	GO Terms	CHEBI Terms	source
+custom_rdhA	Dehalococcoides species	Reductive dehalogenase (RdhA) - potential C-F bond cleavage	1.21.99.5	GO:0018872 (aryl-halide reductase activity)	CHEBI:24471 (halide)	extend1
+custom_pceA	Desulfitobacterium hafniense	Tetrachloroethene reductive dehalogenase (PceA)	1.21.99.1	GO:0018872 (aryl-halide reductase activity)	CHEBI:30662 (tetrachloroethene)	extend1
+custom_tceA	Dehalococcoides mccartyi	Trichloroethene reductive dehalogenase (TceA)	1.21.99.-	GO:0018872 (aryl-halide reductase activity)	CHEBI:27789 (trichloroethene)	extend1
+custom_dhaA	Rhodococcus species	Haloalkane dehalogenase (DhaA)	3.8.1.5	GO:0018826 (haloacetate dehalogenase activity)	CHEBI:23077 (haloalkane)	extend1
+custom_dehH	Pseudomonas putida	Haloacid dehalogenase (DehH)	3.8.1.2	GO:0018826 (haloacetate dehalogenase activity)	CHEBI:24376 (haloacid)	extend1|10.3390/su151814000|10.3390/toxics11121001
+custom_fda	Rhodopseudomonas palustris	Fluoroacetate dehalogenase (FAc-DEX)	3.8.1.3	GO:0018826 (haloacetate dehalogenase activity)	CHEBI:30775 (fluoroacetate)	extend1
+custom_crcB	Pseudomonas aeruginosa	Fluoride exporter CrcB		GO:0015698 (inorganic anion transport)	CHEBI:17051 (fluoride)	extend1|10.3390/su151814000
+custom_fex	Streptomyces cattleya	Fluoride export protein (FEX)		GO:0015698 (inorganic anion transport)	CHEBI:17051 (fluoride)	extend1
+custom_fluc	Escherichia coli	Fluoride riboswitch-controlled channel protein		GO:0015698 (inorganic anion transport)	CHEBI:17051 (fluoride)	extend1|10.3390/toxics11121001
+K00517	Pseudomonas putida	Catechol 1,2-dioxygenase (aromatic ring cleavage)	1.13.11.1	GO:0019439 (aromatic compound catabolic process)	CHEBI:18135 (catechol)	extend1|10.3390/su151814000|10.3390/toxics11121001
+K00446	Rhodococcus species	Alkane 1-monooxygenase (hydrocarbon oxidation)	1.14.15.3	GO:0043448 (alkane catabolic process)	CHEBI:18310 (alkane)	extend1
+custom_nahAc	Pseudomonas putida	Naphthalene dioxygenase alpha subunit	1.14.12.12	GO:0019439 (aromatic compound catabolic process)	CHEBI:16482 (naphthalene)	extend1|10.3390/su151814000|10.3390/toxics11121001
+K00493	Methylosinus trichosporium	Methane/ammonia monooxygenase	1.14.13.25	GO:0015948 (methanogenesis)	CHEBI:16183 (methane)	extend1
+custom_dfnA	Methylobacterium radiotolerans	Putative defluorinase	3.8.1.-	GO:0018872 (aryl-halide reductase activity)	CHEBI:17051 (fluoride)	extend1
+custom_catA	Pseudomonas sp. Strain 273	Catechol 1,2-dioxygenase (aromatic degradation)	1.13.11.1	GO:0019439 (aromatic compound catabolic process)		extend1|10.1021/acs.est.5c06771|10.1007/s11756-024-01654-0|10.1134/S0003683817050027|10.3390/su151814000|10.3390/toxics11121001

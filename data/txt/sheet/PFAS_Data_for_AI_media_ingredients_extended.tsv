@@ -5,7 +5,7 @@ ATCC:1306_ING_003	Magnesium sulfate heptahydrate	ATCC:1306	ATCC Medium 1306 (Met
 ATCC:1306_ING_004	Calcium chloride dihydrate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:64583	Calcium chloride dihydrate	CaCl2·2H2O	0.02	g/L	mineral			extend
 ATCC:1306_ING_005	Dipotassium phosphate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:32030	Dipotassium phosphate	K2HPO4	0.8	g/L	buffer			extend
 ATCC:1306_ING_006	Potassium dihydrogen phosphate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:63036	Potassium dihydrogen phosphate	KH2PO4	0.54	g/L	buffer			extend
-ATCC:1306_ING_007	Ferrous sulfate heptahydrate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:31139	Ferrous sulfate heptahydrate	FeSO4·7H2O	0.005	g/L	trace element			extend
+ATCC:1306_ING_007	Ferrous sulfate heptahydrate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:31139	Ferrous sulfate heptahydrate	FeSO4·7H2O	0.005	g/L	trace element			extend|10.1371/journal.pone.0303904
 ATCC:1306_ING_008	Agar	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:2509	Agar		15.0	g/L	solidifying agent			extend
 NMS_ING_001	Magnesium sulfate heptahydrate	NMS	NMS medium (Nitrate mineral salts)	CHEBI:32599	Magnesium sulfate heptahydrate	MgSO4·7H2O	1.0	g/L	mineral			extend
 NMS_ING_002	Calcium chloride dihydrate	NMS	NMS medium (Nitrate mineral salts)	CHEBI:64583	Calcium chloride dihydrate	CaCl2·2H2O	0.2	g/L	mineral			extend
