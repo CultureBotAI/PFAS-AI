@@ -1,1 +1,5 @@
-Dataset name	Data Type	URL	Size (rows or MB)	Publication	License	Source
+Dataset name	Data Type	URL	Size (rows or MB)	Publication	License	Source	Unnamed: 7
+PRIDE proteomics - methylotroph studies	mass spectrometry, proteomics	https://www.ebi.ac.uk/pride/	Variable	Various publications	CC0 or CC-BY		https://www.ebi.ac.uk/pride/
+MG-RAST metagenomes - soil methylotrophs	metagenomic sequences	https://www.mg-rast.org/	Variable	Various publications	CC-BY 3.0		https://www.mg-rast.org/
+Earth Microbiome Project - methylotroph habitats	16S rRNA, metagenomes	https://earthmicrobiome.org/	Thousands of samples	EMP publications	CC-BY 4.0		https://earthmicrobiome.org/
+GOLD database - methylotroph projects	genome/metagenome project metadata	https://gold.jgi.doe.gov/	Hundreds of projects	GOLD publications	JGI license		https://gold.jgi.doe.gov/

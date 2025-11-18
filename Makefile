@@ -121,7 +121,7 @@ update-biosamples: install data/txt/sheet/PFAS_Data_for_AI_biosamples.tsv
 update-pathways: install data/txt/sheet/PFAS_Data_for_AI_pathways.tsv
 	@echo "Updating pathways table..."
 	@echo "Searching KEGG and MetaCyc for PFAS-relevant pathways..."
-	uv run python extend_pathways.py
+	uv run python src/extend_pathways.py
 	@echo "Pathways table updated successfully."
 	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_pathways_extended.tsv"
 
@@ -129,7 +129,7 @@ update-pathways: install data/txt/sheet/PFAS_Data_for_AI_pathways.tsv
 update-datasets: install data/txt/sheet/PFAS_Data_for_AI_datasets.tsv
 	@echo "Updating datasets table..."
 	@echo "Searching multiple databases for PFAS-relevant datasets..."
-	uv run python extend_datasets.py
+	uv run python src/extend_datasets.py
 	@echo "Datasets table updated successfully."
 	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_datasets_extended.tsv"
 
@@ -162,7 +162,7 @@ update-media: install data/txt/sheet/PFAS_Data_for_AI_growth_media.tsv data/txt/
 update-genes: install data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins.tsv
 	@echo "Updating genes and proteins table..."
 	@echo "Searching UniProt, KEGG and curated databases..."
-	uv run python extend_genes.py
+	uv run python src/extend_genes.py
 	@echo "Genes and proteins table updated successfully."
 	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins_extended.tsv"
 
@@ -170,7 +170,7 @@ update-genes: install data/txt/sheet/PFAS_Data_for_AI_genes_and_proteins.tsv
 update-structures: install data/txt/sheet/PFAS_Data_for_AI_macromolecular_structures.tsv
 	@echo "Updating macromolecular structures table..."
 	@echo "Searching PDB and structural databases..."
-	uv run python extend_structures.py
+	uv run python src/extend_structures.py
 	@echo "Structures table updated successfully."
 	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_macromolecular_structures_extended.tsv"
 
@@ -178,7 +178,7 @@ update-structures: install data/txt/sheet/PFAS_Data_for_AI_macromolecular_struct
 update-publications: install data/txt/sheet/PFAS_Data_for_AI_publications.tsv
 	@echo "Updating publications table..."
 	@echo "Searching PubMed, arXiv, bioRxiv and curated literature..."
-	uv run python extend_publications.py
+	uv run python src/extend_publications.py
 	@echo "Publications table updated successfully."
 	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_publications_extended.tsv"
 

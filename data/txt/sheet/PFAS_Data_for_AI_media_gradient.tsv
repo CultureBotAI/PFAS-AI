@@ -1,31 +1,31 @@
 ingredient_id	ingredient_name	media_id	media_name	ontology_id	ontology_label	chemical_formula	concentration	unit	role	kg_microbe_nodes	notes	source
 ATCC:1306_ING_001	Methanol	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:17790	Methanol	CH3OH	0.5	% (v/v)	carbon source			extend
 ATCC:1306_ING_002	Potassium nitrate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:63043	Potassium nitrate	KNO3	2.0	g/L	nitrogen source			extend
-ATCC:1306_ING_003	Magnesium sulfate heptahydrate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:32599	Magnesium sulfate heptahydrate	MgSO4·7H2O	0.2	g/L	mineral			extend
-ATCC:1306_ING_004	Calcium chloride dihydrate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:64583	Calcium chloride dihydrate	CaCl2·2H2O	0.02	g/L	mineral			extend
+ATCC:1306_ING_003	Magnesium sulfate heptahydrate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:32599	Magnesium sulfate heptahydrate	MgSO4¬∑7H2O	0.2	g/L	mineral			extend
+ATCC:1306_ING_004	Calcium chloride dihydrate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:64583	Calcium chloride dihydrate	CaCl2¬∑2H2O	0.02	g/L	mineral			extend
 ATCC:1306_ING_005	Dipotassium phosphate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:32030	Dipotassium phosphate	K2HPO4	0.8	g/L	buffer			extend
 ATCC:1306_ING_006	Potassium dihydrogen phosphate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:63036	Potassium dihydrogen phosphate	KH2PO4	0.54	g/L	buffer			extend
-ATCC:1306_ING_007	Ferrous sulfate heptahydrate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:31139	Ferrous sulfate heptahydrate	FeSO4·7H2O	0.005	g/L	trace element			extend
+ATCC:1306_ING_007	Ferrous sulfate heptahydrate	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:31139	Ferrous sulfate heptahydrate	FeSO4¬∑7H2O	0.005	g/L	trace element			extend|10.1371/journal.pone.0303904
 ATCC:1306_ING_008	Agar	ATCC:1306	ATCC Medium 1306 (Methanol mineral salts)	CHEBI:2509	Agar		15.0	g/L	solidifying agent			extend
-NMS_ING_001	Magnesium sulfate heptahydrate	NMS	NMS medium (Nitrate mineral salts)	CHEBI:32599	Magnesium sulfate heptahydrate	MgSO4·7H2O	1.0	g/L	mineral			extend
-NMS_ING_002	Calcium chloride dihydrate	NMS	NMS medium (Nitrate mineral salts)	CHEBI:64583	Calcium chloride dihydrate	CaCl2·2H2O	0.2	g/L	mineral			extend
+NMS_ING_001	Magnesium sulfate heptahydrate	NMS	NMS medium (Nitrate mineral salts)	CHEBI:32599	Magnesium sulfate heptahydrate	MgSO4¬∑7H2O	1.0	g/L	mineral			extend
+NMS_ING_002	Calcium chloride dihydrate	NMS	NMS medium (Nitrate mineral salts)	CHEBI:64583	Calcium chloride dihydrate	CaCl2¬∑2H2O	0.2	g/L	mineral			extend
 NMS_ING_003	Potassium nitrate	NMS	NMS medium (Nitrate mineral salts)	CHEBI:63043	Potassium nitrate	KNO3	1.0	g/L	nitrogen source			extend
 NMS_ING_004	Dipotassium phosphate	NMS	NMS medium (Nitrate mineral salts)	CHEBI:32030	Dipotassium phosphate	K2HPO4	0.54	g/L	buffer			extend
 NMS_ING_005	Potassium dihydrogen phosphate	NMS	NMS medium (Nitrate mineral salts)	CHEBI:63036	Potassium dihydrogen phosphate	KH2PO4	0.27	g/L	buffer			extend
 NMS_ING_006	Iron(III) EDTA solution	NMS	NMS medium (Nitrate mineral salts)		Iron(III) EDTA solution		2.0	mL/L	trace element			extend
 NMS_ING_007	Trace element solution	NMS	NMS medium (Nitrate mineral salts)		Trace element solution		1.0	mL/L	trace element			extend
-AMS_ING_001	Magnesium sulfate heptahydrate	AMS	AMS medium (Ammonium mineral salts)	CHEBI:32599	Magnesium sulfate heptahydrate	MgSO4·7H2O	1.0	g/L	mineral			extend
-AMS_ING_002	Calcium chloride dihydrate	AMS	AMS medium (Ammonium mineral salts)	CHEBI:64583	Calcium chloride dihydrate	CaCl2·2H2O	0.2	g/L	mineral			extend
+AMS_ING_001	Magnesium sulfate heptahydrate	AMS	AMS medium (Ammonium mineral salts)	CHEBI:32599	Magnesium sulfate heptahydrate	MgSO4¬∑7H2O	1.0	g/L	mineral			extend
+AMS_ING_002	Calcium chloride dihydrate	AMS	AMS medium (Ammonium mineral salts)	CHEBI:64583	Calcium chloride dihydrate	CaCl2¬∑2H2O	0.2	g/L	mineral			extend
 AMS_ING_003	Ammonium chloride	AMS	AMS medium (Ammonium mineral salts)	CHEBI:31206	Ammonium chloride	NH4Cl	0.5	g/L	nitrogen source			extend
 AMS_ING_004	Dipotassium phosphate	AMS	AMS medium (Ammonium mineral salts)	CHEBI:32030	Dipotassium phosphate	K2HPO4	0.54	g/L	buffer			extend
 AMS_ING_005	Potassium dihydrogen phosphate	AMS	AMS medium (Ammonium mineral salts)	CHEBI:63036	Potassium dihydrogen phosphate	KH2PO4	0.27	g/L	buffer			extend
 AMS_ING_006	Iron(III) EDTA solution	AMS	AMS medium (Ammonium mineral salts)		Iron(III) EDTA solution		2.0	mL/L	trace element			extend
 AMS_ING_007	Trace element solution	AMS	AMS medium (Ammonium mineral salts)		Trace element solution		1.0	mL/L	trace element			extend
-DSMZ:88_ING_001	Disodium succinate hexahydrate	DSMZ:88	DSMZ Medium 88 (SM medium for Paracoccus)	CHEBI:16810	Disodium succinate hexahydrate	C4H4Na2O4·6H2O	2.7	g/L	carbon source			extend
+DSMZ:88_ING_001	Disodium succinate hexahydrate	DSMZ:88	DSMZ Medium 88 (SM medium for Paracoccus)	CHEBI:16810	Disodium succinate hexahydrate	C4H4Na2O4¬∑6H2O	2.7	g/L	carbon source			extend
 DSMZ:88_ING_002	Ammonium chloride	DSMZ:88	DSMZ Medium 88 (SM medium for Paracoccus)	CHEBI:31206	Ammonium chloride	NH4Cl	1.0	g/L	nitrogen source			extend
 DSMZ:88_ING_003	Dipotassium phosphate	DSMZ:88	DSMZ Medium 88 (SM medium for Paracoccus)	CHEBI:32030	Dipotassium phosphate	K2HPO4	1.5	g/L	buffer			extend
 DSMZ:88_ING_004	Potassium dihydrogen phosphate	DSMZ:88	DSMZ Medium 88 (SM medium for Paracoccus)	CHEBI:63036	Potassium dihydrogen phosphate	KH2PO4	0.5	g/L	buffer			extend
-DSMZ:88_ING_005	Magnesium sulfate heptahydrate	DSMZ:88	DSMZ Medium 88 (SM medium for Paracoccus)	CHEBI:32599	Magnesium sulfate heptahydrate	MgSO4·7H2O	0.2	g/L	mineral			extend
+DSMZ:88_ING_005	Magnesium sulfate heptahydrate	DSMZ:88	DSMZ Medium 88 (SM medium for Paracoccus)	CHEBI:32599	Magnesium sulfate heptahydrate	MgSO4¬∑7H2O	0.2	g/L	mineral			extend
 DSMZ:88_ING_006	Yeast extract	DSMZ:88	DSMZ Medium 88 (SM medium for Paracoccus)		Yeast extract		1.0	g/L	vitamin source			extend
 DSMZ:88_ING_007	Trace element solution SL-6	DSMZ:88	DSMZ Medium 88 (SM medium for Paracoccus)		Trace element solution SL-6		1.0	mL/L	trace element			extend
 LB_ING_001	Tryptone	LB	LB medium (Luria-Bertani)		Tryptone		10.0	g/L	protein source			extend
@@ -38,7 +38,7 @@ R2A_ING_003	Casamino acids	R2A	R2A medium (Reasoner's 2A agar)		Casamino acids		
 R2A_ING_004	Glucose	R2A	R2A medium (Reasoner's 2A agar)	CHEBI:17234	Glucose	C6H12O6	0.5	g/L	carbon source			extend
 R2A_ING_005	Soluble starch	R2A	R2A medium (Reasoner's 2A agar)	CHEBI:28017	Soluble starch	(C6H10O5)n	0.5	g/L	carbon source			extend
 R2A_ING_006	Dipotassium phosphate	R2A	R2A medium (Reasoner's 2A agar)	CHEBI:32030	Dipotassium phosphate	K2HPO4	0.3	g/L	buffer			extend
-R2A_ING_007	Magnesium sulfate heptahydrate	R2A	R2A medium (Reasoner's 2A agar)	CHEBI:32599	Magnesium sulfate heptahydrate	MgSO4·7H2O	0.05	g/L	mineral			extend
+R2A_ING_007	Magnesium sulfate heptahydrate	R2A	R2A medium (Reasoner's 2A agar)	CHEBI:32599	Magnesium sulfate heptahydrate	MgSO4¬∑7H2O	0.05	g/L	mineral			extend
 R2A_ING_008	Sodium pyruvate	R2A	R2A medium (Reasoner's 2A agar)	CHEBI:77991	Sodium pyruvate	C3H3NaO3	0.3	g/L	carbon source			extend
 R2A_ING_009	Agar	R2A	R2A medium (Reasoner's 2A agar)	CHEBI:2509	Agar		15.0	g/L	solidifying agent			extend
 MPYG_ING_001	Methanol	MPYG	MPYG medium (Methanol-Peptone-Yeast extract-Glucose)	CHEBI:17790	Methanol	CH3OH	0.5	% (v/v)	carbon source			extend

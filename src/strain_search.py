@@ -43,7 +43,11 @@ def parse_strain_from_name(scientific_name: str) -> Tuple[str, str]:
         >>> parse_strain_from_name("Paracoccus denitrificans")
         ('Paracoccus denitrificans', '')
     """
-    name = scientific_name.strip()
+    # Handle None, NaN, or empty values
+    if not scientific_name or (isinstance(scientific_name, float) and pd.isna(scientific_name)):
+        return '', ''
+
+    name = str(scientific_name).strip()
 
     # Pattern 1: "Genus sp. STRAIN"
     match = re.match(r'(.+?sp\.)\s+([A-Z0-9\-_]+)$', name)
@@ -86,6 +90,13 @@ def extract_culture_collection_ids(text: str) -> List[str]:
         >>> extract_culture_collection_ids("CCM : 7218 , CECT : 5998")
         ['CCM:7218', 'CECT:5998']
     """
+    # Handle None, NaN, or empty values
+    if not text or (isinstance(text, float) and pd.isna(text)):
+        return []
+
+    # Convert to string safely
+    text = str(text)
+
     collection_ids = []
 
     # Pattern: COLLECTION : NUMBER or COLLECTION NUMBER or COLLECTION:NUMBER
@@ -396,6 +407,12 @@ def create_extended_strains_table(
         taxon_id = int(row['NCBITaxon id']) if pd.notna(row['NCBITaxon id']) else None
 
         print(f"[{idx+1}/{len(taxa_df)}] Processing: {scientific_name}")
+
+        # Skip invalid scientific names (NaN, None, empty)
+        if not scientific_name or (isinstance(scientific_name, float) and pd.isna(scientific_name)):
+            print(f"  ⊗ Skipped: Invalid scientific name")
+            skipped_count += 1
+            continue
 
         if not taxon_id:
             print(f"  ⊗ Skipped: No NCBITaxon ID")

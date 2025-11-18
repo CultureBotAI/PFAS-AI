@@ -1,1 +1,77 @@
-gene or protein id	organism (from taxa and genomes tab)	annotation	EC	GO	CHEBI	Source
+gene or protein id	organism (from taxa and genomes tab)	annotation	EC	GO	CHEBI	Accession ID
+LmbB2	Streptomyces lincolnensis	Peroxygenase capable of defluorinating 3-fluoro-tyrosine	1.11.2.6			ANS62459.1
+Procollagen-proline dioxygenase	Sphingobium sp. EP60837	dioxygenase capable of defluorinating 4-fluoroproline	1.14.11.2			A0A173KYN2
+3-methylcatechol 2,3-dioxygenase	Pseudomonas putida	Defluorination of 2,2-Difluoro-1,3-Benzodioxole	1.14.12.11			P13453
+2-halobenzoate 1,2-dioxygenase large subunit	Burkholderia cepacia	dioxygenase capable of defluorinating 2-fluorobenzoate	1.14.12.13			Q51601
+2-halobenzoate 1,2-dioxygenase small subunit	Burkholderia cepacia	dioxygenase capable of defluorinating 2-fluorobenzoate	1.14.12.13			Q51602
+Phenol 2-monooxygenase	Ralstonia pickettii	monooxygenase capable of single defluorination of 2,3,5,6-tetrafluorophenol	1.14.13.7			Q01551
+Cytochrome P450 1A2	Homo sapiens	oxidative defluorination of aromatic compounds	1.14.14.1			P05177
+alkanesulfonate monooxygenase MsuD	Pseudomonas fluorescens	Alkanesulfonate monooxygenase	1.14.14.5			7JV3
+Camphor 5-monooxygenase	Pseudomonas putida	reductive dehalogenation	1.14.15.1			P00183
+Caffeyl-CoA reductase-Etf complex subunit CarE	Acetobacterium woodii (strain ATCC 29683 / DSM 1030 / JCM 2381 / KCTC 1655 / WB1)	reductive defluorination of unsaturated per- and polyfluorocarboxylic acids	1.3.1.108			6FAH_1
+Caffeyl-CoA reductase-Etf complex subunit CarD	Acetobacterium woodii (strain ATCC 29683 / DSM 1030 / JCM 2381 / KCTC 1655 / WB1)	reductive defluorination of _, _-unsaturated per- and polyfluorocarboxylic acids	1.3.1.108			6FAH_2
+Caffeyl-CoA reductase-Etf complex subunit CarC	Acetobacterium woodii (strain ATCC 29683 / DSM 1030 / JCM 2381 / KCTC 1655 / WB1)	reductive defluorination of _, _-unsaturated per- and polyfluorocarboxylic acids	1.3.1.108			6FAH_3
+Maleylacetate reductase 2	Cupriavidus pinatubonensis JMP134	reductase capable of defluorinating 2-fluoromalylacetate	1.3.1.32			P94135
+Benzoyl-CoA reductase subunit A	Thauera aromatica	reductive defluorination of 4-fluoroaromatics	1.3.7.8			O87876
+Benzoyl-CoA reductase subunit B	Thauera aromatica	reductive defluorination of 4-fluoroaromatics	1.3.7.8			O87875
+Benzoyl-CoA reductase subunit C	Thauera aromatica	reductive defluorination of 4-fluoroaromatics	1.3.7.8			O87874
+Benzoyl-CoA reductase subunit D	Thauera aromatica	reductive defluorination of 4-fluoroaromatics	1.3.7.8			O87877
+Acyl-CoA dehydrogenase, short-chain specific	Megasphaera elsdenii	dehydrogenase capable of defluorinating 3-fluoropropionyl-CoA	1.3.8.1			Q06319
+Methylmalonyl-CoA carboxyltransferase 5S subunit	Propionibacterium freudenreichii subsp. shermanii	carboxytransferase capable of defluorinating 3-fluoropropionyl-CoA	2.1.3.1			Q70AC7
+Methylmalonyl-CoA carboxyltransferase 1.3S subunit	Propionibacterium freudenreichii subsp. shermanii	carboxytransferase capable of defluorinating 3-fluoropropionyl-CoA	2.1.3.1			P02904
+Methylmalonyl-CoA carboxyltransferase 12S subunit	Propionibacterium freudenreichii subsp. shermanii	carboxytransferase capable of defluorinating 3-fluoropropionyl-CoA	2.1.3.1			Q8GBW6
+Cellobiose phosphorylase	Thermotoga neapolitana DSM 4359	phosphorylase capable of defluorinating fluorinated sugars	2.4.1.20			B9K7M6
+Trehalose phosphorylase (precursor)	Grifola frondosa	phosphorylase capable of defluorinating fluorinated sugars	2.4.1.231			O75003
+Sucrose phosphorylase	Bifidobacterium adolescentis ATCC 15703	phosphorylase capable of defluorinating fluorinated sugars	2.4.1.7			A0ZZH6
+Maltose phosphorylase	Enterococcus faecalis TX4000	phosphorylase capable of defluorinating fluorinated sugars	2.4.1.8			E6ENP7
+Glutathione S-transferase GstA	Escherichia coli K-12	transferase capable of defluorinating 1-fluoro-2,4-dinitrobenzene	2.5.1.18			P0A9D2
+Fluorinase	Streptantibioticus cattleyicolor	capable of defluorinating 5'-deoxy-5'-fluoroadenosine (can catalyze rxn both ways)	2.5.1.63			Q70GK9
+4-aminobutyrate aminotransferase GabT	Escherichia coli K-12	transaminase capable of defluorinating 4-amino-3-fluorobutanoic acid	2.6.1.19			P22256
+Protein APA1	Saccharomyces cerevisiae S288C	transferase capable of defluorinating adenosine 5'-phosphofluoride	2.7.7.5			P16550
+Carboxymethylenebutenolidase	Pseudomonas sp. P51	carboxymethylenebutenolidase capable of defluorinating 4-fluoromuconolactone	3.1.1.45			P27100
+Parathion hydrolase (precursor)	Brevundimonas diminuta	aryldialkylphosphatase capable of defluorinating several compounds	3.1.8.1			P0A434
+diisopropyl-fluorophosphatase	Phycisphaera mikurensis (strain NBRC 102666 / KCTC 22515 / FYK2301M01)	fluorophosphatase	3.1.8.2			I0ICV4
+Periplasmic alpha-amylase (precursor)	Escherichia coli K-12	amylase capable of defluorinating maltosyl fluoride	3.2.1.1			P25718
+Reducing end xylose-releasing exo-oligoxylanase	Halalkalibacterium halodurans C-125	xylanase capable of defluorinating xylobiosyl fluoride	3.2.1.156			Q9KB30
+Exo-beta-D-glucosaminidase (precursor)	Trichoderma reesei	capable of defluorianting glucosaminyl fluoride	3.2.1.165			Q4R1C4
+O-GlcNAcase NagJ (precursor)	Clostridium perfringens ATCC 13124	capable of defluorinating fluorinated GlcNAc variant	3.2.1.169			Q0TR53
+Alpha-xylosidase BoGH31A (precursor)	Bacteroides ovatus ATCC 8483	xylohydrolase capable of defluorinating xylopyrasonyl fluoride	3.2.1.177			A7LXT0
+Alpha-galactosidase	Escherichia coli K-12	galactosidase capable of defluorinating galactosyl fluoride	3.2.1.22			P06720
+Beta-galactosidase	Escherichia coli K-12	galactosidase capable of defluorinating galactosyl fluoride	3.2.1.23			P00722
+Glycogen debranching enzyme	Saccharomyces cerevisiae S288C	glucosidase capable of defluorinating glucosyl fluoride	3.2.1.33			Q06625
+Alpha-fucosidase A (precursor)	Aspergillus nidulans FGSC A4	fucosidase capable of defluorinating fluorinated sugars	3.2.1.51			Q5AU81
+Beta-glucanase (precursor)	Bacillus licheniformis	licheninase capable of defluorinating fluorinated glucans	3.2.1.73			P27051
+Alpha-L-iduronidase (precursor)	Homo sapiens	iduronidase capable of defluorinating fluorinated iduron	3.2.1.76			P35475
+Cellulose 1,4-beta-cellobiosidase (precursor)	Acetivibrio thermocellus	capable of defluorinating cellobiosyl fluoride	3.2.1.91			P0C2S1
+Bis(5'-adenosyl)-triphosphatase	Homo sapiens	triphosphatase capable of defluorinating adenylylfluoride	3.6.1.29			P49789
+Fluoroacetate dehalogenase	Rhodopseudomonas palustris CGA009	Fluoroacetate dehalogenase	3.8.1.3			Q6NAM1
+Fluoroacetate dehalogenase	Burkholderia sp.	Fluoroacetate dehalogenase	3.8.1.3			Q1JU72
+alpha/beta fold hydrolase	Serratia liquefaciens	hydrolase capable of degrading monofluorinated compounds	3.8.1.3			WHM00222.1
+4-chlorobenzoyl coenzyme A dehalogenase	Pseudomonas sp. CBS3	4-chlorobenzoyl coenzyme A dehalogenase	3.8.1.7			A5JTM5
+4-chlorobenzoyl coenzyme A dehalogenase-2	Arthrobacter sp.	4-chlorobenzoyl coenzyme A dehalogenase	3.8.1.7			Q9LCU3
+4-chlorobenzoyl coenzyme A dehalogenase-1	Arthrobacter sp.	4-chlorobenzoyl coenzyme A dehalogenase-1	3.8.1.7			O85078
+Atrazine chlorohydrolase	Pseudomonas sp. ADP	chlorohydrolase capable of defluorinating fluoroatrazine	3.8.1.8			P72156
+Pyruvate decarboxylase (precursor)	Neurospora crassa OR74A	pyruvate decarboxylase capable of defluorinating fluoropyruvate	4.1.1.1			P33287
+UDP-N-acetylglucosamine 4,6-dehydratase (inverting)	Helicobacter pylori 26695	dehydratase capable of defluorinating fluorinated GlcNAc variant	4.2.1.115			O25511
+Thauera aromatica korB, korA, had, oah, dch, bcrC, bcrB, bcrA and bcrD genes and ORFs	Thauera aromatica	promiscuous anaerobic defluorination of 2-Fluorobenzoate	4.2.1.17			AJ224959.2
+dTDP-glucose 4,6-dehydratase 2	Escherichia coli K-12	capable of defluorinating dTDP-6-fluoro-6-deoxyglucose	4.2.1.46			P27830
+2-methylisoborneol synthase	Streptomyces lasalocidi	synthase capable of defluorinating 2-fluorolinalyl diphosphate	4.2.3.118			D3KYU2
+Diaminopimelate epimerase	Escherichia coli K-12	epimerase capable of defluorinating 3-fluoro-2,6-diaminopimelic acid	5.1.1.7			P0A6K1
+Alpha-methylacyl-CoA racemase	Mycobacterium tuberculosis H37Rv	racemase capable of defluorinating 3-fluoro-2-methyldecanoyl-CoA	5.1.99.4			O06543
+clcB	Escherichia coli K-12	Voltage-gated ClC-type chloride channel ClcB				A7ZM51
+crcB	Escherichia coli K-12	Fluoride-specific ion channel FluC				Q6J5N4
+custom_rdhA	Dehalococcoides species	Reductive dehalogenase (RdhA) - potential C-F bond cleavage	1.21.99.5	GO:0018872 (aryl-halide reductase activity)	CHEBI:24471 (halide)	extend1
+custom_pceA	Desulfitobacterium hafniense	Tetrachloroethene reductive dehalogenase (PceA)	1.21.99.1	GO:0018872 (aryl-halide reductase activity)	CHEBI:30662 (tetrachloroethene)	extend1
+custom_tceA	Dehalococcoides mccartyi	Trichloroethene reductive dehalogenase (TceA)	1.21.99.-	GO:0018872 (aryl-halide reductase activity)	CHEBI:27789 (trichloroethene)	extend1
+custom_dhaA	Rhodococcus species	Haloalkane dehalogenase (DhaA)	3.8.1.5	GO:0018826 (haloacetate dehalogenase activity)	CHEBI:23077 (haloalkane)	extend1
+custom_dehH	Pseudomonas putida	Haloacid dehalogenase (DehH)	3.8.1.2	GO:0018826 (haloacetate dehalogenase activity)	CHEBI:24376 (haloacid)	extend1|10.3390/su151814000|10.3390/toxics11121001
+custom_fda	Rhodopseudomonas palustris	Fluoroacetate dehalogenase (FAc-DEX)	3.8.1.3	GO:0018826 (haloacetate dehalogenase activity)	CHEBI:30775 (fluoroacetate)	extend1
+custom_crcB	Pseudomonas aeruginosa	Fluoride exporter CrcB		GO:0015698 (inorganic anion transport)	CHEBI:17051 (fluoride)	extend1|10.3390/su151814000
+custom_fex	Streptomyces cattleya	Fluoride export protein (FEX)		GO:0015698 (inorganic anion transport)	CHEBI:17051 (fluoride)	extend1
+custom_fluc	Escherichia coli	Fluoride riboswitch-controlled channel protein		GO:0015698 (inorganic anion transport)	CHEBI:17051 (fluoride)	extend1|10.3390/toxics11121001
+K00517	Pseudomonas putida	Catechol 1,2-dioxygenase (aromatic ring cleavage)	1.13.11.1	GO:0019439 (aromatic compound catabolic process)	CHEBI:18135 (catechol)	extend1|10.3390/su151814000|10.3390/toxics11121001
+K00446	Rhodococcus species	Alkane 1-monooxygenase (hydrocarbon oxidation)	1.14.15.3	GO:0043448 (alkane catabolic process)	CHEBI:18310 (alkane)	extend1
+custom_nahAc	Pseudomonas putida	Naphthalene dioxygenase alpha subunit	1.14.12.12	GO:0019439 (aromatic compound catabolic process)	CHEBI:16482 (naphthalene)	extend1|10.3390/su151814000|10.3390/toxics11121001
+K00493	Methylosinus trichosporium	Methane/ammonia monooxygenase	1.14.13.25	GO:0015948 (methanogenesis)	CHEBI:16183 (methane)	extend1
+custom_dfnA	Methylobacterium radiotolerans	Putative defluorinase	3.8.1.-	GO:0018872 (aryl-halide reductase activity)	CHEBI:17051 (fluoride)	extend1
+custom_catA	Pseudomonas sp. Strain 273	Catechol 1,2-dioxygenase (aromatic degradation)	1.13.11.1	GO:0019439 (aromatic compound catabolic process)		extend1|10.1021/acs.est.5c06771|10.1007/s11756-024-01654-0|10.1134/S0003683817050027|10.3390/su151814000|10.3390/toxics11121001

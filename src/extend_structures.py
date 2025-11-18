@@ -3,6 +3,7 @@
 
 import sys
 from pathlib import Path
+from structure_search import create_extended_structures_table
 
 
 def main():

@@ -1,7 +1,118 @@
-Scientific name	NCBITaxon id	Genome identifier (GenBank, IMG etc)	source	Unnamed: 4
-Pseudomonas sp. Strain 273	75692.0	CP015641		
-Hyphomicrobium sp. MC1	717785.0	FQ859181		
-Acidimicrobium sp. Strain A6				
-Stenotrophomonas acidaminiphila OA1				
-Pseudomonas sp. strain 4-a	306.0	ON533612		no whole-genome, just 16S
-Pseudomonas plecoglossicida 2.4-D				
+Scientific name	NCBITaxon id	Genome identifier (GenBank, IMG etc)	Function	source	Notes
+Pseudomonas sp. Strain 273	75692.0	CP015641	PFAS biotransformation		
+Hyphomicrobium sp. MC1	717785.0	FQ859181	PFAS biotransformation		
+Acidimicrobium sp. Strain A6			PFAS biotransformation		
+Stenotrophomonas acidaminiphila OA1			PFAS biotransformation		
+Pseudomonas sp. strain 4-a	306.0	ON533612	PFAS biotransformation		16S only
+Pseudomonas plecoglossicida 2.4-D			PFAS biotransformation		
+Labrys portucalensis F11	376174.0		PFAS biotransformation		16S only
+Klebsiella grimontii Tre-B			PFAS biotransformation		PRJEB89934, cannot found from NCBI
+Citrobacter braakii strain Tre-T			PFAS biotransformation		PRJEB89934, cannot found from NCBI
+Rhodopseudomonas palustris strain CGA009		GCF_000195775.2	PFAS biotransformation		
+Pseudomonas parafulva YAB-1	47880.0	GCF_001186195.1	PFAS biotransformation		
+Pseudomonas aeruginosa strain HJ4			PFAS biotransformation		16S only
+Pseudomonas plecoglossicida strain DD4			PFAS biotransformation		
+Pseudomonas species (PS27 & PFMF10)		MN861077; MN861077	PFAS biotransformation		16S only
+Ensifer Moralensis H16 (gram negative, aerobic rods)		MT267776	PFAS biotransformation		16S only
+Ensifer adahaerens M1		MH141439	PFAS biotransformation		16S only
+Synechicystis sp. PCC 6803	1148.0	GCF_000009725.1	PFAS biotransformation		
+Acetobacterium bakii (DSMZ 8239)		GCA_001263355.1	PFAS biotransformation		
+Methanosarcina barkeri (DSM 800)		CP009528.1	PFAS biotransformation		
+Acetobacterium woodii (DSM 1030)		CP002987	PFAS biotransformation		
+Acetobacterium paludosum (DSM 8237)		GCF_008086595.1	PFAS biotransformation		
+Acetobacterium malicum subsp. malicum (DSM 4132)		GCF_014284495.1	PFAS biotransformation		
+Acetobacterium fimetarium		GCF_014284475.1	PFAS biotransformation		
+Clostridium homopropionicum		GCF_900113195.1	PFAS biotransformation		
+Pseudomonas sp. OCY4	472061.0	EU143652.1	PFAS biotransformation		16S only
+Arthrobacter sp. G1	491961.0	EU342346.1	PFAS biotransformation		16S only
+Ralstonia sp. H1	491962.0	EU342347.1	PFAS biotransformation		
+Gordonia sp. NB4-1Y	875808.0	GCF_030718915.1	PFAS biotransformation		
+Rhodococcus rhodochrous S-2			PFAS biotransformation		
+Mycobacterium austroafricanum		GCF_000612725.1	PFAS biotransformation		
+Caballeronia sp.			PFAS biotransformation		
+Pseudomonas pseudoalcaligenes KF707		AP014862.1	PFAS biotransformation		
+Pseudomonas sp. IMD695		KY308181	PFAS biotransformation		16S only
+"Pseudomonas knackmussii
+B13"		GCF_000689415.1	PFAS biotransformation		
+Pseudomonas putida KT2440		GCF_000007565.2	PFAS biotransformation		
+Rhodococcus jostii RHA1		GCF_000014565.1	PFAS biotransformation		
+Shewanella oneidensis		GCF_000146165.2	PFAS biotransformation		
+Dietzia aurantiaca J3		GCF_021033825.1	PFAS biotransformation		
+Delftia acidovorans Strain D4B		GCA_018887285.2	PFAS biotransformation		
+			Dehalogenase		
+Pseudomonas sp. Strain 273	75692.0	CP015641			
+Hyphomicrobium sp. MC1	717785.0	FQ859181			
+Acidimicrobium sp. Strain A6					
+Stenotrophomonas acidaminiphila OA1					
+Pseudomonas sp. strain 4-a	306.0	ON533612		no whole-genome, just 16S	
+Pseudomonas plecoglossicida 2.4-D					
+Candidatus Falkowbacteria bacterium CG10_big_fil_rev_8_21_14_0_10_43_11	1974568.0	GCA_002778635.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/002/778/635/GCA_002778635.1_*/GCA_002778635.1_*_genomic.gff.gz
+Candidatus Saccharibacteria bacterium CG_4_10_14_0_2_um_filter_52_9	1974866.0	GCA_002792275.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/002/792/275/GCA_002792275.1_*/GCA_002792275.1_*_genomic.gff.gz
+Candidatus Pacearchaeota archaeon CG_4_10_14_0_2_um_filter_31_10	1974426.0	GCA_002792655.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/002/792/655/GCA_002792655.1_*/GCA_002792655.1_*_genomic.gff.gz
+Pseudomonas sp. Nvir	2899657.0	GCF_963778085.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/963/778/085/GCF_963778085.1_*/GCF_963778085.1_*_genomic.gff.gz
+Pseudomonas sp. F16(2018)	2093746.0	GCF_900291905.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/291/905/GCF_900291905.1_*/GCF_900291905.1_*_genomic.gff.gz
+Pseudomonas nitroreducens	46680.0	GCF_000313755.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/313/755/GCF_000313755.1_*/GCF_000313755.1_*_genomic.gff.gz
+Pseudomonas aeruginosa	287.0	GCA_000705235.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/705/235/GCA_000705235.1_*/GCA_000705235.1_*_genomic.gff.gz
+Pseudomonas putida	303.0	GCF_000498395.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/498/395/GCF_000498395.1_*/GCF_000498395.1_*_genomic.gff.gz
+Pseudomonas syringae group genomosp. 3	251701.0	GCF_041379965.2			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/041/379/965/GCF_041379965.2_*/GCF_041379965.2_*_genomic.gff.gz
+Pseudomonas syringae	317.0	GCF_041320585.2			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/041/320/585/GCF_041320585.2_*/GCF_041320585.2_*_genomic.gff.gz
+Pseudomonas savastanoi	29438.0	GCF_041378945.2			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/041/378/945/GCF_041378945.2_*/GCF_041378945.2_*_genomic.gff.gz
+Pseudomonas benzopyrenica	2993566.0	GCF_036884265.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/036/884/265/GCF_036884265.1_*/GCF_036884265.1_*_genomic.gff.gz
+Pseudomonas sp. PARCl1	2853444.0	GCF_947311875.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/947/311/875/GCF_947311875.1_*/GCF_947311875.1_*_genomic.gff.gz
+Pseudomonas shirazica	1940636.0	GCF_900291065.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/291/065/GCF_900291065.1_*/GCF_900291065.1_*_genomic.gff.gz
+Pseudomonas sp. K2I15	2013577.0	GCF_002204795.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/204/795/GCF_002204795.1_*/GCF_002204795.1_*_genomic.gff.gz
+Pseudomonas asplenii	53407.0	GCF_000364705.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/364/705/GCF_000364705.1_*/GCF_000364705.1_*_genomic.gff.gz
+Pseudomonas tolaasii	29442.0	GCF_000316215.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/316/215/GCF_000316215.1_*/GCF_000316215.1_*_genomic.gff.gz
+Pseudomonas sp. Ga0074129	1752219.0	GCF_001465025.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/465/025/GCF_001465025.1_*/GCF_001465025.1_*_genomic.gff.gz
+Pseudomonas fluorescens	294.0	GCF_001444295.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/444/295/GCF_001444295.1_*/GCF_001444295.1_*_genomic.gff.gz
+Pseudomonas sp. EGD-AK9	1386078.0	GCF_000465935.2			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/465/935/GCF_000465935.2_*/GCF_000465935.2_*_genomic.gff.gz
+Pseudomonas sp. CCOS 191	1649877.0	GCF_001007005.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/007/005/GCF_001007005.1_*/GCF_001007005.1_*_genomic.gff.gz
+uncultured Hyphomicrobium sp.	194373.0	GCF_902826555.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/902/826/555/GCF_902826555.1_*/GCF_902826555.1_*_genomic.gff.gz
+Hyphomicrobium sp. 1Nfss2.1	3413936.0	GCF_965243865.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/965/243/865/GCF_965243865.1_*/GCF_965243865.1_*_genomic.gff.gz
+Hyphomicrobium sp. B1	3075651.0	GCF_049532635.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/049/532/635/GCF_049532635.1_*/GCF_049532635.1_*_genomic.gff.gz
+Hyphomicrobium sp. DY-1	3075650.0	GCF_047497105.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/047/497/105/GCF_047497105.1_*/GCF_047497105.1_*_genomic.gff.gz
+Hyphomicrobium sp. ghe19	2682968.0	GCF_902712875.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/902/712/875/GCF_902712875.1_*/GCF_902712875.1_*_genomic.gff.gz
+Hyphomicrobium sp.	82.0	GCA_052388455.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/052/388/455/GCA_052388455.1_*/GCA_052388455.1_*_genomic.gff.gz
+Hyphomicrobium sp. 2TAF46	3233019.0	GCF_052114865.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/052/114/865/GCF_052114865.1_*/GCF_052114865.1_*_genomic.gff.gz
+uncultured Acidimicrobium sp.	221084.0	GCA_964532575.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/964/532/575/GCA_964532575.1_*/GCA_964532575.1_*_genomic.gff.gz
+Acidimicrobium sp.	1872112.0	GCA_040380405.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/040/380/405/GCA_040380405.1_*/GCA_040380405.1_*_genomic.gff.gz
+Acidimicrobium ferrooxidans	53635.0	GCA_943323735.2			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/943/323/735/GCA_943323735.2_*/GCA_943323735.2_*_genomic.gff.gz
+Dehalococcoides mccartyi	61435.0	GCF_047495565.2			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/047/495/565/GCF_047495565.2_*/GCF_047495565.2_*_genomic.gff.gz
+Dehalococcoides sp. THU4	3348344.0	GCF_043231265.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/043/231/265/GCF_043231265.1_*/GCF_043231265.1_*_genomic.gff.gz
+Dehalococcoides sp. HCBD	3440628.0	GCF_051473865.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/051/473/865/GCF_051473865.1_*/GCF_051473865.1_*_genomic.gff.gz
+Dehalococcoides sp.	1966486.0	GCF_047308305.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/047/308/305/GCF_047308305.1_*/GCF_047308305.1_*_genomic.gff.gz
+uncultured Dehalococcoides sp.	171952.0	GCA_964628985.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/964/628/985/GCA_964628985.1_*/GCA_964628985.1_*_genomic.gff.gz
+Dehalococcoides sp. THU3	3151601.0	GCF_039749515.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/039/749/515/GCF_039749515.1_*/GCF_039749515.1_*_genomic.gff.gz
+Desulfitobacterium sp. AusDCA	3240383.0	GCF_051122385.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/051/122/385/GCF_051122385.1_*/GCF_051122385.1_*_genomic.gff.gz
+Desulfitobacterium nosdiversum	3375356.0	GCF_049860565.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/049/860/565/GCF_049860565.1_*/GCF_049860565.1_*_genomic.gff.gz
+Desulfitobacterium sp.	49981.0	GCA_050789315.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/050/789/315/GCA_050789315.1_*/GCA_050789315.1_*_genomic.gff.gz
+uncultured Desulfitobacterium sp.	244202.0	GCA_964491225.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/964/491/225/GCA_964491225.1_*/GCA_964491225.1_*_genomic.gff.gz
+Desulfitobacterium hafniense	49338.0	GCA_038995925.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/038/995/925/GCA_038995925.1_*/GCA_038995925.1_*_genomic.gff.gz
+Desulfitobacterium sp. THU1	3138072.0	GCF_038181555.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/038/181/555/GCF_038181555.1_*/GCF_038181555.1_*_genomic.gff.gz
+Desulfitobacterium sp. T6-6.32	3070040.0	GCA_032666645.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/032/666/645/GCA_032666645.1_*/GCA_032666645.1_*_genomic.gff.gz
+Desulfitobacterium sp. T6-8.88	3070041.0	GCA_032662925.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/032/662/925/GCA_032662925.1_*/GCA_032662925.1_*_genomic.gff.gz
+Desulfitobacterium dehalogenans	36854.0	GCF_012842225.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/012/842/225/GCF_012842225.1_*/GCF_012842225.1_*_genomic.gff.gz
+Desulfitobacterium sp. LBE	884086.0	GCF_007830365.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/830/365/GCF_007830365.1_*/GCF_007830365.1_*_genomic.gff.gz
+Desulfitobacterium chlororespirans	51616.0	GCF_900143285.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/143/285/GCF_900143285.1_*/GCF_900143285.1_*_genomic.gff.gz
+Desulfitobacterium sp. PCE1	146907.0	GCF_000384015.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/384/015/GCF_000384015.1_*/GCF_000384015.1_*_genomic.gff.gz
+Desulfitobacterium dichloroeliminans	233055.0	GCF_000243135.2			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/243/135/GCF_000243135.2_*/GCF_000243135.2_*_genomic.gff.gz
+Rhodococcus rhodochrous	1829.0	GCF_001511235.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/511/235/GCF_001511235.1_*/GCF_001511235.1_*_genomic.gff.gz
+Rhodococcus sp. 311R	1617904.0	GCF_001242945.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/242/945/GCF_001242945.1_*/GCF_001242945.1_*_genomic.gff.gz
+Rhodococcus globerulus	33008.0	GCF_001373455.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/373/455/GCF_001373455.1_*/GCF_001373455.1_*_genomic.gff.gz
+Rhodococcus aetherivorans	191292.0	GCF_000470885.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/470/885/GCF_000470885.1_*/GCF_000470885.1_*_genomic.gff.gz
+Rhodococcus erythropolis	1833.0	GCF_051615655.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/051/615/655/GCF_051615655.1_*/GCF_051615655.1_*_genomic.gff.gz
+Rhodococcus qingshengii	334542.0	GCF_051311045.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/051/311/045/GCF_051311045.1_*/GCF_051311045.1_*_genomic.gff.gz
+Rhodococcus sp. BGS-1C	2100132.0	GCF_051027685.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/051/027/685/GCF_051027685.1_*/GCF_051027685.1_*_genomic.gff.gz
+Rhodococcus ruber	1830.0	GCF_050920855.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/920/855/GCF_050920855.1_*/GCF_050920855.1_*_genomic.gff.gz
+Rhodococcus pyridinivorans	103816.0	GCF_050907905.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/907/905/GCF_050907905.1_*/GCF_050907905.1_*_genomic.gff.gz
+Rhodococcus sp. KRD197	2729731.0	GCF_050320385.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/320/385/GCF_050320385.1_*/GCF_050320385.1_*_genomic.gff.gz
+Rhodococcus sp. KRD162	2729725.0	GCF_050320375.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/050/320/375/GCF_050320375.1_*/GCF_050320375.1_*_genomic.gff.gz
+Rhodococcus opacus	37919.0	GCF_048288345.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/048/288/345/GCF_048288345.1_*/GCF_048288345.1_*_genomic.gff.gz
+Rhodococcus indonesiensis	3055869.0	GCF_047782815.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/047/782/815/GCF_047782815.1_*/GCF_047782815.1_*_genomic.gff.gz
+Rhodococcus sp. DK176	3027223.0	GCF_038447315.2			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/038/447/315/GCF_038447315.2_*/GCF_038447315.2_*_genomic.gff.gz
+Rhodococcus sp. DK17	186196.0	GCF_038447505.2			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/038/447/505/GCF_038447505.2_*/GCF_038447505.2_*_genomic.gff.gz
+Rhodococcus sp. DK180	3027224.0	GCF_038447005.2			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/038/447/005/GCF_038447005.2_*/GCF_038447005.2_*_genomic.gff.gz
+Rhodococcus sp. 3Y1	3341826.0	GCA_041920615.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/041/920/615/GCA_041920615.1_*/GCA_041920615.1_*_genomic.gff.gz
+Rhodococcus sp. NyZ502	3242855.0	GCF_041464245.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/041/464/245/GCF_041464245.1_*/GCF_041464245.1_*_genomic.gff.gz
+Rhodococcus sp. JVH1	745408.0	GCF_000280725.2			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/280/725/GCF_000280725.2_*/GCF_000280725.2_*_genomic.gff.gz
+Rhodococcus wratislaviensis	44752.0	GCF_041228765.1			ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/041/228/765/GCF_041228765.1_*/GCF_041228765.1_*_genomic.gff.gz
