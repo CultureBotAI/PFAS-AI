@@ -1,11 +1,11 @@
 """
 Knowledge Graph Database using DuckDB
 
-This module creates and manages a DuckDB database for the PFAS biodegradation
+This module creates and manages a DuckDB database for the lanthanide bioprocessing
 knowledge graph, providing convenient query methods for exploring nodes and edges.
 
 Usage:
-    >>> from src.kg_analysis.kg_database import KnowledgeGraphDB
+    >>> from src.kg_database import KnowledgeGraphDB
     >>> kg = KnowledgeGraphDB()
     >>> kg.create_database()
     >>> nodes = kg.query_nodes(category="biolink:Enzyme")

@@ -4,538 +4,300 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-PFAS-AI - ML-enabled automated data pipeline for PFAS biodegradation research. Extends small seed datasets into comprehensive research databases by integrating NCBI, KEGG, UniProt, PDB, and other biological databases to identify and characterize PFAS-degrading microorganisms.
+PFAS-AI - ML-enabled automated data pipeline for PFAS biodegradation research. Extends small seed datasets (6 organisms, 23 publications) into comprehensive research databases by integrating NCBI, KEGG, UniProt, PDB, and other biological databases.
 
 **Scientific Focus**: Per- and polyfluoroalkyl substances (PFAS) biodegradation using machine learning-guided microbial consortia design.
 
-**Key Research Areas**:
+**Key Research Targets**:
 - C-F bond cleavage enzymes (dehalogenases, defluorinases)
-- Fluoride resistance mechanisms and transport systems
+- Fluoride resistance mechanisms (CrcB, FEX transporters)
 - Hydrocarbon-degrading microbes for PFAS backbone metabolism
 - Dechlorinating microbes with potential C-F bond cleavage activity
-- Environmental microbes from PFAS-contaminated sites
-- Microbial consortia design for polyfluorinated and perfluorinated compound degradation
-
-**Current Status**: Initial development - transitioning from CMM-AI (lanthanides) to PFAS-AI with new seed data and ML integration focus.
-
-## Project Objectives
-
-1. **ML-Powered Database**: Build a semantically-aware database using KG-Microbe platform to identify putative PFAS biodegradation genes, pathways, taxa, environments, and microbial communities
-2. **Consortia Design**: Use ML to design optimized microbial consortia (3-5 members each) for efficient PFAS degradation
-3. **Experimental Validation**: Test 10-15 consortia, down-select to 5 most effective for detailed PFAS degradation analysis
 
 ## Commands
 
 ### Dependency Management
-- **Always use `uv`** for managing dependencies. Never use `pip`.
-- `uv run <command>` - Run commands in the project environment
+**Always use `uv`** for managing dependencies. Never use `pip`.
 - `uv sync` or `make install` - Install dependencies
+- `uv run <command>` - Run commands in project environment
 
 ### Pipeline Commands (via Makefile)
 
-**Basic Data Extension**:
-- `make` or `make help` - Show all available commands
-- `make update-all` - Run full pipeline (all tables)
-- `make update-genomes` - Extend taxa and genomes with NCBI Assembly data
-- `make update-biosamples` - Extend biosamples with NCBI BioSample data
-- `make update-pathways` - Extend pathways with KEGG/MetaCyc
-- `make update-genes` - Extend genes/proteins with UniProt/KEGG
-- `make update-structures` - Extend structures with PDB/AlphaFold
-- `make update-publications` - Extend publications with PubMed/arXiv
-- `make update-datasets` - Extend datasets with repository searches
-- `make convert-excel` - Convert Excel sheets to TSV (prerequisite)
+**Basic Workflow**:
+```bash
+make convert-excel       # Excel → TSV (prerequisite)
+make update-all          # Extend all tables (extend1)
+make extend2             # Advanced: PDF download → data extraction
+make extendbypub         # Cross-reference publications
+make status              # Check pipeline status
+```
 
-**Experimental Data Tables**:
-- `make update-chemicals` - Extend chemicals with PubChem/CHEBI (PFAS compounds)
-- `make update-assays` - Extend assays with curated protocols (fluoride, PFAS detection)
-- `make update-reactions` - Extend reactions with RHEA/KEGG data (unified table)
-- `make update-bioprocesses` - (Manual) Update bioprocesses table
+**Individual Table Extensions** (extend1):
+- `make update-genomes` - NCBI Assembly/BioSample for PFAS microbes
+- `make update-pathways` - KEGG/MetaCyc dehalogenation pathways
+- `make update-genes` - UniProt/KEGG dehalogenases and fluoride exporters
+- `make update-structures` - PDB structures for dehalogenases
+- `make update-publications` - PubMed/arXiv PFAS literature
+- `make update-datasets` - Multi-repository dataset search
+- `make update-chemicals` - PubChem/CHEBI PFAS compounds
+- `make update-assays` - Fluoride/PFAS detection protocols
+- `make update-reactions` - RHEA/KEGG biochemical reactions
+- `make update-transcriptomics` - SRA/GEO RNA-seq datasets
+- `make update-strains` - Culture collection IDs and procurement
+- `make update-media` - Growth media formulations
 
-**Reaction Category Extensions** (category-specific enrichment with gene linking):
-- `make update-reactions-dehalogenase` - C-F bond cleavage enzymes (16 reactions)
-- `make update-reactions-fluoride` - Fluoride transporters and resistance (38 reactions)
-- `make update-reactions-hydrocarbon` - Alkane/hydrocarbon metabolism (19 reactions)
-- `make update-reactions-pfas-degraders` - Validated PFAS degrader reactions (11 reactions)
-- `make update-reactions-oxygenase` - Oxygenase co-metabolism (29 reactions)
-- `make update-reactions-important-genes` - Non-enzymatic genes (3 entries)
-- `make update-reactions-all-categories` - Extend all categories at once
-- `make merge-reactions` - Merge category files into unified reactions table (107 unique reactions)
-- `make update-screening` - (Manual) Update screening results table
-- `make update-protocols` - (Manual) Update protocols table
+**Reaction Category Extensions** (gene-linked enrichment):
+- `make update-reactions-all-categories` - Extend all 6 categories
+- `make merge-reactions` - Merge into unified reactions table (107 reactions)
 
-**Advanced Workflows**:
-- `make extend2` - Full extend2 workflow: download PDFs → extend chemicals/assays → extract experimental data
-- `make extendbypub` - Cross-reference publications with data sheets and append publication IDs to source columns
-- `make merge-excel` - Merge Excel updates while preserving generated data and publication references
-- `make merge-excel-dry-run` - Preview merge without applying changes
+Individual categories: `dehalogenase`, `fluoride`, `hydrocarbon`, `pfas-degraders`, `oxygenase`, `important-genes`
 
-**Utilities**:
-- `make status` - Check pipeline status (file existence and line counts)
-- `make test` - Run doctests and validation
+**KG-Microbe Integration**:
+- `make create-kg-db` - Create DuckDB knowledge graph from TSV files
+- `make query-kg-db` - Query knowledge graph (see data/kgm/README.md for API)
 
-### Testing Commands
-- `make test` - Run doctests and test_annotation_urls.py
-- `make validate-schema` - Validate extended TSV data against LinkML schema
-- `make validate-consistency` - Validate cross-sheet referential integrity and data quality
-- `uv run python -m doctest src/parsers.py -v` - Run parsers doctests
-- `uv run python -m doctest src/ncbi_search.py -v` - Run NCBI doctests
-- `uv run ruff check src/` - Check code formatting
-- `uv run ruff format src/` - Format code
+**Data Management**:
+- `make merge-excel` - Merge Excel updates while preserving generated data
+- `make merge-excel-dry-run` - Preview merge without applying
+
+### Testing and Validation
+```bash
+make test                   # Run doctests and validation
+make validate-schema        # Validate against LinkML schema
+make validate-consistency   # Cross-sheet referential integrity
+uv run ruff check src/      # Linting
+uv run ruff format src/     # Code formatting
+```
 
 ## Architecture
 
 ### Directory Structure
 ```
-src/                   # Main Python source code (flat structure)
-  parsers.py          # Excel/Word/PDF to TSV/text converters
-  ncbi_search.py      # NCBI Assembly/BioSample search (PFAS microbes)
-  pathway_search.py   # KEGG/MetaCyc pathway search (dehalogenation, fluoride)
-  gene_search.py      # UniProt/KEGG gene/protein search (dehalogenase, defluorinase)
-  structure_search.py # PDB/AlphaFold structure search
-  publication_search.py # PubMed/arXiv literature search (PFAS biodegradation)
-  dataset_search.py   # Multi-repository dataset search
-  extend_*.py         # Pipeline automation scripts
-  tsv_to_linkml.py    # TSV to LinkML YAML converter
-  validate_consistency.py # Cross-sheet consistency validator
-  linkml_models.py    # Generated Python models (auto-generated)
-  cli.py             # Command-line interface
-schema/               # LinkML schema definitions
-  pfas_biodegradation.yaml # Main schema file (to be created)
-data/                 # Research data
-  sheet/             # Original Excel files (PFAS Data for AI.xlsx)
-  txt/sheet/         # Converted TSV + extended tables
-  linkml_database.yaml # LinkML YAML format (generated)
-  publications/      # PDF research papers
-  proposal/          # Project documentation (proposal.txt)
-Makefile             # Pipeline automation
-pyproject.toml       # Package configuration (uses uv/hatchling)
+src/                      # Flat Python module structure (NO src/pfas_ai/ subdirectory)
+  parsers.py             # Excel/Word/PDF converters with filename sanitization
+  ncbi_search.py         # NCBI Assembly/BioSample search + annotation URL generation
+  *_search.py            # Database-specific search modules (pathway, gene, structure, etc.)
+  extend_*.py            # Pipeline automation scripts
+  validate_consistency.py # Cross-sheet validation with fuzzy organism matching
+  tsv_to_linkml.py       # TSV → LinkML YAML converter
+  merge_excel_updates.py # Intelligent Excel merge preserving generated data
+  extend_by_publication.py # Publication cross-reference with keyword matching
+  kg_analysis/           # KG-Microbe DuckDB integration
+    kg_database.py       # Knowledge graph database operations
+schema/
+  pfas_biodegradation.yaml # LinkML schema (13 classes: genomes, genes, reactions, etc.)
+data/
+  sheet/                 # Original Excel: "PFAS Data for AI.xlsx"
+  txt/sheet/             # Converted TSV + *_extended.tsv files
+  publications/          # Downloaded PDFs
+  kgm/                   # KG-Microbe TSV files and kg-microbe.duckdb
+Makefile                 # Pipeline automation (NO justfile)
 ```
 
-### Data Pipeline Flow
+### Data Pipeline Architecture
 
-**Basic Extension (extend1)**:
-1. **Input**: Small seed datasets (6 organisms, 23 publications) in Excel format
-2. **Conversion**: Excel → TSV via `parsers.py`
-3. **Extension**: Query APIs (NCBI, KEGG, UniProt, PDB) to find PFAS-related data
-4. **URL Generation**: Create direct download links for all resources
-5. **Output**: Extended TSV tables with download URLs
+**Two-Phase Extension Model**:
 
-**Advanced Extension (extend2)**:
-1. **PDF Download**: Download publications from URLs in publications table
-2. **Chemical/Assay Extension**: Extend chemicals (PFAS compounds) and assays (fluoride detection, PFAS analysis) with source=extend2 label
-3. **PDF Conversion**: Convert PDFs to markdown format for text extraction
-4. **Data Extraction**: Extract experimental data from PDFs (DOI-based provenance)
-5. **Validation**: Run consistency checks and LinkML schema validation
-6. **Cross-Reference (extendbypub)**: Link publications to data rows by keyword matching
+1. **extend1 (Database Enrichment)**: Query external APIs to find related data
+   - Input: Seed TSV files (6 organisms, 23 publications)
+   - Process: Search NCBI, KEGG, UniProt, PDB with PFAS-specific terms
+   - Output: Extended TSV files with `source=extend1`
+   - URL Generation: Direct download links for all resources
 
-**Source Tracking**:
-- All extended rows include a `source` column for data provenance
-- Source labels: `extend1` (initial extension), `extend2` (second round), DOI (extracted from specific papers)
-- Publication cross-references appended to source column with `|` delimiter (e.g., `extend2|10.1016/j.jhazmat.2021.126361`)
+2. **extend2 (Document Extraction)**: Extract experimental data from publications
+   - Input: Publication URLs from publications table
+   - Process: Download PDFs → convert to markdown → extract data
+   - Output: Additional rows in chemicals, assays, bioprocesses with `source=extend2` or DOI
+   - Cross-Reference: `extendbypub` appends publication IDs to source column with `|` delimiter
 
-### Key Modules
+**Source Provenance System**:
+All extended rows include a `source` column:
+- `extend1` - Initial database search extension
+- `extend2` - Second round PDF extraction
+- DOI (e.g., `10.1016/j.jhazmat.2021.126361`) - Extracted from specific papers
+- Combined (e.g., `extend2|10.1016/j.jhazmat.2021.126361`) - After cross-referencing
 
-**parsers.py**: File format converters
-- `xlsx_to_tsv()` - Excel to TSV with filename sanitization
-- `docx_to_text()` - Word to plain text
-- `pdf_to_text()` - PDF to plain text
-- All functions sanitize filenames (spaces → underscores)
+### Key Architectural Patterns
 
-**ncbi_search.py**: NCBI database integration
-- `search_ncbi_assembly()` - Query Assembly database
-- `search_ncbi_biosample()` - Query BioSample database
-- `search_pfas_organisms()` - Main search logic for PFAS-relevant microbes (to be created)
-- `get_annotation_download_url()` - Generate FTP URLs for genome annotations
-- `create_extended_tables()` - Orchestrate genome/biosample extension
+**Filename Sanitization**: All output files use `sanitize_filename()` (spaces → underscores)
 
-**pathway_search.py**: Metabolic pathway search (KEGG/MetaCyc for dehalogenation, fluoride metabolism)
-**gene_search.py**: Gene/protein search (UniProt/KEGG with focus on dehalogenases, defluorinases, fluoride exporters)
-**structure_search.py**: 3D structure search (PDB/AlphaFold for dehalogenase structures)
-**publication_search.py**: Literature search (PubMed/arXiv/bioRxiv for PFAS biodegradation)
-**dataset_search.py**: Dataset search (GEO, SRA, MetaboLights, PFAS metagenomes)
-**chemical_search.py**: Chemical compound search (PubChem/CHEBI for PFAS compounds) with source labeling
-**assay_search.py**: Assay protocol search with curated methods (fluoride detection, PFAS quantification)
-**reaction_search.py**: Biochemical reaction enrichment from RHEA/KEGG databases
-**convert_reactions_excel.py**: Convert reactions Excel with reaction_category column tracking
-**extend_reactions.py**: Main reactions extension pipeline script
-**extend_reactions_by_category.py**: Category-specific reaction enrichment with gene linking
-**scripts/merge_reaction_categories.py**: Merge category-specific files into unified reactions table
-**pdf_to_markdown.py**: Convert PDFs to markdown for text extraction
-**extract_from_documents.py**: Extract experimental data from markdown files with DOI tracking
-**download_pdfs_from_publications.py**: Download PDFs from publications table URLs
-**extend_by_publication.py**: Cross-reference publications with data sheets
-**merge_excel_updates.py**: Intelligently merge Excel updates while preserving generated data
-**validate_consistency.py**: Cross-sheet consistency and referential integrity validation
-**tsv_to_linkml.py**: Convert TSV data to LinkML YAML format
+**Rate Limiting**: 0.5-1.0 sec delays between API calls throughout codebase
 
-### Search Strategy
+**Deduplication**: Each search module removes duplicates based on unique IDs
 
-**PFAS-specific terms**:
-- PFAS, perfluorinated, polyfluorinated, PFOA, PFOS, AFFF
-- C-F bond, defluorination, dehalogenation, fluoride
-- Per- and polyfluoroalkyl substances, forever chemicals
+**URL Generation**:
+- NCBI: FTP URLs for genome annotations via `get_annotation_download_url()`
+- BioSample: Direct links to SRA data via `get_biosample_download_url()`
+- All databases: Construct valid download URLs, not just landing pages
 
-**Functional terms**:
-- Dehalogenase, defluorinase, fluoroacetate dehalogenase
-- Fluoride exporter, fluoride resistance, CrcB, FEX
-- Reductive dehalogenase (RdhA), haloalkane dehalogenase
-- Hydrocarbon degradation, aromatic degradation
+**Reaction Categories**: Reactions table supports `reaction_category` column for:
+- `dehalogenase` - C-F bond cleavage (16 reactions)
+- `fluoride_resistance` - Fluoride transport (38 reactions)
+- `hydrocarbon_degradation` - Alkane metabolism (19 reactions)
+- `known_pfas_degraders` - Validated PFAS degraders (11 reactions)
+- `oxygenase_cometabolism` - Oxygenase pathways (29 reactions)
+- `important_genes` - Non-enzymatic genes (3 entries)
 
-**Organism groups**:
-- Pseudomonas (known PFAS degraders)
-- Hyphomicrobium (C1 metabolism, potential PFAS degradation)
-- Acidimicrobium (extremophile, acid-tolerant)
-- Dechlorinating bacteria (Dehalococcoides, Desulfitobacterium)
-- Hydrocarbon degraders (Rhodococcus, Mycobacterium)
-- PFAS-contaminated site isolates
+**Data Validation** (two independent levels):
+1. **Schema Validation**: TSV → YAML → LinkML schema validation (types, patterns, ontology terms)
+2. **Cross-Sheet Consistency**: Referential integrity with fuzzy genus-level matching for organism names
 
-**Environmental context**:
-- PFAS-contaminated sites, AFFF-impacted groundwater
-- Wastewater treatment, activated sludge
-- Biofilm, anaerobic digestion
-- Fluoride-rich environments
+### Module Organization
 
-**Rate limiting**: 0.5-1.0 second delays between API calls
-**Deduplication**: Remove duplicates based on unique IDs (assembly_id, sample_id, etc.)
+**Core Utilities** (`parsers.py`):
+- `xlsx_to_tsv()`, `docx_to_text()`, `pdf_to_text()`
+- All functions sanitize filenames and use pandas for TSV I/O
 
-### Data Table Schema
+**Search Modules** (`*_search.py`):
+Each database integration follows the same pattern:
+- Query API with PFAS-specific search terms
+- Extract structured data
+- Generate download URLs
+- Return pandas DataFrame
 
-All extended tables follow TSV format with consistent column naming:
-- **Genomes**: Scientific name, NCBITaxon id, Genome identifier, Annotation download URL, source
-- **Biosamples**: Sample Name, Sample ID, Organism, Download URL
-- **Pathways**: Pathway name, Database (KEGG/MetaCyc), Pathway ID, URL, genes (focus on dehalogenation)
-- **Genes/Proteins**: Gene name, Protein ID, Database, Sequence URL, functional annotations (dehalogenase, fluoride exporter)
-- **Structures**: Protein name, PDB ID, Method, Resolution, Structure URL (dehalogenase structures)
-- **Publications**: Title, Authors, Journal, PMID, DOI, URL (PFAS biodegradation focus)
-- **Chemicals**: PFAS compounds (PFOA, PFOS, precursors), CHEBI/PubChem IDs, molecular formula, compound_type
-- **Assays**: Fluoride detection, PFAS quantification, LC-MS/MS protocols
-- **Reactions**: Biochemical reactions (RHEA IDs, equations, EC numbers, reaction_category for dehalogenation/fluoride resistance/hydrocarbon degradation)
+**Extension Scripts** (`extend_*.py`):
+Pipeline automation that:
+1. Reads seed TSV file
+2. Calls appropriate search module
+3. Deduplicates and merges results
+4. Writes `*_extended.tsv` with source column
+
+**Advanced Workflows**:
+- `merge_excel_updates.py`: 3-way merge (Excel + base TSV + extended TSV) with backup
+- `extend_by_publication.py`: Keyword-based publication matching across sheets
+- `validate_consistency.py`: Cross-table validation with warnings (⚠️) and errors (❌)
+
+### PFAS-Specific Search Terms
+
+**Chemical Terms**: PFAS, perfluorinated, polyfluorinated, PFOA, PFOS, AFFF, C-F bond, defluorination, fluoride
+
+**Functional Terms**: Dehalogenase, defluorinase, fluoroacetate dehalogenase, reductive dehalogenase (RdhA), haloalkane dehalogenase, fluoride exporter (CrcB, FEX)
+
+**Organisms**: Pseudomonas, Hyphomicrobium, Acidimicrobium, Dehalococcoides, Desulfitobacterium, Rhodococcus, Mycobacterium
+
+**Environments**: PFAS-contaminated sites, AFFF-impacted groundwater, wastewater treatment
+
+## LinkML Schema
+
+**Schema Location**: `schema/pfas_biodegradation.yaml`
+
+**13 Main Classes**:
+- **Core (7)**: GenomeRecord, BiosampleRecord, PathwayRecord, GeneProteinRecord, MacromolecularStructureRecord, PublicationRecord, DatasetRecord
+- **Experimental (6)**: ReactionRecord, ChemicalCompoundRecord, AssayMeasurementRecord, BioprocessConditionsRecord, ScreeningResultRecord, ProtocolRecord
+- **New (3)**: TranscriptomicsRecord, StrainRecord, GrowthMediaRecord, MediaIngredientRecord
+
+**Ontology Mappings**: NCBITaxon, SRA, CHEBI, ENVO, MIXS, UniProtKB, GO, EC, RHEA, KEGG, PDB, OBI, BAO, PubChem
+
+**Using LinkML Tools**:
+```bash
+make validate-schema     # Complete workflow: TSV→YAML→validate
+make gen-linkml-models   # Generate src/linkml_models.py from schema
+
+# Manual commands:
+uv run gen-python schema/pfas_biodegradation.yaml > src/linkml_models.py
+uv run gen-json-schema schema/pfas_biodegradation.yaml > schema/schema.json
+uv run python src/tsv_to_linkml.py --data-dir data/txt/sheet --output data/linkml_database.yaml
+uv run linkml-validate -s schema/pfas_biodegradation.yaml data/linkml_database.yaml
+```
 
 ## Development Principles
 
 ### Testing
-- Use doctests liberally as both examples and tests
-- Write pytest functional style (not unittest OO)
-- Use `@pytest.mark.parametrize` for testing input combinations
+- Use doctests liberally (see `parsers.py`, `ncbi_search.py` for examples)
+- pytest functional style (NOT unittest OO)
 - Mark external API tests with `@pytest.mark.integration`
-- Never write mock tests unless explicitly requested
-- Don't weaken test conditions to make them pass - fix the underlying issue
+- **Never write mock tests** unless explicitly requested
+- Don't weaken test conditions - fix the underlying issue
 
 ### Code Style
-- Always use type hints for all functions
-- Document all methods and classes with docstrings
-- Pydantic or LinkML for data objects, dataclasses for engine-style OO state
-- Fail fast - avoid try/except blocks that mask bugs
-- Follow DRY principle, but avoid premature over-abstraction
-- Declarative principles favored
+- Always use type hints
+- Document with docstrings (Google style)
+- Pydantic/LinkML for data objects, dataclasses for OO state
+- **Fail fast** - avoid try/except that masks bugs
+- DRY principle, but avoid premature abstraction
 
 ### API Integration
-- All API calls must respect rate limits (0.5-1.0 sec delays)
+- Respect rate limits (0.5-1.0 sec delays via `time.sleep()`)
 - Handle missing/malformed data gracefully
-- Generate valid URLs for all database resources
-- Use Bio.Entrez for NCBI (email must be configured)
+- Generate **valid download URLs**, not just landing pages
+- Use `Bio.Entrez` for NCBI (requires `Entrez.email` configuration)
 
 ### File Handling
-- Sanitize all output filenames (spaces → underscores via `sanitize_filename()`)
-- Use pandas for TSV reading/writing (sep='\t')
-- Output files go to `data/txt/sheet/` with `_extended.tsv` suffix
-- Input Excel file: `data/sheet/PFAS Data for AI.xlsx`
+- Sanitize all output filenames via `sanitize_filename()`
+- Use pandas for TSV: `pd.read_csv(sep='\t')`, `df.to_csv(sep='\t')`
+- Output files: `data/txt/sheet/PFAS_Data_for_AI_*_extended.tsv`
+- Input Excel: `data/sheet/PFAS Data for AI.xlsx`
 
-## LinkML Schema
+## KG-Microbe Integration
 
-This repository will include a comprehensive LinkML schema for modeling PFAS biodegradation data.
+This project integrates with KG-Microbe platform for ML-enabled discovery:
 
-**Schema Location**: `schema/pfas_biodegradation.yaml` (to be created)
+**Database Location**: `data/kgm/kg-microbe.duckdb` (created from TSV files)
 
-### Schema Overview
+**Training Categories**:
+1. Known PFAS degraders
+2. Dechlorinating microbes (dehalogenases)
+3. Fluoride-resistant microbes (CrcB, FEX)
+4. Hydrocarbon degraders
+5. PFAS-contaminated site isolates
 
-The schema models thirteen main classes for comprehensive PFAS biodegradation research:
-
-#### Core Data Tables (7)
-
-1. **GenomeRecord**: Bacterial/archaeal genomes with taxonomy and annotations
-   - Maps to: NCBITaxon (taxonomy), NCBI Assembly (genome accessions)
-   - Key fields: scientific_name, ncbi_taxon_id, genome_identifier, annotation_download_url
-   - Focus: PFAS-degrading microbes, dehalogenase-containing genomes
-
-2. **BiosampleRecord**: Environmental and cultured samples
-   - Maps to: NCBI BioSample, SRA
-   - Key fields: sample_id, sample_name, organism, download_url
-   - Focus: PFAS-contaminated sites, AFFF-impacted environments
-
-3. **PathwayRecord**: Metabolic pathways for PFAS degradation
-   - Maps to: KEGG, MetaCyc, EC, GO
-   - Key fields: pathway_id, pathway_name, genes, genes_kegg
-   - Focus: Dehalogenation, fluoride metabolism, hydrocarbon degradation
-
-4. **GeneProteinRecord**: Genes and proteins with functional annotations
-   - Maps to: UniProt, KEGG, GO, EC, CHEBI
-   - Key fields: gene_protein_id, annotation, ec_number, go_terms, chebi_terms
-   - Focus: Dehalogenases, defluorinases, fluoride exporters, reductive dehalogenases
-
-5. **MacromolecularStructureRecord**: Protein and complex 3D structures
-   - Maps to: PDB, AlphaFold
-   - Key fields: pdb_id, structure_name, components, method, resolution
-   - Focus: Dehalogenase structures, fluoride exporter structures
-
-6. **PublicationRecord**: Scientific literature
-   - Maps to: DOI, PMID, arXiv, bioRxiv
-   - Key fields: url, title, journal, year, authors
-   - Focus: PFAS biodegradation, C-F bond cleavage, microbial consortia
-
-7. **DatasetRecord**: Research datasets from repositories
-   - Maps to: SRA, GEO, MetaboLights, etc.
-   - Key fields: dataset_name, data_type, url, license
-   - Focus: PFAS metagenomes, contaminated site microbiomes
-
-#### Experimental Data Tables (6)
-
-8. **ReactionRecord**: Biochemical reactions for PFAS biodegradation
-   - Maps to: RHEA (reaction database), KEGG Reaction, EC (Enzyme Commission)
-   - Key fields: reaction_id, equation, reaction_category, ec_number, rhea_id, kegg_reaction_id
-   - Reaction categories: dehalogenase (C-F bond cleavage), fluoride_resistance (transport), hydrocarbon_degradation, oxygenase_cometabolism, known_pfas_degraders
-
-9. **ChemicalCompoundRecord**: PFAS compounds and related chemicals
-   - Maps to: CHEBI, PubChem, ChEMBL
-   - Key fields: chemical_id, chemical_name, compound_type, molecular_formula, role_in_bioprocess
-   - Compound types: perfluorinated (PFOA, PFOS), polyfluorinated (precursors), fluoride, metabolites, degradation products
-
-10. **AssayMeasurementRecord**: Analytical assays for PFAS and fluoride
-    - Maps to: OBI (Ontology for Biomedical Investigations), BAO (BioAssay Ontology)
-    - Key fields: assay_id, assay_name, assay_type, target_analytes, detection_method, detection_limit
-    - Assay types: LC-MS/MS (PFAS quantification), fluoride electrode, ion chromatography, total organic fluorine
-
-11. **BioprocessConditionsRecord**: Experimental conditions for PFAS biodegradation
-    - Maps to: ENVO, MIXS, OBI
-    - Key fields: process_id, process_name, process_type, strain_used, pH, temperature, pfas_concentration
-    - Process types: aerobic degradation, anaerobic degradation, sequential anaerobic-aerobic, bioaugmentation, consortia-based
-
-12. **ScreeningResultRecord**: High-throughput screening data
-    - Maps to: OBI, BAO
-    - Key fields: experiment_id, plate_coordinates, strain_barcode, screening_assay, measurement_values, hit_classification
-    - Focus: Fluoride production, PFAS degradation, growth on PFAS
-
-13. **ProtocolRecord**: Experimental protocols and SOPs
-    - Maps to: OBI
-    - Key fields: protocol_id, protocol_name, protocol_type, protocol_version, protocol_doi, dbtl_iteration
-    - Protocol types: PFAS extraction, fluoride measurement, consortia assembly, LC-MS/MS analysis
-
-### Ontology Mappings
-
-The schema integrates the following ontologies and vocabularies:
-- **NCBITaxon**: Organism taxonomy
-- **SRA**: Sequence Read Archive identifiers
-- **CHEBI**: Chemical entities (PFAS, fluoride, metabolites)
-- **ENVO**: Environmental ontology (contaminated sites, groundwater)
-- **MIXS**: Minimum Information about any Sequence
-- **UniProtKB**: Protein sequences and annotations
-- **GO**: Gene Ontology (molecular function, biological process)
-- **EC**: Enzyme Commission numbers (dehalogenases: EC 3.8.1.-)
-- **RHEA**: Reaction database
-- **KEGG/MetaCyc**: Metabolic pathways (dehalogenation, fluoride metabolism)
-- **PDB**: Protein Data Bank structures
-- **OBI**: Ontology for Biomedical Investigations (assays, protocols)
-- **BAO**: BioAssay Ontology
-- **PubChem**: Chemical compound database (PFAS structures)
-- **ChEMBL**: Bioactive molecule database
-
-### Using LinkML Tools
-
-```bash
-# Install LinkML dependencies
-uv sync
-
-# Validate extended TSV data against schema (complete workflow)
-make validate-schema
-
-# Individual LinkML commands:
-# Generate Python dataclasses from schema
-make gen-linkml-models
-# OR manually:
-uv run gen-python schema/pfas_biodegradation.yaml > src/linkml_models.py
-
-# Generate JSON Schema
-uv run gen-json-schema schema/pfas_biodegradation.yaml > schema/schema.json
-
-# Convert TSV to LinkML YAML format
-uv run python src/tsv_to_linkml.py --data-dir data/txt/sheet --output data/linkml_database.yaml
-
-# Validate YAML data against schema
-uv run linkml-validate -s schema/pfas_biodegradation.yaml data/linkml_database.yaml
-```
-
-### Schema Design Principles
-
-- **Ontology-aligned**: All slots map to standard ontologies where possible
-- **Flexible IDs**: Support for KEGG K numbers, UniProt IDs, custom IDs, GenBank accessions
-- **Validation patterns**: Regex patterns for accession numbers (GCF_*, SAMN*, GO:*, EC:3.8.1.*, CHEBI:*, etc.)
-- **Enumerations**: Controlled vocabularies for PFAS compound types, assay methods, degradation processes
-- **Multivalued slots**: Support for multiple GO terms, CHEBI terms, genes per record
-- **URL handling**: Proper URIs with schema.org mappings
-
-## Data Validation
-
-The project includes two levels of validation:
-
-### 1. Schema Validation (`make validate-schema`)
-
-Validates that TSV data conforms to the LinkML schema structure:
-- Converts TSV files to LinkML YAML format
-- Checks required fields, data types, and patterns
-- Validates ontology term formats (GO:*, CHEBI:*, EC numbers for dehalogenases)
-- Verifies URL formatting and identifier patterns
-
-**Validation workflow**:
-```bash
-make validate-schema
-# 1. Generates Python models from schema
-# 2. Converts TSV → YAML with deduplication
-# 3. Validates YAML against schema
-# 4. Reports validation errors and statistics
-```
-
-### 2. Cross-Sheet Consistency Validation (`make validate-consistency`)
-
-Validates referential integrity and data quality across tables:
-
-**Validation checks**:
-1. **Required columns**: Ensures all tables have expected column names
-2. **Identifier uniqueness**: Checks for duplicate IDs within tables
-   - Genomes: Scientific name must be unique
-   - Biosamples: Sample ID must be unique
-   - Genes/proteins: Gene ID + organism combination must be unique
-3. **Genome references**: Validates organism names across tables
-   - Checks genes/proteins organism references match genomes table
-   - Checks structures organism references match genomes table
-   - Uses fuzzy genus-level matching for organism name variants
-4. **Biosample consistency**: Validates sample IDs and checks for duplicates
-5. **Pathway-gene relationships**: Validates gene IDs referenced in pathways exist in genes table
-6. **URL consistency**: Checks download URL formatting (http/https/ftp patterns)
-7. **Data completeness**: Reports coverage statistics for critical fields
-   - Genome IDs and annotation URLs
-   - EC numbers (focus on dehalogenases), GO terms, PDB IDs
-   - Download URLs across all tables
-
-**Output format**:
-- ❌ **ERRORS**: Critical issues that fail validation (exit code 1)
-- ⚠️ **WARNINGS**: Data quality issues that pass validation but need attention
-- ℹ️ **INFO**: Statistics and coverage metrics
-
-**Example usage**:
-```bash
-# Standard validation (warnings don't fail)
-make validate-consistency
-
-# Strict mode (warnings treated as errors)
-uv run python src/validate_consistency.py --data-dir data/txt/sheet --strict
-```
-
-## ML Integration (KG-Microbe)
-
-This project integrates with the KG-Microbe platform for ML-enabled PFAS biodegradation research:
-
-### Training Data Categories
-
-1. **Known PFAS degraders**: Microbes with demonstrated PFAS biodegradation
-2. **Dechlorinating microbes**: Organisms with dehalogenases (potential C-F bond cleavage)
-3. **Fluoride-resistant microbes**: Organisms with fluoride exporters and resistance genes
-4. **Hydrocarbon degraders**: Microbes for cleaving C-C bonds in PFAS backbones
-5. **PFAS-contaminated site isolates**: Environmental microbes from AFFF sites
-6. **Co-occurrence patterns**: Microbial associations in PFAS-contaminated environments
-7. **Similar organisms**: High similarity to categories 1-6
-
-### Negative Controls
-- Pristine environment microbes (no PFAS exposure)
-- Human pathogens (filter housekeeping genes)
-
-### Feature Extraction
-- Dehalogenase genes (RdhA, DehH, DhaA, etc.)
+**Feature Extraction**:
+- Dehalogenase genes (RdhA, DehH, DhaA)
 - Fluoride exporters (CrcB, FEX)
 - Hydrocarbon degradation pathways
-- Reactive oxygen species production
-- Metabolic co-dependencies
-- Environmental metadata (pH, temperature, salinity, PFAS concentration)
+- Environmental metadata (pH, temperature, PFAS concentration)
 
-### Model Outputs
-- PFAS biodegradation potential scores
-- Community design recommendations (3-5 members per consortium)
-- Stability predictions (microbe-microbe interactions)
-- Pathway completeness assessment
-
-## Workflow Examples
-
-### Complete Extension Workflow
-```bash
-# 1. Convert Excel to TSV (PFAS Data for AI.xlsx)
-make convert-excel
-
-# 2. Run basic extension (extend1) - search for PFAS-related data
-make update-all
-
-# 3. Run advanced extension (extend2)
-make extend2
-# This includes: PDF download → chemical/assay extension → PDF extraction → validation
-
-# 4. Cross-reference publications with data
-make extendbypub
-
-# 5. Validate everything
-make validate-consistency
-make validate-schema
-
-# 6. Check status
-make status
-```
-
-### Merging Excel Updates
-```bash
-# Preview changes without applying
-make merge-excel-dry-run
-
-# Apply merge (backs up existing TSV files)
-make merge-excel
-
-# Validate after merge
-make validate-consistency
-```
-
-### Individual Table Updates
-```bash
-# Update specific tables with custom source labels
-uv run python src/chemical_search.py --source-label extend2  # PFAS compounds
-uv run python src/assay_search.py --source-label extend2     # Fluoride/PFAS assays
-
-# Extract data from a specific PDF directory
-uv run python src/extract_from_documents.py --pdf-dir data/publications --output-dir data/txt/sheet
-```
+**Usage**: See `data/kgm/README.md` for Python API examples
 
 ## Important Notes
 
-- This repo uses Makefile for main commands (no justfile)
-- No tests/ directory - tests are embedded as doctests or in src/ files
-- No docs/ directory or mkdocs - documentation is in README.md and CLAUDE.md
-- Python files are in src/ directly, not src/pfas_ai/ subdirectory
-- NCBI Entrez.email should be set (currently "your.email@example.com")
-- Data is initial seed data (6 organisms, 23 publications) - to be extended
-- LinkML schema needs to be created for PFAS biodegradation domain
-- **Source Provenance**: All extended data includes source column tracking data origin (extend1, extend2, DOI)
-- **Publication Tracking**: Source columns can contain multiple references separated by `|` (e.g., `extend2|10.1016/j.jhazmat.2021.126361`)
-- **Merge Strategy**: `merge-excel` backs up TSV files and intelligently merges schema changes while preserving extended rows
-- **PFAS Focus**: Search terms and curated genes should prioritize PFAS biodegradation (dehalogenase, fluoride resistance, hydrocarbon degradation)
+- **Repo uses Makefile**, not justfile
+- **No tests/ directory** - tests are embedded as doctests or in src/
+- **No docs/ directory** - documentation in README.md and CLAUDE.md
+- **Flat src/ structure** - Python files in src/ directly, NOT src/pfas_ai/
+- **NCBI Entrez.email** should be configured (currently "your.email@example.com")
+- **Source Provenance**: All extended data tracked via source column (extend1, extend2, DOI)
+- **Publication Tracking**: Source columns support `|` delimiter for multiple references
+- **Merge Strategy**: `merge-excel` backs up TSV files before intelligent merge
+- **Data is extensible**: Started with 6 organisms, designed to grow to 100+
 
-## Refactoring Checklist
+## Common Workflows
 
-Items to update from CMM-AI (lanthanides) to PFAS-AI:
+### Complete Extension Pipeline
+```bash
+make convert-excel        # 1. Excel → TSV
+make update-all           # 2. Extend all tables (extend1)
+make extend2              # 3. PDF download → extraction (extend2)
+make extendbypub          # 4. Cross-reference publications
+make validate-consistency # 5. Validate data
+make validate-schema      # 6. Validate against LinkML
+make status               # 7. Check results
+```
 
-- [x] CLAUDE.md - Updated with PFAS focus
-- [ ] README.md - Update project description, tables, examples
-- [ ] pyproject.toml - Update name from cmm-ai to pfas-ai
-- [ ] Makefile - Update table names if needed (currently compatible)
-- [ ] ncbi_search.py - Replace lanthanide search terms with PFAS terms
-- [ ] gene_search.py - Update curated gene lists (dehalogenases, fluoride exporters)
-- [ ] pathway_search.py - Focus on dehalogenation, fluoride pathways
-- [ ] publication_search.py - Update search terms to PFAS-specific
-- [ ] chemical_search.py - PFAS compound types and roles
-- [ ] assay_search.py - Fluoride detection, PFAS quantification assays
-- [ ] LinkML schema - Create schema/pfas_biodegradation.yaml
-- [ ] Documentation strings - Update scientific context in all modules
+### Update Specific Tables
+```bash
+# With custom source labels:
+uv run python src/chemical_search.py --source-label extend2
+uv run python src/assay_search.py --source-label extend2
+
+# Extract from specific PDF directory:
+uv run python src/extract_from_documents.py --pdf-dir data/publications --output-dir data/txt/sheet
+```
+
+### Merge Excel Updates
+```bash
+make merge-excel-dry-run  # Preview changes
+make merge-excel          # Apply merge (creates backups)
+make validate-consistency # Validate after merge
+```
+
+### Knowledge Graph Operations
+```bash
+# Create DuckDB database from TSV files
+make create-kg-db
+
+# Query via Python API (see data/kgm/README.md):
+from src.kg_analysis.kg_database import KGDatabase
+kg = KGDatabase('data/kgm/kg-microbe.duckdb')
+results = kg.query("SELECT * FROM nodes WHERE category='Genome'")
+```

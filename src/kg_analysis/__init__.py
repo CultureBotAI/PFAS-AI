@@ -1,5 +1,7 @@
-"""Knowledge graph analysis module for PFAS biodegradation research."""
+"""
+DuckDB knowledge graph database module.
+"""
 
 from .kg_database import KnowledgeGraphDB
 
-__all__ = ['KnowledgeGraphDB']
+__all__ = ["KnowledgeGraphDB"]
