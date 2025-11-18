@@ -147,9 +147,18 @@ def download_pdfs_from_publications(
     print(f"Reading publications from: {publications_file}")
     df = pd.read_csv(publications_file, sep='\t', dtype=str, keep_default_na=False)
 
-    # Check for URL column
-    if 'URL' not in df.columns:
-        print("Error: No 'URL' column found in publications table")
+    # Find URL column (case-insensitive)
+    url_col = None
+    title_col = None
+    for col in df.columns:
+        if col.lower() == 'url':
+            url_col = col
+        elif col.lower() == 'title':
+            title_col = col
+
+    if url_col is None:
+        print(f"Error: No 'URL' column found in publications table")
+        print(f"Available columns: {list(df.columns)}")
         return
 
     print(f"Found {len(df)} publications")
@@ -162,8 +171,8 @@ def download_pdfs_from_publications(
     failed = 0
 
     for idx, row in df.iterrows():
-        url = row['URL']
-        title = row.get('Title', '')
+        url = row[url_col]
+        title = row.get(title_col, '') if title_col else ''
 
         if not url or pd.isna(url) or url.strip() == '':
             print(f"[{idx+1}/{len(df)}] Skipping: No URL")

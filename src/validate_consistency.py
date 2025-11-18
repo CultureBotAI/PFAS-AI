@@ -301,7 +301,9 @@ class ConsistencyValidator:
                 continue
 
             required = required_columns.get(table_name, [])
-            missing = [col for col in required if col not in df.columns]
+            # Case-insensitive column check
+            df_columns_lower = {col.lower(): col for col in df.columns}
+            missing = [col for col in required if col.lower() not in df_columns_lower]
 
             if missing:
                 self.errors.append(f"{table_name} table missing required columns: {missing}")
