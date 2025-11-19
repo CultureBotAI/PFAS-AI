@@ -1,8 +1,0 @@
-gene_or_protein_id	gene_name	annotation	organism	ec_number	go_terms	chebi_terms	sequence_download_url	source	paper_reference
-rdhA	rdhA	dehalogenase gene						1-s2.0-S095816692400106X-main	1-s2.0-S095816692400106X-main
-dhaA	dhaA	dehalogenase gene						1-s2.0-S095816692400106X-main	1-s2.0-S095816692400106X-main
-crcB	crcB	fluoride_resistance gene						1-s2.0-S095816692400106X-main	1-s2.0-S095816692400106X-main
-alkB	alkB	oxygenase gene						10.1039/d4va00359d	d4va00359d
-catA	catA	oxygenase gene						10.1039/d4va00359d	d4va00359d
-catB	catB	oxygenase gene						10.1039/d4va00359d	d4va00359d
-dehH	dehH	dehalogenase gene						1-s2.0-S0304389425027992-main	1-s2.0-S0304389425027992-main

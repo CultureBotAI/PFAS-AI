@@ -75,3 +75,10 @@ custom_nahAc	Pseudomonas putida	Naphthalene dioxygenase alpha subunit	1.14.12.12
 K00493	Methylosinus trichosporium	Methane/ammonia monooxygenase	1.14.13.25	GO:0015948 (methanogenesis)	CHEBI:16183 (methane)	extend1
 custom_dfnA	Methylobacterium radiotolerans	Putative defluorinase	3.8.1.-	GO:0018872 (aryl-halide reductase activity)	CHEBI:17051 (fluoride)	extend1
 custom_catA	Pseudomonas sp. Strain 273	Catechol 1,2-dioxygenase (aromatic degradation)	1.13.11.1	GO:0019439 (aromatic compound catabolic process)		extend1|10.1021/acs.est.5c06771|10.1007/s11756-024-01654-0|10.1134/S0003683817050027|10.3390/su151814000|10.3390/toxics11121001
+rdhA		dehalogenase gene				
+dhaA		dehalogenase gene				
+crcB		fluoride_resistance gene				
+alkB		oxygenase gene				
+catA		oxygenase gene				
+catB		oxygenase gene				
+dehH		dehalogenase gene				

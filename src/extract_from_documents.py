@@ -716,9 +716,17 @@ def batch_extract_from_directory(pdf_dir: Path, output_dir: Path, summary_only: 
 
         # Append to TSV files (if not summary only)
         if not summary_only:
+            # Map sheet types to actual file names
+            filename_mapping = {
+                'organisms': 'taxa_and_genomes',
+                'genes': 'genes_and_proteins',
+                # All others use their sheet_type name directly
+            }
+
             for sheet_type, records in extracted.items():
                 if records:
-                    tsv_path = output_dir / f"PFAS_Data_for_AI_{sheet_type}_extended.tsv"
+                    filename = filename_mapping.get(sheet_type, sheet_type)
+                    tsv_path = output_dir / f"PFAS_Data_for_AI_{filename}_extended.tsv"
                     append_to_tsv(records, tsv_path, sheet_type)
 
     print("=" * 60)
