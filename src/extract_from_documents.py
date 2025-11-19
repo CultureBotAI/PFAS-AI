@@ -32,7 +32,10 @@ class DocumentExtractor:
             'assays': [],
             'bioprocesses': [],
             'screening_results': [],
-            'protocols': []
+            'protocols': [],
+            'organisms': [],
+            'genes': [],
+            'strains': []
         }
 
     def extract_all(self) -> Dict[str, List[Dict]]:
@@ -44,6 +47,9 @@ class DocumentExtractor:
         self.extract_chemicals()
         self.extract_assays()
         self.extract_bioprocesses()
+        self.extract_organisms()
+        self.extract_genes()
+        self.extract_strains()
         # screening_results and protocols require more structured data
         # that may not be present in all papers
         return self.extracted_data
@@ -256,6 +262,125 @@ class DocumentExtractor:
         self.extracted_data['bioprocesses'] = bioprocesses
         return bioprocesses
 
+    def extract_organisms(self) -> List[Dict]:
+        """Extract organism mentions from PDF for cross-linking.
+
+        Returns:
+            List of organism dictionaries
+        """
+        organisms = []
+        seen_organisms = set()
+
+        # PFAS-degrading organism patterns
+        pfas_organism_patterns = [
+            r'\b(Pseudomonas\s+\w+(?:\s+\w+)?)',
+            r'\b(Acidimicrobium\s+\w+(?:\s+\w+)?)',
+            r'\b(Rhodococcus\s+\w+(?:\s+\w+)?)',
+            r'\b(Mycobacterium\s+\w+(?:\s+\w+)?)',
+            r'\b(Stenotrophomonas\s+\w+(?:\s+\w+)?)',
+            r'\b(Dehalococcoides\s+\w+(?:\s+\w+)?)',
+            r'\b(Desulfitobacterium\s+\w+(?:\s+\w+)?)',
+            r'\b([A-Z][a-z]+\s+sp\.?\s+[A-Z0-9\-]+)',  # e.g., "Pseudomonas sp. 273"
+        ]
+
+        for pattern in pfas_organism_patterns:
+            matches = re.findall(pattern, self.markdown_text)
+            for organism_name in matches:
+                organism_name = organism_name.strip()
+                if organism_name not in seen_organisms:
+                    seen_organisms.add(organism_name)
+                    organisms.append({
+                        'scientific_name': organism_name,
+                        'ncbi_taxon_id': None,
+                        'genome_identifier': None,
+                        'annotation_download_url': None,
+                        'source': self.source_label,
+                        'paper_reference': self.source_file
+                    })
+
+        self.extracted_data['organisms'] = organisms
+        return organisms
+
+    def extract_genes(self) -> List[Dict]:
+        """Extract gene/protein mentions from PDF for cross-linking.
+
+        Returns:
+            List of gene dictionaries
+        """
+        genes = []
+        seen_genes = set()
+
+        # PFAS-relevant gene patterns
+        gene_patterns = {
+            # Dehalogenase genes
+            'dehalogenase': r'\b(rdh[A-Z]|deh[A-Z]+|haloalkane\s+dehalogenase)\b',
+            # Fluoride resistance
+            'fluoride_resistance': r'\b(crc[AB]|fex|fluoride\s+exporter)\b',
+            # Oxygenases
+            'oxygenase': r'\b([a-z]{3}[A-Z]\s+(?:monooxygenase|dioxygenase))\b',
+            # Hydrocarbon degradation
+            'alkane': r'\b(alk[BGJL]|alkane\s+hydroxylase)\b',
+        }
+
+        for gene_type, pattern in gene_patterns.items():
+            matches = re.findall(pattern, self.markdown_text, re.IGNORECASE)
+            for gene_name in matches:
+                gene_name = gene_name.strip()
+                if gene_name not in seen_genes:
+                    seen_genes.add(gene_name)
+                    genes.append({
+                        'gene_or_protein_id': f"Custom_{gene_name}_from_{self.source_file}",
+                        'gene_name': gene_name,
+                        'annotation': f"{gene_type} gene mentioned in {self.source_file}",
+                        'organism': None,
+                        'ec_number': None,
+                        'go_terms': None,
+                        'chebi_terms': None,
+                        'sequence_download_url': None,
+                        'source': self.source_label,
+                        'paper_reference': self.source_file
+                    })
+
+        self.extracted_data['genes'] = genes
+        return genes
+
+    def extract_strains(self) -> List[Dict]:
+        """Extract strain designations from PDF for cross-linking.
+
+        Returns:
+            List of strain dictionaries
+        """
+        strains = []
+        seen_strains = set()
+
+        # Strain designation patterns
+        strain_patterns = [
+            r'\bstrain\s+([A-Z0-9\-]+)\b',
+            r'\b([A-Z]+\s+\d+(?:\.\d+)?)\b',  # e.g., "ATCC 12345"
+            r'\b(DSM\s+\d+)\b',
+            r'\b(JCM\s+\d+)\b',
+            r'\b(NCTC\s+\d+)\b',
+        ]
+
+        for pattern in strain_patterns:
+            matches = re.findall(pattern, self.markdown_text, re.IGNORECASE)
+            for strain_id in matches:
+                strain_id = strain_id.strip()
+                if strain_id and strain_id not in seen_strains and len(strain_id) < 50:
+                    seen_strains.add(strain_id)
+                    strains.append({
+                        'strain_id': f"Custom_{strain_id}_from_{self.source_file}",
+                        'strain_designation': strain_id,
+                        'organism': None,
+                        'culture_collection_id': strain_id if any(cc in strain_id.upper() for cc in ['ATCC', 'DSM', 'JCM', 'NCTC']) else None,
+                        'isolation_source': None,
+                        'source': self.source_label,
+                        'paper_reference': self.source_file
+                    })
+
+        self.extracted_data['strains'] = strains
+        return strains
+
 
 def read_markdown_file(md_path: Path) -> str:
     """Read markdown file content.
@@ -316,7 +441,10 @@ def append_to_tsv(data: List[Dict], tsv_path: Path, sheet_type: str):
         'assays': 'assay_id',
         'bioprocesses': 'process_id',
         'screening_results': 'experiment_id',
-        'protocols': 'protocol_id'
+        'protocols': 'protocol_id',
+        'organisms': 'scientific_name',
+        'genes': 'gene_or_protein_id',
+        'strains': 'strain_id'
     }
     id_col = id_columns.get(sheet_type)
 
@@ -372,7 +500,10 @@ def batch_extract_from_directory(pdf_dir: Path, output_dir: Path, summary_only: 
         'assays': 0,
         'bioprocesses': 0,
         'screening_results': 0,
-        'protocols': 0
+        'protocols': 0,
+        'organisms': 0,
+        'genes': 0,
+        'strains': 0
     }
 
     for md_file in md_files:
@@ -407,6 +538,9 @@ def batch_extract_from_directory(pdf_dir: Path, output_dir: Path, summary_only: 
         print(f"  - {len(extracted['bioprocesses'])} bioprocesses")
         print(f"  - {len(extracted['screening_results'])} screening results")
         print(f"  - {len(extracted['protocols'])} protocols")
+        print(f"  - {len(extracted['organisms'])} organisms")
+        print(f"  - {len(extracted['genes'])} genes")
+        print(f"  - {len(extracted['strains'])} strains")
         print("")
 
         # Update totals

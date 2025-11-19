@@ -371,8 +371,9 @@ def process_sheet(
 
     # Process each publication
     for _, pub_row in publications.iterrows():
-        pub_url = pub_row['URL']
-        pub_title = pub_row.get('Title', 'Unknown')
+        # Case-insensitive column access
+        pub_url = pub_row.get('url') or pub_row.get('URL', '')
+        pub_title = pub_row.get('title') or pub_row.get('Title', 'Unknown')
         pub_id = extract_publication_id(pub_url)
 
         if not pub_id:
