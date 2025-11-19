@@ -46,11 +46,10 @@ make status              # Check pipeline status
 - `make update-strains` - Culture collection IDs and procurement
 - `make update-media` - Growth media formulations
 
-**Reaction Category Extensions** (gene-linked enrichment):
-- `make update-reactions-all-categories` - Extend all 6 categories
-- `make merge-reactions` - Merge into unified reactions table (107 reactions)
-
-Individual categories: `dehalogenase`, `fluoride`, `hydrocarbon`, `pfas-degraders`, `oxygenase`, `important-genes`
+**Reaction Data Management**:
+- `make merge-reactions` - Merge PFAS_Reactions category files (static reference data, 113 reactions)
+- Note: PFAS_Reactions_* files in `data/txt/sheet/PFAS_Reactions/` are static reference data
+- New reactions extend main `reactions_extended.tsv` only (no category-specific extensions)
 
 **KG-Microbe Integration**:
 - `make create-kg-db` - Create DuckDB knowledge graph from TSV files
@@ -89,6 +88,7 @@ schema/
 data/
   sheet/                 # Original Excel: "PFAS Data for AI.xlsx"
   txt/sheet/             # Converted TSV + *_extended.tsv files
+    PFAS_Reactions/      # Static reference: category-specific reaction files (not extended)
   publications/          # Downloaded PDFs
   kgm/                   # KG-Microbe TSV files and kg-microbe.duckdb
 Makefile                 # Pipeline automation (NO justfile)
@@ -130,13 +130,14 @@ All extended rows include a `source` column:
 - BioSample: Direct links to SRA data via `get_biosample_download_url()`
 - All databases: Construct valid download URLs, not just landing pages
 
-**Reaction Categories**: Reactions table supports `reaction_category` column for:
+**Reaction Categories**: Reactions table includes `reaction_category` column (from PFAS_Reactions reference data):
 - `dehalogenase` - C-F bond cleavage (16 reactions)
 - `fluoride_resistance` - Fluoride transport (38 reactions)
 - `hydrocarbon_degradation` - Alkane metabolism (19 reactions)
 - `known_pfas_degraders` - Validated PFAS degraders (11 reactions)
 - `oxygenase_cometabolism` - Oxygenase pathways (29 reactions)
 - `important_genes` - Non-enzymatic genes (3 entries)
+- Category files are in `data/txt/sheet/PFAS_Reactions/` as static reference (not extended)
 
 **Data Validation** (two independent levels):
 1. **Schema Validation**: TSV → YAML → LinkML schema validation (types, patterns, ontology terms)

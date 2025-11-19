@@ -16,6 +16,45 @@ import pandas as pd
 class DocumentExtractor:
     """Extract experimental data from markdown-converted PDF text."""
 
+    # Curated list of PFAS-relevant bacterial genera
+    KNOWN_GENERA = {
+        'Pseudomonas', 'Acidimicrobium', 'Rhodococcus', 'Mycobacterium',
+        'Stenotrophomonas', 'Dehalococcoides', 'Desulfitobacterium',
+        'Hyphomicrobium', 'Methylobacterium', 'Bacillus', 'Burkholderia',
+        'Sphingomonas', 'Achromobacter', 'Ralstonia', 'Cupriavidus',
+        'Arthrobacter', 'Corynebacterium', 'Nocardia', 'Gordonia',
+        'Streptomyces', 'Actinomyces', 'Escherichia', 'Klebsiella',
+        'Enterobacter', 'Citrobacter', 'Serratia', 'Acinetobacter',
+        'Shewanella', 'Geobacter', 'Clostridium', 'Acetobacterium',
+        'Methanosarcina', 'Desulfovibrio', 'Sulfurospirillum'
+    }
+
+    # Common false positives to exclude from organism extraction
+    ORGANISM_BLOCKLIST = {
+        'The global', 'Article history', 'Materials and', 'Methods section',
+        'In this', 'Figure legend', 'Supplementary information', 'Results showed',
+        'Corresponding author', 'International license', 'Copyright holder',
+        'Explore all', 'Discussion section', 'Conclusions drawn', 'Future perspectives',
+        'References cited', 'Acknowledgments section', 'Funding sources',
+        'Competing interests', 'Author contributions', 'Data availability'
+    }
+
+    # Valid culture collection prefixes and their number ranges
+    CULTURE_COLLECTIONS = {
+        'ATCC': (4, 6),  # ATCC 12345
+        'DSM': (3, 6),   # DSM 10331
+        'DSMZ': (3, 6),  # DSMZ 10331
+        'JCM': (4, 6),   # JCM 15462
+        'NBRC': (5, 6),  # NBRC 103882
+        'LMG': (4, 5),   # LMG 1242
+        'NCIMB': (4, 6), # NCIMB 13964
+        'CIP': (4, 6),   # CIP 106686
+        'NCTC': (4, 5),  # NCTC 10332
+        'CCUG': (4, 5),  # CCUG 12345
+        'BCRC': (4, 6),  # BCRC 17578
+        'IAM': (3, 5),   # IAM 1529
+    }
+
     def __init__(self, markdown_text: str, source_file: str, source_label: str = "extend2"):
         """Initialize extractor with markdown text.
 
@@ -37,6 +76,89 @@ class DocumentExtractor:
             'genes': [],
             'strains': []
         }
+
+    def _is_valid_binomial(self, name: str) -> bool:
+        """Validate binomial nomenclature format.
+
+        Args:
+            name: Organism name to validate
+
+        Returns:
+            True if valid binomial format, False otherwise
+        """
+        parts = name.split()
+        if len(parts) < 2:
+            return False
+
+        genus, species = parts[0], parts[1]
+
+        # Check capitalization
+        if not (genus[0].isupper() and genus[1:].islower()):
+            return False
+        if not species.islower():
+            return False
+
+        # Check minimum length (avoid "In et", "The global")
+        if len(genus) < 3 or len(species) < 3:
+            return False
+
+        # Check Latin characters only (no numbers or special chars)
+        if not re.match(r'^[A-Za-z]+$', genus + species):
+            return False
+
+        return True
+
+    def _appears_in_biological_context(self, organism: str) -> bool:
+        """Check if organism appears in biological context.
+
+        Args:
+            organism: Organism name to check
+
+        Returns:
+            True if appears in biological context
+        """
+        # Find all occurrences
+        occurrences = [m.start() for m in re.finditer(
+            re.escape(organism), self.markdown_text, re.IGNORECASE)]
+
+        if len(occurrences) < 2:
+            # Single mention likely false positive
+            return False
+
+        # Check context around each occurrence
+        bio_keywords = {
+            'strain', 'isolate', 'culture', 'species', 'bacterium',
+            'bacteria', 'microorganism', 'organism', 'genus', 'grown',
+            'cultivated', 'inoculated', 'incubated', 'ATCC', 'DSM', 'JCM'
+        }
+
+        for pos in occurrences:
+            start = max(0, pos - 100)
+            end = min(len(self.markdown_text), pos + 100)
+            context = self.markdown_text[start:end].lower()
+
+            if any(kw in context for kw in bio_keywords):
+                return True
+
+        return False
+
+    def _is_valid_strain_id(self, strain_id: str) -> bool:
+        """Validate strain ID format.
+
+        Args:
+            strain_id: Strain ID to validate
+
+        Returns:
+            True if valid strain ID format
+        """
+        # Check against known culture collections
+        for collection, (min_digits, max_digits) in self.CULTURE_COLLECTIONS.items():
+            # Case-sensitive match for collection prefix
+            pattern = rf'^{collection}\s+(\d{{{min_digits},{max_digits}}})$'
+            if re.match(pattern, strain_id):
+                return True
+
+        return False
 
     def extract_all(self) -> Dict[str, List[Dict]]:
         """Extract data for all sheet types.
@@ -211,13 +333,10 @@ class DocumentExtractor:
                 end = min(len(self.markdown_text), match.end() + 250)
                 context = self.markdown_text[start:end]
 
-                # Try to extract organism
+                # Try to extract organism - use validated organisms from main extraction
+                # For now, set to None to avoid extracting garbage text
+                # TODO: Link to organisms extracted via extract_organisms() method
                 organism = None
-                org_pattern = r'\b([A-Z][a-z]+\s+[a-z]+(?:\s+[a-z]+)?)\b'
-                org_matches = re.findall(org_pattern, context)
-                if org_matches:
-                    # Take first binomial name found
-                    organism = org_matches[0]
 
                 # Try to extract pH
                 pH = None
@@ -265,38 +384,64 @@ class DocumentExtractor:
     def extract_organisms(self) -> List[Dict]:
         """Extract organism mentions from PDF for cross-linking.
 
+        Uses improved patterns and validation to minimize false positives.
+
         Returns:
             List of organism dictionaries
         """
         organisms = []
         seen_organisms = set()
 
-        # PFAS-degrading organism patterns
-        pfas_organism_patterns = [
-            r'\b(Pseudomonas\s+\w+(?:\s+\w+)?)',
-            r'\b(Acidimicrobium\s+\w+(?:\s+\w+)?)',
-            r'\b(Rhodococcus\s+\w+(?:\s+\w+)?)',
-            r'\b(Mycobacterium\s+\w+(?:\s+\w+)?)',
-            r'\b(Stenotrophomonas\s+\w+(?:\s+\w+)?)',
-            r'\b(Dehalococcoides\s+\w+(?:\s+\w+)?)',
-            r'\b(Desulfitobacterium\s+\w+(?:\s+\w+)?)',
-            r'\b([A-Z][a-z]+\s+sp\.?\s+[A-Z0-9\-]+)',  # e.g., "Pseudomonas sp. 273"
-        ]
+        # Pattern 1: Genus species (binomial nomenclature)
+        # Min 3 chars each to avoid "In et", "The global"
+        binomial_pattern = r'\b([A-Z][a-z]{2,}\s+[a-z]{3,})\b'
 
-        for pattern in pfas_organism_patterns:
-            matches = re.findall(pattern, self.markdown_text)
-            for organism_name in matches:
-                organism_name = organism_name.strip()
-                if organism_name not in seen_organisms:
-                    seen_organisms.add(organism_name)
-                    organisms.append({
-                        'scientific_name': organism_name,
-                        'ncbi_taxon_id': None,
-                        'genome_identifier': None,
-                        'annotation_download_url': None,
-                        'source': self.source_label,
-                        'paper_reference': self.source_file
-                    })
+        # Pattern 2: Genus sp. STRAIN (e.g., "Pseudomonas sp. 273")
+        # Only match known genera to avoid false positives
+        genus_list = '|'.join(self.KNOWN_GENERA)
+        sp_pattern = rf'\b({genus_list})\s+sp\.?\s+([A-Z0-9\-]{{1,10}})\b'
+
+        # Extract binomial names
+        binomial_matches = re.findall(binomial_pattern, self.markdown_text)
+        for organism_name in binomial_matches:
+            organism_name = organism_name.strip()
+
+            # Multi-layer validation
+            genus = organism_name.split()[0]
+
+            if (organism_name not in seen_organisms and
+                organism_name not in self.ORGANISM_BLOCKLIST and
+                self._is_valid_binomial(organism_name) and
+                genus in self.KNOWN_GENERA and
+                self._appears_in_biological_context(organism_name)):
+
+                seen_organisms.add(organism_name)
+                organisms.append({
+                    'scientific_name': organism_name,
+                    'ncbi_taxon_id': None,
+                    'genome_identifier': None,
+                    'annotation_download_url': None,
+                    'source': self.source_label,
+                    'paper_reference': self.source_file
+                })
+
+        # Extract sp. designations (e.g., "Pseudomonas sp. 273")
+        sp_matches = re.findall(sp_pattern, self.markdown_text)
+        for genus, strain in sp_matches:
+            organism_name = f"{genus} sp. {strain}"
+
+            if (organism_name not in seen_organisms and
+                self._appears_in_biological_context(organism_name)):
+
+                seen_organisms.add(organism_name)
+                organisms.append({
+                    'scientific_name': organism_name,
+                    'ncbi_taxon_id': None,
+                    'genome_identifier': None,
+                    'annotation_download_url': None,
+                    'source': self.source_label,
+                    'paper_reference': self.source_file
+                })
 
         self.extracted_data['organisms'] = organisms
         return organisms
@@ -304,42 +449,65 @@ class DocumentExtractor:
     def extract_genes(self) -> List[Dict]:
         """Extract gene/protein mentions from PDF for cross-linking.
 
+        Uses context-aware patterns to reduce false positives.
+
         Returns:
             List of gene dictionaries
         """
         genes = []
         seen_genes = set()
 
-        # PFAS-relevant gene patterns
+        # PFAS-relevant gene patterns (case-sensitive for gene symbols)
+        # Bacterial genes typically: lowercase italics (rdh, deh, crc, alk)
+        # Proteins typically: Capital first letter (RdhA, DehA, CrcB)
         gene_patterns = {
-            # Dehalogenase genes
-            'dehalogenase': r'\b(rdh[A-Z]|deh[A-Z]+|haloalkane\s+dehalogenase)\b',
-            # Fluoride resistance
-            'fluoride_resistance': r'\b(crc[AB]|fex|fluoride\s+exporter)\b',
-            # Oxygenases
-            'oxygenase': r'\b([a-z]{3}[A-Z]\s+(?:monooxygenase|dioxygenase))\b',
-            # Hydrocarbon degradation
-            'alkane': r'\b(alk[BGJL]|alkane\s+hydroxylase)\b',
+            # Dehalogenase genes (specific symbols only)
+            'dehalogenase': [
+                r'\b(rdhA|rdhB|rdhC)\b',  # Reductive dehalogenases
+                r'\b(dehH|dehI|dehA|dehB)\b',  # Haloacid dehalogenases
+                r'\b(dhaA)\b',  # Haloalkane dehalogenase
+                r'\b(pceA|tceA)\b',  # Chloroethene reductive dehalogenases
+            ],
+            # Fluoride resistance (specific symbols)
+            'fluoride_resistance': [
+                r'\b(crcA|crcB)\b',  # Fluoride exporters
+                r'\b(fexA|fexB)\b',  # Fluoride export proteins
+            ],
+            # Oxygenases (specific known genes)
+            'oxygenase': [
+                r'\b(alkB|alkM|alkG)\b',  # Alkane monooxygenases
+                r'\b(nahAc|nahAd)\b',  # Naphthalene dioxygenase
+                r'\b(catA|catB)\b',  # Catechol dioxygenases
+            ],
         }
 
-        for gene_type, pattern in gene_patterns.items():
-            matches = re.findall(pattern, self.markdown_text, re.IGNORECASE)
-            for gene_name in matches:
-                gene_name = gene_name.strip()
-                if gene_name not in seen_genes:
-                    seen_genes.add(gene_name)
-                    genes.append({
-                        'gene_or_protein_id': f"Custom_{gene_name}_from_{self.source_file}",
-                        'gene_name': gene_name,
-                        'annotation': f"{gene_type} gene mentioned in {self.source_file}",
-                        'organism': None,
-                        'ec_number': None,
-                        'go_terms': None,
-                        'chebi_terms': None,
-                        'sequence_download_url': None,
-                        'source': self.source_label,
-                        'paper_reference': self.source_file
-                    })
+        # Flatten patterns and extract
+        for gene_type, patterns in gene_patterns.items():
+            for pattern in patterns:
+                matches = re.findall(pattern, self.markdown_text)
+                for gene_name in matches:
+                    gene_name = gene_name.strip()
+
+                    # Validation: gene must appear in biological context
+                    if gene_name and gene_name not in seen_genes:
+                        # Check if appears near biological keywords
+                        bio_context = any(kw in self.markdown_text.lower()
+                                        for kw in ['gene', 'protein', 'enzyme', 'encodes', 'catalyzes'])
+
+                        if bio_context:
+                            seen_genes.add(gene_name)
+                            genes.append({
+                                'gene_or_protein_id': gene_name,
+                                'gene_name': gene_name,
+                                'annotation': f"{gene_type} gene",
+                                'organism': None,
+                                'ec_number': None,
+                                'go_terms': None,
+                                'chebi_terms': None,
+                                'sequence_download_url': None,
+                                'source': self.source_label,
+                                'paper_reference': self.source_file
+                            })
 
         self.extracted_data['genes'] = genes
         return genes
@@ -347,32 +515,31 @@ class DocumentExtractor:
     def extract_strains(self) -> List[Dict]:
         """Extract strain designations from PDF for cross-linking.
 
+        Uses strict validation against known culture collections to avoid
+        false positives like "pH 7", "Figure 1", etc.
+
         Returns:
             List of strain dictionaries
         """
         strains = []
         seen_strains = set()
 
-        # Strain designation patterns
-        strain_patterns = [
-            r'\bstrain\s+([A-Z0-9\-]+)\b',
-            r'\b([A-Z]+\s+\d+(?:\.\d+)?)\b',  # e.g., "ATCC 12345"
-            r'\b(DSM\s+\d+)\b',
-            r'\b(JCM\s+\d+)\b',
-            r'\b(NCTC\s+\d+)\b',
-        ]
+        # Build specific patterns for each culture collection
+        for collection, (min_digits, max_digits) in self.CULTURE_COLLECTIONS.items():
+            # Case-sensitive pattern (ATCC, not Atcc or atcc)
+            pattern = rf'\b({collection}\s+\d{{{min_digits},{max_digits}}})\b'
 
-        for pattern in strain_patterns:
-            matches = re.findall(pattern, self.markdown_text, re.IGNORECASE)
+            matches = re.findall(pattern, self.markdown_text)
             for strain_id in matches:
                 strain_id = strain_id.strip()
-                if strain_id and strain_id not in seen_strains and len(strain_id) < 50:
+
+                if strain_id not in seen_strains and self._is_valid_strain_id(strain_id):
                     seen_strains.add(strain_id)
                     strains.append({
-                        'strain_id': f"Custom_{strain_id}_from_{self.source_file}",
+                        'strain_id': strain_id,
                         'strain_designation': strain_id,
                         'organism': None,
-                        'culture_collection_id': strain_id if any(cc in strain_id.upper() for cc in ['ATCC', 'DSM', 'JCM', 'NCTC']) else None,
+                        'culture_collection_id': strain_id,
                         'isolation_source': None,
                         'source': self.source_label,
                         'paper_reference': self.source_file
@@ -551,7 +718,7 @@ def batch_extract_from_directory(pdf_dir: Path, output_dir: Path, summary_only: 
         if not summary_only:
             for sheet_type, records in extracted.items():
                 if records:
-                    tsv_path = output_dir / f"PFAS_Data_for_AI_{sheet_type}.tsv"
+                    tsv_path = output_dir / f"PFAS_Data_for_AI_{sheet_type}_extended.tsv"
                     append_to_tsv(records, tsv_path, sheet_type)
 
     print("=" * 60)

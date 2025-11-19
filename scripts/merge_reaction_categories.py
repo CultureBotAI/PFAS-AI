@@ -2,7 +2,11 @@
 """Merge category-specific extended reaction files into unified reactions table.
 
 This script combines all category-specific reaction extended files
-(with gene linking) into a single comprehensive PFAS_Data_for_AI_reactions_extended.tsv.
+(with gene linking) from PFAS_Reactions/ subdirectory (static reference data)
+into a single comprehensive PFAS_Data_for_AI_reactions_extended.tsv.
+
+NOTE: PFAS_Reactions category files are now static reference data and are NOT
+extended dynamically. All new extensions go to the main reactions_extended.tsv.
 """
 
 import argparse
@@ -164,8 +168,8 @@ def main():
     parser.add_argument(
         '--data-dir',
         type=Path,
-        default=Path('data/txt/sheet'),
-        help='Directory containing category TSV files'
+        default=Path('data/txt/sheet/PFAS_Reactions'),
+        help='Directory containing category TSV files (static reference data)'
     )
     parser.add_argument(
         '--output',

@@ -3,7 +3,7 @@
 # This Makefile provides commands to update PFAS data tables with PFAS-degrading
 # bacteria and archaea from NCBI databases.
 
-.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-uniprot extend-from-pfas-degraders mine-proteins update-chemicals update-assays update-reactions update-reactions-dehalogenase update-reactions-fluoride update-reactions-hydrocarbon update-reactions-pfas-degraders update-reactions-oxygenase update-reactions-important-genes update-reactions-all-categories merge-reactions update-bioprocesses update-screening update-protocols update-transcriptomics update-strains update-media update-all clean install test validate-schema validate-consistency fix-validation gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data download-pdfs extend2 extend-api kg-update kg-update-genes kg-update-pathways kg-update-chemicals kg-update-genomes kg-update-all crosslink annotate-kg extendbypub merge-excel merge-excel-dry-run compare-excel compare-excel-tsv report-missing-pdfs create-kg-db query-kg-db status
+.PHONY: help update-genomes update-biosamples update-pathways update-datasets update-genes update-structures update-publications update-uniprot extend-from-pfas-degraders mine-proteins update-chemicals update-assays update-reactions merge-reactions update-bioprocesses update-screening update-protocols update-transcriptomics update-strains update-media update-all clean install test validate-schema validate-consistency fix-validation gen-linkml-models convert-pdfs-to-markdown extract-from-documents update-experimental-data download-pdfs extend2 extend-api kg-update kg-update-genes kg-update-pathways kg-update-chemicals kg-update-genomes kg-update-all crosslink annotate-kg extendbypub merge-excel merge-excel-dry-run compare-excel compare-excel-tsv report-missing-pdfs create-kg-db query-kg-db status
 
 # Default target
 help:
@@ -29,16 +29,7 @@ help:
 	@echo "  update-chemicals    - Update chemicals table with PubChem/CHEBI"
 	@echo "  update-assays       - Update assays table with curated protocols"
 	@echo "  update-reactions    - Update reactions table with RHEA/KEGG data"
-	@echo ""
-	@echo "Reaction Category Extensions:"
-	@echo "  update-reactions-dehalogenase      - Extend dehalogenase reactions (C-F bond cleavage)"
-	@echo "  update-reactions-fluoride          - Extend fluoride resistance reactions"
-	@echo "  update-reactions-hydrocarbon       - Extend hydrocarbon degradation reactions"
-	@echo "  update-reactions-pfas-degraders    - Extend known PFAS degrader reactions"
-	@echo "  update-reactions-oxygenase         - Extend oxygenase co-metabolism reactions"
-	@echo "  update-reactions-important-genes   - Extend important genes (non-enzymatic)"
-	@echo "  update-reactions-all-categories    - Extend all reaction categories"
-	@echo "  merge-reactions                    - Merge category files into unified table"
+	@echo "  merge-reactions     - Merge PFAS_Reactions category files (static reference data)"
 	@echo ""
 	@echo "  update-bioprocesses - (Manual) Update bioprocesses table"
 	@echo "  update-screening    - (Manual) Update screening results table"
@@ -274,56 +265,16 @@ update-reactions: install
 	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_reactions.tsv"
 	@echo "Output: data/txt/sheet/PFAS_Data_for_AI_reactions_extended.tsv"
 
-# Update individual reaction categories with category-specific enrichment
-update-reactions-dehalogenase: install
-	@echo "Extending dehalogenase reactions (C-F bond cleavage)..."
-	uv run python src/extend_reactions_by_category.py --category dehalogenase
-	@echo "Dehalogenase reactions extended."
-
-update-reactions-fluoride: install
-	@echo "Extending fluoride resistance reactions..."
-	uv run python src/extend_reactions_by_category.py --category fluoride_resistance
-	@echo "Fluoride resistance reactions extended."
-
-update-reactions-hydrocarbon: install
-	@echo "Extending hydrocarbon degradation reactions..."
-	uv run python src/extend_reactions_by_category.py --category hydrocarbon_degradation
-	@echo "Hydrocarbon degradation reactions extended."
-
-update-reactions-pfas-degraders: install
-	@echo "Extending known PFAS degrader reactions..."
-	uv run python src/extend_reactions_by_category.py --category known_pfas_degraders
-	@echo "Known PFAS degrader reactions extended."
-
-update-reactions-oxygenase: install
-	@echo "Extending oxygenase co-metabolism reactions..."
-	uv run python src/extend_reactions_by_category.py --category oxygenase_cometabolism
-	@echo "Oxygenase co-metabolism reactions extended."
-
-update-reactions-important-genes: install
-	@echo "Extending important genes (non-enzymatic)..."
-	uv run python src/extend_reactions_by_category.py --category important_genes
-	@echo "Important genes extended."
-
-# Update all reaction categories
-update-reactions-all-categories: update-reactions-dehalogenase update-reactions-fluoride update-reactions-hydrocarbon update-reactions-pfas-degraders update-reactions-oxygenase update-reactions-important-genes
+# Merge category-specific reaction files from static reference data
+# Note: PFAS_Reactions category files are now static reference data in data/txt/sheet/PFAS_Reactions/
+# They are no longer extended dynamically - all extensions go to main reactions_extended.tsv
+merge-reactions: install
 	@echo ""
-	@echo "All reaction categories extended successfully!"
-	@echo "Extended files:"
-	@echo "  - PFAS_Reactions_dehalogenase_extended.tsv"
-	@echo "  - PFAS_Reactions_fluoride_resistance_extended.tsv"
-	@echo "  - PFAS_Reactions_hydrocarbon_degradation_extended.tsv"
-	@echo "  - PFAS_Reactions_known_pfas_degraders_extended.tsv"
-	@echo "  - PFAS_Reactions_oxygenase_cometabolism_extended.tsv"
-	@echo "  - PFAS_Reactions_important_genes_extended.tsv"
-
-# Merge category-specific reaction files into unified table
-merge-reactions: update-reactions-all-categories
-	@echo ""
-	@echo "Merging category-specific reactions into unified table..."
+	@echo "Merging PFAS_Reactions category files (static reference data)..."
 	uv run python scripts/merge_reaction_categories.py
 	@echo ""
-	@echo "✓ Unified reactions table created!"
+	@echo "✓ Unified reactions table created from reference data!"
+	@echo "  Input:  data/txt/sheet/PFAS_Reactions/*_extended.tsv (static reference)"
 	@echo "  Output: data/txt/sheet/PFAS_Data_for_AI_reactions_extended.tsv"
 
 # Download PDFs from publications table
