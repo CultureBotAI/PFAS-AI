@@ -1,15 +1,9 @@
-# Auto generated from lanthanide_bioprocessing.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-15T21:26:11
-# Schema: lanthanide-bioprocessing-schema
+# Auto generated from pfas_biodegradation.yaml by pythongen.py version: 0.0.1
+# Generation date: 2025-11-18T21:29:35
+# Schema: pfas-biodegradation
 #
-# id: https://w3id.org/cmm-ai/lanthanide-bioprocessing
-# description: LinkML schema for lanthanide bioprocessing research data, integrating bacterial genomes,
-#   biosamples, metabolic pathways, genes/proteins, macromolecular structures, publications,
-#   and datasets related to rare earth element-dependent biological processes.
-#
-#   This schema models data for lanthanide-dependent methylotrophy, particularly focusing on
-#   XoxF methanol dehydrogenase systems, lanthanophore transport, and rare earth element
-#   metabolism in methylotrophic bacteria.
+# id: https://w3id.org/pfas-ai/pfas-biodegradation
+# description: LinkML schema for modeling PFAS biodegradation research data including microorganisms, genes, pathways, structures, assays, and experimental conditions.
 # license: MIT
 
 import dataclasses
@@ -62,24 +56,22 @@ from rdflib import (
     URIRef
 )
 
-from linkml_runtime.linkml_model.types import Integer, String, Uri
+from linkml_runtime.linkml_model.types import Float, Integer, String, Uri
 from linkml_runtime.utils.metamodelcore import URI
 
 metamodel_version = "1.7.0"
-version = "0.1.0"
+version = None
 
 # Namespaces
-BAO = CurieNamespace('BAO', 'http://www.bioassayontology.org/bao#BAO_')
+BAO = CurieNamespace('BAO', 'http://www.bioassayontology.org/bao#')
 CHEBI = CurieNamespace('CHEBI', 'http://purl.obolibrary.org/obo/CHEBI_')
 CHEMBL = CurieNamespace('ChEMBL', 'https://www.ebi.ac.uk/chembl/compound_report_card/')
 DOI = CurieNamespace('DOI', 'https://doi.org/')
 EC = CurieNamespace('EC', 'https://www.enzyme-database.org/query.php?ec=')
 ENVO = CurieNamespace('ENVO', 'http://purl.obolibrary.org/obo/ENVO_')
 GO = CurieNamespace('GO', 'http://purl.obolibrary.org/obo/GO_')
-KEGG = CurieNamespace('KEGG', 'https://www.kegg.jp/entry/')
-MIXS = CurieNamespace('MIXS', 'http://purl.obolibrary.org/obo/MIXS_')
-METACYC = CurieNamespace('MetaCyc', 'https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=')
-NCBI = CurieNamespace('NCBI', 'https://www.ncbi.nlm.nih.gov/')
+KEGG = CurieNamespace('KEGG', 'http://www.kegg.jp/entry/')
+NCBI = CurieNamespace('NCBI', 'http://www.ncbi.nlm.nih.gov/gene/')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
 PDB = CurieNamespace('PDB', 'https://www.rcsb.org/structure/')
@@ -88,10 +80,10 @@ PUBCHEM = CurieNamespace('PubChem', 'https://pubchem.ncbi.nlm.nih.gov/compound/'
 RHEA = CurieNamespace('RHEA', 'https://www.rhea-db.org/rhea/')
 SRA = CurieNamespace('SRA', 'https://www.ncbi.nlm.nih.gov/sra/')
 UNIPROTKB = CurieNamespace('UniProtKB', 'http://purl.uniprot.org/uniprot/')
-CMM = CurieNamespace('cmm', 'https://w3id.org/cmm-ai/lanthanide-bioprocessing/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
+PFAS = CurieNamespace('pfas', 'https://w3id.org/pfas-ai/pfas-biodegradation/')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
-DEFAULT_ = CMM
+DEFAULT_ = PFAS
 
 
 # Types
@@ -109,11 +101,15 @@ class PathwayRecordPathwayId(extended_str):
     pass
 
 
+class ReactionRecordReactionId(extended_str):
+    pass
+
+
 class GeneProteinRecordGeneProteinId(extended_str):
     pass
 
 
-class MacromolecularStructureRecordStructureName(extended_str):
+class MacromolecularStructureRecordPdbId(extended_str):
     pass
 
 
@@ -145,55 +141,120 @@ class ProtocolRecordProtocolId(extended_str):
     pass
 
 
+class TranscriptomicsRecordExperimentId(extended_str):
+    pass
+
+
+class StrainRecordStrainId(extended_str):
+    pass
+
+
+class GrowthMediaRecordMediaId(extended_str):
+    pass
+
+
+class MediaIngredientRecordIngredientId(extended_str):
+    pass
+
+
 @dataclass(repr=False)
-class LanthanideBioprocessingDatabase(YAMLRoot):
+class Database(YAMLRoot):
     """
-    Root container for all lanthanide bioprocessing research data
+    Container for all PFAS biodegradation research data
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = CMM["LanthanideBioprocessingDatabase"]
-    class_class_curie: ClassVar[str] = "cmm:LanthanideBioprocessingDatabase"
-    class_name: ClassVar[str] = "LanthanideBioprocessingDatabase"
-    class_model_uri: ClassVar[URIRef] = CMM.LanthanideBioprocessingDatabase
+    class_class_uri: ClassVar[URIRef] = PFAS["Database"]
+    class_class_curie: ClassVar[str] = "pfas:Database"
+    class_name: ClassVar[str] = "Database"
+    class_model_uri: ClassVar[URIRef] = PFAS.Database
 
-    genomes: Optional[Union[dict[Union[str, GenomeRecordScientificName], Union[dict, "GenomeRecord"]], list[Union[dict, "GenomeRecord"]]]] = empty_dict()
-    biosamples: Optional[Union[dict[Union[str, BiosampleRecordSampleId], Union[dict, "BiosampleRecord"]], list[Union[dict, "BiosampleRecord"]]]] = empty_dict()
-    pathways: Optional[Union[dict[Union[str, PathwayRecordPathwayId], Union[dict, "PathwayRecord"]], list[Union[dict, "PathwayRecord"]]]] = empty_dict()
-    genes_proteins: Optional[Union[dict[Union[str, GeneProteinRecordGeneProteinId], Union[dict, "GeneProteinRecord"]], list[Union[dict, "GeneProteinRecord"]]]] = empty_dict()
-    structures: Optional[Union[dict[Union[str, MacromolecularStructureRecordStructureName], Union[dict, "MacromolecularStructureRecord"]], list[Union[dict, "MacromolecularStructureRecord"]]]] = empty_dict()
-    publications: Optional[Union[dict[Union[str, PublicationRecordUrl], Union[dict, "PublicationRecord"]], list[Union[dict, "PublicationRecord"]]]] = empty_dict()
-    datasets: Optional[Union[dict[Union[str, DatasetRecordDatasetName], Union[dict, "DatasetRecord"]], list[Union[dict, "DatasetRecord"]]]] = empty_dict()
-    chemicals: Optional[Union[dict[Union[str, ChemicalCompoundRecordChemicalId], Union[dict, "ChemicalCompoundRecord"]], list[Union[dict, "ChemicalCompoundRecord"]]]] = empty_dict()
-    assays: Optional[Union[dict[Union[str, AssayMeasurementRecordAssayId], Union[dict, "AssayMeasurementRecord"]], list[Union[dict, "AssayMeasurementRecord"]]]] = empty_dict()
-    bioprocesses: Optional[Union[dict[Union[str, BioprocessConditionsRecordProcessId], Union[dict, "BioprocessConditionsRecord"]], list[Union[dict, "BioprocessConditionsRecord"]]]] = empty_dict()
-    screening_results: Optional[Union[dict[Union[str, ScreeningResultRecordExperimentId], Union[dict, "ScreeningResultRecord"]], list[Union[dict, "ScreeningResultRecord"]]]] = empty_dict()
-    protocols: Optional[Union[dict[Union[str, ProtocolRecordProtocolId], Union[dict, "ProtocolRecord"]], list[Union[dict, "ProtocolRecord"]]]] = empty_dict()
+    genomes: Optional[Union[Union[str, GenomeRecordScientificName], list[Union[str, GenomeRecordScientificName]]]] = empty_list()
+    biosamples: Optional[Union[Union[str, BiosampleRecordSampleId], list[Union[str, BiosampleRecordSampleId]]]] = empty_list()
+    pathways: Optional[Union[Union[str, PathwayRecordPathwayId], list[Union[str, PathwayRecordPathwayId]]]] = empty_list()
+    genes_proteins: Optional[Union[Union[str, GeneProteinRecordGeneProteinId], list[Union[str, GeneProteinRecordGeneProteinId]]]] = empty_list()
+    structures: Optional[Union[Union[str, MacromolecularStructureRecordPdbId], list[Union[str, MacromolecularStructureRecordPdbId]]]] = empty_list()
+    publications: Optional[Union[Union[str, PublicationRecordUrl], list[Union[str, PublicationRecordUrl]]]] = empty_list()
+    datasets: Optional[Union[Union[str, DatasetRecordDatasetName], list[Union[str, DatasetRecordDatasetName]]]] = empty_list()
+    chemicals: Optional[Union[Union[str, ChemicalCompoundRecordChemicalId], list[Union[str, ChemicalCompoundRecordChemicalId]]]] = empty_list()
+    assays: Optional[Union[Union[str, AssayMeasurementRecordAssayId], list[Union[str, AssayMeasurementRecordAssayId]]]] = empty_list()
+    bioprocesses: Optional[Union[Union[str, BioprocessConditionsRecordProcessId], list[Union[str, BioprocessConditionsRecordProcessId]]]] = empty_list()
+    screening_results: Optional[Union[Union[str, ScreeningResultRecordExperimentId], list[Union[str, ScreeningResultRecordExperimentId]]]] = empty_list()
+    protocols: Optional[Union[Union[str, ProtocolRecordProtocolId], list[Union[str, ProtocolRecordProtocolId]]]] = empty_list()
+    reactions: Optional[Union[Union[str, ReactionRecordReactionId], list[Union[str, ReactionRecordReactionId]]]] = empty_list()
+    transcriptomics: Optional[Union[Union[str, TranscriptomicsRecordExperimentId], list[Union[str, TranscriptomicsRecordExperimentId]]]] = empty_list()
+    strains: Optional[Union[Union[str, StrainRecordStrainId], list[Union[str, StrainRecordStrainId]]]] = empty_list()
+    growth_media: Optional[Union[Union[str, GrowthMediaRecordMediaId], list[Union[str, GrowthMediaRecordMediaId]]]] = empty_list()
+    media_ingredients: Optional[Union[Union[str, MediaIngredientRecordIngredientId], list[Union[str, MediaIngredientRecordIngredientId]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        self._normalize_inlined_as_list(slot_name="genomes", slot_type=GenomeRecord, key_name="scientific_name", keyed=True)
+        if not isinstance(self.genomes, list):
+            self.genomes = [self.genomes] if self.genomes is not None else []
+        self.genomes = [v if isinstance(v, GenomeRecordScientificName) else GenomeRecordScientificName(v) for v in self.genomes]
 
-        self._normalize_inlined_as_list(slot_name="biosamples", slot_type=BiosampleRecord, key_name="sample_id", keyed=True)
+        if not isinstance(self.biosamples, list):
+            self.biosamples = [self.biosamples] if self.biosamples is not None else []
+        self.biosamples = [v if isinstance(v, BiosampleRecordSampleId) else BiosampleRecordSampleId(v) for v in self.biosamples]
 
-        self._normalize_inlined_as_list(slot_name="pathways", slot_type=PathwayRecord, key_name="pathway_id", keyed=True)
+        if not isinstance(self.pathways, list):
+            self.pathways = [self.pathways] if self.pathways is not None else []
+        self.pathways = [v if isinstance(v, PathwayRecordPathwayId) else PathwayRecordPathwayId(v) for v in self.pathways]
 
-        self._normalize_inlined_as_list(slot_name="genes_proteins", slot_type=GeneProteinRecord, key_name="gene_protein_id", keyed=True)
+        if not isinstance(self.genes_proteins, list):
+            self.genes_proteins = [self.genes_proteins] if self.genes_proteins is not None else []
+        self.genes_proteins = [v if isinstance(v, GeneProteinRecordGeneProteinId) else GeneProteinRecordGeneProteinId(v) for v in self.genes_proteins]
 
-        self._normalize_inlined_as_list(slot_name="structures", slot_type=MacromolecularStructureRecord, key_name="structure_name", keyed=True)
+        if not isinstance(self.structures, list):
+            self.structures = [self.structures] if self.structures is not None else []
+        self.structures = [v if isinstance(v, MacromolecularStructureRecordPdbId) else MacromolecularStructureRecordPdbId(v) for v in self.structures]
 
-        self._normalize_inlined_as_list(slot_name="publications", slot_type=PublicationRecord, key_name="url", keyed=True)
+        if not isinstance(self.publications, list):
+            self.publications = [self.publications] if self.publications is not None else []
+        self.publications = [v if isinstance(v, PublicationRecordUrl) else PublicationRecordUrl(v) for v in self.publications]
 
-        self._normalize_inlined_as_list(slot_name="datasets", slot_type=DatasetRecord, key_name="dataset_name", keyed=True)
+        if not isinstance(self.datasets, list):
+            self.datasets = [self.datasets] if self.datasets is not None else []
+        self.datasets = [v if isinstance(v, DatasetRecordDatasetName) else DatasetRecordDatasetName(v) for v in self.datasets]
 
-        self._normalize_inlined_as_list(slot_name="chemicals", slot_type=ChemicalCompoundRecord, key_name="chemical_id", keyed=True)
+        if not isinstance(self.chemicals, list):
+            self.chemicals = [self.chemicals] if self.chemicals is not None else []
+        self.chemicals = [v if isinstance(v, ChemicalCompoundRecordChemicalId) else ChemicalCompoundRecordChemicalId(v) for v in self.chemicals]
 
-        self._normalize_inlined_as_list(slot_name="assays", slot_type=AssayMeasurementRecord, key_name="assay_id", keyed=True)
+        if not isinstance(self.assays, list):
+            self.assays = [self.assays] if self.assays is not None else []
+        self.assays = [v if isinstance(v, AssayMeasurementRecordAssayId) else AssayMeasurementRecordAssayId(v) for v in self.assays]
 
-        self._normalize_inlined_as_list(slot_name="bioprocesses", slot_type=BioprocessConditionsRecord, key_name="process_id", keyed=True)
+        if not isinstance(self.bioprocesses, list):
+            self.bioprocesses = [self.bioprocesses] if self.bioprocesses is not None else []
+        self.bioprocesses = [v if isinstance(v, BioprocessConditionsRecordProcessId) else BioprocessConditionsRecordProcessId(v) for v in self.bioprocesses]
 
-        self._normalize_inlined_as_list(slot_name="screening_results", slot_type=ScreeningResultRecord, key_name="experiment_id", keyed=True)
+        if not isinstance(self.screening_results, list):
+            self.screening_results = [self.screening_results] if self.screening_results is not None else []
+        self.screening_results = [v if isinstance(v, ScreeningResultRecordExperimentId) else ScreeningResultRecordExperimentId(v) for v in self.screening_results]
 
-        self._normalize_inlined_as_list(slot_name="protocols", slot_type=ProtocolRecord, key_name="protocol_id", keyed=True)
+        if not isinstance(self.protocols, list):
+            self.protocols = [self.protocols] if self.protocols is not None else []
+        self.protocols = [v if isinstance(v, ProtocolRecordProtocolId) else ProtocolRecordProtocolId(v) for v in self.protocols]
+
+        if not isinstance(self.reactions, list):
+            self.reactions = [self.reactions] if self.reactions is not None else []
+        self.reactions = [v if isinstance(v, ReactionRecordReactionId) else ReactionRecordReactionId(v) for v in self.reactions]
+
+        if not isinstance(self.transcriptomics, list):
+            self.transcriptomics = [self.transcriptomics] if self.transcriptomics is not None else []
+        self.transcriptomics = [v if isinstance(v, TranscriptomicsRecordExperimentId) else TranscriptomicsRecordExperimentId(v) for v in self.transcriptomics]
+
+        if not isinstance(self.strains, list):
+            self.strains = [self.strains] if self.strains is not None else []
+        self.strains = [v if isinstance(v, StrainRecordStrainId) else StrainRecordStrainId(v) for v in self.strains]
+
+        if not isinstance(self.growth_media, list):
+            self.growth_media = [self.growth_media] if self.growth_media is not None else []
+        self.growth_media = [v if isinstance(v, GrowthMediaRecordMediaId) else GrowthMediaRecordMediaId(v) for v in self.growth_media]
+
+        if not isinstance(self.media_ingredients, list):
+            self.media_ingredients = [self.media_ingredients] if self.media_ingredients is not None else []
+        self.media_ingredients = [v if isinstance(v, MediaIngredientRecordIngredientId) else MediaIngredientRecordIngredientId(v) for v in self.media_ingredients]
 
         super().__post_init__(**kwargs)
 
@@ -201,19 +262,20 @@ class LanthanideBioprocessingDatabase(YAMLRoot):
 @dataclass(repr=False)
 class GenomeRecord(YAMLRoot):
     """
-    Bacterial or archaeal genome record with taxonomy and annotation information
+    Bacterial or archaeal genome with taxonomy and annotation information
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = CMM["GenomeRecord"]
-    class_class_curie: ClassVar[str] = "cmm:GenomeRecord"
+    class_class_uri: ClassVar[URIRef] = PFAS["GenomeRecord"]
+    class_class_curie: ClassVar[str] = "pfas:GenomeRecord"
     class_name: ClassVar[str] = "GenomeRecord"
-    class_model_uri: ClassVar[URIRef] = CMM.GenomeRecord
+    class_model_uri: ClassVar[URIRef] = PFAS.GenomeRecord
 
     scientific_name: Union[str, GenomeRecordScientificName] = None
-    ncbi_taxon_id: Optional[int] = None
+    ncbi_taxon_id: Optional[str] = None
     genome_identifier: Optional[str] = None
     annotation_download_url: Optional[Union[str, URI]] = None
+    source: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.scientific_name):
@@ -221,8 +283,8 @@ class GenomeRecord(YAMLRoot):
         if not isinstance(self.scientific_name, GenomeRecordScientificName):
             self.scientific_name = GenomeRecordScientificName(self.scientific_name)
 
-        if self.ncbi_taxon_id is not None and not isinstance(self.ncbi_taxon_id, int):
-            self.ncbi_taxon_id = int(self.ncbi_taxon_id)
+        if self.ncbi_taxon_id is not None and not isinstance(self.ncbi_taxon_id, str):
+            self.ncbi_taxon_id = str(self.ncbi_taxon_id)
 
         if self.genome_identifier is not None and not isinstance(self.genome_identifier, str):
             self.genome_identifier = str(self.genome_identifier)
@@ -230,25 +292,29 @@ class GenomeRecord(YAMLRoot):
         if self.annotation_download_url is not None and not isinstance(self.annotation_download_url, URI):
             self.annotation_download_url = URI(self.annotation_download_url)
 
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
+
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
 class BiosampleRecord(YAMLRoot):
     """
-    Environmental or cultured biological sample with metadata
+    Environmental or cultured biological sample
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = CMM["BiosampleRecord"]
-    class_class_curie: ClassVar[str] = "cmm:BiosampleRecord"
+    class_class_uri: ClassVar[URIRef] = PFAS["BiosampleRecord"]
+    class_class_curie: ClassVar[str] = "pfas:BiosampleRecord"
     class_name: ClassVar[str] = "BiosampleRecord"
-    class_model_uri: ClassVar[URIRef] = CMM.BiosampleRecord
+    class_model_uri: ClassVar[URIRef] = PFAS.BiosampleRecord
 
     sample_id: Union[str, BiosampleRecordSampleId] = None
     sample_name: Optional[str] = None
     organism: Optional[str] = None
     download_url: Optional[Union[str, URI]] = None
+    source: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.sample_id):
@@ -265,27 +331,31 @@ class BiosampleRecord(YAMLRoot):
         if self.download_url is not None and not isinstance(self.download_url, URI):
             self.download_url = URI(self.download_url)
 
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
+
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
 class PathwayRecord(YAMLRoot):
     """
-    Metabolic pathway involved in lanthanide bioprocessing or methylotrophy
+    Metabolic pathway relevant to PFAS biodegradation
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = CMM["PathwayRecord"]
-    class_class_curie: ClassVar[str] = "cmm:PathwayRecord"
+    class_class_uri: ClassVar[URIRef] = PFAS["PathwayRecord"]
+    class_class_curie: ClassVar[str] = "pfas:PathwayRecord"
     class_name: ClassVar[str] = "PathwayRecord"
-    class_model_uri: ClassVar[URIRef] = CMM.PathwayRecord
+    class_model_uri: ClassVar[URIRef] = PFAS.PathwayRecord
 
     pathway_id: Union[str, PathwayRecordPathwayId] = None
     pathway_name: str = None
-    organism: Optional[str] = None
+    database: Optional[Union[str, "PathwayDatabaseEnum"]] = None
+    url: Optional[Union[str, URI]] = None
     genes: Optional[Union[str, list[str]]] = empty_list()
     genes_kegg: Optional[Union[str, list[str]]] = empty_list()
-    download_url: Optional[Union[str, URI]] = None
+    source: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.pathway_id):
@@ -298,8 +368,11 @@ class PathwayRecord(YAMLRoot):
         if not isinstance(self.pathway_name, str):
             self.pathway_name = str(self.pathway_name)
 
-        if self.organism is not None and not isinstance(self.organism, str):
-            self.organism = str(self.organism)
+        if self.database is not None and not isinstance(self.database, PathwayDatabaseEnum):
+            self.database = PathwayDatabaseEnum(self.database)
+
+        if self.url is not None and not isinstance(self.url, URI):
+            self.url = URI(self.url)
 
         if not isinstance(self.genes, list):
             self.genes = [self.genes] if self.genes is not None else []
@@ -309,8 +382,100 @@ class PathwayRecord(YAMLRoot):
             self.genes_kegg = [self.genes_kegg] if self.genes_kegg is not None else []
         self.genes_kegg = [v if isinstance(v, str) else str(v) for v in self.genes_kegg]
 
-        if self.download_url is not None and not isinstance(self.download_url, URI):
-            self.download_url = URI(self.download_url)
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class ReactionRecord(YAMLRoot):
+    """
+    Biochemical reaction relevant to PFAS biodegradation
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PFAS["ReactionRecord"]
+    class_class_curie: ClassVar[str] = "pfas:ReactionRecord"
+    class_name: ClassVar[str] = "ReactionRecord"
+    class_model_uri: ClassVar[URIRef] = PFAS.ReactionRecord
+
+    reaction_id: Union[str, ReactionRecordReactionId] = None
+    equation: str = None
+    reaction_category: Union[str, "ReactionCategoryEnum"] = None
+    reaction_name: Optional[str] = None
+    enzyme_class: Optional[str] = None
+    ec_number: Optional[Union[str, list[str]]] = empty_list()
+    rhea_id: Optional[str] = None
+    kegg_reaction_id: Optional[str] = None
+    go_terms: Optional[Union[str, list[str]]] = empty_list()
+    substrates: Optional[Union[str, list[str]]] = empty_list()
+    products: Optional[Union[str, list[str]]] = empty_list()
+    enzyme_genes: Optional[Union[str, list[str]]] = empty_list()
+    pathway_id: Optional[str] = None
+    note: Optional[str] = None
+    url: Optional[Union[str, URI]] = None
+    source: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.reaction_id):
+            self.MissingRequiredField("reaction_id")
+        if not isinstance(self.reaction_id, ReactionRecordReactionId):
+            self.reaction_id = ReactionRecordReactionId(self.reaction_id)
+
+        if self._is_empty(self.equation):
+            self.MissingRequiredField("equation")
+        if not isinstance(self.equation, str):
+            self.equation = str(self.equation)
+
+        if self._is_empty(self.reaction_category):
+            self.MissingRequiredField("reaction_category")
+        if not isinstance(self.reaction_category, ReactionCategoryEnum):
+            self.reaction_category = ReactionCategoryEnum(self.reaction_category)
+
+        if self.reaction_name is not None and not isinstance(self.reaction_name, str):
+            self.reaction_name = str(self.reaction_name)
+
+        if self.enzyme_class is not None and not isinstance(self.enzyme_class, str):
+            self.enzyme_class = str(self.enzyme_class)
+
+        if not isinstance(self.ec_number, list):
+            self.ec_number = [self.ec_number] if self.ec_number is not None else []
+        self.ec_number = [v if isinstance(v, str) else str(v) for v in self.ec_number]
+
+        if self.rhea_id is not None and not isinstance(self.rhea_id, str):
+            self.rhea_id = str(self.rhea_id)
+
+        if self.kegg_reaction_id is not None and not isinstance(self.kegg_reaction_id, str):
+            self.kegg_reaction_id = str(self.kegg_reaction_id)
+
+        if not isinstance(self.go_terms, list):
+            self.go_terms = [self.go_terms] if self.go_terms is not None else []
+        self.go_terms = [v if isinstance(v, str) else str(v) for v in self.go_terms]
+
+        if not isinstance(self.substrates, list):
+            self.substrates = [self.substrates] if self.substrates is not None else []
+        self.substrates = [v if isinstance(v, str) else str(v) for v in self.substrates]
+
+        if not isinstance(self.products, list):
+            self.products = [self.products] if self.products is not None else []
+        self.products = [v if isinstance(v, str) else str(v) for v in self.products]
+
+        if not isinstance(self.enzyme_genes, list):
+            self.enzyme_genes = [self.enzyme_genes] if self.enzyme_genes is not None else []
+        self.enzyme_genes = [v if isinstance(v, str) else str(v) for v in self.enzyme_genes]
+
+        if self.pathway_id is not None and not isinstance(self.pathway_id, str):
+            self.pathway_id = str(self.pathway_id)
+
+        if self.note is not None and not isinstance(self.note, str):
+            self.note = str(self.note)
+
+        if self.url is not None and not isinstance(self.url, URI):
+            self.url = URI(self.url)
+
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
 
         super().__post_init__(**kwargs)
 
@@ -318,22 +483,23 @@ class PathwayRecord(YAMLRoot):
 @dataclass(repr=False)
 class GeneProteinRecord(YAMLRoot):
     """
-    Gene or protein sequence with functional annotations
+    Gene or protein with functional annotations
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = CMM["GeneProteinRecord"]
-    class_class_curie: ClassVar[str] = "cmm:GeneProteinRecord"
+    class_class_uri: ClassVar[URIRef] = PFAS["GeneProteinRecord"]
+    class_class_curie: ClassVar[str] = "pfas:GeneProteinRecord"
     class_name: ClassVar[str] = "GeneProteinRecord"
-    class_model_uri: ClassVar[URIRef] = CMM.GeneProteinRecord
+    class_model_uri: ClassVar[URIRef] = PFAS.GeneProteinRecord
 
     gene_protein_id: Union[str, GeneProteinRecordGeneProteinId] = None
-    annotation: str = None
     organism: Optional[str] = None
+    annotation: Optional[str] = None
     ec_number: Optional[str] = None
     go_terms: Optional[Union[str, list[str]]] = empty_list()
     chebi_terms: Optional[Union[str, list[str]]] = empty_list()
-    download_url: Optional[Union[str, URI]] = None
+    sequence_url: Optional[Union[str, URI]] = None
+    source: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.gene_protein_id):
@@ -341,13 +507,11 @@ class GeneProteinRecord(YAMLRoot):
         if not isinstance(self.gene_protein_id, GeneProteinRecordGeneProteinId):
             self.gene_protein_id = GeneProteinRecordGeneProteinId(self.gene_protein_id)
 
-        if self._is_empty(self.annotation):
-            self.MissingRequiredField("annotation")
-        if not isinstance(self.annotation, str):
-            self.annotation = str(self.annotation)
-
         if self.organism is not None and not isinstance(self.organism, str):
             self.organism = str(self.organism)
+
+        if self.annotation is not None and not isinstance(self.annotation, str):
+            self.annotation = str(self.annotation)
 
         if self.ec_number is not None and not isinstance(self.ec_number, str):
             self.ec_number = str(self.ec_number)
@@ -360,8 +524,11 @@ class GeneProteinRecord(YAMLRoot):
             self.chebi_terms = [self.chebi_terms] if self.chebi_terms is not None else []
         self.chebi_terms = [v if isinstance(v, str) else str(v) for v in self.chebi_terms]
 
-        if self.download_url is not None and not isinstance(self.download_url, URI):
-            self.download_url = URI(self.download_url)
+        if self.sequence_url is not None and not isinstance(self.sequence_url, URI):
+            self.sequence_url = URI(self.sequence_url)
+
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
 
         super().__post_init__(**kwargs)
 
@@ -369,46 +536,50 @@ class GeneProteinRecord(YAMLRoot):
 @dataclass(repr=False)
 class MacromolecularStructureRecord(YAMLRoot):
     """
-    3D structure of protein, complex, or small molecule
+    3D structure of protein or complex
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = CMM["MacromolecularStructureRecord"]
-    class_class_curie: ClassVar[str] = "cmm:MacromolecularStructureRecord"
+    class_class_uri: ClassVar[URIRef] = PFAS["MacromolecularStructureRecord"]
+    class_class_curie: ClassVar[str] = "pfas:MacromolecularStructureRecord"
     class_name: ClassVar[str] = "MacromolecularStructureRecord"
-    class_model_uri: ClassVar[URIRef] = CMM.MacromolecularStructureRecord
+    class_model_uri: ClassVar[URIRef] = PFAS.MacromolecularStructureRecord
 
-    structure_name: Union[str, MacromolecularStructureRecordStructureName] = None
-    organism: Optional[str] = None
+    pdb_id: Union[str, MacromolecularStructureRecordPdbId] = None
+    structure_name: Optional[str] = None
     components: Optional[str] = None
-    download_url: Optional[Union[str, URI]] = None
-    pdb_id: Optional[str] = None
-    resolution: Optional[str] = None
     method: Optional[Union[str, "StructureMethodEnum"]] = None
+    resolution: Optional[float] = None
+    organism: Optional[str] = None
+    structure_url: Optional[Union[str, URI]] = None
+    source: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.structure_name):
-            self.MissingRequiredField("structure_name")
-        if not isinstance(self.structure_name, MacromolecularStructureRecordStructureName):
-            self.structure_name = MacromolecularStructureRecordStructureName(self.structure_name)
+        if self._is_empty(self.pdb_id):
+            self.MissingRequiredField("pdb_id")
+        if not isinstance(self.pdb_id, MacromolecularStructureRecordPdbId):
+            self.pdb_id = MacromolecularStructureRecordPdbId(self.pdb_id)
 
-        if self.organism is not None and not isinstance(self.organism, str):
-            self.organism = str(self.organism)
+        if self.structure_name is not None and not isinstance(self.structure_name, str):
+            self.structure_name = str(self.structure_name)
 
         if self.components is not None and not isinstance(self.components, str):
             self.components = str(self.components)
 
-        if self.download_url is not None and not isinstance(self.download_url, URI):
-            self.download_url = URI(self.download_url)
-
-        if self.pdb_id is not None and not isinstance(self.pdb_id, str):
-            self.pdb_id = str(self.pdb_id)
-
-        if self.resolution is not None and not isinstance(self.resolution, str):
-            self.resolution = str(self.resolution)
-
         if self.method is not None and not isinstance(self.method, StructureMethodEnum):
             self.method = StructureMethodEnum(self.method)
+
+        if self.resolution is not None and not isinstance(self.resolution, float):
+            self.resolution = float(self.resolution)
+
+        if self.organism is not None and not isinstance(self.organism, str):
+            self.organism = str(self.organism)
+
+        if self.structure_url is not None and not isinstance(self.structure_url, URI):
+            self.structure_url = URI(self.structure_url)
+
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
 
         super().__post_init__(**kwargs)
 
@@ -416,21 +587,23 @@ class MacromolecularStructureRecord(YAMLRoot):
 @dataclass(repr=False)
 class PublicationRecord(YAMLRoot):
     """
-    Scientific publication (peer-reviewed article, preprint, etc.)
+    Scientific publication
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = CMM["PublicationRecord"]
-    class_class_curie: ClassVar[str] = "cmm:PublicationRecord"
+    class_class_uri: ClassVar[URIRef] = PFAS["PublicationRecord"]
+    class_class_curie: ClassVar[str] = "pfas:PublicationRecord"
     class_name: ClassVar[str] = "PublicationRecord"
-    class_model_uri: ClassVar[URIRef] = CMM.PublicationRecord
+    class_model_uri: ClassVar[URIRef] = PFAS.PublicationRecord
 
     url: Union[str, PublicationRecordUrl] = None
-    title: str = None
-    download_url: Optional[Union[str, URI]] = None
+    title: Optional[str] = None
     journal: Optional[str] = None
     year: Optional[int] = None
     authors: Optional[str] = None
+    pmid: Optional[str] = None
+    doi: Optional[str] = None
+    source: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.url):
@@ -438,13 +611,8 @@ class PublicationRecord(YAMLRoot):
         if not isinstance(self.url, PublicationRecordUrl):
             self.url = PublicationRecordUrl(self.url)
 
-        if self._is_empty(self.title):
-            self.MissingRequiredField("title")
-        if not isinstance(self.title, str):
+        if self.title is not None and not isinstance(self.title, str):
             self.title = str(self.title)
-
-        if self.download_url is not None and not isinstance(self.download_url, URI):
-            self.download_url = URI(self.download_url)
 
         if self.journal is not None and not isinstance(self.journal, str):
             self.journal = str(self.journal)
@@ -455,28 +623,36 @@ class PublicationRecord(YAMLRoot):
         if self.authors is not None and not isinstance(self.authors, str):
             self.authors = str(self.authors)
 
+        if self.pmid is not None and not isinstance(self.pmid, str):
+            self.pmid = str(self.pmid)
+
+        if self.doi is not None and not isinstance(self.doi, str):
+            self.doi = str(self.doi)
+
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
+
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
 class DatasetRecord(YAMLRoot):
     """
-    Research dataset from repositories (SRA, GEO, MetaboLights, etc.)
+    Research dataset from public repositories
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = CMM["DatasetRecord"]
-    class_class_curie: ClassVar[str] = "cmm:DatasetRecord"
+    class_class_uri: ClassVar[URIRef] = PFAS["DatasetRecord"]
+    class_class_curie: ClassVar[str] = "pfas:DatasetRecord"
     class_name: ClassVar[str] = "DatasetRecord"
-    class_model_uri: ClassVar[URIRef] = CMM.DatasetRecord
+    class_model_uri: ClassVar[URIRef] = PFAS.DatasetRecord
 
     dataset_name: Union[str, DatasetRecordDatasetName] = None
-    data_type: Optional[Union[str, "DataTypeEnum"]] = None
+    data_type: Optional[Union[str, "DatasetTypeEnum"]] = None
     url: Optional[Union[str, URI]] = None
-    size: Optional[str] = None
-    publication: Optional[str] = None
+    accession: Optional[str] = None
     license: Optional[str] = None
-    download_url: Optional[Union[str, URI]] = None
+    source: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.dataset_name):
@@ -484,23 +660,20 @@ class DatasetRecord(YAMLRoot):
         if not isinstance(self.dataset_name, DatasetRecordDatasetName):
             self.dataset_name = DatasetRecordDatasetName(self.dataset_name)
 
-        if self.data_type is not None and not isinstance(self.data_type, DataTypeEnum):
-            self.data_type = DataTypeEnum(self.data_type)
+        if self.data_type is not None and not isinstance(self.data_type, DatasetTypeEnum):
+            self.data_type = DatasetTypeEnum(self.data_type)
 
         if self.url is not None and not isinstance(self.url, URI):
             self.url = URI(self.url)
 
-        if self.size is not None and not isinstance(self.size, str):
-            self.size = str(self.size)
-
-        if self.publication is not None and not isinstance(self.publication, str):
-            self.publication = str(self.publication)
+        if self.accession is not None and not isinstance(self.accession, str):
+            self.accession = str(self.accession)
 
         if self.license is not None and not isinstance(self.license, str):
             self.license = str(self.license)
 
-        if self.download_url is not None and not isinstance(self.download_url, URI):
-            self.download_url = URI(self.download_url)
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
 
         super().__post_init__(**kwargs)
 
@@ -508,26 +681,27 @@ class DatasetRecord(YAMLRoot):
 @dataclass(repr=False)
 class ChemicalCompoundRecord(YAMLRoot):
     """
-    Chemical compound relevant to lanthanide bioprocessing (lanthanides, chelators, substrates, metabolites)
+    PFAS compounds and related chemicals
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = CMM["ChemicalCompoundRecord"]
-    class_class_curie: ClassVar[str] = "cmm:ChemicalCompoundRecord"
+    class_class_uri: ClassVar[URIRef] = PFAS["ChemicalCompoundRecord"]
+    class_class_curie: ClassVar[str] = "pfas:ChemicalCompoundRecord"
     class_name: ClassVar[str] = "ChemicalCompoundRecord"
-    class_model_uri: ClassVar[URIRef] = CMM.ChemicalCompoundRecord
+    class_model_uri: ClassVar[URIRef] = PFAS.ChemicalCompoundRecord
 
     chemical_id: Union[str, ChemicalCompoundRecordChemicalId] = None
     chemical_name: str = None
     compound_type: Optional[Union[str, "CompoundTypeEnum"]] = None
     molecular_formula: Optional[str] = None
-    molecular_weight: Optional[str] = None
+    molecular_weight: Optional[float] = None
     role_in_bioprocess: Optional[str] = None
     chebi_id: Optional[str] = None
-    pubchem_id: Optional[int] = None
+    pubchem_id: Optional[str] = None
     chembl_id: Optional[str] = None
     properties: Optional[str] = None
     download_url: Optional[Union[str, URI]] = None
+    source: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.chemical_id):
@@ -546,8 +720,8 @@ class ChemicalCompoundRecord(YAMLRoot):
         if self.molecular_formula is not None and not isinstance(self.molecular_formula, str):
             self.molecular_formula = str(self.molecular_formula)
 
-        if self.molecular_weight is not None and not isinstance(self.molecular_weight, str):
-            self.molecular_weight = str(self.molecular_weight)
+        if self.molecular_weight is not None and not isinstance(self.molecular_weight, float):
+            self.molecular_weight = float(self.molecular_weight)
 
         if self.role_in_bioprocess is not None and not isinstance(self.role_in_bioprocess, str):
             self.role_in_bioprocess = str(self.role_in_bioprocess)
@@ -555,8 +729,8 @@ class ChemicalCompoundRecord(YAMLRoot):
         if self.chebi_id is not None and not isinstance(self.chebi_id, str):
             self.chebi_id = str(self.chebi_id)
 
-        if self.pubchem_id is not None and not isinstance(self.pubchem_id, int):
-            self.pubchem_id = int(self.pubchem_id)
+        if self.pubchem_id is not None and not isinstance(self.pubchem_id, str):
+            self.pubchem_id = str(self.pubchem_id)
 
         if self.chembl_id is not None and not isinstance(self.chembl_id, str):
             self.chembl_id = str(self.chembl_id)
@@ -567,33 +741,37 @@ class ChemicalCompoundRecord(YAMLRoot):
         if self.download_url is not None and not isinstance(self.download_url, URI):
             self.download_url = URI(self.download_url)
 
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
+
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
 class AssayMeasurementRecord(YAMLRoot):
     """
-    Analytical assay or measurement method for REE detection/quantification
+    Analytical assay or measurement method
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = CMM["AssayMeasurementRecord"]
-    class_class_curie: ClassVar[str] = "cmm:AssayMeasurementRecord"
+    class_class_uri: ClassVar[URIRef] = PFAS["AssayMeasurementRecord"]
+    class_class_curie: ClassVar[str] = "pfas:AssayMeasurementRecord"
     class_name: ClassVar[str] = "AssayMeasurementRecord"
-    class_model_uri: ClassVar[URIRef] = CMM.AssayMeasurementRecord
+    class_model_uri: ClassVar[URIRef] = PFAS.AssayMeasurementRecord
 
     assay_id: Union[str, AssayMeasurementRecordAssayId] = None
     assay_name: str = None
     assay_type: Optional[Union[str, "AssayTypeEnum"]] = None
-    target_analytes: Optional[Union[str, list[str]]] = empty_list()
+    target_analytes: Optional[str] = None
     detection_method: Optional[str] = None
     detection_limit: Optional[str] = None
     dynamic_range: Optional[str] = None
     protocol_reference: Optional[str] = None
-    equipment_required: Optional[Union[str, list[str]]] = empty_list()
+    equipment_required: Optional[str] = None
     sample_preparation: Optional[str] = None
     data_output_format: Optional[str] = None
     download_url: Optional[Union[str, URI]] = None
+    source: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.assay_id):
@@ -609,9 +787,8 @@ class AssayMeasurementRecord(YAMLRoot):
         if self.assay_type is not None and not isinstance(self.assay_type, AssayTypeEnum):
             self.assay_type = AssayTypeEnum(self.assay_type)
 
-        if not isinstance(self.target_analytes, list):
-            self.target_analytes = [self.target_analytes] if self.target_analytes is not None else []
-        self.target_analytes = [v if isinstance(v, str) else str(v) for v in self.target_analytes]
+        if self.target_analytes is not None and not isinstance(self.target_analytes, str):
+            self.target_analytes = str(self.target_analytes)
 
         if self.detection_method is not None and not isinstance(self.detection_method, str):
             self.detection_method = str(self.detection_method)
@@ -625,9 +802,8 @@ class AssayMeasurementRecord(YAMLRoot):
         if self.protocol_reference is not None and not isinstance(self.protocol_reference, str):
             self.protocol_reference = str(self.protocol_reference)
 
-        if not isinstance(self.equipment_required, list):
-            self.equipment_required = [self.equipment_required] if self.equipment_required is not None else []
-        self.equipment_required = [v if isinstance(v, str) else str(v) for v in self.equipment_required]
+        if self.equipment_required is not None and not isinstance(self.equipment_required, str):
+            self.equipment_required = str(self.equipment_required)
 
         if self.sample_preparation is not None and not isinstance(self.sample_preparation, str):
             self.sample_preparation = str(self.sample_preparation)
@@ -638,35 +814,37 @@ class AssayMeasurementRecord(YAMLRoot):
         if self.download_url is not None and not isinstance(self.download_url, URI):
             self.download_url = URI(self.download_url)
 
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
+
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
 class BioprocessConditionsRecord(YAMLRoot):
     """
-    Experimental conditions for REE biorecovery processes (bioleaching, biomineralization, biosorption)
+    Experimental conditions for PFAS biodegradation
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = CMM["BioprocessConditionsRecord"]
-    class_class_curie: ClassVar[str] = "cmm:BioprocessConditionsRecord"
+    class_class_uri: ClassVar[URIRef] = PFAS["BioprocessConditionsRecord"]
+    class_class_curie: ClassVar[str] = "pfas:BioprocessConditionsRecord"
     class_name: ClassVar[str] = "BioprocessConditionsRecord"
-    class_model_uri: ClassVar[URIRef] = CMM.BioprocessConditionsRecord
+    class_model_uri: ClassVar[URIRef] = PFAS.BioprocessConditionsRecord
 
     process_id: Union[str, BioprocessConditionsRecordProcessId] = None
     process_name: str = None
     process_type: Optional[Union[str, "ProcessTypeEnum"]] = None
     strain_used: Optional[str] = None
-    organism_used: Optional[str] = None
-    growth_conditions: Optional[str] = None
-    ree_concentration: Optional[str] = None
-    contact_time: Optional[str] = None
-    pH: Optional[str] = None
-    temperature: Optional[str] = None
-    competing_ions: Optional[Union[str, list[str]]] = empty_list()
-    process_parameters: Optional[str] = None
-    optimization_history: Optional[str] = None
-    download_url: Optional[Union[str, URI]] = None
+    ph: Optional[float] = None
+    temperature: Optional[float] = None
+    pfas_concentration: Optional[str] = None
+    duration: Optional[str] = None
+    oxygen_condition: Optional[str] = None
+    medium_composition: Optional[str] = None
+    degradation_percentage: Optional[float] = None
+    fluoride_release: Optional[float] = None
+    source: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.process_id):
@@ -685,36 +863,32 @@ class BioprocessConditionsRecord(YAMLRoot):
         if self.strain_used is not None and not isinstance(self.strain_used, str):
             self.strain_used = str(self.strain_used)
 
-        if self.organism_used is not None and not isinstance(self.organism_used, str):
-            self.organism_used = str(self.organism_used)
+        if self.ph is not None and not isinstance(self.ph, float):
+            self.ph = float(self.ph)
 
-        if self.growth_conditions is not None and not isinstance(self.growth_conditions, str):
-            self.growth_conditions = str(self.growth_conditions)
+        if self.temperature is not None and not isinstance(self.temperature, float):
+            self.temperature = float(self.temperature)
 
-        if self.ree_concentration is not None and not isinstance(self.ree_concentration, str):
-            self.ree_concentration = str(self.ree_concentration)
+        if self.pfas_concentration is not None and not isinstance(self.pfas_concentration, str):
+            self.pfas_concentration = str(self.pfas_concentration)
 
-        if self.contact_time is not None and not isinstance(self.contact_time, str):
-            self.contact_time = str(self.contact_time)
+        if self.duration is not None and not isinstance(self.duration, str):
+            self.duration = str(self.duration)
 
-        if self.pH is not None and not isinstance(self.pH, str):
-            self.pH = str(self.pH)
+        if self.oxygen_condition is not None and not isinstance(self.oxygen_condition, str):
+            self.oxygen_condition = str(self.oxygen_condition)
 
-        if self.temperature is not None and not isinstance(self.temperature, str):
-            self.temperature = str(self.temperature)
+        if self.medium_composition is not None and not isinstance(self.medium_composition, str):
+            self.medium_composition = str(self.medium_composition)
 
-        if not isinstance(self.competing_ions, list):
-            self.competing_ions = [self.competing_ions] if self.competing_ions is not None else []
-        self.competing_ions = [v if isinstance(v, str) else str(v) for v in self.competing_ions]
+        if self.degradation_percentage is not None and not isinstance(self.degradation_percentage, float):
+            self.degradation_percentage = float(self.degradation_percentage)
 
-        if self.process_parameters is not None and not isinstance(self.process_parameters, str):
-            self.process_parameters = str(self.process_parameters)
+        if self.fluoride_release is not None and not isinstance(self.fluoride_release, float):
+            self.fluoride_release = float(self.fluoride_release)
 
-        if self.optimization_history is not None and not isinstance(self.optimization_history, str):
-            self.optimization_history = str(self.optimization_history)
-
-        if self.download_url is not None and not isinstance(self.download_url, URI):
-            self.download_url = URI(self.download_url)
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
 
         super().__post_init__(**kwargs)
 
@@ -722,26 +896,22 @@ class BioprocessConditionsRecord(YAMLRoot):
 @dataclass(repr=False)
 class ScreeningResultRecord(YAMLRoot):
     """
-    High-throughput screening result from automated strain/condition testing
+    High-throughput screening result
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = CMM["ScreeningResultRecord"]
-    class_class_curie: ClassVar[str] = "cmm:ScreeningResultRecord"
+    class_class_uri: ClassVar[URIRef] = PFAS["ScreeningResultRecord"]
+    class_class_curie: ClassVar[str] = "pfas:ScreeningResultRecord"
     class_name: ClassVar[str] = "ScreeningResultRecord"
-    class_model_uri: ClassVar[URIRef] = CMM.ScreeningResultRecord
+    class_model_uri: ClassVar[URIRef] = PFAS.ScreeningResultRecord
 
     experiment_id: Union[str, ScreeningResultRecordExperimentId] = None
     plate_coordinates: Optional[str] = None
     strain_barcode: Optional[str] = None
     screening_assay: Optional[str] = None
-    target_ree: Optional[Union[str, list[str]]] = empty_list()
     measurement_values: Optional[str] = None
     hit_classification: Optional[Union[str, "HitClassificationEnum"]] = None
-    validation_status: Optional[str] = None
-    follow_up_experiments: Optional[Union[str, list[str]]] = empty_list()
-    assay_reference: Optional[str] = None
-    download_url: Optional[Union[str, URI]] = None
+    source: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.experiment_id):
@@ -758,28 +928,14 @@ class ScreeningResultRecord(YAMLRoot):
         if self.screening_assay is not None and not isinstance(self.screening_assay, str):
             self.screening_assay = str(self.screening_assay)
 
-        if not isinstance(self.target_ree, list):
-            self.target_ree = [self.target_ree] if self.target_ree is not None else []
-        self.target_ree = [v if isinstance(v, str) else str(v) for v in self.target_ree]
-
         if self.measurement_values is not None and not isinstance(self.measurement_values, str):
             self.measurement_values = str(self.measurement_values)
 
         if self.hit_classification is not None and not isinstance(self.hit_classification, HitClassificationEnum):
             self.hit_classification = HitClassificationEnum(self.hit_classification)
 
-        if self.validation_status is not None and not isinstance(self.validation_status, str):
-            self.validation_status = str(self.validation_status)
-
-        if not isinstance(self.follow_up_experiments, list):
-            self.follow_up_experiments = [self.follow_up_experiments] if self.follow_up_experiments is not None else []
-        self.follow_up_experiments = [v if isinstance(v, str) else str(v) for v in self.follow_up_experiments]
-
-        if self.assay_reference is not None and not isinstance(self.assay_reference, str):
-            self.assay_reference = str(self.assay_reference)
-
-        if self.download_url is not None and not isinstance(self.download_url, URI):
-            self.download_url = URI(self.download_url)
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
 
         super().__post_init__(**kwargs)
 
@@ -787,29 +943,22 @@ class ScreeningResultRecord(YAMLRoot):
 @dataclass(repr=False)
 class ProtocolRecord(YAMLRoot):
     """
-    Experimental protocol or standard operating procedure (SOP)
+    Experimental protocol or SOP
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = CMM["ProtocolRecord"]
-    class_class_curie: ClassVar[str] = "cmm:ProtocolRecord"
+    class_class_uri: ClassVar[URIRef] = PFAS["ProtocolRecord"]
+    class_class_curie: ClassVar[str] = "pfas:ProtocolRecord"
     class_name: ClassVar[str] = "ProtocolRecord"
-    class_model_uri: ClassVar[URIRef] = CMM.ProtocolRecord
+    class_model_uri: ClassVar[URIRef] = PFAS.ProtocolRecord
 
     protocol_id: Union[str, ProtocolRecordProtocolId] = None
     protocol_name: str = None
     protocol_type: Optional[Union[str, "ProtocolTypeEnum"]] = None
     protocol_version: Optional[str] = None
     protocol_doi: Optional[str] = None
-    protocol_url: Optional[Union[str, URI]] = None
-    associated_assays: Optional[Union[str, list[str]]] = empty_list()
-    equipment_list: Optional[Union[str, list[str]]] = empty_list()
-    success_criteria: Optional[str] = None
-    quality_control: Optional[str] = None
-    dbtl_iteration: Optional[str] = None
-    validation_status: Optional[str] = None
-    user_notes: Optional[str] = None
-    download_url: Optional[Union[str, URI]] = None
+    dbtl_iteration: Optional[int] = None
+    source: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.protocol_id):
@@ -831,971 +980,1326 @@ class ProtocolRecord(YAMLRoot):
         if self.protocol_doi is not None and not isinstance(self.protocol_doi, str):
             self.protocol_doi = str(self.protocol_doi)
 
-        if self.protocol_url is not None and not isinstance(self.protocol_url, URI):
-            self.protocol_url = URI(self.protocol_url)
+        if self.dbtl_iteration is not None and not isinstance(self.dbtl_iteration, int):
+            self.dbtl_iteration = int(self.dbtl_iteration)
 
-        if not isinstance(self.associated_assays, list):
-            self.associated_assays = [self.associated_assays] if self.associated_assays is not None else []
-        self.associated_assays = [v if isinstance(v, str) else str(v) for v in self.associated_assays]
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
 
-        if not isinstance(self.equipment_list, list):
-            self.equipment_list = [self.equipment_list] if self.equipment_list is not None else []
-        self.equipment_list = [v if isinstance(v, str) else str(v) for v in self.equipment_list]
+        super().__post_init__(**kwargs)
 
-        if self.success_criteria is not None and not isinstance(self.success_criteria, str):
-            self.success_criteria = str(self.success_criteria)
 
-        if self.quality_control is not None and not isinstance(self.quality_control, str):
-            self.quality_control = str(self.quality_control)
+@dataclass(repr=False)
+class TranscriptomicsRecord(YAMLRoot):
+    """
+    Transcriptomics experiment record from SRA, GEO, or ArrayExpress
+    """
+    _inherited_slots: ClassVar[list[str]] = []
 
-        if self.dbtl_iteration is not None and not isinstance(self.dbtl_iteration, str):
-            self.dbtl_iteration = str(self.dbtl_iteration)
+    class_class_uri: ClassVar[URIRef] = PFAS["TranscriptomicsRecord"]
+    class_class_curie: ClassVar[str] = "pfas:TranscriptomicsRecord"
+    class_name: ClassVar[str] = "TranscriptomicsRecord"
+    class_model_uri: ClassVar[URIRef] = PFAS.TranscriptomicsRecord
 
-        if self.validation_status is not None and not isinstance(self.validation_status, str):
-            self.validation_status = str(self.validation_status)
+    experiment_id: Union[str, TranscriptomicsRecordExperimentId] = None
+    organism: str = None
+    study_id: Optional[str] = None
+    sample_id: Optional[str] = None
+    project_title: Optional[str] = None
+    sample_description: Optional[str] = None
+    condition: Optional[str] = None
+    data_type: Optional[Union[str, "TranscriptomicsDataTypeEnum"]] = None
+    sra_accession: Optional[str] = None
+    geo_accession: Optional[str] = None
+    arrayexpress_accession: Optional[str] = None
+    size: Optional[str] = None
+    publication: Optional[str] = None
+    license: Optional[str] = None
+    download_url: Optional[Union[str, URI]] = None
+    source: Optional[str] = None
 
-        if self.user_notes is not None and not isinstance(self.user_notes, str):
-            self.user_notes = str(self.user_notes)
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.experiment_id):
+            self.MissingRequiredField("experiment_id")
+        if not isinstance(self.experiment_id, TranscriptomicsRecordExperimentId):
+            self.experiment_id = TranscriptomicsRecordExperimentId(self.experiment_id)
+
+        if self._is_empty(self.organism):
+            self.MissingRequiredField("organism")
+        if not isinstance(self.organism, str):
+            self.organism = str(self.organism)
+
+        if self.study_id is not None and not isinstance(self.study_id, str):
+            self.study_id = str(self.study_id)
+
+        if self.sample_id is not None and not isinstance(self.sample_id, str):
+            self.sample_id = str(self.sample_id)
+
+        if self.project_title is not None and not isinstance(self.project_title, str):
+            self.project_title = str(self.project_title)
+
+        if self.sample_description is not None and not isinstance(self.sample_description, str):
+            self.sample_description = str(self.sample_description)
+
+        if self.condition is not None and not isinstance(self.condition, str):
+            self.condition = str(self.condition)
+
+        if self.data_type is not None and not isinstance(self.data_type, TranscriptomicsDataTypeEnum):
+            self.data_type = TranscriptomicsDataTypeEnum(self.data_type)
+
+        if self.sra_accession is not None and not isinstance(self.sra_accession, str):
+            self.sra_accession = str(self.sra_accession)
+
+        if self.geo_accession is not None and not isinstance(self.geo_accession, str):
+            self.geo_accession = str(self.geo_accession)
+
+        if self.arrayexpress_accession is not None and not isinstance(self.arrayexpress_accession, str):
+            self.arrayexpress_accession = str(self.arrayexpress_accession)
+
+        if self.size is not None and not isinstance(self.size, str):
+            self.size = str(self.size)
+
+        if self.publication is not None and not isinstance(self.publication, str):
+            self.publication = str(self.publication)
+
+        if self.license is not None and not isinstance(self.license, str):
+            self.license = str(self.license)
 
         if self.download_url is not None and not isinstance(self.download_url, URI):
             self.download_url = URI(self.download_url)
+
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class StrainRecord(YAMLRoot):
+    """
+    Microbial strain with standardized nomenclature and culture collection information
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PFAS["StrainRecord"]
+    class_class_curie: ClassVar[str] = "pfas:StrainRecord"
+    class_name: ClassVar[str] = "StrainRecord"
+    class_model_uri: ClassVar[URIRef] = PFAS.StrainRecord
+
+    strain_id: Union[str, StrainRecordStrainId] = None
+    scientific_name: str = None
+    species_taxon_id: Optional[int] = None
+    strain_designation: Optional[str] = None
+    type_strain: Optional[Union[str, "TypeStrainEnum"]] = None
+    culture_collection_ids: Optional[Union[str, list[str]]] = empty_list()
+    procurement_urls: Optional[Union[Union[str, URI], list[Union[str, URI]]]] = empty_list()
+    availability_status: Optional[Union[str, "AvailabilityStatusEnum"]] = None
+    alternative_names: Optional[Union[str, list[str]]] = empty_list()
+    biosafety_level: Optional[int] = None
+    growth_requirements: Optional[str] = None
+    kg_microbe_nodes: Optional[Union[str, list[str]]] = empty_list()
+    notes: Optional[str] = None
+    source: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.strain_id):
+            self.MissingRequiredField("strain_id")
+        if not isinstance(self.strain_id, StrainRecordStrainId):
+            self.strain_id = StrainRecordStrainId(self.strain_id)
+
+        if self._is_empty(self.scientific_name):
+            self.MissingRequiredField("scientific_name")
+        if not isinstance(self.scientific_name, str):
+            self.scientific_name = str(self.scientific_name)
+
+        if self.species_taxon_id is not None and not isinstance(self.species_taxon_id, int):
+            self.species_taxon_id = int(self.species_taxon_id)
+
+        if self.strain_designation is not None and not isinstance(self.strain_designation, str):
+            self.strain_designation = str(self.strain_designation)
+
+        if self.type_strain is not None and not isinstance(self.type_strain, TypeStrainEnum):
+            self.type_strain = TypeStrainEnum(self.type_strain)
+
+        if not isinstance(self.culture_collection_ids, list):
+            self.culture_collection_ids = [self.culture_collection_ids] if self.culture_collection_ids is not None else []
+        self.culture_collection_ids = [v if isinstance(v, str) else str(v) for v in self.culture_collection_ids]
+
+        if not isinstance(self.procurement_urls, list):
+            self.procurement_urls = [self.procurement_urls] if self.procurement_urls is not None else []
+        self.procurement_urls = [v if isinstance(v, URI) else URI(v) for v in self.procurement_urls]
+
+        if self.availability_status is not None and not isinstance(self.availability_status, AvailabilityStatusEnum):
+            self.availability_status = AvailabilityStatusEnum(self.availability_status)
+
+        if not isinstance(self.alternative_names, list):
+            self.alternative_names = [self.alternative_names] if self.alternative_names is not None else []
+        self.alternative_names = [v if isinstance(v, str) else str(v) for v in self.alternative_names]
+
+        if self.biosafety_level is not None and not isinstance(self.biosafety_level, int):
+            self.biosafety_level = int(self.biosafety_level)
+
+        if self.growth_requirements is not None and not isinstance(self.growth_requirements, str):
+            self.growth_requirements = str(self.growth_requirements)
+
+        if not isinstance(self.kg_microbe_nodes, list):
+            self.kg_microbe_nodes = [self.kg_microbe_nodes] if self.kg_microbe_nodes is not None else []
+        self.kg_microbe_nodes = [v if isinstance(v, str) else str(v) for v in self.kg_microbe_nodes]
+
+        if self.notes is not None and not isinstance(self.notes, str):
+            self.notes = str(self.notes)
+
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class GrowthMediaRecord(YAMLRoot):
+    """
+    Curated growth medium formulation for microbial cultivation with standardized nomenclature
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PFAS["GrowthMediaRecord"]
+    class_class_curie: ClassVar[str] = "pfas:GrowthMediaRecord"
+    class_name: ClassVar[str] = "GrowthMediaRecord"
+    class_model_uri: ClassVar[URIRef] = PFAS.GrowthMediaRecord
+
+    media_id: Union[str, GrowthMediaRecordMediaId] = None
+    media_name: str = None
+    media_type: Optional[Union[str, "MediaTypeEnum"]] = None
+    alternative_names: Optional[Union[str, list[str]]] = empty_list()
+    description: Optional[str] = None
+    target_organisms: Optional[str] = None
+    ph: Optional[str] = None
+    sterilization_method: Optional[str] = None
+    references: Optional[Union[str, list[str]]] = empty_list()
+    kg_microbe_nodes: Optional[Union[str, list[str]]] = empty_list()
+    notes: Optional[str] = None
+    source: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.media_id):
+            self.MissingRequiredField("media_id")
+        if not isinstance(self.media_id, GrowthMediaRecordMediaId):
+            self.media_id = GrowthMediaRecordMediaId(self.media_id)
+
+        if self._is_empty(self.media_name):
+            self.MissingRequiredField("media_name")
+        if not isinstance(self.media_name, str):
+            self.media_name = str(self.media_name)
+
+        if self.media_type is not None and not isinstance(self.media_type, MediaTypeEnum):
+            self.media_type = MediaTypeEnum(self.media_type)
+
+        if not isinstance(self.alternative_names, list):
+            self.alternative_names = [self.alternative_names] if self.alternative_names is not None else []
+        self.alternative_names = [v if isinstance(v, str) else str(v) for v in self.alternative_names]
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
+        if self.target_organisms is not None and not isinstance(self.target_organisms, str):
+            self.target_organisms = str(self.target_organisms)
+
+        if self.ph is not None and not isinstance(self.ph, str):
+            self.ph = str(self.ph)
+
+        if self.sterilization_method is not None and not isinstance(self.sterilization_method, str):
+            self.sterilization_method = str(self.sterilization_method)
+
+        if not isinstance(self.references, list):
+            self.references = [self.references] if self.references is not None else []
+        self.references = [v if isinstance(v, str) else str(v) for v in self.references]
+
+        if not isinstance(self.kg_microbe_nodes, list):
+            self.kg_microbe_nodes = [self.kg_microbe_nodes] if self.kg_microbe_nodes is not None else []
+        self.kg_microbe_nodes = [v if isinstance(v, str) else str(v) for v in self.kg_microbe_nodes]
+
+        if self.notes is not None and not isinstance(self.notes, str):
+            self.notes = str(self.notes)
+
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class MediaIngredientRecord(YAMLRoot):
+    """
+    Individual ingredient in a growth medium with chemical details and concentration
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PFAS["MediaIngredientRecord"]
+    class_class_curie: ClassVar[str] = "pfas:MediaIngredientRecord"
+    class_name: ClassVar[str] = "MediaIngredientRecord"
+    class_model_uri: ClassVar[URIRef] = PFAS.MediaIngredientRecord
+
+    ingredient_id: Union[str, MediaIngredientRecordIngredientId] = None
+    ingredient_name: str = None
+    media_id: str = None
+    media_name: Optional[str] = None
+    ontology_id: Optional[str] = None
+    ontology_label: Optional[str] = None
+    chemical_formula: Optional[str] = None
+    concentration: Optional[float] = None
+    unit: Optional[str] = None
+    role: Optional[Union[str, "IngredientRoleEnum"]] = None
+    kg_microbe_nodes: Optional[Union[str, list[str]]] = empty_list()
+    notes: Optional[str] = None
+    source: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.ingredient_id):
+            self.MissingRequiredField("ingredient_id")
+        if not isinstance(self.ingredient_id, MediaIngredientRecordIngredientId):
+            self.ingredient_id = MediaIngredientRecordIngredientId(self.ingredient_id)
+
+        if self._is_empty(self.ingredient_name):
+            self.MissingRequiredField("ingredient_name")
+        if not isinstance(self.ingredient_name, str):
+            self.ingredient_name = str(self.ingredient_name)
+
+        if self._is_empty(self.media_id):
+            self.MissingRequiredField("media_id")
+        if not isinstance(self.media_id, str):
+            self.media_id = str(self.media_id)
+
+        if self.media_name is not None and not isinstance(self.media_name, str):
+            self.media_name = str(self.media_name)
+
+        if self.ontology_id is not None and not isinstance(self.ontology_id, str):
+            self.ontology_id = str(self.ontology_id)
+
+        if self.ontology_label is not None and not isinstance(self.ontology_label, str):
+            self.ontology_label = str(self.ontology_label)
+
+        if self.chemical_formula is not None and not isinstance(self.chemical_formula, str):
+            self.chemical_formula = str(self.chemical_formula)
+
+        if self.concentration is not None and not isinstance(self.concentration, float):
+            self.concentration = float(self.concentration)
+
+        if self.unit is not None and not isinstance(self.unit, str):
+            self.unit = str(self.unit)
+
+        if self.role is not None and not isinstance(self.role, IngredientRoleEnum):
+            self.role = IngredientRoleEnum(self.role)
+
+        if not isinstance(self.kg_microbe_nodes, list):
+            self.kg_microbe_nodes = [self.kg_microbe_nodes] if self.kg_microbe_nodes is not None else []
+        self.kg_microbe_nodes = [v if isinstance(v, str) else str(v) for v in self.kg_microbe_nodes]
+
+        if self.notes is not None and not isinstance(self.notes, str):
+            self.notes = str(self.notes)
+
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
 
         super().__post_init__(**kwargs)
 
 
 # Enumerations
+class PathwayDatabaseEnum(EnumDefinitionImpl):
+
+    KEGG = PermissibleValue(
+        text="KEGG",
+        description="Kyoto Encyclopedia of Genes and Genomes")
+    MetaCyc = PermissibleValue(
+        text="MetaCyc",
+        description="Metabolic Pathway Database")
+    BioCyc = PermissibleValue(
+        text="BioCyc",
+        description="Collection of Pathway/Genome Databases")
+    RHEA = PermissibleValue(
+        text="RHEA",
+        description="Reaction database")
+
+    _defn = EnumDefinition(
+        name="PathwayDatabaseEnum",
+    )
+
+class ReactionCategoryEnum(EnumDefinitionImpl):
+
+    dehalogenase = PermissibleValue(
+        text="dehalogenase",
+        description="Dehalogenase reactions for C-X bond cleavage")
+    known_pfas_degraders = PermissibleValue(
+        text="known_pfas_degraders",
+        description="Reactions from known PFAS-degrading organisms")
+    fluoride_resistance = PermissibleValue(
+        text="fluoride_resistance",
+        description="Fluoride resistance and transport reactions")
+    hydrocarbon_degradation = PermissibleValue(
+        text="hydrocarbon_degradation",
+        description="Hydrocarbon degradation pathways")
+    important_genes = PermissibleValue(
+        text="important_genes",
+        description="Important non-enzymatic genes (transporters, regulators)")
+    oxygenase_cometabolism = PermissibleValue(
+        text="oxygenase_cometabolism",
+        description="Oxygenase and co-metabolism reactions")
+
+    _defn = EnumDefinition(
+        name="ReactionCategoryEnum",
+    )
+
 class StructureMethodEnum(EnumDefinitionImpl):
-    """
-    Method for structure determination
-    """
+
     _defn = EnumDefinition(
         name="StructureMethodEnum",
-        description="Method for structure determination",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "X-ray crystallography",
+        setattr(cls, "X-RAY DIFFRACTION",
             PermissibleValue(
-                text="X-ray crystallography",
-                description="X-ray diffraction of crystallized molecules"))
-        setattr(cls, "NMR spectroscopy",
+                text="X-RAY DIFFRACTION",
+                description="X-ray crystallography"))
+        setattr(cls, "SOLUTION NMR",
             PermissibleValue(
-                text="NMR spectroscopy",
-                description="Nuclear magnetic resonance spectroscopy"))
-        setattr(cls, "Cryo-EM",
+                text="SOLUTION NMR",
+                description="Nuclear magnetic resonance in solution"))
+        setattr(cls, "ELECTRON MICROSCOPY",
             PermissibleValue(
-                text="Cryo-EM",
-                description="Cryo-electron microscopy"))
-        setattr(cls, "Predicted structure",
+                text="ELECTRON MICROSCOPY",
+                description="Cryo-EM or electron microscopy"))
+        setattr(cls, "SOLID-STATE NMR",
             PermissibleValue(
-                text="Predicted structure",
-                description="Computational prediction (e.g., AlphaFold)"))
-        setattr(cls, "Homology modeling",
+                text="SOLID-STATE NMR",
+                description="Solid-state NMR"))
+        setattr(cls, "THEORETICAL MODEL",
             PermissibleValue(
-                text="Homology modeling",
-                description="Model based on homologous structures"))
-        setattr(cls, "Computational prediction",
-            PermissibleValue(
-                text="Computational prediction",
-                description="Ab initio or other computational methods"))
-        setattr(cls, "Chemical characterization",
-            PermissibleValue(
-                text="Chemical characterization",
-                description="Chemical analysis methods"))
-        setattr(cls, "Multiple methods",
-            PermissibleValue(
-                text="Multiple methods",
-                description="Combination of experimental methods"))
+                text="THEORETICAL MODEL",
+                description="Computational model (AlphaFold, etc.)"))
 
-class DataTypeEnum(EnumDefinitionImpl):
-    """
-    Type of research dataset
-    """
+class DatasetTypeEnum(EnumDefinitionImpl):
+
+    genomics = PermissibleValue(
+        text="genomics",
+        description="Genomic sequencing data")
     transcriptomics = PermissibleValue(
         text="transcriptomics",
-        description="Transcriptome analysis data")
+        description="RNA-seq or microarray data")
     proteomics = PermissibleValue(
         text="proteomics",
-        description="Protein expression/identification data")
+        description="Protein expression data")
     metabolomics = PermissibleValue(
         text="metabolomics",
         description="Metabolite profiling data")
     metagenomics = PermissibleValue(
         text="metagenomics",
-        description="Metagenomic sequencing data")
-    pathways = PermissibleValue(
-        text="pathways",
-        description="Metabolic pathway databases")
-    thermodynamics = PermissibleValue(
-        text="thermodynamics",
-        description="Thermodynamic data")
+        description="Environmental metagenome data")
+    other = PermissibleValue(
+        text="other",
+        description="Other data types")
 
     _defn = EnumDefinition(
-        name="DataTypeEnum",
-        description="Type of research dataset",
+        name="DatasetTypeEnum",
     )
 
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "genomic DNA sequencing",
-            PermissibleValue(
-                text="genomic DNA sequencing",
-                description="Whole genome sequencing data"))
-        setattr(cls, "RNA-seq",
-            PermissibleValue(
-                text="RNA-seq",
-                description="RNA sequencing data"))
-        setattr(cls, "16S rRNA",
-            PermissibleValue(
-                text="16S rRNA",
-                description="16S ribosomal RNA amplicon data"))
-        setattr(cls, "protein sequences",
-            PermissibleValue(
-                text="protein sequences",
-                description="Protein sequence databases"))
-        setattr(cls, "metabolic compounds",
-            PermissibleValue(
-                text="metabolic compounds",
-                description="Chemical compound databases"))
-        setattr(cls, "mass spectrometry",
-            PermissibleValue(
-                text="mass spectrometry",
-                description="MS/MS or LC-MS data"))
-        setattr(cls, "annotated genomes",
-            PermissibleValue(
-                text="annotated genomes",
-                description="Annotated genome assemblies"))
-        setattr(cls, "3D protein structures",
-            PermissibleValue(
-                text="3D protein structures",
-                description="Structural biology data"))
-
 class CompoundTypeEnum(EnumDefinitionImpl):
-    """
-    Type of chemical compound
-    """
-    lanthanide = PermissibleValue(
-        text="lanthanide",
-        description="Rare earth element (La, Ce, Nd, Eu, Tb, Gd, etc.)")
-    lanthanophore = PermissibleValue(
-        text="lanthanophore",
-        description="Lanthanide-chelating siderophore")
-    chelator = PermissibleValue(
-        text="chelator",
-        description="Metal-chelating compound")
-    substrate = PermissibleValue(
-        text="substrate",
-        description="Metabolic substrate")
-    product = PermissibleValue(
-        text="product",
-        description="Metabolic product")
+
+    perfluorinated = PermissibleValue(
+        text="perfluorinated",
+        description="Fully fluorinated PFAS (PFOA, PFOS)")
+    polyfluorinated = PermissibleValue(
+        text="polyfluorinated",
+        description="Partially fluorinated PFAS (precursors)")
+    fluoride = PermissibleValue(
+        text="fluoride",
+        description="Fluoride ion")
     metabolite = PermissibleValue(
         text="metabolite",
-        description="Intermediate metabolite")
-    cofactor = PermissibleValue(
-        text="cofactor",
-        description="Enzymatic cofactor")
-    extractant = PermissibleValue(
-        text="extractant",
-        description="Solvent extraction reagent")
-    sensitizer = PermissibleValue(
-        text="sensitizer",
-        description="Luminescence sensitizer")
+        description="PFAS degradation metabolite")
+    degradation_product = PermissibleValue(
+        text="degradation_product",
+        description="Degradation product")
+    fluorotelomer = PermissibleValue(
+        text="fluorotelomer",
+        description="Fluorotelomer alcohol")
+    precursor = PermissibleValue(
+        text="precursor",
+        description="PFAS precursor compound")
 
     _defn = EnumDefinition(
         name="CompoundTypeEnum",
-        description="Type of chemical compound",
     )
 
 class AssayTypeEnum(EnumDefinitionImpl):
-    """
-    Type of analytical assay
-    """
+
     FACS = PermissibleValue(
         text="FACS",
         description="Fluorescence-activated cell sorting")
-    HPLC = PermissibleValue(
-        text="HPLC",
-        description="High-performance liquid chromatography")
 
     _defn = EnumDefinition(
         name="AssayTypeEnum",
-        description="Type of analytical assay",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "time-resolved luminescence (TRL)",
+        setattr(cls, "LC-MS/MS",
             PermissibleValue(
-                text="time-resolved luminescence (TRL)",
-                description="Time-resolved lanthanide luminescence"))
-        setattr(cls, "ICP-OES",
+                text="LC-MS/MS",
+                description="Liquid chromatography tandem mass spectrometry"))
+        setattr(cls, "fluoride electrode",
             PermissibleValue(
-                text="ICP-OES",
-                description="Inductively coupled plasma optical emission spectrometry"))
+                text="fluoride electrode",
+                description="Ion-selective electrode"))
+        setattr(cls, "ion chromatography",
+            PermissibleValue(
+                text="ion chromatography",
+                description="Ion chromatography"))
+        setattr(cls, "combustion IC",
+            PermissibleValue(
+                text="combustion IC",
+                description="Combustion ion chromatography (TOF)"))
+        setattr(cls, "growth assay",
+            PermissibleValue(
+                text="growth assay",
+                description="Microbial growth assay"))
         setattr(cls, "ICP-MS",
             PermissibleValue(
                 text="ICP-MS",
                 description="Inductively coupled plasma mass spectrometry"))
-        setattr(cls, "fluorescence spectroscopy",
+        setattr(cls, "GC-MS",
             PermissibleValue(
-                text="fluorescence spectroscopy",
-                description="Fluorescence emission spectroscopy"))
-        setattr(cls, "absorbance spectroscopy",
-            PermissibleValue(
-                text="absorbance spectroscopy",
-                description="UV-Vis absorbance spectroscopy"))
-        setattr(cls, "mass spectrometry",
-            PermissibleValue(
-                text="mass spectrometry",
-                description="General mass spectrometry"))
-        setattr(cls, "LC-MS",
-            PermissibleValue(
-                text="LC-MS",
-                description="Liquid chromatography-mass spectrometry"))
-        setattr(cls, "confocal microscopy",
-            PermissibleValue(
-                text="confocal microscopy",
-                description="Confocal fluorescence microscopy"))
-        setattr(cls, "electron microscopy",
-            PermissibleValue(
-                text="electron microscopy",
-                description="SEM or TEM imaging"))
-        setattr(cls, "growth assay",
-            PermissibleValue(
-                text="growth assay",
-                description="Microbial growth measurement"))
-        setattr(cls, "viability assay",
-            PermissibleValue(
-                text="viability assay",
-                description="Cell viability assessment"))
+                text="GC-MS",
+                description="Gas chromatography mass spectrometry"))
 
 class ProcessTypeEnum(EnumDefinitionImpl):
-    """
-    Type of bioprocess
-    """
-    bioleaching = PermissibleValue(
-        text="bioleaching",
-        description="Microbial leaching of REEs from solid substrates")
-    biomineralization = PermissibleValue(
-        text="biomineralization",
-        description="Microbial precipitation of REE minerals")
-    biosorption = PermissibleValue(
-        text="biosorption",
-        description="Surface adsorption of REEs by biomass")
-    bioaccumulation = PermissibleValue(
-        text="bioaccumulation",
-        description="Intracellular accumulation of REEs")
-    fermentation = PermissibleValue(
-        text="fermentation",
-        description="Fermentative production of metabolites")
-    bioextraction = PermissibleValue(
-        text="bioextraction",
-        description="Combined bio-based extraction process")
+
+    aerobic_degradation = PermissibleValue(
+        text="aerobic_degradation",
+        description="Aerobic PFAS biodegradation")
+    anaerobic_degradation = PermissibleValue(
+        text="anaerobic_degradation",
+        description="Anaerobic PFAS biodegradation")
+    sequential_anaerobic_aerobic = PermissibleValue(
+        text="sequential_anaerobic_aerobic",
+        description="Sequential treatment")
+    bioaugmentation = PermissibleValue(
+        text="bioaugmentation",
+        description="Bioaugmentation with degraders")
+    consortia_based = PermissibleValue(
+        text="consortia_based",
+        description="Microbial consortia degradation")
+    bioreactor = PermissibleValue(
+        text="bioreactor",
+        description="Bioreactor system")
 
     _defn = EnumDefinition(
         name="ProcessTypeEnum",
-        description="Type of bioprocess",
     )
 
 class HitClassificationEnum(EnumDefinitionImpl):
-    """
-    Classification of screening hits
-    """
+
     positive = PermissibleValue(
         text="positive",
-        description="Strong positive hit")
+        description="Positive hit")
     negative = PermissibleValue(
         text="negative",
-        description="Negative control or no activity")
+        description="Negative hit")
     borderline = PermissibleValue(
         text="borderline",
-        description="Weak or borderline hit")
+        description="Borderline result")
+    false_positive = PermissibleValue(
+        text="false_positive",
+        description="False positive")
     validated = PermissibleValue(
         text="validated",
-        description="Validated positive hit")
+        description="Validated hit")
 
     _defn = EnumDefinition(
         name="HitClassificationEnum",
-        description="Classification of screening hits",
     )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "false positive",
-            PermissibleValue(
-                text="false positive",
-                description="Suspected false positive"))
 
 class ProtocolTypeEnum(EnumDefinitionImpl):
-    """
-    Type of experimental protocol
-    """
+
+    assay_protocol = PermissibleValue(
+        text="assay_protocol",
+        description="Analytical assay protocol")
+    cultivation_protocol = PermissibleValue(
+        text="cultivation_protocol",
+        description="Microbial cultivation protocol")
+    extraction_protocol = PermissibleValue(
+        text="extraction_protocol",
+        description="Compound extraction protocol")
+    transformation_protocol = PermissibleValue(
+        text="transformation_protocol",
+        description="Genetic transformation protocol")
+    screening_protocol = PermissibleValue(
+        text="screening_protocol",
+        description="High-throughput screening protocol")
+    degradation_protocol = PermissibleValue(
+        text="degradation_protocol",
+        description="PFAS degradation protocol")
+
     _defn = EnumDefinition(
         name="ProtocolTypeEnum",
-        description="Type of experimental protocol",
+    )
+
+class TranscriptomicsDataTypeEnum(EnumDefinitionImpl):
+    """
+    Type of transcriptomics or gene expression data
+    """
+    microarray = PermissibleValue(
+        text="microarray",
+        description="Gene expression microarray")
+    metatranscriptomics = PermissibleValue(
+        text="metatranscriptomics",
+        description="Community-level transcriptomics")
+
+    _defn = EnumDefinition(
+        name="TranscriptomicsDataTypeEnum",
+        description="Type of transcriptomics or gene expression data",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "assay protocol",
+        setattr(cls, "RNA-Seq",
             PermissibleValue(
-                text="assay protocol",
-                description="Analytical assay procedure"))
-        setattr(cls, "cultivation protocol",
+                text="RNA-Seq",
+                description="RNA sequencing (Illumina, PacBio, Nanopore)"))
+        setattr(cls, "single-cell RNA-seq",
             PermissibleValue(
-                text="cultivation protocol",
-                description="Microbial cultivation procedure"))
-        setattr(cls, "extraction protocol",
+                text="single-cell RNA-seq",
+                description="Single-cell RNA sequencing"))
+        setattr(cls, "differential expression",
             PermissibleValue(
-                text="extraction protocol",
-                description="Extraction/purification procedure"))
-        setattr(cls, "transformation protocol",
+                text="differential expression",
+                description="Differential gene expression analysis"))
+        setattr(cls, "time-course",
             PermissibleValue(
-                text="transformation protocol",
-                description="Genetic transformation procedure"))
-        setattr(cls, "screening protocol",
+                text="time-course",
+                description="Time-series transcriptomics"))
+        setattr(cls, "dual RNA-seq",
             PermissibleValue(
-                text="screening protocol",
-                description="High-throughput screening procedure"))
-        setattr(cls, "sample preparation",
+                text="dual RNA-seq",
+                description="Host-pathogen dual RNA-seq"))
+        setattr(cls, "small RNA-seq",
             PermissibleValue(
-                text="sample preparation",
-                description="Sample preparation procedure"))
-        setattr(cls, "quality control",
+                text="small RNA-seq",
+                description="Small RNA or miRNA sequencing"))
+        setattr(cls, "long-read RNA-seq",
             PermissibleValue(
-                text="quality control",
-                description="QC/validation procedure"))
+                text="long-read RNA-seq",
+                description="Long-read transcriptomics (PacBio, Nanopore)"))
+
+class TypeStrainEnum(EnumDefinitionImpl):
+    """
+    Type strain designation
+    """
+    yes = PermissibleValue(
+        text="yes",
+        description="Nomenclatural type strain for the species")
+    no = PermissibleValue(
+        text="no",
+        description="Not a type strain")
+    unknown = PermissibleValue(
+        text="unknown",
+        description="Type strain status unknown")
+
+    _defn = EnumDefinition(
+        name="TypeStrainEnum",
+        description="Type strain designation",
+    )
+
+class AvailabilityStatusEnum(EnumDefinitionImpl):
+    """
+    Culture collection availability status
+    """
+    available = PermissibleValue(
+        text="available",
+        description="Currently available for purchase/request")
+    restricted = PermissibleValue(
+        text="restricted",
+        description="Available with restrictions (MTA, permits, etc.)")
+    discontinued = PermissibleValue(
+        text="discontinued",
+        description="No longer maintained in collection")
+    unknown = PermissibleValue(
+        text="unknown",
+        description="Availability status unknown")
+
+    _defn = EnumDefinition(
+        name="AvailabilityStatusEnum",
+        description="Culture collection availability status",
+    )
+
+class MediaTypeEnum(EnumDefinitionImpl):
+    """
+    Type of growth medium
+    """
+    minimal = PermissibleValue(
+        text="minimal",
+        description="Minimal medium with defined chemical composition")
+    complex = PermissibleValue(
+        text="complex",
+        description="Complex medium with undefined components (extracts, peptones)")
+    selective = PermissibleValue(
+        text="selective",
+        description="Selective medium favoring specific organisms")
+    differential = PermissibleValue(
+        text="differential",
+        description="Differential medium distinguishing organisms by visible changes")
+    enrichment = PermissibleValue(
+        text="enrichment",
+        description="Enrichment medium promoting growth of target organisms")
+
+    _defn = EnumDefinition(
+        name="MediaTypeEnum",
+        description="Type of growth medium",
+    )
+
+class IngredientRoleEnum(EnumDefinitionImpl):
+    """
+    Function of ingredient in growth medium
+    """
+    mineral = PermissibleValue(
+        text="mineral",
+        description="Essential mineral (Mg, Ca, etc.)")
+    buffer = PermissibleValue(
+        text="buffer",
+        description="pH buffer (phosphate, HEPES, etc.)")
+    salt = PermissibleValue(
+        text="salt",
+        description="Osmotic support or ionic strength")
+    vitamin = PermissibleValue(
+        text="vitamin",
+        description="Vitamin or growth factor")
+    indicator = PermissibleValue(
+        text="indicator",
+        description="pH or metabolic indicator")
+
+    _defn = EnumDefinition(
+        name="IngredientRoleEnum",
+        description="Function of ingredient in growth medium",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "carbon source",
+            PermissibleValue(
+                text="carbon source",
+                description="Primary carbon source for growth"))
+        setattr(cls, "nitrogen source",
+            PermissibleValue(
+                text="nitrogen source",
+                description="Nitrogen source (nitrate, ammonium, amino acids)"))
+        setattr(cls, "trace element",
+            PermissibleValue(
+                text="trace element",
+                description="Micronutrient or trace element mix"))
+        setattr(cls, "solidifying agent",
+            PermissibleValue(
+                text="solidifying agent",
+                description="Agar or gellan gum for solid media"))
+        setattr(cls, "protein source",
+            PermissibleValue(
+                text="protein source",
+                description="Peptone, tryptone, or protein hydrolysate"))
+        setattr(cls, "vitamin source",
+            PermissibleValue(
+                text="vitamin source",
+                description="Yeast extract or vitamin mix"))
+        setattr(cls, "amino acid source",
+            PermissibleValue(
+                text="amino acid source",
+                description="Casamino acids or amino acid mix"))
 
 # Slots
 class slots:
     pass
 
-slots.scientific_name = Slot(uri=SCHEMA.scientificName, name="scientific_name", curie=SCHEMA.curie('scientificName'),
-                   model_uri=CMM.scientific_name, domain=None, range=Optional[str])
+slots.database__genomes = Slot(uri=PFAS.genomes, name="database__genomes", curie=PFAS.curie('genomes'),
+                   model_uri=PFAS.database__genomes, domain=None, range=Optional[Union[Union[str, GenomeRecordScientificName], list[Union[str, GenomeRecordScientificName]]]])
 
-slots.ncbi_taxon_id = Slot(uri=NCBITAXON.id, name="ncbi_taxon_id", curie=NCBITAXON.curie('id'),
-                   model_uri=CMM.ncbi_taxon_id, domain=None, range=Optional[int])
+slots.database__biosamples = Slot(uri=PFAS.biosamples, name="database__biosamples", curie=PFAS.curie('biosamples'),
+                   model_uri=PFAS.database__biosamples, domain=None, range=Optional[Union[Union[str, BiosampleRecordSampleId], list[Union[str, BiosampleRecordSampleId]]]])
 
-slots.genome_identifier = Slot(uri=CMM.genome_identifier, name="genome_identifier", curie=CMM.curie('genome_identifier'),
-                   model_uri=CMM.genome_identifier, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(GC[AF]_\d+\.\d+|\d+\.\d+)?$'))
+slots.database__pathways = Slot(uri=PFAS.pathways, name="database__pathways", curie=PFAS.curie('pathways'),
+                   model_uri=PFAS.database__pathways, domain=None, range=Optional[Union[Union[str, PathwayRecordPathwayId], list[Union[str, PathwayRecordPathwayId]]]])
 
-slots.annotation_download_url = Slot(uri=CMM.annotation_download_url, name="annotation_download_url", curie=CMM.curie('annotation_download_url'),
-                   model_uri=CMM.annotation_download_url, domain=None, range=Optional[Union[str, URI]])
+slots.database__genes_proteins = Slot(uri=PFAS.genes_proteins, name="database__genes_proteins", curie=PFAS.curie('genes_proteins'),
+                   model_uri=PFAS.database__genes_proteins, domain=None, range=Optional[Union[Union[str, GeneProteinRecordGeneProteinId], list[Union[str, GeneProteinRecordGeneProteinId]]]])
 
-slots.sample_name = Slot(uri=SCHEMA.name, name="sample_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.sample_name, domain=None, range=Optional[str])
+slots.database__structures = Slot(uri=PFAS.structures, name="database__structures", curie=PFAS.curie('structures'),
+                   model_uri=PFAS.database__structures, domain=None, range=Optional[Union[Union[str, MacromolecularStructureRecordPdbId], list[Union[str, MacromolecularStructureRecordPdbId]]]])
 
-slots.sample_id = Slot(uri=CMM.sample_id, name="sample_id", curie=CMM.curie('sample_id'),
-                   model_uri=CMM.sample_id, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^SAM[NDE][A-Z]?\d+$'))
+slots.database__publications = Slot(uri=PFAS.publications, name="database__publications", curie=PFAS.curie('publications'),
+                   model_uri=PFAS.database__publications, domain=None, range=Optional[Union[Union[str, PublicationRecordUrl], list[Union[str, PublicationRecordUrl]]]])
 
-slots.organism = Slot(uri=SCHEMA.organism, name="organism", curie=SCHEMA.curie('organism'),
-                   model_uri=CMM.organism, domain=None, range=Optional[str])
+slots.database__datasets = Slot(uri=PFAS.datasets, name="database__datasets", curie=PFAS.curie('datasets'),
+                   model_uri=PFAS.database__datasets, domain=None, range=Optional[Union[Union[str, DatasetRecordDatasetName], list[Union[str, DatasetRecordDatasetName]]]])
 
-slots.pathway_name = Slot(uri=SCHEMA.name, name="pathway_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.pathway_name, domain=None, range=Optional[str])
+slots.database__chemicals = Slot(uri=PFAS.chemicals, name="database__chemicals", curie=PFAS.curie('chemicals'),
+                   model_uri=PFAS.database__chemicals, domain=None, range=Optional[Union[Union[str, ChemicalCompoundRecordChemicalId], list[Union[str, ChemicalCompoundRecordChemicalId]]]])
 
-slots.pathway_id = Slot(uri=CMM.pathway_id, name="pathway_id", curie=CMM.curie('pathway_id'),
-                   model_uri=CMM.pathway_id, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(ko\d+|path:map\d+|PWY-\d+|PWY\d+|Custom_[A-Z0-9]+)$'))
+slots.database__assays = Slot(uri=PFAS.assays, name="database__assays", curie=PFAS.curie('assays'),
+                   model_uri=PFAS.database__assays, domain=None, range=Optional[Union[Union[str, AssayMeasurementRecordAssayId], list[Union[str, AssayMeasurementRecordAssayId]]]])
 
-slots.genes = Slot(uri=CMM.genes, name="genes", curie=CMM.curie('genes'),
-                   model_uri=CMM.genes, domain=None, range=Optional[Union[str, list[str]]])
+slots.database__bioprocesses = Slot(uri=PFAS.bioprocesses, name="database__bioprocesses", curie=PFAS.curie('bioprocesses'),
+                   model_uri=PFAS.database__bioprocesses, domain=None, range=Optional[Union[Union[str, BioprocessConditionsRecordProcessId], list[Union[str, BioprocessConditionsRecordProcessId]]]])
 
-slots.genes_kegg = Slot(uri=CMM.genes_kegg, name="genes_kegg", curie=CMM.curie('genes_kegg'),
-                   model_uri=CMM.genes_kegg, domain=None, range=Optional[Union[str, list[str]]])
+slots.database__screening_results = Slot(uri=PFAS.screening_results, name="database__screening_results", curie=PFAS.curie('screening_results'),
+                   model_uri=PFAS.database__screening_results, domain=None, range=Optional[Union[Union[str, ScreeningResultRecordExperimentId], list[Union[str, ScreeningResultRecordExperimentId]]]])
 
-slots.gene_protein_id = Slot(uri=CMM.gene_protein_id, name="gene_protein_id", curie=CMM.curie('gene_protein_id'),
-                   model_uri=CMM.gene_protein_id, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(K\d+(_[A-Za-z0-9]+)?|[OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9]([A-Z][A-Z0-9]{2}[0-9]){1,2}|custom_[\w]+)?$'))
+slots.database__protocols = Slot(uri=PFAS.protocols, name="database__protocols", curie=PFAS.curie('protocols'),
+                   model_uri=PFAS.database__protocols, domain=None, range=Optional[Union[Union[str, ProtocolRecordProtocolId], list[Union[str, ProtocolRecordProtocolId]]]])
 
-slots.annotation = Slot(uri=SCHEMA.description, name="annotation", curie=SCHEMA.curie('description'),
-                   model_uri=CMM.annotation, domain=None, range=Optional[str])
+slots.database__reactions = Slot(uri=PFAS.reactions, name="database__reactions", curie=PFAS.curie('reactions'),
+                   model_uri=PFAS.database__reactions, domain=None, range=Optional[Union[Union[str, ReactionRecordReactionId], list[Union[str, ReactionRecordReactionId]]]])
 
-slots.ec_number = Slot(uri=CMM.ec_number, name="ec_number", curie=CMM.curie('ec_number'),
-                   model_uri=CMM.ec_number, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^\d+\.\d+\.\d+\.\d+$'))
+slots.database__transcriptomics = Slot(uri=PFAS.transcriptomics, name="database__transcriptomics", curie=PFAS.curie('transcriptomics'),
+                   model_uri=PFAS.database__transcriptomics, domain=None, range=Optional[Union[Union[str, TranscriptomicsRecordExperimentId], list[Union[str, TranscriptomicsRecordExperimentId]]]])
 
-slots.go_terms = Slot(uri=CMM.go_terms, name="go_terms", curie=CMM.curie('go_terms'),
-                   model_uri=CMM.go_terms, domain=None, range=Optional[Union[str, list[str]]],
-                   pattern=re.compile(r'^GO:\d{7}'))
+slots.database__strains = Slot(uri=PFAS.strains, name="database__strains", curie=PFAS.curie('strains'),
+                   model_uri=PFAS.database__strains, domain=None, range=Optional[Union[Union[str, StrainRecordStrainId], list[Union[str, StrainRecordStrainId]]]])
 
-slots.chebi_terms = Slot(uri=CMM.chebi_terms, name="chebi_terms", curie=CMM.curie('chebi_terms'),
-                   model_uri=CMM.chebi_terms, domain=None, range=Optional[Union[str, list[str]]],
-                   pattern=re.compile(r'^CHEBI:\d+'))
+slots.database__growth_media = Slot(uri=PFAS.growth_media, name="database__growth_media", curie=PFAS.curie('growth_media'),
+                   model_uri=PFAS.database__growth_media, domain=None, range=Optional[Union[Union[str, GrowthMediaRecordMediaId], list[Union[str, GrowthMediaRecordMediaId]]]])
 
-slots.structure_name = Slot(uri=SCHEMA.name, name="structure_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.structure_name, domain=None, range=Optional[str])
+slots.database__media_ingredients = Slot(uri=PFAS.media_ingredients, name="database__media_ingredients", curie=PFAS.curie('media_ingredients'),
+                   model_uri=PFAS.database__media_ingredients, domain=None, range=Optional[Union[Union[str, MediaIngredientRecordIngredientId], list[Union[str, MediaIngredientRecordIngredientId]]]])
 
-slots.components = Slot(uri=CMM.components, name="components", curie=CMM.curie('components'),
-                   model_uri=CMM.components, domain=None, range=Optional[str])
+slots.genomeRecord__scientific_name = Slot(uri=PFAS.scientific_name, name="genomeRecord__scientific_name", curie=PFAS.curie('scientific_name'),
+                   model_uri=PFAS.genomeRecord__scientific_name, domain=None, range=URIRef)
 
-slots.pdb_id = Slot(uri=CMM.pdb_id, name="pdb_id", curie=CMM.curie('pdb_id'),
-                   model_uri=CMM.pdb_id, domain=None, range=Optional[str])
+slots.genomeRecord__ncbi_taxon_id = Slot(uri=PFAS.ncbi_taxon_id, name="genomeRecord__ncbi_taxon_id", curie=PFAS.curie('ncbi_taxon_id'),
+                   model_uri=PFAS.genomeRecord__ncbi_taxon_id, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\d+$'))
 
-slots.resolution = Slot(uri=CMM.resolution, name="resolution", curie=CMM.curie('resolution'),
-                   model_uri=CMM.resolution, domain=None, range=Optional[str])
+slots.genomeRecord__genome_identifier = Slot(uri=PFAS.genome_identifier, name="genomeRecord__genome_identifier", curie=PFAS.curie('genome_identifier'),
+                   model_uri=PFAS.genomeRecord__genome_identifier, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(GCF_|GCA_|\d+).*'))
 
-slots.method = Slot(uri=CMM.method, name="method", curie=CMM.curie('method'),
-                   model_uri=CMM.method, domain=None, range=Optional[Union[str, "StructureMethodEnum"]])
+slots.genomeRecord__annotation_download_url = Slot(uri=PFAS.annotation_download_url, name="genomeRecord__annotation_download_url", curie=PFAS.curie('annotation_download_url'),
+                   model_uri=PFAS.genomeRecord__annotation_download_url, domain=None, range=Optional[Union[str, URI]])
 
-slots.url = Slot(uri=SCHEMA.url, name="url", curie=SCHEMA.curie('url'),
-                   model_uri=CMM.url, domain=None, range=Optional[Union[str, URI]])
+slots.genomeRecord__source = Slot(uri=PFAS.source, name="genomeRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.genomeRecord__source, domain=None, range=Optional[str])
 
-slots.title = Slot(uri=SCHEMA.headline, name="title", curie=SCHEMA.curie('headline'),
-                   model_uri=CMM.title, domain=None, range=Optional[str])
+slots.biosampleRecord__sample_id = Slot(uri=PFAS.sample_id, name="biosampleRecord__sample_id", curie=PFAS.curie('sample_id'),
+                   model_uri=PFAS.biosampleRecord__sample_id, domain=None, range=URIRef,
+                   pattern=re.compile(r'^SAMN\d+$'))
 
-slots.journal = Slot(uri=SCHEMA.publisher, name="journal", curie=SCHEMA.curie('publisher'),
-                   model_uri=CMM.journal, domain=None, range=Optional[str])
+slots.biosampleRecord__sample_name = Slot(uri=PFAS.sample_name, name="biosampleRecord__sample_name", curie=PFAS.curie('sample_name'),
+                   model_uri=PFAS.biosampleRecord__sample_name, domain=None, range=Optional[str])
 
-slots.year = Slot(uri=SCHEMA.datePublished, name="year", curie=SCHEMA.curie('datePublished'),
-                   model_uri=CMM.year, domain=None, range=Optional[int])
+slots.biosampleRecord__organism = Slot(uri=PFAS.organism, name="biosampleRecord__organism", curie=PFAS.curie('organism'),
+                   model_uri=PFAS.biosampleRecord__organism, domain=None, range=Optional[str])
 
-slots.authors = Slot(uri=SCHEMA.author, name="authors", curie=SCHEMA.curie('author'),
-                   model_uri=CMM.authors, domain=None, range=Optional[str])
+slots.biosampleRecord__download_url = Slot(uri=PFAS.download_url, name="biosampleRecord__download_url", curie=PFAS.curie('download_url'),
+                   model_uri=PFAS.biosampleRecord__download_url, domain=None, range=Optional[Union[str, URI]])
 
-slots.dataset_name = Slot(uri=SCHEMA.name, name="dataset_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.dataset_name, domain=None, range=Optional[str])
+slots.biosampleRecord__source = Slot(uri=PFAS.source, name="biosampleRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.biosampleRecord__source, domain=None, range=Optional[str])
 
-slots.data_type = Slot(uri=CMM.data_type, name="data_type", curie=CMM.curie('data_type'),
-                   model_uri=CMM.data_type, domain=None, range=Optional[Union[str, "DataTypeEnum"]])
+slots.pathwayRecord__pathway_id = Slot(uri=PFAS.pathway_id, name="pathwayRecord__pathway_id", curie=PFAS.curie('pathway_id'),
+                   model_uri=PFAS.pathwayRecord__pathway_id, domain=None, range=URIRef)
 
-slots.size = Slot(uri=CMM.size, name="size", curie=CMM.curie('size'),
-                   model_uri=CMM.size, domain=None, range=Optional[str])
+slots.pathwayRecord__pathway_name = Slot(uri=PFAS.pathway_name, name="pathwayRecord__pathway_name", curie=PFAS.curie('pathway_name'),
+                   model_uri=PFAS.pathwayRecord__pathway_name, domain=None, range=str)
 
-slots.publication = Slot(uri=CMM.publication, name="publication", curie=CMM.curie('publication'),
-                   model_uri=CMM.publication, domain=None, range=Optional[str])
+slots.pathwayRecord__database = Slot(uri=PFAS.database, name="pathwayRecord__database", curie=PFAS.curie('database'),
+                   model_uri=PFAS.pathwayRecord__database, domain=None, range=Optional[Union[str, "PathwayDatabaseEnum"]])
 
-slots.license = Slot(uri=SCHEMA.license, name="license", curie=SCHEMA.curie('license'),
-                   model_uri=CMM.license, domain=None, range=Optional[str])
+slots.pathwayRecord__url = Slot(uri=PFAS.url, name="pathwayRecord__url", curie=PFAS.curie('url'),
+                   model_uri=PFAS.pathwayRecord__url, domain=None, range=Optional[Union[str, URI]])
 
-slots.download_url = Slot(uri=SCHEMA.contentUrl, name="download_url", curie=SCHEMA.curie('contentUrl'),
-                   model_uri=CMM.download_url, domain=None, range=Optional[Union[str, URI]])
+slots.pathwayRecord__genes = Slot(uri=PFAS.genes, name="pathwayRecord__genes", curie=PFAS.curie('genes'),
+                   model_uri=PFAS.pathwayRecord__genes, domain=None, range=Optional[Union[str, list[str]]])
 
-slots.chemical_id = Slot(uri=SCHEMA.identifier, name="chemical_id", curie=SCHEMA.curie('identifier'),
-                   model_uri=CMM.chemical_id, domain=None, range=Optional[str])
+slots.pathwayRecord__genes_kegg = Slot(uri=PFAS.genes_kegg, name="pathwayRecord__genes_kegg", curie=PFAS.curie('genes_kegg'),
+                   model_uri=PFAS.pathwayRecord__genes_kegg, domain=None, range=Optional[Union[str, list[str]]],
+                   pattern=re.compile(r'^K\d{5}$'))
 
-slots.chemical_name = Slot(uri=SCHEMA.name, name="chemical_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.chemical_name, domain=None, range=Optional[str])
+slots.pathwayRecord__source = Slot(uri=PFAS.source, name="pathwayRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.pathwayRecord__source, domain=None, range=Optional[str])
 
-slots.compound_type = Slot(uri=CMM.compound_type, name="compound_type", curie=CMM.curie('compound_type'),
-                   model_uri=CMM.compound_type, domain=None, range=Optional[Union[str, "CompoundTypeEnum"]])
+slots.reactionRecord__reaction_id = Slot(uri=PFAS.reaction_id, name="reactionRecord__reaction_id", curie=PFAS.curie('reaction_id'),
+                   model_uri=PFAS.reactionRecord__reaction_id, domain=None, range=URIRef)
 
-slots.molecular_formula = Slot(uri=CMM.molecular_formula, name="molecular_formula", curie=CMM.curie('molecular_formula'),
-                   model_uri=CMM.molecular_formula, domain=None, range=Optional[str])
+slots.reactionRecord__reaction_name = Slot(uri=PFAS.reaction_name, name="reactionRecord__reaction_name", curie=PFAS.curie('reaction_name'),
+                   model_uri=PFAS.reactionRecord__reaction_name, domain=None, range=Optional[str])
 
-slots.molecular_weight = Slot(uri=CMM.molecular_weight, name="molecular_weight", curie=CMM.curie('molecular_weight'),
-                   model_uri=CMM.molecular_weight, domain=None, range=Optional[str])
+slots.reactionRecord__equation = Slot(uri=PFAS.equation, name="reactionRecord__equation", curie=PFAS.curie('equation'),
+                   model_uri=PFAS.reactionRecord__equation, domain=None, range=str)
 
-slots.role_in_bioprocess = Slot(uri=CMM.role_in_bioprocess, name="role_in_bioprocess", curie=CMM.curie('role_in_bioprocess'),
-                   model_uri=CMM.role_in_bioprocess, domain=None, range=Optional[str])
+slots.reactionRecord__reaction_category = Slot(uri=PFAS.reaction_category, name="reactionRecord__reaction_category", curie=PFAS.curie('reaction_category'),
+                   model_uri=PFAS.reactionRecord__reaction_category, domain=None, range=Union[str, "ReactionCategoryEnum"])
 
-slots.chebi_id = Slot(uri=CMM.chebi_id, name="chebi_id", curie=CMM.curie('chebi_id'),
-                   model_uri=CMM.chebi_id, domain=None, range=Optional[str],
+slots.reactionRecord__enzyme_class = Slot(uri=PFAS.enzyme_class, name="reactionRecord__enzyme_class", curie=PFAS.curie('enzyme_class'),
+                   model_uri=PFAS.reactionRecord__enzyme_class, domain=None, range=Optional[str])
+
+slots.reactionRecord__ec_number = Slot(uri=PFAS.ec_number, name="reactionRecord__ec_number", curie=PFAS.curie('ec_number'),
+                   model_uri=PFAS.reactionRecord__ec_number, domain=None, range=Optional[Union[str, list[str]]],
+                   pattern=re.compile(r'^EC:\d+\.\d+\.\d+\.\d+$|^EC:\d+\.\d+\.\d+\.-$'))
+
+slots.reactionRecord__rhea_id = Slot(uri=PFAS.rhea_id, name="reactionRecord__rhea_id", curie=PFAS.curie('rhea_id'),
+                   model_uri=PFAS.reactionRecord__rhea_id, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^RHEA:\d+$'))
+
+slots.reactionRecord__kegg_reaction_id = Slot(uri=PFAS.kegg_reaction_id, name="reactionRecord__kegg_reaction_id", curie=PFAS.curie('kegg_reaction_id'),
+                   model_uri=PFAS.reactionRecord__kegg_reaction_id, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^R\d{5}$'))
+
+slots.reactionRecord__go_terms = Slot(uri=PFAS.go_terms, name="reactionRecord__go_terms", curie=PFAS.curie('go_terms'),
+                   model_uri=PFAS.reactionRecord__go_terms, domain=None, range=Optional[Union[str, list[str]]],
+                   pattern=re.compile(r'^GO:\d{7}$'))
+
+slots.reactionRecord__substrates = Slot(uri=PFAS.substrates, name="reactionRecord__substrates", curie=PFAS.curie('substrates'),
+                   model_uri=PFAS.reactionRecord__substrates, domain=None, range=Optional[Union[str, list[str]]])
+
+slots.reactionRecord__products = Slot(uri=PFAS.products, name="reactionRecord__products", curie=PFAS.curie('products'),
+                   model_uri=PFAS.reactionRecord__products, domain=None, range=Optional[Union[str, list[str]]])
+
+slots.reactionRecord__enzyme_genes = Slot(uri=PFAS.enzyme_genes, name="reactionRecord__enzyme_genes", curie=PFAS.curie('enzyme_genes'),
+                   model_uri=PFAS.reactionRecord__enzyme_genes, domain=None, range=Optional[Union[str, list[str]]])
+
+slots.reactionRecord__pathway_id = Slot(uri=PFAS.pathway_id, name="reactionRecord__pathway_id", curie=PFAS.curie('pathway_id'),
+                   model_uri=PFAS.reactionRecord__pathway_id, domain=None, range=Optional[str])
+
+slots.reactionRecord__note = Slot(uri=PFAS.note, name="reactionRecord__note", curie=PFAS.curie('note'),
+                   model_uri=PFAS.reactionRecord__note, domain=None, range=Optional[str])
+
+slots.reactionRecord__url = Slot(uri=PFAS.url, name="reactionRecord__url", curie=PFAS.curie('url'),
+                   model_uri=PFAS.reactionRecord__url, domain=None, range=Optional[Union[str, URI]])
+
+slots.reactionRecord__source = Slot(uri=PFAS.source, name="reactionRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.reactionRecord__source, domain=None, range=Optional[str])
+
+slots.geneProteinRecord__gene_protein_id = Slot(uri=PFAS.gene_protein_id, name="geneProteinRecord__gene_protein_id", curie=PFAS.curie('gene_protein_id'),
+                   model_uri=PFAS.geneProteinRecord__gene_protein_id, domain=None, range=URIRef)
+
+slots.geneProteinRecord__organism = Slot(uri=PFAS.organism, name="geneProteinRecord__organism", curie=PFAS.curie('organism'),
+                   model_uri=PFAS.geneProteinRecord__organism, domain=None, range=Optional[str])
+
+slots.geneProteinRecord__annotation = Slot(uri=PFAS.annotation, name="geneProteinRecord__annotation", curie=PFAS.curie('annotation'),
+                   model_uri=PFAS.geneProteinRecord__annotation, domain=None, range=Optional[str])
+
+slots.geneProteinRecord__ec_number = Slot(uri=PFAS.ec_number, name="geneProteinRecord__ec_number", curie=PFAS.curie('ec_number'),
+                   model_uri=PFAS.geneProteinRecord__ec_number, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\d+\.\d+\.\d+\.\d+$|^\d+\.\d+\.\d+\.-$'))
+
+slots.geneProteinRecord__go_terms = Slot(uri=PFAS.go_terms, name="geneProteinRecord__go_terms", curie=PFAS.curie('go_terms'),
+                   model_uri=PFAS.geneProteinRecord__go_terms, domain=None, range=Optional[Union[str, list[str]]],
+                   pattern=re.compile(r'^GO:\d{7}$'))
+
+slots.geneProteinRecord__chebi_terms = Slot(uri=PFAS.chebi_terms, name="geneProteinRecord__chebi_terms", curie=PFAS.curie('chebi_terms'),
+                   model_uri=PFAS.geneProteinRecord__chebi_terms, domain=None, range=Optional[Union[str, list[str]]],
                    pattern=re.compile(r'^CHEBI:\d+$'))
 
-slots.pubchem_id = Slot(uri=CMM.pubchem_id, name="pubchem_id", curie=CMM.curie('pubchem_id'),
-                   model_uri=CMM.pubchem_id, domain=None, range=Optional[int])
+slots.geneProteinRecord__sequence_url = Slot(uri=PFAS.sequence_url, name="geneProteinRecord__sequence_url", curie=PFAS.curie('sequence_url'),
+                   model_uri=PFAS.geneProteinRecord__sequence_url, domain=None, range=Optional[Union[str, URI]])
 
-slots.chembl_id = Slot(uri=CMM.chembl_id, name="chembl_id", curie=CMM.curie('chembl_id'),
-                   model_uri=CMM.chembl_id, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^CHEMBL\d+$'))
+slots.geneProteinRecord__source = Slot(uri=PFAS.source, name="geneProteinRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.geneProteinRecord__source, domain=None, range=Optional[str])
 
-slots.properties = Slot(uri=CMM.properties, name="properties", curie=CMM.curie('properties'),
-                   model_uri=CMM.properties, domain=None, range=Optional[str])
+slots.macromolecularStructureRecord__pdb_id = Slot(uri=PFAS.pdb_id, name="macromolecularStructureRecord__pdb_id", curie=PFAS.curie('pdb_id'),
+                   model_uri=PFAS.macromolecularStructureRecord__pdb_id, domain=None, range=URIRef,
+                   pattern=re.compile(r'^[0-9][A-Za-z0-9]{3}$'))
 
-slots.assay_id = Slot(uri=SCHEMA.identifier, name="assay_id", curie=SCHEMA.curie('identifier'),
-                   model_uri=CMM.assay_id, domain=None, range=Optional[str])
+slots.macromolecularStructureRecord__structure_name = Slot(uri=PFAS.structure_name, name="macromolecularStructureRecord__structure_name", curie=PFAS.curie('structure_name'),
+                   model_uri=PFAS.macromolecularStructureRecord__structure_name, domain=None, range=Optional[str])
 
-slots.assay_name = Slot(uri=SCHEMA.name, name="assay_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.assay_name, domain=None, range=Optional[str])
+slots.macromolecularStructureRecord__components = Slot(uri=PFAS.components, name="macromolecularStructureRecord__components", curie=PFAS.curie('components'),
+                   model_uri=PFAS.macromolecularStructureRecord__components, domain=None, range=Optional[str])
 
-slots.assay_type = Slot(uri=CMM.assay_type, name="assay_type", curie=CMM.curie('assay_type'),
-                   model_uri=CMM.assay_type, domain=None, range=Optional[Union[str, "AssayTypeEnum"]])
+slots.macromolecularStructureRecord__method = Slot(uri=PFAS.method, name="macromolecularStructureRecord__method", curie=PFAS.curie('method'),
+                   model_uri=PFAS.macromolecularStructureRecord__method, domain=None, range=Optional[Union[str, "StructureMethodEnum"]])
 
-slots.target_analytes = Slot(uri=CMM.target_analytes, name="target_analytes", curie=CMM.curie('target_analytes'),
-                   model_uri=CMM.target_analytes, domain=None, range=Optional[Union[str, list[str]]])
+slots.macromolecularStructureRecord__resolution = Slot(uri=PFAS.resolution, name="macromolecularStructureRecord__resolution", curie=PFAS.curie('resolution'),
+                   model_uri=PFAS.macromolecularStructureRecord__resolution, domain=None, range=Optional[float])
 
-slots.detection_method = Slot(uri=CMM.detection_method, name="detection_method", curie=CMM.curie('detection_method'),
-                   model_uri=CMM.detection_method, domain=None, range=Optional[str])
+slots.macromolecularStructureRecord__organism = Slot(uri=PFAS.organism, name="macromolecularStructureRecord__organism", curie=PFAS.curie('organism'),
+                   model_uri=PFAS.macromolecularStructureRecord__organism, domain=None, range=Optional[str])
 
-slots.detection_limit = Slot(uri=CMM.detection_limit, name="detection_limit", curie=CMM.curie('detection_limit'),
-                   model_uri=CMM.detection_limit, domain=None, range=Optional[str])
+slots.macromolecularStructureRecord__structure_url = Slot(uri=PFAS.structure_url, name="macromolecularStructureRecord__structure_url", curie=PFAS.curie('structure_url'),
+                   model_uri=PFAS.macromolecularStructureRecord__structure_url, domain=None, range=Optional[Union[str, URI]])
 
-slots.dynamic_range = Slot(uri=CMM.dynamic_range, name="dynamic_range", curie=CMM.curie('dynamic_range'),
-                   model_uri=CMM.dynamic_range, domain=None, range=Optional[str])
+slots.macromolecularStructureRecord__source = Slot(uri=PFAS.source, name="macromolecularStructureRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.macromolecularStructureRecord__source, domain=None, range=Optional[str])
 
-slots.protocol_reference = Slot(uri=CMM.protocol_reference, name="protocol_reference", curie=CMM.curie('protocol_reference'),
-                   model_uri=CMM.protocol_reference, domain=None, range=Optional[str])
+slots.publicationRecord__url = Slot(uri=PFAS.url, name="publicationRecord__url", curie=PFAS.curie('url'),
+                   model_uri=PFAS.publicationRecord__url, domain=None, range=URIRef)
 
-slots.equipment_required = Slot(uri=CMM.equipment_required, name="equipment_required", curie=CMM.curie('equipment_required'),
-                   model_uri=CMM.equipment_required, domain=None, range=Optional[Union[str, list[str]]])
+slots.publicationRecord__title = Slot(uri=PFAS.title, name="publicationRecord__title", curie=PFAS.curie('title'),
+                   model_uri=PFAS.publicationRecord__title, domain=None, range=Optional[str])
 
-slots.sample_preparation = Slot(uri=CMM.sample_preparation, name="sample_preparation", curie=CMM.curie('sample_preparation'),
-                   model_uri=CMM.sample_preparation, domain=None, range=Optional[str])
+slots.publicationRecord__journal = Slot(uri=PFAS.journal, name="publicationRecord__journal", curie=PFAS.curie('journal'),
+                   model_uri=PFAS.publicationRecord__journal, domain=None, range=Optional[str])
 
-slots.data_output_format = Slot(uri=CMM.data_output_format, name="data_output_format", curie=CMM.curie('data_output_format'),
-                   model_uri=CMM.data_output_format, domain=None, range=Optional[str])
+slots.publicationRecord__year = Slot(uri=PFAS.year, name="publicationRecord__year", curie=PFAS.curie('year'),
+                   model_uri=PFAS.publicationRecord__year, domain=None, range=Optional[int])
 
-slots.process_id = Slot(uri=SCHEMA.identifier, name="process_id", curie=SCHEMA.curie('identifier'),
-                   model_uri=CMM.process_id, domain=None, range=Optional[str])
+slots.publicationRecord__authors = Slot(uri=PFAS.authors, name="publicationRecord__authors", curie=PFAS.curie('authors'),
+                   model_uri=PFAS.publicationRecord__authors, domain=None, range=Optional[str])
 
-slots.process_name = Slot(uri=SCHEMA.name, name="process_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.process_name, domain=None, range=Optional[str])
+slots.publicationRecord__pmid = Slot(uri=PFAS.pmid, name="publicationRecord__pmid", curie=PFAS.curie('pmid'),
+                   model_uri=PFAS.publicationRecord__pmid, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\d+$'))
 
-slots.process_type = Slot(uri=CMM.process_type, name="process_type", curie=CMM.curie('process_type'),
-                   model_uri=CMM.process_type, domain=None, range=Optional[Union[str, "ProcessTypeEnum"]])
+slots.publicationRecord__doi = Slot(uri=PFAS.doi, name="publicationRecord__doi", curie=PFAS.curie('doi'),
+                   model_uri=PFAS.publicationRecord__doi, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^10\.\d+/.*$'))
 
-slots.strain_used = Slot(uri=CMM.strain_used, name="strain_used", curie=CMM.curie('strain_used'),
-                   model_uri=CMM.strain_used, domain=None, range=Optional[str])
+slots.publicationRecord__source = Slot(uri=PFAS.source, name="publicationRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.publicationRecord__source, domain=None, range=Optional[str])
 
-slots.organism_used = Slot(uri=CMM.organism_used, name="organism_used", curie=CMM.curie('organism_used'),
-                   model_uri=CMM.organism_used, domain=None, range=Optional[str])
+slots.datasetRecord__dataset_name = Slot(uri=PFAS.dataset_name, name="datasetRecord__dataset_name", curie=PFAS.curie('dataset_name'),
+                   model_uri=PFAS.datasetRecord__dataset_name, domain=None, range=URIRef)
 
-slots.growth_conditions = Slot(uri=CMM.growth_conditions, name="growth_conditions", curie=CMM.curie('growth_conditions'),
-                   model_uri=CMM.growth_conditions, domain=None, range=Optional[str])
+slots.datasetRecord__data_type = Slot(uri=PFAS.data_type, name="datasetRecord__data_type", curie=PFAS.curie('data_type'),
+                   model_uri=PFAS.datasetRecord__data_type, domain=None, range=Optional[Union[str, "DatasetTypeEnum"]])
 
-slots.ree_concentration = Slot(uri=CMM.ree_concentration, name="ree_concentration", curie=CMM.curie('ree_concentration'),
-                   model_uri=CMM.ree_concentration, domain=None, range=Optional[str])
+slots.datasetRecord__url = Slot(uri=PFAS.url, name="datasetRecord__url", curie=PFAS.curie('url'),
+                   model_uri=PFAS.datasetRecord__url, domain=None, range=Optional[Union[str, URI]])
 
-slots.contact_time = Slot(uri=CMM.contact_time, name="contact_time", curie=CMM.curie('contact_time'),
-                   model_uri=CMM.contact_time, domain=None, range=Optional[str])
+slots.datasetRecord__accession = Slot(uri=PFAS.accession, name="datasetRecord__accession", curie=PFAS.curie('accession'),
+                   model_uri=PFAS.datasetRecord__accession, domain=None, range=Optional[str])
 
-slots.pH = Slot(uri=CMM.pH, name="pH", curie=CMM.curie('pH'),
-                   model_uri=CMM.pH, domain=None, range=Optional[str])
+slots.datasetRecord__license = Slot(uri=PFAS.license, name="datasetRecord__license", curie=PFAS.curie('license'),
+                   model_uri=PFAS.datasetRecord__license, domain=None, range=Optional[str])
 
-slots.temperature = Slot(uri=CMM.temperature, name="temperature", curie=CMM.curie('temperature'),
-                   model_uri=CMM.temperature, domain=None, range=Optional[str])
+slots.datasetRecord__source = Slot(uri=PFAS.source, name="datasetRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.datasetRecord__source, domain=None, range=Optional[str])
 
-slots.competing_ions = Slot(uri=CMM.competing_ions, name="competing_ions", curie=CMM.curie('competing_ions'),
-                   model_uri=CMM.competing_ions, domain=None, range=Optional[Union[str, list[str]]])
+slots.chemicalCompoundRecord__chemical_id = Slot(uri=PFAS.chemical_id, name="chemicalCompoundRecord__chemical_id", curie=PFAS.curie('chemical_id'),
+                   model_uri=PFAS.chemicalCompoundRecord__chemical_id, domain=None, range=URIRef)
 
-slots.process_parameters = Slot(uri=CMM.process_parameters, name="process_parameters", curie=CMM.curie('process_parameters'),
-                   model_uri=CMM.process_parameters, domain=None, range=Optional[str])
+slots.chemicalCompoundRecord__chemical_name = Slot(uri=PFAS.chemical_name, name="chemicalCompoundRecord__chemical_name", curie=PFAS.curie('chemical_name'),
+                   model_uri=PFAS.chemicalCompoundRecord__chemical_name, domain=None, range=str)
 
-slots.optimization_history = Slot(uri=CMM.optimization_history, name="optimization_history", curie=CMM.curie('optimization_history'),
-                   model_uri=CMM.optimization_history, domain=None, range=Optional[str])
+slots.chemicalCompoundRecord__compound_type = Slot(uri=PFAS.compound_type, name="chemicalCompoundRecord__compound_type", curie=PFAS.curie('compound_type'),
+                   model_uri=PFAS.chemicalCompoundRecord__compound_type, domain=None, range=Optional[Union[str, "CompoundTypeEnum"]])
 
-slots.experiment_id = Slot(uri=SCHEMA.identifier, name="experiment_id", curie=SCHEMA.curie('identifier'),
-                   model_uri=CMM.experiment_id, domain=None, range=Optional[str])
+slots.chemicalCompoundRecord__molecular_formula = Slot(uri=PFAS.molecular_formula, name="chemicalCompoundRecord__molecular_formula", curie=PFAS.curie('molecular_formula'),
+                   model_uri=PFAS.chemicalCompoundRecord__molecular_formula, domain=None, range=Optional[str])
 
-slots.plate_coordinates = Slot(uri=CMM.plate_coordinates, name="plate_coordinates", curie=CMM.curie('plate_coordinates'),
-                   model_uri=CMM.plate_coordinates, domain=None, range=Optional[str])
+slots.chemicalCompoundRecord__molecular_weight = Slot(uri=PFAS.molecular_weight, name="chemicalCompoundRecord__molecular_weight", curie=PFAS.curie('molecular_weight'),
+                   model_uri=PFAS.chemicalCompoundRecord__molecular_weight, domain=None, range=Optional[float])
 
-slots.strain_barcode = Slot(uri=CMM.strain_barcode, name="strain_barcode", curie=CMM.curie('strain_barcode'),
-                   model_uri=CMM.strain_barcode, domain=None, range=Optional[str])
+slots.chemicalCompoundRecord__role_in_bioprocess = Slot(uri=PFAS.role_in_bioprocess, name="chemicalCompoundRecord__role_in_bioprocess", curie=PFAS.curie('role_in_bioprocess'),
+                   model_uri=PFAS.chemicalCompoundRecord__role_in_bioprocess, domain=None, range=Optional[str])
 
-slots.screening_assay = Slot(uri=CMM.screening_assay, name="screening_assay", curie=CMM.curie('screening_assay'),
-                   model_uri=CMM.screening_assay, domain=None, range=Optional[str])
-
-slots.target_ree = Slot(uri=CMM.target_ree, name="target_ree", curie=CMM.curie('target_ree'),
-                   model_uri=CMM.target_ree, domain=None, range=Optional[Union[str, list[str]]])
-
-slots.measurement_values = Slot(uri=CMM.measurement_values, name="measurement_values", curie=CMM.curie('measurement_values'),
-                   model_uri=CMM.measurement_values, domain=None, range=Optional[str])
-
-slots.hit_classification = Slot(uri=CMM.hit_classification, name="hit_classification", curie=CMM.curie('hit_classification'),
-                   model_uri=CMM.hit_classification, domain=None, range=Optional[Union[str, "HitClassificationEnum"]])
-
-slots.validation_status = Slot(uri=CMM.validation_status, name="validation_status", curie=CMM.curie('validation_status'),
-                   model_uri=CMM.validation_status, domain=None, range=Optional[str])
-
-slots.follow_up_experiments = Slot(uri=CMM.follow_up_experiments, name="follow_up_experiments", curie=CMM.curie('follow_up_experiments'),
-                   model_uri=CMM.follow_up_experiments, domain=None, range=Optional[Union[str, list[str]]])
-
-slots.assay_reference = Slot(uri=CMM.assay_reference, name="assay_reference", curie=CMM.curie('assay_reference'),
-                   model_uri=CMM.assay_reference, domain=None, range=Optional[str])
-
-slots.protocol_id = Slot(uri=SCHEMA.identifier, name="protocol_id", curie=SCHEMA.curie('identifier'),
-                   model_uri=CMM.protocol_id, domain=None, range=Optional[str])
-
-slots.protocol_name = Slot(uri=SCHEMA.name, name="protocol_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.protocol_name, domain=None, range=Optional[str])
-
-slots.protocol_type = Slot(uri=CMM.protocol_type, name="protocol_type", curie=CMM.curie('protocol_type'),
-                   model_uri=CMM.protocol_type, domain=None, range=Optional[Union[str, "ProtocolTypeEnum"]])
-
-slots.protocol_version = Slot(uri=CMM.protocol_version, name="protocol_version", curie=CMM.curie('protocol_version'),
-                   model_uri=CMM.protocol_version, domain=None, range=Optional[str])
-
-slots.protocol_doi = Slot(uri=CMM.protocol_doi, name="protocol_doi", curie=CMM.curie('protocol_doi'),
-                   model_uri=CMM.protocol_doi, domain=None, range=Optional[str])
-
-slots.protocol_url = Slot(uri=CMM.protocol_url, name="protocol_url", curie=CMM.curie('protocol_url'),
-                   model_uri=CMM.protocol_url, domain=None, range=Optional[Union[str, URI]])
-
-slots.associated_assays = Slot(uri=CMM.associated_assays, name="associated_assays", curie=CMM.curie('associated_assays'),
-                   model_uri=CMM.associated_assays, domain=None, range=Optional[Union[str, list[str]]])
-
-slots.equipment_list = Slot(uri=CMM.equipment_list, name="equipment_list", curie=CMM.curie('equipment_list'),
-                   model_uri=CMM.equipment_list, domain=None, range=Optional[Union[str, list[str]]])
-
-slots.success_criteria = Slot(uri=CMM.success_criteria, name="success_criteria", curie=CMM.curie('success_criteria'),
-                   model_uri=CMM.success_criteria, domain=None, range=Optional[str])
-
-slots.quality_control = Slot(uri=CMM.quality_control, name="quality_control", curie=CMM.curie('quality_control'),
-                   model_uri=CMM.quality_control, domain=None, range=Optional[str])
-
-slots.dbtl_iteration = Slot(uri=CMM.dbtl_iteration, name="dbtl_iteration", curie=CMM.curie('dbtl_iteration'),
-                   model_uri=CMM.dbtl_iteration, domain=None, range=Optional[str])
-
-slots.user_notes = Slot(uri=CMM.user_notes, name="user_notes", curie=CMM.curie('user_notes'),
-                   model_uri=CMM.user_notes, domain=None, range=Optional[str])
-
-slots.lanthanideBioprocessingDatabase__genomes = Slot(uri=CMM.genomes, name="lanthanideBioprocessingDatabase__genomes", curie=CMM.curie('genomes'),
-                   model_uri=CMM.lanthanideBioprocessingDatabase__genomes, domain=None, range=Optional[Union[dict[Union[str, GenomeRecordScientificName], Union[dict, GenomeRecord]], list[Union[dict, GenomeRecord]]]])
-
-slots.lanthanideBioprocessingDatabase__biosamples = Slot(uri=CMM.biosamples, name="lanthanideBioprocessingDatabase__biosamples", curie=CMM.curie('biosamples'),
-                   model_uri=CMM.lanthanideBioprocessingDatabase__biosamples, domain=None, range=Optional[Union[dict[Union[str, BiosampleRecordSampleId], Union[dict, BiosampleRecord]], list[Union[dict, BiosampleRecord]]]])
-
-slots.lanthanideBioprocessingDatabase__pathways = Slot(uri=CMM.pathways, name="lanthanideBioprocessingDatabase__pathways", curie=CMM.curie('pathways'),
-                   model_uri=CMM.lanthanideBioprocessingDatabase__pathways, domain=None, range=Optional[Union[dict[Union[str, PathwayRecordPathwayId], Union[dict, PathwayRecord]], list[Union[dict, PathwayRecord]]]])
-
-slots.lanthanideBioprocessingDatabase__genes_proteins = Slot(uri=CMM.genes_proteins, name="lanthanideBioprocessingDatabase__genes_proteins", curie=CMM.curie('genes_proteins'),
-                   model_uri=CMM.lanthanideBioprocessingDatabase__genes_proteins, domain=None, range=Optional[Union[dict[Union[str, GeneProteinRecordGeneProteinId], Union[dict, GeneProteinRecord]], list[Union[dict, GeneProteinRecord]]]])
-
-slots.lanthanideBioprocessingDatabase__structures = Slot(uri=CMM.structures, name="lanthanideBioprocessingDatabase__structures", curie=CMM.curie('structures'),
-                   model_uri=CMM.lanthanideBioprocessingDatabase__structures, domain=None, range=Optional[Union[dict[Union[str, MacromolecularStructureRecordStructureName], Union[dict, MacromolecularStructureRecord]], list[Union[dict, MacromolecularStructureRecord]]]])
-
-slots.lanthanideBioprocessingDatabase__publications = Slot(uri=CMM.publications, name="lanthanideBioprocessingDatabase__publications", curie=CMM.curie('publications'),
-                   model_uri=CMM.lanthanideBioprocessingDatabase__publications, domain=None, range=Optional[Union[dict[Union[str, PublicationRecordUrl], Union[dict, PublicationRecord]], list[Union[dict, PublicationRecord]]]])
-
-slots.lanthanideBioprocessingDatabase__datasets = Slot(uri=CMM.datasets, name="lanthanideBioprocessingDatabase__datasets", curie=CMM.curie('datasets'),
-                   model_uri=CMM.lanthanideBioprocessingDatabase__datasets, domain=None, range=Optional[Union[dict[Union[str, DatasetRecordDatasetName], Union[dict, DatasetRecord]], list[Union[dict, DatasetRecord]]]])
-
-slots.lanthanideBioprocessingDatabase__chemicals = Slot(uri=CMM.chemicals, name="lanthanideBioprocessingDatabase__chemicals", curie=CMM.curie('chemicals'),
-                   model_uri=CMM.lanthanideBioprocessingDatabase__chemicals, domain=None, range=Optional[Union[dict[Union[str, ChemicalCompoundRecordChemicalId], Union[dict, ChemicalCompoundRecord]], list[Union[dict, ChemicalCompoundRecord]]]])
-
-slots.lanthanideBioprocessingDatabase__assays = Slot(uri=CMM.assays, name="lanthanideBioprocessingDatabase__assays", curie=CMM.curie('assays'),
-                   model_uri=CMM.lanthanideBioprocessingDatabase__assays, domain=None, range=Optional[Union[dict[Union[str, AssayMeasurementRecordAssayId], Union[dict, AssayMeasurementRecord]], list[Union[dict, AssayMeasurementRecord]]]])
-
-slots.lanthanideBioprocessingDatabase__bioprocesses = Slot(uri=CMM.bioprocesses, name="lanthanideBioprocessingDatabase__bioprocesses", curie=CMM.curie('bioprocesses'),
-                   model_uri=CMM.lanthanideBioprocessingDatabase__bioprocesses, domain=None, range=Optional[Union[dict[Union[str, BioprocessConditionsRecordProcessId], Union[dict, BioprocessConditionsRecord]], list[Union[dict, BioprocessConditionsRecord]]]])
-
-slots.lanthanideBioprocessingDatabase__screening_results = Slot(uri=CMM.screening_results, name="lanthanideBioprocessingDatabase__screening_results", curie=CMM.curie('screening_results'),
-                   model_uri=CMM.lanthanideBioprocessingDatabase__screening_results, domain=None, range=Optional[Union[dict[Union[str, ScreeningResultRecordExperimentId], Union[dict, ScreeningResultRecord]], list[Union[dict, ScreeningResultRecord]]]])
-
-slots.lanthanideBioprocessingDatabase__protocols = Slot(uri=CMM.protocols, name="lanthanideBioprocessingDatabase__protocols", curie=CMM.curie('protocols'),
-                   model_uri=CMM.lanthanideBioprocessingDatabase__protocols, domain=None, range=Optional[Union[dict[Union[str, ProtocolRecordProtocolId], Union[dict, ProtocolRecord]], list[Union[dict, ProtocolRecord]]]])
-
-slots.GenomeRecord_scientific_name = Slot(uri=SCHEMA.scientificName, name="GenomeRecord_scientific_name", curie=SCHEMA.curie('scientificName'),
-                   model_uri=CMM.GenomeRecord_scientific_name, domain=GenomeRecord, range=Union[str, GenomeRecordScientificName])
-
-slots.GenomeRecord_ncbi_taxon_id = Slot(uri=NCBITAXON.id, name="GenomeRecord_ncbi_taxon_id", curie=NCBITAXON.curie('id'),
-                   model_uri=CMM.GenomeRecord_ncbi_taxon_id, domain=GenomeRecord, range=Optional[int])
-
-slots.GenomeRecord_genome_identifier = Slot(uri=CMM.genome_identifier, name="GenomeRecord_genome_identifier", curie=CMM.curie('genome_identifier'),
-                   model_uri=CMM.GenomeRecord_genome_identifier, domain=GenomeRecord, range=Optional[str],
-                   pattern=re.compile(r'^(GC[AF]_\d+\.\d+|\d+\.\d+)?$'))
-
-slots.GenomeRecord_annotation_download_url = Slot(uri=CMM.annotation_download_url, name="GenomeRecord_annotation_download_url", curie=CMM.curie('annotation_download_url'),
-                   model_uri=CMM.GenomeRecord_annotation_download_url, domain=GenomeRecord, range=Optional[Union[str, URI]])
-
-slots.BiosampleRecord_sample_id = Slot(uri=CMM.sample_id, name="BiosampleRecord_sample_id", curie=CMM.curie('sample_id'),
-                   model_uri=CMM.BiosampleRecord_sample_id, domain=BiosampleRecord, range=Union[str, BiosampleRecordSampleId],
-                   pattern=re.compile(r'^SAM[NDE][A-Z]?\d+$'))
-
-slots.BiosampleRecord_sample_name = Slot(uri=SCHEMA.name, name="BiosampleRecord_sample_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.BiosampleRecord_sample_name, domain=BiosampleRecord, range=Optional[str])
-
-slots.BiosampleRecord_organism = Slot(uri=SCHEMA.organism, name="BiosampleRecord_organism", curie=SCHEMA.curie('organism'),
-                   model_uri=CMM.BiosampleRecord_organism, domain=BiosampleRecord, range=Optional[str])
-
-slots.BiosampleRecord_download_url = Slot(uri=SCHEMA.contentUrl, name="BiosampleRecord_download_url", curie=SCHEMA.curie('contentUrl'),
-                   model_uri=CMM.BiosampleRecord_download_url, domain=BiosampleRecord, range=Optional[Union[str, URI]])
-
-slots.PathwayRecord_pathway_id = Slot(uri=CMM.pathway_id, name="PathwayRecord_pathway_id", curie=CMM.curie('pathway_id'),
-                   model_uri=CMM.PathwayRecord_pathway_id, domain=PathwayRecord, range=Union[str, PathwayRecordPathwayId],
-                   pattern=re.compile(r'^(ko\d+|path:map\d+|PWY-\d+|PWY\d+|Custom_[A-Z0-9]+)$'))
-
-slots.PathwayRecord_pathway_name = Slot(uri=SCHEMA.name, name="PathwayRecord_pathway_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.PathwayRecord_pathway_name, domain=PathwayRecord, range=str)
-
-slots.PathwayRecord_organism = Slot(uri=SCHEMA.organism, name="PathwayRecord_organism", curie=SCHEMA.curie('organism'),
-                   model_uri=CMM.PathwayRecord_organism, domain=PathwayRecord, range=Optional[str])
-
-slots.PathwayRecord_genes = Slot(uri=CMM.genes, name="PathwayRecord_genes", curie=CMM.curie('genes'),
-                   model_uri=CMM.PathwayRecord_genes, domain=PathwayRecord, range=Optional[Union[str, list[str]]])
-
-slots.PathwayRecord_genes_kegg = Slot(uri=CMM.genes_kegg, name="PathwayRecord_genes_kegg", curie=CMM.curie('genes_kegg'),
-                   model_uri=CMM.PathwayRecord_genes_kegg, domain=PathwayRecord, range=Optional[Union[str, list[str]]])
-
-slots.PathwayRecord_download_url = Slot(uri=SCHEMA.contentUrl, name="PathwayRecord_download_url", curie=SCHEMA.curie('contentUrl'),
-                   model_uri=CMM.PathwayRecord_download_url, domain=PathwayRecord, range=Optional[Union[str, URI]])
-
-slots.GeneProteinRecord_gene_protein_id = Slot(uri=CMM.gene_protein_id, name="GeneProteinRecord_gene_protein_id", curie=CMM.curie('gene_protein_id'),
-                   model_uri=CMM.GeneProteinRecord_gene_protein_id, domain=GeneProteinRecord, range=Union[str, GeneProteinRecordGeneProteinId],
-                   pattern=re.compile(r'^(K\d+(_[A-Za-z0-9]+)?|[OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9]([A-Z][A-Z0-9]{2}[0-9]){1,2}|custom_[\w]+)?$'))
-
-slots.GeneProteinRecord_organism = Slot(uri=SCHEMA.organism, name="GeneProteinRecord_organism", curie=SCHEMA.curie('organism'),
-                   model_uri=CMM.GeneProteinRecord_organism, domain=GeneProteinRecord, range=Optional[str])
-
-slots.GeneProteinRecord_annotation = Slot(uri=SCHEMA.description, name="GeneProteinRecord_annotation", curie=SCHEMA.curie('description'),
-                   model_uri=CMM.GeneProteinRecord_annotation, domain=GeneProteinRecord, range=str)
-
-slots.GeneProteinRecord_ec_number = Slot(uri=CMM.ec_number, name="GeneProteinRecord_ec_number", curie=CMM.curie('ec_number'),
-                   model_uri=CMM.GeneProteinRecord_ec_number, domain=GeneProteinRecord, range=Optional[str],
-                   pattern=re.compile(r'^\d+\.\d+\.\d+\.\d+$'))
-
-slots.GeneProteinRecord_go_terms = Slot(uri=CMM.go_terms, name="GeneProteinRecord_go_terms", curie=CMM.curie('go_terms'),
-                   model_uri=CMM.GeneProteinRecord_go_terms, domain=GeneProteinRecord, range=Optional[Union[str, list[str]]],
-                   pattern=re.compile(r'^GO:\d{7}'))
-
-slots.GeneProteinRecord_chebi_terms = Slot(uri=CMM.chebi_terms, name="GeneProteinRecord_chebi_terms", curie=CMM.curie('chebi_terms'),
-                   model_uri=CMM.GeneProteinRecord_chebi_terms, domain=GeneProteinRecord, range=Optional[Union[str, list[str]]],
-                   pattern=re.compile(r'^CHEBI:\d+'))
-
-slots.GeneProteinRecord_download_url = Slot(uri=SCHEMA.contentUrl, name="GeneProteinRecord_download_url", curie=SCHEMA.curie('contentUrl'),
-                   model_uri=CMM.GeneProteinRecord_download_url, domain=GeneProteinRecord, range=Optional[Union[str, URI]])
-
-slots.MacromolecularStructureRecord_structure_name = Slot(uri=SCHEMA.name, name="MacromolecularStructureRecord_structure_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.MacromolecularStructureRecord_structure_name, domain=MacromolecularStructureRecord, range=Union[str, MacromolecularStructureRecordStructureName])
-
-slots.MacromolecularStructureRecord_organism = Slot(uri=SCHEMA.organism, name="MacromolecularStructureRecord_organism", curie=SCHEMA.curie('organism'),
-                   model_uri=CMM.MacromolecularStructureRecord_organism, domain=MacromolecularStructureRecord, range=Optional[str])
-
-slots.MacromolecularStructureRecord_components = Slot(uri=CMM.components, name="MacromolecularStructureRecord_components", curie=CMM.curie('components'),
-                   model_uri=CMM.MacromolecularStructureRecord_components, domain=MacromolecularStructureRecord, range=Optional[str])
-
-slots.MacromolecularStructureRecord_download_url = Slot(uri=SCHEMA.contentUrl, name="MacromolecularStructureRecord_download_url", curie=SCHEMA.curie('contentUrl'),
-                   model_uri=CMM.MacromolecularStructureRecord_download_url, domain=MacromolecularStructureRecord, range=Optional[Union[str, URI]])
-
-slots.MacromolecularStructureRecord_pdb_id = Slot(uri=CMM.pdb_id, name="MacromolecularStructureRecord_pdb_id", curie=CMM.curie('pdb_id'),
-                   model_uri=CMM.MacromolecularStructureRecord_pdb_id, domain=MacromolecularStructureRecord, range=Optional[str])
-
-slots.MacromolecularStructureRecord_resolution = Slot(uri=CMM.resolution, name="MacromolecularStructureRecord_resolution", curie=CMM.curie('resolution'),
-                   model_uri=CMM.MacromolecularStructureRecord_resolution, domain=MacromolecularStructureRecord, range=Optional[str])
-
-slots.MacromolecularStructureRecord_method = Slot(uri=CMM.method, name="MacromolecularStructureRecord_method", curie=CMM.curie('method'),
-                   model_uri=CMM.MacromolecularStructureRecord_method, domain=MacromolecularStructureRecord, range=Optional[Union[str, "StructureMethodEnum"]])
-
-slots.PublicationRecord_url = Slot(uri=SCHEMA.url, name="PublicationRecord_url", curie=SCHEMA.curie('url'),
-                   model_uri=CMM.PublicationRecord_url, domain=PublicationRecord, range=Union[str, PublicationRecordUrl])
-
-slots.PublicationRecord_title = Slot(uri=SCHEMA.headline, name="PublicationRecord_title", curie=SCHEMA.curie('headline'),
-                   model_uri=CMM.PublicationRecord_title, domain=PublicationRecord, range=str)
-
-slots.PublicationRecord_download_url = Slot(uri=SCHEMA.contentUrl, name="PublicationRecord_download_url", curie=SCHEMA.curie('contentUrl'),
-                   model_uri=CMM.PublicationRecord_download_url, domain=PublicationRecord, range=Optional[Union[str, URI]])
-
-slots.PublicationRecord_journal = Slot(uri=SCHEMA.publisher, name="PublicationRecord_journal", curie=SCHEMA.curie('publisher'),
-                   model_uri=CMM.PublicationRecord_journal, domain=PublicationRecord, range=Optional[str])
-
-slots.PublicationRecord_year = Slot(uri=SCHEMA.datePublished, name="PublicationRecord_year", curie=SCHEMA.curie('datePublished'),
-                   model_uri=CMM.PublicationRecord_year, domain=PublicationRecord, range=Optional[int])
-
-slots.PublicationRecord_authors = Slot(uri=SCHEMA.author, name="PublicationRecord_authors", curie=SCHEMA.curie('author'),
-                   model_uri=CMM.PublicationRecord_authors, domain=PublicationRecord, range=Optional[str])
-
-slots.DatasetRecord_dataset_name = Slot(uri=SCHEMA.name, name="DatasetRecord_dataset_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.DatasetRecord_dataset_name, domain=DatasetRecord, range=Union[str, DatasetRecordDatasetName])
-
-slots.DatasetRecord_data_type = Slot(uri=CMM.data_type, name="DatasetRecord_data_type", curie=CMM.curie('data_type'),
-                   model_uri=CMM.DatasetRecord_data_type, domain=DatasetRecord, range=Optional[Union[str, "DataTypeEnum"]])
-
-slots.DatasetRecord_url = Slot(uri=SCHEMA.url, name="DatasetRecord_url", curie=SCHEMA.curie('url'),
-                   model_uri=CMM.DatasetRecord_url, domain=DatasetRecord, range=Optional[Union[str, URI]])
-
-slots.DatasetRecord_size = Slot(uri=CMM.size, name="DatasetRecord_size", curie=CMM.curie('size'),
-                   model_uri=CMM.DatasetRecord_size, domain=DatasetRecord, range=Optional[str])
-
-slots.DatasetRecord_publication = Slot(uri=CMM.publication, name="DatasetRecord_publication", curie=CMM.curie('publication'),
-                   model_uri=CMM.DatasetRecord_publication, domain=DatasetRecord, range=Optional[str])
-
-slots.DatasetRecord_license = Slot(uri=SCHEMA.license, name="DatasetRecord_license", curie=SCHEMA.curie('license'),
-                   model_uri=CMM.DatasetRecord_license, domain=DatasetRecord, range=Optional[str])
-
-slots.DatasetRecord_download_url = Slot(uri=SCHEMA.contentUrl, name="DatasetRecord_download_url", curie=SCHEMA.curie('contentUrl'),
-                   model_uri=CMM.DatasetRecord_download_url, domain=DatasetRecord, range=Optional[Union[str, URI]])
-
-slots.ChemicalCompoundRecord_chemical_id = Slot(uri=SCHEMA.identifier, name="ChemicalCompoundRecord_chemical_id", curie=SCHEMA.curie('identifier'),
-                   model_uri=CMM.ChemicalCompoundRecord_chemical_id, domain=ChemicalCompoundRecord, range=Union[str, ChemicalCompoundRecordChemicalId])
-
-slots.ChemicalCompoundRecord_chemical_name = Slot(uri=SCHEMA.name, name="ChemicalCompoundRecord_chemical_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.ChemicalCompoundRecord_chemical_name, domain=ChemicalCompoundRecord, range=str)
-
-slots.ChemicalCompoundRecord_compound_type = Slot(uri=CMM.compound_type, name="ChemicalCompoundRecord_compound_type", curie=CMM.curie('compound_type'),
-                   model_uri=CMM.ChemicalCompoundRecord_compound_type, domain=ChemicalCompoundRecord, range=Optional[Union[str, "CompoundTypeEnum"]])
-
-slots.ChemicalCompoundRecord_molecular_formula = Slot(uri=CMM.molecular_formula, name="ChemicalCompoundRecord_molecular_formula", curie=CMM.curie('molecular_formula'),
-                   model_uri=CMM.ChemicalCompoundRecord_molecular_formula, domain=ChemicalCompoundRecord, range=Optional[str])
-
-slots.ChemicalCompoundRecord_molecular_weight = Slot(uri=CMM.molecular_weight, name="ChemicalCompoundRecord_molecular_weight", curie=CMM.curie('molecular_weight'),
-                   model_uri=CMM.ChemicalCompoundRecord_molecular_weight, domain=ChemicalCompoundRecord, range=Optional[str])
-
-slots.ChemicalCompoundRecord_role_in_bioprocess = Slot(uri=CMM.role_in_bioprocess, name="ChemicalCompoundRecord_role_in_bioprocess", curie=CMM.curie('role_in_bioprocess'),
-                   model_uri=CMM.ChemicalCompoundRecord_role_in_bioprocess, domain=ChemicalCompoundRecord, range=Optional[str])
-
-slots.ChemicalCompoundRecord_chebi_id = Slot(uri=CMM.chebi_id, name="ChemicalCompoundRecord_chebi_id", curie=CMM.curie('chebi_id'),
-                   model_uri=CMM.ChemicalCompoundRecord_chebi_id, domain=ChemicalCompoundRecord, range=Optional[str],
+slots.chemicalCompoundRecord__chebi_id = Slot(uri=PFAS.chebi_id, name="chemicalCompoundRecord__chebi_id", curie=PFAS.curie('chebi_id'),
+                   model_uri=PFAS.chemicalCompoundRecord__chebi_id, domain=None, range=Optional[str],
                    pattern=re.compile(r'^CHEBI:\d+$'))
 
-slots.ChemicalCompoundRecord_pubchem_id = Slot(uri=CMM.pubchem_id, name="ChemicalCompoundRecord_pubchem_id", curie=CMM.curie('pubchem_id'),
-                   model_uri=CMM.ChemicalCompoundRecord_pubchem_id, domain=ChemicalCompoundRecord, range=Optional[int])
+slots.chemicalCompoundRecord__pubchem_id = Slot(uri=PFAS.pubchem_id, name="chemicalCompoundRecord__pubchem_id", curie=PFAS.curie('pubchem_id'),
+                   model_uri=PFAS.chemicalCompoundRecord__pubchem_id, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\d+$'))
 
-slots.ChemicalCompoundRecord_chembl_id = Slot(uri=CMM.chembl_id, name="ChemicalCompoundRecord_chembl_id", curie=CMM.curie('chembl_id'),
-                   model_uri=CMM.ChemicalCompoundRecord_chembl_id, domain=ChemicalCompoundRecord, range=Optional[str],
-                   pattern=re.compile(r'^CHEMBL\d+$'))
+slots.chemicalCompoundRecord__chembl_id = Slot(uri=PFAS.chembl_id, name="chemicalCompoundRecord__chembl_id", curie=PFAS.curie('chembl_id'),
+                   model_uri=PFAS.chemicalCompoundRecord__chembl_id, domain=None, range=Optional[str])
 
-slots.ChemicalCompoundRecord_properties = Slot(uri=CMM.properties, name="ChemicalCompoundRecord_properties", curie=CMM.curie('properties'),
-                   model_uri=CMM.ChemicalCompoundRecord_properties, domain=ChemicalCompoundRecord, range=Optional[str])
+slots.chemicalCompoundRecord__properties = Slot(uri=PFAS.properties, name="chemicalCompoundRecord__properties", curie=PFAS.curie('properties'),
+                   model_uri=PFAS.chemicalCompoundRecord__properties, domain=None, range=Optional[str])
 
-slots.ChemicalCompoundRecord_download_url = Slot(uri=SCHEMA.contentUrl, name="ChemicalCompoundRecord_download_url", curie=SCHEMA.curie('contentUrl'),
-                   model_uri=CMM.ChemicalCompoundRecord_download_url, domain=ChemicalCompoundRecord, range=Optional[Union[str, URI]])
+slots.chemicalCompoundRecord__download_url = Slot(uri=PFAS.download_url, name="chemicalCompoundRecord__download_url", curie=PFAS.curie('download_url'),
+                   model_uri=PFAS.chemicalCompoundRecord__download_url, domain=None, range=Optional[Union[str, URI]])
 
-slots.AssayMeasurementRecord_assay_id = Slot(uri=SCHEMA.identifier, name="AssayMeasurementRecord_assay_id", curie=SCHEMA.curie('identifier'),
-                   model_uri=CMM.AssayMeasurementRecord_assay_id, domain=AssayMeasurementRecord, range=Union[str, AssayMeasurementRecordAssayId])
+slots.chemicalCompoundRecord__source = Slot(uri=PFAS.source, name="chemicalCompoundRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.chemicalCompoundRecord__source, domain=None, range=Optional[str])
 
-slots.AssayMeasurementRecord_assay_name = Slot(uri=SCHEMA.name, name="AssayMeasurementRecord_assay_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.AssayMeasurementRecord_assay_name, domain=AssayMeasurementRecord, range=str)
+slots.assayMeasurementRecord__assay_id = Slot(uri=PFAS.assay_id, name="assayMeasurementRecord__assay_id", curie=PFAS.curie('assay_id'),
+                   model_uri=PFAS.assayMeasurementRecord__assay_id, domain=None, range=URIRef)
 
-slots.AssayMeasurementRecord_assay_type = Slot(uri=CMM.assay_type, name="AssayMeasurementRecord_assay_type", curie=CMM.curie('assay_type'),
-                   model_uri=CMM.AssayMeasurementRecord_assay_type, domain=AssayMeasurementRecord, range=Optional[Union[str, "AssayTypeEnum"]])
+slots.assayMeasurementRecord__assay_name = Slot(uri=PFAS.assay_name, name="assayMeasurementRecord__assay_name", curie=PFAS.curie('assay_name'),
+                   model_uri=PFAS.assayMeasurementRecord__assay_name, domain=None, range=str)
 
-slots.AssayMeasurementRecord_target_analytes = Slot(uri=CMM.target_analytes, name="AssayMeasurementRecord_target_analytes", curie=CMM.curie('target_analytes'),
-                   model_uri=CMM.AssayMeasurementRecord_target_analytes, domain=AssayMeasurementRecord, range=Optional[Union[str, list[str]]])
+slots.assayMeasurementRecord__assay_type = Slot(uri=PFAS.assay_type, name="assayMeasurementRecord__assay_type", curie=PFAS.curie('assay_type'),
+                   model_uri=PFAS.assayMeasurementRecord__assay_type, domain=None, range=Optional[Union[str, "AssayTypeEnum"]])
 
-slots.AssayMeasurementRecord_detection_method = Slot(uri=CMM.detection_method, name="AssayMeasurementRecord_detection_method", curie=CMM.curie('detection_method'),
-                   model_uri=CMM.AssayMeasurementRecord_detection_method, domain=AssayMeasurementRecord, range=Optional[str])
+slots.assayMeasurementRecord__target_analytes = Slot(uri=PFAS.target_analytes, name="assayMeasurementRecord__target_analytes", curie=PFAS.curie('target_analytes'),
+                   model_uri=PFAS.assayMeasurementRecord__target_analytes, domain=None, range=Optional[str])
 
-slots.AssayMeasurementRecord_detection_limit = Slot(uri=CMM.detection_limit, name="AssayMeasurementRecord_detection_limit", curie=CMM.curie('detection_limit'),
-                   model_uri=CMM.AssayMeasurementRecord_detection_limit, domain=AssayMeasurementRecord, range=Optional[str])
+slots.assayMeasurementRecord__detection_method = Slot(uri=PFAS.detection_method, name="assayMeasurementRecord__detection_method", curie=PFAS.curie('detection_method'),
+                   model_uri=PFAS.assayMeasurementRecord__detection_method, domain=None, range=Optional[str])
 
-slots.AssayMeasurementRecord_dynamic_range = Slot(uri=CMM.dynamic_range, name="AssayMeasurementRecord_dynamic_range", curie=CMM.curie('dynamic_range'),
-                   model_uri=CMM.AssayMeasurementRecord_dynamic_range, domain=AssayMeasurementRecord, range=Optional[str])
+slots.assayMeasurementRecord__detection_limit = Slot(uri=PFAS.detection_limit, name="assayMeasurementRecord__detection_limit", curie=PFAS.curie('detection_limit'),
+                   model_uri=PFAS.assayMeasurementRecord__detection_limit, domain=None, range=Optional[str])
 
-slots.AssayMeasurementRecord_protocol_reference = Slot(uri=CMM.protocol_reference, name="AssayMeasurementRecord_protocol_reference", curie=CMM.curie('protocol_reference'),
-                   model_uri=CMM.AssayMeasurementRecord_protocol_reference, domain=AssayMeasurementRecord, range=Optional[str])
+slots.assayMeasurementRecord__dynamic_range = Slot(uri=PFAS.dynamic_range, name="assayMeasurementRecord__dynamic_range", curie=PFAS.curie('dynamic_range'),
+                   model_uri=PFAS.assayMeasurementRecord__dynamic_range, domain=None, range=Optional[str])
 
-slots.AssayMeasurementRecord_equipment_required = Slot(uri=CMM.equipment_required, name="AssayMeasurementRecord_equipment_required", curie=CMM.curie('equipment_required'),
-                   model_uri=CMM.AssayMeasurementRecord_equipment_required, domain=AssayMeasurementRecord, range=Optional[Union[str, list[str]]])
+slots.assayMeasurementRecord__protocol_reference = Slot(uri=PFAS.protocol_reference, name="assayMeasurementRecord__protocol_reference", curie=PFAS.curie('protocol_reference'),
+                   model_uri=PFAS.assayMeasurementRecord__protocol_reference, domain=None, range=Optional[str])
 
-slots.AssayMeasurementRecord_sample_preparation = Slot(uri=CMM.sample_preparation, name="AssayMeasurementRecord_sample_preparation", curie=CMM.curie('sample_preparation'),
-                   model_uri=CMM.AssayMeasurementRecord_sample_preparation, domain=AssayMeasurementRecord, range=Optional[str])
+slots.assayMeasurementRecord__equipment_required = Slot(uri=PFAS.equipment_required, name="assayMeasurementRecord__equipment_required", curie=PFAS.curie('equipment_required'),
+                   model_uri=PFAS.assayMeasurementRecord__equipment_required, domain=None, range=Optional[str])
 
-slots.AssayMeasurementRecord_data_output_format = Slot(uri=CMM.data_output_format, name="AssayMeasurementRecord_data_output_format", curie=CMM.curie('data_output_format'),
-                   model_uri=CMM.AssayMeasurementRecord_data_output_format, domain=AssayMeasurementRecord, range=Optional[str])
+slots.assayMeasurementRecord__sample_preparation = Slot(uri=PFAS.sample_preparation, name="assayMeasurementRecord__sample_preparation", curie=PFAS.curie('sample_preparation'),
+                   model_uri=PFAS.assayMeasurementRecord__sample_preparation, domain=None, range=Optional[str])
 
-slots.AssayMeasurementRecord_download_url = Slot(uri=SCHEMA.contentUrl, name="AssayMeasurementRecord_download_url", curie=SCHEMA.curie('contentUrl'),
-                   model_uri=CMM.AssayMeasurementRecord_download_url, domain=AssayMeasurementRecord, range=Optional[Union[str, URI]])
+slots.assayMeasurementRecord__data_output_format = Slot(uri=PFAS.data_output_format, name="assayMeasurementRecord__data_output_format", curie=PFAS.curie('data_output_format'),
+                   model_uri=PFAS.assayMeasurementRecord__data_output_format, domain=None, range=Optional[str])
 
-slots.BioprocessConditionsRecord_process_id = Slot(uri=SCHEMA.identifier, name="BioprocessConditionsRecord_process_id", curie=SCHEMA.curie('identifier'),
-                   model_uri=CMM.BioprocessConditionsRecord_process_id, domain=BioprocessConditionsRecord, range=Union[str, BioprocessConditionsRecordProcessId])
+slots.assayMeasurementRecord__download_url = Slot(uri=PFAS.download_url, name="assayMeasurementRecord__download_url", curie=PFAS.curie('download_url'),
+                   model_uri=PFAS.assayMeasurementRecord__download_url, domain=None, range=Optional[Union[str, URI]])
 
-slots.BioprocessConditionsRecord_process_name = Slot(uri=SCHEMA.name, name="BioprocessConditionsRecord_process_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.BioprocessConditionsRecord_process_name, domain=BioprocessConditionsRecord, range=str)
+slots.assayMeasurementRecord__source = Slot(uri=PFAS.source, name="assayMeasurementRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.assayMeasurementRecord__source, domain=None, range=Optional[str])
 
-slots.BioprocessConditionsRecord_process_type = Slot(uri=CMM.process_type, name="BioprocessConditionsRecord_process_type", curie=CMM.curie('process_type'),
-                   model_uri=CMM.BioprocessConditionsRecord_process_type, domain=BioprocessConditionsRecord, range=Optional[Union[str, "ProcessTypeEnum"]])
+slots.bioprocessConditionsRecord__process_id = Slot(uri=PFAS.process_id, name="bioprocessConditionsRecord__process_id", curie=PFAS.curie('process_id'),
+                   model_uri=PFAS.bioprocessConditionsRecord__process_id, domain=None, range=URIRef)
 
-slots.BioprocessConditionsRecord_strain_used = Slot(uri=CMM.strain_used, name="BioprocessConditionsRecord_strain_used", curie=CMM.curie('strain_used'),
-                   model_uri=CMM.BioprocessConditionsRecord_strain_used, domain=BioprocessConditionsRecord, range=Optional[str])
+slots.bioprocessConditionsRecord__process_name = Slot(uri=PFAS.process_name, name="bioprocessConditionsRecord__process_name", curie=PFAS.curie('process_name'),
+                   model_uri=PFAS.bioprocessConditionsRecord__process_name, domain=None, range=str)
 
-slots.BioprocessConditionsRecord_organism_used = Slot(uri=CMM.organism_used, name="BioprocessConditionsRecord_organism_used", curie=CMM.curie('organism_used'),
-                   model_uri=CMM.BioprocessConditionsRecord_organism_used, domain=BioprocessConditionsRecord, range=Optional[str])
+slots.bioprocessConditionsRecord__process_type = Slot(uri=PFAS.process_type, name="bioprocessConditionsRecord__process_type", curie=PFAS.curie('process_type'),
+                   model_uri=PFAS.bioprocessConditionsRecord__process_type, domain=None, range=Optional[Union[str, "ProcessTypeEnum"]])
 
-slots.BioprocessConditionsRecord_growth_conditions = Slot(uri=CMM.growth_conditions, name="BioprocessConditionsRecord_growth_conditions", curie=CMM.curie('growth_conditions'),
-                   model_uri=CMM.BioprocessConditionsRecord_growth_conditions, domain=BioprocessConditionsRecord, range=Optional[str])
+slots.bioprocessConditionsRecord__strain_used = Slot(uri=PFAS.strain_used, name="bioprocessConditionsRecord__strain_used", curie=PFAS.curie('strain_used'),
+                   model_uri=PFAS.bioprocessConditionsRecord__strain_used, domain=None, range=Optional[str])
 
-slots.BioprocessConditionsRecord_ree_concentration = Slot(uri=CMM.ree_concentration, name="BioprocessConditionsRecord_ree_concentration", curie=CMM.curie('ree_concentration'),
-                   model_uri=CMM.BioprocessConditionsRecord_ree_concentration, domain=BioprocessConditionsRecord, range=Optional[str])
+slots.bioprocessConditionsRecord__ph = Slot(uri=PFAS.ph, name="bioprocessConditionsRecord__ph", curie=PFAS.curie('ph'),
+                   model_uri=PFAS.bioprocessConditionsRecord__ph, domain=None, range=Optional[float])
 
-slots.BioprocessConditionsRecord_contact_time = Slot(uri=CMM.contact_time, name="BioprocessConditionsRecord_contact_time", curie=CMM.curie('contact_time'),
-                   model_uri=CMM.BioprocessConditionsRecord_contact_time, domain=BioprocessConditionsRecord, range=Optional[str])
+slots.bioprocessConditionsRecord__temperature = Slot(uri=PFAS.temperature, name="bioprocessConditionsRecord__temperature", curie=PFAS.curie('temperature'),
+                   model_uri=PFAS.bioprocessConditionsRecord__temperature, domain=None, range=Optional[float])
 
-slots.BioprocessConditionsRecord_pH = Slot(uri=CMM.pH, name="BioprocessConditionsRecord_pH", curie=CMM.curie('pH'),
-                   model_uri=CMM.BioprocessConditionsRecord_pH, domain=BioprocessConditionsRecord, range=Optional[str])
+slots.bioprocessConditionsRecord__pfas_concentration = Slot(uri=PFAS.pfas_concentration, name="bioprocessConditionsRecord__pfas_concentration", curie=PFAS.curie('pfas_concentration'),
+                   model_uri=PFAS.bioprocessConditionsRecord__pfas_concentration, domain=None, range=Optional[str])
 
-slots.BioprocessConditionsRecord_temperature = Slot(uri=CMM.temperature, name="BioprocessConditionsRecord_temperature", curie=CMM.curie('temperature'),
-                   model_uri=CMM.BioprocessConditionsRecord_temperature, domain=BioprocessConditionsRecord, range=Optional[str])
+slots.bioprocessConditionsRecord__duration = Slot(uri=PFAS.duration, name="bioprocessConditionsRecord__duration", curie=PFAS.curie('duration'),
+                   model_uri=PFAS.bioprocessConditionsRecord__duration, domain=None, range=Optional[str])
 
-slots.BioprocessConditionsRecord_competing_ions = Slot(uri=CMM.competing_ions, name="BioprocessConditionsRecord_competing_ions", curie=CMM.curie('competing_ions'),
-                   model_uri=CMM.BioprocessConditionsRecord_competing_ions, domain=BioprocessConditionsRecord, range=Optional[Union[str, list[str]]])
+slots.bioprocessConditionsRecord__oxygen_condition = Slot(uri=PFAS.oxygen_condition, name="bioprocessConditionsRecord__oxygen_condition", curie=PFAS.curie('oxygen_condition'),
+                   model_uri=PFAS.bioprocessConditionsRecord__oxygen_condition, domain=None, range=Optional[str])
 
-slots.BioprocessConditionsRecord_process_parameters = Slot(uri=CMM.process_parameters, name="BioprocessConditionsRecord_process_parameters", curie=CMM.curie('process_parameters'),
-                   model_uri=CMM.BioprocessConditionsRecord_process_parameters, domain=BioprocessConditionsRecord, range=Optional[str])
+slots.bioprocessConditionsRecord__medium_composition = Slot(uri=PFAS.medium_composition, name="bioprocessConditionsRecord__medium_composition", curie=PFAS.curie('medium_composition'),
+                   model_uri=PFAS.bioprocessConditionsRecord__medium_composition, domain=None, range=Optional[str])
 
-slots.BioprocessConditionsRecord_optimization_history = Slot(uri=CMM.optimization_history, name="BioprocessConditionsRecord_optimization_history", curie=CMM.curie('optimization_history'),
-                   model_uri=CMM.BioprocessConditionsRecord_optimization_history, domain=BioprocessConditionsRecord, range=Optional[str])
+slots.bioprocessConditionsRecord__degradation_percentage = Slot(uri=PFAS.degradation_percentage, name="bioprocessConditionsRecord__degradation_percentage", curie=PFAS.curie('degradation_percentage'),
+                   model_uri=PFAS.bioprocessConditionsRecord__degradation_percentage, domain=None, range=Optional[float])
 
-slots.BioprocessConditionsRecord_download_url = Slot(uri=SCHEMA.contentUrl, name="BioprocessConditionsRecord_download_url", curie=SCHEMA.curie('contentUrl'),
-                   model_uri=CMM.BioprocessConditionsRecord_download_url, domain=BioprocessConditionsRecord, range=Optional[Union[str, URI]])
+slots.bioprocessConditionsRecord__fluoride_release = Slot(uri=PFAS.fluoride_release, name="bioprocessConditionsRecord__fluoride_release", curie=PFAS.curie('fluoride_release'),
+                   model_uri=PFAS.bioprocessConditionsRecord__fluoride_release, domain=None, range=Optional[float])
 
-slots.ScreeningResultRecord_experiment_id = Slot(uri=SCHEMA.identifier, name="ScreeningResultRecord_experiment_id", curie=SCHEMA.curie('identifier'),
-                   model_uri=CMM.ScreeningResultRecord_experiment_id, domain=ScreeningResultRecord, range=Union[str, ScreeningResultRecordExperimentId])
+slots.bioprocessConditionsRecord__source = Slot(uri=PFAS.source, name="bioprocessConditionsRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.bioprocessConditionsRecord__source, domain=None, range=Optional[str])
 
-slots.ScreeningResultRecord_plate_coordinates = Slot(uri=CMM.plate_coordinates, name="ScreeningResultRecord_plate_coordinates", curie=CMM.curie('plate_coordinates'),
-                   model_uri=CMM.ScreeningResultRecord_plate_coordinates, domain=ScreeningResultRecord, range=Optional[str])
+slots.screeningResultRecord__experiment_id = Slot(uri=PFAS.experiment_id, name="screeningResultRecord__experiment_id", curie=PFAS.curie('experiment_id'),
+                   model_uri=PFAS.screeningResultRecord__experiment_id, domain=None, range=URIRef)
 
-slots.ScreeningResultRecord_strain_barcode = Slot(uri=CMM.strain_barcode, name="ScreeningResultRecord_strain_barcode", curie=CMM.curie('strain_barcode'),
-                   model_uri=CMM.ScreeningResultRecord_strain_barcode, domain=ScreeningResultRecord, range=Optional[str])
+slots.screeningResultRecord__plate_coordinates = Slot(uri=PFAS.plate_coordinates, name="screeningResultRecord__plate_coordinates", curie=PFAS.curie('plate_coordinates'),
+                   model_uri=PFAS.screeningResultRecord__plate_coordinates, domain=None, range=Optional[str])
 
-slots.ScreeningResultRecord_screening_assay = Slot(uri=CMM.screening_assay, name="ScreeningResultRecord_screening_assay", curie=CMM.curie('screening_assay'),
-                   model_uri=CMM.ScreeningResultRecord_screening_assay, domain=ScreeningResultRecord, range=Optional[str])
+slots.screeningResultRecord__strain_barcode = Slot(uri=PFAS.strain_barcode, name="screeningResultRecord__strain_barcode", curie=PFAS.curie('strain_barcode'),
+                   model_uri=PFAS.screeningResultRecord__strain_barcode, domain=None, range=Optional[str])
 
-slots.ScreeningResultRecord_target_ree = Slot(uri=CMM.target_ree, name="ScreeningResultRecord_target_ree", curie=CMM.curie('target_ree'),
-                   model_uri=CMM.ScreeningResultRecord_target_ree, domain=ScreeningResultRecord, range=Optional[Union[str, list[str]]])
+slots.screeningResultRecord__screening_assay = Slot(uri=PFAS.screening_assay, name="screeningResultRecord__screening_assay", curie=PFAS.curie('screening_assay'),
+                   model_uri=PFAS.screeningResultRecord__screening_assay, domain=None, range=Optional[str])
 
-slots.ScreeningResultRecord_measurement_values = Slot(uri=CMM.measurement_values, name="ScreeningResultRecord_measurement_values", curie=CMM.curie('measurement_values'),
-                   model_uri=CMM.ScreeningResultRecord_measurement_values, domain=ScreeningResultRecord, range=Optional[str])
+slots.screeningResultRecord__measurement_values = Slot(uri=PFAS.measurement_values, name="screeningResultRecord__measurement_values", curie=PFAS.curie('measurement_values'),
+                   model_uri=PFAS.screeningResultRecord__measurement_values, domain=None, range=Optional[str])
 
-slots.ScreeningResultRecord_hit_classification = Slot(uri=CMM.hit_classification, name="ScreeningResultRecord_hit_classification", curie=CMM.curie('hit_classification'),
-                   model_uri=CMM.ScreeningResultRecord_hit_classification, domain=ScreeningResultRecord, range=Optional[Union[str, "HitClassificationEnum"]])
+slots.screeningResultRecord__hit_classification = Slot(uri=PFAS.hit_classification, name="screeningResultRecord__hit_classification", curie=PFAS.curie('hit_classification'),
+                   model_uri=PFAS.screeningResultRecord__hit_classification, domain=None, range=Optional[Union[str, "HitClassificationEnum"]])
 
-slots.ScreeningResultRecord_validation_status = Slot(uri=CMM.validation_status, name="ScreeningResultRecord_validation_status", curie=CMM.curie('validation_status'),
-                   model_uri=CMM.ScreeningResultRecord_validation_status, domain=ScreeningResultRecord, range=Optional[str])
+slots.screeningResultRecord__source = Slot(uri=PFAS.source, name="screeningResultRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.screeningResultRecord__source, domain=None, range=Optional[str])
 
-slots.ScreeningResultRecord_follow_up_experiments = Slot(uri=CMM.follow_up_experiments, name="ScreeningResultRecord_follow_up_experiments", curie=CMM.curie('follow_up_experiments'),
-                   model_uri=CMM.ScreeningResultRecord_follow_up_experiments, domain=ScreeningResultRecord, range=Optional[Union[str, list[str]]])
+slots.protocolRecord__protocol_id = Slot(uri=PFAS.protocol_id, name="protocolRecord__protocol_id", curie=PFAS.curie('protocol_id'),
+                   model_uri=PFAS.protocolRecord__protocol_id, domain=None, range=URIRef)
 
-slots.ScreeningResultRecord_assay_reference = Slot(uri=CMM.assay_reference, name="ScreeningResultRecord_assay_reference", curie=CMM.curie('assay_reference'),
-                   model_uri=CMM.ScreeningResultRecord_assay_reference, domain=ScreeningResultRecord, range=Optional[str])
+slots.protocolRecord__protocol_name = Slot(uri=PFAS.protocol_name, name="protocolRecord__protocol_name", curie=PFAS.curie('protocol_name'),
+                   model_uri=PFAS.protocolRecord__protocol_name, domain=None, range=str)
 
-slots.ScreeningResultRecord_download_url = Slot(uri=SCHEMA.contentUrl, name="ScreeningResultRecord_download_url", curie=SCHEMA.curie('contentUrl'),
-                   model_uri=CMM.ScreeningResultRecord_download_url, domain=ScreeningResultRecord, range=Optional[Union[str, URI]])
+slots.protocolRecord__protocol_type = Slot(uri=PFAS.protocol_type, name="protocolRecord__protocol_type", curie=PFAS.curie('protocol_type'),
+                   model_uri=PFAS.protocolRecord__protocol_type, domain=None, range=Optional[Union[str, "ProtocolTypeEnum"]])
 
-slots.ProtocolRecord_protocol_id = Slot(uri=SCHEMA.identifier, name="ProtocolRecord_protocol_id", curie=SCHEMA.curie('identifier'),
-                   model_uri=CMM.ProtocolRecord_protocol_id, domain=ProtocolRecord, range=Union[str, ProtocolRecordProtocolId])
+slots.protocolRecord__protocol_version = Slot(uri=PFAS.protocol_version, name="protocolRecord__protocol_version", curie=PFAS.curie('protocol_version'),
+                   model_uri=PFAS.protocolRecord__protocol_version, domain=None, range=Optional[str])
 
-slots.ProtocolRecord_protocol_name = Slot(uri=SCHEMA.name, name="ProtocolRecord_protocol_name", curie=SCHEMA.curie('name'),
-                   model_uri=CMM.ProtocolRecord_protocol_name, domain=ProtocolRecord, range=str)
+slots.protocolRecord__protocol_doi = Slot(uri=PFAS.protocol_doi, name="protocolRecord__protocol_doi", curie=PFAS.curie('protocol_doi'),
+                   model_uri=PFAS.protocolRecord__protocol_doi, domain=None, range=Optional[str])
 
-slots.ProtocolRecord_protocol_type = Slot(uri=CMM.protocol_type, name="ProtocolRecord_protocol_type", curie=CMM.curie('protocol_type'),
-                   model_uri=CMM.ProtocolRecord_protocol_type, domain=ProtocolRecord, range=Optional[Union[str, "ProtocolTypeEnum"]])
+slots.protocolRecord__dbtl_iteration = Slot(uri=PFAS.dbtl_iteration, name="protocolRecord__dbtl_iteration", curie=PFAS.curie('dbtl_iteration'),
+                   model_uri=PFAS.protocolRecord__dbtl_iteration, domain=None, range=Optional[int])
 
-slots.ProtocolRecord_protocol_version = Slot(uri=CMM.protocol_version, name="ProtocolRecord_protocol_version", curie=CMM.curie('protocol_version'),
-                   model_uri=CMM.ProtocolRecord_protocol_version, domain=ProtocolRecord, range=Optional[str])
+slots.protocolRecord__source = Slot(uri=PFAS.source, name="protocolRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.protocolRecord__source, domain=None, range=Optional[str])
 
-slots.ProtocolRecord_protocol_doi = Slot(uri=CMM.protocol_doi, name="ProtocolRecord_protocol_doi", curie=CMM.curie('protocol_doi'),
-                   model_uri=CMM.ProtocolRecord_protocol_doi, domain=ProtocolRecord, range=Optional[str])
+slots.transcriptomicsRecord__experiment_id = Slot(uri=PFAS.experiment_id, name="transcriptomicsRecord__experiment_id", curie=PFAS.curie('experiment_id'),
+                   model_uri=PFAS.transcriptomicsRecord__experiment_id, domain=None, range=URIRef,
+                   pattern=re.compile(r'^([SED]RX\d+|GSE\d+|E-[A-Z]+-\d+)$'))
 
-slots.ProtocolRecord_protocol_url = Slot(uri=CMM.protocol_url, name="ProtocolRecord_protocol_url", curie=CMM.curie('protocol_url'),
-                   model_uri=CMM.ProtocolRecord_protocol_url, domain=ProtocolRecord, range=Optional[Union[str, URI]])
+slots.transcriptomicsRecord__study_id = Slot(uri=PFAS.study_id, name="transcriptomicsRecord__study_id", curie=PFAS.curie('study_id'),
+                   model_uri=PFAS.transcriptomicsRecord__study_id, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^([SED]RP\d+|GSE\d+|E-[A-Z]+-\d+)?$'))
 
-slots.ProtocolRecord_associated_assays = Slot(uri=CMM.associated_assays, name="ProtocolRecord_associated_assays", curie=CMM.curie('associated_assays'),
-                   model_uri=CMM.ProtocolRecord_associated_assays, domain=ProtocolRecord, range=Optional[Union[str, list[str]]])
+slots.transcriptomicsRecord__sample_id = Slot(uri=PFAS.sample_id, name="transcriptomicsRecord__sample_id", curie=PFAS.curie('sample_id'),
+                   model_uri=PFAS.transcriptomicsRecord__sample_id, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(SAM[NED]\d+|GSM\d+)?$'))
 
-slots.ProtocolRecord_equipment_list = Slot(uri=CMM.equipment_list, name="ProtocolRecord_equipment_list", curie=CMM.curie('equipment_list'),
-                   model_uri=CMM.ProtocolRecord_equipment_list, domain=ProtocolRecord, range=Optional[Union[str, list[str]]])
+slots.transcriptomicsRecord__organism = Slot(uri=PFAS.organism, name="transcriptomicsRecord__organism", curie=PFAS.curie('organism'),
+                   model_uri=PFAS.transcriptomicsRecord__organism, domain=None, range=str)
 
-slots.ProtocolRecord_success_criteria = Slot(uri=CMM.success_criteria, name="ProtocolRecord_success_criteria", curie=CMM.curie('success_criteria'),
-                   model_uri=CMM.ProtocolRecord_success_criteria, domain=ProtocolRecord, range=Optional[str])
+slots.transcriptomicsRecord__project_title = Slot(uri=PFAS.project_title, name="transcriptomicsRecord__project_title", curie=PFAS.curie('project_title'),
+                   model_uri=PFAS.transcriptomicsRecord__project_title, domain=None, range=Optional[str])
 
-slots.ProtocolRecord_quality_control = Slot(uri=CMM.quality_control, name="ProtocolRecord_quality_control", curie=CMM.curie('quality_control'),
-                   model_uri=CMM.ProtocolRecord_quality_control, domain=ProtocolRecord, range=Optional[str])
+slots.transcriptomicsRecord__sample_description = Slot(uri=PFAS.sample_description, name="transcriptomicsRecord__sample_description", curie=PFAS.curie('sample_description'),
+                   model_uri=PFAS.transcriptomicsRecord__sample_description, domain=None, range=Optional[str])
 
-slots.ProtocolRecord_dbtl_iteration = Slot(uri=CMM.dbtl_iteration, name="ProtocolRecord_dbtl_iteration", curie=CMM.curie('dbtl_iteration'),
-                   model_uri=CMM.ProtocolRecord_dbtl_iteration, domain=ProtocolRecord, range=Optional[str])
+slots.transcriptomicsRecord__condition = Slot(uri=PFAS.condition, name="transcriptomicsRecord__condition", curie=PFAS.curie('condition'),
+                   model_uri=PFAS.transcriptomicsRecord__condition, domain=None, range=Optional[str])
 
-slots.ProtocolRecord_validation_status = Slot(uri=CMM.validation_status, name="ProtocolRecord_validation_status", curie=CMM.curie('validation_status'),
-                   model_uri=CMM.ProtocolRecord_validation_status, domain=ProtocolRecord, range=Optional[str])
+slots.transcriptomicsRecord__data_type = Slot(uri=PFAS.data_type, name="transcriptomicsRecord__data_type", curie=PFAS.curie('data_type'),
+                   model_uri=PFAS.transcriptomicsRecord__data_type, domain=None, range=Optional[Union[str, "TranscriptomicsDataTypeEnum"]])
 
-slots.ProtocolRecord_user_notes = Slot(uri=CMM.user_notes, name="ProtocolRecord_user_notes", curie=CMM.curie('user_notes'),
-                   model_uri=CMM.ProtocolRecord_user_notes, domain=ProtocolRecord, range=Optional[str])
+slots.transcriptomicsRecord__sra_accession = Slot(uri=PFAS.sra_accession, name="transcriptomicsRecord__sra_accession", curie=PFAS.curie('sra_accession'),
+                   model_uri=PFAS.transcriptomicsRecord__sra_accession, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[SED]RX\d*$'))
 
-slots.ProtocolRecord_download_url = Slot(uri=SCHEMA.contentUrl, name="ProtocolRecord_download_url", curie=SCHEMA.curie('contentUrl'),
-                   model_uri=CMM.ProtocolRecord_download_url, domain=ProtocolRecord, range=Optional[Union[str, URI]])
+slots.transcriptomicsRecord__geo_accession = Slot(uri=PFAS.geo_accession, name="transcriptomicsRecord__geo_accession", curie=PFAS.curie('geo_accession'),
+                   model_uri=PFAS.transcriptomicsRecord__geo_accession, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(GSE|GSM)\d*$'))
+
+slots.transcriptomicsRecord__arrayexpress_accession = Slot(uri=PFAS.arrayexpress_accession, name="transcriptomicsRecord__arrayexpress_accession", curie=PFAS.curie('arrayexpress_accession'),
+                   model_uri=PFAS.transcriptomicsRecord__arrayexpress_accession, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^E-[A-Z]+-\d*$'))
+
+slots.transcriptomicsRecord__size = Slot(uri=PFAS.size, name="transcriptomicsRecord__size", curie=PFAS.curie('size'),
+                   model_uri=PFAS.transcriptomicsRecord__size, domain=None, range=Optional[str])
+
+slots.transcriptomicsRecord__publication = Slot(uri=PFAS.publication, name="transcriptomicsRecord__publication", curie=PFAS.curie('publication'),
+                   model_uri=PFAS.transcriptomicsRecord__publication, domain=None, range=Optional[str])
+
+slots.transcriptomicsRecord__license = Slot(uri=PFAS.license, name="transcriptomicsRecord__license", curie=PFAS.curie('license'),
+                   model_uri=PFAS.transcriptomicsRecord__license, domain=None, range=Optional[str])
+
+slots.transcriptomicsRecord__download_url = Slot(uri=PFAS.download_url, name="transcriptomicsRecord__download_url", curie=PFAS.curie('download_url'),
+                   model_uri=PFAS.transcriptomicsRecord__download_url, domain=None, range=Optional[Union[str, URI]])
+
+slots.transcriptomicsRecord__source = Slot(uri=PFAS.source, name="transcriptomicsRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.transcriptomicsRecord__source, domain=None, range=Optional[str])
+
+slots.strainRecord__strain_id = Slot(uri=PFAS.strain_id, name="strainRecord__strain_id", curie=PFAS.curie('strain_id'),
+                   model_uri=PFAS.strainRecord__strain_id, domain=None, range=URIRef,
+                   pattern=re.compile(r'^([A-Z]{2,10}:\d+|STRAIN_\d+)$'))
+
+slots.strainRecord__species_taxon_id = Slot(uri=PFAS.species_taxon_id, name="strainRecord__species_taxon_id", curie=PFAS.curie('species_taxon_id'),
+                   model_uri=PFAS.strainRecord__species_taxon_id, domain=None, range=Optional[int])
+
+slots.strainRecord__scientific_name = Slot(uri=PFAS.scientific_name, name="strainRecord__scientific_name", curie=PFAS.curie('scientific_name'),
+                   model_uri=PFAS.strainRecord__scientific_name, domain=None, range=str)
+
+slots.strainRecord__strain_designation = Slot(uri=PFAS.strain_designation, name="strainRecord__strain_designation", curie=PFAS.curie('strain_designation'),
+                   model_uri=PFAS.strainRecord__strain_designation, domain=None, range=Optional[str])
+
+slots.strainRecord__type_strain = Slot(uri=PFAS.type_strain, name="strainRecord__type_strain", curie=PFAS.curie('type_strain'),
+                   model_uri=PFAS.strainRecord__type_strain, domain=None, range=Optional[Union[str, "TypeStrainEnum"]])
+
+slots.strainRecord__culture_collection_ids = Slot(uri=PFAS.culture_collection_ids, name="strainRecord__culture_collection_ids", curie=PFAS.curie('culture_collection_ids'),
+                   model_uri=PFAS.strainRecord__culture_collection_ids, domain=None, range=Optional[Union[str, list[str]]])
+
+slots.strainRecord__procurement_urls = Slot(uri=PFAS.procurement_urls, name="strainRecord__procurement_urls", curie=PFAS.curie('procurement_urls'),
+                   model_uri=PFAS.strainRecord__procurement_urls, domain=None, range=Optional[Union[Union[str, URI], list[Union[str, URI]]]])
+
+slots.strainRecord__availability_status = Slot(uri=PFAS.availability_status, name="strainRecord__availability_status", curie=PFAS.curie('availability_status'),
+                   model_uri=PFAS.strainRecord__availability_status, domain=None, range=Optional[Union[str, "AvailabilityStatusEnum"]])
+
+slots.strainRecord__alternative_names = Slot(uri=PFAS.alternative_names, name="strainRecord__alternative_names", curie=PFAS.curie('alternative_names'),
+                   model_uri=PFAS.strainRecord__alternative_names, domain=None, range=Optional[Union[str, list[str]]])
+
+slots.strainRecord__biosafety_level = Slot(uri=PFAS.biosafety_level, name="strainRecord__biosafety_level", curie=PFAS.curie('biosafety_level'),
+                   model_uri=PFAS.strainRecord__biosafety_level, domain=None, range=Optional[int])
+
+slots.strainRecord__growth_requirements = Slot(uri=PFAS.growth_requirements, name="strainRecord__growth_requirements", curie=PFAS.curie('growth_requirements'),
+                   model_uri=PFAS.strainRecord__growth_requirements, domain=None, range=Optional[str])
+
+slots.strainRecord__kg_microbe_nodes = Slot(uri=PFAS.kg_microbe_nodes, name="strainRecord__kg_microbe_nodes", curie=PFAS.curie('kg_microbe_nodes'),
+                   model_uri=PFAS.strainRecord__kg_microbe_nodes, domain=None, range=Optional[Union[str, list[str]]])
+
+slots.strainRecord__notes = Slot(uri=PFAS.notes, name="strainRecord__notes", curie=PFAS.curie('notes'),
+                   model_uri=PFAS.strainRecord__notes, domain=None, range=Optional[str])
+
+slots.strainRecord__source = Slot(uri=PFAS.source, name="strainRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.strainRecord__source, domain=None, range=Optional[str])
+
+slots.growthMediaRecord__media_id = Slot(uri=PFAS.media_id, name="growthMediaRecord__media_id", curie=PFAS.curie('media_id'),
+                   model_uri=PFAS.growthMediaRecord__media_id, domain=None, range=URIRef,
+                   pattern=re.compile(r'^([A-Z]+:\d+|[A-Z0-9]+)$'))
+
+slots.growthMediaRecord__media_name = Slot(uri=PFAS.media_name, name="growthMediaRecord__media_name", curie=PFAS.curie('media_name'),
+                   model_uri=PFAS.growthMediaRecord__media_name, domain=None, range=str)
+
+slots.growthMediaRecord__media_type = Slot(uri=PFAS.media_type, name="growthMediaRecord__media_type", curie=PFAS.curie('media_type'),
+                   model_uri=PFAS.growthMediaRecord__media_type, domain=None, range=Optional[Union[str, "MediaTypeEnum"]])
+
+slots.growthMediaRecord__alternative_names = Slot(uri=PFAS.alternative_names, name="growthMediaRecord__alternative_names", curie=PFAS.curie('alternative_names'),
+                   model_uri=PFAS.growthMediaRecord__alternative_names, domain=None, range=Optional[Union[str, list[str]]])
+
+slots.growthMediaRecord__description = Slot(uri=PFAS.description, name="growthMediaRecord__description", curie=PFAS.curie('description'),
+                   model_uri=PFAS.growthMediaRecord__description, domain=None, range=Optional[str])
+
+slots.growthMediaRecord__target_organisms = Slot(uri=PFAS.target_organisms, name="growthMediaRecord__target_organisms", curie=PFAS.curie('target_organisms'),
+                   model_uri=PFAS.growthMediaRecord__target_organisms, domain=None, range=Optional[str])
+
+slots.growthMediaRecord__ph = Slot(uri=PFAS.ph, name="growthMediaRecord__ph", curie=PFAS.curie('ph'),
+                   model_uri=PFAS.growthMediaRecord__ph, domain=None, range=Optional[str])
+
+slots.growthMediaRecord__sterilization_method = Slot(uri=PFAS.sterilization_method, name="growthMediaRecord__sterilization_method", curie=PFAS.curie('sterilization_method'),
+                   model_uri=PFAS.growthMediaRecord__sterilization_method, domain=None, range=Optional[str])
+
+slots.growthMediaRecord__references = Slot(uri=PFAS.references, name="growthMediaRecord__references", curie=PFAS.curie('references'),
+                   model_uri=PFAS.growthMediaRecord__references, domain=None, range=Optional[Union[str, list[str]]])
+
+slots.growthMediaRecord__kg_microbe_nodes = Slot(uri=PFAS.kg_microbe_nodes, name="growthMediaRecord__kg_microbe_nodes", curie=PFAS.curie('kg_microbe_nodes'),
+                   model_uri=PFAS.growthMediaRecord__kg_microbe_nodes, domain=None, range=Optional[Union[str, list[str]]])
+
+slots.growthMediaRecord__notes = Slot(uri=PFAS.notes, name="growthMediaRecord__notes", curie=PFAS.curie('notes'),
+                   model_uri=PFAS.growthMediaRecord__notes, domain=None, range=Optional[str])
+
+slots.growthMediaRecord__source = Slot(uri=PFAS.source, name="growthMediaRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.growthMediaRecord__source, domain=None, range=Optional[str])
+
+slots.mediaIngredientRecord__ingredient_id = Slot(uri=PFAS.ingredient_id, name="mediaIngredientRecord__ingredient_id", curie=PFAS.curie('ingredient_id'),
+                   model_uri=PFAS.mediaIngredientRecord__ingredient_id, domain=None, range=URIRef,
+                   pattern=re.compile(r'^[A-Z0-9_:]+_ING_\d+$'))
+
+slots.mediaIngredientRecord__ingredient_name = Slot(uri=PFAS.ingredient_name, name="mediaIngredientRecord__ingredient_name", curie=PFAS.curie('ingredient_name'),
+                   model_uri=PFAS.mediaIngredientRecord__ingredient_name, domain=None, range=str)
+
+slots.mediaIngredientRecord__media_id = Slot(uri=PFAS.media_id, name="mediaIngredientRecord__media_id", curie=PFAS.curie('media_id'),
+                   model_uri=PFAS.mediaIngredientRecord__media_id, domain=None, range=str)
+
+slots.mediaIngredientRecord__media_name = Slot(uri=PFAS.media_name, name="mediaIngredientRecord__media_name", curie=PFAS.curie('media_name'),
+                   model_uri=PFAS.mediaIngredientRecord__media_name, domain=None, range=Optional[str])
+
+slots.mediaIngredientRecord__ontology_id = Slot(uri=PFAS.ontology_id, name="mediaIngredientRecord__ontology_id", curie=PFAS.curie('ontology_id'),
+                   model_uri=PFAS.mediaIngredientRecord__ontology_id, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(CHEBI:\d+|PUBCHEM:\d+|)$'))
+
+slots.mediaIngredientRecord__ontology_label = Slot(uri=PFAS.ontology_label, name="mediaIngredientRecord__ontology_label", curie=PFAS.curie('ontology_label'),
+                   model_uri=PFAS.mediaIngredientRecord__ontology_label, domain=None, range=Optional[str])
+
+slots.mediaIngredientRecord__chemical_formula = Slot(uri=PFAS.chemical_formula, name="mediaIngredientRecord__chemical_formula", curie=PFAS.curie('chemical_formula'),
+                   model_uri=PFAS.mediaIngredientRecord__chemical_formula, domain=None, range=Optional[str])
+
+slots.mediaIngredientRecord__concentration = Slot(uri=PFAS.concentration, name="mediaIngredientRecord__concentration", curie=PFAS.curie('concentration'),
+                   model_uri=PFAS.mediaIngredientRecord__concentration, domain=None, range=Optional[float])
+
+slots.mediaIngredientRecord__unit = Slot(uri=PFAS.unit, name="mediaIngredientRecord__unit", curie=PFAS.curie('unit'),
+                   model_uri=PFAS.mediaIngredientRecord__unit, domain=None, range=Optional[str])
+
+slots.mediaIngredientRecord__role = Slot(uri=PFAS.role, name="mediaIngredientRecord__role", curie=PFAS.curie('role'),
+                   model_uri=PFAS.mediaIngredientRecord__role, domain=None, range=Optional[Union[str, "IngredientRoleEnum"]])
+
+slots.mediaIngredientRecord__kg_microbe_nodes = Slot(uri=PFAS.kg_microbe_nodes, name="mediaIngredientRecord__kg_microbe_nodes", curie=PFAS.curie('kg_microbe_nodes'),
+                   model_uri=PFAS.mediaIngredientRecord__kg_microbe_nodes, domain=None, range=Optional[Union[str, list[str]]])
+
+slots.mediaIngredientRecord__notes = Slot(uri=PFAS.notes, name="mediaIngredientRecord__notes", curie=PFAS.curie('notes'),
+                   model_uri=PFAS.mediaIngredientRecord__notes, domain=None, range=Optional[str])
+
+slots.mediaIngredientRecord__source = Slot(uri=PFAS.source, name="mediaIngredientRecord__source", curie=PFAS.curie('source'),
+                   model_uri=PFAS.mediaIngredientRecord__source, domain=None, range=Optional[str])
 

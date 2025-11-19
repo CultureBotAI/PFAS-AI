@@ -42,6 +42,33 @@ class ConsistencyValidator:
         self.screening_results_df = self._load_table("screening_results.tsv")
         self.protocols_df = self._load_table("protocols.tsv")
 
+    def _get_column(self, df: pd.DataFrame, *column_names: str):
+        """Get column from DataFrame, trying multiple name variations.
+
+        Args:
+            df: DataFrame to search
+            *column_names: Possible column names to try
+
+        Returns:
+            Column data if found, otherwise None
+        """
+        for col_name in column_names:
+            if col_name in df.columns:
+                return df[col_name]
+        return None
+
+    def _has_column(self, df: pd.DataFrame, *column_names: str) -> bool:
+        """Check if DataFrame has any of the given column names.
+
+        Args:
+            df: DataFrame to check
+            *column_names: Possible column names to try
+
+        Returns:
+            True if any column name exists
+        """
+        return any(col_name in df.columns for col_name in column_names)
+
     def _load_table(self, filename: str) -> pd.DataFrame:
         """Load a TSV table.
 
@@ -252,38 +279,67 @@ class ConsistencyValidator:
                 self.info.append(f"{table_name} table: All {id_col} values are unique ({len(ids)} records)")
 
         # Special handling for genes/proteins: check gene_id + organism combination
-        if not self.genes_df.empty and 'gene or protein id' in self.genes_df.columns:
-            gene_df = self.genes_df.copy()
-            # Create composite key
-            gene_df['composite_key'] = (
-                gene_df['gene or protein id'].astype(str) + '::' +
-                gene_df.get('organism (from taxa and genomes tab)', '').astype(str)
-            )
-            composite_ids = gene_df['composite_key'].dropna()
-            duplicates = composite_ids[composite_ids.duplicated()].unique()
+        if not self.genes_df.empty:
+            # Get gene ID column (supports multiple naming conventions)
+            gene_id_col = self._get_column(self.genes_df, 'gene or protein id', 'gene_or_protein_id', 'Gene/Protein Identifier')
+            organism_col = self._get_column(self.genes_df, 'organism (from taxa and genomes tab)', 'organism', 'Organism')
 
-            if len(duplicates) > 0:
-                self.errors.append(
-                    f"genes/proteins table: Found {len(duplicates)} duplicate gene+organism combinations: {list(duplicates)[:5]}"
+            if gene_id_col is not None and organism_col is not None:
+                gene_df = self.genes_df.copy()
+                # Create composite key
+                gene_df['composite_key'] = (
+                    gene_id_col.astype(str) + '::' +
+                    organism_col.astype(str)
                 )
-            else:
-                # Count unique gene IDs (may have duplicates across organisms, which is OK)
-                unique_genes = self.genes_df['gene or protein id'].nunique()
-                total_records = len(self.genes_df['gene or protein id'].dropna())
-                self.info.append(
-                    f"genes/proteins table: {unique_genes} unique gene IDs across {total_records} records (duplicates across organisms are allowed)"
-                )
+                composite_ids = gene_df['composite_key'].dropna()
+                duplicates = composite_ids[composite_ids.duplicated()].unique()
+
+                if len(duplicates) > 0:
+                    self.errors.append(
+                        f"genes/proteins table: Found {len(duplicates)} duplicate gene+organism combinations: {list(duplicates)[:5]}"
+                    )
+                else:
+                    # Count unique gene IDs (may have duplicates across organisms, which is OK)
+                    unique_genes = gene_id_col.nunique()
+                    total_records = len(gene_id_col.dropna())
+                    self.info.append(
+                        f"genes/proteins table: {unique_genes} unique gene IDs across {total_records} records (duplicates across organisms are allowed)"
+                    )
 
     def validate_required_columns(self) -> None:
         """Validate that required columns exist in each table."""
+        # Map required columns with alternative names
         required_columns = {
-            'genomes': ['Scientific name', 'NCBITaxon id', 'Genome identifier (GenBank, IMG etc)'],
-            'biosamples': ['Sample Name', 'Sample ID', 'Organism'],
-            'pathways': ['pathway name', 'pathway id'],
-            'genes': ['gene or protein id', 'annotation'],
-            'structures': ['Name', 'Organism'],
-            'publications': ['URL', 'Title'],
-            'datasets': ['Dataset name', 'URL'],
+            'genomes': [
+                (['Scientific name', 'scientific_name'], 'Scientific name'),
+                (['NCBITaxon id', 'ncbi_taxon_id'], 'NCBITaxon id'),
+                (['Genome identifier (GenBank, IMG etc)', 'genome_identifier'], 'Genome identifier')
+            ],
+            'biosamples': [
+                (['Sample Name', 'sample_name'], 'Sample Name'),
+                (['Sample ID', 'sample_id'], 'Sample ID'),
+                (['Organism', 'organism'], 'Organism')
+            ],
+            'pathways': [
+                (['pathway name', 'pathway_name'], 'pathway name'),
+                (['pathway id', 'pathway_id'], 'pathway id')
+            ],
+            'genes': [
+                (['gene or protein id', 'gene_or_protein_id', 'Gene/Protein Identifier'], 'gene id'),
+                (['annotation', 'Annotation'], 'annotation')
+            ],
+            'structures': [
+                (['Name', 'name'], 'Name'),
+                (['Organism', 'organism'], 'Organism')
+            ],
+            'publications': [
+                (['URL', 'url'], 'URL'),
+                (['Title', 'title'], 'Title')
+            ],
+            'datasets': [
+                (['Dataset name', 'dataset_name'], 'Dataset name'),
+                (['URL', 'url'], 'URL')
+            ],
         }
 
         table_map = {
@@ -301,9 +357,12 @@ class ConsistencyValidator:
                 continue
 
             required = required_columns.get(table_name, [])
-            # Case-insensitive column check
-            df_columns_lower = {col.lower(): col for col in df.columns}
-            missing = [col for col in required if col.lower() not in df_columns_lower]
+            missing = []
+
+            # Check if at least one variation of each required column exists
+            for column_variations, display_name in required:
+                if not self._has_column(df, *column_variations):
+                    missing.append(display_name)
 
             if missing:
                 self.errors.append(f"{table_name} table missing required columns: {missing}")
