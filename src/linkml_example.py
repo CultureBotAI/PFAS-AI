@@ -1,11 +1,11 @@
-"""Example usage of LinkML models for lanthanide bioprocessing data.
+"""Example usage of LinkML models for PFAS bioprocessing data.
 
 This module demonstrates how to use the generated LinkML dataclasses to create,
-validate, and serialize lanthanide bioprocessing research data.
+validate, and serialize PFAS bioprocessing research data.
 """
 
 from linkml_models import (
-    LanthanideBioprocessingDatabase,
+    PFASBioprocessingDatabase,
     GenomeRecord,
     BiosampleRecord,
     PathwayRecord,
@@ -20,11 +20,11 @@ from linkml_runtime.dumpers import yaml_dumper, json_dumper
 from linkml_runtime.loaders import yaml_loader, json_loader
 
 
-def create_example_database() -> LanthanideBioprocessingDatabase:
+def create_example_database() -> PFASBioprocessingDatabase:
     """Create an example database with sample records.
 
     Returns:
-        LanthanideBioprocessingDatabase instance with example data
+        PFASBioprocessingDatabase instance with example data
 
     Examples:
         >>> db = create_example_database()
@@ -70,7 +70,7 @@ def create_example_database() -> LanthanideBioprocessingDatabase:
     gene1 = GeneProteinRecord(
         gene_protein_id="K23995",
         organism="Methylobacterium species",
-        annotation="PQQ-dependent methanol dehydrogenase, lanthanide-dependent (XoxF)",
+        annotation="PQQ-dependent methanol dehydrogenase, PFAS-dependent (XoxF)",
         ec_number="1.1.2.7",
         go_terms=["GO:0018525"],  # methanol metabolic process
         chebi_terms=["CHEBI:17790"],  # methanol
@@ -110,7 +110,7 @@ def create_example_database() -> LanthanideBioprocessingDatabase:
     )
 
     # Create database container
-    database = LanthanideBioprocessingDatabase(
+    database = PFASBioprocessingDatabase(
         genomes=[genome1, genome2],
         biosamples=[biosample1],
         pathways=[pathway1],
@@ -123,7 +123,7 @@ def create_example_database() -> LanthanideBioprocessingDatabase:
     return database
 
 
-def save_to_yaml(database: LanthanideBioprocessingDatabase, output_path: str) -> None:
+def save_to_yaml(database: PFASBioprocessingDatabase, output_path: str) -> None:
     """Save database to YAML file.
 
     Args:
@@ -134,7 +134,7 @@ def save_to_yaml(database: LanthanideBioprocessingDatabase, output_path: str) ->
     print(f"Database saved to {output_path}")
 
 
-def save_to_json(database: LanthanideBioprocessingDatabase, output_path: str) -> None:
+def save_to_json(database: PFASBioprocessingDatabase, output_path: str) -> None:
     """Save database to JSON file.
 
     Args:
@@ -145,30 +145,30 @@ def save_to_json(database: LanthanideBioprocessingDatabase, output_path: str) ->
     print(f"Database saved to {output_path}")
 
 
-def load_from_yaml(input_path: str) -> LanthanideBioprocessingDatabase:
+def load_from_yaml(input_path: str) -> PFASBioprocessingDatabase:
     """Load database from YAML file.
 
     Args:
         input_path: Path to input YAML file
 
     Returns:
-        LanthanideBioprocessingDatabase instance
+        PFASBioprocessingDatabase instance
     """
-    database = yaml_loader.load(input_path, target_class=LanthanideBioprocessingDatabase)
+    database = yaml_loader.load(input_path, target_class=PFASBioprocessingDatabase)
     print(f"Database loaded from {input_path}")
     return database
 
 
-def load_from_json(input_path: str) -> LanthanideBioprocessingDatabase:
+def load_from_json(input_path: str) -> PFASBioprocessingDatabase:
     """Load database from JSON file.
 
     Args:
         input_path: Path to input JSON file
 
     Returns:
-        LanthanideBioprocessingDatabase instance
+        PFASBioprocessingDatabase instance
     """
-    database = json_loader.load(input_path, target_class=LanthanideBioprocessingDatabase)
+    database = json_loader.load(input_path, target_class=PFASBioprocessingDatabase)
     print(f"Database loaded from {input_path}")
     return database
 

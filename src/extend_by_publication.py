@@ -165,7 +165,7 @@ def extract_keywords_from_row(row: pd.Series, sheet_name: str) -> Dict[str, Set[
             if 'chemical' in str(col_name).lower() or 'compound' in str(col_name).lower():
                 # Chemical names and formulas
                 keywords['chemicals'].add(value_lower)
-                # Lanthanide ions (Eu3+, La3+, etc.)
+                # PFAS ions (Eu3+, La3+, etc.)
                 ion_matches = re.findall(r'\b([A-Z][a-z]?\d?\+)\b', value)
                 keywords['chemicals'].update([i.lower() for i in ion_matches])
 

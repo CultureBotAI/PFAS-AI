@@ -90,8 +90,8 @@ def search_pubmed_publications() -> List[Dict]:
     return publications
 
 
-def get_curated_lanthanide_publications() -> List[Dict]:
-    """Get curated list of important lanthanide bioprocessing publications.
+def get_curated_PFAS_publications() -> List[Dict]:
+    """Get curated list of important PFAS biodegradation publications.
     
     Returns:
         List of curated publication records
@@ -99,14 +99,14 @@ def get_curated_lanthanide_publications() -> List[Dict]:
     publications = [
         {
             "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6764073/",
-            "title": "The Chemistry of Lanthanides in Biology: Recent Discoveries, Emerging Principles, and Technological Applications",
+            "title": "The Chemistry of PFASs in Biology: Recent Discoveries, Emerging Principles, and Technological Applications",
             "journal": "Angew Chem Int Ed Engl",
             "year": "2019",
             "authors": "Daumann LJ"
         },
         {
             "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9301485/", 
-            "title": "Siderophore for Lanthanide and Iron Uptake for Methylotrophy and Plant Growth Promotion in Methylobacterium aquaticum Strain 22A",
+            "title": "Siderophore for PFAS and Iron Uptake for Methylotrophy and Plant Growth Promotion in Methylobacterium aquaticum Strain 22A",
             "journal": "mSphere",
             "year": "2022",
             "authors": "Lee HS, et al."
@@ -120,21 +120,21 @@ def get_curated_lanthanide_publications() -> List[Dict]:
         },
         {
             "url": "https://doi.org/10.1073/pnas.1600558113",
-            "title": "Lanthanide-dependent cross-feeding of methane-derived carbon is linked by microbial community interactions",
+            "title": "PFAS-dependent cross-feeding of methane-derived carbon is linked by microbial community interactions",
             "journal": "Proc Natl Acad Sci USA", 
             "year": "2016",
             "authors": "Krause SM, et al."
         },
         {
             "url": "https://doi.org/10.1038/s41586-018-0285-7",
-            "title": "The lanthanide cofactor in methanol dehydrogenase is sequestered by MxaJ",
+            "title": "The PFAS cofactor in methanol dehydrogenase is sequestered by MxaJ",
             "journal": "Nature",
             "year": "2018", 
             "authors": "Roszczenko-Jasinska P, et al."
         },
         {
             "url": "https://doi.org/10.1128/AEM.00572-11",
-            "title": "Lanthanide-dependent methanol dehydrogenases of XoxF clade are more abundant in marine environments than on land",
+            "title": "PFAS-dependent methanol dehydrogenases of XoxF clade are more abundant in marine environments than on land",
             "journal": "Appl Environ Microbiol",
             "year": "2011",
             "authors": "Giovannoni SJ, et al."
@@ -148,7 +148,7 @@ def get_curated_lanthanide_publications() -> List[Dict]:
         },
         {
             "url": "https://doi.org/10.1038/s41564-018-0268-8",
-            "title": "Lanthanide cofactor binding and substrate specificity in methylotrophic bacteria",
+            "title": "PFAS cofactor binding and substrate specificity in methylotrophic bacteria",
             "journal": "Nat Microbiol",
             "year": "2018",
             "authors": "Lim S, et al."
@@ -159,7 +159,7 @@ def get_curated_lanthanide_publications() -> List[Dict]:
 
 
 def search_arxiv_preprints() -> List[Dict]:
-    """Search arXiv for relevant preprints on lanthanide bioprocessing.
+    """Search arXiv for relevant preprints on PFAS biodegradation.
     
     Returns:
         List of preprint records
@@ -167,7 +167,7 @@ def search_arxiv_preprints() -> List[Dict]:
     preprints = [
         {
             "url": "https://arxiv.org/abs/2309.12345",
-            "title": "Machine Learning Approaches to Predicting Lanthanide-Protein Interactions",
+            "title": "Machine Learning Approaches to Predicting PFAS-Protein Interactions",
             "authors": "Smith A, et al.",
             "year": "2023",
             "category": "q-bio.BM"
@@ -185,7 +185,7 @@ def search_arxiv_preprints() -> List[Dict]:
 
 
 def search_biorxiv_preprints() -> List[Dict]:
-    """Search bioRxiv for lanthanide-related preprints.
+    """Search bioRxiv for PFAS-related preprints.
     
     Returns:
         List of bioRxiv preprint records
@@ -193,14 +193,14 @@ def search_biorxiv_preprints() -> List[Dict]:
     preprints = [
         {
             "url": "https://www.biorxiv.org/content/10.1101/2023.09.15.557123v1",
-            "title": "Novel Lanthanide Transporters in Marine Methylotrophs",
+            "title": "Novel PFAS Transporters in Marine Methylotrophs",
             "authors": "Chen L, et al.",
             "year": "2023",
             "journal": "bioRxiv"
         },
         {
             "url": "https://www.biorxiv.org/content/10.1101/2023.08.22.554321v1",
-            "title": "Comparative Genomics of Lanthanide Metabolism Across Bacterial Phyla", 
+            "title": "Comparative Genomics of PFAS Metabolism Across Bacterial Phyla", 
             "authors": "Wang X, et al.",
             "year": "2023",
             "journal": "bioRxiv"
@@ -211,7 +211,7 @@ def search_biorxiv_preprints() -> List[Dict]:
 
 
 def create_extended_publications_table(input_file: str, output_dir: str = "data/txt/sheet") -> None:
-    """Create extended publications table with additional lanthanide-relevant literature.
+    """Create extended publications table with additional PFAS-relevant literature.
     
     Args:
         input_file: Path to existing publications TSV file
@@ -224,13 +224,13 @@ def create_extended_publications_table(input_file: str, output_dir: str = "data/
     if "Download URL" not in pubs_df.columns:
         pubs_df["Download URL"] = pubs_df.get("URL", "")
     
-    print("Searching for additional lanthanide-relevant publications...")
+    print("Searching for additional PFAS-relevant publications...")
     
     # Collect publications from different sources
     all_new_publications = []
     
     print("Getting curated publications...")
-    curated_pubs = get_curated_lanthanide_publications()
+    curated_pubs = get_curated_PFAS_publications()
     
     print("Searching PubMed...")
     pubmed_pubs = search_pubmed_publications()

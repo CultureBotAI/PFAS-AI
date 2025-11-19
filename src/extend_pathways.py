@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Script to extend CMM pathways data with additional lanthanide-relevant pathways."""
+"""Script to extend PFAS pathways data with additional biodegradation-relevant pathways."""
 
 import sys
 from pathlib import Path
@@ -9,17 +9,17 @@ from pathway_search import create_extended_pathways_table
 
 def main():
     """Main function to extend the pathways data table."""
-    
+
     # Path to existing data
     pathways_path = "data/txt/sheet/PFAS_Data_for_AI_pathways.tsv"
-    
+
     # Check if file exists
     if not Path(pathways_path).exists():
         print(f"Error: Pathways file not found: {pathways_path}")
         print("Please run 'make convert-excel' first to convert Excel files to TSV.")
         return 1
-    
-    print("Starting pathway extension for lanthanide bioprocessing...")
+
+    print("Starting pathway extension for PFAS biodegradation...")
     print("Searching KEGG and MetaCyc databases for relevant pathways...")
     print("=" * 60)
     

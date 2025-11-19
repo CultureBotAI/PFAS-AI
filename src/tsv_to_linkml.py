@@ -1,7 +1,7 @@
 """Convert extended TSV files to LinkML-compatible YAML format.
 
 This script reads the extended TSV tables and converts them to LinkML database format
-for validation against the lanthanide bioprocessing schema.
+for validation against the PFAS bioprocessing schema.
 """
 
 import argparse
@@ -15,7 +15,7 @@ from linkml_runtime.dumpers import yaml_dumper
 # Import generated LinkML models
 try:
     from linkml_models import (
-        LanthanideBioprocessingDatabase,
+        PFASBioprocessingDatabase,
         GenomeRecord,
         BiosampleRecord,
         PathwayRecord,
@@ -37,7 +37,7 @@ try:
         ProtocolTypeEnum,
     )
 except ImportError:
-    print("Error: LinkML models not found. Run 'uv run gen-python schema/lanthanide_bioprocessing.yaml > src/linkml_models.py' first.")
+    print("Error: LinkML models not found. Run 'uv run gen-python schema/PFAS_bioprocessing.yaml > src/linkml_models.py' first.")
     sys.exit(1)
 
 
@@ -382,7 +382,7 @@ def convert_chemicals(tsv_path: Path) -> list[ChemicalCompoundRecord]:
             except KeyError:
                 # Map common variations
                 ct_mapping = {
-                    'lanthanide': CompoundTypeEnum.lanthanide,
+                    'PFAS': CompoundTypeEnum.PFAS,
                     'lanthanophore': CompoundTypeEnum.lanthanophore,
                     'chelator': CompoundTypeEnum.chelator,
                     'substrate': CompoundTypeEnum.substrate,
@@ -655,7 +655,7 @@ def convert_protocols(tsv_path: Path) -> list[ProtocolRecord]:
     return records
 
 
-def convert_all_tsvs(data_dir: Path, output_path: Optional[Path] = None) -> LanthanideBioprocessingDatabase:
+def convert_all_tsvs(data_dir: Path, output_path: Optional[Path] = None) -> PFASBioprocessingDatabase:
     """Convert all TSV files to LinkML database.
 
     Args:
@@ -663,7 +663,7 @@ def convert_all_tsvs(data_dir: Path, output_path: Optional[Path] = None) -> Lant
         output_path: Optional path to save YAML output
 
     Returns:
-        LanthanideBioprocessingDatabase instance
+        PFASBioprocessingDatabase instance
     """
     print(f"Converting TSV files from {data_dir}...")
 
@@ -721,7 +721,7 @@ def convert_all_tsvs(data_dir: Path, output_path: Optional[Path] = None) -> Lant
         print(f"  Converted {len(protocols)} protocol records")
 
     # Create database
-    database = LanthanideBioprocessingDatabase(
+    database = PFASBioprocessingDatabase(
         genomes=genomes,
         biosamples=biosamples,
         pathways=pathways,

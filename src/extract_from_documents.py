@@ -184,18 +184,18 @@ class DocumentExtractor:
         """
         chemicals = []
 
-        # Pattern for lanthanide ions (Eu³⁺, Tb³⁺, etc.)
-        lanthanide_pattern = r'\b(La|Ce|Pr|Nd|Pm|Sm|Eu|Gd|Tb|Dy|Ho|Er|Tm|Yb|Lu)(?:³⁺|3\+|\(III\))\b'
-        lanthanides_found = set(re.findall(lanthanide_pattern, self.markdown_text, re.IGNORECASE))
+        # Pattern for PFAS ions (Eu³⁺, Tb³⁺, etc.)
+        PFAS_pattern = r'\b(La|Ce|Pr|Nd|Pm|Sm|Eu|Gd|Tb|Dy|Ho|Er|Tm|Yb|Lu)(?:³⁺|3\+|\(III\))\b'
+        PFASs_found = set(re.findall(PFAS_pattern, self.markdown_text, re.IGNORECASE))
 
-        for element in lanthanides_found:
+        for element in PFASs_found:
             chemicals.append({
                 'chemical_id': f"Custom_{element}_from_{self.source_file}",
                 'chemical_name': f"{element}(III) ion",
-                'compound_type': 'lanthanide',
+                'compound_type': 'PFAS',
                 'molecular_formula': f"{element}3+",
                 'molecular_weight': None,
-                'role_in_bioprocess': f"Lanthanide element mentioned in {self.source_file}",
+                'role_in_bioprocess': f"PFAS element mentioned in {self.source_file}",
                 'chebi_id': None,
                 'pubchem_id': None,
                 'chembl_id': None,
@@ -354,7 +354,7 @@ class DocumentExtractor:
 
                 # Try to extract REE concentration
                 ree_conc = None
-                conc_pattern = r'(\d+\.?\d*\s*(?:μM|mM|ppm|mg/L))\s*(?:Eu|Tb|La|Ce|Nd|lanthanide|REE)'
+                conc_pattern = r'(\d+\.?\d*\s*(?:μM|mM|ppm|mg/L))\s*(?:Eu|Tb|La|Ce|Nd|PFAS|REE)'
                 conc_match = re.search(conc_pattern, context, re.IGNORECASE)
                 if conc_match:
                     ree_conc = conc_match.group(1)

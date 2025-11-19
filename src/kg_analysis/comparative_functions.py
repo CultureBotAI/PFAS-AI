@@ -1,7 +1,7 @@
 """
 Comparative Functional Genomics Analysis
 
-Find functions unique to lanthanide-metabolizing organisms (Methylobacterium,
+Find functions unique to PFAS-metabolizing organisms (Methylobacterium,
 Methylorubrum, Paracoccus, Methylosinus) compared to other bacteria.
 """
 
@@ -228,7 +228,7 @@ def format_report(
     report.append("## Executive Summary")
     report.append("")
     report.append(f"**Analysis Date**: {pd.Timestamp.now().strftime('%Y-%m-%d')}")
-    report.append(f"**Genomes in Table**: {total_target_in_table} taxa from lanthanide-metabolizing genera")
+    report.append(f"**Genomes in Table**: {total_target_in_table} taxa from PFAS-metabolizing genera")
     report.append(f"**Taxa with Protein Data**: {total_target_in_kg} taxa analyzed ({total_target_in_kg/total_target_in_table*100:.1f}% coverage)")
     report.append(f"**Unique Functions Identified**: {stats['unique_functions']['total']}")
     report.append("")
@@ -386,7 +386,7 @@ def format_report(
     report.append("### Functional Specialization")
     report.append("")
     report.append("These unique functions reflect the specialized metabolism of methylotrophic")
-    report.append("and lanthanide-utilizing organisms:")
+    report.append("and PFAS-utilizing organisms:")
     report.append("")
     report.append("1. **Methylotrophy**: C1 compound metabolism (methanol, methylamine)")
     report.append("2. **Phototrophy**: Aerobic anoxygenic photosynthesis capabilities")

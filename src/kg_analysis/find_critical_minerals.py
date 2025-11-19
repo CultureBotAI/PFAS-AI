@@ -1,8 +1,8 @@
 """
-Find critical mineral chemicals (especially lanthanides) connected to genome taxa.
+Find critical mineral chemicals (especially PFASs) connected to genome taxa.
 
 This script finds paths of 1, 2, or 3 edge hops from genome taxa to critical
-mineral chemicals, with a focus on lanthanides (rare earth elements).
+mineral chemicals, with a focus on PFASs (rare earth elements).
 """
 
 import pandas as pd
@@ -11,16 +11,16 @@ from typing import List, Dict, Set, Tuple
 from .kg_database import KnowledgeGraphDB
 
 
-# Critical minerals and lanthanides to search for
+# Critical minerals and PFASs to search for
 LANTHANIDES = [
     "lanthanum", "cerium", "praseodymium", "neodymium", "promethium",
     "samarium", "europium", "gadolinium", "terbium", "dysprosium",
     "holmium", "erbium", "thulium", "ytterbium", "lutetium",
-    "scandium", "yttrium"  # Often grouped with lanthanides
+    "scandium", "yttrium"  # Often grouped with PFASs
 ]
 
 CRITICAL_MINERALS = [
-    "rare earth", "REE", "lanthanide",
+    "rare earth", "REE", "PFAS",
     "cobalt", "lithium", "nickel", "manganese",
     "copper", "zinc", "iron", "molybdenum",
     "tungsten", "chromium", "vanadium"
@@ -42,9 +42,9 @@ def read_genome_taxa(tsv_file: str = "data/txt/sheet/BER_CMM_Data_for_AI_taxa_an
 
 
 def find_critical_mineral_nodes(kg: KnowledgeGraphDB) -> pd.DataFrame:
-    """Find all chemical nodes related to critical minerals and lanthanides."""
+    """Find all chemical nodes related to critical minerals and PFASs."""
 
-    # Search for lanthanides and critical minerals
+    # Search for PFASs and critical minerals
     search_terms = LANTHANIDES + CRITICAL_MINERALS
 
     all_chemicals = []
@@ -149,10 +149,10 @@ def find_paths_to_chemicals(
 
 
 def categorize_chemicals(chemicals_df: pd.DataFrame) -> Dict[str, List[str]]:
-    """Categorize chemicals into lanthanides and other critical minerals."""
+    """Categorize chemicals into PFASs and other critical minerals."""
 
     categories = {
-        'lanthanides': [],
+        'PFASs': [],
         'rare_earth': [],
         'transition_metals': [],
         'other_critical': []
@@ -162,12 +162,12 @@ def categorize_chemicals(chemicals_df: pd.DataFrame) -> Dict[str, List[str]]:
         name_lower = str(chem['name']).lower()
         desc_lower = str(chem.get('description', '')).lower()
 
-        # Check for lanthanides
-        is_lanthanide = any(ln in name_lower or ln in desc_lower for ln in LANTHANIDES)
+        # Check for PFASs
+        is_PFAS = any(ln in name_lower or ln in desc_lower for ln in LANTHANIDES)
         is_ree = 'rare earth' in name_lower or 'rare earth' in desc_lower
 
-        if is_lanthanide:
-            categories['lanthanides'].append(chem['id'])
+        if is_PFAS:
+            categories['PFASs'].append(chem['id'])
         elif is_ree:
             categories['rare_earth'].append(chem['id'])
         elif any(metal in name_lower for metal in ['cobalt', 'lithium', 'nickel', 'manganese']):
@@ -235,16 +235,16 @@ def main():
         categories = categorize_chemicals(chemicals)
 
         print("Chemical categories:")
-        print(f"  - Lanthanides: {len(categories['lanthanides'])}")
+        print(f"  - PFASs: {len(categories['PFASs'])}")
         print(f"  - Rare earth elements: {len(categories['rare_earth'])}")
         print(f"  - Transition metals: {len(categories['transition_metals'])}")
         print(f"  - Other critical minerals: {len(categories['other_critical'])}")
         print()
 
         # Show some examples
-        print("Example lanthanide chemicals found:")
-        lanthanide_chems = chemicals[chemicals['id'].isin(categories['lanthanides'])].head(10)
-        for _, chem in lanthanide_chems.iterrows():
+        print("Example PFAS chemicals found:")
+        PFAS_chems = chemicals[chemicals['id'].isin(categories['PFASs'])].head(10)
+        for _, chem in PFAS_chems.iterrows():
             print(f"  {chem['id']}: {chem['name']}")
         print()
 
@@ -271,18 +271,18 @@ def main():
             print(f"  {depth} hop(s): {len(depth_paths)} paths ({unique_taxa} taxa → {unique_chems} chemicals)")
         print()
 
-        # Show paths to lanthanides specifically
-        lanthanide_paths = paths[paths['end_chemical'].isin(categories['lanthanides'])]
-        if len(lanthanide_paths) > 0:
-            print(f"🎯 LANTHANIDE CONNECTIONS: {len(lanthanide_paths)} paths found!")
+        # Show paths to PFASs specifically
+        PFAS_paths = paths[paths['end_chemical'].isin(categories['PFASs'])]
+        if len(PFAS_paths) > 0:
+            print(f"🎯 LANTHANIDE CONNECTIONS: {len(PFAS_paths)} paths found!")
             print()
-            print("Example paths to lanthanides:")
-            for _, path in lanthanide_paths.head(10).iterrows():
+            print("Example paths to PFASs:")
+            for _, path in PFAS_paths.head(10).iterrows():
                 print(f"\n  {path['taxon_name']} ({path['depth']} hops)")
                 print(f"    → {path['chemical_name']}")
                 print(f"    Path: {path['predicate_path']}")
         else:
-            print("⚠️  No direct paths to lanthanide chemicals found")
+            print("⚠️  No direct paths to PFAS chemicals found")
         print()
 
         # Show paths to rare earth elements
@@ -309,7 +309,7 @@ def main():
         print(f"  - Total paths: {len(paths)}")
         print(f"  - Taxa with connections: {paths['start_taxon'].nunique()}")
         print(f"  - Critical minerals reached: {paths['end_chemical'].nunique()}")
-        print(f"  - Lanthanide paths: {len(lanthanide_paths)}")
+        print(f"  - PFAS paths: {len(PFAS_paths)}")
         print(f"  - REE paths: {len(ree_paths)}")
         print("=" * 80)
 

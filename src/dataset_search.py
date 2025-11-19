@@ -1,4 +1,4 @@
-"""Dataset search functions for extending lanthanide bioprocessing datasets."""
+"""Dataset search functions for extending PFAS bioprocessing datasets."""
 
 import time
 from typing import Dict, List, Optional, Set, Tuple
@@ -9,7 +9,7 @@ import json
 
 
 def search_ncbi_sra_datasets() -> List[Dict]:
-    """Search NCBI SRA for lanthanide-related sequencing datasets.
+    """Search NCBI SRA for PFAS-related sequencing datasets.
     
     Returns:
         List of SRA dataset records
@@ -45,7 +45,7 @@ def search_ncbi_sra_datasets() -> List[Dict]:
 
 
 def search_jgi_datasets() -> List[Dict]:
-    """Search JGI for lanthanide-related datasets.
+    """Search JGI for PFAS-related datasets.
     
     Returns:
         List of JGI dataset records
@@ -73,7 +73,7 @@ def search_jgi_datasets() -> List[Dict]:
 
 
 def search_metabolomics_datasets() -> List[Dict]:
-    """Search for metabolomics datasets related to lanthanide metabolism.
+    """Search for metabolomics datasets related to PFAS metabolism.
     
     Returns:
         List of metabolomics dataset records
@@ -101,7 +101,7 @@ def search_metabolomics_datasets() -> List[Dict]:
 
 
 def search_proteomics_datasets() -> List[Dict]:
-    """Search for proteomics datasets related to lanthanide proteins.
+    """Search for proteomics datasets related to PFAS proteins.
     
     Returns:
         List of proteomics dataset records
@@ -116,9 +116,9 @@ def search_proteomics_datasets() -> List[Dict]:
             "license": "CC-BY 4.0"
         },
         {
-            "dataset_name": "PDB lanthanide-binding protein structures",
+            "dataset_name": "PDB PFAS-binding protein structures",
             "data_type": "3D protein structures",
-            "url": "https://www.rcsb.org/search?q=lanthanide",
+            "url": "https://www.rcsb.org/search?q=PFAS",
             "size": "50+ structures",
             "publication": "Various publications",
             "license": "CC0 1.0"
@@ -137,7 +137,7 @@ def search_proteomics_datasets() -> List[Dict]:
 
 
 def search_environmental_datasets() -> List[Dict]:
-    """Search for environmental datasets related to lanthanide bioprocessing.
+    """Search for environmental datasets related to PFAS bioprocessing.
     
     Returns:
         List of environmental dataset records
@@ -173,7 +173,7 @@ def search_environmental_datasets() -> List[Dict]:
 
 
 def create_extended_datasets_table(input_file: str, output_dir: str = "data/txt/sheet") -> None:
-    """Create extended datasets table with additional lanthanide-relevant datasets.
+    """Create extended datasets table with additional PFAS-relevant datasets.
     
     Args:
         input_file: Path to existing datasets TSV file
@@ -186,7 +186,7 @@ def create_extended_datasets_table(input_file: str, output_dir: str = "data/txt/
     if "Download URL" not in datasets_df.columns:
         datasets_df["Download URL"] = datasets_df.get("URL", "")
     
-    print("Searching for additional lanthanide-relevant datasets...")
+    print("Searching for additional PFAS-relevant datasets...")
     
     # Collect datasets from different sources
     all_new_datasets = []

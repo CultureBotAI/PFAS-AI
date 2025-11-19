@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Script to extend CMM datasets data with additional lanthanide-relevant datasets."""
+"""Script to extend PFAS datasets data with additional PFAS-relevant datasets."""
 
 import sys
 from pathlib import Path
@@ -21,7 +21,7 @@ def main():
         print("Please run 'make convert-excel' first to convert Excel files to TSV.")
         return 1
     
-    print("Starting dataset extension for lanthanide bioprocessing...")
+    print("Starting dataset extension for PFAS biodegradation...")
     print("Searching multiple databases for relevant datasets...")
     print("=" * 60)
     

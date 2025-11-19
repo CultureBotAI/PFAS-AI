@@ -250,14 +250,14 @@ def get_gene_download_url(gene_id: str, organism: str = "") -> str:
 
 
 def search_kegg_genes() -> List[Dict]:
-    """Search KEGG for lanthanide-related genes.
+    """Search KEGG for PFAS-related genes.
     
     Returns:
         List of gene records from KEGG
     """
     genes = []
     
-    # KEGG orthology groups relevant to lanthanide metabolism
+    # KEGG orthology groups relevant to PFAS metabolism
     kegg_genes = [
         ("K23995", "PQQ-dependent methanol dehydrogenase (XoxF)"),
         ("K14028", "PQQ-dependent methanol dehydrogenase (MxaF)"),
@@ -281,7 +281,7 @@ def search_kegg_genes() -> List[Dict]:
 
 
 def create_extended_genes_table(input_file: str, output_dir: str = "data/txt/sheet") -> None:
-    """Create extended genes and proteins table with additional lanthanide-relevant genes.
+    """Create extended genes and proteins table with additional PFAS-relevant genes.
     
     Args:
         input_file: Path to existing genes TSV file
@@ -301,10 +301,10 @@ def create_extended_genes_table(input_file: str, output_dir: str = "data/txt/she
             if gene_id:
                 genes_df.at[idx, "Download URL"] = get_gene_download_url(str(gene_id), str(organism))
     
-    print("Searching for additional lanthanide-relevant genes...")
+    print("Searching for additional PFAS-relevant genes...")
     
     # Get comprehensive gene database
-    lanthanide_genes = get_lanthanide_genes_database()
+    PFAS_genes = get_PFAS_genes_database()
     
     # Search external databases
     methylotroph_organisms = [
@@ -320,7 +320,7 @@ def create_extended_genes_table(input_file: str, output_dir: str = "data/txt/she
     kegg_genes = search_kegg_genes()
     
     # Combine all genes
-    all_new_genes = lanthanide_genes + uniprot_genes + kegg_genes
+    all_new_genes = PFAS_genes + uniprot_genes + kegg_genes
     
     print(f"Found {len(all_new_genes)} additional genes and proteins")
     

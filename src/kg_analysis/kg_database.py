@@ -1,7 +1,7 @@
 """
 Knowledge Graph Database using DuckDB
 
-This module creates and manages a DuckDB database for the lanthanide bioprocessing
+This module creates and manages a DuckDB database for the PFAS biodegradation
 knowledge graph, providing convenient query methods for exploring nodes and edges.
 
 Usage:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Script to extend CMM macromolecular structures data with additional lanthanide-relevant structures."""
+"""Script to extend CMM macromolecular structures data with additional PFAS-relevant structures."""
 
 import sys
 from pathlib import Path
@@ -18,7 +18,7 @@ def main():
         print("Please run 'make convert-excel' first to convert Excel files to TSV.")
         return 1
     
-    print("Starting macromolecular structures extension for lanthanide bioprocessing...")
+    print("Starting macromolecular structures extension for PFAS bioprocessing...")
     print("Searching PDB and curated structural databases...")
     print("=" * 60)
     

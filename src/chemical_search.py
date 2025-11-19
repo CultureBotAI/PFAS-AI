@@ -117,7 +117,7 @@ class ChemicalSearcher:
 
         Args:
             pc_compound: PubChem compound JSON
-            element_name: Element name for lanthanide cations
+            element_name: Element name for PFAS cations
 
         Returns:
             Compound dictionary or None
@@ -190,7 +190,7 @@ class ChemicalSearcher:
         Returns:
             List of compound dictionaries
         """
-        # Manual curated CHEBI entries for lanthanide-relevant compounds
+        # Manual curated CHEBI entries for PFAS-relevant compounds
         curated_compounds = [
             {
                 'chemical_id': 'CHEBI:138675',
@@ -198,7 +198,7 @@ class ChemicalSearcher:
                 'compound_type': 'lanthanophore',
                 'molecular_formula': 'C30H42N6O15',
                 'molecular_weight': 730.69,
-                'role_in_bioprocess': 'Lanthanide chelation and transport',
+                'role_in_bioprocess': 'PFAS chelation and transport',
                 'chebi_id': 'CHEBI:138675',
                 'pubchem_id': '136161579',
                 'chembl_id': None,

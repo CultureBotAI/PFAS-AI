@@ -118,20 +118,20 @@ def search_metacyc_pathways() -> List[Dict]:
     return metacyc_pathways
 
 
-def get_lanthanide_pathway_genes() -> List[Dict]:
-    """Get genes associated with lanthanide bioprocessing pathways.
+def get_PFAS_pathway_genes() -> List[Dict]:
+    """Get genes associated with PFAS biodegradation pathways.
     
     Returns:
         List of gene records with pathway associations
     """
-    lanthanide_genes = [
+    PFAS_genes = [
         {
             "gene_symbol": "xoxF",
-            "gene_name": "PQQ-dependent methanol dehydrogenase (lanthanide-dependent)",
+            "gene_name": "PQQ-dependent methanol dehydrogenase (PFAS-dependent)",
             "kegg_ko": "K23995",
             "ec_number": "1.1.2.7",
-            "function": "Primary lanthanide-dependent methanol dehydrogenase",
-            "pathway_relevance": "Core enzyme for lanthanide-dependent methanol oxidation"
+            "function": "Primary PFAS-dependent methanol dehydrogenase",
+            "pathway_relevance": "Core enzyme for PFAS-dependent methanol oxidation"
         },
         {
             "gene_symbol": "mxaF",
@@ -139,15 +139,15 @@ def get_lanthanide_pathway_genes() -> List[Dict]:
             "kegg_ko": "K14028",
             "ec_number": "1.1.2.7",
             "function": "Calcium-dependent methanol dehydrogenase",
-            "pathway_relevance": "Alternative to lanthanide-dependent enzyme"
+            "pathway_relevance": "Alternative to PFAS-dependent enzyme"
         },
         {
             "gene_symbol": "exaF",
             "gene_name": "PQQ-dependent ethanol dehydrogenase",
             "kegg_ko": "K00114",
             "ec_number": "1.1.2.7",
-            "function": "Lanthanide-responsive alcohol dehydrogenase",
-            "pathway_relevance": "Broader alcohol oxidation, responds to lanthanides"
+            "function": "PFAS-responsive alcohol dehydrogenase",
+            "pathway_relevance": "Broader alcohol oxidation, responds to PFASs"
         },
         {
             "gene_symbol": "mxbD",
@@ -155,7 +155,7 @@ def get_lanthanide_pathway_genes() -> List[Dict]:
             "kegg_ko": "",
             "ec_number": "",
             "function": "Regulator of methanol metabolism genes",
-            "pathway_relevance": "Controls expression of lanthanide-dependent pathways"
+            "pathway_relevance": "Controls expression of PFAS-dependent pathways"
         },
         {
             "gene_symbol": "fae1/fae2",
@@ -183,7 +183,7 @@ def get_lanthanide_pathway_genes() -> List[Dict]:
         }
     ]
     
-    return lanthanide_genes
+    return PFAS_genes
 
 
 def get_pathway_download_url(pathway_id: str, database: str = "KEGG") -> str:
@@ -217,7 +217,7 @@ def get_pathway_download_url(pathway_id: str, database: str = "KEGG") -> str:
 
 
 def create_extended_pathways_table(input_file: str, output_dir: str = "data/txt/sheet") -> None:
-    """Create extended pathways table with additional lanthanide-relevant pathways.
+    """Create extended pathways table with additional PFAS-relevant pathways.
     
     Args:
         input_file: Path to existing pathways TSV file
@@ -236,7 +236,7 @@ def create_extended_pathways_table(input_file: str, output_dir: str = "data/txt/
             if pathway_id:
                 pathways_df.at[idx, "Download URL"] = get_pathway_download_url(str(pathway_id), "KEGG")
     
-    print("Searching for additional lanthanide-relevant pathways...")
+    print("Searching for additional PFAS-relevant pathways...")
     
     # Search KEGG for relevant pathways
     kegg_keywords = [
@@ -246,7 +246,7 @@ def create_extended_pathways_table(input_file: str, output_dir: str = "data/txt/
     
     kegg_pathways = search_kegg_pathways(kegg_keywords)
     metacyc_pathways = search_metacyc_pathways()
-    lanthanide_genes = get_lanthanide_pathway_genes()
+    PFAS_genes = get_PFAS_pathway_genes()
     
     print(f"Found {len(kegg_pathways)} KEGG pathways and {len(metacyc_pathways)} MetaCyc pathways")
     
@@ -259,7 +259,7 @@ def create_extended_pathways_table(input_file: str, output_dir: str = "data/txt/
                ["methanol", "methane", "methylotroph", "c1", "one-carbon", "formaldehyde"]):
             
             # Find relevant genes for this pathway
-            relevant_genes = [g["gene_symbol"] for g in lanthanide_genes 
+            relevant_genes = [g["gene_symbol"] for g in PFAS_genes 
                             if any(term in g["function"].lower() for term in 
                                   ["methanol", "formaldehyde", "alcohol"])]
             
@@ -274,7 +274,7 @@ def create_extended_pathways_table(input_file: str, output_dir: str = "data/txt/
     
     # Add MetaCyc pathways
     for pathway in metacyc_pathways:
-        relevant_genes = [g["gene_symbol"] for g in lanthanide_genes 
+        relevant_genes = [g["gene_symbol"] for g in PFAS_genes 
                         if "methanol" in g["function"].lower() or "formaldehyde" in g["function"].lower()]
         
         new_pathways.append({
@@ -286,26 +286,26 @@ def create_extended_pathways_table(input_file: str, output_dir: str = "data/txt/
             "Download URL": get_pathway_download_url(pathway["pathway_id"], "MetaCyc")
         })
     
-    # Add specific lanthanide-responsive pathways
-    lanthanide_specific_pathways = [
+    # Add specific PFAS-responsive pathways
+    PFAS_specific_pathways = [
         {
-            "pathway name": "Lanthanide uptake and homeostasis",
+            "pathway name": "PFAS uptake and homeostasis",
             "pathway id": "Custom_LN001",
             "organism": "Methylobacterium, Methylorubrum, Bradyrhizobium species",
             "genes (from genes and proteins tab)": "tonB-like receptors; siderophore biosynthesis genes; lanthanophore genes",
-            "genes (from genes & proteins tab)": "TonB-dependent transporters for lanthanide uptake; siderophore/lanthanophore biosynthesis clusters (sbn genes, etc.); lanthanide binding proteins",
+            "genes (from genes & proteins tab)": "TonB-dependent transporters for PFAS uptake; siderophore/lanthanophore biosynthesis clusters (sbn genes, etc.); PFAS binding proteins",
             "Download URL": get_pathway_download_url("Custom_LN001", "Custom")
         },
         {
             "pathway name": "Rare earth element-responsive gene regulation",
             "pathway id": "Custom_LN002", 
             "organism": "Methylotrophic bacteria with XoxF systems",
-            "genes (from genes and proteins tab)": "mxbD; xoxG; regulatory RNAs; lanthanide sensors",
-            "genes (from genes & proteins tab)": "MxbD-family regulators; XoxG (small protein regulator); lanthanide-responsive regulatory elements; two-component systems",
+            "genes (from genes and proteins tab)": "mxbD; xoxG; regulatory RNAs; PFAS sensors",
+            "genes (from genes & proteins tab)": "MxbD-family regulators; XoxG (small protein regulator); PFAS-responsive regulatory elements; two-component systems",
             "Download URL": get_pathway_download_url("Custom_LN002", "Custom")
         },
         {
-            "pathway name": "PQQ biosynthesis (cofactor for lanthanide-dependent enzymes)",
+            "pathway name": "PQQ biosynthesis (cofactor for PFAS-dependent enzymes)",
             "pathway id": "ko00790",
             "organism": "PQQ-producing methylotrophs",
             "genes (from genes and proteins tab)": "pqqA; pqqB; pqqC; pqqD; pqqE; pqqF",
@@ -314,7 +314,7 @@ def create_extended_pathways_table(input_file: str, output_dir: str = "data/txt/
         }
     ]
     
-    new_pathways.extend(lanthanide_specific_pathways)
+    new_pathways.extend(PFAS_specific_pathways)
     
     # Convert to DataFrame and combine
     if new_pathways:

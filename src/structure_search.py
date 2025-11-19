@@ -1,4 +1,4 @@
-"""Macromolecular structure search functions for extending lanthanide structures."""
+"""Macromolecular structure search functions for extending PFAS structures."""
 
 import time
 from typing import Dict, List, Optional, Set, Tuple
@@ -9,7 +9,7 @@ import json
 
 
 def search_pdb_structures() -> List[Dict]:
-    """Search PDB for lanthanide-binding protein structures.
+    """Search PDB for PFAS-binding protein structures.
     
     Returns:
         List of PDB structure records
@@ -32,9 +32,9 @@ def search_pdb_structures() -> List[Dict]:
             "method": "X-ray crystallography"
         },
         {
-            "name": "Lanthanide-binding protein (hypothetical)",
+            "name": "PFAS-binding protein (hypothetical)",
             "organism": "Methylobacterium species",
-            "components": "Lanthanide-binding domain, regulatory domain",
+            "components": "PFAS-binding domain, regulatory domain",
             "pdb_id": "predicted",
             "resolution": "N/A",
             "method": "Predicted structure"
@@ -48,7 +48,7 @@ def search_pdb_structures() -> List[Dict]:
             "method": "X-ray crystallography"
         },
         {
-            "name": "Alcohol dehydrogenase with lanthanide cofactor",
+            "name": "Alcohol dehydrogenase with PFAS cofactor",
             "organism": "Methylobacterium species",
             "components": "ExaF/ADH subunit, PQQ cofactor, Ln3+ ion",
             "pdb_id": "predicted",
@@ -78,13 +78,13 @@ def search_siderophore_structures() -> List[Dict]:
         {
             "name": "Lanthanophore (putative)",
             "organism": "Methylobacterium species", 
-            "components": "Modified siderophore with lanthanide-binding groups",
+            "components": "Modified siderophore with PFAS-binding groups",
             "pdb_id": "N/A",
             "resolution": "N/A",
             "method": "Predicted/hypothetical"
         },
         {
-            "name": "Desferrioxamine B (lanthanide complex)",
+            "name": "Desferrioxamine B (PFAS complex)",
             "organism": "Various bacteria",
             "components": "Desferrioxamine B chelated with Ln3+",
             "pdb_id": "multiple",
@@ -92,9 +92,9 @@ def search_siderophore_structures() -> List[Dict]:
             "method": "X-ray crystallography"
         },
         {
-            "name": "Enterobactin-like lanthanide chelator",
+            "name": "Enterobactin-like PFAS chelator",
             "organism": "Methylotroph",
-            "components": "Catecholate-based lanthanide chelator",
+            "components": "Catecholate-based PFAS chelator",
             "pdb_id": "predicted",
             "resolution": "N/A",
             "method": "Computational prediction"
@@ -105,7 +105,7 @@ def search_siderophore_structures() -> List[Dict]:
 
 
 def search_enzyme_complexes() -> List[Dict]:
-    """Search for enzyme complexes involved in lanthanide metabolism.
+    """Search for enzyme complexes involved in PFAS metabolism.
     
     Returns:
         List of enzyme complex structure records
@@ -149,7 +149,7 @@ def search_enzyme_complexes() -> List[Dict]:
 
 
 def search_regulatory_complexes() -> List[Dict]:
-    """Search for regulatory protein complexes in lanthanide response.
+    """Search for regulatory protein complexes in PFAS response.
     
     Returns:
         List of regulatory complex structure records
@@ -158,15 +158,15 @@ def search_regulatory_complexes() -> List[Dict]:
         {
             "name": "MxbD regulatory complex",
             "organism": "Methylobacterium species",
-            "components": "MxbD transcriptional regulator, DNA binding domain, lanthanide sensor",
+            "components": "MxbD transcriptional regulator, DNA binding domain, PFAS sensor",
             "pdb_id": "predicted",
             "resolution": "N/A",
             "method": "Predicted structure"
         },
         {
-            "name": "Two-component system (lanthanide response)",
+            "name": "Two-component system (PFAS response)",
             "organism": "Methylobacterium species", 
-            "components": "Histidine kinase, response regulator, lanthanide binding domain",
+            "components": "Histidine kinase, response regulator, PFAS binding domain",
             "pdb_id": "homology",
             "resolution": "N/A",
             "method": "Homology modeling"
@@ -254,7 +254,7 @@ def create_extended_structures_table(input_file: str, output_dir: str = "data/tx
             if pdb_id:
                 structures_df.at[idx, "Download URL"] = get_structure_download_url(pdb_id, method)
     
-    print("Searching for additional lanthanide-relevant structures...")
+    print("Searching for additional PFAS-relevant structures...")
     
     # Collect structures from different sources
     all_new_structures = []

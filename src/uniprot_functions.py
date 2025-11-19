@@ -218,7 +218,7 @@ def create_functions_table(
     including enzymes, GO processes, reactions, pathways, and chemicals.
 
     Args:
-        query_terms: Search terms (default: lanthanide-relevant terms)
+        query_terms: Search terms (default: PFAS-relevant terms)
         organisms: Organism names (default: methylotroph genera)
         output_dir: Directory to save output file
         source_label: Source provenance label
@@ -235,7 +235,7 @@ def create_functions_table(
             "MxaF",
             "ExaF",
             "alcohol dehydrogenase",
-            "lanthanide",
+            "PFAS",
             "lanthanophore",
             "lanmodulin",
             "methylotroph"
@@ -311,7 +311,7 @@ def extend_existing_functions_table(
 
     Args:
         input_file: Path to existing functions TSV file
-        query_terms: Search terms (default: lanthanide-relevant terms)
+        query_terms: Search terms (default: PFAS-relevant terms)
         organisms: Organism names (default: methylotroph genera)
         output_dir: Directory to save extended table
     """
