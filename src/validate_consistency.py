@@ -453,6 +453,9 @@ class ConsistencyValidator:
             pubchem = row.get('pubchem_id')
             if pd.notna(pubchem):
                 pubchem_str = str(pubchem).strip()
+                # Remove .0 suffix if present (pandas converts to float)
+                if pubchem_str.endswith('.0'):
+                    pubchem_str = pubchem_str[:-2]
                 if pubchem_str.isdigit():
                     pubchem_count += 1
                 else:
