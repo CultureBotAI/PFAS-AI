@@ -303,7 +303,7 @@ kg = KGDatabase('data/kgm/kg-microbe.duckdb')
 results = kg.query("SELECT * FROM nodes WHERE category='Genome'")
 ```
 
-## Carried from the former AGENTS.md (review and trim)
+## Tooling notes carried from the former AGENTS.md (a cmm-ai template; verify before relying on it)
 
 # AGENTS.md for cmm-ai
 
